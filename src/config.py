@@ -1,4 +1,3 @@
-# src/config.py
 from pathlib import Path
 
 class ProjectPaths:
@@ -12,7 +11,7 @@ class ProjectPaths:
         # Diretórios de entrada para os relatórios agendados do ERP TOTVS
         self.entrada_totvs = self.base_dir / "dados" / "entrada_totvs"
         
-        # Diretórios de entrada para os XMLs originais (Fontes de Verdade)
+        # Diretórios de entrada para os XMLs originais
         self.xml_materiais = self.base_dir / "dados" / "xml_materiais_quirius"
         self.xml_servicos = self.base_dir / "dados" / "xml_servicos_nacional"
         
@@ -20,7 +19,7 @@ class ProjectPaths:
         self.historico = self.base_dir / "dados" / "historico"
         
         # Caminho físico do Painel de Controle Excel (Planilha Mestre)
-        self.planilha_mestre = self.base_dir / "planilha_mestre" / "Analise de notas de serviços_V03.07.2025.xlsm"
+        self.planilha_mestre = self.base_dir / "planilha_mestre" / "planilha_mestre.xlsm"
 
     def get_all_required_directories(self) -> list:
         """Retorna a lista de todas as pastas que o sistema precisa para funcionar."""
@@ -80,11 +79,10 @@ class EnvironmentInitializer:
 
 
 if __name__ == "__main__":
-    # Ponto de entrada isolado para validação da Fase 1
     # Captura a raiz do projeto de forma dinâmica (2 níveis acima deste arquivo)
     PROJECT_ROOT = Path(__file__).resolve().parent.parent
     
-    # Injeção de Dependência clássica da POO
+    # Injeção de Dependência
     app_paths = ProjectPaths(base_dir=PROJECT_ROOT)
     environment = EnvironmentInitializer(paths=app_paths)
     
