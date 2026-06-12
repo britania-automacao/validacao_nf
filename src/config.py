@@ -1,90 +1,91 @@
+# src/config.py
 from pathlib import Path
 
-class ProjectPaths:
+class CaminhosProjeto:
     """
-    Classe responsável por encapsular, centralizar e gerenciar todos os caminhos
+    Classe responsável por centralizar, organizar e gerenciar todos os caminhos
     de diretórios e arquivos do ecossistema de validação fiscal.
     """
-    def __init__(self, base_dir: Path):
-        self.base_dir = base_dir
+    def __init__(self, diretorio_base: Path):
+        self.diretorio_base = diretorio_base
         
         # Diretórios de entrada para os relatórios agendados do ERP TOTVS
-        self.entrada_totvs = self.base_dir / "dados" / "entrada_totvs"
+        self.entrada_totvs = self.diretorio_base / "dados" / "entrada_totvs"
         
-        # Diretórios de entrada para os XMLs originais
-        self.xml_materiais = self.base_dir / "dados" / "xml_materiais_quirius"
-        self.xml_servicos = self.base_dir / "dados" / "xml_servicos_nacional"
+        # Diretórios de entrada para os arquivos XML originais (Fontes de Verdade)
+        self.xml_materiais_quirius = self.diretorio_base / "dados" / "xml_materiais_quirius"
+        self.xml_servicos_nacional = self.diretorio_base / "dados" / "xml_servicos_nacional"
         
-        # Diretório para armazenamento de logs e histórico de processamento
-        self.historico = self.base_dir / "dados" / "historico"
+        # Diretório para armazenamento de histórico e arquivos de controle (ex: memória do NSU)
+        self.historico_controle = self.diretorio_base / "dados" / "historico"
         
         # Caminho físico do Painel de Controle Excel (Planilha Mestre)
-        self.planilha_mestre = self.base_dir / "planilha_mestre" / "planilha_mestre.xlsm"
+        self.planilha_mestre = self.diretorio_base / "planilha_mestre" / "Analise de notas de serviços_V03.07.2025.xlsm"
 
-    def get_all_required_directories(self) -> list:
-        """Retorna a lista de todas as pastas que o sistema precisa para funcionar."""
+    def obter_todos_diretorios_obrigatorios(self) -> list:
+        """Retorna a lista com todos os caminhos de pastas necessários para a aplicação."""
         return [
             self.entrada_totvs,
-            self.xml_materiais,
-            self.xml_servicos,
-            self.historico
+            self.xml_materiais_quirius,
+            self.xml_servicos_nacional,
+            self.historico_controle
         ]
 
 
-class EnvironmentInitializer:
+class InicializadorAmbiente:
     """
     Classe de infraestrutura responsável por validar pré-requisitos,
-    criar árvores de diretórios e garantir a integridade do ambiente antes do ETL.
+    criar a árvore de diretórios e garantir a integridade do ambiente antes do processamento.
     """
-    def __init__(self, paths: ProjectPaths):
-        self.paths = paths
+    def __init__(self, caminhos: CaminhosProjeto):
+        self.caminhos = caminhos
 
-    def run_lifecycle_setup(self) -> bool:
-        """Executa o ciclo de vida de preparação do ambiente de execução."""
-        print("[INFO] Iniciando validação de infraestrutura local...")
+    def executar_configuracao_ciclo_vida(self) -> bool:
+        """Executa a preparação e validação completa do ambiente local de execução."""
+        print("[INFO] Iniciando a validação da infraestrutura local...")
         
-        folders_created = self._build_directory_tree()
-        master_sheet_verified = self._check_master_sheet_presence()
+        estrutura_pastas_criada = self._criar_arvore_diretorios()
+        planilha_mestre_verificada = self._verificar_presenca_planilha_mestre()
         
-        if folders_created and master_sheet_verified:
-            print("[SUCCESS] Fase 1 concluída. Ambiente Orientado a Objetos pronto.\n")
+        if estrutura_pastas_criada and planilha_mestre_verificada:
+            print("[SUCESSO] Fase 1 concluída. Ambiente pronto para o processamento.\n")
             return True
         else:
-            print("[ERROR] Falha crítica na preparação do ambiente. Verifique os logs.\n")
+            print("[ERRO] Falha crítica na preparação do ambiente. Verifique as mensagens acima.\n")
             return False
 
-    def _build_directory_tree(self) -> bool:
-        """Varre os caminhos encapsulados e cria as pastas ausentes de forma segura."""
+    def _criar_arvore_diretorios(self) -> bool:
+        """Varre os caminhos configurados e cria de forma automática as pastas ausentes."""
         try:
-            for directory in self.paths.get_all_required_directories():
-                if not directory.exists():
-                    directory.mkdir(parents=True, exist_ok=True)
-                    print(f"[SETUP] Diretório criado: dados/{directory.name}/")
+            for diretorio in self.caminhos.obter_todos_diretorios_obrigatorios():
+                if not diretorio.exists():
+                    diretorio.mkdir(parents=True, exist_ok=True)
+                    print(f"[SETUP] Diretório criado com sucesso: dados/{diretorio.name}/")
                 else:
-                    print(f"[INFO] Estrutura validada: dados/{directory.name}/")
+                    print(f"[INFO] Diretório validado e existente: dados/{diretorio.name}/")
             return True
-        except Exception as e:
-            print(f"[CRITICAL] Erro ao instanciar árvore de diretórios: {e}")
+        except Exception as erro:
+            print(f"[CRITICAL] Erro ao instanciar a árvore de diretórios: {erro}")
             return False
 
-    def _check_master_sheet_presence(self) -> bool:
-        """Garante que o arquivo Excel (UI/Painel de Controle) está posicionado."""
-        if self.paths.planilha_mestre.exists():
-            print(f"[INFO] Interface do usuário identificada: {self.paths.planilha_mestre.name}")
+    def _verificar_presenca_planilha_mestre(self) -> bool:
+        """Garante que a planilha mestre (interface com o usuário) está posicionada corretamente."""
+        if self.caminhos.planilha_mestre.exists():
+            print(f"[INFO] Interface do usuário identificada: {self.caminhos.planilha_mestre.name}")
             return True
         else:
-            print(f"\n[WARNING] ALERTA: Arquivo '{self.paths.planilha_mestre.name}' ausente!")
-            print(f"[WARNING] Certifique-se de salvá-lo em: {self.paths.planilha_mestre.parent}\n")
+            print(f"\n[AVISO] ALERTA: Arquivo '{self.caminhos.planilha_mestre.name}' ausente!")
+            print(f"[AVISO] Certifique-se de salvá-lo em: {self.caminhos.planilha_mestre.parent}\n")
             return False
 
 
 if __name__ == "__main__":
     # Captura a raiz do projeto de forma dinâmica (2 níveis acima deste arquivo)
-    PROJECT_ROOT = Path(__file__).resolve().parent.parent
+    RAIZ_PROJETO = Path(__file__).resolve().parent.parent
     
-    # Injeção de Dependência
-    app_paths = ProjectPaths(base_dir=PROJECT_ROOT)
-    environment = EnvironmentInitializer(paths=app_paths)
+    # Instanciação dos objetos com injeção de dependência
+    config_caminhos = CaminhosProjeto(diretorio_base=RAIZ_PROJETO)
+    inicializador = InicializadorAmbiente(caminhos=config_caminhos)
     
-    # Execução do setup do ecossistema
-    environment.run_lifecycle_setup()
+    # Executa o setup inicial
+    inicializador.executar_configuracao_ciclo_vida()

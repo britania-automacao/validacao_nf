@@ -1,139 +1,157 @@
+# src/nfse_fetcher.py
 import os
 import base64
 import gzip
-import io
 from pathlib import Path
 from dotenv import load_dotenv
 from requests_pkcs12 import get
-from config import ProjectPaths
+from config import CaminhosProjeto
 
 load_dotenv()
 
-class NationalNfseFetcher:
+class BuscadorNfseNacional:
     """
-    Classe responsável por conectar-se à API da Base Nacional da NFS-e (ADN),
-    autenticar via Certificado Digital A1 e descarregar os XMLs por NSU.
+    Classe responsável por conectar-se à API do Ambiente de Dados Nacional (ADN),
+    autenticar via Certificado Digital A1 e baixar os arquivos XML de forma sequencial por NSU.
     """
-    def __init__(self, paths: ProjectPaths):
-        self.paths = paths
-        self.cert_name = os.getenv("CERTIFICADO_NOME")
-        self.cert_password = os.getenv("CERTIFICADO_SENHA")
+    def __init__(self, caminhos: CaminhosProjeto):
+        self.caminhos = caminhos
+        self.nome_certificado = os.getenv("CERTIFICADO_NOME")
+        self.senha_certificado = os.getenv("CERTIFICADO_SENHA")
         self.cnpj_empresa = os.getenv("CNPJ_EMPRESA")
         
-        # URL Base do Ambiente de Produção Restrita (Testes)
-        self.api_base_url = "https://adn.producaorestrita.nfse.gov.br/contribuintes"
+        # URL Base do Ambiente de Produção Restrita (Testes), conforme o manual oficial da API
+        self.url_base_api = "https://adn.producaorestrita.nfse.gov.br/contribuintes"
 
-    def run_fetch_cycle(self) -> bool:
-        """Orquestra o processo de autenticação e download."""
-        print(f"[FETCHER] A iniciar sincronização para o CNPJ: {self.cnpj_empresa}...")
+    def executar_ciclo_busca(self) -> bool:
+        """Orquestra o download contínuo dos XMLs consumindo a fila até encontrar o fim dela (Erro 404)."""
+        print(f"[FETCHER] Iniciando a sincronização de notas para o CNPJ: {self.cnpj_empresa}...")
         
-        caminho_cert = self._get_certificate_path()
-        if not caminho_cert:
+        caminho_absoluto_certificado = self._obter_caminho_certificado()
+        if not caminho_absoluto_certificado:
             return False
 
-        # Para este tentar puxar o NSU número 1 da fila da empresa
-        nsu_teste = 1
-        sucesso = self._request_national_xml_by_nsu(caminho_cert, nsu_teste)
-        return sucesso
+        # Define o arquivo de texto que serve como memória de progresso
+        arquivo_memoria_nsu = self.caminhos.historico_controle / "ultimo_nsu.txt"
+        
+        # Recupera o último NSU processado ou inicia do primeiro se o arquivo não existir
+        if arquivo_memoria_nsu.exists():
+            nsu_atual = int(arquivo_memoria_nsu.read_text().strip())
+        else:
+            nsu_atual = 1
 
-    def _get_certificate_path(self):
-        """Valida e retorna o caminho absoluto do certificado A1."""
-        if not self.cert_name:
-            print("[CRITICAL] Nome do certificado não configurado no ficheiro .env")
+        print(f"[FETCHER] Retomando os downloads a partir do NSU: {nsu_atual}...")
+        total_notas_baixadas = 0
+
+        # Loop de consumo da fila que só encerra quando o governo retornar 404 (fim da fila)
+        while True:
+            sucesso_requisicao = self._requisitar_xml_por_nsu(caminho_absoluto_certificado, nsu_atual)
+            
+            if sucesso_requisicao:
+                total_notas_baixadas += 1
+                nsu_atual += 1
+                # Atualiza a memória do robô no disco imediatamente para evitar perda de tracking
+                arquivo_memoria_nsu.write_text(str(nsu_atual))
+            else:
+                print(f"[FETCHER] Fila de transmissão esgotada. Nenhuma nota nova encontrada após o NSU {nsu_atual - 1}.")
+                break
+                
+        print(f"[SUCESSO] Ciclo finalizado! Total de novos lotes salvos nesta sessão: {total_notas_baixadas}\n")
+        return True
+
+    def _obter_caminho_certificado(self) -> str:
+        """Valida as configurações do ambiente e retorna o caminho físico do certificado A1."""
+        if not self.nome_certificado:
+            print("[CRITICAL] Nome do certificado não configurado no arquivo .env")
             return None
             
-        cert_path = self.paths.base_dir / "dados" / "certificados" / self.cert_name
+        caminho_certificado = self.caminhos.diretorio_base / "dados" / "certificados" / self.nome_certificado
         
-        if not cert_path.exists():
-            print(f"[CRITICAL] Certificado não encontrado no caminho: {cert_path}")
+        if not caminho_certificado.exists():
+            print(f"[CRITICAL] Arquivo do certificado não encontrado em: {caminho_certificado}")
             return None
             
-        return str(cert_path)
+        return str(caminho_certificado)
 
-    def _request_national_xml_by_nsu(self, cert_path: str, nsu: int) -> bool:
-        """Executa a chamada HTTP GET utilizando o Certificado Digital A1."""
-        url_endpoint = f"{self.api_base_url}/DFe/{nsu}"
+    def _requisitar_xml_por_nsu(self, caminho_cert: str, nsu_consulta: int) -> bool:
+        """Executa a chamada HTTP GET assinando digitalmente a requisição com o certificado PFX."""
+        url_endpoint_completo = f"{self.url_base_api}/DFe/{nsu_consulta}"
         
-        # CNPJ de consulta como parâmetro
-        parametros = {
+        parametros_consulta = {
             "cnpjConsulta": self.cnpj_empresa
         }
 
-        print(f"[FETCHER] A consultar o NSU {nsu} no portal do Governo...")
+        print(f"[FETCHER] Consultando a posição de NSU {nsu_consulta} na Base Nacional...")
 
         try:
-            # Envia o pedido GET assinando com o certificado A1
-            response = get(
-                url=url_endpoint,
-                params=parametros,
-                pkcs12_filename=cert_path,
-                pkcs12_password=self.cert_password,
+            resposta_servidor = get(
+                url=url_endpoint_completo,
+                params=parametros_consulta,
+                pkcs12_filename=caminho_cert,
+                pkcs12_password=self.senha_certificado,
                 timeout=30
             )
 
-            if response.status_code == 200:
-                print(f"[SUCCESS] Documento NSU {nsu} recebido com sucesso!")
+            # Status 200: Encontrou dados na fila
+            if resposta_servidor.status_code == 200:
+                dados_resposta_json = resposta_servidor.json()
+                lista_documentos_lote = dados_resposta_json.get("LoteDFe", [])
                 
-                # O governo devolve um JSON contendo a lista de documentos. 
-                # decodificar e guardar cada um deles.
-                dados_json = response.json()
-                lote = dados_json.get("LoteDFe", [])
-                
-                if not lote:
-                    print(f"[INFO] Lote vazio recebido para o NSU {nsu}.")
+                if not lista_documentos_lote:
                     return False
                     
-                for documento in lote:
-                    self._decode_and_save_xml(documento)
+                for documento_fiscal in lista_documentos_lote:
+                    self._decodificar_e_salvar_arquivo_xml(documento_fiscal)
                     
                 return True
                 
-            elif response.status_code == 404:
-                print(f"[INFO] NSU {nsu} não encontrado ou fila vazia.")
+            # Status 404: Fim da fila ou índice não gerado ainda pelo fisco
+            elif resposta_servidor.status_code == 404:
+                print(f"[INFO] NSU {nsu_consulta} não localizado (Fim da fila alcançado).")
                 return False
-            elif response.status_code == 403:
-                print("[ERRO] Acesso Negado (403). O Certificado não tem permissão para este CNPJ.")
+            elif resposta_servidor.status_code == 403:
+                print("[ERRO] Acesso Negado (403). O certificado não possui permissão para este CNPJ.")
                 return False
             else:
-                print(f"[ERRO API] O Servidor retornou o código: {response.status_code}")
-                print(f"Detalhe: {response.text}")
+                print(f"[ERRO API] O servidor retornou o status {resposta_servidor.status_code}")
                 return False
 
-        except Exception as e:
-            print(f"[CRITICAL] Falha na conexão segura com o Governo: {e}")
+        except Exception as erro_conexao:
+            print(f"[CRITICAL] Falha na conexão segura SSL com o ambiente governamental: {erro_conexao}")
             return False
 
-    def _decode_and_save_xml(self, documento: dict):
-        """Descompacta o Base64/GZIP do governo e guarda o ficheiro XML em texto limpo."""
-        nsu_doc = documento.get("NSU", "Desconhecido")
-        chave = documento.get("ChaveAcesso", f"SemChave_{nsu_doc}")
-        arquivo_base64 = documento.get("ArquivoXml")
+    def _decodificar_e_salvar_arquivo_xml(self, dados_documento: dict):
+        """Descompacta a string criptografada em Base64/GZIP gerando o arquivo XML legível em UTF-8."""
+        nsu_documento = dados_documento.get("NSU", "Desconhecido")
+        chave_acesso = dados_documento.get("ChaveAcesso", f"SemChave_{nsu_documento}")
+        string_base64_comprimida = dados_documento.get("ArquivoXml")
 
-        if not arquivo_base64:
-            print(f"[ALERTA] Documento NSU {nsu_doc} não contém o campo ArquivoXml.")
+        if not string_base64_comprimida:
+            print(f"[AVISO] O documento de NSU {nsu_documento} veio com o bloco XML vazio.")
             return
 
         try:
-            # Transforma o Base64 de volta para Bytes comprimidos
-            bytes_comprimidos = base64.b64decode(arquivo_base64)
+            # Decodifica a base64 transformando em bytes binários compactados
+            bytes_comprimidos = base64.b64decode(string_base64_comprimida)
             
-            # Descomprime o formato GZIP para obter o XML original
-            xml_texto_puro = gzip.decompress(bytes_comprimidos).decode('utf-8')
+            # Descomprime o GZIP recuperando a string estruturada do XML original
+            texto_xml_puro = gzip.decompress(bytes_comprimidos).decode('utf-8')
 
-            # Guarda no disco para o Pandas o poder ler
-            caminho_arquivo = self.paths.xml_servicos / f"NFSe_{chave}.xml"
+            # Grava o arquivo de texto limpo no diretório mapeado pelo ecossistema
+            caminho_final_arquivo = self.caminhos.xml_servicos_nacional / f"NFSe_{chave_acesso}.xml"
             
-            with open(caminho_arquivo, 'w', encoding='utf-8') as f:
-                f.write(xml_texto_puro)
+            with open(caminho_final_arquivo, 'w', encoding='utf-8') as arquivo_escrita:
+                arquivo_escrita.write(texto_xml_puro)
                 
-            print(f"[FETCHER] XML descompactado e guardado: {caminho_arquivo.name}")
+            print(f"[FETCHER] Arquivo gravado com sucesso: {caminho_final_arquivo.name}")
 
-        except Exception as e:
-            print(f"[ERRO] Falha ao descompactar e guardar o NSU {nsu_doc}: {e}")
+        except Exception as erro_decodificacao:
+            print(f"[ERRO] Falha ao processar o desmembramento criptográfico do NSU {nsu_documento}: {erro_decodificacao}")
+
 
 if __name__ == "__main__":
-    BASE_DIR = Path(__file__).resolve().parent.parent
-    caminhos = ProjectPaths(base_dir=BASE_DIR)
+    RAIZ_PROJETO = Path(__file__).resolve().parent.parent
+    config_caminhos = CaminhosProjeto(diretorio_base=RAIZ_PROJETO)
     
-    fetcher = NationalNfseFetcher(paths=caminhos)
-    fetcher.run_fetch_cycle()
+    gerenciador_fetcher = BuscadorNfseNacional(caminhos=config_caminhos)
+    gerenciador_fetcher.executar_ciclo_busca()
