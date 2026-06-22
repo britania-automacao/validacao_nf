@@ -1,0 +1,259 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+        
+    <infNFSe Id="NFS42091021253113791001790000000131326826010561358094">
+                
+        <xLocEmi>JOINVILLE</xLocEmi>
+                
+        <xLocPrestacao>JOINVILLE</xLocPrestacao>
+                
+        <nNFSe>1313268</nNFSe>
+                
+        <cLocIncid>4209102</cLocIncid>
+                
+        <xLocIncid>JOINVILLE</xLocIncid>
+                
+        <xTribNac>1.07 - Suporte técnico em informática, inclusive instalação, configuração e manutenção de programas de computação e bancos de dados.</xTribNac>
+                
+        <verAplic>04.01.44.0000</verAplic>
+                
+        <ambGer>1</ambGer>
+                
+        <tpEmis>2</tpEmis>
+                
+        <cStat>100</cStat>
+                
+        <dhProc>2026-01-13T18:33:42-03:00</dhProc>
+                
+        <nDFSe>1313268</nDFSe>
+                
+        <emit>
+                        
+            <CNPJ>53113791001790</CNPJ>
+                        
+            <IM>9507</IM>
+                        
+            <xNome>Totvs Sa</xNome>
+                        
+            <xFant>Totvs Sa</xFant>
+                        
+            <enderNac>
+                                
+                <xLgr>Santos Dumont</xLgr>
+                                
+                <nro>831</nro>
+                                
+                <xCpl>ANDAR 1</xCpl>
+                                
+                <xBairro>Bom Retiro</xBairro>
+                                
+                <cMun>4209102</cMun>
+                                
+                <UF>SC</UF>
+                                
+                <CEP>89204300</CEP>
+                            
+            </enderNac>
+                        
+            <fone>1140030015</fone>
+                        
+            <email>fiscal@totvs.com.br</email>
+                    
+        </emit>
+                
+        <valores>
+                        
+            <vBC>17515.64</vBC>
+                        
+            <pAliqAplic>2.00</pAliqAplic>
+                        
+            <vISSQN>350.31</vISSQN>
+                        
+            <vLiq>16701.16</vLiq>
+                    
+        </valores>
+                
+        <DPS versao="1.01">
+                        
+            <infDPS Id="DPS420910225311379100179003000000000000006430">
+                                
+                <tpAmb>1</tpAmb>
+                                
+                <dhEmi>2026-01-12T15:08:10-03:00</dhEmi>
+                                
+                <verAplic>04.01.44.0000</verAplic>
+                                
+                <serie>3000</serie>
+                                
+                <nDPS>6430</nDPS>
+                                
+                <dCompet>2026-01-12</dCompet>
+                                
+                <tpEmit>1</tpEmit>
+                                
+                <cLocEmi>4209102</cLocEmi>
+                                
+                <prest>
+                                        
+                    <CNPJ>53113791001790</CNPJ>
+                                        
+                    <IM>9507</IM>
+                                        
+                    <fone>1140030015</fone>
+                                        
+                    <email>fiscal@totvs.com.br</email>
+                                        
+                    <regTrib>
+                                                
+                        <opSimpNac>1</opSimpNac>
+                                                
+                        <regEspTrib>0</regEspTrib>
+                                            
+                    </regTrib>
+                                    
+                </prest>
+                                
+                <toma>
+                                        
+                    <CNPJ>76492701000157</CNPJ>
+                                        
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                                        
+                    <end>
+                                                
+                        <endNac>
+                                                        
+                            <cMun>4106902</cMun>
+                                                        
+                            <CEP>80040265</CEP>
+                                                    
+                        </endNac>
+                                                
+                        <xLgr>AV N S DA LUZ</xLgr>
+                                                
+                        <nro>1330</nro>
+                                                
+                        <xBairro>HUGO LANGE</xBairro>
+                                            
+                    </end>
+                                        
+                    <fone>04199668092</fone>
+                                        
+                    <email>INFRA.TI@BRITANIA.COM.BR</email>
+                                    
+                </toma>
+                                
+                <serv>
+                                        
+                    <locPrest>
+                                                
+                        <cLocPrestacao>4209102</cLocPrestacao>
+                                            
+                    </locPrest>
+                                        
+                    <cServ>
+                                                
+                        <cTribNac>010701</cTribNac>
+                                                
+                        <xDescServ>N Conforme EC 132 2023 e LC 214 2025 os tributos cbs e ibs sao calculados sobre o valor da respectiva NFSe a partir de 2026.  SMS - SUPORTE TECNICO EM INFORMATICA, INCLUSIVE INSTALA.Contrato: CONT61343       Proposta: AANHJ7/03 - Valor: 17.515,64 / PIS: 113.85/ COFINS: 525.47/ CSLL: 175.16/ CLIENTE: T61343/ 1o. VENC.: 24/02/2026/ Essa NFS-e nao esta sujeita a Retencao na Fonte do ISSQN por Forca do ARTIGO 3o. DA LC 116/03 / Esta NFS-e nao esta sujeita a Retencao do Imposto de Renda Retido na Fonte por Forca do ARTIGO 714 RIR/18 / Esta NFS-e esta sujeita a Retencao das Contribuicoes por Forca do ARTIGO 30 DA LEI 10.833/03/ Reajuste por aumento de carga tributaria da Reoneracao da Folha de Pagamento Lei 14.973/2024</xDescServ>
+                                                
+                        <cNBS>115013000</cNBS>
+                                                
+                        <cIntContrib>97095086</cIntContrib>
+                                            
+                    </cServ>
+                                        
+                    <infoCompl>
+                                                
+                        <xInfComp>| Natureza da operação: 101 - ISS devido para Joinville | Forma de pagamento: Parcela: 1 Vencimento: 24/02/2026 Tipo: Prazo Valor: 17.515,64000 | SMS - SUPORTE TECNICO EM INFORMATICAINCLUSIVE INSTALA | - Esta NF-em foi gerada com fundamento na Lei Complementar Municipal n. 286, de 21 de novembro de 2008, regulamentada pelo Decreto Municipal n. 30.798, de 08 de março de 2018.</xInfComp>
+                                            
+                    </infoCompl>
+                                    
+                </serv>
+                                
+                <valores>
+                                        
+                    <vServPrest>
+                                                
+                        <vServ>17515.64</vServ>
+                                            
+                    </vServPrest>
+                                        
+                    <trib>
+                                                
+                        <tribMun>
+                                                        
+                            <tribISSQN>1</tribISSQN>
+                                                        
+                            <tpRetISSQN>1</tpRetISSQN>
+                                                    
+                        </tribMun>
+                                                
+                        <tribFed>
+                                                        
+                            <piscofins>
+                                                                
+                                <CST>01</CST>
+                                                                
+                                <vBCPisCofins>17515.64</vBCPisCofins>
+                                                                
+                                <pAliqPis>0.65</pAliqPis>
+                                                                
+                                <pAliqCofins>3.00</pAliqCofins>
+                                                                
+                                <vPis>113.85</vPis>
+                                                                
+                                <vCofins>525.47</vCofins>
+                                                                
+                                <tpRetPisCofins>1</tpRetPisCofins>
+                                                            
+                            </piscofins>
+                                                        
+                            <vRetCSLL>175.16</vRetCSLL>
+                                                    
+                        </tribFed>
+                                                
+                        <totTrib>
+                                                        
+                            <vTotTrib>
+                                                                
+                                <vTotTribFed>2355.85</vTotTribFed>
+                                                                
+                                <vTotTribEst>0.00</vTotTribEst>
+                                                                
+                                <vTotTribMun>579.77</vTotTribMun>
+                                                            
+                            </vTotTrib>
+                                                    
+                        </totTrib>
+                                            
+                    </trib>
+                                    
+                </valores>
+                            
+            </infDPS>
+                    
+        </DPS>
+            
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42091021253113791001790000000131326826010561358094">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>W67lEbe/efFRX5gMC0gtt8MaMfg=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>SVadAc90joBxfnsd2XKaF5irSNcNAAuklI27M74EmzFSL9PW9xYP3teysYvYRlk8GcQ2tZZwSNNBbb9vgtzs38ZeD/8lYaQrTwzPOvEHLSy11prUp9FaNpOz+8jsPRc6hkakhXRvzpAm5s2J/FR3MHpLzi4h+W51FeYZ8dz5T6ri/mkaDY7Yms9ibrdpj4ue1Fd5lsrammfx1xtMYhDXcthWWcMFzXxMSUYniSDJ9BnFKDZ3p0Gpd1vwXF+Nf5fVUYxl28uX/XWZC6Qu9dqVGMj9YmSf0TKTSFW1pil9B7oUmG3Hsa/5LUMJ8t0UUCMfjcTnQ+K5fQ2vdoG52ipv7Q==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIHaTCCBVGgAwIBAgIIEd4lASJmheIwDQYJKoZIhvcNAQELBQAwdTELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEZMBcGA1UEAxMQQUMgU09MVVRJIFJGQiBWNTAeFw0yNTAxMjIxOTQzMDBaFw0yNjAxMjIxOTQzMDBaMIH6MQswCQYDVQQGEwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDELMAkGA1UECBMCU0MxEjAQBgNVBAcTCUpvaW52aWxsZTEcMBoGA1UECxMTQ2VydGlmaWNhZG8gRGlnaXRhbDEXMBUGA1UECxMOMDk0NjE2NDcwMDAxOTUxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTEuMCwGA1UEAxMlTVVOSUNJUElPIERFIEpPSU5WSUxMRTo4MzE2OTYyMzAwMDExMDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALBGuQHbjgqNc0p2jSeH7X3S0YR1oJkuU2EMwgzzqB6X3OETAom1h+fN96hGwF6GrUnSrCyTEnrRuxWksuck99HT96Dz8kaZ3BQGDclnN75SF7YAMDCmkULyIzAaZg+pyh+NbNKi+Ahp+C1RErqlnK8NF4VssRMDfMqE6kpDdxhpFHg2ww+lNPNY0aOyNMiJ68Zm+JgtRpSCMikhE9Jst9JF4zKyLX04w3nuta+dW+sbs533+UsE3nPgrDF43QqsM803Wm6Ofch1DJAgqQKEwP7l/cdyfZ5IKMysajmRmUsPsxKxcBYd+vtNFL0ebfbjdRLeJkwXvNMbp0jFNyD5Ko8CAwEAAaOCAnUwggJxMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAU/PKCALL4vZ/VgttgICczPMK+zJkwTwYIKwYBBQUHAQEEQzBBMD8GCCsGAQUFBzAChjNodHRwOi8vY2NkLmFjc29sdXRpLmNvbS5ici9sY3IvYWMtc29sdXRpLXJmYi12NS5wN2IwgcYGA1UdEQSBvjCBu4EmZ2FiaW5ldGVkb3ByZWZlaXRvQGpvaW52aWxsZS5zYy5nb3YuYnKgIwYFYEwBAwKgGhMYQURSSUFOTyBCT1JOU0NIRUlOIFNJTFZBoBkGBWBMAQMDoBATDjgzMTY5NjIzMDAwMTEwoDgGBWBMAQMEoC8TLTAxMDMxOTc4MDE3NTU0ODg5NzEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwWAYDVR0gBFEwTzBNBgZgTAECASgwQzBBBggrBgEFBQcCARY1aHR0cDovL2NjZC5hY3NvbHV0aS5jb20uYnIvZG9jcy9kcGMtYWMtc29sdXRpLXJmYi5wZGYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMIGABgNVHR8EeTB3MDmgN6A1hjNodHRwOi8vY2NkLmFjc29sdXRpLmNvbS5ici9sY3IvYWMtc29sdXRpLXJmYi12NS5jcmwwOqA4oDaGNGh0dHA6Ly9jY2QyLmFjc29sdXRpLmNvbS5ici9sY3IvYWMtc29sdXRpLXJmYi12NS5jcmwwHQYDVR0OBBYEFLbAMupOg+5uryitfdKIct7daYnAMA4GA1UdDwEB/wQEAwIF4DANBgkqhkiG9w0BAQsFAAOCAgEAHV6jWIkZTzJDM31d9cuduE91/F3hfOkqCWI7g52MdUUrUSiMAVqvkIIx7gTLzYcYKkKKs2tp+IlzwtmnL75xbUrTuq7bhK2oMQKD1Ju3/7aLUjoD8/G18GncEr9V0NoDAFigLNWXIfEwOjr5JHvRC9zc6mq3cyXQ/eF2r/nBDKJ0vB+bO3JiNDOG9IYLDdwAj/xf3a6Pg3aWIi1QdLlLX1f2wJbp4FxCtVWlQzmLBRDnaltKnsVBZG6VzDW+4p37FDTeELpteSC6gC63gH08QpNqII0veTtgJZ2ueWBJvEn0/uimLESgrFCvF9vVT+iJ7cxUs3+Wi+MTP7Lcxt1IyfQwORCkwUR/ZZbyJBwIxGWCoCJpdOhbOXwJgCanEGOR7mp7gQ9YbfqlBAUYfPGYSBYEhQ6yrRjhtj+tf3yGUtYdCkgylhzO/RK8OA5AALoSTngeZfCdWC2+2sQFHEYtJjVdsJ1Pb4xcwOh9mIQXECiRJYKsHNknQAgRMrwW1N0P7b6ZBpZ4hkoY4DawtBj07T1x0GHF2WnB7eV/EQqf52ydyfMC2Xy83yHHzWKT+OyZ5Ym2IPgCQiBN1738vrIhjk+1/6iLXRpHs48/U3ckorkIGwd5sOARY00HuvnbOShhKgXNa9NLJ7aA1unzqV4jNYMXGmTbH1oSBrg8hnn1IlI=</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

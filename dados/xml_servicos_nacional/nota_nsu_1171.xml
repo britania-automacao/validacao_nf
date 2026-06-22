@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS31699011208217423000170260000000043226010000004325">
+        <xLocEmi>Ubá</xLocEmi>
+        <xLocPrestacao>Ubá</xLocPrestacao>
+        <nNFSe>2600000000432</nNFSe>
+        <cLocIncid>3169901</cLocIncid>
+        <xLocIncid>Ubá</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <xNBS>Serviços de intermediação na distribuição de mercadorias</xNBS>
+        <verAplic>1.01</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-06T17:11:24-03:00</dhProc>
+        <nDFSe>2600000000432</nDFSe>
+        <emit>
+            <CNPJ>08217423000170</CNPJ>
+            <IM>41181</IM>
+            <xNome>EURO REPRESENTACOES DE UBA LTDA</xNome>
+            <xFant>*</xFant>
+            <enderNac>
+                <xLgr>AVENI OLEGARIO MACIEL</xLgr>
+                <nro>491</nro>
+                <xBairro>INDUSTRIAL</xBairro>
+                <cMun>3169901</cMun>
+                <UF>MG</UF>
+                <CEP>36502000</CEP>
+            </enderNac>
+            <fone>3235321430</fone>
+            <email>pliniocontabilidadefiscal@gmail.com</email>
+        </emit>
+        <valores>
+            <vBC>59.67</vBC>
+            <pAliqAplic>2.01</pAliqAplic>
+            <vISSQN>1.20</vISSQN>
+            <vLiq>59.67</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS316990120821742300017000001202600000000432">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-06T17:11:24-03:00</dhEmi>
+                <verAplic>1.01</verAplic>
+                <serie>00001</serie>
+                <nDPS>202600000000432</nDPS>
+                <dCompet>2026-01-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3169901</cLocEmi>
+                <prest>
+                    <CNPJ>08217423000170</CNPJ>
+                    <IM>41181</IM>
+                    <fone>3235321430</fone>
+                    <email>pliniocontabilidadefiscal@gmail.com</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITâNIA ELETRODOMéSTICOS S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3169901</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>Comissão sobre vendas</xDescServ>
+                        <cNBS>102010000</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>59.67</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+          
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+              
+            <Reference URI="#NFS31699011208217423000170260000000043226010000004325">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>n5iwkeOYh50DdoDxEfw+bZ+dmvE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>Z38RHI/sofFYPbgUQpIjIqkRhoEXQEs2zliRYxvm8GnmeSo3cR542C5s2unoHRVAtRZfb6Yic23SolpzVJFZDRdd7N+NxMX/v7eLtgy7tqXYZcLA7g6yaR239RPOArIQpbBgVt9OPel+kERXeB4Yk7w1/HG5DVsspzrJzzNVovIPjhGEKSUwqvECAarMHU8xycoWxZn/ccEdB4HpS308iu7Vsw0EIhI1aWKDY29fj5LMW8rjtxcJPDOcX+LSR6pfAmOyJPIexRnTfmr6bQu0464ir4F9RwkzCoTzTKvpSGlWV+hsAQKY6elOlsvIzynvr6RqtQXS5m9fyPFkRF3Itg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

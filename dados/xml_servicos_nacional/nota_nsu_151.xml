@@ -1,0 +1,148 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS42038081201741960000175000000000008424010000000191">
+        <xLocEmi>Canoinhas</xLocEmi>
+        <xLocPrestacao>Canoinhas</xLocPrestacao>
+        <nNFSe>84</nNFSe>
+        <cLocIncid>4203808</cLocIncid>
+        <xLocIncid>Canoinhas</xLocIncid>
+        <xTribNac>Assistência Técnica</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2024-01-25T08:14:11-03:00</dhProc>
+        <nDFSe>84</nDFSe>
+        <emit>
+            <CNPJ>01741960000175</CNPJ>
+            <IM>4874</IM>
+            <xNome>INFORMATICA DIRSCHNABEL LTDA</xNome>
+            <enderNac>
+                <xLgr>12 DE SETEMBRO</xLgr>
+                <nro>7</nro>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4203808</cMun>
+                <UF>SC</UF>
+                <CEP>89460138</CEP>
+            </enderNac>
+            <fone>4736223615</fone>
+            <email>dirschnabeldiloa@outlook.com</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>1617.96</vBC>
+            <pAliqAplic>3.13</pAliqAplic>
+            <vISSQN>50.72</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>1617.96</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS420380820174196000017500001000000000000084">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2024-01-25T08:14:11-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>84</nDPS>
+                <dCompet>2024-01-25</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4203808</cLocEmi>
+                <prest>
+                    <CNPJ>01741960000175</CNPJ>
+                    <IM>4874</IM>
+                    <xNome>INFORMATICA DIRSCHNABEL LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4203808</cMun>
+                            <CEP>89460138</CEP>
+                        </endNac>
+                        <xLgr>12 DE SETEMBRO</xLgr>
+                        <nro>7</nro>
+                        <xBairro>CENTRO</xBairro>
+                    </end>
+                    <fone>4736223615</fone>
+                    <email>dirschnabeldiloa@outlook.com</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMSTICOS SA.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4125506</cMun>
+                            <CEP>83000001</CEP>
+                        </endNac>
+                        <xLgr>Rua Endereco invalido.</xLgr>
+                        <nro>0</nro>
+                        <xBairro>invalido.</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4203808</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>140200</cTribNac>
+                        <xDescServ>Serviços em garantia Codigo: 580101240180445</xDescServ>
+                        <cIntContrib>19833</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>1617.96</vServ>
+                    </vServPrest>
+                    <vDescCondIncond>
+                        <vDescIncond>0.00</vDescIncond>
+                        <vDescCond>0.00</vDescCond>
+                    </vDescCondIncond>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <pAliq>3.13</pAliq>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                                <vPis>0.00</vPis>
+                                <vCofins>0.00</vCofins>
+                            </piscofins>
+                            <vRetCP>0.00</vRetCP>
+                            <vRetIRRF>0.00</vRetIRRF>
+                            <vRetCSLL>0.00</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>217.62</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>75.88</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42038081201741960000175000000000008424010000000191">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>c6CMDkUzKc+jOWbCEzcAU/y/esg=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>YjsydU3SQvIgup8aCWAlSPYcpMicPWQIfkNY4qG9WNVCheTBDfS0xsVvEH3jtAvNH5KIZXUzrmaU2HPpEnBXDZO3Ag+3W+bVgVLBAFY+YmueTBFkUIzQdxe4lLv60uDZInj4Ch8HMuen2YmJsDWVufO0ZyH5YA3e6n4f1cRyKZbHcJRCVcrjmTY2s/WckV6wH9pLxmhZOn3TD04yU5de1PjBO1tAr4SDdyUZdcLqOMTrO87xEDQN+0CUZnoZyS0tknLFMbjk0AbBbrqIr6bkCW8I6QhSmkz4ugH3dC5r3fOaf+ASHKymr46oGIpp+GCBBB787F1p+hdtHBifj/SVdw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH+jCCBeKgAwIBAgIQRVEN7EtUQZNZcEWoRJj95TANBgkqhkiG9w0BAQsFADB4 MQswCQYDVQQGEwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDE2MDQGA1UECxMtU2Vj cmV0YXJpYSBkYSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRwwGgYD VQQDExNBQyBDZXJ0aXNpZ24gUkZCIEc1MB4XDTIzMTIxODEwNTQzOVoXDTI0MTIx NzEwNTQzOVowgfExCzAJBgNVBAYTAkJSMRMwEQYDVQQKDApJQ1AtQnJhc2lsMQsw CQYDVQQIDAJTQzESMBAGA1UEBwwJQ2Fub2luaGFzMRMwEQYDVQQLDApQcmVzZW5j aWFsMRcwFQYDVQQLDA44MzE5Mzk4NzAwMDEzNTE2MDQGA1UECwwtU2VjcmV0YXJp YSBkYSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRYwFAYDVQQLDA1S RkIgZS1DTlBKIEExMS4wLAYDVQQDDCVNVU5JQ0lQSU8gREUgQ0FOT0lOSEFTOjgz MTAyMzg0MDAwMTgwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiUgm 7jAFii6UopEGRMpJZtQUd6ZwAExeuQMCYJXSGzb+GkN6meW3XFCWYSZepRBXG4U1 Z6rTjnK93ahVdRj7rqN+PQpg3P073hMJrVepxDc8ingjCZ5RwYwC86b1GxgPf7vV xx34pWr4k/TcUTT6Uhw7m2rQXKYBf1z94EW/FNme6UrnuLS6I+5h4faVWUn6kf67 1SaqJdyIaBn38mZd57qEdqKvOYRyxsfuHReJsM0gUTcTGefhbdJiYjYhlsLA9NQi UFBNQmcx5PpIjZVMftYtvEhghP8ibyHBCI2kuzpnBt5R2zJnVPH9lLyuuAa9vRm7 nlX45pptjXq2kvK/twIDAQABo4IDBDCCAwAwgbMGA1UdEQSBqzCBqKA+BgVgTAED BKA1BDMxNDA2MTk5MzA3NjMxMDEzOTc3MDAwMDAwMDAwMDAwMDAwMDAwMDU5Nzkz OTNTRVNQU0OgHwYFYEwBAwKgFgQUSlVMSUFOQSBNQUNJRUwgSE9QUEWgGQYFYEwB AwOgEAQOODMxMDIzODQwMDAxODCgFwYFYEwBAwegDgQMMDAwMDAwMDAwMDAwgRFj cGRAcG1jLnNjLmdvdi5icjAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFFN9f52+0WHQ ILran+OJpxNzWM1CMH8GA1UdIAR4MHYwdAYGYEwBAgEMMGowaAYIKwYBBQUHAgEW XGh0dHA6Ly9pY3AtYnJhc2lsLmNlcnRpc2lnbi5jb20uYnIvcmVwb3NpdG9yaW8v ZHBjL0FDX0NlcnRpc2lnbl9SRkIvRFBDX0FDX0NlcnRpc2lnbl9SRkIucGRmMIG8 BgNVHR8EgbQwgbEwV6BVoFOGUWh0dHA6Ly9pY3AtYnJhc2lsLmNlcnRpc2lnbi5j b20uYnIvcmVwb3NpdG9yaW8vbGNyL0FDQ2VydGlzaWduUkZCRzUvTGF0ZXN0Q1JM LmNybDBWoFSgUoZQaHR0cDovL2ljcC1icmFzaWwub3V0cmFsY3IuY29tLmJyL3Jl cG9zaXRvcmlvL2xjci9BQ0NlcnRpc2lnblJGQkc1L0xhdGVzdENSTC5jcmwwDgYD VR0PAQH/BAQDAgXgMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDBDCBrAYI KwYBBQUHAQEEgZ8wgZwwXwYIKwYBBQUHMAKGU2h0dHA6Ly9pY3AtYnJhc2lsLmNl cnRpc2lnbi5jb20uYnIvcmVwb3NpdG9yaW8vY2VydGlmaWNhZG9zL0FDX0NlcnRp c2lnbl9SRkJfRzUucDdjMDkGCCsGAQUFBzABhi1odHRwOi8vb2NzcC1hYy1jZXJ0 aXNpZ24tcmZiLmNlcnRpc2lnbi5jb20uYnIwDQYJKoZIhvcNAQELBQADggIBAIqn fycHf//7pK8s/G/buC4MRWSwNdfPTVfb4V8U668NxZijktgZ4u8K30C6XaCjgKkB IE52Xc9oAvxyrx4AyCwf1tohIETlyD0AWKQwDajsT2vkvsCe84ZqH7LTapg8aaTi hUTfF9hhXViNtamEo7sfGDM+eqACw67NOfRaMXQZfZY0U66/TDKhU/QycARjqu2M sJLsq56so5wiPuYsQYJpHyeq+CfGDBI/5XOnKHHo1vMM9AHhMUqcIQ6vFdTJMsgB UpKMzYgWNmxdflEVbGdqqYIF+bxenYLxoCSXn4B+vZgCCHQVpEBHmjcLk0rifQ1m R3qyOEq5sLcnp+wsozYNDeakAFVxEaPMz6C1FtHRx7zB95lrX4v9ofSWKFQszwu/ wVbeWqgusxy4toICKligH9RBD9bQymuMJaeAZ6Yxmov8/V7UvVxW+iZROeTwOPHM h1AtNanieAARUhk2p4ayB/dSUN0x2zGqI5BI5chr8JZyQ5pbdbZ7YBLv/wm7cvqT XE6MR5QMLwnMfDV91DwzZJz7X7CEX6RL70SXeph/LG5KAcfZtuCZ1Zh7+UTkQ4fM p0aCvpUMHDMCNGN8Y07Bu3GnpOUvkXpn+L6wf0qsb5a0+AWxxJMin2rFYZpxJIj/ Qqkn5OKD+IUxvf2NyjOUNWUJTq+un/sasrDEHPml</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

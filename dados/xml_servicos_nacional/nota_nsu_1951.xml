@@ -1,0 +1,120 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS21113001213791818000111000000000018426026703133680">
+        <xLocEmi>São Luís</xLocEmi>
+        <xLocPrestacao>SAO LUIS</xLocPrestacao>
+        <nNFSe>184</nNFSe>
+        <cLocIncid>2111300</cLocIncid>
+        <xLocIncid>SAO LUIS</xLocIncid>
+        <xTribNac>100901 - Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <verAplic>STM_v1.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-02-10T14:11:11-03:00</dhProc>
+        <nDFSe>184</nDFSe>
+        <emit>
+            <CNPJ>13791818000111</CNPJ>
+            <IM>3682421916</IM>
+            <xNome>G S COSTA REPRESENTACAO E COMERCIO</xNome>
+            <enderNac>
+                <xLgr>AV DOS HOLANDESES/CONS.HILTON RODRIGUES 200 LOJA  76                  COND  GOLDEN SHOP CALHAU</xLgr>
+                <nro>Nº 200</nro>
+                <xBairro>CALHAU</xBairro>
+                <cMun>2111300</cMun>
+                <UF>MA</UF>
+                <CEP>65071380</CEP>
+            </enderNac>
+            <fone>988259695</fone>
+            <email>glaucio.s.costa@gmail.com</email>
+        </emit>
+        <valores>
+            <vBC>20.71</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>1.04</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>20.71</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS211130021379181800011100001000000000000184">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-02-10T14:11:11-03:00</dhEmi>
+                <verAplic>STM_v1.0</verAplic>
+                <serie>1</serie>
+                <nDPS>184</nDPS>
+                <dCompet>2026-02-10</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2111300</cLocEmi>
+                <prest>
+                    <CNPJ>13791818000111</CNPJ>
+                    <IM>3682421916</IM>
+                    <fone>98988259695</fone>
+                    <email>glaucio.s.costa@gmail.com</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <IM>5238242</IM>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AV AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187727</fone>
+                    <email>auditoria.at@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2111300</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>100901 - Representação de qualquer natureza, inclusive comercial.</xDescServ>
+                        <cNBS>102010000</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>20.71</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS21113001213791818000111000000000018426026703133680">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>+jEdPHlNWtCzAiNskduVqypbWfI=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>ENXp3fNh6TjSiokWTFM7sPVOLOBAfkYgjUmYWLQze3cyonMfKucBESZcVPGtlb4WhW+ikwsBFLVD9D4nXDjWf5kR8M+G3zQEYWuLKCjvGYKbXX5+FCUuAvbc1mKF+K4fWQGVPAiVX81NuBNyIhyVKzwmijPbr8YQXYewMDj4xQ5+HdJ4pBb01IZVoWzZIpE9p9SV1XvOqnv2gsj2N3RJZLNY2rsD7DBhIkNkmHZS2qWZUNPDvETuMJ2yMjqyFQaoMNc9TgT0O0lpYl0dESaowkGFKBdn0kUksNd8jhLvxcdCEucl8aPgqvYeMEKJas5ldkrMCN+GU7uBDIMdef4RlQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIHSDCCBTCgAwIBAgIITlImARQ6lPAwDQYJKoZIhvcNAQELBQAwWTELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxFTATBgNVBAsTDEFDIFNPTFVUSSB2NTEeMBwGA1UEAxMVQUMgU09MVVRJIE11bHRpcGxhIHY1MB4XDTI2MDExNDEyNDMwMFoXDTI3MDExNDEyNDMwMFowgeQxCzAJBgNVBAYTAkJSMRMwEQYDVQQKEwpJQ1AtQnJhc2lsMQswCQYDVQQIEwJNQTERMA8GA1UEBxMIU2FvIEx1aXMxHjAcBgNVBAsTFUFDIFNPTFVUSSBNdWx0aXBsYSB2NTEXMBUGA1UECxMOMTIxMDk4ODYwMDAxOTUxHDAaBgNVBAsTE0NlcnRpZmljYWRvIERpZ2l0YWwxGjAYBgNVBAsTEUNlcnRpZmljYWRvIFBKIEExMS0wKwYDVQQDEyRNVU5JQ0lQSU8gREUgU0FPIExVSVM6MDYzMDcxMDIwMDAxMzAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCFCm9XGhKQDZF6cgIasXZr4vt7qTi/g5Qr+v3yTX6i/GZY7Z9g2woawTDUBdcTx42pFCzeDVp4TiNRwgmG9rLNy0xMAmFLZfgiompjrngzeswuVf0JMJGjanJLkvq+diAOUZaD12tRFUvsdJ3sQ4BUr9mFavxGeuVs2aDLNFhiWtOdDibvAlzZ1QQSk35uUZqX7nM6u7PGMLZlffi30bL7zu1hBAzM4fQQKDuGsckxm/Me+P1wyAjPDhSUFhp5z6+TGnAlapgYa+AR03C5Asnn53/VhA16ENiNsDxuiyCwz4yh7FhCCCXRFQWN1urN4laYPKnC8nxstsHJGPw8CHdVAgMBAAGjggKGMIICgjAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFMVS7SWACd+cgsifR8bdtF8x3bmxMFQGCCsGAQUFBwEBBEgwRjBEBggrBgEFBQcwAoY4aHR0cDovL2NjZC5hY3NvbHV0aS5jb20uYnIvbGNyL2FjLXNvbHV0aS1tdWx0aXBsYS12NS5wN2IwgcEGA1UdEQSBuTCBtoElZ2FiaW5ldGVAcHJlZmVpdHVyYS5zYW9sdWlzLm1hLmdvdi5icqAfBgVgTAEDAqAWExRFRFVBUkRPIFNBTElNIEJSQUlERaAZBgVgTAEDA6AQEw4wNjMwNzEwMjAwMDEzMKA4BgVgTAEDBKAvEy0xMjAxMTk3NjU1MDY4NDgwMzA0MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDCgFwYFYEwBAwegDhMMMDAwMDAwMDAwMDAwMF0GA1UdIARWMFQwUgYGYEwBAgEmMEgwRgYIKwYBBQUHAgEWOmh0dHA6Ly9jY2QuYWNzb2x1dGkuY29tLmJyL2RvY3MvZHBjLWFjLXNvbHV0aS1tdWx0aXBsYS5wZGYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMIGMBgNVHR8EgYQwgYEwPqA8oDqGOGh0dHA6Ly9jY2QuYWNzb2x1dGkuY29tLmJyL2xjci9hYy1zb2x1dGktbXVsdGlwbGEtdjUuY3JsMD+gPaA7hjlodHRwOi8vY2NkMi5hY3NvbHV0aS5jb20uYnIvbGNyL2FjLXNvbHV0aS1tdWx0aXBsYS12NS5jcmwwHQYDVR0OBBYEFBz80bRjhimSwQ2RdxUDFHZHerYxMA4GA1UdDwEB/wQEAwIF4DANBgkqhkiG9w0BAQsFAAOCAgEApHALwx7hHk3rFsppjAO0bIKIicnAJ7OXo9iSBuW3H87ENM9wjjcR161m2n5BrFHmodVUPv3SK4J4oE67shQWGoJr2k1DOZZ2kid9RNWKExDVLbgw1q3W9Td0dE9bsNJjYHMYyj4mxgayLyZB/rUpkT9YG/uyyfe2BfUIcbi0FasSignVkVv2gVLXk8urh3U9vy3EgSSSXFjr2G3QDUQrs0Xb0kTQLdizAroMgscttju2WvRca0f1/NJUdFnmb1qyrDkQAB8uZEycdiFZVgBBgbUwyRnUpg1LF5bcWLc2ooKTKH0MiTaTPvdGVoDBdvxYRD7xWWMV5RomzHc+AIhspmPQ8rIFAQv1Wx1Kmo/xlL3+NcX9GljeHFzckotisVZyzrb70mznVu0iZzbNLOroB9ItQtDbftRwazsVGoSdmHLqvXMiRO4h4o7SIpGjPlGfaMX7b0FFoa3yZIijyt12jFUqvcUPdsTWXDCVl4A6VOPrsXboAKI5za3pWth1bDQyYdl/ivJI8LjjhQXfCAn2kHCHXZaxO/BF1KgVf6IbPbQQhWQqJqgVkTU1q1cM9CVG5Qy3y32EwAngP5wWR+7yjk+UDGCFbW2Wk9aQXveaLw3WJ0aus9s4fNpvE/0cqh0kVn3ePyr3uX3IwH/YNzFKS+0E+JgDphMHvb8IqW9DnMI=</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

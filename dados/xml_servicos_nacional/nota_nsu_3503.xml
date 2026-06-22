@@ -1,0 +1,231 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+        
+    <infNFSe Id="NFS42091021205794609000101000000058881326050749851232">
+                
+        <xLocEmi>JOINVILLE</xLocEmi>
+                
+        <xLocPrestacao>JOINVILLE</xLocPrestacao>
+                
+        <nNFSe>588813</nNFSe>
+                
+        <cLocIncid>4209102</cLocIncid>
+                
+        <xLocIncid>JOINVILLE</xLocIncid>
+                
+        <xTribNac>1.05 - Licenciamento ou cessão de direito de uso de programas de computação.</xTribNac>
+                
+        <verAplic>04.01.51.0000</verAplic>
+                
+        <ambGer>1</ambGer>
+                
+        <tpEmis>2</tpEmis>
+                
+        <cStat>100</cStat>
+                
+        <dhProc>2026-05-19T16:11:20-03:00</dhProc>
+                
+        <nDFSe>588813</nDFSe>
+                
+        <emit>
+                        
+            <CNPJ>05794609000101</CNPJ>
+                        
+            <IM>78483</IM>
+                        
+            <xNome>Neogrid Informatica LTDA</xNome>
+                        
+            <xFant>Neogrid Informatica LTDA</xFant>
+                        
+            <enderNac>
+                                
+                <xLgr>Santos Dumont</xLgr>
+                                
+                <nro>935</nro>
+                                
+                <xCpl>4 ANDAR-</xCpl>
+                                
+                <xBairro>Santo Antonio</xBairro>
+                                
+                <cMun>4209102</cMun>
+                                
+                <UF>SC</UF>
+                                
+                <CEP>89218105</CEP>
+                            
+            </enderNac>
+                        
+            <fone>4730437401</fone>
+                        
+            <email>notificacao.fin@neogrid.com</email>
+                    
+        </emit>
+                
+        <valores>
+                        
+            <vBC>12634.45</vBC>
+                        
+            <pAliqAplic>2.00</pAliqAplic>
+                        
+            <vISSQN>252.69</vISSQN>
+                        
+            <vLiq>12634.45</vLiq>
+                    
+        </valores>
+                
+        <DPS versao="1.01">
+                        
+            <infDPS Id="DPS420910220579460900010103000000000000613795">
+                                
+                <tpAmb>1</tpAmb>
+                                
+                <dhEmi>2026-05-19T00:00:00-03:00</dhEmi>
+                                
+                <verAplic>04.01.51.0000</verAplic>
+                                
+                <serie>3000</serie>
+                                
+                <nDPS>613795</nDPS>
+                                
+                <dCompet>2026-05-19</dCompet>
+                                
+                <tpEmit>1</tpEmit>
+                                
+                <cLocEmi>4209102</cLocEmi>
+                                
+                <prest>
+                                        
+                    <CNPJ>05794609000101</CNPJ>
+                                        
+                    <IM>78483</IM>
+                                        
+                    <fone>4730437401</fone>
+                                        
+                    <email>notificacao.fin@neogrid.com</email>
+                                        
+                    <regTrib>
+                                                
+                        <opSimpNac>1</opSimpNac>
+                                                
+                        <regEspTrib>0</regEspTrib>
+                                            
+                    </regTrib>
+                                    
+                </prest>
+                                
+                <toma>
+                                        
+                    <CNPJ>76492701000157</CNPJ>
+                                        
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                                        
+                    <end>
+                                                
+                        <endNac>
+                                                        
+                            <cMun>4106902</cMun>
+                                                        
+                            <CEP>80040265</CEP>
+                                                    
+                        </endNac>
+                                                
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                                                
+                        <nro>1330</nro>
+                                                
+                        <xCpl>SC</xCpl>
+                                                
+                        <xBairro>HUGO LANGE</xBairro>
+                                            
+                    </end>
+                                    
+                </toma>
+                                
+                <serv>
+                                        
+                    <locPrest>
+                                                
+                        <cLocPrestacao>4209102</cLocPrestacao>
+                                            
+                    </locPrest>
+                                        
+                    <cServ>
+                                                
+                        <cTribNac>010501</cTribNac>
+                                                
+                        <xDescServ>MENSALIDADE DE USO ADD-ON - EDI : 1,00 = 259,33 / MENSALIDADE DE USO - EDI : 1,00 = 11.757,48 / MENSALIDADE DE USO PLATAFORMA - EDI : 1,00 = 617,64   Observacoes: Proposta: B3F7F1577511 - Parcela:  - MENSALIDADE DE USO ADD-ON -  - Pedido de compra:  / Proposta: 5BF05D3DF83B - Parcela:  - MENSALIDADE DE USO -  - Pedido de compra:  / Proposta: 5BF05D3DF83B - Parcela:  - MENSALIDADE DE USO PLATAFORMA -  - Pedido de compra:    Observacoes:  - Competencia: Maio de 2026  Vencimentos: 29/06/2026    12.634,45   Id de Contrato: 4496  Seu boleto sera encaminhado em ate 3 dias apos emissao da nota, para os contatos cadastrados em nosso sistema.</xDescServ>
+                                                
+                        <cIntContrib>101577682</cIntContrib>
+                                            
+                    </cServ>
+                                        
+                    <infoCompl>
+                                                
+                        <xInfComp>| Natureza da operação: 101 - ISS devido para Joinville | - Esta NF-em foi gerada com fundamento na Lei Complementar Municipal n. 286, de 21 de novembro de 2008, regulamentada pelo Decreto Municipal n. 30.798, de 08 de março de 2018.</xInfComp>
+                                            
+                    </infoCompl>
+                                    
+                </serv>
+                                
+                <valores>
+                                        
+                    <vServPrest>
+                                                
+                        <vServ>12634.45</vServ>
+                                            
+                    </vServPrest>
+                                        
+                    <trib>
+                                                
+                        <tribMun>
+                                                        
+                            <tribISSQN>1</tribISSQN>
+                                                        
+                            <tpRetISSQN>1</tpRetISSQN>
+                                                    
+                        </tribMun>
+                                                
+                        <totTrib>
+                                                        
+                            <vTotTrib>
+                                                                
+                                <vTotTribFed>1699.33</vTotTribFed>
+                                                                
+                                <vTotTribEst>0.00</vTotTribEst>
+                                                                
+                                <vTotTribMun>418.20</vTotTribMun>
+                                                            
+                            </vTotTrib>
+                                                    
+                        </totTrib>
+                                            
+                    </trib>
+                                    
+                </valores>
+                            
+            </infDPS>
+                    
+        </DPS>
+            
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42091021205794609000101000000058881326050749851232">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>zR+OwWME3eZozRGvYgZtn6+OQok=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>iImOsz8eK3WXPbm80jvRcNwO4pRZgKKcYk1FUnjxoKpZgd3OS68OPtMAgVHpO7m26IeUXSRIWI0GLP2bidLkxnZq/ubECFCOOzzTtN5f3ifAYogzoOm/dS+W2BacBmUVWlBrBxj7NPaxWA4bYd9kQNEarTU5R1wz/BYPXcVvR1iPWBjDE7Bxaxo7LmDpMbreOJkiwY+NWF1p/DWdMF7WB0rzxP2EWHC0GQ6dSuCFOqPY3N0oD63hcqYMfEkwWmCglmMy/f9IXbuSrlgDmGlgoxmXqVkDp+XNVFiT4jEmxlqT7jpkd3AwQGXek1keq0sDCLPNLk3GszqLXlACHbAgYQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH3jCCBcagAwIBAgIKPuOTtp77yino5jANBgkqhkiG9w0BAQsFADBbMQswCQYDVQQGEwJCUjEWMBQGA1UECwwNQUMgU3luZ3VsYXJJRDETMBEGA1UECgwKSUNQLUJyYXNpbDEfMB0GA1UEAwwWQUMgU3luZ3VsYXJJRCBNdWx0aXBsYTAeFw0yNjA0MjcxOTMwMjFaFw0yNzA0MjcxOTMwMjFaMIHLMQswCQYDVQQGEwJCUjETMBEGA1UECgwKSUNQLUJyYXNpbDEiMCAGA1UECwwZQ2VydGlmaWNhZG8gRGlnaXRhbCBQSiBBMTEZMBcGA1UECwwQVmlkZW9jb25mZXJlbmNpYTEXMBUGA1UECwwOMzA5OTQxODQwMDAxMTMxHzAdBgNVBAsMFkFDIFN5bmd1bGFySUQgTXVsdGlwbGExLjAsBgNVBAMMJU1VTklDSVBJTyBERSBKT0lOVklMTEU6ODMxNjk2MjMwMDAxMTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDJHMIEW5zjULogyBmURi/N4UiIdS0Jn57DODnyfJNd/gOuQT6f2eSfu/gBX2cl/v6rsm2tw5+cx7t3nJZloIHeCDDWT3SnEfuXV5RdvPKkbcMK/Nj3WTbt5ms17PnSwKOAxAV1MHNGNmsfj3n8KX0N2PMqctCAmu+8jZM7/FlfWfquxZpzrvryMj3NEVYVLRFSKSD9qEXF3EuYmwZsjomdIEG1TjUvh7r2+qZLXjiyhuzakI9k2eW1SQIUIkCgebs/TvJOTRmwyMwG6xQINA14QDauIHwq1K3X3aQSCxchAaXdYaD9QyasimgdnfMTzJmGWvSpDMjGQmGIC82S9vPDAgMBAAGjggMxMIIDLTAOBgNVHQ8BAf8EBAMCBeAwHQYDVR0lBBYwFAYIKwYBBQUHAwQGCCsGAQUFBwMCMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUk+H/fh3l9eRN4TliiyFpleavchYwHQYDVR0OBBYEFMq7cIsqWlstSqSNVQmvCGmRSBa3MH8GCCsGAQUFBwEBBHMwcTBvBggrBgEFBQcwAoZjaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvY2VydGlmaWNhZG9zL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEucDdiMIGCBgNVHSAEezB5MHcGB2BMAQIBgQUwbDBqBggrBgEFBQcCARZeaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvZHBjL2RwYy1hYy1zeW5ndWxhcklELW11bHRpcGxhLnBkZjCBxQYDVR0RBIG9MIG6oBgGBWBMAQMCoA8EDVJFSkFORSBHQU1CSU6gGQYFYEwBAwOgEAQOODMxNjk2MjMwMDAxMTCgQgYFYEwBAwSgOQQ3MTEwNTE5Njc0OTkzMjY4MzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOBAwwMDAwMDAwMDAwMDCBJmdhYmluZXRlZG9wcmVmZWl0b0Bqb2ludmlsbGUuc2MuZ292LmJyMIHiBgNVHR8EgdowgdcwZKBioGCGXmh0dHA6Ly9zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2xjci9sY3ItYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS5jcmwwb6BtoGuGaWh0dHA6Ly9pY3AtYnJhc2lsLnN5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvbGNyL2xjci1hYy1zeW5ndWxhcmlkLW11bHRpcGxhLmNybDANBgkqhkiG9w0BAQsFAAOCAgEAiQaLxsikP9CIIUYZLiHWrX+siWvts1ITTs+F8SJOWGExc/390n+cXGeXeC8sn2ZUwGL2YKvYexEGoF9Btcxcl9ImwDG1StJJwpcSRkDXGBw/CvtHab5h8ZvrpWmatb05RQxAGVDdd/LxflvfnYYO6pRk4ev3qx0845E86xZIlBeWztA1QQv+vPf1A6l3frOfANi+72IT1DTsjqksAoA1a+SFKIBTvWESC8zMrgzt6mNj/fDgQo59sh2lUCESx/21O4vFKRUPh89lCWYJN9Mlhu/O6HsiLQJa3R+zO1npOQW5OHOPV3RetuoqHvQQj9f+VkAcBQktdfDxahx9rWegFYkMNDVVj2XlSMY15LSHXtHL33KMWwxCQaQuFF6ggr744rQRB0Ka2ARD7RmcTdhSD8dFDvKR/aeh2st0pap9iNndNLuHbJx/WryCM4WjZtgCEWd09mf0y2WWrou+XpWsDZ/0iOpARhLEzaP5oSryDW0tDIKjIm0unbOdllgd/+ZXJX9nQkgnyVXWrsHH+5qDyGB3E3eFmJJfbTbPoGqpV5NfKVRg7dsVPkwgp+Hgpg/j5Y4YoH0VGC9mQWomBWs/Gn77XlnbwWZA3dZxfkSWubmuQXZvdKGrovEI6POXiQH5jFSlGZe+ipiNTM1vKgc02xIGCRzEfssYEVTjCdJE+eg=</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

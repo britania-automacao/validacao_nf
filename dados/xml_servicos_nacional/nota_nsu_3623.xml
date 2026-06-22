@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+    <infNFSe Id="NFS41191521201331236000173000000001487326050000000000">
+        <xLocEmi>Pinhais</xLocEmi>
+        <xLocPrestacao>Pinhais</xLocPrestacao>
+        <nNFSe>14873</nNFSe>
+        <cLocIncid>4119152</cLocIncid>
+        <xLocIncid>Pinhais</xLocIncid>
+        <xTribNac>Composição gráfica, inclusive confecção de impressos gráficos, fotocomposição, clicheria, zincografia, litografia e fotolitografia, exceto se destinados a posterior operação de comercialização ou industrialização, ainda que incorporados, de qualquer forma, a outra mercadoria que deva ser objeto de posterior circulação, tais como bulas, rótulos, etiquetas, caixas, cartuchos, embalagens e manuais técnicos e de instrução, quando ficarão sujeitos ao ICMS.</xTribNac>
+        <verAplic>1.01</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-05-29T17:15:04-03:00</dhProc>
+        <nDFSe>14873</nDFSe>
+        <emit>
+            <CNPJ>01331236000173</CNPJ>
+            <IM>71605</IM>
+            <xNome>FORMATONOVE IMPRESSORA E COPIADORA LTDA</xNome>
+            <enderNac>
+                <xLgr>QUINZE DE OUTUBRO</xLgr>
+                <nro>1316</nro>
+                <xCpl>SALA 5 6 E 7</xCpl>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4119152</cMun>
+                <UF>PR</UF>
+                <CEP>83323040</CEP>
+            </enderNac>
+            <fone>04138885018</fone>
+            <email>faturamento@f9.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>2157.28</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>43.15</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>2157.28</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS411915220133123600017300001000000000014873">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-05-29T17:15:04-03:00</dhEmi>
+                <verAplic>1.01</verAplic>
+                <serie>1</serie>
+                <nDPS>14873</nDPS>
+                <dCompet>2026-05-29</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4119152</cLocEmi>
+                <prest>
+                    <CNPJ>01331236000173</CNPJ>
+                    <IM>71605</IM>
+                    <fone>04138885018</fone>
+                    <email>faturamento@f9.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <email>joao.bendlin@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4119152</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>130501</cTribNac>
+                        <xDescServ>13.05 SERVICOS GRAFICO, COPIA E IMPRESSAO;SERVICOS GRAFICOS: ANIVERSARIANTES DO MES AMBIENTACAO MATRIZ;NUMERO DO MLA: 294779;Pedido de compra: 682.323;VENCIMENTO 10 07 2026;PGTO VIA DEPOSITO BANCARIO BCO ITAU AG 3701 C C 02738-9 PIX 01331236000173;; Valor aprox. trib. Lei 12.741-2012:; R$ 43,15 fed.- R$ 0,00 (0,00%), mun.- R$ 43,15(2,00%),;fonte IBPT.;</xDescServ>
+                        <cNBS>121012100</cNBS>
+                        <cIntContrib>423459</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>2157.28</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>290.15</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>51.34</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41191521201331236000173000000001487326050000000000">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>Hd3O1L4aJOYZrX/nYGBMcxJBqYM=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>PJ6pgGGuDXfUwD9IN9EKM+ti+eKPlkHwJSz0Yw+/VDl/CcptwhDSPRDdUl5Oq/00k0CT2c6R3l54hmsAe9F8dp0ZQQyih/HJszKE2rZJ8BTawwZFYQRSTZyygEbWVIHVJZd0BvZQPv6VN/WCAMY8bncb6zo1rqrLdQxcP/N3eZkw6OC+z8HP46JQc3KJ6TAu17evdLXynUtJcpoqRqTuoqQCzrbSfjbbFNNSalS2uaKNixGGHqtDfw8FzbjzA1e31NdJrBz147wAaaVNqau1E/slDOrKvT4nkNlVSd9EB5EhZ43vX2Doeod4Gp8/7ZLksg7vEerWRdUzzDv/G9CgJQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

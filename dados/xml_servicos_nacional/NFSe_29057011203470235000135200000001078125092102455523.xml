@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS29057011203470235000135200000001078125092102455523">
+        <xLocEmi>2905701</xLocEmi>
+        <xLocPrestacao>2905701</xLocPrestacao>
+        <nNFSe>2000000010781</nNFSe>
+        <cLocIncid>2905701</cLocIncid>
+        <xLocIncid>2905701</xLocIncid>
+        <xTribNac>COMPOSIÇÃO GRÁFICA, INCLUSIVE CONFECÇÃO DE IMPRESSOS GRÁFICOS, FOTOCOMPOSIÇÃO, CLICHERIA, ZINCOGRAFIA, LITOGRAFIA E FOTOLITOGRÁFIA, EXCETO SE DESTINADOS A POSTERIOR OPERAÇÃO DE COMERCIALIZAÇÃO OU INDUSTRIALIZAÇÃO, AINDA QUE INCORPORADOS, DE QUALQUER FORMA, A OUTRA MERCADORIA QUE DEVA SER OBJETO DE POSTERIOR CIRCULAÇÃO, TAIS COMO BULAS, RÓTULOS, ETIQUETAS, CAIXAS, CARTUCHOS, EMBALAGENS E MANUAIS TÉCNICOS E DE INSTRUÇÃO, QUANDO FICARÃO SUJEITOS AO ICMS.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-09-04T14:33:40+03:00</dhProc>
+        <nDFSe>210245552</nDFSe>
+        <emit>
+            <CNPJ>03470235000135</CNPJ>
+            <IM>0036337001</IM>
+            <xNome>ZOOM PUBLICIDADE EXTERIOR LTDA</xNome>
+            <xFant>ZOOM PUBLICIDADE EXTERIOR LTDA</xFant>
+            <enderNac>
+                <xLgr>RUA JARDIM PIRAJUSSARA</xLgr>
+                <nro>S/N</nro>
+                <xBairro>ABRANTES/CAJAZEIRAS - ABRANTES</xBairro>
+                <cMun>2905701</cMun>
+                <UF>BA</UF>
+                <CEP>42840000</CEP>
+            </enderNac>
+            <fone>7133112365</fone>
+            <email>procuradoria@mbassessores.com.br</email>
+        </emit>
+        <valores>
+            <vBC>88066.00</vBC>
+            <pAliqAplic>3.00</pAliqAplic>
+            <vISSQN>2641.98</vISSQN>
+            <vLiq>85424.02</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS290570120347023500013500001200000000010781">
+                <tpAmb>2</tpAmb>
+                <dhEmi>2025-09-04T14:33:40+03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>00001</serie>
+                <nDPS>200000000010781</nDPS>
+                <dCompet>2025-09-04</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2905701</cLocEmi>
+                <prest>
+                    <CNPJ>03470235000135</CNPJ>
+                    <fone>7133112365</fone>
+                    <email>procuradoria@mbassessores.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <CAEPF>00000000000000</CAEPF>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2905701</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>140401</cTribNac>
+                        <xDescServ>COMPOSIÇÃO GRÁFICA, INCLUSIVE CONFECÇÃO DE IMPRESSOS GRÁFICOS, FOTOCOMPOSIÇÃO, CLICHERIA, ZINCOGRAFIA, LITOGRAFIA E FOTOLITOGRÁFIA, EXCETO SE DESTINADOS A POSTERIOR OPERAÇÃO DE COMERCIALIZAÇÃO OU INDUSTRIALIZAÇÃO, AINDA QUE INCORPORADOS, DE QUALQUER FORMA, A OUTRA MERCADORIA QUE DEVA SER OBJETO DE POSTERIOR CIRCULAÇÃO, TAIS COMO BULAS, RÓTULOS, ETIQUETAS, CAIXAS, CARTUCHOS, EMBALAGENS E MANUAIS TÉCNICOS E DE INSTRUÇÃO, QUANDO FICARÃO SUJEITOS AO ICMS.</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>88066.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <pTotTrib>
+                                <pTotTribFed>0</pTotTribFed>
+                                <pTotTribEst>0</pTotTribEst>
+                                <pTotTribMun>3.00</pTotTribMun>
+                            </pTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="ID_2NFS29057011203470235000135200000001078125092102455523"><SignedInfo Id="ID_1NFS29057011203470235000135200000001078125092102455523"><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#NFS29057011203470235000135200000001078125092102455523"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>Rl2StfN/JwKkjWrdpeRmrqtCM+0=</DigestValue></Reference></SignedInfo><SignatureValue>fgnC61Ls2Kwi+/Q2dsa8cBjuGJkhMHkngJ9fqIyQksRNJa/9Q720/SzXwg/Jagkjl6S1pLKXn35T&#13;
+nc4/7ymGbbAFksYi/FslAtg/+jEukMe6U/aI87H2B58wE7P463iHjbDxBShy6YeLPc7hsJxr/oiD&#13;
+N9o6VgtMrA46Gv//vh4j+5M8wZG5aL4ogOAT6kixSC94/5543bE++YQ+S6Bep1v09qJnXdF/0WCK&#13;
+4Fz/Txpfn+cwyPdBk13GWZ47tr8neIJg34PswKgYcwxm8JPgenpq2grIQBnKw5E10R6Z6301DKCt&#13;
+Vo0KW17A67mnaKVCOtSYWuLpXFkp1a3I6JQikw==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIH1zCCBb+gAwIBAgILAIDb9zZ6ToELU8swDQYJKoZIhvcNAQELBQAwWzELMAkGA1UEBhMCQlIx&#13;
+FjAUBgNVBAsMDUFDIFN5bmd1bGFySUQxEzARBgNVBAoMCklDUC1CcmFzaWwxHzAdBgNVBAMMFkFD&#13;
+IFN5bmd1bGFySUQgTXVsdGlwbGEwHhcNMjUwMTMxMjExODE3WhcNMjYwMTMxMjExODE3WjCBxDEL&#13;
+MAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxIjAgBgNVBAsMGUNlcnRpZmljYWRvIERp&#13;
+Z2l0YWwgUEogQTExEzARBgNVBAsMClByZXNlbmNpYWwxFzAVBgNVBAsMDjMxOTA0OTE4MDAwMTk5&#13;
+MR8wHQYDVQQLDBZBQyBTeW5ndWxhcklEIE11bHRpcGxhMS0wKwYDVQQDDCRNVU5JQ0lQSU8gREUg&#13;
+Q0FNQUNBUkk6MTQxMDk3NjMwMDAxODAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC4&#13;
+1S1Ypes3cOfoVUgK8szYLGkmZ1jaAzhWjKbnLrRtmvM2eKd0luvk6qYq1nkeQ02iGSzqQkR8j3Px&#13;
+b3w+uw+4c2PoATSbLrbA20oNgeEGx3F8jf/eUWpPtHJA9Fw5fWIeqEpZMHFY/GyUTX5IShsCO1SS&#13;
+bq4+ciBbC6yG3uxOsiiPIAblIgl5anJ3ZpyJ+hfZD5f+S2o6Vs4UdgZT56RSkzRBnRN/bR3ExcTk&#13;
+Tpqg5UbnnwRyv/3/fDJoOd9kT3CN1uTQhHdVkpTspuziuuFudyoa9QgmoTpd9YU/NIwlnXVC7K2i&#13;
+6QSqMx8P6HmGn2mGZy3voI5tih7+zM29p0f7AgMBAAGjggMwMIIDLDAOBgNVHQ8BAf8EBAMCBeAw&#13;
+HQYDVR0lBBYwFAYIKwYBBQUHAwQGCCsGAQUFBwMCMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUk+H/&#13;
+fh3l9eRN4TliiyFpleavchYwHQYDVR0OBBYEFIHFWv6dLTFrtxUksHj5xdzokhiEMH8GCCsGAQUF&#13;
+BwEBBHMwcTBvBggrBgEFBQcwAoZjaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlv&#13;
+L2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvY2VydGlmaWNhZG9zL2FjLXN5bmd1bGFyaWQtbXVsdGlw&#13;
+bGEucDdiMIGCBgNVHSAEezB5MHcGB2BMAQIBgQUwbDBqBggrBgEFBQcCARZeaHR0cDovL3N5bmd1&#13;
+bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvZHBjL2RwYy1h&#13;
+Yy1zeW5ndWxhcklELW11bHRpcGxhLnBkZjCBxAYDVR0RBIG8MIG5oB4GBWBMAQMCoBUEE0xVSVog&#13;
+Q0FSTE9TIENBRVRBTk+gGQYFYEwBAwOgEAQOMTQxMDk3NjMwMDAxODCgQgYFYEwBAwSgOQQ3MjMw&#13;
+OTE5NTQwNzQwOTQxOTUwNDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVg&#13;
+TAEDB6AOBAwwMDAwMDAwMDAwMDCBH0xVSVouQ0FFVEFOT0BDQU1BQ0FSSS5CQS5HT1YuQlIwgeIG&#13;
+A1UdHwSB2jCB1zBvoG2ga4ZpaHR0cDovL2ljcC1icmFzaWwuc3luZ3VsYXJpZC5jb20uYnIvcmVw&#13;
+b3NpdG9yaW8vYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS9sY3IvbGNyLWFjLXN5bmd1bGFyaWQtbXVs&#13;
+dGlwbGEuY3JsMGSgYqBghl5odHRwOi8vc3luZ3VsYXJpZC5jb20uYnIvcmVwb3NpdG9yaW8vYWMt&#13;
+c3luZ3VsYXJpZC1tdWx0aXBsYS9sY3IvbGNyLWFjLXN5bmd1bGFyaWQtbXVsdGlwbGEuY3JsMA0G&#13;
+CSqGSIb3DQEBCwUAA4ICAQA2+NCO85MjNmbYpAvkxXSBZZkhmnMphy+ESdzPSbTaou0nFPGB0UbC&#13;
+q1X2vbzVxpMVup6mBLg+C+uls1dTEIEhGFl6nSsd9Rl0OKOa1vCOuz+Yj2tEiuHx4+xV4nPISXol&#13;
+TIrrhqR7sqhk7fSRN3fsTJ6MSlK1AePUCpf4s71xD7gTsNXyVf7DJvF8vPWUdNR4gf4NiECN05cI&#13;
+5mg62VlNv/zLKE9IEJ18ppTrt69vBpmMk6sJY77qdh3EFmIq3U6/keZ/23HLxTda9UUYptyk8QE1&#13;
+JxU/V2dSdCovQLFXQ8oXDu8LPoRFh4OJjVzZ0x4B6htWe/vmZgrrti6vrEqhUK1myK4sEAkYep+a&#13;
+C3mtjenwWjPTUnGT51NPj4zrFTS2beLnGx0SEQd0Qn0C2P/P8kmim0O67qjgmFL8q3F6IiIoHHZ6&#13;
+NQOwMOwKCGQNX7iCVeX+VEHeGjq94Lje4AsPon14jNyIbNT93eXJtAN4jrWmoyq7MaSdMDi/k5B5&#13;
+lIBt6xxgUebFxxw/eTwwDpL7ac/mqMxxm/6y4HQ3VnOU3/r88mvs9TQsnuY3RT5qYz1GiwKEhfYo&#13;
+PNuVxT2m3/C0g/BH06SDhgOdnuQcNRyxSUeVJHEqiV3dcO0H7xmoKylrCoYNwAPyLh2wQv0AwQwA&#13;
+Kb7Z9ATzwvqtYc9MQJpBGg==</X509Certificate></X509Data></KeyInfo></Signature></NFSe>

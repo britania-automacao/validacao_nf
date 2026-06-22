@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35488071202874918000195000000003341126030000000006">
+        <xLocEmi>SAO CAETANO DO SUL</xLocEmi>
+        <xLocPrestacao>SAO CAETANO DO SUL</xLocPrestacao>
+        <nNFSe>33411</nNFSe>
+        <cLocIncid>3548807</cLocIncid>
+        <xLocIncid>SAO CAETANO DO SUL</xLocIncid>
+        <xTribNac>Licenciamento Ou Cessão De Direito De Uso De Programas De Computação.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-03-02T15:51:13-03:00</dhProc>
+        <nDFSe>23810892</nDFSe>
+        <emit>
+            <CNPJ>02874918000195</CNPJ>
+            <IM>54809</IM>
+            <xNome>SYSTRADE COMÉRCIO E SERVIÇOS EIRELI</xNome>
+            <xFant>SYSTRADE COMÉRCIO E SERVIÇOS EIRELI</xFant>
+            <enderNac>
+                <xLgr>Teffé</xLgr>
+                <nro>334</nro>
+                <xBairro>Santa Maria</xBairro>
+                <cMun>3548807</cMun>
+                <UF>SP</UF>
+                <CEP>09560140</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vBC>10319.40</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>206.39</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>10319.40</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS354880720287491800019510000000000000033411">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-03-02T15:51:13-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>10000</serie>
+                <nDPS>33411</nDPS>
+                <dCompet>2026-03-02</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3548807</cLocEmi>
+                <prest>
+                    <CNPJ>02874918000195</CNPJ>
+                    <IM>54809</IM>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3548807</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010501</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>Cessao De Direito De Uso De Programa De Computador</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>10319.40</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35488071202874918000195000000003341126030000000006">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>BixiW3k1bnf8jpw/U32XsMqVcPQ=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>MgLVcl6opYCuTBQvbU5R7TY47jC367VIWdxH6f4lQ8JuI69Gk+Y2OKVQwtRsc+8dKOzOCwItQdx7C/BHE1Vm7uIZrdHXFdTR/L4vXjUUGobu5WWh9d2HQxZt12raXZBe81g4WycKmH2o+GMJq8txu7quVcchZDigbWb5WS4dJ5Ml6CQKhU/aishiV5xxqpTPwoluPMHtX2R9B5vJcFbG2chvhsZuhRi/LckGC9HtXPx7GUOPOo08YHutF8+7AGUMw/6jM50S1eQ3xeydgXuHxYo5jNCIc1X1QVbhlFJ0tMR0gA9VK1XAHizrpNeLASWx9ouHs9kisMC7PEoBwJVfhw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

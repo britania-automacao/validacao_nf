@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS52087071201448729000198000000000002526041775470719">
+        <xLocEmi>GOIÂNIA</xLocEmi>
+        <xLocPrestacao>GOIÂNIA</xLocPrestacao>
+        <nNFSe>25</nNFSe>
+        <cLocIncid>5208707</cLocIncid>
+        <xLocIncid>GOIÂNIA</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <xNBS>1.0201.00.00-Serviços de intermediação na distribuição de mercadorias</xNBS>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-04-06T10:18:37-03:00</dhProc>
+        <nDFSe>25</nDFSe>
+        <emit>
+            <CNPJ>01448729000198</CNPJ>
+            <IM>968196</IM>
+            <xNome>REMAG REPRESENTACOES COMERCIAIS LTDA</xNome>
+            <xFant>REMAG REPRESENTACOES</xFant>
+            <enderNac>
+                <xLgr>AVENIDA REPUBLICA DO LIBANO</xLgr>
+                <nro>1914</nro>
+                <xCpl>LOTE: 31E - QUADRA: E3</xCpl>
+                <xBairro>SETOR OESTE</xBairro>
+                <cMun>5208707</cMun>
+                <UF>GO</UF>
+                <CEP>74115030</CEP>
+            </enderNac>
+            <fone>6232122161</fone>
+        </emit>
+        <valores>
+            <vBC>8993.08</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>179.86</vISSQN>
+            <vLiq>8858.19</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS520870720144872900019870002000000000000025">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-04-06T10:18:37-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>70002</serie>
+                <nDPS>25</nDPS>
+                <dCompet>2026-04-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>5208707</cLocEmi>
+                <prest>
+                    <CNPJ>01448729000198</CNPJ>
+                    <IM>968196</IM>
+                    <fone>6232122161</fone>
+                    <email>remagrep@terra.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1.330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>5208707</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>Comissões recebidas no mês.</xDescServ>
+                        <cNBS>102010000</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>8993.08</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.00</pAliq>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                            </piscofins>
+                            <vRetIRRF>134.89</vRetIRRF>
+                        </tribFed>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS52087071201448729000198000000000002526041775470719">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>dFRmL8/s6USJOEXCECQx7HjmDog=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>nccCjKkZkTdfeyXvahn42XMhMcxRlJpQMyeOmxGhBVavuTLjfpdjDAKcL/bH3qzfu6C4cLdvO0eFOR6wkgChK8iDQECWyRUg8HyDqwkUi+ASY5uwNJzZHLlqpfCEcAL0hSDJvvKeu4wfDHcw1bR5XzhWSagxU4QNMLydaUP1hUygyM70qdfqWn4CbYKDdVCOhrqK8GnWszxIhaolwKvfJC6I+hn8AZlTylNJ8IPx+yQ8rpQHkZgB2gMgg3atPHVfyVG5AiqPGXvATWS9jL9chsrf1tTzu+HDbAunesvSThuK4mRHD1TWDls9YJindDU5/qRPep0wRMHyk6WX0esCsw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

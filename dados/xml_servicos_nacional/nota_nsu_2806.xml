@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35487081268425628000172000000007853426030000000000">
+        <xLocEmi>SAO BERNARDO DO CAMPO</xLocEmi>
+        <xLocPrestacao>SAO BERNARDO DO CAMPO</xLocPrestacao>
+        <nNFSe>78534</nNFSe>
+        <cLocIncid>3548708</cLocIncid>
+        <xLocIncid>SAO BERNARDO DO CAMPO</xLocIncid>
+        <xTribNac>Composição Gráfica, Inclusive Confecção De Impressos Gráficos, Fotocomposição, Clicheria, Zincografia, Litografia E Fotolitografia, Exceto Se Destinados A Posterior Operação De Comercialização Ou Industrialização, Ainda Que Incorporados, De Qualquer Forma, A Outra Mercadoria Que Deva Ser Objeto De Posterior Circulação, Tais Como Bulas, Rótulos, Etiquetas, Caixas, Cartuchos, Embalagens E Manuais Técnicos E De Instrução, Quando Ficarão Sujeitos Ao Icms.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-03-06T12:32:12-03:00</dhProc>
+        <nDFSe>33033413</nDFSe>
+        <emit>
+            <CNPJ>68425628000172</CNPJ>
+            <IM>153406</IM>
+            <xNome>NEOBAND SOLUCOES GRAFICAS LTDA</xNome>
+            <xFant>NEOBAND SOLUCOES GRAFICAS LTDA</xFant>
+            <enderNac>
+                <xLgr>AVEN.  HUMBERTO DE A. C. BRANCO</xLgr>
+                <nro>559</nro>
+                <xBairro>ASSUNCAO</xBairro>
+                <cMun>3548708</cMun>
+                <UF>SP</UF>
+                <CEP>09850300</CEP>
+            </enderNac>
+            <fone>1121991295</fone>
+            <email>fiscal@neoband.com.br</email>
+        </emit>
+        <valores>
+            <vBC>71451.96</vBC>
+            <pAliqAplic>3.00</pAliqAplic>
+            <vISSQN>2143.56</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>71451.96</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS354870826842562800017210000000000000078534">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-03-06T12:32:12-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>10000</serie>
+                <nDPS>78534</nDPS>
+                <dCompet>2026-03-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3548708</cLocEmi>
+                <prest>
+                    <CNPJ>68425628000172</CNPJ>
+                    <IM>153406</IM>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>Britania Eletrodomesticos S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040026</CEP>
+                        </endNac>
+                        <xLgr>Av. Nsa. da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3548708</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>130501</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>PRESTACAO DE SERVICOS GRAFICOS PERSONALIZADOS PARA USO PUBLICITARIO  : 1  -  8245.51  -  802508  -  13.05  SERVICOS GRAFICOS COPIAS E IMPRESSÕES :  SERVIÇOS GRAFICOS : COMPRA MPDV BASE PARA CAIXAS ACÚSTICASOs produtos descritos neste documento fabricados em papel são provenientes de florestas certificadas FSC ou outras fontes controladas. Produtos certificados FSC Misto 70% - CU-COC- 889408.PEDIDO DE COMPRA :  00669.842VENCIMENTO:  20/04/2026PAGAMENTO VIA DEPOSITOBANCARIO: BANCO ARTTA = AG 001 - C/C 68425119-4</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>71451.96</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35487081268425628000172000000007853426030000000000">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>tcyZ6Hjn81rqqq/S5zSIY8gBi08=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>Us6theeIrzJ1nD1lAtxVBIFH7cZoVXEEC/afrF9c5xadbc3BDN7yTonovybHiq+il7h39UnN1TOu0JQ98Pajxyhz6y5JxutfECDs1dpTCpsAsntMngRew8kzCwYTQcdVfozzVyEOunHjsO+MJk+kg9sTrroPd22s5fDJI0fvuJKoYX8JU4y29IlmxvgGNEM2ciz7OE+5dx/3+jkk5XG9bB4WjEfLXSJVt2t7NKXRA9S7rbGMivGIeEM5oJFVSNtDe/xEzRo+fXAyrbvllVmksqGDg0KjyaEeNQ71J55k7uImdEbR9Re2++ReIflq+qtxbg+aw7YNjMMgkCTwnhhnKw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

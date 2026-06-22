@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS42082031210613589000157000000000093426030602870628">
+        <xLocEmi>ITAJAÍ</xLocEmi>
+        <xLocPrestacao>ITAJAÍ</xLocPrestacao>
+        <nNFSe>934</nNFSe>
+        <cLocIncid>4208203</cLocIncid>
+        <xLocIncid>ITAJAÍ</xLocIncid>
+        <xTribNac>13.02.01 Fonografia ou gravação de sons, inclusive trucagem, dublagem, mixagem e congêneres.</xTribNac>
+        <verAplic>04.01.49.0007</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-03-25T15:29:50-03:00</dhProc>
+        <nDFSe>934</nDFSe>
+        <emit>
+            <CNPJ>10613589000157</CNPJ>
+            <IM>309229</IM>
+            <xNome>CAFE MAESTRO ESTUDIO E PRODUCAO AUDIOVISUAL LTDA</xNome>
+            <xFant>CAFE MAESTRO ESTUDIO E PRODUCAO AUDIOVISUAL LTDA</xFant>
+            <enderNac>
+                <xLgr>URUGUAI</xLgr>
+                <nro>458</nro>
+                <xCpl>CENTRO DE VIVENCIA  SALA  209</xCpl>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4208203</cMun>
+                <UF>SC</UF>
+                <CEP>88302901</CEP>
+            </enderNac>
+            <fone>47999119986</fone>
+            <email>contato@cafemaestro.com.br</email>
+        </emit>
+        <valores>
+            <vBC>2000.00</vBC>
+            <vISSQN>0.00</vISSQN>
+            <vLiq>2000.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS420820321061358900015706000000000000000934">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-03-25T15:29:50-03:00</dhEmi>
+                <verAplic>04.01.49.0007</verAplic>
+                <serie>6000</serie>
+                <nDPS>934</nDPS>
+                <dCompet>2026-03-25</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4208203</cLocEmi>
+                <prest>
+                    <CNPJ>10613589000157</CNPJ>
+                    <IM>309229</IM>
+                    <fone>47999119986</fone>
+                    <email>contato@cafemaestro.com.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>08004025</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LAGE</xBairro>
+                    </end>
+                    <fone>4132187965</fone>
+                    <email>auditoria.at@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4208203</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>130201</cTribNac>
+                        <xDescServ>Pedido de Compra 674627 - MLA 290239.LOCAÇÃO DE EQUIPAMENTO DE SOMServiço: Locação de equipamento de som e imagem.Necessário estrutura conforme abaixo para a cidade de ITAJAÍ-SC para o Workshop Philco- Instaladores.DATA: 25/03/2026 HORÁRIO: 17:30 ÀS 22:30 Cidade: ITAJAÍ-SC Endereço: AVENIDA OSVALDO REIS BALNEÁRIO 3277 BALNEÁRIO SANTA CLARADescrição: Serviço de locação de equipamentos de som e imagem sendo: projetor com tela, 2 microfones e caixas de som.  Obs.: Entrega e retirada do equipamento por conta do fornecedor.</xDescServ>
+                        <cNBS>125011200</cNBS>
+                        <cIntContrib>47953073</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>| Natureza da operação: 501 - ISS devido a Itajaí, a ser recolhido pelo prestador do serviço via DAS (Simples Nacional)Dados bancários: Banco 341 - Itaú, Agência 6382, conta corrente 26141-7, CHAVE PIX CNPJ 10.613.589/0001-57Valor Aproximado dos Tributos: Federais R$ 269,00 (13,45%) | Municipais R$ 79,80 (3,99%). Fonte: IBPT/empresometro.com.br | - Consulte a autenticidade desta Nota Fiscal no portal da NFS-e de Itajaí: http://nfse.itajai.sc.gov.br/- DOCUMENTO FISCAL EMITIDO POR ME OU EPP OPTANTE PELO SIMPLES NACIONAL</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>2000.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>269.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>79.80</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42082031210613589000157000000000093426030602870628">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>vHrZpEcZZ8PFxuCJZ8LGCuvrBwk=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>T0nUfXaJoaucwcvpddXHXHC/uwH7wTTJkfa5cewUDMHrutjXUbtTM3frEF8YkCkAOA9Ogkm87xlcB1RsaUSpMT6puoHcw7eB1V+HiqbLUZLgEU7Hx6SD8IeTqdEK0ppu+Y6Vlq86YUJreYl1bHQJKpK87z2s594wlAQs5sHaErNUeaq0eY3XTJuvQYV5T2usYwpdTTc/jM7K5gqNzDE+yRwY1D6fz2hjKHki7G4UqNtUCK5cRxlg4qw5jbFbSiO0JG2lr0uRC0c8d0ah1EuHO4DwrLwfusAJMnFcwQvRurPnB2BQ9qOOJ8dDVuEMG9HX4qnqfN/6X5SnxKx1OzzHTw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

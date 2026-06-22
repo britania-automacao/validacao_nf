@@ -1,0 +1,135 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS31062001208294685000138240000000039624048607729925">
+        <xLocEmi>BELO HORIZONTE</xLocEmi>
+        <xLocPrestacao>BELO HORIZONTE</xLocPrestacao>
+        <nNFSe>2400000000396</nNFSe>
+        <cLocIncid>3106200</cLocIncid>
+        <xLocIncid>BELO HORIZONTE</xLocIncid>
+        <xTribNac>Licenciamento ou cessão de direito de uso de programas de computação.</xTribNac>
+        <xTribMun>Licenciamento ou cessão de direito de uso de programas de computação</xTribMun>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2024-04-09T11:55:27-03:00</dhProc>
+        <nDFSe>2400000000396</nDFSe>
+        <emit>
+            <CNPJ>08294685000138</CNPJ>
+            <IM>02214590018</IM>
+            <xNome>WAYCARBON SOLUCOES AMBIENTAIS E PROJETOS DE CARBONO S.A.</xNome>
+            <xFant>WAYCARBON SOLUCOES AMBIENTAIS E PROJETOS DE CARBONO LTD</xFant>
+            <enderNac>
+                <xLgr>RUA BERNARDO GUIMARAES</xLgr>
+                <nro>166</nro>
+                <xCpl>ANDAR 6</xCpl>
+                <xBairro>Funcionários</xBairro>
+                <cMun>3106200</cMun>
+                <UF>MG</UF>
+                <CEP>30140080</CEP>
+            </enderNac>
+            <fone>3136560501</fone>
+            <email>financeiro@waycarbon.com</email>
+        </emit>
+        <valores>
+            <vBC>50000.00</vBC>
+            <vLiq>50000.00</vLiq>
+            <xOutInf>Empresa beneficiada pelo PROEMP. ISSQN não sujeito à retenção na fonte em BH; Certificado de Incentivo Fiscal-nº 17-A Chave de acesso no Ambiente de Dados Nacional: 31062001208294685000138240000000039624048607729925.</xOutInf>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS310620020829468500013845000000000000003478">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2024-04-09T00:00:00-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>45000</serie>
+                <nDPS>3478</nDPS>
+                <dCompet>2024-04-09</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3106200</cLocEmi>
+                <prest>
+                    <CNPJ>08294685000138</CNPJ>
+                    <IM>02214590018</IM>
+                    <xNome>WAYCARBON SOLUCOES AMBIENTAIS E PROJETOS DE CARBONO S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>3106200</cMun>
+                            <CEP>30140080</CEP>
+                        </endNac>
+                        <xLgr>RUA BERNARDO GUIMARAES</xLgr>
+                        <nro>166</nro>
+                        <xCpl>ANDAR 6</xCpl>
+                        <xBairro>Funcionários</xBairro>
+                    </end>
+                    <fone>3136560501</fone>
+                    <email>financeiro@waycarbon.com</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>corporativo@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3106200</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010501</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>Cessao de direito de uso do CLIMAS (Software de gestao de emissoes e de ecoeficiencia) e servicos complementares.||Detalhamento: Assinatura Anual|Parcela 3/3|n C-1832|</xDescServ>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>NFS-e gerada com o número de série do RPS alfanumérico de acordo com o modelo de BH, com valor de: 1.</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>50000.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS31062001208294685000138240000000039624048607729925">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>m336erquPhNzp0n4cRh9ESUxs8c=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>C3a6TMinudD+8RzbrZQB6z1amL/ch1l9oVVkI/bjoBHsHQfwCvoHdJ92T//WHMq6s37Os+NjsesoOM12IdM1v1f/ftNiwUmNc3Su39XJgbCRGHAlMqSDTuAKaSYi5BzT/G05b7DBUPHvIZPWVB9LEUb6p3CoUT3U8GjOQo6PkWu0fr4iPaDtu78q7cZgDLid2Bvdf4LI/zAcDIGhMl62nCtbrD9lWBbFGc7wp0RogusfqhrTFyMMZ5DGpWCbBTudJAAVObNJDQQK/2V84/FmHhXZyF3MvaK7PHKlXAifX0GABh6duQrGh4KPO7Cq0jsnfLul5Krnb9m9atZJlMoqZQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIIHTCCBgWgAwIBAgIQVfLdykQIR3oXsJDM9RuWODANBgkqhkiG9w0BAQsFADB0MQswCQYDVQQGEwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDEtMCsGA1UECxMkQ2VydGlzaWduIENlcnRpZmljYWRvcmEgRGlnaXRhbCBTLkEuMSEwHwYDVQQDExhBQyBDZXJ0aXNpZ24gTXVsdGlwbGEgRzcwHhcNMjMwOTEyMTgwMzExWhcNMjQwOTExMTgwMzExWjCB7jELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxCzAJBgNVBAgMAk1HMRcwFQYDVQQHDA5CZWxvIEhvcml6b250ZTEZMBcGA1UECwwQVmlkZW9Db25mZXJlbmNpYTEXMBUGA1UECwwOMDE1NTQyODUwMDAxNzUxHjAcBgNVBAsMFUFDIENlcnRpc2lnbiBNdWx0aXBsYTEbMBkGA1UECwwSQXNzaW5hdHVyYSBUaXBvIEExMTMwMQYDVQQDDCpNVU5JQ0lQSU8gREUgQkVMTyBIT1JJWk9OVEU6MTg3MTUzODMwMDAxNDAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCLudcEE/EB//cJStC57qDZtydNGf8wozGgc4YMZxuQCCP/dRgcX7aSzcnpO0KNYk2nqbhVlQEAGYXf0uBmKdgPzDS02lAvF5MXy9VP6ymFNf+IRTCLhvlOPXRooQGTmz83DodmEL+U7MtHyghOxuVwfPgZM1WN7WU1S07w22wlEJMJ45qGHgiVXs/HsvXM6s9TArCPbt2L4IYcCVgWCUguprXb/CSzmYjvJlYz2y6x6ZuG69g4om0G0iWm8aAEzMt0PQX8BGT16FKgWLg28uTCJlLNaw6Q9ABemlgauzMPtIbVB5+Hh05KyC59iKFRtKt8edys/tPxxLQkyASptN/xAgMBAAGjggMuMIIDKjCBvAYDVR0RBIG0MIGxoDgGBWBMAQMEoC8ELTI4MDgxOTYxNDk2MDY1MzA2MDQxMjI3MDc1NTk3MDAwMDAwMDAwMDAwMDAwMKAtBgVgTAEDAqAkBCJFVUdFTklPIEVVU1RBUVVJTyBWRUxPU08gRkVSTkFOREVToBkGBWBMAQMDoBAEDjE4NzE1MzgzMDAwMTQwoBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMIESZXZlbG9zb0BwYmguZ292LmJyMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUXXIMvzPSu+OGpuhMBnF+VVwHoNYwgYsGA1UdIASBgzCBgDB+BgZgTAECAQswdDByBggrBgEFBQcCARZmaHR0cDovL2ljcC1icmFzaWwuY2VydGlzaWduLmNvbS5ici9yZXBvc2l0b3Jpby9kcGMvQUNfQ2VydGlzaWduX011bHRpcGxhL0RQQ19BQ19DZXJ0aVNpZ25fTXVsdGlwbGEucGRmMIHGBgNVHR8Egb4wgbswXKBaoFiGVmh0dHA6Ly9pY3AtYnJhc2lsLmNlcnRpc2lnbi5jb20uYnIvcmVwb3NpdG9yaW8vbGNyL0FDQ2VydGlzaWduTXVsdGlwbGFHNy9MYXRlc3RDUkwuY3JsMFugWaBXhlVodHRwOi8vaWNwLWJyYXNpbC5vdXRyYWxjci5jb20uYnIvcmVwb3NpdG9yaW8vbGNyL0FDQ2VydGlzaWduTXVsdGlwbGFHNy9MYXRlc3RDUkwuY3JsMA4GA1UdDwEB/wQEAwIF4DAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwgbYGCCsGAQUFBwEBBIGpMIGmMGQGCCsGAQUFBzAChlhodHRwOi8vaWNwLWJyYXNpbC5jZXJ0aXNpZ24uY29tLmJyL3JlcG9zaXRvcmlvL2NlcnRpZmljYWRvcy9BQ19DZXJ0aXNpZ25fTXVsdGlwbGFfRzcucDdjMD4GCCsGAQUFBzABhjJodHRwOi8vb2NzcC1hYy1jZXJ0aXNpZ24tbXVsdGlwbGEuY2VydGlzaWduLmNvbS5icjANBgkqhkiG9w0BAQsFAAOCAgEAN3ALF0SVes6XN6WvukBGd0D4Am2di+zsbaYCoVrHmTOS9W8jnj2MGvDfCPU1f0gxDB0Cb2O/uU7v4MqGcKaQe26Sh20HtMT4VU1Ue/PxXlFKPuhieior1bwY0g7v/tTYPcilUsNIYAg7HWkfWYQrO8VGvdwXy4j/QPkUHIS+FEtw7hSNxnKy5uf1bqmvJxfkhQWnLtJjwOUXj/8h592xK7jgVTdZYc5oiB6xOCy99OjNGDd1WTvbJQ3qacJXo5FzShFKtJCeZRf3D9Lmkh0Yuemwwmmz3oGG6Q4xpgfDfPYrOXJbegOd+CBC+WBws+UXalRq7iMBpYhJJf2fbcbhB7Swj1YLxtR9WIronW8DtbAtKhyxZxBc5eZjblVYSTE4TdmWC7sC0OowVwY3zbVbk5/4xtSMsE7y6nXEnj/olBnp3Vg/+5mcOogTQQN4NhRSOdGCuJgxYZ1gMq7TbMNSRxLnF7B7ku7DcPS7rfriV1+47Oh5LET+RyIKdPDm9Q8WdDJ9DVBADDFr//XEAMwg6lkzrd8aFrq9x2DtG4g9VfzOP02xgjLJuYNPxCABpB89d9EhX9jI32DycRILsSqBRV/DkC8yg/oYTb6VDlcdyogwuUQ2FkkHUK6x0eMYl8DDolgqNRCnPyUorR5PqSoEPzIVTsfs7RJcCE6gykfWU40=</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,138 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS41069022208852922000210000000000009726024360553530">
+        <xLocEmi>Curitiba</xLocEmi>
+        <xLocPrestacao>Curitiba</xLocPrestacao>
+        <nNFSe>97</nNFSe>
+        <cLocIncid>4106902</cLocIncid>
+        <xLocIncid>Curitiba</xLocIncid>
+        <xTribNac>Assessoria e consultoria em informática.</xTribNac>
+        <verAplic>EmissorWeb_1.6.0.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>2</procEmi>
+        <cStat>100</cStat>
+        <dhProc>2026-02-12T17:50:47-03:00</dhProc>
+        <nDFSe>13214247</nDFSe>
+        <emit>
+            <CNPJ>08852922000210</CNPJ>
+            <IM>5753198</IM>
+            <xNome>DEXIAN DO BRASIL SERVICOS DE TECNOLOGIA LTDA</xNome>
+            <enderNac>
+                <xLgr>R. HEITOR STOCKLER DE FRANÇA</xLgr>
+                <nro>000396</nro>
+                <xBairro>Centro Cívico</xBairro>
+                <cMun>4106902</cMun>
+                <UF>PR</UF>
+                <CEP>80030030</CEP>
+            </enderNac>
+            <fone>4135129700</fone>
+            <email>BRASIL-CONTABIL@DISYS.COM</email>
+        </emit>
+        <valores>
+            <vBC>10400.00</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>520.00</vISSQN>
+            <vTotalRet>639.60</vTotalRet>
+            <vLiq>9760.40</vLiq>
+        </valores>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+            <infDPS Id="DPS410690220885292200021070000000000000000027">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-02-12T17:50:47-03:00</dhEmi>
+                <verAplic>EmissorWeb_1.4.0.27</verAplic>
+                <serie>70000</serie>
+                <nDPS>27</nDPS>
+                <dCompet>2026-02-12</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4106902</cLocEmi>
+                <prest>
+                    <CNPJ>08852922000210</CNPJ>
+                    <IM>5753198</IM>
+                    <fone>4135129700</fone>
+                    <email>BRASIL-CONTABIL@DISYS.COM</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4106902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010601</cTribNac>
+                        <xDescServ>STF_CWB - P S CONSULTORIA TI</xDescServ>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>PERIODO: JANEIRO 2026 VENCIMENTO: 14.03.2026 DADOS BANCARIOS: ITAU AG.: 0265 C-C 28.215-2 CNPJ: 08.852.922-0001-39</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>10400.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>01</CST>
+                                <vBCPisCofins>10400.00</vBCPisCofins>
+                                <pAliqPis>0.65</pAliqPis>
+                                <pAliqCofins>3.00</pAliqCofins>
+                                <vPis>67.60</vPis>
+                                <vCofins>312.00</vCofins>
+                                <tpRetPisCofins>3</tpRetPisCofins>
+                            </piscofins>
+                            <vRetIRRF>156.00</vRetIRRF>
+                            <vRetCSLL>483.60</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>639.60</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>520.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS41069022208852922000210000000000009726024360553530">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>FRfvbjMog88h1ZR2ENqk2iRUS+puNK1qILOG3OzNqwM=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>AYhncJvgIOofcKLDwLZXVUUe683YT6c+VMasB54tDW6bJaPzwzLTMYdyX85jB7E3ls8Vg0i9ANrOs9MPNIHsfUkveB6TVddP/wO9uXCn2SNqLwVnAM0vzjaTroyGxEL59WKnvWqf4HSpP0Z2T+KPh/RrzKCuUNd4x6+IVd6QyJmOA3MYtsWmys/Bvcc/luyXLoIqbiinxzP2CoVEo+xV8e8ARjJs+J4yf8KuOYB1V/hxSoiBRP9E5UIXnBjaiQkq+DB3S4gqZ9bXBV1jFgIwWn1PepJr38bLPwJ1yXE1XiT/TCIKdtb/Kxf8ZjhSGNf+0LNecNVKgoH8mqONhzD/Zw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

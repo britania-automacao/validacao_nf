@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS32052001237982240000149000000000654626020599334416">
+        <xLocEmi>VILA VELHA</xLocEmi>
+        <xLocPrestacao>Vila Velha</xLocPrestacao>
+        <nNFSe>6546</nNFSe>
+        <cLocIncid>3205200</cLocIncid>
+        <xLocIncid>Vila Velha</xLocIncid>
+        <xTribNac>Licenciamento ou cessão de direito de uso de programas de computação.</xTribNac>
+        <verAplic>SilTecnologia_v1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-02-03T00:00:00-03:00</dhProc>
+        <nDFSe>59933441</nDFSe>
+        <emit>
+            <CNPJ>37982240000149</CNPJ>
+            <IM>123718</IM>
+            <xNome>HOTSCOOL TECNOLOGIA EDUCACIONAL LTDA</xNome>
+            <enderNac>
+                <xLgr>ANTONIO GIL VELOSO</xLgr>
+                <nro>1818</nro>
+                <xBairro>PRAIA DA COSTA</xBairro>
+                <cMun>3205200</cMun>
+                <UF>ES</UF>
+                <CEP>29101018</CEP>
+            </enderNac>
+            <fone>92712859</fone>
+            <email>suporte@hotscool.com</email>
+        </emit>
+        <valores>
+            <vBC>5100.00</vBC>
+            <pAliqAplic>4.94</pAliqAplic>
+            <vISSQN>251.94</vISSQN>
+            <vLiq>5100.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS320520023798224000014900030000000000003566">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-02-03T00:00:00-03:00</dhEmi>
+                <verAplic>SilTecnologia_v1.00</verAplic>
+                <serie>00030</serie>
+                <nDPS>3566</nDPS>
+                <dCompet>2026-02-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3205200</cLocEmi>
+                <prest>
+                    <CNPJ>37982240000149</CNPJ>
+                    <IM>123718</IM>
+                    <fone>92712859</fone>
+                    <email>suporte@hotscool.com</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITÂNIA ELETRODOMÉSTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xCpl>Esquina</xCpl>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3205200</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010501</cTribNac>
+                        <xDescServ>Em atendimento a Lei 12.741/2012 (Lei do Imposto na Nota Fiscal) informamos que o valor aproximado dos tributos incidentes sobre as operações deste estabelecimento é de 14,75%, assim distribuídos: União - 9,81% / Estado: 0,00% / Município: 4,94%. Software denominado PLATAFORMA HOTSCOOL, desenvolvido para ensino a distancia (e-learning), no formato Software como Servico (SaaS Software As A Service)</xDescServ>
+                        <cNBS>111032900</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>5100.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed/>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>251.94</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS32052001237982240000149000000000654626020599334416">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>zfltqr2UWh/rMdAWwb/B0P8NjdE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>VNGhhRn1pKCIyxnkpQ/XdpsSZZY15nAoKp57jz2imVHF4qcY5KJp6OHQI4EY8iNF+wjv+MxACOMrrQUVKzsGf0bmeiy+xLhUniw9nRHSPz+kKIxasyQ5eV446kP/cyZVzcE03WIy287lhZhCAvGM1gi+1uKFjMZctnKdFNg91sHUJZq2d8+l6/pLOaz57I9tOai/pnCovaPUC2xUUP9Yczr+K5AKw+5qUojrZXBYVlTZUt7nvojoiHdqGlwvlDPCcQ6tOu0oQ736IcEAzaLcYuQNFMFreNvfvGchKuJ9A/H/GEaorVvnw7Ce6RAYUmfWSBUs5PjdxDEuxd40gsZeJw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH2zCCBcOgAwIBAgIKeVr5hpUvFZnlPzANBgkqhkiG9w0BAQsFADBbMQswCQYDVQQGEwJCUjEWMBQGA1UECwwNQUMgU3luZ3VsYXJJRDETMBEGA1UECgwKSUNQLUJyYXNpbDEfMB0GA1UEAwwWQUMgU3luZ3VsYXJJRCBNdWx0aXBsYTAeFw0yNTEyMTkyMTQxMzhaFw0yNjEyMTkyMTQxMzhaMIHMMQswCQYDVQQGEwJCUjETMBEGA1UECgwKSUNQLUJyYXNpbDEiMCAGA1UECwwZQ2VydGlmaWNhZG8gRGlnaXRhbCBQSiBBMTEZMBcGA1UECwwQVmlkZW9jb25mZXJlbmNpYTEXMBUGA1UECwwOMDg1OTgzNjAwMDAxNDkxHzAdBgNVBAsMFkFDIFN5bmd1bGFySUQgTXVsdGlwbGExLzAtBgNVBAMMJk1VTklDSVBJTyBERSBWSUxBIFZFTEhBOjI3MTY1NTU0MDAwMTAzMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxdH8Eloi9QOz01Ke5/r+Fe61hf0j7XRR42/dgMXBd5WTU5/B662Q1T+jpzNhakCT8qVylYkdxbY2XxCbc9XNZKPz6RglU4jJ/PYvrcWZ9FhgSilQ3Dc55OUsxkq2xid2wxy/3bm9eL5zKfCPhLaK2gSiydtUNVVJS5gFv3mAXT2LUMqCXWzUVl3o493JDo9p3Ic1CZBydmwfk+OaMPM2ET/VXoPX9NuQp69Ms+aSibPEtLeoMN6YT+nanNbxAnNRpL60foBoXiE+ikUvmjV1kqD+w0Gi5sC27/5FdQonET/pYU7I8NxgfvVmzG3eRuW5KbQ+cVlT98xJGtDGQWt76QIDAQABo4IDLTCCAykwDgYDVR0PAQH/BAQDAgXgMB0GA1UdJQQWMBQGCCsGAQUFBwMEBggrBgEFBQcDAjAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFJPh/34d5fXkTeE5YoshaZXmr3IWMB0GA1UdDgQWBBQB2vbE4rGhcmQS0XSXw+Y4Oz5GpjB/BggrBgEFBQcBAQRzMHEwbwYIKwYBBQUHMAKGY2h0dHA6Ly9zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2NlcnRpZmljYWRvcy9hYy1zeW5ndWxhcmlkLW11bHRpcGxhLnA3YjCBggYDVR0gBHsweTB3BgdgTAECAYEFMGwwagYIKwYBBQUHAgEWXmh0dHA6Ly9zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2RwYy9kcGMtYWMtc3luZ3VsYXJJRC1tdWx0aXBsYS5wZGYwgcEGA1UdEQSBuTCBtqAeBgVgTAEDAqAVBBNBcm5hbGRvIEJvcmdvIEZpbGhvoBkGBWBMAQMDoBAEDjI3MTY1NTU0MDAwMTAzoEIGBWBMAQMEoDkENzIwMDkxOTgzMDk2ODQ3NDk3NzUwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDCgFwYFYEwBAwegDgQMMDAwMDAwMDAwMDAwgRxnYWJpbmV0ZUB2aWxhdmVsaGEuZXMuZ292LmJyMIHiBgNVHR8EgdowgdcwZKBioGCGXmh0dHA6Ly9zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2xjci9sY3ItYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS5jcmwwb6BtoGuGaWh0dHA6Ly9pY3AtYnJhc2lsLnN5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvbGNyL2xjci1hYy1zeW5ndWxhcmlkLW11bHRpcGxhLmNybDANBgkqhkiG9w0BAQsFAAOCAgEAmmx8UUYhFg935UvBZmZD1NEnMGKS2g0dxFKgzPFUrEUvJg0OJy3PUUmG0NZ0RPePzhzQSMOZBX9Y6vr/M+LrzayztfdTGJLAt8EuvEW66DW7LhRDECtpsf+eYLwZwQb+3MMMizlBii0RQJEWWp18HP3W+yomBE6N39Zo24O85KQ7IKNF8VMPsA8h3qQduKOaAAE+pBalQ2JFaYXVMDOYan9aMSwKDO3d/+viIaytvukyqZ9A7DW5cYDFvtPCH/Ih6zMih01xUuEu9c+cmSsbPtZQecbaBPaUXVj5BQ9yxXtLZwiXP5pMVUgXz9UtQGAvqkh0ih/AUuU9rsw3MMQzJhyplPXSCDfykKmMedRVA2m0SOX1kSCfxc8kN4rOHJAMLF363hOb5C7FOwSUl0F+PNZBrqaJl9vrdCTUjn7skzMM7ZDNBJcm6fBlHhVioHhsTJ/7Td5eLEhuto/EoSNj+T0vugJ/8rmmt3UhyDgbr+icOi3V83OnpSRn51rcASkohxhh4m9VB5wva8NFE/BnxlY40OCxIgGo/6X2YJbgAQkCM3IPBAIF7mhFFTK5KrFhp05XKIaUWrX9omLlL8RT2LOrnBOJae0Tf3oq6y7KVIl/0ts2FsDNxCoxDzIQn3NBw0609dNQQOmHrkCbBuP74vumcGe4/d68xD+Pv1tY7Hk=</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

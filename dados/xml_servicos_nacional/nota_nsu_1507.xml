@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35503081204784569000146000000003447226019159479015">
+        <xLocEmi>São Paulo</xLocEmi>
+        <xLocPrestacao>São Paulo</xLocPrestacao>
+        <nNFSe>34472</nNFSe>
+        <cLocIncid>3550308</cLocIncid>
+        <xTribNac>Agenciamento de publicidade e propaganda, inclusive o agenciamento de veiculação por quaisquer meios</xTribNac>
+        <verAplic>1.0.4+8DCD75</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-15T13:02:57-03:00</dhProc>
+        <nDFSe>34472</nDFSe>
+        <emit>
+            <CNPJ>04784569000146</CNPJ>
+            <IM>30754500</IM>
+            <xNome>CALIA/ Y2 PROPAGANDA E MARKETING LTDA.</xNome>
+            <enderNac>
+                <xLgr>MARIA COELHO AGUIAR</xLgr>
+                <nro>215</nro>
+                <xCpl>BLOCO E</xCpl>
+                <xBairro>JARDIM SAO LUIS</xBairro>
+                <cMun>3550308</cMun>
+                <UF>SP</UF>
+                <CEP>05804900</CEP>
+            </enderNac>
+            <email>fiscal@calia.com.br</email>
+        </emit>
+        <valores>
+            <vBC>7580.64</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>379.03</vISSQN>
+            <vLiq>7580.64</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS355030820478456900014600001000000000034472">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-15T13:02:57-03:00</dhEmi>
+                <verAplic>1.0.4+8DCD75</verAplic>
+                <serie>1</serie>
+                <nDPS>34472</nDPS>
+                <dCompet>2026-01-15</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3550308</cLocEmi>
+                <prest>
+                    <CNPJ>04784569000146</CNPJ>
+                    <IM>30754500</IM>
+                    <email>fiscal@calia.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <email>corporativo@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100801</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>PI 133718 - KWAI BRASILRAZAO SOCIAL: JOYO TECNOLOGIA BRASIL LTDA.CNPJ: 40.225.615/0001-30FATURA DO VEICULO:  506553HONORARIOS MIDIA/COMISSAO DA AGENCIA R$ 7.580,64REF. CONTRATO 6008CAMPANHA:VOCE NO MODO BRITANIAVENCIMENTO:20/02/2026DADOS BANCARIOS:BANCO ITAUAGENCIA: 0393 / C/C: 66635-9 IRRF - NAO RETER DE ACORDO COM ART. 53 DA LEI 7450/85 C/C ART. 6 DA LEI 9064/95 IN SRF 24/86, 123/92.CSRF - NAO INCIDENCIA NOS TERMOS DOS ARTS. 29. E 30 DA LEI 10.8333/2003;NOS TERMOS DA LEI 12.741/12 OS IMPOSTOS APROXIMADOS DA NOTA FISCAL DE 16,62%ESTA NOTA SO PODERA SER CANCELADA DENTRO DO MES DE SUA EMISSAO</xDescServ>
+                        <cNBS>999999999</cNBS>
+                        <cIntContrib>000000034472USP</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>7580.64</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>5.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>379.03</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35503081204784569000146000000003447226019159479015">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>d+cNjRX9fAS7zG2VQ7gxSOWlJPE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>gimd9GGcitSCtl6r8H6UtW+bPzVVv+kVz8fAjP/84nSlWMFpzg/SMD1GbCKNgRbjO74CzMwHrC/k61w6oNaRes+pgK3rQhpQyAVkjPrlE630Fs6hyRF+P5tPeHNAy0EkDdYZkG6tmYbBNaqhSWDQehHrAiHWXpY7267y9osXcBoULdGy8YeLxZPQBYvmESBr1yyOrmFVJUdda6moTnYrJOlXtD8kLGZ85fJbruQRhXIzpL02cTQWSD3hnU6qCIB0WML2TqcjMs23vC2qqgOPbKX2UcOYIpm2r6OoyfSxcQ5vmjW76T8iOTVBZ27rSRbttxbuFrUdQkG8LM9hAceJxQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIHbTCCBVWgAwIBAgIIEd4lAhQ5orAwDQYJKoZIhvcNAQELBQAwdTELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEZMBcGA1UEAxMQQUMgU09MVVRJIFJGQiBWNTAeFw0yNTAyMTQxMjM0MDBaFw0yNjAyMTQxMjM0MDBaMIIBADELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAlNQMRIwEAYDVQQHEwlTYW8gUGF1bG8xGTAXBgNVBAsTEFZpZGVvY29uZmVyZW5jaWExFzAVBgNVBAsTDjA5NDYxNjQ3MDAwMTk1MTYwNAYDVQQLEy1TZWNyZXRhcmlhIGRhIFJlY2VpdGEgRmVkZXJhbCBkbyBCcmFzaWwgLSBSRkIxFjAUBgNVBAsTDVJGQiBlLUNOUEogQTExNzA1BgNVBAMTLlNFQ1JFVEFSSUEgTVVOSUNJUEFMIERBIEZBWkVOREE6NDYzOTIxMzAwMDAxMTgwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDWRc08e70Cr3zFqn5vvq9IVoOpv+NmPuzkXcqCMPfuRVatRE2Q0rD9mzzAHps4LAfrpsRyz9p7mmbmwsCNluDhBJzyKnqUFzd/9XuWXud3CUpT8tdPm7EFFKjFIDoHxFRc7AEzIqatg2kBxqdpuc/T1vyjPI4L9ZA5FHqYXDP1rhOx2Px5yrYJZkZLZBwBZW/qU9u993V+gq/dboCTTRHgEstrVk7aj6a9prPP211mMQxE9UZXFSZESI5ePPIqnySiIoxqMM7RlcyCQy0HE//ZTex2yQZo1vFO3cHWez7q7Byv/So6OHeDPAEgrLluvQ+hCHd5y2cl6ORp5Ajs+15NAgMBAAGjggJyMIICbjAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFPzyggCy+L2f1YLbYCAnMzzCvsyZME8GCCsGAQUFBwEBBEMwQTA/BggrBgEFBQcwAoYzaHR0cDovL2NjZC5hY3NvbHV0aS5jb20uYnIvbGNyL2FjLXNvbHV0aS1yZmItdjUucDdiMIHDBgNVHREEgbswgbiBIWxhcmVsbGFub0BzZi5wcmVmZWl0dXJhLnNwLmdvdi5icqAlBgVgTAEDAqAcExpMVUlTIEZFTElQRSBWSURBTCBBUkVMTEFOT6AZBgVgTAEDA6AQEw40NjM5MjEzMDAwMDExOKA4BgVgTAEDBKAvEy0xOTA0MTk4NzM2NjYzMTAxODQ2MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDCgFwYFYEwBAwegDhMMMDAwMDAwMDAwMDAwMFgGA1UdIARRME8wTQYGYEwBAgEoMEMwQQYIKwYBBQUHAgEWNWh0dHA6Ly9jY2QuYWNzb2x1dGkuY29tLmJyL2RvY3MvZHBjLWFjLXNvbHV0aS1yZmIucGRmMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDBDCBgAYDVR0fBHkwdzA5oDegNYYzaHR0cDovL2NjZC5hY3NvbHV0aS5jb20uYnIvbGNyL2FjLXNvbHV0aS1yZmItdjUuY3JsMDqgOKA2hjRodHRwOi8vY2NkMi5hY3NvbHV0aS5jb20uYnIvbGNyL2FjLXNvbHV0aS1yZmItdjUuY3JsMB0GA1UdDgQWBBR5NuHnMeGlxRzdDfgOgckc8RO86zAOBgNVHQ8BAf8EBAMCBeAwDQYJKoZIhvcNAQELBQADggIBALmbiZ7SAHGobaJoXlzoe6GwtpDxZYL1YSEO39t8hJIdl0BiDuS/l7vXZ20TYm0UufEkRAQsbQ2i9Um8ZKDHTASLfUJ7Z3xIIQfTqcE/Lkbcb9eckHbwz+bHMBL023q1gGgZfSzkLrhUjaUck7Zy/KhABMsvpfJaZNc6u0LDh8Nh1qkD6C+T6/UarYl8ICK4W9Usbf169Y0KAdi+KsHYggF7/xAzLeddHVBZsopPhSjUWJIYbdNLQsTh4S00N7C0WRv67zFCYKm0OKQ/F+IHf705Lha6tJtGdl6rqcdDgXOJ3ZOfjHuYdTtjvQim96dOZPGVe5ZHPbTwjWeFYWIWCSH+A5AFxPG5a3xDA5zbUeC42bVsLTikv7iA6EXDb+hAiE4NCexa2f4O/q32NAulUw7K0x8qgV7eiB51H0z91D6PqeBYGE9owZt4xQA9vClkz6fXP1iK68H+0O/g1/Sa9ehvbIwKgMgg5i727QaUD2cRDokMfGIlp1+9lTjt6YdldxQE75obSnA8TYztwF7ZIXEQQA1BhZERdLLE3VLepdS62eADRDuEpYvo+EaYCrNyMP9tPd0emNQlj2uEDnxo62UCcQXH6yP8/GgBuesGyzMiIIog2Lddw3BLC0BS9GHP5IFUxCPJ98z66UHjlh3DttZpVNf+sGINNY0hI49mT4WK</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

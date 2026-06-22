@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns0="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS35151521246429730000103000000000010325110000001033">
+        <xLocEmi>Engenheiro Coelho</xLocEmi>
+        <xLocPrestacao>Engenheiro Coelho</xLocPrestacao>
+        <nNFSe>103</nNFSe>
+        <cLocIncid>3515152</cLocIncid>
+        <xLocIncid>Engenheiro Coelho</xLocIncid>
+        <xTribNac>Promoção de Venda.</xTribNac>
+        <verAplic>SIGISS Web 3.2.3.5</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>1</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-11-07T16:03:49-03:00</dhProc>
+        <nDFSe>103</nDFSe>
+        <emit>
+            <CNPJ>46429730000103</CNPJ>
+            <xNome>FRANCIELLE DE SOUZA NOGUEIRA LTDA</xNome>
+            <enderNac>
+                <xLgr>RUA HOLANDA</xLgr>
+                <nro>162</nro>
+                <xBairro>RESIDENCIAL LAGO AZUL</xBairro>
+                <cMun>3515152</cMun>
+                <UF>SP</UF>
+                <CEP>13449899</CEP>
+            </enderNac>
+            <fone>19997909903</fone>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>7000.00</vBC>
+            <pAliqAplic>0.00</pAliqAplic>
+            <vISSQN>0.00</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>7000.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS351515224642973000010300001000000000000103">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-11-07T00:00:00-03:00</dhEmi>
+                <verAplic>SIGISS Web 3.2.3.5</verAplic>
+                <serie>00001</serie>
+                <nDPS>103</nDPS>
+                <dCompet>2025-11-07</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3515152</cLocEmi>
+                <prest>
+                    <CNPJ>46429730000103</CNPJ>
+                    <fone>19997909903</fone>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITÂNIA ELETRODOMÉSTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>82520060</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Jardim Social</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3515152</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>170601</cTribNac>
+                        <xDescServ>Pagamento referente às entregas da influenciadora Francielle Nogueira para Havan Philco. Contrato assinado e registrado sob nº C-3716.Dados para pagamento: Banco 260 - Nu Pagamentos S.AAG 0001.  C/C 32336109-0.  PIX CNPJ/MF: 46.429.730/0001-03</xDescServ>
+                        <cNBS>114061100</cNBS>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>Empresa Optante pelo Simples Nacional, conforme Lei Federal Complementar nº 123 de 14/12/2006. Conf. Lei Federal 12741/12 a Carga Tributária Aproximada desta NF é de 13,45% Federal (IBPT) e de 4.10% Municipal, perfazendo o valor de R$ 1228,50 Nota Fiscal Eletrônica Autorizada pelo Decreto nº 3256 de 02/12/2010.Forma de Pagamento: deposito bancario</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>7000.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed/>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35151521246429730000103000000000010325110000001033">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>UnUpNmqx1/7e0G2d4dwfioka60s=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>kK5Cf+eoJ5vHYm1bvULuz6c2YHrOfc9drAUY4LQJimMbon3fg1nHbVkP7Ei3PyN8oVqr0v44ot4Ib3q/QPKsm9g+vKI1rYWc+0fxgWC9xfDSgJsSIZwbdlBhqURaTOdoW2DDLGbQPPMWgdZtpp1ixVw34D2GSz8thc3QV5OYwu+UTBrO85RULpBUNieb8GHfmYjYq/1YTLQ/z62Lo5hgT7WsKME6qgl9yfpdEYTmy0oTMMrkT401JMS9npsI6UqWh/wbmXKcy5ytXFuE/MSiqc9/YCuOeSAyPgUdYOhMoSmrs8FgW4YTn9ulJevai98Bi8Wzz76zBehWSjSS6aKtIw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIHUTCCBTmgAwIBAgIIF3slARVss4IwDQYJKoZIhvcNAQELBQAwWTELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxFTATBgNVBAsTDEFDIFNPTFVUSSB2NTEeMBwGA1UEAxMVQUMgU09MVVRJIE11bHRpcGxhIHY1MB4XDTI1MDEyMTE3NTQwMFoXDTI2MDEyMTE3NTQwMFowgfAxCzAJBgNVBAYTAkJSMRMwEQYDVQQKEwpJQ1AtQnJhc2lsMQswCQYDVQQIEwJTUDEXMBUGA1UEBxMOUmliZWlyYW8gUHJldG8xHjAcBgNVBAsTFUFDIFNPTFVUSSBNdWx0aXBsYSB2NTEXMBUGA1UECxMOMTQwMDA5MzAwMDAxNTAxGTAXBgNVBAsTEFZpZGVvY29uZmVyZW5jaWExGjAYBgNVBAsTEUNlcnRpZmljYWRvIFBKIEExMTYwNAYDVQQDEy1NVU5JQ0lQSU8gREUgRU5HRU5IRUlSTyBDT0VMSE86Njc5OTYzNjMwMDAxMDgwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCbz2Z6QVPo4A6S8T8hQc4znU6ow/a47sUOUYR3Q9GKwI6SuWcOkZZ8fELwM2EOrx6qNDveWRVyRbLoQ70kqz5zvra2VX1ZAy8Yx6eAm4rQNNQBnJHR1MbxgfJZqsa7lMH0MNZs4WLZcytVSGeKIFaZzHGFX1MM6DA7HKWSXQ4cf3QsGp3sybOIknlY9MsmnVeseh2V9t1yRI/U9z0JcSPXxL/yAwu1jiv9YyS7rU/cIYrcw9+4iIJBDdTai9AgTAo3nC8mLA8l+3JE7qeuNgmQYx7cAj3LjExu/BzkwCbBVCgivC5HKK73/nYiFo3s6EbcY21QrBCaFeceulBRM2i1AgMBAAGjggKDMIICfzAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFMVS7SWACd+cgsifR8bdtF8x3bmxMFQGCCsGAQUFBwEBBEgwRjBEBggrBgEFBQcwAoY4aHR0cDovL2NjZC5hY3NvbHV0aS5jb20uYnIvbGNyL2FjLXNvbHV0aS1tdWx0aXBsYS12NS5wN2Iwgb4GA1UdEQSBtjCBs4EZcGVkcm8uZnJhbmNvLmVjQGdtYWlsLmNvbaAjBgVgTAEDAqAaExhQRURSTyBGUkFOQ08gREUgT0xJVkVJUkGgGQYFYEwBAwOgEBMONjc5OTYzNjMwMDAxMDigPQYFYEwBAwSgNBMyMjgwNjE5NzIxNjYwMzYyNzg0MTAwMDAwMDAwMDAwMDAwMDAwMjAwMzQxMzUyU1NQU1CgFwYFYEwBAwegDhMMMDAwMDAwMDAwMDAwMF0GA1UdIARWMFQwUgYGYEwBAgEmMEgwRgYIKwYBBQUHAgEWOmh0dHA6Ly9jY2QuYWNzb2x1dGkuY29tLmJyL2RvY3MvZHBjLWFjLXNvbHV0aS1tdWx0aXBsYS5wZGYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMIGMBgNVHR8EgYQwgYEwPqA8oDqGOGh0dHA6Ly9jY2QuYWNzb2x1dGkuY29tLmJyL2xjci9hYy1zb2x1dGktbXVsdGlwbGEtdjUuY3JsMD+gPaA7hjlodHRwOi8vY2NkMi5hY3NvbHV0aS5jb20uYnIvbGNyL2FjLXNvbHV0aS1tdWx0aXBsYS12NS5jcmwwHQYDVR0OBBYEFDJpFdvvw5tREO8hj1JelPAxOAE3MA4GA1UdDwEB/wQEAwIF4DANBgkqhkiG9w0BAQsFAAOCAgEAOK36MrPxpDr2B8/z0EGwolAXYTbH721LnqqMUV8XCoriwTNerphakWcNAJdHXj5lSFvhGEo2WkAxIjpgcXHNSiq/3m6wuU6qsfnnGRmLUOvUPf1KpJ9idS5X/MeR5VUm/TBh3G+IcubAm/seA5K7ZG68ctvd6pwNdHaTv1LuWkel9WiHPA88SUWCeKlmUA+0hl7Ktf1kBX28dGOPwgm+RRfwrmrxx0sOodHXmm6vefFIrmZf7SCsOGAE1hj/zCYAueTGkiLdvTcb1q6dFrmoLYL1QnMVU6HMW8wSUWiJsSMecxDhVlihnJZNRwKPm/MbjfpHTbqNtkCdhmgWZmZuYZZrFxPvRq9UHrd9w1N5CT9qvCm3siWPTU5zOc32Nu8zd9JKKZRsXMJpqr0LKtFFZvEX1iV13M/OdHetZ1gqXHhB29z3+VgmYv0IMBBucYrSGjoKD/Qe4Xf+wr7tudV0yDASpG/m6G3dsE6OKdtwax+3tnEPqR5/V6P39WFIbC7U+BmFlZoL9BpUN+br2oBt+xEg906oCb0htu3ehrgny5KLgB76gasKQaIadG+Ifx8cxDNiruU1zp4FFeOLNWsytxoOxKtQFp1JlYsYoLsBZa5XHDGreW/0f50JljjOTs8LEMKQq/FuS1ACCqJSR7m34NRf9d+1UbaEgkZAualmbok=</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,209 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS41069022213475043000175000000000550426026003010255">
+        <xLocEmi>Curitiba</xLocEmi>
+        <xLocPrestacao>Curitiba</xLocPrestacao>
+        <nNFSe>5504</nNFSe>
+        <cLocIncid>4106902</cLocIncid>
+        <xLocIncid>Curitiba</xLocIncid>
+        <xTribNac>Licenciamento ou cessão de direito de uso de programas de computação.</xTribNac>
+        <xNBS>Licenciamento de direitos de uso de programas de computador (software)</xNBS>
+        <verAplic>SefinNacional_1.6.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>1</procEmi>
+        <cStat>100</cStat>
+        <dhProc>2026-02-15T09:41:37-03:00</dhProc>
+        <nDFSe>13766007</nDFSe>
+        <emit>
+            <CNPJ>13475043000175</CNPJ>
+            <IM>7868653</IM>
+            <xNome>LOGCOMEX LTDA.</xNome>
+            <enderNac>
+                <xLgr>AV. CANDIDO DE ABREU</xLgr>
+                <nro>000070</nro>
+                <xCpl>CORPORATIVO</xCpl>
+                <xBairro>Centro Cívico</xBairro>
+                <cMun>4106902</cMun>
+                <UF>PR</UF>
+                <CEP>80530000</CEP>
+            </enderNac>
+            <fone>08004941717</fone>
+            <email>faturamento@logcomex.com</email>
+        </emit>
+        <valores>
+            <vBC>35000.00</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>1750.00</vISSQN>
+            <vLiq>35000.00</vLiq>
+        </valores>
+        <IBSCBS>
+            <cLocalidadeIncid>4106902</cLocalidadeIncid>
+            <xLocalidadeIncid>Curitiba</xLocalidadeIncid>
+            <valores>
+                <vBC>33250.00</vBC>
+                <vCalcReeRepRes>0.00</vCalcReeRepRes>
+                <uf>
+                    <pIBSUF>0.10</pIBSUF>
+                    <pAliqEfetUF>0.10</pAliqEfetUF>
+                </uf>
+                <mun>
+                    <pIBSMun>0.00</pIBSMun>
+                    <pAliqEfetMun>0.00</pAliqEfetMun>
+                </mun>
+                <fed>
+                    <pCBS>0.90</pCBS>
+                    <pAliqEfetCBS>0.90</pAliqEfetCBS>
+                </fed>
+            </valores>
+            <totCIBS>
+                <vTotNF>35000.00</vTotNF>
+                <gIBS>
+                    <vIBSTot>33.25</vIBSTot>
+                    <gIBSUFTot>
+                        <vIBSUF>33.25</vIBSUF>
+                    </gIBSUFTot>
+                    <gIBSMunTot>
+                        <vIBSMun>0.00</vIBSMun>
+                    </gIBSMunTot>
+                </gIBS>
+                <gCBS>
+                    <vCBS>299.25</vCBS>
+                </gCBS>
+            </totCIBS>
+        </IBSCBS>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+            <infDPS Id="DPS410690221347504300017500900000000000005400">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-02-15T09:41:37-03:00</dhEmi>
+                <verAplic>Omie 1.1</verAplic>
+                <serie>00900</serie>
+                <nDPS>5400</nDPS>
+                <dCompet>2026-02-15</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4106902</cLocEmi>
+                <prest>
+                    <CNPJ>13475043000175</CNPJ>
+                    <IM>7868653</IM>
+                    <fone>08004941717</fone>
+                    <email>faturamento@logcomex.com</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>financeiro@logcomex.com</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4106902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010501</cTribNac>
+                        <xDescServ>PP  - NCM INTEL MULTIMODAL IMPORT BRAZIL  - PREMIER ALGORITHMS V1 - SRV00262 - Qtde 1 x Valor Unit. R$ 35.000,00 = Total R$ 35.000,00.|</xDescServ>
+                        <cNBS>111032200</cNBS>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>SANTANDER|Agencia: 3114|Conta Corrente: 13002985-5|PIX: c8d49c4d-2653-4524-92de-fd011dc35591|Vencto. 17/03/2026|</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>35000.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>01</CST>
+                                <vBCPisCofins>35000.00</vBCPisCofins>
+                                <pAliqPis>0.00</pAliqPis>
+                                <pAliqCofins>0.00</pAliqCofins>
+                                <vPis>0.00</vPis>
+                                <vCofins>0.00</vCofins>
+                                <tpRetPisCofins>0</tpRetPisCofins>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <pTotTrib>
+                                <pTotTribFed>13.45</pTotTribFed>
+                                <pTotTribEst>0.00</pTotTribEst>
+                                <pTotTribMun>4.54</pTotTribMun>
+                            </pTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+                <IBSCBS>
+                    <finNFSe>0</finNFSe>
+                    <indFinal>0</indFinal>
+                    <cIndOp>100501</cIndOp>
+                    <indDest>0</indDest>
+                    <valores>
+                        <trib>
+                            <gIBSCBS>
+                                <CST>000</CST>
+                                <cClassTrib>000001</cClassTrib>
+                            </gIBSCBS>
+                        </trib>
+                    </valores>
+                </IBSCBS>
+            </infDPS>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+                <SignedInfo>
+                    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                    <Reference URI="#DPS410690221347504300017500900000000000005400">
+                        <Transforms>
+                            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                        </Transforms>
+                        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                        <DigestValue>9i2M7dUNrfKKOgj6Y4KwgfKQ13k=</DigestValue>
+                    </Reference>
+                </SignedInfo>
+                <SignatureValue>EAIKtNexztZ4nctOfFkP4XR6AJ6XIg5fvM2WE8zRhDnX9K5ub2dYogzgyUjg79WoNHlKgY/1RnpslS5UeL7u3L5MD1am2oQ9GQzt+OxjXQ7Yp2iMWsjFLmAGxmcLu6smaAmfRkEEOy6lnaCMp8xVdhqYd97ah6iJIfiyj2/JcWCzRyrjXzDkRs8di2iWuIJ/ScbNg2pp9GWHcIqVFgefmD4JOaqRVMfbYluhfsbDTT5o/1uQ3ga7nHcZA6oyoPbyL1fBlIMKrz9216jx6vrk/bHuQUQf5rSST4qaLxXyxJFhy+LeP7OMxILq8MLiUovYOfKM1UG+6cSoMwtWEGzsGw==</SignatureValue>
+                <KeyInfo>
+                    <X509Data>
+                        <X509Certificate>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</X509Certificate>
+                    </X509Data>
+                </KeyInfo>
+            </Signature>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS41069022213475043000175000000000550426026003010255">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>Ye5tRzjEtfNLTr3KOFcgRtHelfrtxoFSFA6oKi4u5as=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>AU0xEJFq8Ph+upvb9DJ2sAw6c92SR0uzZeCJHnmbdvUl7bo3BZtnOmhRygLpQZzZEyJMhAAb5p/Ac31fS9yVECc54Q4Hnn+U3rzi67Z8rn5eNA9DDCmgjYbZnF4CZO8fZQBelmIDwmZrKOi8glpbOMbc0XcA3+0hQkOpvuiB9rs+rlOsIPg/MS4+Lke5LoG5CnznEBYulE0bDG148DAZumil2JJD8i+v7O0ZtGWhMAw+JF43moyWNC4PkMbzdcAJidzBZBzhFngEmBEIouk7W3wyBztJBAanqwjMi4paWdpFjLibVnyLOlkkFSfBzQUX0yoOKokfrJRQSMwR1Glhsg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

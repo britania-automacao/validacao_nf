@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+    <infNFSe Id="NFS42091021205511344000189000000000593225120823182981">
+        <xLocEmi>JOINVILLE</xLocEmi>
+        <xLocPrestacao>JOINVILLE</xLocPrestacao>
+        <nNFSe>5932</nNFSe>
+        <cLocIncid>4209102</cLocIncid>
+        <xLocIncid>JOINVILLE</xLocIncid>
+        <xTribNac>1.07 - Suporte técnico em informática, inclusive instalação, configuração e manutenção de programas de computação e bancos de dados.</xTribNac>
+        <verAplic>04.01.46.0015</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-12-29T14:45:39-03:00</dhProc>
+        <nDFSe>5932</nDFSe>
+        <emit>
+            <CNPJ>05511344000189</CNPJ>
+            <IM>81408</IM>
+            <xNome>Cingo Serviços em Tecnologia da Informação LTDA. - EPP</xNome>
+            <xFant>Cingo Serviços em Tecnologia da Informação LTDA. - EPP</xFant>
+            <enderNac>
+                <xLgr>Doutor Joao Colin</xLgr>
+                <nro>1872</nro>
+                <xCpl>Antar 3 Sala 31</xCpl>
+                <xBairro>America</xBairro>
+                <cMun>4209102</cMun>
+                <UF>SC</UF>
+                <CEP>89204002</CEP>
+            </enderNac>
+            <fone>4730340101</fone>
+            <email>adrianomurara@bertantemuraracontabil.com.br</email>
+        </emit>
+        <valores>
+            <vBC>6851.50</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>137.03</vISSQN>
+            <vLiq>6532.91</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS420910220551134400018902000000000000001059">
+                <tpAmb>2</tpAmb>
+                <dhEmi>2025-12-29T00:00:00-03:00</dhEmi>
+                <verAplic>04.01.46.0015</verAplic>
+                <serie>2000</serie>
+                <nDPS>1059</nDPS>
+                <dCompet>2025-12-29</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4209102</cLocEmi>
+                <prest>
+                    <CNPJ>05511344000189</CNPJ>
+                    <IM>81408</IM>
+                    <fone>4730340101</fone>
+                    <email>adrianomurara@bertantemuraracontabil.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xCpl>-</xCpl>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4209102</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010701</cTribNac>
+                        <xDescServ>Proposta Técnica BRITANIA_20210412_5--Produto CINGO  - Manutenção Mensal Produto CINGO CODES
+ - VENCIMENTO 20/12/2025</xDescServ>
+                        <cNBS>115013000</cNBS>
+                        <cIntContrib>80404121</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>| Natureza da operação: 101 - ISS devido para Joinville | - &gt; SEM VALOR LEGAL &lt;&gt; SEM VALOR LEGAL &lt;&gt; SEM VALOR LEGAL &lt;&gt; SEM VALOR LEGAL &lt;&gt; SEM VALOR LEGAL &lt;&gt; SEM VALOR LEGAL &lt;&gt; SEM VALOR LEGAL &lt;&gt; SEM VALOR LEGAL &lt;&gt; SEM VALOR LEGAL &lt;&gt; SEM VALOR LEGAL &lt;</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>6851.50</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>921.53</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>226.78</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI="#NFS42091021205511344000189000000000593225120823182981"><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>APYvJxWzpDwIbsAVl98UX3SEa3s=</DigestValue></Reference></SignedInfo><SignatureValue>gDXTWJQdCcSalthiIizYZG9bAmpwaDNRbc2dL9n/mS4JsGGs2xdoCa5S5zv9xlmihmg3KBovXMTp&#13;
+BYACOSHGV65BQJLJXj+KzegqODQQTfRhGLTlXzX1KhqyHTKoRkFDF0fn/gJrSVwuU61xkuqfDjBe&#13;
+yFbreUWH039FsE3lm9Y0oW0N1ZqHrEhaBQMZ/4PqvgY7RAeGl/Qq8Is8J5TuITu7dZsPSozXqm3I&#13;
+KWG4s6d4MjLLcPDBnqLkFwEzJlJlszqUYAfu/Ks9yY7k3r6l+uuj6N8TDb9yjWEyz6FsKw4/oilK&#13;
+D3zbZ4PFdhDIxWpBrQx5SvSdMatmIx6ihB6/kQ==</SignatureValue><KeyInfo><X509Data><X509Certificate>MIIHaTCCBVGgAwIBAgIIEd4lASJmheIwDQYJKoZIhvcNAQELBQAwdTELMAkGA1UEBhMCQlIxEzAR&#13;
+BgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFs&#13;
+IGRvIEJyYXNpbCAtIFJGQjEZMBcGA1UEAxMQQUMgU09MVVRJIFJGQiBWNTAeFw0yNTAxMjIxOTQz&#13;
+MDBaFw0yNjAxMjIxOTQzMDBaMIH6MQswCQYDVQQGEwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDEL&#13;
+MAkGA1UECBMCU0MxEjAQBgNVBAcTCUpvaW52aWxsZTEcMBoGA1UECxMTQ2VydGlmaWNhZG8gRGln&#13;
+aXRhbDEXMBUGA1UECxMOMDk0NjE2NDcwMDAxOTUxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVj&#13;
+ZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTEuMCwG&#13;
+A1UEAxMlTVVOSUNJUElPIERFIEpPSU5WSUxMRTo4MzE2OTYyMzAwMDExMDCCASIwDQYJKoZIhvcN&#13;
+AQEBBQADggEPADCCAQoCggEBALBGuQHbjgqNc0p2jSeH7X3S0YR1oJkuU2EMwgzzqB6X3OETAom1&#13;
+h+fN96hGwF6GrUnSrCyTEnrRuxWksuck99HT96Dz8kaZ3BQGDclnN75SF7YAMDCmkULyIzAaZg+p&#13;
+yh+NbNKi+Ahp+C1RErqlnK8NF4VssRMDfMqE6kpDdxhpFHg2ww+lNPNY0aOyNMiJ68Zm+JgtRpSC&#13;
+MikhE9Jst9JF4zKyLX04w3nuta+dW+sbs533+UsE3nPgrDF43QqsM803Wm6Ofch1DJAgqQKEwP7l&#13;
+/cdyfZ5IKMysajmRmUsPsxKxcBYd+vtNFL0ebfbjdRLeJkwXvNMbp0jFNyD5Ko8CAwEAAaOCAnUw&#13;
+ggJxMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAU/PKCALL4vZ/VgttgICczPMK+zJkwTwYIKwYBBQUH&#13;
+AQEEQzBBMD8GCCsGAQUFBzAChjNodHRwOi8vY2NkLmFjc29sdXRpLmNvbS5ici9sY3IvYWMtc29s&#13;
+dXRpLXJmYi12NS5wN2IwgcYGA1UdEQSBvjCBu4EmZ2FiaW5ldGVkb3ByZWZlaXRvQGpvaW52aWxs&#13;
+ZS5zYy5nb3YuYnKgIwYFYEwBAwKgGhMYQURSSUFOTyBCT1JOU0NIRUlOIFNJTFZBoBkGBWBMAQMD&#13;
+oBATDjgzMTY5NjIzMDAwMTEwoDgGBWBMAQMEoC8TLTAxMDMxOTc4MDE3NTU0ODg5NzEwMDAwMDAw&#13;
+MDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwWAYDVR0gBFEwTzBN&#13;
+BgZgTAECASgwQzBBBggrBgEFBQcCARY1aHR0cDovL2NjZC5hY3NvbHV0aS5jb20uYnIvZG9jcy9k&#13;
+cGMtYWMtc29sdXRpLXJmYi5wZGYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMIGABgNV&#13;
+HR8EeTB3MDmgN6A1hjNodHRwOi8vY2NkLmFjc29sdXRpLmNvbS5ici9sY3IvYWMtc29sdXRpLXJm&#13;
+Yi12NS5jcmwwOqA4oDaGNGh0dHA6Ly9jY2QyLmFjc29sdXRpLmNvbS5ici9sY3IvYWMtc29sdXRp&#13;
+LXJmYi12NS5jcmwwHQYDVR0OBBYEFLbAMupOg+5uryitfdKIct7daYnAMA4GA1UdDwEB/wQEAwIF&#13;
+4DANBgkqhkiG9w0BAQsFAAOCAgEAHV6jWIkZTzJDM31d9cuduE91/F3hfOkqCWI7g52MdUUrUSiM&#13;
+AVqvkIIx7gTLzYcYKkKKs2tp+IlzwtmnL75xbUrTuq7bhK2oMQKD1Ju3/7aLUjoD8/G18GncEr9V&#13;
+0NoDAFigLNWXIfEwOjr5JHvRC9zc6mq3cyXQ/eF2r/nBDKJ0vB+bO3JiNDOG9IYLDdwAj/xf3a6P&#13;
+g3aWIi1QdLlLX1f2wJbp4FxCtVWlQzmLBRDnaltKnsVBZG6VzDW+4p37FDTeELpteSC6gC63gH08&#13;
+QpNqII0veTtgJZ2ueWBJvEn0/uimLESgrFCvF9vVT+iJ7cxUs3+Wi+MTP7Lcxt1IyfQwORCkwUR/&#13;
+ZZbyJBwIxGWCoCJpdOhbOXwJgCanEGOR7mp7gQ9YbfqlBAUYfPGYSBYEhQ6yrRjhtj+tf3yGUtYd&#13;
+CkgylhzO/RK8OA5AALoSTngeZfCdWC2+2sQFHEYtJjVdsJ1Pb4xcwOh9mIQXECiRJYKsHNknQAgR&#13;
+MrwW1N0P7b6ZBpZ4hkoY4DawtBj07T1x0GHF2WnB7eV/EQqf52ydyfMC2Xy83yHHzWKT+OyZ5Ym2&#13;
+IPgCQiBN1738vrIhjk+1/6iLXRpHs48/U3ckorkIGwd5sOARY00HuvnbOShhKgXNa9NLJ7aA1unz&#13;
+qV4jNYMXGmTbH1oSBrg8hnn1IlI=</X509Certificate></X509Data></KeyInfo></Signature></NFSe>

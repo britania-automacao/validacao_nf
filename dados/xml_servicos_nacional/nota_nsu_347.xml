@@ -1,0 +1,243 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+      
+    <infNFSe Id="NFS28003081213384434000184240000000024124111018325076">
+            
+        <xLocEmi>Aracaju</xLocEmi>
+            
+        <xLocPrestacao>Salvador</xLocPrestacao>
+            
+        <nNFSe>2400000000241</nNFSe>
+            
+        <cLocIncid>2800308</cLocIncid>
+            
+        <xLocIncid>Aracaju</xLocIncid>
+            
+        <xTribNac>(VETADO)</xTribNac>
+            
+        <xTribMun>LOCAÇÃO DE BENS MÓVEIS (OPERAÇÃO NÃO INCIDENTE DE ISSQN) (VETADO)</xTribMun>
+            
+        <verAplic>Abrasf_202</verAplic>
+            
+        <ambGer>1</ambGer>
+            
+        <tpEmis>2</tpEmis>
+            
+        <cStat>100</cStat>
+            
+        <dhProc>2024-11-04T16:26:17-03:00</dhProc>
+            
+        <nDFSe>101832507</nDFSe>
+            
+        <emit>
+                  
+            <CNPJ>13384434000184</CNPJ>
+                  
+            <IM>864602</IM>
+                  
+            <xNome>TOP PDV LTDA - ME</xNome>
+                  
+            <xFant>AGENCIA TOP TRADE, MARKETING E EVENTOS</xFant>
+                  
+            <enderNac>
+                        
+                <xLgr>Rua SEN ROLEMBERG</xLgr>
+                        
+                <nro>814</nro>
+                        
+                <xBairro>São José</xBairro>
+                        
+                <cMun>2800308</cMun>
+                        
+                <UF>SE</UF>
+                        
+                <CEP>49015120</CEP>
+                      
+            </enderNac>
+                  
+            <fone>7932149172</fone>
+                  
+            <email>contato@agenciatoppdv.com.br</email>
+                
+        </emit>
+            
+        <valores>
+                  
+            <vCalcDR>0.00</vCalcDR>
+                  
+            <vBC>12237.04</vBC>
+                  
+            <pAliqAplic>0.00</pAliqAplic>
+                  
+            <vISSQN>0.00</vISSQN>
+                  
+            <vLiq>12237.04</vLiq>
+                  
+            <xOutInf>Optante do Simples Nacional. Trib. aprox. R$ 1.645,88 Federal e R$ 611,85 Municipal. Fonte: IBPT [96A549]</xOutInf>
+                
+        </valores>
+            
+        <DPS versao="1.00">
+                  
+            <infDPS Id="DPS280030821338443400018402024202400000000241">
+                        
+                <tpAmb>1</tpAmb>
+                        
+                <dhEmi>2024-11-04T16:26:17-03:00</dhEmi>
+                        
+                <verAplic>Abrasf_202</verAplic>
+                        
+                <serie>2024</serie>
+                        
+                <nDPS>202400000000241</nDPS>
+                        
+                <dCompet>2024-11-01</dCompet>
+                        
+                <tpEmit>1</tpEmit>
+                        
+                <cLocEmi>2800308</cLocEmi>
+                        
+                <prest>
+                              
+                    <CNPJ>13384434000184</CNPJ>
+                              
+                    <IM>864602</IM>
+                              
+                    <xNome>TOP PDV LTDA - ME</xNome>
+                              
+                    <end>
+                                    
+                        <endNac>
+                                          
+                            <cMun>2800308</cMun>
+                                          
+                            <CEP>49015120</CEP>
+                                        
+                        </endNac>
+                                    
+                        <xLgr>Rua SEN ROLEMBERG</xLgr>
+                                    
+                        <nro>814</nro>
+                                    
+                        <xBairro>São José</xBairro>
+                                  
+                    </end>
+                              
+                    <fone>7932149172</fone>
+                              
+                    <email>contato@agenciatoppdv.com.br</email>
+                              
+                    <regTrib>
+                                    
+                        <opSimpNac>3</opSimpNac>
+                                    
+                        <regEspTrib>0</regEspTrib>
+                                  
+                    </regTrib>
+                            
+                </prest>
+                        
+                <toma>
+                              
+                    <CNPJ>76492701000157</CNPJ>
+                              
+                    <xNome>BRITANIA ELETRODOMESTICOS S/A</xNome>
+                              
+                    <end>
+                                    
+                        <endNac>
+                                          
+                            <cMun>4106902</cMun>
+                                          
+                            <CEP>80040265</CEP>
+                                        
+                        </endNac>
+                                    
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                                    
+                        <nro>1330</nro>
+                                    
+                        <xBairro>Hugo Lange</xBairro>
+                                  
+                    </end>
+                              
+                    <fone>41985061767</fone>
+                              
+                    <email>vinicius.lins@britania.com.br</email>
+                            
+                </toma>
+                        
+                <serv>
+                              
+                    <locPrest>
+                                    
+                        <cLocPrestacao>2927408</cLocPrestacao>
+                                  
+                    </locPrest>
+                              
+                    <cServ>
+                                    
+                        <cTribNac>990101</cTribNac>
+                                    
+                        <xDescServ>LOCAÇÃO DE PAINEL E MOBILIARIOS MODULADOS PERSONALIZADOS PARA EVENTO GUAIBIM PAGAMENTO PARA 30 DIAS DADOS BANCÁRIOS PESSOA JURÍDICA TITULAR Top Pdv Ltda BANCO Itau AGÊNCIA 297 CONTA CORRENTE 30303-4 PIX CNPJ 13.384.434/0001-84</xDescServ>
+                                  
+                    </cServ>
+                            
+                </serv>
+                        
+                <valores>
+                              
+                    <vServPrest>
+                                    
+                        <vServ>12237.04</vServ>
+                                  
+                    </vServPrest>
+                              
+                    <trib>
+                                    
+                        <tribMun>
+                                          
+                            <tribISSQN>1</tribISSQN>
+                                          
+                            <pAliq>0.00</pAliq>
+                                          
+                            <tpRetISSQN>1</tpRetISSQN>
+                                        
+                        </tribMun>
+                                    
+                        <totTrib>
+                                          
+                            <indTotTrib>0</indTotTrib>
+                                        
+                        </totTrib>
+                                  
+                    </trib>
+                            
+                </valores>
+                      
+            </infDPS>
+                
+        </DPS>
+          
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS28003081213384434000184240000000024124111018325076">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>P7e1RT9AHOUglbXSGZ4nP+kVu0Q=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>HB0ZnCTVzhMY4ZCfiQfoSJhBypdxusxypRmBbyqH5PiqHwIF8/6m5k7y6dNeLr0WOFzYHqHx1OLV1G8fIwu0PKpFM5ilddwBKON5yPo4Eepyxob/QtI5oX0+Vm3XuHL7t9I15RkHnoyWWXhZm73wBBT4a0bbIr3EdvV1E3H4rJ6plFz/n9azmkfgo6R/fR3nzPPjWDiK160EtgUNDwddirSeaZhrbek5gHPZHOWJDah/3GnPLHD1tHCuSRYJHFsY785uzWYNwKD97KaosP4Ht0eYRv5bYsY5PwaYEHMiU4jRStUvFU/116WPzFacxa2/fpC/nVAlpXRqNHXUo4cSVA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

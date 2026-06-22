@@ -1,0 +1,140 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS31062001239491243000105230000000070523108253187658">
+        <xLocEmi>BELO HORIZONTE</xLocEmi>
+        <xLocPrestacao>BELO HORIZONTE</xLocPrestacao>
+        <nNFSe>2300000000705</nNFSe>
+        <cLocIncid>3106200</cLocIncid>
+        <xLocIncid>BELO HORIZONTE</xLocIncid>
+        <xTribNac>Assessoria e consultoria em informática.</xTribNac>
+        <xTribMun>Assessoria e Consultoria em informática</xTribMun>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2023-10-10T12:47:07-03:00</dhProc>
+        <nDFSe>2300000000705</nDFSe>
+        <emit>
+            <CNPJ>39491243000105</CNPJ>
+            <IM>13859120017</IM>
+            <xNome>COOP IT COOPERATIVA DE TRABALHO DOS PROFISSIONAIS DE INFORMATICA, ASSESSORIA E CONSULTORIA TECNICA</xNome>
+            <enderNac>
+                <xLgr>RUA DA BAHIA</xLgr>
+                <nro>1046</nro>
+                <xCpl>SALA 201</xCpl>
+                <xBairro>Centro</xBairro>
+                <cMun>3106200</cMun>
+                <UF>MG</UF>
+                <CEP>30160011</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vCalcDR>7632.36</vCalcDR>
+            <vBC>359.64</vBC>
+            <pAliqAplic>3.00</pAliqAplic>
+            <vISSQN>10.79</vISSQN>
+            <vTotalRet>16.18</vTotalRet>
+            <vLiq>7975.82</vLiq>
+            <xOutInf>Chave de acesso no Ambiente de Dados Nacional: 31062001239491243000105230000000070523108253187658.</xOutInf>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS310620023949124300010575000002300000000705">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2023-10-10T12:47:07-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>75000</serie>
+                <nDPS>2300000000705</nDPS>
+                <dCompet>2023-10-10</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3106200</cLocEmi>
+                <prest>
+                    <CNPJ>39491243000105</CNPJ>
+                    <IM>13859120017</IM>
+                    <xNome>COOP IT COOPERATIVA DE TRABALHO DOS PROFISSIONAIS DE INFORMATICA, ASSESSORIA E CONSULTORIA TECNICA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>3106200</cMun>
+                            <CEP>30160011</CEP>
+                        </endNac>
+                        <xLgr>RUA DA BAHIA</xLgr>
+                        <nro>1046</nro>
+                        <xCpl>SALA 201</xCpl>
+                        <xBairro>Centro</xBairro>
+                    </end>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>1</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3106200</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010601</cTribNac>
+                        <cTribMun>002</cTribMun>
+                        <xDescServ>Ato Cooperado  Folha de Produção   R$ 7.992,00 | Taxa Administrativa   R$ 359,64 |Lei 8.725/2003, artigo 10.  |Lei 10.833/2003, artigo 32, inciso I - Não incidência CSLL.  |Banco: Itaú - Ag: 0734 - Conta: 99.858-6  |</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>7992.00</vServ>
+                    </vServPrest>
+                    <vDedRed>
+                        <vDR>7632.36</vDR>
+                    </vDedRed>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <pAliq>3.00</pAliq>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                                <vCofins>10.79</vCofins>
+                            </piscofins>
+                            <vRetIRRF>5.39</vRetIRRF>
+                        </tribFed>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS31062001239491243000105230000000070523108253187658">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>OAA0OOZ+iOVt3JR5GRB9z01j9yo=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>bu/WXj6q2d2dbJn0DFaQQ4sW/j9EYXgNdWve8OR9KRgsKQvF8ds4Pri4LsvXLx5np2pKKGoEGoru9r00E6sJlGJnkG8PC+dnpk6Wf0wq+Fpd39W0tuqM4pT4FXY3o8wg6TmREbNytA6zgXzpyMSXj3vDhTZ6G7qwoII3BXSTHUaDcoieKtdNEf6Gg2yPUxw6G/n1DQoorzZRdgXnMzoPF5WNeUafCK3OobH4Chr9eydbecgw1WOqby/RcyZTnHsy5KlAr0/WLKaKcOSjDViclvYG+xL4h25EQRogExImd1caAFJJlbortHkUB6/b1EU7qtnVK3NWum4T/wyyHaT5Mg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIIHTCCBgWgAwIBAgIQVfLdykQIR3oXsJDM9RuWODANBgkqhkiG9w0BAQsFADB0MQswCQYDVQQGEwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDEtMCsGA1UECxMkQ2VydGlzaWduIENlcnRpZmljYWRvcmEgRGlnaXRhbCBTLkEuMSEwHwYDVQQDExhBQyBDZXJ0aXNpZ24gTXVsdGlwbGEgRzcwHhcNMjMwOTEyMTgwMzExWhcNMjQwOTExMTgwMzExWjCB7jELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxCzAJBgNVBAgMAk1HMRcwFQYDVQQHDA5CZWxvIEhvcml6b250ZTEZMBcGA1UECwwQVmlkZW9Db25mZXJlbmNpYTEXMBUGA1UECwwOMDE1NTQyODUwMDAxNzUxHjAcBgNVBAsMFUFDIENlcnRpc2lnbiBNdWx0aXBsYTEbMBkGA1UECwwSQXNzaW5hdHVyYSBUaXBvIEExMTMwMQYDVQQDDCpNVU5JQ0lQSU8gREUgQkVMTyBIT1JJWk9OVEU6MTg3MTUzODMwMDAxNDAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCLudcEE/EB//cJStC57qDZtydNGf8wozGgc4YMZxuQCCP/dRgcX7aSzcnpO0KNYk2nqbhVlQEAGYXf0uBmKdgPzDS02lAvF5MXy9VP6ymFNf+IRTCLhvlOPXRooQGTmz83DodmEL+U7MtHyghOxuVwfPgZM1WN7WU1S07w22wlEJMJ45qGHgiVXs/HsvXM6s9TArCPbt2L4IYcCVgWCUguprXb/CSzmYjvJlYz2y6x6ZuG69g4om0G0iWm8aAEzMt0PQX8BGT16FKgWLg28uTCJlLNaw6Q9ABemlgauzMPtIbVB5+Hh05KyC59iKFRtKt8edys/tPxxLQkyASptN/xAgMBAAGjggMuMIIDKjCBvAYDVR0RBIG0MIGxoDgGBWBMAQMEoC8ELTI4MDgxOTYxNDk2MDY1MzA2MDQxMjI3MDc1NTk3MDAwMDAwMDAwMDAwMDAwMKAtBgVgTAEDAqAkBCJFVUdFTklPIEVVU1RBUVVJTyBWRUxPU08gRkVSTkFOREVToBkGBWBMAQMDoBAEDjE4NzE1MzgzMDAwMTQwoBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMIESZXZlbG9zb0BwYmguZ292LmJyMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUXXIMvzPSu+OGpuhMBnF+VVwHoNYwgYsGA1UdIASBgzCBgDB+BgZgTAECAQswdDByBggrBgEFBQcCARZmaHR0cDovL2ljcC1icmFzaWwuY2VydGlzaWduLmNvbS5ici9yZXBvc2l0b3Jpby9kcGMvQUNfQ2VydGlzaWduX011bHRpcGxhL0RQQ19BQ19DZXJ0aVNpZ25fTXVsdGlwbGEucGRmMIHGBgNVHR8Egb4wgbswXKBaoFiGVmh0dHA6Ly9pY3AtYnJhc2lsLmNlcnRpc2lnbi5jb20uYnIvcmVwb3NpdG9yaW8vbGNyL0FDQ2VydGlzaWduTXVsdGlwbGFHNy9MYXRlc3RDUkwuY3JsMFugWaBXhlVodHRwOi8vaWNwLWJyYXNpbC5vdXRyYWxjci5jb20uYnIvcmVwb3NpdG9yaW8vbGNyL0FDQ2VydGlzaWduTXVsdGlwbGFHNy9MYXRlc3RDUkwuY3JsMA4GA1UdDwEB/wQEAwIF4DAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwgbYGCCsGAQUFBwEBBIGpMIGmMGQGCCsGAQUFBzAChlhodHRwOi8vaWNwLWJyYXNpbC5jZXJ0aXNpZ24uY29tLmJyL3JlcG9zaXRvcmlvL2NlcnRpZmljYWRvcy9BQ19DZXJ0aXNpZ25fTXVsdGlwbGFfRzcucDdjMD4GCCsGAQUFBzABhjJodHRwOi8vb2NzcC1hYy1jZXJ0aXNpZ24tbXVsdGlwbGEuY2VydGlzaWduLmNvbS5icjANBgkqhkiG9w0BAQsFAAOCAgEAN3ALF0SVes6XN6WvukBGd0D4Am2di+zsbaYCoVrHmTOS9W8jnj2MGvDfCPU1f0gxDB0Cb2O/uU7v4MqGcKaQe26Sh20HtMT4VU1Ue/PxXlFKPuhieior1bwY0g7v/tTYPcilUsNIYAg7HWkfWYQrO8VGvdwXy4j/QPkUHIS+FEtw7hSNxnKy5uf1bqmvJxfkhQWnLtJjwOUXj/8h592xK7jgVTdZYc5oiB6xOCy99OjNGDd1WTvbJQ3qacJXo5FzShFKtJCeZRf3D9Lmkh0Yuemwwmmz3oGG6Q4xpgfDfPYrOXJbegOd+CBC+WBws+UXalRq7iMBpYhJJf2fbcbhB7Swj1YLxtR9WIronW8DtbAtKhyxZxBc5eZjblVYSTE4TdmWC7sC0OowVwY3zbVbk5/4xtSMsE7y6nXEnj/olBnp3Vg/+5mcOogTQQN4NhRSOdGCuJgxYZ1gMq7TbMNSRxLnF7B7ku7DcPS7rfriV1+47Oh5LET+RyIKdPDm9Q8WdDJ9DVBADDFr//XEAMwg6lkzrd8aFrq9x2DtG4g9VfzOP02xgjLJuYNPxCABpB89d9EhX9jI32DycRILsSqBRV/DkC8yg/oYTb6VDlcdyogwuUQ2FkkHUK6x0eMYl8DDolgqNRCnPyUorR5PqSoEPzIVTsfs7RJcCE6gykfWU40=</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

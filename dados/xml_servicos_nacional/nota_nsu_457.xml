@@ -1,0 +1,151 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS42166021238116457000139000000000107325020000000000">
+        <xLocEmi>São José</xLocEmi>
+        <xLocPrestacao>São Paulo</xLocPrestacao>
+        <nNFSe>1073</nNFSe>
+        <cLocIncid>4216602</cLocIncid>
+        <xLocIncid>São José</xLocIncid>
+        <xTribNac>Propaganda e publicidade, inclusive promoção de vendas, planejamento de campanhas ou sistemas de publicidade, elaboração de desenhos, textos e demais materiais publicitários.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-02-14T10:35:07-03:00</dhProc>
+        <nDFSe>1073</nDFSe>
+        <emit>
+            <CNPJ>38116457000139</CNPJ>
+            <IM>9026978</IM>
+            <xNome>COZINHE JA TREINAMENTOS LTDA</xNome>
+            <xFant>COZINHE JA</xFant>
+            <enderNac>
+                <xLgr>ANTONIO BASIL SCHROEDER</xLgr>
+                <nro>37</nro>
+                <xBairro>BARREIROS</xBairro>
+                <cMun>4216602</cMun>
+                <UF>SC</UF>
+                <CEP>88110400</CEP>
+            </enderNac>
+            <fone>19996420060</fone>
+            <email>CONTATO@COZINHEJA.COM.BR</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>4000.00</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>200.00</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>4000.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS421660223811645700013900001000000000001073">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-02-14T10:35:07-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>1073</nDPS>
+                <dCompet>2025-02-14</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4216602</cLocEmi>
+                <prest>
+                    <CNPJ>38116457000139</CNPJ>
+                    <IM>9026978</IM>
+                    <xNome>COZINHE JA TREINAMENTOS LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4216602</cMun>
+                            <CEP>88110400</CEP>
+                        </endNac>
+                        <xLgr>ANTONIO BASIL SCHROEDER</xLgr>
+                        <nro>37</nro>
+                        <xBairro>BARREIROS</xBairro>
+                    </end>
+                    <fone>19996420060</fone>
+                    <email>CONTATO@COZINHEJA.COM.BR</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80000001</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132343300</fone>
+                    <email>thayse.gimenes@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>170600</cTribNac>
+                        <xDescServ>AP: 12025  CAMPANHA: MESTRES DA AIR FRYER  DESCRIÇÃO DO SERVIÇO: INFLUENCIADOR Bruna Hermogenes de Lemos @cozinheja PREVISÃO DE PAGAMENTO: 10/03/2025 Dados para pagamento e contrato: Banco Santander (033) Agência: 0041 Conta Corrente: 13.012833-0 Cnpj: 38.116.457/0001-39 Cozinhe Já Treinamentos LTDA CPF: 412.514.058-86 Bruna Hermogenes de Lemos Email: contato@cozinheja.com.br  PIX = CNPJ</xDescServ>
+                        <cIntContrib>5403693</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>4000.00</vServ>
+                    </vServPrest>
+                    <vDescCondIncond>
+                        <vDescIncond>0.00</vDescIncond>
+                        <vDescCond>0.00</vDescCond>
+                    </vDescCondIncond>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <pAliq>5.00</pAliq>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                                <vPis>0.00</vPis>
+                                <vCofins>0.00</vCofins>
+                            </piscofins>
+                            <vRetCP>0.00</vRetCP>
+                            <vRetIRRF>0.00</vRetIRRF>
+                            <vRetCSLL>0.00</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>538.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>112.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42166021238116457000139000000000107325020000000000">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>h3k+pNI52oXTVCaXwsM39We/FH4=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>TMrJIQ3Z8EXMw7aElrnGBQU54H1iKFWJxZJOjzwci46fEfkuUMIs2ILHgplLeoauB1JLP39HOfhU4WqOJQeq/04SW+asF2xxT4ceCCAVFge79JoEoq0MwyDEaGoQu2ouUx1wTUmSqBNnnlarq1tXuT2CqQvB1L9ZSJWvSqQ4y2Obdhcizqygr9Xvtl1zeZO7EG1jOuS4QARQ9M0L8mp0Vj6USEPR26DnAQES/6ChR4q6s74bD1KeAa5a0fgiL1mV1hNlvXY/lO4+o99SaRWh7673dPQMyEzbs75hGzhj4937mAZqi5kskR3HBCvWn15BwT9ZimFkv8uqyyqb3PKbZQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIHpDCCBYygAwIBAgIMa0UmIMFVVKW5S4pHMA0GCSqGSIb3DQEBCwUAMIGnMQsw CQYDVQQGEwJCUjETMBEGA1UECgwKSUNQLUJyYXNpbDEPMA0GA1UECwwGQ1NQQi0x MTswOQYDVQQLDDJTZXJ2aWNvIEZlZGVyYWwgZGUgUHJvY2Vzc2FtZW50byBkZSBE YWRvcyAtIFNFUlBSTzE1MDMGA1UEAwwsQXV0b3JpZGFkZSBDZXJ0aWZpY2Fkb3Jh IGRvIFNFUlBSTyBGaW5hbCBTU0wwHhcNMjQwNDE1MTQxMjE5WhcNMjUwNDE1MTQx MjE5WjCB3zELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxGTAXBgNV BAsMEHZpZGVvY29uZmVyZW5jaWExFzAVBgNVBAsMDjMzNjgzMTExMDAwMTA3MRUw EwYDVQQLDAxBcGxpY2FjYW8gQTExETAPBgNVBAsMCEFSU0VSUFJPMTUwMwYDVQQL DCxBdXRvcmlkYWRlIENlcnRpZmljYWRvcmEgZG8gU0VSUFJPIEZpbmFsIFNTTDEm MCQGA1UEAwwdSU5GT0NPTlYgTVVOSUNJUElPIERFIFNPIEpPU0UwggEiMA0GCSqG SIb3DQEBAQUAA4IBDwAwggEKAoIBAQCMu9AI+TtXoeEka3BNKkJNgBRYyq89d/T4 Ya16q2YS/JIt1ToUlTYwZGuVEUDoIBhSP1/VNHks67tCilRGb+OyDEyTbYpDfNYs CoTj5Yqmd7v9pC07oGgUdC2/nrIlUoL8yc7Wi9k5kQ1wsZ2ICPjofsIKaY3Jn84h ed5YV5X0oH20Q0Psc0+w7pNYAWe6ID015yo13PaFkQdbDlsV+sPHf5TLJkD4IKkv Z7KUKQ9+LYUDL8QrPCOlchxXWMxMX6ZCM5YyzBUz2OSCCAJwqHqyqsH/IOc1XfUX POMGG9zC2m18CjleOy8//ycgjCAK+Whk5GGsVRtQGezWyxEmZj+XAgMBAAGjggKU MIICkDAfBgNVHSMEGDAWgBTdCFl+ThYdI9JUgr1cVIdkw/oDPzCBiwYDVR0fBIGD MIGAMD2gO6A5hjdodHRwOi8vcmVwb3NpdG9yaW8uc2VycHJvLmdvdi5ici9sY3Iv YWNzZXJwcm9hY2Zzc2wuY3JsMD+gPaA7hjlodHRwOi8vY2VydGlmaWNhZG9zMi5z ZXJwcm8uZ292LmJyL2xjci9hY3NlcnByb2FjZnNzbC5jcmwwgY4GCCsGAQUFBwEB BIGBMH8wRwYIKwYBBQUHMAKGO2h0dHA6Ly9yZXBvc2l0b3Jpby5zZXJwcm8uZ292 LmJyL2NhZGVpYXMvYWNzZXJwcm9hY2Zzc2wucDdiMDQGCCsGAQUFBzABhihodHRw Oi8vb2NzcC5zZXJwcm8uZ292LmJyL0FDU0VSUFJPQUNGU1NMMIHIBgNVHREEgcAw gb2gIAYFYEwBAwigFwQVTVVOSUNJUElPIERFIFNBTyBKT1NFoBkGBWBMAQMDoBAE DjgyODkyMjc0MDAwMTA1oCcGBWBMAQMCoB4EHEpBTUlSIE1BQ0hBRE8gUElNRU5U QSBKVU5JT1KgPQYFYEwBAwSgNAQyMjUwMTE5OTEwNzY2OTE0Nzk4OTIxMDY0MDI1 MjUyMDAwMDAwMDA1Mzk5NTM0U1NQU0OBFmphbWlycGltZW50YUBnbWFpbC5jb20w DgYDVR0PAQH/BAQDAgXgMBMGA1UdJQQMMAoGCCsGAQUFBwMCMF4GA1UdIARXMFUw UwYGYEwBAgFZMEkwRwYIKwYBBQUHAgEWO2h0dHA6Ly9yZXBvc2l0b3Jpby5zZXJw cm8uZ292LmJyL2RvY3MvZHBjYWNzZXJwcm9hY2Zzc2wucGRmMA0GCSqGSIb3DQEB CwUAA4ICAQCA9vmiPa9qUEiLdBlAVbeGF7IUtUAecJXdWRYmosfLs4bdjv1dAQm4 XHR9UHG+fiiCN+ZJQT0uuS/3WdxYnfze2zdVINoILSAlGpU17BUCYCJv08uXNAre 0snjgNiqrgbXOHTh6dqXx/jz2eYvkiRDAsx96ugNgeK6qxeEp43CVWnBwzVEkEhs 8c9+MVI0DoTpby87HvOFxpUcYbLlsBwAToVOcNBT5pJ9zmCosP/7pyNe+i9/Wl89 c2aKJLjWbX9uOQKlr07jD5kOTjHzswbVSCBE0s6hBErtgpRPeayTjtWESrLNNOFa XS12I9EHsT24XA4cfOWUHT7XWWbuP8BRq3gWJ8CXcufvYcLb5yu4mY03+gCl9Auu DxES3WhSebCoskiCluLc957u/a162olCMPWN8pzJxI0pPmlbsUWKCvNn5xXUAlob HGRFCIroQx3ey2qtySGpVA6RP1Q67hV17qu+Q9NXgZKt4V6ZAdKMrDIPKXBcKOKN AaeuOnsGPkWlDUGUrpVQSBIXmB5cVRswZaMT0TiyjD0uSChESi2jFVaiiLdunhzL PR2Cc2Gz4nGupZKfcLdMJn6NEcDIakvbixkwvveYF43fmKWRTPJ6X+PoMmZ/nSk1 z99VjByGGRu8v8gjAkAumBUxFf2wdwfM5ijkzdy1xG+gACQurmG6GQ==</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

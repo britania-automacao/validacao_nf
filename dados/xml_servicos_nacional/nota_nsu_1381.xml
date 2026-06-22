@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35503081235061031000137000000000081226013739018524">
+        <xLocEmi>São Paulo</xLocEmi>
+        <xLocPrestacao>São Paulo</xLocPrestacao>
+        <nNFSe>812</nNFSe>
+        <cLocIncid>3550308</cLocIncid>
+        <xTribNac>Suporte técnico em informática, inclusive instalação, configuração e manutenção de programas de comp</xTribNac>
+        <verAplic>1.0.4+E75B3A</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-08T12:59:52-03:00</dhProc>
+        <nDFSe>812</nDFSe>
+        <emit>
+            <CNPJ>35061031000137</CNPJ>
+            <IM>64118550</IM>
+            <xNome>INFLR TECNOLOGIA S.A.</xNome>
+            <enderNac>
+                <xLgr>CLAUDIO SOARES</xLgr>
+                <nro>72</nro>
+                <xCpl>CONJ  115B</xCpl>
+                <xBairro>PINHEIROS</xBairro>
+                <cMun>3550308</cMun>
+                <UF>SP</UF>
+                <CEP>05422030</CEP>
+            </enderNac>
+            <email>financeiro@adgrowth.com</email>
+        </emit>
+        <valores>
+            <vBC>194732.70</vBC>
+            <pAliqAplic>2.90</pAliqAplic>
+            <vISSQN>5647.24</vISSQN>
+            <vLiq>194732.70</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS355030823506103100013700001000000000000812">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-08T12:59:52-03:00</dhEmi>
+                <verAplic>1.0.4+E75B3A</verAplic>
+                <serie>1</serie>
+                <nDPS>812</nDPS>
+                <dCompet>2026-01-08</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3550308</cLocEmi>
+                <prest>
+                    <CNPJ>35061031000137</CNPJ>
+                    <IM>64118550</IM>
+                    <email>financeiro@adgrowth.com</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AV. NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010701</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>Nota Fiscal referente as Campanhas: Britânia Maximização A/C: Calia VEICULAÇÃO: dez/25 PI: 127541 Dados de Pagamento:   Banco: SANTANDER - 033  Agência: 3829  Conta-Corrente: 13005566-2 CNPJ / PIX:  35.061.031/0001-37 Data de Vencimento: 10/02/2026 Valor liquido a pagar: R$ 182.756,64  Valor de referência ao Desconto-Padrão (remuneração da Agência - Item 1.11 das Normas Padrão da Atividade Publicitária): R$ 48.683,17</xDescServ>
+                        <cNBS>999999999</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>194732.70</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.90</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>11976.06</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>5647.24</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35503081235061031000137000000000081226013739018524">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>Xsu9Dnct0qSBZQ0c3r3kIY9ZplY=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>Rbj6JJrqPnDjMLAptHYXLDILisEHQhILCkAt1ls9wYAhVx5TpAlsr1ZAI2b/2attAGzk3Ef5Ost+/hQF1V6rZKd8zuaHgdy3tVuv7AueQDifF21adtQWeCn83+qikRm2OW3D3tUHlgVbfLOj/6C/JNU4mFKZvVb6LjfeDSQaO857ZciCNIrXrjHl5KYqtu9HsdFe83T2c4vdPh3UNUY0VJX+Ph/oB3WVKjqBua2umBTNmpuf91VAxsrq55Evt0bmzh679hrexI9ib8NRNWfK0LOiHXcFEpRoyIoZ/C7BLUzYr+ApJHpLsZgoUkHLHSty4J1h/h2tw4Z2m6CjsnQ27A==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

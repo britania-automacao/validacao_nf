@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS29108001206088541000108260000000000126010375268505">
+        <xLocEmi>Feira de Santana</xLocEmi>
+        <xLocPrestacao>Feira de Santana</xLocPrestacao>
+        <nNFSe>2600000000001</nNFSe>
+        <cLocIncid>2910800</cLocIncid>
+        <xLocIncid>Feira de Santana</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <xTribMun>Representação de qualquer natureza, inclusive comercial.</xTribMun>
+        <verAplic>Abrasf_202</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-07T08:56:02-03:00</dhProc>
+        <nDFSe>37526850</nDFSe>
+        <emit>
+            <CNPJ>06088541000108</CNPJ>
+            <IM>358266</IM>
+            <xNome>PAULO SERGIO REPRESENTACOES LTDA</xNome>
+            <xFant>PAULO SERGIO REPRESENTACOES</xFant>
+            <enderNac>
+                <xLgr>Rua Antônio Carlos Magalhães</xLgr>
+                <nro>1444</nro>
+                <xBairro>Cidade Nova</xBairro>
+                <cMun>2910800</cMun>
+                <UF>BA</UF>
+                <CEP>44053268</CEP>
+            </enderNac>
+            <fone>7532262990</fone>
+            <email>comercial@paulosergiorepresentacoes.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>2461.85</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>49.24</vISSQN>
+            <vLiq>2461.85</vLiq>
+        </valores>
+        <xOutInf>Optante do Simples Nacional. Trib. aprox. R$ 331,12 Federal e R$ 73,86 Municipal. Fonte: IBPT [1C2537]</xOutInf>
+        <DPS versao="1.01">
+            <infDPS Id="DPS291080020608854100010802026202600000000001">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-07T08:56:02-03:00</dhEmi>
+                <verAplic>Abrasf_202</verAplic>
+                <serie>2026</serie>
+                <nDPS>202600000000001</nDPS>
+                <dCompet>2026-01-07</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2910800</cLocEmi>
+                <prest>
+                    <CNPJ>06088541000108</CNPJ>
+                    <IM>358266</IM>
+                    <fone>7532262990</fone>
+                    <email>comercial@paulosergiorepresentacoes.com.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>nfe01@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2910800</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>Referente a Comissão de Dezembro/2025.</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>2461.85</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS29108001206088541000108260000000000126010375268505">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>QE/30yrCPE3yTWIN2XoIMxIa9R8=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>txOizAFa7Et+HPjiQ3lzWQVW1CcrSyJ/0QO8fMjD4VC0Ezn69iGdlstt4+BC5byJTCYHM4z4x9jNvR3hg3+TRgXmBUu+97SNNV0IiYd4BHYM11McHqTxBLSnTmRuVlOjr6NNM2NoLrgCTddrUXmdzAGqIjhDGY85+1KULsQtikc5aZjiovVlGTYsjnusHGpNRJIFGZsWiX28Ta7hxEb10tWTXsbbO+RYr+54YO47KEM6F/hzJiQa6Ua8gfEFdWAtsl+5EfaM7GkAK7qz3aSQWfb2UJXeoVqOOWqZsgoEgh9bkWxz2MVXM9ccXRhJa3BluMcu4AMWxTRDOx4ES64t/Q==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

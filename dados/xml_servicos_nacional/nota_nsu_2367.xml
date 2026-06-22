@@ -1,0 +1,208 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS43149022254206518000105000000000030126039913170558">
+        <xLocEmi>Porto Alegre</xLocEmi>
+        <xLocPrestacao>Porto Alegre</xLocPrestacao>
+        <nNFSe>301</nNFSe>
+        <cLocIncid>4314902</cLocIncid>
+        <xLocIncid>Porto Alegre</xLocIncid>
+        <xTribNac>Suporte técnico em informática, inclusive instalação, configuração e manutenção de programas de computação e bancos de dados.</xTribNac>
+        <xNBS>Serviços de suporte em tecnologia da informação (TI)</xNBS>
+        <verAplic>SefinNacional_1.6.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>1</procEmi>
+        <cStat>100</cStat>
+        <dhProc>2026-03-05T14:22:06-03:00</dhProc>
+        <nDFSe>31131945</nDFSe>
+        <emit>
+            <CNPJ>54206518000105</CNPJ>
+            <xNome>SENSUS RS TECNOLOGIA LTDA</xNome>
+            <enderNac>
+                <xLgr>GEN NETO</xLgr>
+                <nro>71</nro>
+                <xBairro>MOINHOS VENTO</xBairro>
+                <cMun>4314902</cMun>
+                <UF>RS</UF>
+                <CEP>90560020</CEP>
+            </enderNac>
+            <fone>4730292866</fone>
+            <email>FINANCEIRO@SENSUSTEC.COM.BR</email>
+        </emit>
+        <valores>
+            <vBC>20171.14</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>403.42</vISSQN>
+            <vTotalRet>1240.52</vTotalRet>
+            <vLiq>18930.62</vLiq>
+        </valores>
+        <IBSCBS>
+            <cLocalidadeIncid>4106902</cLocalidadeIncid>
+            <xLocalidadeIncid>Curitiba</xLocalidadeIncid>
+            <valores>
+                <vBC>19031.48</vBC>
+                <vCalcReeRepRes>0.00</vCalcReeRepRes>
+                <uf>
+                    <pIBSUF>0.10</pIBSUF>
+                    <pAliqEfetUF>0.10</pAliqEfetUF>
+                </uf>
+                <mun>
+                    <pIBSMun>0.00</pIBSMun>
+                    <pAliqEfetMun>0.00</pAliqEfetMun>
+                </mun>
+                <fed>
+                    <pCBS>0.90</pCBS>
+                    <pAliqEfetCBS>0.90</pAliqEfetCBS>
+                </fed>
+            </valores>
+            <totCIBS>
+                <vTotNF>18930.62</vTotNF>
+                <gIBS>
+                    <vIBSTot>19.03</vIBSTot>
+                    <gIBSUFTot>
+                        <vIBSUF>19.03</vIBSUF>
+                    </gIBSUFTot>
+                    <gIBSMunTot>
+                        <vIBSMun>0.00</vIBSMun>
+                    </gIBSMunTot>
+                </gIBS>
+                <gCBS>
+                    <vCBS>171.28</vCBS>
+                </gCBS>
+            </totCIBS>
+        </IBSCBS>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+            <infDPS Id="DPS431490225420651800010500900000000000000622">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-03-05T14:20:03-03:00</dhEmi>
+                <verAplic>notagateway_v2.03</verAplic>
+                <serie>900</serie>
+                <nDPS>622</nDPS>
+                <dCompet>2026-03-05</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4314902</cLocEmi>
+                <prest>
+                    <CNPJ>54206518000105</CNPJ>
+                    <fone>4730292866</fone>
+                    <email>financeiro@sensustec.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>financeiro.ti@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4314902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010701</cTribNac>
+                        <xDescServ>1 Horas Abertas. 20.171,14Faturamento referente a CONTRATO SEN.2023/5613 - 12 de 12 - CONTRATO SEN.2023/5613 - ATENDIMENTO HORAS ABERTASCodigo do INSS: 99 OutrosVencimento: 10/04/2026Dados para deposito:Sensus RS LtdaBanco: Sicoob (756)  Ag: 3039-2  Conta: 172.281-6Pix Cnpj: 54.206.518/0001-05</xDescServ>
+                        <cNBS>115013000</cNBS>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>Trib aprox R$: 2.546,17 Federal, R$: 0,00 Estadual e R$: 378,61 Municipal Fonte: IBPT/empresometro.com.br   3CA397</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>20171.14</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>01</CST>
+                                <vBCPisCofins>20171.14</vBCPisCofins>
+                                <pAliqPis>0.65</pAliqPis>
+                                <pAliqCofins>3.00</pAliqCofins>
+                                <vPis>131.11</vPis>
+                                <vCofins>605.13</vCofins>
+                                <tpRetPisCofins>3</tpRetPisCofins>
+                            </piscofins>
+                            <vRetIRRF>302.57</vRetIRRF>
+                            <vRetCSLL>937.95</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <pTotTrib>
+                                <pTotTribFed>13.45</pTotTribFed>
+                                <pTotTribEst>0.00</pTotTribEst>
+                                <pTotTribMun>2.00</pTotTribMun>
+                            </pTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+                <IBSCBS>
+                    <finNFSe>0</finNFSe>
+                    <cIndOp>100301</cIndOp>
+                    <indDest>0</indDest>
+                    <valores>
+                        <trib>
+                            <gIBSCBS>
+                                <CST>000</CST>
+                                <cClassTrib>000001</cClassTrib>
+                            </gIBSCBS>
+                        </trib>
+                    </valores>
+                </IBSCBS>
+            </infDPS>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+                <SignedInfo>
+                    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                    <Reference URI="#DPS431490225420651800010500900000000000000622">
+                        <Transforms>
+                            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                        </Transforms>
+                        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                        <DigestValue>LeoBo1QJq/Rx/kp+855v3WsQ0FM=</DigestValue>
+                    </Reference>
+                </SignedInfo>
+                <SignatureValue>YmCB1YPz9jnkCPccu3kSELFtLP8z70Vv4qPC4JqcaC1MHRdPXghggklF+PVmr+qpbZ+vYE4LegpUZjbFdlqStFA/Bu5Zlu9L7NPWZxPMxd3DKJNud5e5wCtf213VtHyPS+urCAogWrjnFnMP+t5fTAiGhH7LsfnKUf2xIdx9YpDpq1/5DpTDiSLs2troSgLXKK3JFN4YG0a5TI5bMEB1hupx9fLQgWQ8szGOnZ8bUpGV3DMDIeyvrxxjR60NJRm7chQEjMvbcZC1Wz+E/yqNvz/fxfDs49UQgxklR0f5RaUw7DJYrg+zzguhyokk3Swp7ZIYQyWJubAaid5qEz8Eaw==</SignatureValue>
+                <KeyInfo>
+                    <X509Data>
+                        <X509Certificate>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</X509Certificate>
+                    </X509Data>
+                </KeyInfo>
+            </Signature>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS43149022254206518000105000000000030126039913170558">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>rcZ+VM46CfGi4usMUZhSvkIB85j+GMXW2dVq2m0R7wM=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>V3MK1hOhBJjXRWC/WmOrd0lWCh3ctk9bVGPNiA7jjmBWqMn6+dB+WvzdBnlcB+Ubpct6Ne+k5NcdIaEjS/Q5FCDxxcbq6VDnzT3Hnv/cVMvAR5jLL4VFA2pOG0t7XNTR2J2DglfiMIYYa944MJyUyCeZ+cUJNaQ8wKNk9Jnzs6iPBePL2lt4jdEcovXwg10mt8xMEi0VHrsCP3P2t6G3ssJG9+oVmXkNwvEGrGHA1rOZR6zyuBCp1xpcdDT5wgJhKt7TzVIs1qASSZd+tnLth35eagOz2+IC3+ld75Qd3h0+x0jBFwHr7PYZdie2FX4K/OrHfchwVc0pFhTL4aXPhQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

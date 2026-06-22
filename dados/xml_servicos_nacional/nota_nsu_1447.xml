@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS28003081213384434000184250000000045625111116015088">
+        <xLocEmi>Aracaju</xLocEmi>
+        <xLocPrestacao>Salvador</xLocPrestacao>
+        <nNFSe>2500000000456</nNFSe>
+        <cLocIncid>2800308</cLocIncid>
+        <xLocIncid>Aracaju</xLocIncid>
+        <xTribNac>Organização de festas e recepções; bufê (exceto o fornecimento de alimentação e bebidas, que fica sujeito ao ICMS),.</xTribNac>
+        <xTribMun>Organização de festas e recepções, bufê (exceto o fornecimento de alimentação e bebidas, que fica sujeito ao ICMS),.</xTribMun>
+        <verAplic>Abrasf_202</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-11-04T11:17:07-03:00</dhProc>
+        <nDFSe>111601508</nDFSe>
+        <emit>
+            <CNPJ>13384434000184</CNPJ>
+            <IM>864602</IM>
+            <xNome>TOP PDV LTDA - ME</xNome>
+            <xFant>AGENCIA TOP TRADE, MARKETING E EVENTOS</xFant>
+            <enderNac>
+                <xLgr>Rua SEN ROLEMBERG</xLgr>
+                <nro>814</nro>
+                <xBairro>São José</xBairro>
+                <cMun>2800308</cMun>
+                <UF>SE</UF>
+                <CEP>49015120</CEP>
+            </enderNac>
+            <fone>7932149172</fone>
+            <email>contato@agenciatoppdv.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>16852.50</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>842.63</vISSQN>
+            <vLiq>16852.50</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS280030821338443400018402025202500000000456">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-11-04T11:17:07-03:00</dhEmi>
+                <verAplic>Abrasf_202</verAplic>
+                <serie>2025</serie>
+                <nDPS>202500000000456</nDPS>
+                <dCompet>2025-11-04</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2800308</cLocEmi>
+                <prest>
+                    <CNPJ>13384434000184</CNPJ>
+                    <IM>864602</IM>
+                    <fone>7932149172</fone>
+                    <email>contato@agenciatoppdv.com.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <fone>41985061767</fone>
+                    <email>vinicius.lins@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2927408</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>171101</cTribNac>
+                        <xDescServ>Pedido de compra 657861. STAND Ramiro Campelo - Descrição do item: STAND Dados de entrega: Local: Hotel Fiesta Convention - Sala Íris Endereço: Av. Antônio Carlos Magalhães, 741 - Itaigara, Salvador/BA Número do MLA: 283536 PAGAMENTO PARA 30 DIAS DADOS BANCÁRIOS PESSOA JURÍDICA TITULAR Top Pdv Ltda BANCO Itau AGÊNCIA 297 CONTA CORRENTE 30303-4 PIX CNPJ 13.384.434/0001-84</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>16852.50</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>5.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS28003081213384434000184250000000045625111116015088">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>UHP0xkTHI1IxTVBOvzNBaMCFGs8=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>MexjW1i50UrjjgEnM1nPkhA+Wb/j0B7BS7jzy5TwjYgqW9rRQNOWgvgINXcJclWyCmEZJOSaA9/TolMKRJgDBfFPfiIXXUtqbYS4PEVS5224El1SsBBxdkU8ITAvd33NW0IA7JAXu8WFUe0RX9Zs5lrQ8OG+EJ8ZF2ltsMlxggsJSdZnshtHufSRi5A8hs+oC7+o2gL4KANgdjd/juhZqSCIhEhnKXTNPUzuGxvdGfz0EhK0bFNKbOYUXC0UIxwNRwsKMyvLsYX1ZV+bul+ZJYvEusS2uD7zRaLlUESnbkhCm+3CO9HpkOqQzUIOn252QMo6XgNgbZyIZ88rhx9r1g==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

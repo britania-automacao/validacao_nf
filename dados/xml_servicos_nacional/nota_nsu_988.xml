@@ -1,0 +1,126 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS41191521201331236000173000000001413925120000000007">
+        <xLocEmi>Pinhais</xLocEmi>
+        <xLocPrestacao>Pinhais</xLocPrestacao>
+        <nNFSe>14139</nNFSe>
+        <cLocIncid>4119152</cLocIncid>
+        <xLocIncid>Pinhais</xLocIncid>
+        <xTribNac>Composição gráfica, fotocomposição, clicheria, zincografia, litografia, fotolitografia.forma, a outra mercadoria que deva ser objeto de posterior circulação, tais como bulas, rótulos, etiquetas, caixas, cartuchos, embalagens e manuais técnicos e de instrução, quando ficarão sujeitos ao ICMS</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-12-03T14:06:31-03:00</dhProc>
+        <nDFSe>14139</nDFSe>
+        <emit>
+            <CNPJ>01331236000173</CNPJ>
+            <IM>71605</IM>
+            <xNome>FORMATONOVE IMPRESSORA E COPIADORA LTDA</xNome>
+            <enderNac>
+                <xLgr>QUINZE DE OUTUBRO</xLgr>
+                <nro>1316</nro>
+                <xCpl>SALA 5 6 E 7</xCpl>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4119152</cMun>
+                <UF>PR</UF>
+                <CEP>83323040</CEP>
+            </enderNac>
+            <fone>04138885018</fone>
+            <email>faturamento@f9.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>3920.00</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>78.40</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>3920.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS411915220133123600017300001000000000014139">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-12-03T14:06:31-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>14139</nDPS>
+                <dCompet>2025-12-03</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4119152</cLocEmi>
+                <prest>
+                    <CNPJ>01331236000173</CNPJ>
+                    <IM>71605</IM>
+                    <fone>04138885018</fone>
+                    <email>faturamento@f9.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <email>boletos@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4119152</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>130501</cTribNac>
+                        <xDescServ>BOX TRUSS Q15 Impressao digital em lona branca fosca, 380g 500x500,;largura: 3,00, altura: 2.00 Acabamento: bainha e ilhos. Inclui montagem e desmontagem. Impressao digital em tecido, acabamento com haste de aluminio superior e inferior e cordao de sustentacao.; Pedido de compra: 660453;VENCIMENTO 10 01 2026;PGTO VIA DEPOSITO BANCARIO BCO ITAU AG 3701 C C 02738-9 PIX 01331236000173;; Valor aprox. trib. Lei 12.741-2012:; R$ 78,40 fed.- R$ 0,00 (0,00%), mun.- R$ 78,40(2,00%),;fonte IBPT.;</xDescServ>
+                        <cIntContrib>423459</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>3920.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>527.24</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>93.30</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41191521201331236000173000000001413925120000000007">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>xWYMR6LYpz/koksr2xcjjCWLoZ0=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>bohfRYNQbYLXkXCd0tDw6mTl2NnZ3jhSIWz5GKcVrogrJenobAQK676pfNxBhMkmQuVbiDNeOM9DimJ0moXy0I3SfgtD9r9zeq+Kml7otYtj2LCOEJhdeiePFZ2fcZDC8NcLiNn+jHf0BUWk1/u0XoHAL1wcUp621nikeYVJlzhMymFmaJE7pNISTyo3+lFx7tR0CDZ8wnOrgtgEY9dTEmD6vocA65xh+005pXm4EDVfo2FJPuzAqsnw+dzZYfS7EPYyT0HriAh2o6JIhi9rrcPCTyoT/C3SakXjR5Ngr2C76MeVrDltQRXLe4ofzuVnXIAi/lI+lzolY1qZ+4yjcg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

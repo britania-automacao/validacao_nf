@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS43067671272381189000110250000290849025127565939030">
+        <xLocEmi>Eldorado do Sul</xLocEmi>
+        <xLocPrestacao>Eldorado do Sul</xLocPrestacao>
+        <nNFSe>2500002908490</nNFSe>
+        <cLocIncid>4306767</cLocIncid>
+        <xLocIncid>Eldorado do Sul</xLocIncid>
+        <xTribNac>Licenciamento ou cessão de direito de uso de programas de computação.</xTribNac>
+        <xTribMun>Desenvolvimento e licenciamento de programas de computador não-customi</xTribMun>
+        <verAplic>2.0.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-12-08T14:44:46-03:00</dhProc>
+        <nDFSe>2500002908490</nDFSe>
+        <emit>
+            <CNPJ>72381189000110</CNPJ>
+            <IM>3033</IM>
+            <xNome>DELL COMPUTADORES DO BRASIL LTDA</xNome>
+            <xFant>*</xFant>
+            <enderNac>
+                <xLgr>AV INDUSTRIAL BELGRAF</xLgr>
+                <nro>400</nro>
+                <xCpl>-</xCpl>
+                <xBairro>Industrial</xBairro>
+                <cMun>4306767</cMun>
+                <UF>RS</UF>
+                <CEP>92990000</CEP>
+            </enderNac>
+            <fone>5132748519</fone>
+            <email>NFE@DELL.COM</email>
+        </emit>
+        <valores>
+            <vBC>45270.37</vBC>
+            <vISSQN>905.40</vISSQN>
+            <vLiq>45270.37</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS430676727238118900011049999002500002908490">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-12-01T13:22:07-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>49999</serie>
+                <nDPS>2500002908490</nDPS>
+                <dCompet>2025-12-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4306767</cLocEmi>
+                <prest>
+                    <CNPJ>72381189000110</CNPJ>
+                    <IM>3033</IM>
+                    <fone>5132748519</fone>
+                    <email>NFE@DELL.COM</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>nikolly.bitencourt@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4306767</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010501</cTribNac>
+                        <cTribMun>002</cTribMun>
+                        <xDescServ>INSS: nao tem cessao de mao-de-obra e nao se enquadra na IN RFB n 2110/2022***NFSe 1 de 1 ***DOF: 02-726478183004.01***Forma Pag: Venda a prazo 93711936***Prazo: 3E***AC985848 - CS Software Microsoft EAS Azure prepayment , Sem Midia (QTD: 1 VL UNIT: R$ 45270,37). Alíquota Efetiva: 2,0000000000%.</xDescServ>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>NFS-e Gerada a Partir do RPS 2908292 Série E Emitido em 01/12/2025; Lei 12741/2012: Mun: R$905,41; Est: R$0,00; Fed: R$6088,86; Total Aprox: R$6994,27. Fonte: IBPT.; Alíquota aplicada: 2.00;</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>45270.37</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS43067671272381189000110250000290849025127565939030">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>K0fdWA41KoOY1h4TpRDJxl9F7Ms=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>SIxHwDhUEb8gWOdAtx/chEfqEsDlg9TjvtKxkESJR5r0NXmqf/9HeNE3z5YtaAALdwkQCTLaDy8AvZcFe1WYitjMHZcDygH8rlqB9uEueTkBqH1Il6Dt34GrQ6wTl7dBFSKmrl6qobGkGbDd/HsGGpxa7d4DWnfO5hn+R2ZS+n/q95zIz1p9CtTc1+UOppbjqouz+SX10DQzCRrQiHmiN+fD3CaOjOJ+oOwvlVZJ0A2IDdzmbEiIwn+f02nxeVhglWLemCv5m/GelAr8PH1WyDNgG6v0w3eyAM2FHLSH8hUMJHrDrcc51mSu60avbFMmm+74G/fqlQI1ILrsTLpvyA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

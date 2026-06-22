@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS42029091230816395000166000000000058725100000000008">
+        <xLocEmi>Brusque</xLocEmi>
+        <xLocPrestacao>Brusque</xLocPrestacao>
+        <nNFSe>587</nNFSe>
+        <cLocIncid>4202909</cLocIncid>
+        <xLocIncid>Brusque</xLocIncid>
+        <xTribNac>Processamento, armazenamento ou hospedagem de dados, textos, imagens, vídeos, páginas eletrônicas, aplicativos e sistemas de informação, entre outros formatos, e congêneres.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-10-01T16:42:18-03:00</dhProc>
+        <nDFSe>587</nDFSe>
+        <emit>
+            <CNPJ>30816395000166</CNPJ>
+            <IM>70601</IM>
+            <xNome>WA SOLUTIONS CONSULTORIA LTDA</xNome>
+            <enderNac>
+                <xLgr>ARNOLDO WAGNER</xLgr>
+                <nro>140</nro>
+                <xBairro>SANTA TEREZINHA</xBairro>
+                <cMun>4202909</cMun>
+                <UF>SC</UF>
+                <CEP>88352487</CEP>
+            </enderNac>
+            <fone>04796145577</fone>
+            <email>HUGUES.SILVA@WASOLUTIONS.CO</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>1087.44</vBC>
+            <pAliqAplic>4.14</pAliqAplic>
+            <vISSQN>45.01</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>1087.44</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS420290923081639500016600001000000000000587">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-10-01T16:42:18-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>587</nDPS>
+                <dCompet>2025-10-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4202909</cLocEmi>
+                <prest>
+                    <CNPJ>30816395000166</CNPJ>
+                    <IM>70601</IM>
+                    <fone>04796145577</fone>
+                    <email>HUGUES.SILVA@WASOLUTIONS.CO</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Nossa Senhora da Luz Av Nossa Senhora da Luz</xLgr>
+                        <nro>S/N</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>CORPORATIVO@BRITANIA.COM.BR</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4202909</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010301</cTribNac>
+                        <xDescServ>Número de Contrato Jurídico C-2448 Número de Contrato Sistêmico 5801 / 5802 Número do Pedido 23136956 / 23136957 PEDIDO DE COMPRA 00607.803  Mensalidade Agosto - Servidor Amazon U$ 200 - Dólar 30/09- R$5,4372  *** DATA DE PAGAMENTO 10/11/2024 ***</xDescServ>
+                        <cIntContrib>10000125260</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>Número de Contrato Jurídico C-2448 Número de Contrato Sistêmico 5801 / 5802 Número do Pedido 23136956 / 23136957 PEDIDO DE COMPRA 00607.803  Mensalidade Agosto - Servidor Amazon U$ 200 - Dólar 30/09- R$5,4372  *** DATA DE PAGAMENTO 10/11/2024 ***</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>1087.44</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>4.14</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>146.26</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>35.99</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42029091230816395000166000000000058725100000000008">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>ErBhT0v+ZcOQdxYfWhOBv7yH4RE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>CO//7+svXofAqORiXODl9vRMcWJqvcU1xh1876Ynxw2IkVPp5JhubI+Ge6LGxj0frPZvdDeqWNC+UNDJyBOtQUZtd3CjDpItQcmB9ThLKeEePqGfYx1rMFleV5wixnXebDQDEjuOx3fivrbxiJvWtJXWO1hu4fw2V10D00GoNYQsZJwmEteWyisoRWajQ4Y89LuBgigXRx7DKObAfqOhOJK/woQR49nSr4ux3h3hEW0FQpMY1pR1shZx/u0Wv2hLVEQNPRdqa8ulAzfaG5eyMTKU5kb8vrK4sRlwpn9ejFJDxImKROrEgFiwrxUJx45dNJrfXpLX44FG8ob+fFm0xw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35503081202667694000140000000148337126040916120884">
+        <xLocEmi>S o Paulo</xLocEmi>
+        <xLocPrestacao>S o Paulo</xLocPrestacao>
+        <nNFSe>1483371</nNFSe>
+        <cLocIncid>3550308</cLocIncid>
+        <xTribNac>Licenciamento ou cessão de direito de uso de programas de computação.</xTribNac>
+        <verAplic>1.0.4+13A027</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-04-17T16:53:36-03:00</dhProc>
+        <nDFSe>1483371</nDFSe>
+        <emit>
+            <CNPJ>02667694000140</CNPJ>
+            <IM>27143449</IM>
+            <xNome>TELMEX DO BRASIL S/A</xNome>
+            <enderNac>
+                <xLgr>DOS INGLESES</xLgr>
+                <nro>600</nro>
+                <xCpl>12 ANDAR - PARTE</xCpl>
+                <xBairro>MORRO DOS INGLESES</xBairro>
+                <cMun>3550308</cMun>
+                <UF>SP</UF>
+                <CEP>01329904</CEP>
+            </enderNac>
+            <email>retencaotributos.iss@claro.com.br</email>
+        </emit>
+        <valores>
+            <vBC>626.65</vBC>
+            <pAliqAplic>2.90</pAliqAplic>
+            <vISSQN>18.17</vISSQN>
+            <vLiq>626.65</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS355030820266769400014000001000000001483371">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-04-17T16:53:36-03:00</dhEmi>
+                <verAplic>1.0.4+13A027</verAplic>
+                <serie>1</serie>
+                <nDPS>1483371</nDPS>
+                <dCompet>2026-04-15</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3550308</cLocEmi>
+                <prest>
+                    <CNPJ>02667694000140</CNPJ>
+                    <IM>27143449</IM>
+                    <email>retencaotributos.iss@claro.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010501</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>WIFI SEGURO</xDescServ>
+                        <cNBS>999999999</cNBS>
+                        <cIntContrib>00000048599700U1</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>626.65</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.90</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>18.17</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35503081202667694000140000000148337126040916120884">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>t024CfYkzJfxKFK0uZXNfV2ncDA=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>tDeINss8cC5kRwfX2pjlTAGsHqAh6IKe+B7IpfCcxWnUZa5SbX71nb5gyAI3H6na5Tq4hLGvsbzsFp7LN14yKOblEtib6ontHUjbuEFB4IdEjjSr/nY2xa7k/u51TcBdnpzc4lSLvEcX+cVCEumDTG4Ld6ElvHz+evij9pKM6uZq+bKqMpDHCQ2t1TCxznn0OG1SZIh9EvmRd2mH2eXtQ3UZjd8VdGzUNGzYkCpar5KTVUlU5kXakqWh3qFPfYvxSV3n9Na6uRjVQoC8T25/Sf3sW//z1Bg+8wyU77Wv9c8fqndeWVx0jtEEQ/LJjdZ7QipVCT57shaI7N7w0vfacQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

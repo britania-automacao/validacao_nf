@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS15014021242988507000145000000000011226024051568933">
+        <xLocEmi>BELEM</xLocEmi>
+        <xLocPrestacao>BELEM</xLocPrestacao>
+        <nNFSe>112</nNFSe>
+        <cLocIncid>1501402</cLocIncid>
+        <xLocIncid>BELEM</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <xTribMun>REPRESENTANTES COMERCIAIS E AGENTES DO COMERCIO DE MEDICAMENTOS, COSMETICOS E PRODUTOS DE PERFUMARIA</xTribMun>
+        <xNBS>Serviços de intermediação na distribuição de mercadorias</xNBS>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-02-03T16:13:25-03:00</dhProc>
+        <nDFSe>112</nDFSe>
+        <emit>
+            <CNPJ>42988507000145</CNPJ>
+            <IM>4063024</IM>
+            <xNome>CCAS08 REPRESENTACOES E SERVICOS LTDA</xNome>
+            <xFant>CCAS08 REPRESENTACOES E SERVICOS LTDA</xFant>
+            <enderNac>
+                <xLgr>GENTIL BITTENCOURT</xLgr>
+                <nro>554</nro>
+                <xCpl>SALA:8;ANDAR:2</xCpl>
+                <xBairro>BATISTA CAMPOS</xBairro>
+                <cMun>1501402</cMun>
+                <UF>PA</UF>
+                <CEP>66035340</CEP>
+            </enderNac>
+            <email>ciroalves08@gmail.com</email>
+        </emit>
+        <valores>
+            <vCalcDR>8112.40</vCalcDR>
+            <vBC>8112.40</vBC>
+            <vISSQN>261.34</vISSQN>
+            <vTotalRet>261.34</vTotalRet>
+            <vLiq>8112.40</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS150140224298850700014500001000000000000112">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-02-03T16:13:25-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>00001</serie>
+                <nDPS>112</nDPS>
+                <dCompet>2026-02-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>1501402</cLocEmi>
+                <prest>
+                    <CNPJ>42988507000145</CNPJ>
+                    <IM>4063024</IM>
+                    <email>ciroalves08@gmail.com</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AV NOSSA SENHORA DA LUZ, NUMERO 1330,</xLgr>
+                        <nro>0</nro>
+                        <xBairro>HUGO LANGE,</xBairro>
+                    </end>
+                    <email>corporativo@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>1501402</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <cTribMun>010</cTribMun>
+                        <xDescServ>COD.: 25320</xDescServ>
+                        <cNBS>102010000</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>8112.40</vServ>
+                    </vServPrest>
+                    <vDescCondIncond/>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS15014021242988507000145000000000011226024051568933">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>facQ58/fsTqDqJFHdfcMB/spI6w=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>QeOv02FzCiJT89rMa+B66l9eqGnCB76NhJpVj62o+qJuQ2YxDeIzrXBDU+y/EdQ3PXfTjOs4qYIRtsk6TXLdiAJCXck6zwsfEiFGR/I8R3YjENR7Q2YkkG9UvI4z9F+QNy7+G5wTInk9QUD5JemoV05wn3Z0tNlMOZ8a8bJ9xnrjfxCoQWHcZVknSVyrW9BvXJOI1elZPEajagu7Ow3qN5MXJFNwwkdZObwJuFYlL9I5TLGh8I4oGHUV5EfP8reSzJJeSixSOEgV5XiWCRjc2JtQ6KYuaCx2PguEO0lAslHxcssj7MxlfKS5Kcz9ClLq89qM8mPYFImMvcr9N5zr+w==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

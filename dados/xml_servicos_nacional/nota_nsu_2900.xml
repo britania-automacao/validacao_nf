@@ -1,0 +1,159 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS41069022285057529000102000000000050926048184328824">
+        <xLocEmi>Curitiba</xLocEmi>
+        <xLocPrestacao>Curitiba</xLocPrestacao>
+        <nNFSe>509</nNFSe>
+        <cLocIncid>4106902</cLocIncid>
+        <xLocIncid>Curitiba</xLocIncid>
+        <xTribNac>Composição gráfica, inclusive confecção de impressos gráficos, fotocomposição, clicheria, zincografia, litografia e fotolitografia, exceto se destinados a posterior operação de comercialização ou industrialização, ainda que incorporados, de qualquer forma, a outra mercadoria que deva ser objeto de posterior circulação, tais como bulas, rótulos, etiquetas, caixas, cartuchos, embalagens e manuais técnicos e de instrução, quando ficarão sujeitos ao ICMS.</xTribNac>
+        <verAplic>SefinNacional_1.6.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>1</procEmi>
+        <cStat>100</cStat>
+        <dhProc>2026-04-08T17:29:16-03:00</dhProc>
+        <nDFSe>25511765</nDFSe>
+        <emit>
+            <CNPJ>85057529000102</CNPJ>
+            <IM>2606918</IM>
+            <xNome>HELLOGRAF ARTES GRAFICAS LTDA</xNome>
+            <enderNac>
+                <xLgr>R. JOÃO REFFO</xLgr>
+                <nro>000452</nro>
+                <xBairro>Santa Felicidade</xBairro>
+                <cMun>4106902</cMun>
+                <UF>PR</UF>
+                <CEP>82410000</CEP>
+            </enderNac>
+            <fone>4199895427</fone>
+            <email>FATURAMENTO@HELLOGRAF.COM.BR</email>
+        </emit>
+        <valores>
+            <tpBM>4</tpBM>
+            <vBC>57940.00</vBC>
+            <pAliqAplic>2.50</pAliqAplic>
+            <vISSQN>1448.50</vISSQN>
+            <vLiq>57940.00</vLiq>
+        </valores>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+            <infDPS Id="DPS410690228505752900010200900000000000000509">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-04-08T17:29:15-00:00</dhEmi>
+                <verAplic>EmissorWeb_1.4.0.26</verAplic>
+                <serie>900</serie>
+                <nDPS>509</nDPS>
+                <dCompet>2026-04-08</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4106902</cLocEmi>
+                <prest>
+                    <CNPJ>85057529000102</CNPJ>
+                    <IM>2606918</IM>
+                    <fone>4199895427</fone>
+                    <email>FATURAMENTO@HELLOGRAF.COM.BR</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <IM>0</IM>
+                    <xNome>BRITANIA ELETRODOMESTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AV. NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4106902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>130501</cTribNac>
+                        <xDescServ>SERVIÇO GRAFICO - MLA COMPLEMENTAR PARA COMPRA DAS CINTAS TOTEM 5K BRITANIA - 5K PHILCOR$ 57.940,00 - 18/05/2026 - DEPÓSITO BANCÁRIONúmero do MLA: 291197 / Pedido de compra nº 00675.375Chave pix: 85057529000102 / Banco Itau / AG 3377 / C/C 03605-2Hellograf Artes Graficas Ltda</xDescServ>
+                    </cServ>
+                    <infoCompl/>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>57940.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <BM>
+                                <nBM>41069020200006</nBM>
+                            </BM>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>01</CST>
+                                <vBCPisCofins>57940.00</vBCPisCofins>
+                                <pAliqPis>1.65</pAliqPis>
+                                <pAliqCofins>7.60</pAliqCofins>
+                                <vPis>956.01</vPis>
+                                <vCofins>4403.44</vCofins>
+                                <tpRetPisCofins>2</tpRetPisCofins>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>5359.45</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>1448.50</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <SignedInfo>
+                    <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                    <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+                    <Reference URI="#DPS410690228505752900010200900000000000000509">
+                        <Transforms>
+                            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                            <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                        </Transforms>
+                        <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                        <DigestValue>JcqqHu4pcSHPd7y7uTWwXtnb05xv4CNtQTGQhp6vJEg=</DigestValue>
+                    </Reference>
+                </SignedInfo>
+                <SignatureValue>oxiJLZAP7Yr6mW9GQFQY8z8CbG8PxkBPlDhUmvr34UV4Jx173ZjuuEbdqLHwuSi8klsoMe8GZoHfyMAamH0L8oVsqq5jakhhufV9xHg3l6GznwExEkhvuHhwXTsSCJbBxDRin/P3OHJ5J9crkM7Hb39/dJKsa3kTuYUt5VyPredFXkK92iNby4LncAsLHvJCI4vGnDw1iD2gDcgdQ4QJgw7GHSilmIx20SKz7Mbmgvl5G8JEfROGj9znvzuMQrtFo+FXRf+TG6WaDvIkOcSxLz/yqaNPoRBPCF+xN+2zHkdi31gokFCeFLBaqcfVO1XJAN1su24oSc0SJcg5S78eTg==</SignatureValue>
+                <KeyInfo>
+                    <X509Data>
+                        <X509Certificate>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</X509Certificate>
+                    </X509Data>
+                </KeyInfo>
+            </Signature>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS41069022285057529000102000000000050926048184328824">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>cLLwegx3xKIfCjs1fHgY+qJv11kJcrTYq6jl7iiEobc=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>JfAUjtMqZ8vJSfEDjhbB3dvqBwz9fQzn337F2HpdacvSHupvSZJHRMcc4SX03j4U4XLwoZQ85FHYnM29ioOWNa9X1mekjbAcGZcIQsbe4jaFnJS53k+FqyP5wppVO6FhB7q1JeH23oNAkk5wOR6ikC8de2yOttWznIT+TDycXCrRIoLqsOdjvmUaxXbh1Xg09xju4YgOpNB+dfJu5FeiyUEIbKs4jTlg5v0t51CKsIGveNSdu1H7ReyW/RWeGQdObfqEwr54VEd9Ye3JO/HX2cJ2eFfx6jIb7Lc9rFbFyxjZTYsvS0+uwOuZoCANBYmWybAjGOZGmrPuDQpKD+d42A==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

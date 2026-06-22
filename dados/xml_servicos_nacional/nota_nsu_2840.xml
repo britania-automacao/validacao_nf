@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+    <infNFSe Id="NFS42166021254025199000131000000000004726040000000001">
+        <xLocEmi>São José</xLocEmi>
+        <xLocPrestacao>São José</xLocPrestacao>
+        <nNFSe>47</nNFSe>
+        <cLocIncid>4216602</cLocIncid>
+        <xLocIncid>São José</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <verAplic>1.01</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-04-06T13:28:47-03:00</dhProc>
+        <nDFSe>47</nDFSe>
+        <emit>
+            <CNPJ>54025199000131</CNPJ>
+            <IM>9078489</IM>
+            <xNome>R &amp; M REPRESENTACOES LTDA</xNome>
+            <enderNac>
+                <xLgr>CELSO BAYMA</xLgr>
+                <nro>732</nro>
+                <xCpl>APTO 305</xCpl>
+                <xBairro>BARREIROS</xBairro>
+                <cMun>4216602</cMun>
+                <UF>SC</UF>
+                <CEP>88117037</CEP>
+            </enderNac>
+            <fone>5548999229</fone>
+            <email>ndorner@gmail.com</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>1090.46</vBC>
+            <pAliqAplic>2.01</pAliqAplic>
+            <vISSQN>21.92</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>1090.46</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS421660225402519900013100001000000000000047">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-04-06T13:28:47-03:00</dhEmi>
+                <verAplic>1.01</verAplic>
+                <serie>1</serie>
+                <nDPS>47</nDPS>
+                <dCompet>2026-04-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4216602</cLocEmi>
+                <prest>
+                    <CNPJ>54025199000131</CNPJ>
+                    <IM>9078489</IM>
+                    <fone>5548999229</fone>
+                    <email>ndorner@gmail.com</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80000001</CEP>
+                        </endNac>
+                        <xLgr>Avenida NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>thayse.gimenes@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4216602</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>Serviços no mes</xDescServ>
+                        <cNBS>102010000</cNBS>
+                        <cIntContrib>37619585</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>1090.46</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.01</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>146.67</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>29.88</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42166021254025199000131000000000004726040000000001">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>EEo9kgGIforgaYiIxFQlE6iuxys=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>cMm6QQCTzbPCa6Enw5LUlNwthQPou0kf9qyUzOmMiEiRrwGIJv1gbtPNjS/BcNWHsMVIADfhpsoLO70NU+T71EWYEC7M1vwQbNrZO+pN8BGMhs4F4w53g2VEAxjBFsyEIIPCVjB0/kPcLrkPwlxiOGy+tCMjssO+ZQ9McLNzhV6p8/JZIUV5n56yreffj9Qg15NJe3FCZYjvFi7SNwOyrRXgtO+GwLJPZGXo1iQbF68XCsXzavu05nBaPnIjz6ZyGfcQfJDsN9VnCRFp+jrbpyuh7WohwyD7McNk6yPAFg2yXUDBi0+Wm0L0zCTE1ofUA6QPlUEfPXmOY/CWhE2lnw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

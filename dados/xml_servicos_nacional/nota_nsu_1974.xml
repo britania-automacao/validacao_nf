@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+    <infNFSe Id="NFS42075021232609309000170000000000032425110000000004">
+        <xLocEmi>Indaial</xLocEmi>
+        <xLocPrestacao>Indaial</xLocPrestacao>
+        <nNFSe>324</nNFSe>
+        <cLocIncid>4207502</cLocIncid>
+        <xLocIncid>Indaial</xLocIncid>
+        <xTribNac>Agenciamento de publicidade e propaganda, inclusive o agenciamento de veiculação por quaisquer meios.</xTribNac>
+        <verAplic>1.01</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-11-06T17:01:32-03:00</dhProc>
+        <nDFSe>324</nDFSe>
+        <emit>
+            <CNPJ>32609309000170</CNPJ>
+            <IM>42513</IM>
+            <xNome>INDAVIRUS LTDA</xNome>
+            <enderNac>
+                <xLgr>BRUSQUE</xLgr>
+                <nro>358</nro>
+                <xBairro>RIO MORTO</xBairro>
+                <cMun>4207502</cMun>
+                <UF>SC</UF>
+                <CEP>89082450</CEP>
+            </enderNac>
+            <fone>047991227130</fone>
+            <email>INDAVIRUS@GMAIL.COM</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>35000.00</vBC>
+            <pAliqAplic>0.00</pAliqAplic>
+            <vISSQN>0.00</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>35000.00</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS420750223260930900017000001000000000000324">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-11-06T17:01:32-03:00</dhEmi>
+                <verAplic>1.01</verAplic>
+                <serie>1</serie>
+                <nDPS>324</nDPS>
+                <dCompet>2025-11-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4207502</cLocEmi>
+                <prest>
+                    <CNPJ>32609309000170</CNPJ>
+                    <IM>42513</IM>
+                    <fone>047991227130</fone>
+                    <email>INDAVIRUS@GMAIL.COM</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>82520060</CEP>
+                        </endNac>
+                        <xLgr>avenida linha avenida alameda avenida nossa senhora da luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>BACACHERI</xBairro>
+                    </end>
+                    <email>CORPORATIVO@BRITANIA.COM.BR</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4207502</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100801</cTribNac>
+                        <xDescServ>DIVULGAÇÃO CAIXA DE SOM PCX 6900 PHILCO | REDES SOCIAIS INDAVÍRUS - REF OUTUBRO 2025 (Contrato Philco x Indavírus parcela 06/06)</xDescServ>
+                        <cIntContrib>1003615</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>DADOS PARA PAGAMENTO: Banco 085 | Agência: 0101 (Viacredi) Conta corrente: 1460213-0 INDAVIRUS EIRELI | CNPJ: 32.609.309/0001-70 OU Chave PIX: (47) 99122-7130</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>35000.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>3.86</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42075021232609309000170000000000032425110000000004">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>jQRzFnGDfrmnZxWTEWBMRrC5Az4=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>I29W1v3AF27kAGu7ogygROoF1anjVSXtO++OFEyGrdwgwtMqvjs2AFjViTmvSpt2ABqUumPCaWufZE/33c8nm+Ypsk78Z1VrpMn2ItdefRn0AObiW/mZe/qtNwxr88qs/JsS+6VGDVaASuhXnckTPNRo8TStNVkf8wLIFvm1lYZk/TEIROXYJlogloLx/tDl870Il7jPWC2rtXS+JR7JIiVZ68KGz2ixsvAkesK8UC9reyg9By8yxeebyEM8TwjSebunT8WIVfyxVxtykvozfvd9yEBkKIGzZ5bxshF0/du57QSffUahlTc5dnd0LPp0GEpz6wmOdbSpiehhkSfO0A==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35259041231081923000149000000000013726010000000002">
+        <xLocEmi>JUNDIAI</xLocEmi>
+        <xLocPrestacao>JUNDIAI</xLocPrestacao>
+        <nNFSe>137</nNFSe>
+        <cLocIncid>3525904</cLocIncid>
+        <xLocIncid>JUNDIAI</xLocIncid>
+        <xTribNac>Fotografia E Cinematografia, Inclusive Revelação, Ampliação, Cópia, Reprodução, Trucagem E Congêneres.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-27T11:28:14-03:00</dhProc>
+        <nDFSe>12468026</nDFSe>
+        <emit>
+            <CNPJ>31081923000149</CNPJ>
+            <IM>129275</IM>
+            <xNome>RENAN CAVOLI SKOPINSKI 42297934807</xNome>
+            <xFant>RENAN CAVOLI SKOPINSKI 42297934807</xFant>
+            <enderNac>
+                <xLgr>999 Gilda Besutti Schiavo</xLgr>
+                <nro>87</nro>
+                <xBairro>Parque da Represa</xBairro>
+                <cMun>3525904</cMun>
+                <UF>SP</UF>
+                <CEP>13214564</CEP>
+            </enderNac>
+            <fone>45826275</fone>
+            <email>eematioli@gmail.com</email>
+        </emit>
+        <valores>
+            <vBC>4500.00</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>4500.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS352590423108192300014910000000000000000137">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-27T11:28:14-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>10000</serie>
+                <nDPS>137</nDPS>
+                <dCompet>2026-01-27</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3525904</cLocEmi>
+                <prest>
+                    <CNPJ>31081923000149</CNPJ>
+                    <IM>129275</IM>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS AS</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xCpl>1330, de 772 a 2370</xCpl>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3525904</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>130301</cTribNac>
+                        <cTribMun>002</cTribMun>
+                        <xDescServ>PRODUÇÃO AUDIOVISUAL</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>4500.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35259041231081923000149000000000013726010000000002">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>kbft/+SwYUZ4AbupVqqCfUbBx0E=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>EB/RrOIOJ8I7JRkNDT9DPghUVUAjyYvEo6Yc5RaAbGQUkjD4SPmVUbQrXeFHP8bGwAqqOhMKr0PFPnUU5VDaMP1n/PoCDqFEhMDk8L0/WoM0fi0v+afl4jtDLo60YrE9BEiVG8hCvwrBZwWPlTcQswDTCYYJ17dc776KBzzXIkWeYLBrcw2681aeYBGpV/Qc+E1LnvlztAkb5FFvoKCOwSM6x8tVZ5N2U6Dx7U8ekcQ3GjykR6CMzQF0dCTEsDbuKonpxUZzbPpCBECPenekCek7dr2FxuZO8k9nRzXjLD7X6KgB1PJh0Ioy2Ddry5QDuRtGzkEhE/4s2MvMFe2WbQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

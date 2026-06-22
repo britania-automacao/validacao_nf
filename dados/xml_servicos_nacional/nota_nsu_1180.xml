@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS41015071205418856000103000000000039426010000000000">
+        <xLocEmi>Arapongas</xLocEmi>
+        <xLocPrestacao>Arapongas</xLocPrestacao>
+        <nNFSe>394</nNFSe>
+        <cLocIncid>4101507</cLocIncid>
+        <xLocIncid>Arapongas</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-06T19:31:10-03:00</dhProc>
+        <nDFSe>394</nDFSe>
+        <emit>
+            <CNPJ>05418856000103</CNPJ>
+            <IM>37142</IM>
+            <xNome>AROEIRA REPRESENTACOES COMERCIAIS EIRELI - ME</xNome>
+            <enderNac>
+                <xLgr>FLAMINGOS</xLgr>
+                <nro>400</nro>
+                <xCpl>AP. 501</xCpl>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4101507</cMun>
+                <UF>PR</UF>
+                <CEP>86700040</CEP>
+            </enderNac>
+            <fone>4332524794</fone>
+            <email>jesus.aroeira@gmail.com</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>198.43</vBC>
+            <pAliqAplic>2.69</pAliqAplic>
+            <vISSQN>5.35</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>198.43</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS410150720541885600010300001000000000000394">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-06T19:31:10-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>394</nDPS>
+                <dCompet>2026-01-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4101507</cLocEmi>
+                <prest>
+                    <CNPJ>05418856000103</CNPJ>
+                    <IM>37142</IM>
+                    <fone>4332524794</fone>
+                    <email>jesus.aroeira@gmail.com</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITÂNIA ELETRODOMÉSTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>82520060</CEP>
+                        </endNac>
+                        <xLgr>RUA alameda avenida nossa senhora da luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>BACACHERI</xBairro>
+                    </end>
+                    <email>CORPORATIVO@BRITANIA.COM.BR</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4101507</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>COMISSOES S/LIQUIDACOES DE 01/12/2025 A 31/12/2025</xDescServ>
+                        <cIntContrib>343773</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>EMPRESA OPTANTE PELO SIMPLES NACIONAL.</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>198.43</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.69</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41015071205418856000103000000000039426010000000000">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>ArIq1xlJsaAJ3G9O3BE9VAFkjaA=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>J2urqLvx6/aT4fE8aBZ/UGP0d3P712oVVF4i41V6qPah8uT27UF0xEDebS+TYpxwU421eAkSSjxv3DRQLbE3n/DzJsei1gjcYVCdbS0NnkW5RgBtrUh3J/0mo67lJjxlSI1U1yoNe85n/VosBohRmMGNDqMzTvC3Cz/P4dG8PmnIh18Xps6A5b6L7BAUb7vLrcHGMutCxFxq8E1Or/Weqka7sgiSpgAFuko7Sx9y+mdhN291Qbj6TfIp5uNyI2sBqW7a+ZsZQFbPYZ7eYKAdgazf7JISx1NfPllLTSxJFfTFt1jnasET8IqT4UHslkCsd69zhB0chEKKFYC5/6YA6w==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

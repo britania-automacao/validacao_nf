@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35183051246094192000143000000000003826020000000009">
+        <xLocEmi>GUARAREMA</xLocEmi>
+        <xLocPrestacao>GUARAREMA</xLocPrestacao>
+        <nNFSe>38</nNFSe>
+        <cLocIncid>3518305</cLocIncid>
+        <xLocIncid>GUARAREMA</xLocIncid>
+        <xTribNac>Propaganda E Publicidade, Inclusive Promoção De Vendas, Planejamento De Campanhas Ou Sistemas De Publicidade, Elaboração De Desenhos, Textos E Demais Materiais Publicitários.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-02-09T16:27:40-03:00</dhProc>
+        <nDFSe>6677417</nDFSe>
+        <emit>
+            <CNPJ>46094192000143</CNPJ>
+            <IM>13663</IM>
+            <xNome>FCC BARBERO MARKETING E VENDAS LTDA</xNome>
+            <xFant>FCC BARBERO MARKETING E VENDAS LTDA</xFant>
+            <enderNac>
+                <xLgr>R  LAZARO GERMANO</xLgr>
+                <nro>521</nro>
+                <xBairro>ITAPEMA</xBairro>
+                <cMun>3518305</cMun>
+                <UF>SP</UF>
+                <CEP>08900000</CEP>
+            </enderNac>
+            <fone>1146105650</fone>
+            <email>elocontabilidade.gma@gmail.com</email>
+        </emit>
+        <valores>
+            <vBC>10400.00</vBC>
+            <pAliqAplic>2.01</pAliqAplic>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>10400.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS351830524609419200014310000000000000000038">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-02-09T16:27:40-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>10000</serie>
+                <nDPS>38</nDPS>
+                <dCompet>2026-02-09</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3518305</cLocEmi>
+                <prest>
+                    <CNPJ>46094192000143</CNPJ>
+                    <IM>13663</IM>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITÂNIA ELETRODOMÉSTICOS S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3518305</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>170601</cTribNac>
+                        <cTribMun>003</cTribMun>
+                        <xDescServ>PROMOÇÃO DE VENDAS</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>10400.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35183051246094192000143000000000003826020000000009">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>GsIweu5rPjtm1sneUK68zBIq8H8=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>dDq/iqCRPORzMHlNubDtZ+eUWglkk0mjaAP9pwyCLLkrbJBVRnW1zh7JPBOHG2GrzfszObRTBrrKnCyAuv80s/4IH5McF/BOfOPzCDCVO1XOTOzgMvMElRoGTaSWZk12QMQFydQaEI7LDdmV/ZexR8g1L9TLfuLdsdeB+pfHSnBErf+0qyEQxPz0xWfUqer6ksnMmvh8sIAlaREvtoXD3z2LmPspQ9ajvWjC3rOWwO9eZWmq0MOr9a/raEQDxLgIRHJDTO8Gkm3aIj4LXZhS09Dz5CgzKduSgYkPmpRfvGyHkDKUekQjBuONbDNQoCT/wvk/+rYMNqqc6KBPnBhKoQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS43067671272381189000110250000292725725122583783728">
+        <xLocEmi>Eldorado do Sul</xLocEmi>
+        <xLocPrestacao>Eldorado do Sul</xLocPrestacao>
+        <nNFSe>2500002927257</nNFSe>
+        <cLocIncid>4306767</cLocIncid>
+        <xLocIncid>Eldorado do Sul</xLocIncid>
+        <xTribNac>Suporte técnico em informática, inclusive instalação, configuração e manutenção de programas de computação e bancos de dados.</xTribNac>
+        <xTribMun>Suporte técnico, manutenção, outros serviços tecnologia da informação</xTribMun>
+        <verAplic>2.0.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-12-16T18:30:29-03:00</dhProc>
+        <nDFSe>2500002927257</nDFSe>
+        <emit>
+            <CNPJ>72381189000110</CNPJ>
+            <IM>3033</IM>
+            <xNome>DELL COMPUTADORES DO BRASIL LTDA</xNome>
+            <xFant>*</xFant>
+            <enderNac>
+                <xLgr>AV INDUSTRIAL BELGRAF</xLgr>
+                <nro>400</nro>
+                <xCpl>-</xCpl>
+                <xBairro>Industrial</xBairro>
+                <cMun>4306767</cMun>
+                <UF>RS</UF>
+                <CEP>92990000</CEP>
+            </enderNac>
+            <fone>5132748519</fone>
+            <email>NFE@DELL.COM</email>
+        </emit>
+        <valores>
+            <vBC>1135.62</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>22.71</vISSQN>
+            <vLiq>1135.62</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS430676727238118900011049999002500002927257">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-12-16T08:26:01-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>49999</serie>
+                <nDPS>2500002927257</nDPS>
+                <dCompet>2025-12-16</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4306767</cLocEmi>
+                <prest>
+                    <CNPJ>72381189000110</CNPJ>
+                    <IM>3033</IM>
+                    <fone>5132748519</fone>
+                    <email>NFE@DELL.COM</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>nikolly.bitencourt@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4306767</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010701</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>INSS: nao tem cessao de mao-de-obra e nao se enquadra na IN RFB n 2110/2022***PIS, COFINS e CSLL nao sujeitos a retencao***Ordem 725364137- PO 657626/658262***NFSe 1 de 1 ***DOF: 04-0725859.01***Forma Pag: Venda a prazo***Prazo: 3E***716-1304 - Suporte tecnico de Informatica, 7x24, ProSupport, 3 anos (QTD: 1 VL UNIT: R$ 535,99)716-1312 - Suporte tecnico de Informatica no local NBD, ProSupport, 3 anos (QTD: 1 VL UNIT: R$ 599,63). Alíquota Efetiva: 2,0000000000%.</xDescServ>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>NFS-e Gerada a Partir do RPS 2927054 Série E Emitido em 16/12/2025; Lei 12741/2012: Mun: R$22,71; Est: R$0,00; Fed: R$152,74; Total Aprox: R$175,45. Fonte: IBPT.;</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>1135.62</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS43067671272381189000110250000292725725122583783728">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>cA1UmKuB7tzeVSpRZnuv/9+f3CE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>Uo88ml7MuFGy0HEzO0vXVPRrmu9TRTKBw1hbFqGan2x3+zu1X+DwaHbcqmK838xLmnL7JYSdjBbnxcPIUSZ9KiEfqlibhnmz5sdMT+It9xc7C+DkTYKfFPztOHa+dhDFXhGH2mmDKk/r4S15e60qB3tiqVCMLudIhcCQCTlH8XpgUeQR2wSjj4GblEk/BuznLkiSB1MS3H06YrV3OLPaLrWI89jlVTXVch8+e8C0AazMVlQy2J0B2Zry4VDYoEp2+dS8QkF7qbRoBRTo/N0dEIMP4kf1zUy6xNzivVavsMZNJdNgcHFrxTHHVYnUURUkPjsXaw90RbkOpzDAii8ZlQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

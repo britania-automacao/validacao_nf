@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS33045572236110608000116000000000004226066186263206">
+        <xLocEmi>Rio de Janeiro</xLocEmi>
+        <xLocPrestacao>Rio de Janeiro</xLocPrestacao>
+        <nNFSe>42</nNFSe>
+        <cLocIncid>3304557</cLocIncid>
+        <xLocIncid>Rio de Janeiro</xLocIncid>
+        <xTribNac>Bufê (exceto o fornecimento de alimentação e bebidas, que fica sujeito ao ICMS).</xTribNac>
+        <xTribMun>Bufê.</xTribMun>
+        <xNBS>Fornecimento de alimentação para eventos</xNBS>
+        <verAplic>EmissorWeb_1.6.0.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>2</procEmi>
+        <cStat>101</cStat>
+        <dhProc>2026-06-08T16:34:11-03:00</dhProc>
+        <nDFSe>88773302</nDFSe>
+        <emit>
+            <CNPJ>36110608000116</CNPJ>
+            <xNome>POMERA GASTRONOMIA LTDA</xNome>
+            <enderNac>
+                <xLgr>RUA MISAEL DE MENDONCA</xLgr>
+                <nro>00127</nro>
+                <xBairro>PARADA DE LUCAS</xBairro>
+                <cMun>3304557</cMun>
+                <UF>RJ</UF>
+                <CEP>21250610</CEP>
+            </enderNac>
+            <fone>2124873487</fone>
+            <email>contato@pomera.com.br</email>
+        </emit>
+        <valores>
+            <vLiq>5500.00</vLiq>
+        </valores>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+            <infDPS Id="DPS330455723611060800011670000000000000000037">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-06-08T16:34:11-03:00</dhEmi>
+                <verAplic>EmissorWeb_1.6.0.0</verAplic>
+                <serie>70000</serie>
+                <nDPS>37</nDPS>
+                <dCompet>2026-05-04</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3304557</cLocEmi>
+                <subst>
+                    <chSubstda>33045572236110608000116000000000003526056829357829</chSubstda>
+                    <cMotivo>99</cMotivo>
+                    <xMotivo>valor diferente do pedido de compras</xMotivo>
+                </subst>
+                <prest>
+                    <CNPJ>36110608000116</CNPJ>
+                    <fone>2124873487</fone>
+                    <email>contato@pomera.com.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3304557</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>171102</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>pedido 00679.353 - Número do MLA: 293381- ação dia das mães - coffee fajor -100 pessoas - dados bancários - Santander ag 1607 cc 13001510-9</xDescServ>
+                        <cNBS>103013100</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>5500.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <pTotTribSN>16.00</pTotTribSN>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS33045572236110608000116000000000004226066186263206">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>ojoXrlnIWSJ1AgsX8MSj+YXhw6UkYKb2hVIPV+/9fFw=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>B0WRYaL8ZjHb1xIo/efLmKhAjfWx/q4XBgR0PWwkmR3GnU3b0UOzqxWQ1Ptd55Dch05Mby4UYj6LzPwBlIhd4G/70++JW8NKAkfYrmX57FP0RS8tIDrEKw6ULwu58ysODGh48UVU4xdvPWx3TZBNGRFhVu9mNCwCWcEScAAD6dwNnJMYHcGayuBOemo8HABigauFu+Bi1R8dfp21YkKS7HH5bTB/MvVZJNzxDjeymiia1wJVeJmA2gnda7eCC0Zx6Km7mPGNtvoIJSPZfe9vMlop7/I2mvy7l5zVZdy/nJiSuGVYg/k+ImDifKQYacXHusk97/UuQ7FMrPkiRCc1uw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

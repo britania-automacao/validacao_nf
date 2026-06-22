@@ -14,3 +14,5 @@ pywin32>=306; sys_platform == 'win32'
 
 # Compilação e Distribuição da Aplicação (.exe)
 pyinstaller>=6.4.0
+
+cryptography

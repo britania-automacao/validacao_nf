@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<evento xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+      
+    <infEvento Id="EVT42166021249685135000127000000000089726050000000004101101001">
+            
+        <verAplic>1.00</verAplic>
+            
+        <ambGer>1</ambGer>
+            
+        <nSeqEvento>001</nSeqEvento>
+            
+        <dhProc>2026-05-07T15:17:26-03:00</dhProc>
+            
+        <nDFSe>897</nDFSe>
+            
+        <pedRegEvento versao="1.00">
+                  
+            <infPedReg Id="PRE42166021249685135000127000000000089726050000000004101101">
+                        
+                <tpAmb>1</tpAmb>
+                        
+                <verAplic>1.00</verAplic>
+                        
+                <dhEvento>2026-05-07T15:17:25-03:00</dhEvento>
+                        
+                <CNPJAutor>49685135000127</CNPJAutor>
+                        
+                <chNFSe>42166021249685135000127000000000089726050000000004</chNFSe>
+                        
+                <e101101>
+                              
+                    <xDesc>Cancelamento de NFS-e</xDesc>
+                              
+                    <cMotivo>1</cMotivo>
+                              
+                    <xMotivo>emissor incorreto</xMotivo>
+                            
+                </e101101>
+                      
+            </infPedReg>
+                
+        </pedRegEvento>
+          
+    </infEvento>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#EVT42166021249685135000127000000000089726050000000004101101001">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>Dyi2gp52vyXUt/JXCrmX9HyAWGs=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>lGi+0AZcGOg6CHpJCyI7RoB1DjKE6u70XXNidClvKXb8macna5kN/Soz1E7ctrTCbsTrhdxce6ZpKJW7kNgdmcqBFTln1qh/Xjf9BCvF0eLRGaZnz0UXnjCNzCW4OmscrStXG1oitHwvA5j0b0Zpsa59x+jfxKuoWrC+ERSkpyd0zQmGrzglvKmJsz3pNByGjZG0xFITpZ0um4Lh6HAynAqqWuCBymXMjLgD073IMXx+Sl3PYMt7p92Av2uBiTfcHpPhYfrFRc3TBtEZz3DD1zt4aacwxE4cpQ7PeRUkoztsZHWkNZ/lwf1Rhfm2B6FCiOBDuGDDvjn+z95Ri1T4rA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</evento>

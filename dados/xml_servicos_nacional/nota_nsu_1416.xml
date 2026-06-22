@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS42038081201741960000175000000000084626010000000002">
+        <xLocEmi>Canoinhas</xLocEmi>
+        <xLocPrestacao>Canoinhas</xLocPrestacao>
+        <nNFSe>846</nNFSe>
+        <cLocIncid>4203808</cLocIncid>
+        <xLocIncid>Canoinhas</xLocIncid>
+        <xTribNac>Assistência técnica.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-10T11:48:43-03:00</dhProc>
+        <nDFSe>846</nDFSe>
+        <emit>
+            <CNPJ>01741960000175</CNPJ>
+            <IM>4874</IM>
+            <xNome>INFORMATICA DIRSCHNABEL LTDA</xNome>
+            <enderNac>
+                <xLgr>12 DE SETEMBRO</xLgr>
+                <nro>7</nro>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4203808</cMun>
+                <UF>SC</UF>
+                <CEP>89460138</CEP>
+            </enderNac>
+            <fone>4736223615</fone>
+            <email>dirschnabeldiloa@outlook.com</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>352.90</vBC>
+            <pAliqAplic>2.01</pAliqAplic>
+            <vISSQN>7.09</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>352.90</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS420380820174196000017500001000000000000846">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-10T11:48:43-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>846</nDPS>
+                <dCompet>2026-01-10</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4203808</cLocEmi>
+                <prest>
+                    <CNPJ>01741960000175</CNPJ>
+                    <IM>4874</IM>
+                    <fone>4736223615</fone>
+                    <email>dirschnabeldiloa@outlook.com</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMSTICOS SA.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4209102</cMun>
+                            <CEP>89239270</CEP>
+                        </endNac>
+                        <xLgr>RUA DONA FRANCISCA</xLgr>
+                        <nro>12340</nro>
+                        <xBairro>PIRABEIRABA</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4203808</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>140201</cTribNac>
+                        <xDescServ>SERVIÇOS EM GARANTIA 940101260180445</xDescServ>
+                        <cIntContrib>19833</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>352.90</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.01</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42038081201741960000175000000000084626010000000002">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>dYlbU8WS6ibJ7Z4+O0EverwdppE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>FmqxVZWAT80HpWO7dH7qiLC0RL+hc0+AtxMKi3xzAe0eC4+PTCqPiu/tJkbeCaq4oVxYTfhXnytfMw6RcRjfJwXBi/jYrjVqLfVZTwWIOBV3/9m6WJ24J+TYHYjs6zycVKFMpdvyKckTCWTrvTyEZEYOarqYz7yI1Owp8FLjRkk3EXSF4UItkkUsc0hW8rM6+wmsyqi3R8zsAPSB0tFVueKW/9G+XpXSoztf1Ds9h+p9eBOzKCm3/RtoUkblz+UU5xZz1hynP4BU1RlltfbuBr5U9aHCLpk7KMVTFBpFs9fVBj5eMXQzPT8lBA23B/VYKwMnIeoHIF4BsGuUavNNHw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

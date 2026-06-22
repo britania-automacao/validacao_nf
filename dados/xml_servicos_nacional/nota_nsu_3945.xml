@@ -1,0 +1,173 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35503081213347016000117000012790082226020253662392">
+        <xLocEmi>São Paulo</xLocEmi>
+        <xLocPrestacao>São Paulo</xLocPrestacao>
+        <nNFSe>127900822</nNFSe>
+        <cLocIncid>3550308</cLocIncid>
+        <xTribNac>Inserção de textos, desenhos e outros materiais de propaganda e publicidade, em qualquer meio (excet</xTribNac>
+        <verAplic>1.2.1+3BF96C</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-02-01T23:22:52-03:00</dhProc>
+        <nDFSe>127900822</nDFSe>
+        <emit>
+            <CNPJ>13347016000117</CNPJ>
+            <IM>42427630</IM>
+            <xNome>FACEBOOK SERVICOS ONLINE DO BRASIL LTDA.</xNome>
+            <enderNac>
+                <xLgr>BRIG FARIA LIMA</xLgr>
+                <nro>3732</nro>
+                <xCpl>ANDAR 3AO7 8ALASUL 9 E</xCpl>
+                <xBairro>ITAIM BIBI</xBairro>
+                <cMun>3550308</cMun>
+                <UF>SP</UF>
+                <CEP>04538132</CEP>
+            </enderNac>
+            <email>apbr@fb.com</email>
+        </emit>
+        <valores>
+            <vBC>99233.05</vBC>
+            <pAliqAplic>2.90</pAliqAplic>
+            <vISSQN>2877.75</vISSQN>
+            <vLiq>99233.05</vLiq>
+        </valores>
+        <IBSCBS>
+            <cLocalidadeIncid>4106902</cLocalidadeIncid>
+            <xLocalidadeIncid>Curitiba</xLocalidadeIncid>
+            <valores>
+                <vBC>96355.29</vBC>
+                <uf>
+                    <pIBSUF>0.10</pIBSUF>
+                    <pRedAliqUF>0.00</pRedAliqUF>
+                    <pAliqEfetUF>0.00</pAliqEfetUF>
+                </uf>
+                <mun>
+                    <pIBSMun>0.00</pIBSMun>
+                    <pRedAliqMun>0.00</pRedAliqMun>
+                    <pAliqEfetMun>0.00</pAliqEfetMun>
+                </mun>
+                <fed>
+                    <pCBS>0.90</pCBS>
+                    <pRedAliqCBS>0.00</pRedAliqCBS>
+                    <pAliqEfetCBS>0.00</pAliqEfetCBS>
+                </fed>
+            </valores>
+            <totCIBS>
+                <vTotNF>99233.05</vTotNF>
+                <gIBS>
+                    <vIBSTot>96.36</vIBSTot>
+                    <gIBSUFTot>
+                        <vIBSUF>96.35</vIBSUF>
+                    </gIBSUFTot>
+                    <gIBSMunTot>
+                        <vIBSMun>0.00</vIBSMun>
+                    </gIBSMunTot>
+                </gIBS>
+                <gCBS>
+                    <vCBS>867.19</vCBS>
+                </gCBS>
+            </totCIBS>
+        </IBSCBS>
+        <DPS versao="1.01">
+            <infDPS Id="DPS355030821334701600011700001000000127900822">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-02-01T23:22:52-03:00</dhEmi>
+                <verAplic>1.2.1+3BF96C</verAplic>
+                <serie>1</serie>
+                <nDPS>127900822</nDPS>
+                <dCompet>2026-01-31</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3550308</cLocEmi>
+                <prest>
+                    <CNPJ>13347016000117</CNPJ>
+                    <IM>42427630</IM>
+                    <email>apbr@fb.com</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>172501</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>Conjunto de pedidos de insercao de anuncios na internet durante o mes Janeiro Conforme Lei 12.741/2012, os valores aproximados dos tributos sao:  Tributos Federais: R$ 13346,85  Tributos Estaduais R$ 0,00  Tributos Municipais R$ 4068,56 Para duvidas relacionadas a esta nota fiscal, por favor entre em contato conosco atraves do email AR@fb.com ou seu gerente de contas. Referente a conta de anuncios: 684399148688473</xDescServ>
+                        <cNBS>114063300</cNBS>
+                        <cIntContrib>000000470861E</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>99233.05</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.90</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>2877.75</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+                <IBSCBS>
+                    <finNFSe>0</finNFSe>
+                    <indFinal>0</indFinal>
+                    <cIndOp>100101</cIndOp>
+                    <indDest>0</indDest>
+                    <valores>
+                        <trib>
+                            <gIBSCBS>
+                                <CST>000</CST>
+                                <cClassTrib>000001</cClassTrib>
+                            </gIBSCBS>
+                        </trib>
+                    </valores>
+                </IBSCBS>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35503081213347016000117000012790082226020253662392">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>LQ06ecCDBUlaD7xuvdjXKP040H4=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>P3P8b2j7oh+qudewYz8O7Izz4f2usoApYPWqUunxwkzwIOEKOoXC0bLa+XqurBrgD950ZczBOiiD7IRjAr4ZC6mAM4esIXGE2jzr5izoNl2xaYE28tmTEJ1Cxu+vyjis0o12s39v68rFRRPNcKGY+ZLBbLaaZN6kIA9BLxNhp212c/8xN/Xd3o5Yxe6ZQr/kst3IzxFwkq4Q951+GXLm2/dyhvwTGHlEze6Ys8KF/Vw3y0rLhI1J3Eodu49yX1qRQQbaMSBDBu7JVIul/cHmhdpT1OmlSi3bhJaBksX72k2sEUO4hXtg//1DoJt8ekuq1f1ZtJqobeKK4c83FLODaw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

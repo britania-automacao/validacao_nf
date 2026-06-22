@@ -1,0 +1,154 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS41191521202390909000129000000002626723120000012879">
+        <xLocEmi>Pinhais</xLocEmi>
+        <xLocPrestacao>Curitiba</xLocPrestacao>
+        <nNFSe>26267</nNFSe>
+        <cLocIncid>4119152</cLocIncid>
+        <xLocIncid>Pinhais</xLocIncid>
+        <xTribNac>Dedetização, desinfecção, desinsetização, imunização, higienização, desratização, pulverização e congêneres.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2023-12-05T11:45:31-03:00</dhProc>
+        <nDFSe>26267</nDFSe>
+        <emit>
+            <CNPJ>02390909000129</CNPJ>
+            <IM>25497</IM>
+            <xNome>BIOTRAT SISTEMAS DE SANEAMENTO LTDA</xNome>
+            <enderNac>
+                <xLgr>CORBELIA</xLgr>
+                <nro>1475</nro>
+                <xCpl>********</xCpl>
+                <xBairro>ALTO TARUMA</xBairro>
+                <cMun>4119152</cMun>
+                <UF>PR</UF>
+                <CEP>83325260</CEP>
+            </enderNac>
+            <fone>41992074545</fone>
+            <email>nfe@biotratsaneamento.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>285.00</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>5.70</vISSQN>
+            <vTotalRet>44.60</vTotalRet>
+            <vLiq>240.40</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS411915220239090900012900001000000000026267">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2023-12-05T11:45:31-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>26267</nDPS>
+                <dCompet>2023-12-05</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4119152</cLocEmi>
+                <prest>
+                    <CNPJ>02390909000129</CNPJ>
+                    <IM>25497</IM>
+                    <xNome>BIOTRAT SISTEMAS DE SANEAMENTO LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4119152</cMun>
+                            <CEP>83325260</CEP>
+                        </endNac>
+                        <xLgr>CORBELIA</xLgr>
+                        <nro>1475</nro>
+                        <xCpl>********</xCpl>
+                        <xBairro>ALTO TARUMA</xBairro>
+                    </end>
+                    <fone>41992074545</fone>
+                    <email>nfe@biotratsaneamento.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>avenida av nossa senhora da luz</xLgr>
+                        <nro>0</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>eduardo.barboza@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4106902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>071300</cTribNac>
+                        <xDescServ>AFASTAMENTO DE POMBOS</xDescServ>
+                        <cIntContrib>254975</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>Nao gera direito a credito fiscal de IPI. SERVICOS PRESTADOS COFORME ORDEM DE COMPRA 00513.812 condicao de pagamento boleto 45 dias (713) Servico Tributado no municipio do prestador.  Usuario responsavel pela emissao: 02.390.909-0001-29 - BIOTRAT SISTEMAS DE SANEAMENTO LTDA</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>285.00</vServ>
+                    </vServPrest>
+                    <vDescCondIncond>
+                        <vDescIncond>0.00</vDescIncond>
+                        <vDescCond>0.00</vDescCond>
+                    </vDescCondIncond>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <pAliq>2.00</pAliq>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                                <vPis>1.85</vPis>
+                                <vCofins>8.55</vCofins>
+                            </piscofins>
+                            <vRetCP>31.35</vRetCP>
+                            <vRetIRRF>0.00</vRetIRRF>
+                            <vRetCSLL>2.85</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>38.33</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>13.62</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41191521202390909000129000000002626723120000012879">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>Ok6xOMp51eoJkY41UVkUTlwg2i8=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>hY8PvtVSo2BMDvOlOKjweqOujO6MsVYylMdsN2n5W0xx1kIg5xLn8aZ1EnJ2FQC0y/Rrit2ovaNC26uOaugsHV3FC9xFU+pK526q4t4umyhL7Kp5kWmSXMTKinA/ItYlbxtKdciqKPtJ/vGSbXx6bgw7ouu2xAiUshBqLhCw9QyEAyt/3VYje7MFx2yPCIHsbYiOiMp8FwU26R+35VykNChu3yt70Crxw/IDGTdAUXG0/XOZUZYnbnZpP7/6fvQ4ujyzHnZvr3hTG+0n5KJ+AaPTB407Xmw2fnKSUql6tzfppfs8BJLUN9m/lbczklvg30K4QoiEJ8Sj64MdB7XTMg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH9DCCBdygAwIBAgIIJdr+wJ4xaiUwDQYJKoZIhvcNAQELBQAwdDELMAkGA1UE BhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEg ZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEYMBYGA1UEAxMPQUMg VkFMSUQgUkZCIHY1MB4XDTIzMDUyNjE3MjEzN1oXDTI0MDUyNTE3MjEzN1owggEG MQswCQYDVQQGEwJCUjELMAkGA1UECBMCUFIxEDAOBgNVBAcTB1BJTkhBSVMxEzAR BgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0 YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBB MTERMA8GA1UECxMIQVIgQ0FSRFMxGTAXBgNVBAsTEFZpZGVvY29uZmVyZW5jaWEx FzAVBgNVBAsTDjI1NDQ5NDM1MDAwMTQ5MSwwKgYDVQQDEyNNVU5JQ0lQSU8gREUg UElOSEFJUzo5NTQyMzAwMDAwMDEwMDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC AQoCggEBALjAxlzI0xszYb80dlvXMDcN1s9MQksxF+4pttbakCiiITJJk1Olp/fa T65uvWgYDtLehIKt2X63sYRH7Yisy4XCj3RQtNccpxfF7smzpNT0gUZDtlkXLYdk DkqgdvMDTZRl9JEHQDNImRpwUe+vUl6Upd6vmv+ubUXzHfkN6DJ74m2waR5tZgXm p/NUeXH0wXmxNULaTAEnrBzysL9qu/qE61c3vsPSdsH11n6usO3wi0kuav9DD+ee xXGtYfiufyY3fW+aQCyIRzHuZ9JAf38kEx2uh9UDPfVg5qHsoXj+DwAOLj5Z2XR4 f1IryAHK482Fo4Kud+04Y04OMmYixJkCAwEAAaOCAvQwggLwMIGcBggrBgEFBQcB AQSBjzCBjDBVBggrBgEFBQcwAoZJaHR0cDovL2ljcC1icmFzaWwudmFsaWRjZXJ0 aWZpY2Fkb3JhLmNvbS5ici9hYy12YWxpZHJmYi9hYy12YWxpZHJmYnY1LnA3YjAz BggrBgEFBQcwAYYnaHR0cDovL29jc3B2NS52YWxpZGNlcnRpZmljYWRvcmEuY29t LmJyMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUU8ul5HVQmUAsvlsVRcm+yzCqicUw cAYDVR0gBGkwZzBlBgZgTAECASUwWzBZBggrBgEFBQcCARZNaHR0cDovL2ljcC1i cmFzaWwudmFsaWRjZXJ0aWZpY2Fkb3JhLmNvbS5ici9hYy12YWxpZHJmYi9kcGMt YWMtdmFsaWRyZmJ2NS5wZGYwgbYGA1UdHwSBrjCBqzBToFGgT4ZNaHR0cDovL2lj cC1icmFzaWwudmFsaWRjZXJ0aWZpY2Fkb3JhLmNvbS5ici9hYy12YWxpZHJmYi9s Y3ItYWMtdmFsaWRyZmJ2NS5jcmwwVKBSoFCGTmh0dHA6Ly9pY3AtYnJhc2lsMi52 YWxpZGNlcnRpZmljYWRvcmEuY29tLmJyL2FjLXZhbGlkcmZiL2xjci1hYy12YWxp ZHJmYnY1LmNybDAOBgNVHQ8BAf8EBAMCBeAwHQYDVR0lBBYwFAYIKwYBBQUHAwIG CCsGAQUFBwMEMIHIBgNVHREEgcAwgb2BIGNhcm9saW5lLnNpbHZhQHBpbmhhaXMu cHIuZ292LmJyoD0GBWBMAQMEoDQEMjE3MDkxOTY1NTA3NTExNjY5ODcwMDAwMDAw MDAwMDAwMDAwMDA0MDM1MDU3OFNTUFBSoCYGBWBMAQMCoB0EG1JPU0EgTUFSSUEg REUgSkVTVVMgQ09MT01CT6AZBgVgTAEDA6AQBA45NTQyMzAwMDAwMDEwMKAXBgVg TAEDB6AOBAwwMDAwMDAwMDAwMDAwDQYJKoZIhvcNAQELBQADggIBAAzDupT0g1Iw Z8Tjs9FFp4Ue9te4DJ+Ju8MFfd6AfwynYaSpvQ49XXCwvTXQjRZmqq2gLQG+6HKJ hCFFb72Y2BstJmuOytsuOi7MGvAbJoE9tpxIx9MEMhVMJJG1BA6D2pwI4LoGRoJH GY9L8E1i8j4Hy4esSe3OE8gTJOgcj7rNLhH0p1vp4ji3rybtycwixRLuGPmenwwX FVTccmZoeWsn58ppQBf8abhgc1vKBfnRaGBkhO65es7Bt2tEBzMGb5ljyRxxo2FK vmf5owtSc3Np60tNOOO1lwK6FSMPAT3shwj2Ii2vaopbpniCrCHgqxbn7iaWWWG+ i19Dz9VUtHV8wYYWJWATrMCzg9oAXWWpZ2fNYttvSSul4gQ9lWnTna5/lk0Jj0ic j94rB/PUY4EzZ6PqRjQCU2rhISk/wjEVtV50g2BX4LNX2QwOHDqIZliZvSSqfSIi Z5qfiJQ21dbhAAgq/pnPD7IkWoQ2T5V2tp6w6zMfwQFbIAELpTXO4cs1nG9i5fIW hqP17kQ9x1LkzRBXK+108S6VKfMYPiCRSyaCTl4pYsAOHXh3xV9VvcO8BlHd0N9b HU7fJ6N1PCQUsQOdaQowhKyRy3JlfH0aPWSKkyDcZKAvL0tgdPJ+yng0odrJZqOH lBZN1xsVDLtHxqioZJg48PYd5ZtvaNpH</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

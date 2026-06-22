@@ -1,0 +1,182 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35503081259456277000176000000063819426066899305786">
+        <xLocEmi>São Paulo</xLocEmi>
+        <xLocPrestacao>São Paulo</xLocPrestacao>
+        <nNFSe>638194</nNFSe>
+        <cLocIncid>3550308</cLocIncid>
+        <xTribNac>Licenciamento ou cessão de direito de uso de programas de computação.</xTribNac>
+        <verAplic>1.2.1+3BF96C</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-06-12T01:15:47-03:00</dhProc>
+        <nDFSe>638194</nDFSe>
+        <emit>
+            <CNPJ>59456277000176</CNPJ>
+            <IM>95854770</IM>
+            <xNome>ORACLE DO BRASIL SISTEMAS LTDA</xNome>
+            <enderNac>
+                <xLgr>DR JOSE AUREO BUSTAMANTE</xLgr>
+                <nro>455</nro>
+                <xCpl>ANEXO MORUMBI BUSINESS</xCpl>
+                <xBairro>SANTO AMARO</xBairro>
+                <cMun>3550308</cMun>
+                <UF>SP</UF>
+                <CEP>04710090</CEP>
+            </enderNac>
+            <email>invoicing_br@oracle.com</email>
+        </emit>
+        <valores>
+            <vBC>23253.59</vBC>
+            <pAliqAplic>2.90</pAliqAplic>
+            <vISSQN>674.35</vISSQN>
+            <vTotalRet>2150.95</vTotalRet>
+            <vLiq>23253.59</vLiq>
+        </valores>
+        <IBSCBS>
+            <cLocalidadeIncid>4106902</cLocalidadeIncid>
+            <xLocalidadeIncid>Curitiba</xLocalidadeIncid>
+            <valores>
+                <vBC>20428.29</vBC>
+                <uf>
+                    <pIBSUF>0.10</pIBSUF>
+                    <pRedAliqUF>0.00</pRedAliqUF>
+                    <pAliqEfetUF>0.00</pAliqEfetUF>
+                </uf>
+                <mun>
+                    <pIBSMun>0.00</pIBSMun>
+                    <pRedAliqMun>0.00</pRedAliqMun>
+                    <pAliqEfetMun>0.00</pAliqEfetMun>
+                </mun>
+                <fed>
+                    <pCBS>0.90</pCBS>
+                    <pRedAliqCBS>0.00</pRedAliqCBS>
+                    <pAliqEfetCBS>0.00</pAliqEfetCBS>
+                </fed>
+            </valores>
+            <totCIBS>
+                <vTotNF>23253.59</vTotNF>
+                <gIBS>
+                    <vIBSTot>20.43</vIBSTot>
+                    <gIBSUFTot>
+                        <vIBSUF>20.42</vIBSUF>
+                    </gIBSUFTot>
+                    <gIBSMunTot>
+                        <vIBSMun>0.00</vIBSMun>
+                    </gIBSMunTot>
+                </gIBS>
+                <gCBS>
+                    <vCBS>183.85</vCBS>
+                </gCBS>
+            </totCIBS>
+        </IBSCBS>
+        <DPS versao="1.01">
+            <infDPS Id="DPS355030825945627700017600001000000000638194">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-06-12T01:15:47-03:00</dhEmi>
+                <verAplic>1.2.1+3BF96C</verAplic>
+                <serie>1</serie>
+                <nDPS>638194</nDPS>
+                <dCompet>2026-06-10</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3550308</cLocEmi>
+                <prest>
+                    <CNPJ>59456277000176</CNPJ>
+                    <IM>95854770</IM>
+                    <email>invoicing_br@oracle.com</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Av Nossa Senhora Da Luz 1330</xLgr>
+                        <nro>.</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <email>jorge.mello@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010501</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>Ref. Parcela de Licenca de Uso de Programas de Computador/ Atualizacoes Tecnicas. Parcela 1 / 1.02/06/2026 - 01/06/2027  OM/CT:20868265 AR:27556193 Conforme art.1-lei 12.741/12:PIS (1,65%) R$383,68 e COFINS (7,60%) R$1.767,27. Serv. nao sujeito a ret. de 11% de INSS por nao se enquadrar na lista de srv. IN 2.110/22, art.112, inciso X, que e exaustiva. Venc.:10-07-2026  Valor Liquido a Pagar R$ 23.253,59. Para a efetivacao do pagamento referente a esta NF-e favor verificar a fatura que sera enviada para o seu endereco ou entrar em contato com o contas a receber da Oracle ao email collections_br@oracle.com.</xDescServ>
+                        <cNBS>111032200</cNBS>
+                        <cIntContrib>000001310936SP000</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>23253.59</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.90</pAliq>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                                <vPis>383.68</vPis>
+                                <vCofins>1767.27</vCofins>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>2150.95</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>674.35</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+                <IBSCBS>
+                    <finNFSe>0</finNFSe>
+                    <indFinal>1</indFinal>
+                    <cIndOp>100501</cIndOp>
+                    <indDest>0</indDest>
+                    <valores>
+                        <trib>
+                            <gIBSCBS>
+                                <CST>000</CST>
+                                <cClassTrib>000001</cClassTrib>
+                            </gIBSCBS>
+                        </trib>
+                    </valores>
+                </IBSCBS>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35503081259456277000176000000063819426066899305786">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>YviMJHYNtn7CmW71p0oteJxJb7Q=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>ijkBKzYkiEizhaPtfs97n2H9e3YsuP0Ft09igjYLjmsH1wgi3V8+bQxf/KrG2xgMyjs//A8xdQBuLhwTBTf8Szb2WF9LKdHwfCxzAkPDgcoDCFfYErfhxGh449gdDQT2nG9ZICFa/CTHzfv3Wmzi+Cc+c70yt76Jlq63cX/2+51hEphjhaKRVJmuxyU2atjOhdyML1zMxcO07Cp2XXYHvuUEBbQ4aLnLSSgItTpn4imlHe6R342QTRTHEpdi7FDTL5jU5C2AfFn7x8W1wF1sCnB3T/2Unr9Pw79A4Te7IRRHX9m5bsprbCh7jUKnT+dtOLjchCYCfAl0Z9FcyhO7ZA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS26096001222828287000185260000000000326015822136460">
+        <xLocEmi>OLINDA</xLocEmi>
+        <xLocPrestacao>OLINDA</xLocPrestacao>
+        <nNFSe>2600000000003</nNFSe>
+        <cLocIncid>2609600</cLocIncid>
+        <xLocIncid>OLINDA</xLocIncid>
+        <xTribNac>Processamento de dados, textos, imagens, vídeos, páginas eletrônicas, aplicativos e sistemas de informação, entre outros formatos, e congêneres.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-05T08:59:22-00:00</dhProc>
+        <nDFSe>2600000000003</nDFSe>
+        <emit>
+            <CNPJ>22828287000185</CNPJ>
+            <IM>1124056</IM>
+            <xNome>INTELIVIX LTDA</xNome>
+            <xFant>INTELIVIX</xFant>
+            <enderNac>
+                <xLgr>AVN DR JOSE AUGUSTO MOREIRA</xLgr>
+                <nro>846</nro>
+                <xCpl>SL 1201</xCpl>
+                <xBairro>CASA CAIADA</xBairro>
+                <cMun>2609600</cMun>
+                <UF>PE</UF>
+                <CEP>52070015</CEP>
+            </enderNac>
+            <email>MAURICIO@INTELIVIX.COM</email>
+        </emit>
+        <valores>
+            <vBC>1400.00</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>28.00</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>1400.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS260960022282828700018502026002600000000003">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-05T08:59:22-00:00</dhEmi>
+                <verAplic>1.0</verAplic>
+                <serie>2026</serie>
+                <nDPS>2600000000003</nDPS>
+                <dCompet>2026-01-05</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2609600</cLocEmi>
+                <prest>
+                    <CNPJ>22828287000185</CNPJ>
+                    <IM>1124056</IM>
+                    <email>MAURICIO@INTELIVIX.COM</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICO SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2609600</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010301</cTribNac>
+                        <xDescServ>ANÁLISE E PROCESSOS DE DADOS JURIDICOS AUTOMAÇÃO DJE PERFIL MONITORADO DJE BANCO ITAU AG- 4861 C/C-25552-1 PIX(22.828.287/0001-85)</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>1400.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="Id-631D13E2-F4D1-4DF4-B2DF-D8FC45258273">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS26096001222828287000185260000000000326015822136460">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>NAgndTrVGZQV+/5PPpdKbsE9ihk=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>TkEzpyNmWApFViczzXAptq4rEW7E4E2gn0oUT+XYqRpyn+/UXHGgJyfl064ExSNCgiBtkZRNwX4nBIAWC0fjd4XlbFU+/75NJlaXtqkPqhdqQwYB9piyeBdcPwKeyYcyqTueAysM3T0zYA/ShyORvUpRuqA4T8j+hZEB4wWz6u95GVt2+ON60ix7NpDrtKOV5AmOvaEQQqiyh9c1aokLBNoIQ7+kArR2hIRdVgF2QpX0IONEOMVi9ND/DOPQvBDjZrjHcvQqu7DYxsG/lPuhjjCivFs7Vt3sQcfndXYFajnLYYrn21gGOx59gpOp97/7wyvtV5kh7SHNmrCk9l4xcA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

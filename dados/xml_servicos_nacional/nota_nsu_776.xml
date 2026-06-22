@@ -1,0 +1,120 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS42029092230659776000189000000000006825090886679124">
+        <xLocEmi>Brusque</xLocEmi>
+        <xLocPrestacao>Brusque</xLocPrestacao>
+        <nNFSe>68</nNFSe>
+        <cLocIncid>4202909</cLocIncid>
+        <xLocIncid>Brusque</xLocIncid>
+        <xTribNac>Serviços de programação e comunicação visual e congêneres.</xTribNac>
+        <xNBS>Serviços de projetos (design) de embalagens, expositores de loja e objetos promocionais para comunicação e vendas</xNBS>
+        <verAplic>EmissorWeb_1.3.0.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>2</procEmi>
+        <cStat>100</cStat>
+        <dhProc>2025-09-18T20:59:42-03:00</dhProc>
+        <nDFSe>150461</nDFSe>
+        <emit>
+            <CNPJ>30659776000189</CNPJ>
+            <xNome>JHOUSER JHONNY PADOANI 01971970948</xNome>
+            <enderNac>
+                <xLgr>NICOLAU LAURITZEN</xLgr>
+                <nro>165</nro>
+                <xBairro>GUARANI</xBairro>
+                <cMun>4202909</cMun>
+                <UF>SC</UF>
+                <CEP>88350470</CEP>
+            </enderNac>
+            <fone>4733552117</fone>
+            <email>jpadoani@gmail.com</email>
+        </emit>
+        <valores>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>2900.00</vLiq>
+        </valores>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+            <infDPS Id="DPS420290923065977600018900900000000000000072">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-09-18T20:59:42-03:00</dhEmi>
+                <verAplic>EmissorWeb_1.3.0.0</verAplic>
+                <serie>900</serie>
+                <nDPS>72</nDPS>
+                <dCompet>2025-09-18</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4202909</cLocEmi>
+                <prest>
+                    <CNPJ>30659776000189</CNPJ>
+                    <fone>47996668012</fone>
+                    <email>jpadoani@gmail.com</email>
+                    <regTrib>
+                        <opSimpNac>2</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>suprimentos@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4202909</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>230101</cTribNac>
+                        <xDescServ>1 SERVICOS DE PROGRAMACAO E COMUNICACAO VISUAL, DESENHO IN  SERVIÇO DE MONTAGEM: Vitrine Havan de Brusque/SC.Plotagem da parede/vitrine + piso, colagem de adesivo no vidro, além de u m letreiro da Britânia em acrílico móvel e uma penteadeira em MDF branco com espelho e iluminação para decoração. Instalação dia 15/09/2025 Número do MLA: 280245</xDescServ>
+                        <cNBS>114091320</cNBS>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>PEDIDO DE COMPRA 00652.283</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>2900.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42029092230659776000189000000000006825090886679124">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>35TZw1cD683BMlJVho9XVJ2K5Jg=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>pS+WuMSUhK+lnJpuzifMnSezGhpfeAclFQ5SiKD58c6hNmgQ9jKqBE3HVCU7CT/xSBjKR5IOmNGcU8wf5h9t6gQhZz+2Nk9YWxOr31im9p2p7ANHEfHNIhrNNerf41lEJGD1KfCWl/y/v1/xLkrM8yPHGlAotHaEMK6D7wVBFGsm69CTelvnjCdpenCTLNcT82TIRdUQ6KOeqKKLd0AoaB9rq8DGDU3SdKHZaJGLpdD/JqQQnjhSW7NwntlBdaqZyeKjMUSgGnSbKfAPBRlntMU7iQeMyxOwMiJ9UAihFRQ8Rl+CdDs9p2GUS8RoHh4Ci3v4ylgok3EUbIOEMiPABg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

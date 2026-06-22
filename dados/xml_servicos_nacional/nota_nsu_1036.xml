@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS41152001222602336000167000000000015025121189897727">
+        <xLocEmi>Maringá</xLocEmi>
+        <xLocPrestacao>Maringá</xLocPrestacao>
+        <nNFSe>150</nNFSe>
+        <cLocIncid>4115200</cLocIncid>
+        <xLocIncid>Maringá</xLocIncid>
+        <xTribNac>Propaganda e publicidade.</xTribNac>
+        <xTribMun>Propaganda e publicidade.</xTribMun>
+        <verAplic>FintelWeb_1.0.0.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-12-12T18:15:47-03:00</dhProc>
+        <nDFSe>118989772</nDFSe>
+        <emit>
+            <CNPJ>22602336000167</CNPJ>
+            <IM>168724</IM>
+            <xNome>MARCELO REINEKE - PROMOCOES - ME</xNome>
+            <xFant>MARCELO REINEKE - PROMOCOES - ME</xFant>
+            <enderNac>
+                <xLgr>EDEZIO DE ALMEIDA LIMA</xLgr>
+                <nro>646</nro>
+                <xCpl>RESIDENCIA</xCpl>
+                <xBairro>MONTE REI JARDIM</xBairro>
+                <cMun>4115200</cMun>
+                <UF>PR</UF>
+                <CEP>87083680</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>23536.12</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS411520022260233600016700001000000000000150">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-12-12T18:15:47-03:00</dhEmi>
+                <verAplic>FintelWeb_1.0.0.0</verAplic>
+                <serie>1</serie>
+                <nDPS>150</nDPS>
+                <dCompet>2025-12-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4115200</cLocEmi>
+                <prest>
+                    <CNPJ>22602336000167</CNPJ>
+                    <IM>168724</IM>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>82520060</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xCpl>AV NOSSA SENHORA DA LUZ</xCpl>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <fone>4132187678</fone>
+                    <email>marcelo.reineke@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4115200</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>170601</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>Prestação de serviços relacionados a vendas, referente ao mês 12/2025.</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>23536.12</vServ>
+                    </vServPrest>
+                    <vDescCondIncond/>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS41152001222602336000167000000000015025121189897727">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>+2d4lrGI4cpTClk8soigNitNA0JUq/T9ULazmNQAdPc=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>lviCsaBwPAFgnKy8/uVl6NUS/E3ThSypiLPSwvxTPRYwq+cOIrlNidvcN/XPphwYiM+nK9ILNgoOrgJAsr/JIssXnlobIM+J79HO+G+ZXJnc4gWLQdjAKtm8PHGoDdcPyprzedq0Uy/mCjtin19MPZ5GQVTs9HOczGcWcH0YjcQuj1hVqDU8nrhnOXNY7iXb//BXlEtA7j0nxo48qk+vgK8g6mgc4rOoFlY33mOh+oWy0LJy2tgHmkglGIraHfMMDxsDgwzW1eTeRAvZvL3X6SLj4+yvjkk2msq72vNLpuQanMvUJfYIXolTDFxwc32pgHYCRndyyUJqM6bD+p+Owg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

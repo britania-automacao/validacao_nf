@@ -1,40 +1,99 @@
 # src/services_etl.py
+import os
+import smtplib
+from email.message import EmailMessage
 import pandas as pd
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from dotenv import load_dotenv
+
+from openpyxl import Workbook
+from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
+from openpyxl.utils import get_column_letter
+
 from config import CaminhosProjeto
 
+load_dotenv()
+
+class LeitorSimplesNacional:
+    def __init__(self, diretorio_base: Path):
+        self.pasta = diretorio_base / "dados" / "consulta_simples_nacional"
+
+    def _limpar_cnpj(self, cnpj_bruto) -> str:
+        if pd.isna(cnpj_bruto): return ""
+        limpo = ''.join(filter(str.isdigit, str(cnpj_bruto)))
+        return limpo.zfill(14) if limpo else ""
+
+    def carregar(self) -> pd.DataFrame:
+        if not self.pasta.exists():
+            print("[AVISO] Pasta de Consulta Simples Nacional não encontrada. (dados/consulta_simples_nacional)")
+            return pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN'])
+            
+        arquivos = list(self.pasta.glob("*.xlsx")) + list(self.pasta.glob("*.csv"))
+        if not arquivos:
+            print("[AVISO] Nenhum arquivo de Consulta Simples Nacional encontrado na pasta.")
+            return pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN'])
+            
+        caminho = arquivos[0]
+        try:
+            print(f"[ETL SIMPLES] A ler base de Consulta Simples Nacional: {caminho.name}")
+            if caminho.suffix.lower() == '.xlsx':
+                df = pd.read_excel(caminho, dtype=str)
+            else:
+                df = pd.read_csv(caminho, sep=',', encoding='utf-8', dtype=str)
+                if len(df.columns) == 1:
+                    df = pd.read_csv(caminho, sep=';', encoding='latin1', dtype=str)
+                    
+            col_cnpj = [c for c in df.columns if 'CNPJ' in c.upper()][0]
+            col_simples = [c for c in df.columns if 'SIMPLES' in c.upper()][0]
+            
+            df['CNPJ_Limpo'] = df[col_cnpj].apply(self._limpar_cnpj)
+            df['Simples_SN'] = df[col_simples].str.strip().str.upper()
+            
+            df = df.drop_duplicates(subset=['CNPJ_Limpo'])
+            return df[['CNPJ_Limpo', 'Simples_SN']]
+            
+        except Exception as e:
+            print(f"[ERRO SIMPLES] Falha ao estruturar a base do Simples Nacional: {e}")
+            return pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN'])
+
+
 class LeitorXmlNacional:
-    """
-    Extrai dados do Ambiente Nacional (SPED), incluindo todas as tags de impostos e retenções.
-    """
     def __init__(self, caminhos: CaminhosProjeto):
         self.caminhos = caminhos
-        self.namespaces_sped = {'ns': 'http://www.sped.fazenda.gov.br/nfse'}
+
+    def _get_node(self, raiz, tags_possiveis):
+        for elem in raiz.iter():
+            local_name = elem.tag.split('}')[-1]
+            if local_name in tags_possiveis:
+                return elem
+        return None
+
+    def _get_text(self, raiz, tags_possiveis, default=None):
+        nodo = self._get_node(raiz, tags_possiveis)
+        if nodo is not None and nodo.text:
+            return nodo.text.strip()
+        return default
+
+    def _get_float(self, raiz, tags_possiveis):
+        valor_str = self._get_text(raiz, tags_possiveis)
+        if valor_str:
+            try: return float(valor_str)
+            except ValueError: return 0.0
+        return 0.0
 
     def _normalizar_numero_nota(self, numero_bruto: str) -> str:
         if not numero_bruto: return None
-        numero_limpo = str(numero_bruto).strip()
-        if len(numero_limpo) >= 13 and numero_limpo.isdigit():
-            return str(int(numero_limpo[-9:]))
-        return numero_limpo
-
-    def _extrair_valor(self, raiz, tag):
-        """Função auxiliar para buscar tags financeiras e converter para float de forma segura."""
-        nodo = raiz.find(f'.//ns:{tag}', self.namespaces_sped)
-        if nodo is not None and nodo.text:
-            try:
-                return float(nodo.text.strip())
-            except ValueError:
-                return 0.0
-        return 0.0
+        num_limpo = ''.join(filter(str.isdigit, str(numero_bruto)))
+        if not num_limpo: return str(numero_bruto).strip()
+        return str(int(num_limpo))
 
     def processar_diretorio_xml(self) -> pd.DataFrame:
-        print("[ETL XML] Iniciando extração do Fato Gerador (Governo)...")
-        
+        print("[ETL XML] A iniciar a extração do Fato Gerador (Governo)...")
         lista_arquivos_xml = list(self.caminhos.xml_servicos_nacional.glob("*.xml"))
+        
         if not lista_arquivos_xml:
-            print("[AVISO] Nenhum XML encontrado.")
+            print("[AVISO] A pasta de XMLs está vazia.")
             return pd.DataFrame()
 
         registros = []
@@ -43,93 +102,121 @@ class LeitorXmlNacional:
                 arvore = ET.parse(caminho)
                 raiz = arvore.getroot()
 
-                # Identificação
-                nodo_numero = raiz.find('.//ns:nNFSe', self.namespaces_sped)
-                numero_normalizado = self._normalizar_numero_nota(nodo_numero.text.strip() if nodo_numero is not None else None)
+                numero_bruto = self._get_text(raiz, ['nNFSe', 'Numero', 'nNFS-e'])
+                numero_normalizado = self._normalizar_numero_nota(numero_bruto)
 
-                nodo_emit = raiz.find('.//ns:emit', self.namespaces_sped)
-                cnpj = nodo_emit.find('ns:CNPJ', self.namespaces_sped).text.strip() if nodo_emit is not None else None
+                cnpj = None
+                nome_xml = "Fornecedor Desconhecido"
+                
+                nodo_forn = self._get_node(raiz, ['prest', 'PrestadorServico', 'emit', 'Emitente'])
+                if nodo_forn is not None:
+                    cnpj_bruto = self._get_text(nodo_forn, ['CNPJ', 'Cnpj'])
+                    if cnpj_bruto: 
+                        cnpj = ''.join(filter(str.isdigit, str(cnpj_bruto))).zfill(14)
+                    nome_xml = self._get_text(nodo_forn, ['xNome', 'RazaoSocial'], "Fornecedor Desconhecido")
 
-                # Valor Bruto Principal
-                valor_bruto = self._extrair_valor(raiz, 'vServ')
-                if valor_bruto == 0.0:
-                    valor_bruto = self._extrair_valor(raiz, 'vBC')
+                valor_bruto = self._get_float(raiz, ['vServ', 'ValorServicos'])
+                if valor_bruto == 0.0: 
+                    valor_bruto = self._get_float(raiz, ['vBC', 'BaseCalculo'])
 
-                # Puxa a flag que diz se a Britânia deve ou não reter o imposto
-                nodo_ret_iss = raiz.find('.//ns:tpRetISSQN', self.namespaces_sped)
-                flag_ret_iss = str(nodo_ret_iss.text.strip()) if nodo_ret_iss is not None and nodo_ret_iss.text else '1'
+                flag_ret_iss = self._get_text(raiz, ['tpRetISSQN', 'IssRetido'], '1')
+                op_simp_nac = self._get_text(raiz, ['opSimpNac', 'OptanteSimplesNacional'], '2')
 
                 if cnpj and numero_normalizado:
                     chave = f"{cnpj}_{numero_normalizado}"
                     registros.append({
-                        "Chave": chave,
-                        "CNPJ_XML": cnpj,
+                        "Chave": chave, 
+                        "CNPJ_XML": cnpj, 
                         "Nota_XML": numero_normalizado,
+                        "Nome_XML": nome_xml, 
                         "Valor_XML": valor_bruto,
-                        "ISS_XML": self._extrair_valor(raiz, 'vISSQN'),
-                        "Flag_Ret_ISS": flag_ret_iss, # 1 = Não Retido, 2 = Retido
-                        "IRRF_XML": self._extrair_valor(raiz, 'vRetIRRF'),
-                        "INSS_XML": self._extrair_valor(raiz, 'vRetCP'),
-                        "PIS_XML": self._extrair_valor(raiz, 'vRetPIS'),
-                        "COFINS_XML": self._extrair_valor(raiz, 'vRetCOFINS'),
-                        "CSLL_XML": self._extrair_valor(raiz, 'vRetCSLL'),
+                        "ISS_XML": self._get_float(raiz, ['vISSQN', 'ValorIss']),
+                        "Flag_Ret_ISS": flag_ret_iss,
+                        "opSimpNac_XML": op_simp_nac,
+                        "IRRF_XML": self._get_float(raiz, ['vRetIRRF', 'ValorIr']),
+                        "INSS_XML": self._get_float(raiz, ['vRetCP', 'ValorInss']),
+                        "PIS_XML": self._get_float(raiz, ['vRetPIS', 'ValorPis']),
+                        "COFINS_XML": self._get_float(raiz, ['vRetCOFINS', 'ValorCofins']),
+                        "CSLL_XML": self._get_float(raiz, ['vRetCSLL', 'ValorCsll']),
                         "Origem_XML": caminho.name
                     })
-            except Exception as e:
-                print(f"[ERRO XML] Falha no arquivo {caminho.name}: {e}")
 
-        df = pd.DataFrame(registros)
-        print(f"[SUCESSO XML] {len(df)} notas processadas com mapeamento tributário.\n")
-        return df
+            except Exception:
+                pass 
+
+        print(f"[ETL XML] Sucesso! {len(registros)} Fatos Geradores mapeados.")
+        return pd.DataFrame(registros)
 
 
 class LeitorRelatorioTotvs:
-    """
-    Lê o relatório do ERP, limpando caracteres e capturando o lançamento humano dos impostos.
-    """
     def __init__(self, caminhos: CaminhosProjeto):
         self.caminhos = caminhos
 
     def _limpar_cnpj(self, cnpj_bruto) -> str:
         if pd.isna(cnpj_bruto): return ""
-        return ''.join(filter(str.isdigit, str(cnpj_bruto)))
+        limpo = ''.join(filter(str.isdigit, str(cnpj_bruto)))
+        return limpo.zfill(14) if limpo else ""
 
     def _limpar_numero_nota(self, numero_bruto) -> str:
         if pd.isna(numero_bruto): return ""
-        numero_str = str(numero_bruto).strip()
-        if numero_str.endswith(".0"): numero_str = numero_str[:-2]
-        return numero_str
+        num_limpo = ''.join(filter(str.isdigit, str(numero_bruto)))
+        if num_limpo: return str(int(num_limpo))
+        return str(numero_bruto).strip()
 
     def _converter_moeda_totvs(self, df, nome_coluna):
-        """Troca padrão brasileiro de milhar e vírgula para float americano."""
-        if nome_coluna in df.columns:
-            return df[nome_coluna].astype(str).str.replace('.', '', regex=False).str.replace(',', '.', regex=False).apply(pd.to_numeric, errors='coerce').fillna(0.0)
-        return 0.0
+        if nome_coluna not in df.columns:
+            return 0.0
+            
+        def limpar_moeda(valor):
+            if pd.isna(valor): return 0.0
+            v_str = str(valor).strip()
+            if ',' in v_str:
+                v_str = v_str.replace('.', '').replace(',', '.')
+            try:
+                return float(v_str)
+            except ValueError:
+                return 0.0
+
+        return df[nome_coluna].apply(limpar_moeda)
 
     def processar_relatorio(self) -> pd.DataFrame:
-        print("[ETL TOTVS] Iniciando leitura do ERP...")
-        
+        print("[ETL TOTVS] A iniciar a leitura do ERP...")
         arquivos_totvs = list(self.caminhos.entrada_totvs.glob("*.xlsx")) + list(self.caminhos.entrada_totvs.glob("*.csv"))
         if not arquivos_totvs:
             print("[AVISO] Nenhum relatório do TOTVS encontrado.")
             return pd.DataFrame()
 
-        caminho_relatorio = arquivos_totvs[0]
+        lista_dfs = []
+
+        for caminho_relatorio in arquivos_totvs:
+            try:
+                print(f"[ETL TOTVS] A processar arquivo: {caminho_relatorio.name}")
+                if caminho_relatorio.suffix.lower() == '.xlsx':
+                    df_temp = pd.read_excel(caminho_relatorio, dtype=str)
+                else:
+                    try:
+                        df_temp = pd.read_csv(caminho_relatorio, sep=';', encoding='utf-8', dtype=str)
+                    except UnicodeDecodeError:
+                        df_temp = pd.read_csv(caminho_relatorio, sep=';', encoding='latin1', dtype=str)
+                
+                lista_dfs.append(df_temp)
+            except Exception as e:
+                print(f"[ERRO TOTVS] Falha ao ler o arquivo {caminho_relatorio.name}: {e}")
+
+        if not lista_dfs:
+            print("[ERRO TOTVS] Nenhum arquivo pôde ser lido com sucesso.")
+            return pd.DataFrame()
+
+        df_totvs = pd.concat(lista_dfs, ignore_index=True)
+
         try:
-            if caminho_relatorio.suffix.lower() == '.xlsx':
-                df_totvs = pd.read_excel(caminho_relatorio, dtype=str)
-            else:
-                df_totvs = pd.read_csv(caminho_relatorio, sep=';', encoding='latin1', dtype=str)
-            
             df_totvs.dropna(how='all', inplace=True)
             df_totvs.columns = df_totvs.columns.str.strip().str.replace('\n', ' ').str.replace('\r', '')
-            
+
             if 'Docto' in df_totvs.columns and 'CNPJ emit' in df_totvs.columns:
-                
                 df_totvs['Nota_TOTVS'] = df_totvs['Docto'].apply(self._limpar_numero_nota)
                 df_totvs['CNPJ_TOTVS'] = df_totvs['CNPJ emit'].apply(self._limpar_cnpj)
                 
-                # Conversão de todas as colunas financeiras
                 df_totvs['Valor_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'Tot. Nota')
                 df_totvs['ISS_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'ISS')
                 df_totvs['IRRF_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'IRRF')
@@ -141,93 +228,362 @@ class LeitorRelatorioTotvs:
                 df_totvs['Chave'] = df_totvs.apply(lambda row: f"{row['CNPJ_TOTVS']}_{row['Nota_TOTVS']}" if row['CNPJ_TOTVS'] and row['Nota_TOTVS'] else None, axis=1)
                 df_totvs = df_totvs.dropna(subset=['Chave']).copy()
                 
-                colunas_export = ['Chave', 'Nome Abrev', 'Valor_TOTVS', 'ISS_TOTVS', 'IRRF_TOTVS', 'INSS_TOTVS', 'PIS_TOTVS', 'COFINS_TOTVS', 'CSLL_TOTVS']
-                print(f"[SUCESSO TOTVS] {len(df_totvs)} lançamentos processados.\n")
-                return df_totvs[colunas_export]
+                print(f"[ETL TOTVS] Lançamentos finais enviados para o cruzamento: {len(df_totvs)}")
+                return df_totvs
             else:
-                print("[ERRO TOTVS] Colunas obrigatórias não encontradas.")
+                print("[ERRO TOTVS] Colunas 'Docto' ou 'CNPJ emit' não encontradas nos arquivos combinados.")
                 return pd.DataFrame()
         except Exception as e:
-            print(f"[ERRO TOTVS] Falha ao processar relatório: {e}")
+            print(f"[ERRO TOTVS] Falha ao estruturar relatórios combinados: {e}")
             return pd.DataFrame()
 
 
 class AuditorFiscal:
-    """
-    O Motor de Malha Fina. Compara Fato Gerador x Lançamento Contábil centavo por centavo.
-    """
-    def cruzar_dados(self, df_xml: pd.DataFrame, df_totvs: pd.DataFrame) -> pd.DataFrame:
-        print("[AUDITORIA] Rodando Malha Fina Tributária...")
-        
+    def cruzar_dados(self, df_xml: pd.DataFrame, df_totvs: pd.DataFrame, df_simples: pd.DataFrame) -> pd.DataFrame:
+        print("[AUDITORIA] A executar a Malha Fina Tributária...")
         if df_xml.empty or df_totvs.empty:
             return pd.DataFrame()
             
         df_cruzamento = pd.merge(df_xml, df_totvs, on='Chave', how='outer', indicator=True)
         
+        df_cruzamento['CNPJ_Merge'] = df_cruzamento['CNPJ_TOTVS'].fillna(df_cruzamento['CNPJ_XML'])
+        
+        if not df_simples.empty:
+            df_cruzamento = pd.merge(df_cruzamento, df_simples, left_on='CNPJ_Merge', right_on='CNPJ_Limpo', how='left')
+        else:
+            df_cruzamento['Simples_SN'] = 'NÃO'
+            
+        for col, col_fallback in [('CNPJ emit', 'CNPJ_XML'), ('Docto', 'Nota_XML'), ('Nome Abrev', 'Nome_XML'), ('Tot. Nota', 'Valor_XML')]:
+            if col in df_cruzamento.columns:
+                df_cruzamento[col] = df_cruzamento[col].fillna(df_cruzamento[col_fallback])
+        
         def validar_impostos(row):
-            if row['_merge'] == 'left_only':
-                return "ALERTA CRÍTICO: Nota no Governo, NÃO LANÇADA no ERP."
-            elif row['_merge'] == 'right_only':
-                return "ALERTA: Documento no TOTVS, não achado no Governo."
+            if row['_merge'] == 'right_only': return "FALTA_XML"
+            if row['_merge'] == 'left_only': return "" 
             
             erros_encontrados = []
             
-            # Validação do Valor Principal
             if abs(row['Valor_XML'] - row['Valor_TOTVS']) > 0.10:
-                erros_encontrados.append(f"Bruto(XML: {row['Valor_XML']:.2f} | ERP: {row['Valor_TOTVS']:.2f})")
+                erros_encontrados.append("VALOR_BRUTO")
                 
-            # Validação INTELIGENTE do ISS (Olhando para a Flag de Retenção)
             flag_ret = str(row.get('Flag_Ret_ISS', '1'))
-            # Só espera que o TOTVS tenha valor de ISS se a flag oficial for '2' (Retido)
-            iss_esperado_totvs = row.get('ISS_XML', 0.0) if flag_ret == '2' else 0.0
-            val_iss_totvs = row.get('ISS_TOTVS', 0.0)
-            
-            if abs(iss_esperado_totvs - val_iss_totvs) > 0.10:
-                texto_regra = f"{iss_esperado_totvs:.2f} (Retido)" if flag_ret == '2' else "0.00 (Não Retido)"
-                erros_encontrados.append(f"ISS(XML Esperava: {texto_regra} | ERP Lançou: {val_iss_totvs:.2f})")
+            iss_esperado = row.get('ISS_XML', 0.0) if flag_ret == '2' else 0.0
+            if abs(iss_esperado - row.get('ISS_TOTVS', 0.0)) > 0.10:
+                erros_encontrados.append("ISS")
                 
-            # Validação dos Impostos Federais (Já são exclusivos de retenção nativamente no XML)
-            matriz_federais = [
-                ('IRRF', 'IRRF_XML', 'IRRF_TOTVS'),
-                ('INSS', 'INSS_XML', 'INSS_TOTVS'),
-                ('PIS', 'PIS_XML', 'PIS_TOTVS'),
-                ('COFINS', 'COFINS_XML', 'COFINS_TOTVS'),
-                ('CSLL', 'CSLL_XML', 'CSLL_TOTVS')
-            ]
+            is_simples = (str(row.get('Simples_SN', 'NÃO')).strip().upper() == 'SIM') or (str(row.get('opSimpNac_XML', '2')) == '1')
             
-            for nome_imposto, col_xml, col_erp in matriz_federais:
-                val_xml = row.get(col_xml, 0.0)
-                val_erp = row.get(col_erp, 0.0)
-                if abs(val_xml - val_erp) > 0.10:
-                    erros_encontrados.append(f"{nome_imposto}(XML: {val_xml:.2f} | ERP: {val_erp:.2f})")
+            teve_erro_simples = False
+            if is_simples:
+                soma_federais_totvs = sum([
+                    row.get('IRRF_TOTVS', 0.0),
+                    row.get('INSS_TOTVS', 0.0),
+                    row.get('CSLL_TOTVS', 0.0),
+                    row.get('PIS_TOTVS', 0.0),
+                    row.get('COFINS_TOTVS', 0.0)
+                ])
+                if soma_federais_totvs > 0.05:
+                    erros_encontrados.append("SIMPLES_RET_INDEVIDA")
+                    teve_erro_simples = True
+
+            if not teve_erro_simples:
+                for nome, col_xml, col_erp in [('IR', 'IRRF_XML', 'IRRF_TOTVS'), ('INSS', 'INSS_XML', 'INSS_TOTVS'), ('CS', 'CSLL_XML', 'CSLL_TOTVS')]:
+                    if abs(row.get(col_xml, 0.0) - row.get(col_erp, 0.0)) > 0.10:
+                        erros_encontrados.append(nome)
             
-            if erros_encontrados:
-                return "DIVERGÊNCIA TRIBUTÁRIA -> " + " ; ".join(erros_encontrados)
-            else:
-                return "OK: 100% Conciliado (Bruto e Impostos Bateram)."
+            return ",".join(erros_encontrados) if erros_encontrados else "OK"
+            
+        def status_curto(row):
+            if row['_merge'] == 'right_only': return 'FALTA XML'
+            elif row['_merge'] == 'left_only': return 'IGNORAR'
+            elif row['Observações'] != 'OK': return 'DIVERGENTE'
+            else: return 'CONCILIADO'
+            
+        def mapear_apontamento(obs):
+            if obs in ['OK', '']: return "Sem Erro"
+            if obs == 'FALTA_XML': return "Nota sem XML na Receita"
+            if "SIMPLES_RET_INDEVIDA" in obs: return "Sem Consulta Simples nacional"
+            
+            tem_ir, tem_cs, tem_inss, tem_iss = "IR" in obs, "CS" in obs, "INSS" in obs, "ISS" in obs
+            
+            if tem_ir and tem_cs and tem_iss and tem_inss: return "Verf. IR/CS/ISS/INSS"
+            if tem_ir and tem_cs and tem_inss: return "Verf. IR/CS/INSS"
+            if tem_ir and tem_iss and tem_inss: return "Verf. IR/ISS/INSS"
+            if tem_ir and tem_cs: return "Verf. IR/CS"
+            if tem_ir and tem_inss: return "Verf. IR/INSS"
+            if tem_cs and tem_inss: return "Verf. CS/INSS"
+            if tem_ir: return "Verf. IR"
+            if tem_iss: return "Verf. ISS"
+            if tem_inss: return "Verf. INSS"
+            if tem_cs: return "Verf. CS"
+            return "Outras Divergências"
                 
-        df_cruzamento['Status_Auditoria'] = df_cruzamento.apply(validar_impostos, axis=1)
-        print("[SUCESSO] Auditoria Concluída!")
+        df_cruzamento['Observações'] = df_cruzamento.apply(validar_impostos, axis=1)
+        df_cruzamento['Valid. FINAL'] = df_cruzamento.apply(status_curto, axis=1)
+        df_cruzamento['Apontamento_Mapeado'] = df_cruzamento['Observações'].apply(mapear_apontamento)
+        
         return df_cruzamento
+
+    def exportar_relatorio_divergencias(self, df_resultado: pd.DataFrame, caminho_saida: Path) -> Path:
+        print(f"[EXPORTAÇÃO] A desenhar painel executivo e a pintar colunas de erro...")
+        if df_resultado.empty: return None
+
+        df_lancadas = df_resultado[df_resultado['_merge'].isin(['both', 'right_only'])].copy()
+        if df_lancadas.empty: return None
+            
+        df_erros = df_lancadas[df_lancadas['Valid. FINAL'].isin(['DIVERGENTE', 'FALTA XML'])].copy()
+
+        cols_financeiras = ['Valor_TOTVS', 'IRRF_TOTVS', 'CSLL_TOTVS', 'INSS_TOTVS', 'ISS_TOTVS']
+        for c in cols_financeiras:
+            if c in df_lancadas.columns:
+                df_lancadas[c] = pd.to_numeric(df_lancadas[c], errors='coerce').fillna(0)
+
+        total_nfs = len(df_lancadas)
+        total_verificar = len(df_erros)
+        
+        est_col = 'Est' if 'Est' in df_lancadas.columns else 'Est Fiscal'
+        if est_col in df_lancadas.columns:
+            df_estab = df_lancadas.groupby(est_col).size().reset_index(name='Total NFS')
+            erros_estab = df_erros.groupby(est_col).size().reset_index(name='Para Verificar')
+            df_estab = pd.merge(df_estab, erros_estab, on=est_col, how='left').fillna(0)
+            df_estab['Para Verificar'] = df_estab['Para Verificar'].astype(int)
+        else:
+            df_estab = pd.DataFrame(columns=['Estab', 'Total NFS', 'Para Verificar'])
+        
+        lista_apontamentos = [
+            (1, "Sem Consulta Simples nacional"),
+            (2, "S/ Cadast Base Ret"),
+            (3, "Verf. IR/CS/ISS/INSS"),
+            (4, "Verf. IR"),
+            (5, "Verf. IR/CS"),
+            (6, "Verf. IR/CS/INSS"),
+            (7, "Verf. ISS"),
+            (8, "Verf. INSS"),
+            (9, "Verf. CS"),
+            (10, "Verf. CS/INSS"),
+            (11, "Verf. IR/ISS/INSS"),
+            (12, "Verf. IR/INSS"),
+            (13, "Nota sem XML na Receita")
+        ]
+        erros_contagem = df_erros['Apontamento_Mapeado'].value_counts().to_dict()
+        dados_apontamentos = []
+        for ordem, desc in lista_apontamentos:
+            qtd = erros_contagem.get(desc, 0)
+            dados_apontamentos.append((ordem, desc, qtd))
+            
+        if 'CNPJ emit' in df_lancadas.columns and 'Nome Abrev' in df_lancadas.columns:
+            df_forn = df_lancadas.groupby(['CNPJ emit', 'Nome Abrev']).size().reset_index(name='Quantidade')
+            df_forn = df_forn.sort_values(by='Quantidade', ascending=False).head(10)
+        else:
+            df_forn = pd.DataFrame(columns=['CNPJ emit', 'Nome Abrev', 'Quantidade'])
+        
+        if 'Cód.Item' in df_lancadas.columns and 'Descrição Item' in df_lancadas.columns:
+            df_serv = df_lancadas.groupby(['Cód.Item', 'Descrição Item']).size().reset_index(name='Quantidades')
+            df_serv = df_serv.sort_values(by='Quantidades', ascending=False).head(5)
+        else:
+            df_serv = pd.DataFrame(columns=['Cód.Item', 'Desc. Tipo de serviço', 'Quantidades'])
+            
+        totais_gerais = [
+            ("Valor Total NFS", df_lancadas['Valor_TOTVS'].sum()),
+            ("Total IRRF", df_lancadas['IRRF_TOTVS'].sum()),
+            ("Total CSRF", df_lancadas['CSLL_TOTVS'].sum()),
+            ("TOTAL INSS", df_lancadas['INSS_TOTVS'].sum()),
+            ("TOTAL I.S.S", df_lancadas['ISS_TOTVS'].sum())
+        ]
+
+        arquivo_saida = caminho_saida / "Relatorio_Divergencias.xlsx"
+        wb = Workbook()
+        ws = wb.active
+        ws.title = "Dashboard"
+        ws.sheet_view.showGridLines = False
+
+        fill_title = PatternFill(fill_type="solid", fgColor="0E2841")
+        fill_header = PatternFill(fill_type="solid", fgColor="FFC000")
+        font_title = Font(bold=True, color="FFFFFF")
+        font_header = Font(bold=True, color="000000")
+        borda = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'), bottom=Side(style='thin'))
+
+        def criar_titulo_secao(ws, col_start, col_end, row, texto):
+            ws.merge_cells(start_row=row, start_column=col_start, end_row=row, end_column=col_end)
+            c = ws.cell(row=row, column=col_start, value=texto)
+            c.font = font_title
+            c.fill = fill_title
+            c.alignment = Alignment(horizontal="center", vertical="center")
+            for col in range(col_start, col_end + 1):
+                ws.cell(row=row, column=col).border = borda
+
+        def criar_tabela(ws, col_start, row_start, headers, dados):
+            for i, h in enumerate(headers):
+                c = ws.cell(row=row_start, column=col_start+i, value=h)
+                c.font = font_header
+                c.fill = fill_header
+                c.alignment = Alignment(horizontal="center", vertical="center")
+                c.border = borda
+            for r_idx, row_data in enumerate(dados, 1):
+                for c_idx, val in enumerate(row_data):
+                    c = ws.cell(row=row_start+r_idx, column=col_start+c_idx, value=val)
+                    c.border = borda
+                    if isinstance(val, (int, float)): 
+                        c.alignment = Alignment(horizontal="center", vertical="center")
+
+        larguras = {'B': 12, 'C': 15, 'D': 18, 'E': 3, 'F': 8, 'G': 35, 'H': 15, 'I': 3, 'J': 18, 'K': 35, 'L': 15, 'M': 3, 'N': 20, 'O': 20}
+        for col, width in larguras.items():
+            ws.column_dimensions[col].width = width
+
+        criar_titulo_secao(ws, 2, 4, 2, "RESUMO DE NFS")
+        ws.cell(row=3, column=2, value="Total de NFS").font = Font(bold=True)
+        ws.cell(row=3, column=3, value=total_nfs).alignment = Alignment(horizontal="left")
+        ws.cell(row=4, column=2, value="Total NFS Para Verificar").font = Font(bold=True)
+        ws.cell(row=4, column=3, value=total_verificar).alignment = Alignment(horizontal="left")
+        
+        criar_tabela(ws, 2, 6, ["Estab", "Total NFS", "Para Verificar"], df_estab.values.tolist())
+        
+        criar_titulo_secao(ws, 6, 8, 2, "APONTAMENTOS")
+        criar_tabela(ws, 6, 3, ["Ordem", "Descrição", "Quantidades"], dados_apontamentos)
+        
+        criar_titulo_secao(ws, 10, 12, 2, "10 MAIORES FORNECEDORES DE EMISSÃO")
+        criar_tabela(ws, 10, 3, ["Emit.", "Nome Abrev", "Quantidade"], df_forn.values.tolist())
+        
+        row_serv = 3 + len(df_forn) + 2
+        criar_titulo_secao(ws, 10, 12, row_serv, "5 MAIORES TIPO DE SERVIÇOS")
+        criar_tabela(ws, 10, row_serv+1, ["Cód.Item", "Desc. Tipo de serviço", "Quantidades"], df_serv.values.tolist())
+
+        criar_titulo_secao(ws, 14, 15, 2, "TOTAL GERAL")
+        criar_tabela(ws, 14, 3, ["Descrição", "Valor"], totais_gerais)
+        
+        for row in range(4, 4 + len(totais_gerais)):
+            c_val = ws.cell(row=row, column=15)
+            c_val.number_format = 'R$ #,##0.00'
+
+        # =======================================================
+        # ABA 2: VALIDAÇÃO COM CÉLULAS PINTADAS
+        # =======================================================
+        ws_val = wb.create_sheet("Validação")
+        colunas_tecnicas = ['Chave', 'CNPJ_XML', 'Nota_XML', 'Nome_XML', 'Valor_XML', 'ISS_XML', 'Flag_Ret_ISS', 'IRRF_XML', 'INSS_XML', 'PIS_XML', 'COFINS_XML', 'CSLL_XML', 'Origem_XML', 'Nota_TOTVS', 'CNPJ_TOTVS', 'Valor_TOTVS', 'ISS_TOTVS', 'IRRF_TOTVS', 'INSS_TOTVS', 'PIS_TOTVS', 'COFINS_TOTVS', 'CSLL_TOTVS', '_merge', 'Apontamento_Mapeado']
+        colunas_originais = [col for col in df_resultado.columns if col not in colunas_tecnicas and col not in ['Observações', 'Valid. FINAL', 'CNPJ_Merge', 'CNPJ_Limpo', 'Simples_SN']]
+        colunas_finais = ['Observações', 'Valid. FINAL'] + colunas_originais
+        
+        ws_val.append(colunas_finais)
+        for col_idx, col_name in enumerate(colunas_finais, 1):
+            celula = ws_val.cell(row=1, column=col_idx)
+            celula.font = font_title
+            celula.fill = fill_title
+            ws_val.column_dimensions[celula.column_letter].width = 20
+            
+        if not df_erros.empty:
+            df_erros['Ordem_Sort'] = df_erros['Valid. FINAL'].apply(lambda x: 1 if x == 'FALTA XML' else 0)
+            df_erros = df_erros.sort_values(by=['Ordem_Sort', 'Apontamento_Mapeado']).drop(columns=['Ordem_Sort'])
+            
+            df_export = df_erros[colunas_finais].copy()
+            df_export = df_export.fillna("")
+            
+            # --- DEFINIÇÃO DO ESTILO VISUAL DOS ERROS ---
+            col_idx_map = {col_name: idx for idx, col_name in enumerate(colunas_finais, 1)}
+            fill_erro = PatternFill(fill_type="solid", fgColor="FFC7CE") # Fundo Vermelho Claro
+            font_erro = Font(color="9C0006", bold=True)                  # Texto Vermelho Escuro
+            
+            for r_idx, r in enumerate(df_export.itertuples(index=False), start=2):
+                ws_val.append(list(r))
+                
+                obs = str(r[0]) # A coluna Observações é sempre o índice 0 na iteração
+                
+                # Função rápida para pintar o par de colunas que está errado
+                def pintar_celulas(col_xml, col_totvs):
+                    if col_xml in col_idx_map:
+                        ws_val.cell(row=r_idx, column=col_idx_map[col_xml]).fill = fill_erro
+                        ws_val.cell(row=r_idx, column=col_idx_map[col_xml]).font = font_erro
+                    if col_totvs in col_idx_map:
+                        ws_val.cell(row=r_idx, column=col_idx_map[col_totvs]).fill = fill_erro
+                        ws_val.cell(row=r_idx, column=col_idx_map[col_totvs]).font = font_erro
+
+                # Condicionais que disparam a "pintura"
+                if "VALOR_BRUTO" in obs: pintar_celulas("Valor_XML", "Valor_TOTVS")
+                if "ISS" in obs: pintar_celulas("ISS_XML", "ISS_TOTVS")
+                if "IR" in obs: pintar_celulas("IRRF_XML", "IRRF_TOTVS")
+                if "INSS" in obs: pintar_celulas("INSS_XML", "INSS_TOTVS")
+                if "CS" in obs: pintar_celulas("CSLL_XML", "CSLL_TOTVS")
+                
+                # Se for erro de DARF do Simples Nacional, pinta as colunas que o ERP reteve indevidamente
+                if "SIMPLES_RET_INDEVIDA" in obs:
+                    for fed_col in ["IRRF_TOTVS", "INSS_TOTVS", "CSLL_TOTVS", "PIS_TOTVS", "COFINS_TOTVS"]:
+                        if fed_col in col_idx_map:
+                            try:
+                                val = float(r[col_idx_map[fed_col] - 1])
+                                if val > 0:
+                                    ws_val.cell(row=r_idx, column=col_idx_map[fed_col]).fill = fill_erro
+                                    ws_val.cell(row=r_idx, column=col_idx_map[fed_col]).font = font_erro
+                            except ValueError:
+                                pass
+                
+        ws_val.freeze_panes = "A2"
+        ultima_coluna = get_column_letter(ws_val.max_column)
+        ws_val.auto_filter.ref = f"A1:{ultima_coluna}{ws_val.max_row}"
+
+        wb.save(arquivo_saida)
+        print(f"[SUCESSO] Dashboard Pixel Perfect gerado em: {arquivo_saida}")
+        return arquivo_saida
+
+
+class NotificadorEmail:
+    def enviar_relatorio(self, caminho_arquivo: Path):
+        print(f"[EMAIL] A preparar envio para destinatário...")
+        
+        remetente = os.getenv('EMAIL_REMETENTE')
+        senha = os.getenv('EMAIL_SENHA')
+        destinatario = os.getenv('EMAIL_DESTINATARIO')
+        smtp_server = os.getenv('SMTP_SERVER')
+        smtp_port = int(os.getenv('SMTP_PORT', 587))
+
+        if not all([remetente, senha, destinatario, smtp_server]):
+            print("[AVISO] Credenciais de e-mail ausentes no .env. A ignorar envio.")
+            return
+
+        try:
+            msg = EmailMessage()
+            msg['Subject'] = '📊 Relatório Diário: Malha Fina e Apontamentos'
+            msg['From'] = remetente
+            msg['To'] = destinatario
+            msg.set_content("Bom dia,\n\nA auditoria foi concluída.\nEm anexo, a folha de cálculo executiva.\n\nCom os melhores cumprimentos,\nAutomação")
+
+            with open(caminho_arquivo, 'rb') as f:
+                msg.add_attachment(f.read(), maintype='application', subtype='vnd.openxmlformats-officedocument.spreadsheetml.sheet', filename=caminho_arquivo.name)
+
+            with smtplib.SMTP(smtp_server, smtp_port) as server:
+                server.starttls()
+                server.login(remetente, senha)
+                server.send_message(msg)
+                
+            print("[SUCESSO] E-mail enviado!")
+        except Exception as e:
+            print(f"[ERRO EMAIL] Falha ao enviar o e-mail: {e}")
 
 if __name__ == "__main__":
     RAIZ_PROJETO = Path(__file__).resolve().parent.parent
     config_caminhos = CaminhosProjeto(diretorio_base=RAIZ_PROJETO)
     
-    leitor_xml = LeitorXmlNacional(caminhos=config_caminhos)
-    tabela_xml = leitor_xml.processar_diretorio_xml()
-    
-    leitor_totvs = LeitorRelatorioTotvs(caminhos=config_caminhos)
-    tabela_totvs = leitor_totvs.processar_relatorio()
+    tabela_xml = LeitorXmlNacional(caminhos=config_caminhos).processar_diretorio_xml()
+    tabela_totvs = LeitorRelatorioTotvs(caminhos=config_caminhos).processar_relatorio()
+    tabela_simples = LeitorSimplesNacional(diretorio_base=RAIZ_PROJETO).carregar()
     
     auditor = AuditorFiscal()
-    resultado = auditor.cruzar_dados(df_xml=tabela_xml, df_totvs=tabela_totvs)
+    resultado = auditor.cruzar_dados(df_xml=tabela_xml, df_totvs=tabela_totvs, df_simples=tabela_simples)
     
     if not resultado.empty:
-        pd.set_option('display.max_colwidth', None)
-        colunas_visuais = ['Chave', 'Nome Abrev', 'Status_Auditoria']
+        print("\n" + "="*50)
+        print("📊 RESUMO DE CRUZAMENTO DE DADOS (MATCH)")
+        print("="*50)
         
-        print("\n" + "="*90)
-        print("                        RELATÓRIO DE MALHA FINA - BRITÂNIA")
-        print("="*90)
-        print(resultado[colunas_visuais].to_string(index=False))
+        qtd_both = len(resultado[resultado['_merge'] == 'both'])
+        qtd_so_totvs = len(resultado[resultado['_merge'] == 'right_only'])
+        
+        print(f"-> Notas processadas do TOTVS: {len(tabela_totvs)}")
+        print(f"-> Notas processadas do Governo: {len(tabela_xml)}")
+        print(f"-> Notas conciliadas perfeitamente: {qtd_both}")
+        print(f"-> Notas no TOTVS SEM XML no Governo: {qtd_so_totvs}")
+        
+        config_caminhos.saida_auditoria.mkdir(parents=True, exist_ok=True)
+        arquivo_excel = auditor.exportar_relatorio_divergencias(df_resultado=resultado, caminho_saida=config_caminhos.saida_auditoria)
+        
+        if arquivo_excel:
+            print("\n[!] Painel Gerado e Guardado na Pasta. Analise o ficheiro Excel para ver as células pintadas!")
+            NotificadorEmail().enviar_relatorio(arquivo_excel)

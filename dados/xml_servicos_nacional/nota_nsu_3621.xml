@@ -1,0 +1,120 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35503081276535764033238000000017346226054344228502">
+        <xLocEmi>São Paulo</xLocEmi>
+        <xLocPrestacao>São Paulo</xLocPrestacao>
+        <nNFSe>173462</nNFSe>
+        <cLocIncid>3550308</cLocIncid>
+        <xTribNac>Serviços técnicos em edificações e congêneres.</xTribNac>
+        <verAplic>1.1.2+7E2917</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-05-29T16:32:34-03:00</dhProc>
+        <nDFSe>173462</nDFSe>
+        <emit>
+            <CNPJ>76535764033238</CNPJ>
+            <IM>32398590</IM>
+            <xNome>OI S.A. - EM RECUPERACAO JUDICIAL</xNome>
+            <enderNac>
+                <xLgr>ROQUE PETRONI JUNIOR</xLgr>
+                <nro>999</nro>
+                <xCpl>CONJ  81</xCpl>
+                <xBairro>VILA GERTRUDES</xBairro>
+                <cMun>3550308</cMun>
+                <UF>SP</UF>
+                <CEP>04707910</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vBC>159.68</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>7.98</vISSQN>
+            <vLiq>159.68</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS355030827653576403323800001000000000173462">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-05-29T16:32:34-03:00</dhEmi>
+                <verAplic>1.1.2+7E2917</verAplic>
+                <serie>1</serie>
+                <nDPS>173462</nDPS>
+                <dCompet>2026-04-18</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3550308</cLocEmi>
+                <prest>
+                    <CNPJ>76535764033238</CNPJ>
+                    <IM>32398590</IM>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>3550308</cMun>
+                            <CEP>45480040</CEP>
+                        </endNac>
+                        <xLgr>AV  DR CARDOSO DE MELO</xLgr>
+                        <nro>NÃO INFORMADO</nro>
+                        <xBairro>VILA OLIMPIA</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>310101</cTribNac>
+                        <cTribMun>099</cTribMun>
+                        <xDescServ>TC RESOLUTION 751-1000 36M</xDescServ>
+                        <cNBS>999999999</cNBS>
+                        <cIntContrib>000000440211</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>159.68</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>5.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>7.98</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35503081276535764033238000000017346226054344228502">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>REH11JPyLwLx9gTONk4Sr+UuikE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>f6NxkfbQsy2c1wTxt+46aFITRgmgmc3b/xkc9wIq5IAEROvggEXBxuwKToYo+xunmWisBTwvBKPk5FA8t90nEk5ri2Rb1sUgPVQQc7qRMLUrIuny/ZH3J5fza/6tJmhA0c9+B2V2/UHNmiOk+l8maZdUAagciiKw072jn+voSafXp89wCPXpyiglijKmLP7tzObXz1z3qnpJD17zOiJAUfYAvi7/hdAwZDfTK0Jae7YviTzeetolWBeE3nPxCHPsGEMULXB+I7oZHJlX6yDdsiIfkovAdeL40sFLMWTiG4Es2D5EAQC2izM5tms8t0XpmjrfrAxpnUZWTYu8A+EMXQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

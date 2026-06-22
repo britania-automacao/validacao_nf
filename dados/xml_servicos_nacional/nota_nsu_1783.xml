@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+    <infNFSe Id="NFS41072561213558932000104000000000526826027187857638">
+        <xLocEmi>Douradina</xLocEmi>
+        <xLocPrestacao>Douradina</xLocPrestacao>
+        <nNFSe>5268</nNFSe>
+        <cLocIncid>4107256</cLocIncid>
+        <xLocIncid>Douradina</xLocIncid>
+        <xTribNac>Organização, promoção e execução de programas de turismo, passeios, viagens, excursões, hospedagens e congêneres.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-02-04T09:45:49-03:00</dhProc>
+        <nDFSe>5268</nDFSe>
+        <emit>
+            <CNPJ>13558932000104</CNPJ>
+            <xNome>GAZIN VIAGENS LTDA</xNome>
+            <xFant>GAZIN VIAGENS</xFant>
+            <enderNac>
+                <xLgr>Rodovia RODOVIA ANTONIO PEDROSO</xLgr>
+                <nro>KM 01</nro>
+                <xCpl>SALA 03</xCpl>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4107256</cMun>
+                <UF>PR</UF>
+                <CEP>87485000</CEP>
+            </enderNac>
+            <email>fabio.bianchini@gazin.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>400.00</vBC>
+            <vISSQN>10.00</vISSQN>
+            <vLiq>400.00</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS410725621355893200010400001000000000005268">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-02-04T09:45:49-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>5268</nDPS>
+                <dCompet>2026-01-31</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4107256</cLocEmi>
+                <prest>
+                    <CNPJ>13558932000104</CNPJ>
+                    <email>fabio.bianchini@gazin.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xCpl>de 772 a 2370 - lado par</xCpl>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>corporativo@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4107256</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>090202</cTribNac>
+                        <xDescServ>Receita com comissão de agenciamento de viagens</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>400.00</vServ>
+                    </vServPrest>
+                    <vDescCondIncond/>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41072561213558932000104000000000526826027187857638">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>diQdmJrOaFNcCCUOW5k68L9TnQg=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>F+DGKAe5DZdrRUNXCxI5Q5P3Ld2b0aiBHB4/bMnwikk2yIZIL7oQIzGawD5Ep5YohRe6GeeoMNGoUSdJbur8OEmwU3Cl93DUgx8WO0ifmGcXPU7E4BVBfN0WUegAZV/rZ2h410W1N39+2VxdP2+nxU0/JOEQhwy7rjSA0W+jz+F1PsabQlccO5HqXFgRejOugVi67tkY+v0aGUxlgrh+AtluXT+3JF2MWzFVauvDDUMp30M8MjhqHZuZyu5TMcv0csZm4/KifJ+NQs/RzYfzXxOLmIVS8SobhhidDXNbLm8T77Fp9+BK5qD/PFhwB6vP2cxgdsRLO/I0e557NIHpLA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

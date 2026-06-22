@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS41069021249979819000131000000000010723121453127550">
+        <xLocEmi>4106902</xLocEmi>
+        <xLocPrestacao>CURITIBA</xLocPrestacao>
+        <nNFSe>107</nNFSe>
+        <cLocIncid>4106902</cLocIncid>
+        <xLocIncid>CURITIBA</xLocIncid>
+        <xTribNac>Emissão, reemissão e fornecimento de avisos, comprovantes e documentos em geral; abono de firmas; coleta e entrega de documentos, bens e valores; comunicação com outra agência ou com a administração central; licenciamento eletrônico de veículos; transferência de veículos; agenciamento fiduciário ou depositário; devolução de bens em custódia.</xTribNac>
+        <verAplic>1</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2023-12-29T07:38:00-03:00</dhProc>
+        <nDFSe>1</nDFSe>
+        <emit>
+            <CNPJ>49979819000131</CNPJ>
+            <IM>10827718</IM>
+            <xNome>JCE ENTREGAS RAPIDAS LTDA</xNome>
+            <enderNac>
+                <xLgr>R. ADILIO RAMOS</xLgr>
+                <nro>001388</nro>
+                <xBairro>BAIRRO ALTO</xBairro>
+                <cMun>4106902</cMun>
+                <UF>PR</UF>
+                <CEP>80040265</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>397.70</vBC>
+            <vISSQN>11.93</vISSQN>
+            <vTotalRet>0</vTotalRet>
+            <vLiq>397.70</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS410690224997981900013100000000000000000001">
+                <tpAmb>2</tpAmb>
+                <dhEmi>2023-12-28T09:38:25-03:00</dhEmi>
+                <verAplic>1</verAplic>
+                <serie>0</serie>
+                <nDPS>1</nDPS>
+                <dCompet>2023-12-28</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4106902</cLocEmi>
+                <prest>
+                    <CNPJ>49979819000131</CNPJ>
+                    <IM>10827718</IM>
+                    <xNome>JCE ENTREGAS RAPIDAS LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>R. ADILIO RAMOS</xLgr>
+                        <nro>001388</nro>
+                        <xBairro>BAIRRO ALTO</xBairro>
+                    </end>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <IM>5238242</IM>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>001330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4106902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010900</cTribNac>
+                        <xDescServ>Duplicata de serviços de entregas na cidade de Curitiba e Região Metropolitana de Curitiba.Dados para transferência:pix: eric@jcentregasrapidas.com.brAgência: 0001Conta: 3869239-0Instituição: 403 - Cora SCDNome da Empresa: JCE ENTREGAS RAPIDAS LTDACNPJ: 49979819000131</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>397.70</vServ>
+                    </vServPrest>
+                    <vDescCondIncond>
+                        <vDescIncond>0.00</vDescIncond>
+                    </vDescCondIncond>
+                    <vDedRed>
+                        <vDR>0.00</vDR>
+                    </vDedRed>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpImunidade>0</tpImunidade>
+                            <tpRetISSQN>2</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <pTotTrib>
+                                <pTotTribFed>0</pTotTribFed>
+                                <pTotTribEst>0</pTotTribEst>
+                                <pTotTribMun>0</pTotTribMun>
+                            </pTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41069021249979819000131000000000010723121453127550">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>dVFCow/w0RG2MNHMFLVPJc+vyOs=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>W+V8xEhHJj0koR1OufIzpju6y8oV72txcy5RCmzjl/aP5zhYkU8vs95J5zcrj4NCEEHqN6pM4aCcaLQqrGnCiaP/06lwG+HtFZuInMw2fdmbsunTrkZR5MbL5kUAawxwV+Vp5ix74D9YZ8ECpbFaAgqiECd1KogawRY9mXmzhJA0dFjyu4i8M0pHrrrUopYAbBk/kPGRhm7lM1wehQQgJbwf8Z/pHbh8xPU9xYXGi7gs+PE8lmtYgy0hss3VQK6YbnjCF99ZcEid5hjFTLd3U6otdxN63TXB0F48tLYEBopzZYY6sB7CRIJzpnC3h8FPMYCiEsr7nBesNVIxmpLy2Q==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

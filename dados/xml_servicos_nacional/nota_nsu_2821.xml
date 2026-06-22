@@ -1,0 +1,172 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS24032511224477464000151260000000003426046342350885">
+        <xLocEmi>PARNAMIRIM</xLocEmi>
+        <xLocPrestacao>PARNAMIRIM</xLocPrestacao>
+        <nNFSe>2600000000034</nNFSe>
+        <cLocIncid>2403251</cLocIncid>
+        <xLocIncid>PARNAMIRIM</xLocIncid>
+        <xTribNac>Assessoria ou consultoria de qualquer natureza, não contida em outros itens desta lista.</xTribNac>
+        <verAplic>1.01</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-04-06T08:56:37-00:00</dhProc>
+        <nDFSe>2600000000034</nDFSe>
+        <emit>
+            <CNPJ>24477464000151</CNPJ>
+            <IM>0161187</IM>
+            <xNome>ARAUJO REPRESENTACOES COMERCIAIS E SERVICOS LTDA</xNome>
+            <xFant>JN - SERVICOS</xFant>
+            <enderNac>
+                <xLgr>AV AYRTON SENNA</xLgr>
+                <nro>2349</nro>
+                <xCpl>SL 10</xCpl>
+                <xBairro>NOVA PARNAMIRIM</xBairro>
+                <cMun>2403251</cMun>
+                <UF>RN</UF>
+                <CEP>59151600</CEP>
+            </enderNac>
+            <fone>84999889375</fone>
+            <email>sistemarncontabilidade@gmail.com</email>
+        </emit>
+        <valores>
+            <vBC>300.73</vBC>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>300.73</vLiq>
+        </valores>
+        <IBSCBS>
+            <cLocalidadeIncid>2403251</cLocalidadeIncid>
+            <xLocalidadeIncid>PARNAMIRIM</xLocalidadeIncid>
+            <valores>
+                <vBC>300.73</vBC>
+                <uf>
+                    <pIBSUF>0.10</pIBSUF>
+                    <pRedAliqUF>0.00</pRedAliqUF>
+                    <pAliqEfetUF>0.00</pAliqEfetUF>
+                </uf>
+                <mun>
+                    <pIBSMun>0.00</pIBSMun>
+                    <pRedAliqMun>0.00</pRedAliqMun>
+                    <pAliqEfetMun>0.00</pAliqEfetMun>
+                </mun>
+                <fed>
+                    <pCBS>0.90</pCBS>
+                    <pRedAliqCBS>0.00</pRedAliqCBS>
+                    <pAliqEfetCBS>0.00</pAliqEfetCBS>
+                </fed>
+            </valores>
+            <totCIBS>
+                <vTotNF>300.73</vTotNF>
+                <gIBS>
+                    <vIBSTot>0.30</vIBSTot>
+                    <gIBSUFTot>
+                        <vIBSUF>0.30</vIBSUF>
+                    </gIBSUFTot>
+                    <gIBSMunTot>
+                        <vIBSMun>0.00</vIBSMun>
+                    </gIBSMunTot>
+                </gIBS>
+                <gCBS>
+                    <vCBS>2.71</vCBS>
+                </gCBS>
+            </totCIBS>
+        </IBSCBS>
+        <DPS versao="1.01">
+            <infDPS Id="DPS240325122447746400015102026002600000000034">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-04-06T08:56:37-00:00</dhEmi>
+                <verAplic>1.01</verAplic>
+                <serie>2026</serie>
+                <nDPS>2600000000034</nDPS>
+                <dCompet>2026-04-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2403251</cLocEmi>
+                <prest>
+                    <CNPJ>24477464000151</CNPJ>
+                    <IM>0161187</IM>
+                    <fone>84999889375</fone>
+                    <email>sistemarncontabilidade@gmail.com</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITÂNIA ELETRODOMÉSTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>nfe01@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2403251</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>170101</cTribNac>
+                        <xDescServ>SERVIÇO PRESTADO DE REPRESNTAÇÃO COMERCIAL REFERENTE AO MES MARÇO DE 2026.</xDescServ>
+                        <cNBS>114013900</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>300.73</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+                <IBSCBS>
+                    <finNFSe>0</finNFSe>
+                    <indFinal>0</indFinal>
+                    <cIndOp>030101</cIndOp>
+                    <indDest>0</indDest>
+                    <valores>
+                        <trib>
+                            <gIBSCBS>
+                                <CST>000</CST>
+                                <cClassTrib>000001</cClassTrib>
+                            </gIBSCBS>
+                        </trib>
+                    </valores>
+                </IBSCBS>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="Id-0546CD48-BFCD-40DA-AECB-D034F08F5CD5">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS24032511224477464000151260000000003426046342350885">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>UGonHfZxz8g5HhD5ssVPSL6mZTE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>ZAJsV5Fp8yqpHxTvwezUz8ItUkkvpbjDC6hbrHADjOa9rwve0wK6F0DVjsk24hwhN2vtiCBt6vKfY7lNQAwtvMvsagTpxAVelszlIwb9MMXxzSY3+u1tFN0ESeoLZNx38G/HAKZdzK5vhSrgzDlZ8BYcc1rhKFfXEMFhOc/rCzO91e+DbwTwEBoOTf/C5ZwMilNXem25Rt8qGUl3+4s6caoqeX661ttjrTlYWTaFpt9z7vKAI1dl4HV33lYSHCBPEGp4s1KPrHmcNw+Vt0f8x30FEsdhynirnM/DVXCAcuCoGJPJOBmcJdG55wppe7adu/15Zc0tQdDoAvGQDUeocQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

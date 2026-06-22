@@ -1,0 +1,139 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35434021210724873000109000000000065225061749042539">
+        <xLocEmi>RIBEIRÃO PRETO</xLocEmi>
+        <xLocPrestacao>RIBEIRÃO PRETO</xLocPrestacao>
+        <nNFSe>652</nNFSe>
+        <cLocIncid>3543402</cLocIncid>
+        <xLocIncid>RIBEIRÃO PRETO</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-06-04T13:08:51-03:00</dhProc>
+        <nDFSe>652</nDFSe>
+        <emit>
+            <CNPJ>10724873000109</CNPJ>
+            <IM>13610001</IM>
+            <xNome>Arj Representacoes de Ferramentas Ltda</xNome>
+            <enderNac>
+                <xLgr>Avenida Presidente Vargas</xLgr>
+                <nro>1265</nro>
+                <xCpl>SALA 808</xCpl>
+                <xBairro>Jardim São Luiz</xBairro>
+                <cMun>3543402</cMun>
+                <UF>SP</UF>
+                <CEP>14020273</CEP>
+            </enderNac>
+            <fone>01092455331</fone>
+            <email>arj@arjrepresentacoes.com.br</email>
+        </emit>
+        <valores>
+            <vBC>28297.90</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>565.96</vISSQN>
+            <vLiq>27873.44</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS354340221072487300010900001000000000000640">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-06-04T00:00:00-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>00001</serie>
+                <nDPS>640</nDPS>
+                <dCompet>2025-06-04</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3543402</cLocEmi>
+                <prest>
+                    <CNPJ>10724873000109</CNPJ>
+                    <IM>13610001</IM>
+                    <xNome>Arj Representacoes de Ferramentas Ltda</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>3543402</cMun>
+                            <CEP>14020273</CEP>
+                        </endNac>
+                        <xLgr>Avenida Presidente Vargas</xLgr>
+                        <nro>1265</nro>
+                        <xCpl>SALA 808</xCpl>
+                        <xBairro>Jardim São Luiz</xBairro>
+                    </end>
+                    <fone>01092455331</fone>
+                    <email>arj@arjrepresentacoes.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>Britânia Eletrodomésticos S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3543402</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>Para pagamento de comissão.</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>28297.90</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <pAliq>2.00</pAliq>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                                <vPis>0.00</vPis>
+                                <vCofins>0.00</vCofins>
+                            </piscofins>
+                            <vRetCP>0.00</vRetCP>
+                            <vRetIRRF>424.46</vRetIRRF>
+                            <vRetCSLL>0.00</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35434021210724873000109000000000065225061749042539">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>Z+C1xaNgdTApZiJDmIQQG7yFoJg=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>B+vKjMobEahPFhop2rHWF21kd37juoq+caH1xFzc3ScvJEuwj7VF4Oe7qxn/M5ALdMu7zmPMPlvQw0kob/5uTyVBhgZ7D1Qkl7lJ5+EvcPq5gNKR0jx7wP8OQ7u7uWobuUKXHNjtCNTTZpGt3muYWHcZrYpp6wm5jUaOIB3AdhXwqhsAmH5lAXSC41awQh3DO5V+edrJ3oayiBM85Tn2MzjXBcXbgf4IfEQtJlCrJVOxb1m8zrXOok9UyQb3VA2EMa7YU6elbIJIV2pZ5SrqQf2qQFW+09G945Ec3N7P/cS+TVvPfaRNWr/fWmVEAtohy+7Tdq2lFhNVsU9zdIqHjg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

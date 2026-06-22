@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS25040091223659607000183250000000003325080131717950">
+        <xLocEmi>Campina Grande</xLocEmi>
+        <xLocPrestacao>Campina Grande</xLocPrestacao>
+        <nNFSe>2500000000033</nNFSe>
+        <cLocIncid>2504009</cLocIncid>
+        <xLocIncid>Campina Grande</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <xTribMun>Representação de qualquer natureza, inclusive comercial.</xTribMun>
+        <verAplic>Abrasf_202</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-08-06T12:48:51-03:00</dhProc>
+        <nDFSe>13171795</nDFSe>
+        <emit>
+            <CNPJ>23659607000183</CNPJ>
+            <IM>589711</IM>
+            <xNome>FEEDBACK SERVICOS LTDA</xNome>
+            <xFant>FEEDBACK</xFant>
+            <enderNac>
+                <xLgr>Rua João Francisco de Araújo</xLgr>
+                <nro>234</nro>
+                <xBairro>Santa Rosa</xBairro>
+                <cMun>2504009</cMun>
+                <UF>PB</UF>
+                <CEP>58416655</CEP>
+            </enderNac>
+            <fone>83987064544</fone>
+            <email>GALILEUSILVALUCENA@HOTMAIL.COM</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>202.39</vBC>
+            <pAliqAplic>2.39</pAliqAplic>
+            <vISSQN>4.84</vISSQN>
+            <vLiq>202.39</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS250400922365960700018302025202500000000033">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-08-06T12:48:51-03:00</dhEmi>
+                <verAplic>Abrasf_202</verAplic>
+                <serie>2025</serie>
+                <nDPS>202500000000033</nDPS>
+                <dCompet>2025-08-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2504009</cLocEmi>
+                <prest>
+                    <CNPJ>23659607000183</CNPJ>
+                    <IM>589711</IM>
+                    <fone>83987064544</fone>
+                    <email>GALILEUSILVALUCENA@HOTMAIL.COM</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <email>nfe01@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2504009</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>VALOR REFERENTE COMISSÕES DE VENDAS.</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>202.39</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.39</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS25040091223659607000183250000000003325080131717950">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>0TPa2zkJUiHFhIT+2jfscy9nPJ0=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>NVX9rtgy4bCIYZ9aA2YeAAxJvcN09Ft2/K+9JfJJMm3qLYjAiJQiB+xgRMXJufxvdgIvfTm/a7SIy7wKA5bzgDDeuywzn73b4diQbxzXecrUE5ftKwjm3ok/WhH30Z1v+4u1ZfsCKRPGZ4Baz/M4F6rWpzWexrnOjVuXEPJVT0Vfpi86ITvYGh63dtEpncIp0eL2TwMXtaZz1nfPZuEq9yan89LDdrzARHlwJEXdP6YylEHNsxkW3vBaUQmF+bmRLhGyqASs8IQUa+jTNNMw6jQB3SigY4Ke3m3QBNqruFulK6fBZIc2m5Y0SP3VNapnFjqjD4Rn+sQEafRHeCp98Q==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

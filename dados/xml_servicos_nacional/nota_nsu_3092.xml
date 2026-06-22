@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS35095021243635918000110000000002067226045638720416">
+        <xLocEmi>CAMPINAS</xLocEmi>
+        <xLocPrestacao>CAMPINAS</xLocPrestacao>
+        <nNFSe>20672</nNFSe>
+        <cLocIncid>3509502</cLocIncid>
+        <xLocIncid>CAMPINAS</xLocIncid>
+        <xTribNac>Agenciamento, corretagem ou intermediação de títulos em geral e valores mobiliários.</xTribNac>
+        <xTribMun>ATIVIDADES DE INTERMEDIACAO E AGENCIAMENTO DE SERVICOS E NEGOCIOS EM GERAL, EXCETO IMOBILIARIOS</xTribMun>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-04-28T08:49:06-03:00</dhProc>
+        <nDFSe>20672</nDFSe>
+        <emit>
+            <CNPJ>43635918000110</CNPJ>
+            <IM>007220448</IM>
+            <xNome>ALLOG CAMPINAS - TRANSPORTES INTERNACIONAIS LTDA</xNome>
+            <xFant>ALLOG CAMPINAS - TRANSPORTES INTERNACIONAIS LTDA</xFant>
+            <enderNac>
+                <xLgr>JOAO SCARPARO NETTO</xLgr>
+                <nro>84</nro>
+                <xCpl>BLOCO C                    CONJUNTO 04</xCpl>
+                <xBairro>LOTEAMENTO CENTER SANTA GENEBRA</xBairro>
+                <cMun>3509502</cMun>
+                <UF>SP</UF>
+                <CEP>13080655</CEP>
+            </enderNac>
+            <email>contabil@consulting.allog.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>177.07</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>8.85</vISSQN>
+            <vTotalRet>8.85</vTotalRet>
+            <vLiq>177.07</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS350950224363591800011000001000000000020672">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-04-28T08:49:06-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>00001</serie>
+                <nDPS>20672</nDPS>
+                <dCompet>2026-04-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3509502</cLocEmi>
+                <prest>
+                    <CNPJ>43635918000110</CNPJ>
+                    <IM>007220448</IM>
+                    <email>contabil@consulting.allog.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3509502</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100201</cTribNac>
+                        <cTribMun>003</cTribMun>
+                        <xDescServ>DESCONSOLIDACAONUMERO DO CONHECIMENTO: AASHA2631118 / REFERENCIA DO CLIENTE: PP 0197/26A / PROCESSO: IA0326125915 / DATA DE VENCIMENTO: 30/06/2026 / FATURA: 130176/26 / RESERVA:.NUMERO DO CONHECIMENTO: AASHA2631118 / REFERENCIA DO CLIENTE: PP 0197/26A / PROCESSO: IA0326125915 / DATA DE VENCIMENTO: 30/06/2026 / FATURA: 130176/26 / RESERVA:</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>177.07</vServ>
+                    </vServPrest>
+                    <vDescCondIncond/>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>5.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35095021243635918000110000000002067226045638720416">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>2wfKdYK2mgdsmVLgVvaUnH9pIIE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>XzqNhNlNXWnPWBxk4+2WeQmmxBW0XHo7M+sXKrtrzpfFtvhJEw3h86MPVelIuhbHy0SJ2Fh0W4sxGn4yv3NHsYQUytgeEk0MVLNA88djE9lMCrEfTHpcaR3yZq+9FyKjKUmg0DLtbrIK8iobW8e6teStJPFYC3h1WI6atjxvgqFH4Vuj/CI+R0mH1QwiuRCIR5az3YiSYTN7uVqPVcoMg0YTdKbvpiSxsRYmq6LyHxMzJEsmJkSelW/Nqkrgr7fPRw4u493cujsEaMvhSJ3q37yagi9Zu5sapGBJ9ipxusWyDlWBjenn8gVkX8vP5PGm74J5f4M327S3PoMzP3XbuQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

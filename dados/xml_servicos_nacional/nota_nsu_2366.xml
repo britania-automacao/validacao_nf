@@ -1,0 +1,229 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+        
+    <infNFSe Id="NFS41076521202297194000164000000000651926033696491496">
+                
+        <xLocEmi>Fazenda Rio Grande</xLocEmi>
+                
+        <xLocPrestacao>Curitiba</xLocPrestacao>
+                
+        <nNFSe>6519</nNFSe>
+                
+        <cLocIncid>4106902</cLocIncid>
+                
+        <xLocIncid>Curitiba</xLocIncid>
+                
+        <xTribNac>Limpeza, manutenção e conservação de vias e logradouros públicos, parques, jardins e congêneres.</xTribNac>
+                
+        <xNBS>Serviços de esgoto e tratamento de esgotos</xNBS>
+                
+        <verAplic>1.1.0</verAplic>
+                
+        <ambGer>1</ambGer>
+                
+        <tpEmis>2</tpEmis>
+                
+        <cStat>100</cStat>
+                
+        <dhProc>2026-03-05T13:44:49-03:00</dhProc>
+                
+        <nDFSe>6519</nDFSe>
+                
+        <emit>
+                        
+            <CNPJ>02297194000164</CNPJ>
+                        
+            <IM>091110054712</IM>
+                        
+            <xNome>JOSE SEBASTIAO DURAU &amp; CIA LTDA ME</xNome>
+                        
+            <enderNac>
+                                
+                <xLgr>R SUCUPIRA</xLgr>
+                                
+                <nro>688</nro>
+                                
+                <xBairro>EUCALIPTOS</xBairro>
+                                
+                <cMun>4107652</cMun>
+                                
+                <UF>PR</UF>
+                                
+                <CEP>83820482</CEP>
+                           
+            </enderNac>
+                        
+            <fone>4130821520</fone>
+                        
+            <email>desentupidorahidrofaz@outlook.com</email>
+                   
+        </emit>
+                
+        <valores>
+                        
+            <vBC>616.00</vBC>
+                        
+            <pAliqAplic>5.00</pAliqAplic>
+                        
+            <vISSQN>30.80</vISSQN>
+                        
+            <vTotalRet>30.80</vTotalRet>
+                        
+            <vLiq>585.20</vLiq>
+                   
+        </valores>
+                
+        <DPS versao="1.01">
+                        
+            <infDPS Id="DPS410765220229719400016400001000000000006519">
+                                
+                <tpAmb>1</tpAmb>
+                                
+                <dhEmi>2026-03-05T13:44:29-03:00</dhEmi>
+                                
+                <verAplic>1.1.0</verAplic>
+                                
+                <serie>1</serie>
+                                
+                <nDPS>6519</nDPS>
+                                
+                <dCompet>2026-03-05</dCompet>
+                                
+                <tpEmit>1</tpEmit>
+                                
+                <cLocEmi>4107652</cLocEmi>
+                                
+                <prest>
+                                        
+                    <CNPJ>02297194000164</CNPJ>
+                                        
+                    <IM>091110054712</IM>
+                                        
+                    <fone>4130821520</fone>
+                                        
+                    <email>desentupidorahidrofaz@outlook.com</email>
+                                        
+                    <regTrib>
+                                                
+                        <opSimpNac>3</opSimpNac>
+                                                
+                        <regApTribSN>2</regApTribSN>
+                                                
+                        <regEspTrib>0</regEspTrib>
+                                           
+                    </regTrib>
+                                   
+                </prest>
+                                
+                <toma>
+                                        
+                    <CNPJ>76492701000157</CNPJ>
+                                        
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                                        
+                    <end>
+                                                
+                        <endNac>
+                                                        
+                            <cMun>4106902</cMun>
+                                                        
+                            <CEP>80040265</CEP>
+                                                   
+                        </endNac>
+                                                
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                                                
+                        <nro>1330</nro>
+                                                
+                        <xBairro>Hugo Lange</xBairro>
+                                           
+                    </end>
+                                        
+                    <email>desentupidorahidrofaz@outlook.com</email>
+                                   
+                </toma>
+                                
+                <serv>
+                                        
+                    <locPrest>
+                                                
+                        <cLocPrestacao>4106902</cLocPrestacao>
+                                           
+                    </locPrest>
+                                        
+                    <cServ>
+                                                
+                        <cTribNac>071001</cTribNac>
+                                                
+                        <xDescServ>Numero de Contrato Sistemico 6400 Numero do Pedido N/A Desentupimento de vaso sanitario e ralo</xDescServ>
+                                                
+                        <cNBS>124021000</cNBS>
+                                                
+                        <cIntContrib>36756</cIntContrib>
+                                           
+                    </cServ>
+                                   
+                </serv>
+                                
+                <valores>
+                                        
+                    <vServPrest>
+                                                
+                        <vServ>616.00</vServ>
+                                           
+                    </vServPrest>
+                                        
+                    <trib>
+                                                
+                        <tribMun>
+                                                        
+                            <tribISSQN>1</tribISSQN>
+                                                        
+                            <tpRetISSQN>2</tpRetISSQN>
+                                                   
+                        </tribMun>
+                                                
+                        <totTrib>
+                                                        
+                            <pTotTrib>
+                                                                
+                                <pTotTribFed>13.45</pTotTribFed>
+                                                                
+                                <pTotTribEst>0.00</pTotTribEst>
+                                                                
+                                <pTotTribMun>4.76</pTotTribMun>
+                                                           
+                            </pTotTrib>
+                                                   
+                        </totTrib>
+                                           
+                    </trib>
+                                   
+                </valores>
+                           
+            </infDPS>
+                   
+        </DPS>
+           
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41076521202297194000164000000000651926033696491496">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>/8H4qB9joQ7PgL8cQaAUXhSDMwo=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>CYw/8ogfzUMpAol8WpMcwQ3d6/We7lk8x0jKtSkTbZycamtNPUV3eIjALz29ZVS+m0ryG+Lv2500mkEKy/cmlukZumJaOwIV7Sk2ITMc1MvsCtZlXMSy+aAntIPtLg1qPJD1fdZqaRlCdcdb1T4Owc5b5iaO1cx7Yp4sPPw7O0HgrgjqUuxcB0DVdcIJrliVma8q/5ru39er9fF4zBJLcfvassEmUFsdG3JPLY3riioUnfEmQcRRaZeSt+fWHwpo/nmx9ycmRJZvF6WigiOz77BLQKCn/A74NVuPkuMYK36H8GTPNwhJ4ZZuYFdycEE1o4fe3BXn0gPN6hre7Lw0Ag==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH5TCCBc2gAwIBAgIKb4Rwpo+3dBBX3TANBgkqhkiG9w0BAQsFADBbMQswCQYDVQQGEwJCUjEWMBQGA1UECwwNQUMgU3luZ3VsYXJJRDETMBEGA1UECgwKSUNQLUJyYXNpbDEfMB0GA1UEAwwWQUMgU3luZ3VsYXJJRCBNdWx0aXBsYTAeFw0yNTEwMjMxNzE0NDhaFw0yNjEwMjMxNzE0NDhaMIHOMQswCQYDVQQGEwJCUjETMBEGA1UECgwKSUNQLUJyYXNpbDEiMCAGA1UECwwZQ2VydGlmaWNhZG8gRGlnaXRhbCBQSiBBMTETMBEGA1UECwwKUHJlc2VuY2lhbDEXMBUGA1UECwwOMzQ3OTc4MTQwMDAxMTAxHzAdBgNVBAsMFkFDIFN5bmd1bGFySUQgTXVsdGlwbGExNzA1BgNVBAMMLk1VTklDSVBJTyBERSBGQVpFTkRBIFJJTyBHUkFOREU6OTU0MjI5ODYwMDAxMDIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDRKOy1DYefYk4gcDJtpL0PCaz5wQ1uWq1fJn9U07b4q/+6HVWRedFn2GE1b/I1ddbto11qpkkQZ7dTLr1o36AND9EpQhg7nLtCgtA0PH3HjQ3MMG2Cx1t5gyamku76oVtRLmc0QSfYAYrmizK9jVN9JF2HsO3qD4+XPsHNz5SWx498RrMynqTy90S/vZkCHnFRO4jdpzLKp+lHI/0L5qaOy1XDqm/xOJzyyKwugJLt36AHIXMv1NtJ7RNll1MWM+IColmPPtlgpt5ADYpFN22dZzKwSMcDQQJ8LEoHu+j/u9QGUutqsRfvebrH9HldfXoBGiKjjiZDwtWUKGHsFf+BAgMBAAGjggM1MIIDMTAOBgNVHQ8BAf8EBAMCBeAwHQYDVR0lBBYwFAYIKwYBBQUHAwQGCCsGAQUFBwMCMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUk+H/fh3l9eRN4TliiyFpleavchYwHQYDVR0OBBYEFAvLpwxFvrntt8Jq9ONtoFY283GiMH8GCCsGAQUFBwEBBHMwcTBvBggrBgEFBQcwAoZjaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvY2VydGlmaWNhZG9zL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEucDdiMIGCBgNVHSAEezB5MHcGB2BMAQIBgQUwbDBqBggrBgEFBQcCARZeaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvZHBjL2RwYy1hYy1zeW5ndWxhcklELW11bHRpcGxhLnBkZjCByQYDVR0RBIHBMIG+oB8GBWBMAQMCoBYEFExVSVogU0VSR0lPIENMQVVESU5PoBkGBWBMAQMDoBAEDjk1NDIyOTg2MDAwMTAyoEIGBWBMAQMEoDkENzA0MDkxOTY4NzU3MzY1MzU5MDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDCgFwYFYEwBAwegDgQMMDAwMDAwMDAwMDAwgSNnYWJpbmV0ZUBmYXplbmRhcmlvZ3JhbmRlLnByLmdvdi5icjCB4gYDVR0fBIHaMIHXMGSgYqBghl5odHRwOi8vc3luZ3VsYXJpZC5jb20uYnIvcmVwb3NpdG9yaW8vYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS9sY3IvbGNyLWFjLXN5bmd1bGFyaWQtbXVsdGlwbGEuY3JsMG+gbaBrhmlodHRwOi8vaWNwLWJyYXNpbC5zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2xjci9sY3ItYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS5jcmwwDQYJKoZIhvcNAQELBQADggIBACoSYN8fsuF+dKwpEQ8/n2SgIKkjuqGgtKB6Wgpba1OeRxGRmJ/W8U+JjSXixTjrPspkwJmZ0kEN3dTsBAS5GnwoLZA6IkXSpgaFKYZqDyF2hwnBKMOKXBY8wHKsiul8kQ9snQUtwJMDHL6PCbJdi4B+EYEriO6NdbmxHSrvuHW84Zl10pDNbnNX2xPa/WRj0R0iVhii4DJHqeifHsTomcFx1dprRxl+E51LoLTQWUorj5WNleY95jw6SFZrSMWlfA3begA5VMQUH4CK73McBeOVvKQ7QVe+ozKOOnM4ZEULP8W38ZCHoxJg7rVQfHCkHA+NjAjSMGmnz6Z0Epm6O5710IQZo583JtfGxKQmLxGKAwiC8Ey4frUHeMV5fLElXd3NRZ7PuvNeJM1tqlYpx0C4wtHlc+GgC5AogVE5BbPmsgkklLk3GtWDoNm+nFrL8q4WHrDBH47cQBjx1w8y0vdxdDccxjxvrlGZcy/45uXLxKocgWXAwuEfQx2Nl4mqGv2GbzdZC5nDUK9BSklkPNrvDpPrvFC6eoeHe4Xl4WIGz73Xl7TRc5YXmRjvWmuHebw/Otf6Rfvp/BhbhtXe2PPwiZ/Gb0BllwVCE8Q2gCRSaDtomr3OP7QWq3GweatzEdumN52Y3Wwz+KWMdWQBF5P+pQLDCuxVSIpm4oInYSeH</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,149 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS41191521226498844000106000000004103225010000000000">
+        <xLocEmi>Pinhais</xLocEmi>
+        <xLocPrestacao>Pinhais</xLocPrestacao>
+        <nNFSe>41032</nNFSe>
+        <cLocIncid>4119152</cLocIncid>
+        <xLocIncid>Pinhais</xLocIncid>
+        <xTribNac>Funerais, inclusive fornecimento de caixão, urna ou esquifes; aluguel de capela; transporte do corpo cadavérico; fornecimento de flores, coroas e outros paramentos; desembaraço de certidão de óbito; fornecimento de véu, essa e outros adornos; embalsamento, embelezamento, conservação ou restauração de cadáveres.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-01-13T15:51:22-03:00</dhProc>
+        <nDFSe>41032</nDFSe>
+        <emit>
+            <CNPJ>26498844000106</CNPJ>
+            <IM>68687</IM>
+            <xNome>JARDIM DA SAUDADE ASSISTENCIA LTDA</xNome>
+            <enderNac>
+                <xLgr>MARINGA</xLgr>
+                <nro>3300</nro>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4119152</cMun>
+                <UF>PR</UF>
+                <CEP>83324000</CEP>
+            </enderNac>
+            <fone>04130862122</fone>
+            <email>financeiro@jardimdasaudade.com</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>390.00</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>7.80</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>390.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS411915222649884400010600001000000000041032">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-01-13T15:51:22-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>41032</nDPS>
+                <dCompet>2025-01-13</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4119152</cLocEmi>
+                <prest>
+                    <CNPJ>26498844000106</CNPJ>
+                    <IM>68687</IM>
+                    <xNome>JARDIM DA SAUDADE ASSISTENCIA LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4119152</cMun>
+                            <CEP>83324000</CEP>
+                        </endNac>
+                        <xLgr>MARINGA</xLgr>
+                        <nro>3300</nro>
+                        <xBairro>CENTRO</xBairro>
+                    </end>
+                    <fone>04130862122</fone>
+                    <email>financeiro@jardimdasaudade.com</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>Britânia Eletrodomésticos SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>00000000</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA avenida av nossa senhora da luz</xLgr>
+                        <nro>0</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>marcia.bochnia@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4119152</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>250100</cTribNac>
+                        <xDescServ>Serviços Especiais de Cemitério</xDescServ>
+                        <cIntContrib>2378647</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>390.00</vServ>
+                    </vServPrest>
+                    <vDescCondIncond>
+                        <vDescIncond>0.00</vDescIncond>
+                        <vDescCond>0.00</vDescCond>
+                    </vDescCondIncond>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <pAliq>2.00</pAliq>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                                <vPis>0.00</vPis>
+                                <vCofins>0.00</vCofins>
+                            </piscofins>
+                            <vRetCP>0.00</vRetCP>
+                            <vRetIRRF>0.00</vRetIRRF>
+                            <vRetCSLL>0.00</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>52.46</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>17.63</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41191521226498844000106000000004103225010000000000">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>dhIEkVKYQZKqC+IO6BylLD8yxzQ=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>R7X4MtRuEKHOaI8Z2yWZyjOZ2b6XGCHwqZggtlHsdVccRHL47ZbBj4cHkqDhiv8Pw+fW0l6dhmIqix74+ZusIhHBFJJopxqPk/2iDsOM424XtgGNTa+3KF+YgvjKd5DYPWpUUuOTg7HJydOLbFQkT/PtbEvaSUjbwiB+8aeACKoPN9NSS8lLQopPlNF/cPBUWJjZm+Vvgwjvaiwf/emORxayygAVS1yG++XOW3GRjiwymGePji482NqC70m1KirutUTXUHMFzQD8fVL169abuabATB4l3+BD138eW79IA6kQ1kLxYRqJ4gh82MrQF8PZyTt5n8Wtegb8b/aMgthAPg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH9TCCBd2gAwIBAgIIIMsu3qIE8TQwDQYJKoZIhvcNAQELBQAwdDELMAkGA1UE BhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEg ZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEYMBYGA1UEAxMPQUMg VkFMSUQgUkZCIHY1MB4XDTI0MDUyNDE4NDMxN1oXDTI1MDUyNDE4NDMxN1owggEK MQswCQYDVQQGEwJCUjELMAkGA1UECBMCUFIxEDAOBgNVBAcTB1BJTkhBSVMxEzAR BgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0 YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBB MTEVMBMGA1UECxMMQVIgVE9UQUxDRVJUMRkwFwYDVQQLExBWaWRlb2NvbmZlcmVu Y2lhMRcwFQYDVQQLEw40NzQ2ODcxNzAwMDEyNjEsMCoGA1UEAxMjTVVOSUNJUElP IERFIFBJTkhBSVM6OTU0MjMwMDAwMDAxMDAwggEiMA0GCSqGSIb3DQEBAQUAA4IB DwAwggEKAoIBAQCWJEBk5A2Hy79dKILowKS6iBA/4Z4ZtCD8KQEdhb8UyKab54Dk a8Yy/VmQfWUZWG4yns34tNZj4CihT9EOUSwmLJdxo18JrR0uHJcL4viaHETmF5Mh viOEh6FY6XcnXekDC+8Qss+fEbP8RgMw4lRknnTM2bAMzecik4RZLXL+/51KpwXL 9X1sEPCrVT/GqGM89WyYNinAqUUYLwm/aNpf0WDQAOuJPlBFVFzpAXfFLykK720J hAbRXRISzaRgOQMe3HRzaA+uz87lhgE5yKtnQ9sqFZFI0dPMdK1sfjrEs/y6u7d7 PWJ08kmqKvY3maTGuKfsVjDc+e7yD8TsbQslAgMBAAGjggLxMIIC7TCBnAYIKwYB BQUHAQEEgY8wgYwwVQYIKwYBBQUHMAKGSWh0dHA6Ly9pY3AtYnJhc2lsLnZhbGlk Y2VydGlmaWNhZG9yYS5jb20uYnIvYWMtdmFsaWRyZmIvYWMtdmFsaWRyZmJ2NS5w N2IwMwYIKwYBBQUHMAGGJ2h0dHA6Ly9vY3NwdjUudmFsaWRjZXJ0aWZpY2Fkb3Jh LmNvbS5icjAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFFPLpeR1UJlALL5bFUXJvssw qonFMHAGA1UdIARpMGcwZQYGYEwBAgElMFswWQYIKwYBBQUHAgEWTWh0dHA6Ly9p Y3AtYnJhc2lsLnZhbGlkY2VydGlmaWNhZG9yYS5jb20uYnIvYWMtdmFsaWRyZmIv ZHBjLWFjLXZhbGlkcmZidjUucGRmMIG2BgNVHR8Ega4wgaswU6BRoE+GTWh0dHA6 Ly9pY3AtYnJhc2lsLnZhbGlkY2VydGlmaWNhZG9yYS5jb20uYnIvYWMtdmFsaWRy ZmIvbGNyLWFjLXZhbGlkcmZidjUuY3JsMFSgUqBQhk5odHRwOi8vaWNwLWJyYXNp bDIudmFsaWRjZXJ0aWZpY2Fkb3JhLmNvbS5ici9hYy12YWxpZHJmYi9sY3ItYWMt dmFsaWRyZmJ2NS5jcmwwDgYDVR0PAQH/BAQDAgXgMB0GA1UdJQQWMBQGCCsGAQUF BwMCBggrBgEFBQcDBDCBxQYDVR0RBIG9MIG6gR1nYWJwcmVmZWl0YUBwaW5oYWlz LnByLmdvdi5icqA9BgVgTAEDBKA0BDIxNzA5MTk2NTUwNzUxMTY2OTg3MDAwMDAw MDAwMDAwMDAwMDAwNDAzNTA1NzhTU1BQUqAmBgVgTAEDAqAdBBtST1NBIE1BUklB IERFIEpFU1VTIENPTE9NQk+gGQYFYEwBAwOgEAQOOTU0MjMwMDAwMDAxMDCgFwYF YEwBAwegDgQMMDAwMDAwMDAwMDAwMA0GCSqGSIb3DQEBCwUAA4ICAQB87ZMQlFGJ r5xSuMfC4TCNfg2w5wBtZOfKFDjQpwvArFqG1HSdVfFf9jsG6n1bEeVq34uatJOn CyTBjXZYnsdgA3OgOoXZSM13uICH+Bl1OcHX+3Ns6z/U6vYiHqmnjBK/oKn1ONM+ qF69p2S8yaftDl92tvZN0CfsIpkcLiThj0gYs4rZQDJLP4jy3ZrWr4lLkgtQqXG4 OttfABdSFYUAzXbz7tZI/RGcKyZDjvmK+unSwMD+TVVEeP861LE+xriG/aB1cGQc eA08LvaSdy6GS/z8967DDrO/pPhSdMyIkMNaEPBW+m7yYUkx15PTp7NQCnnB84hO yM+9umiz+qo4ajcyszuVOzKjI1vkaqSZx1H6Z94Smar3TqkBm7GH7d3Upo4jhwTY x8DoUGXKTf4M2heIlrlAMoDFLQfEhm2kH3LlJ1dVWi2AP902es0YffK/5l4Nm/7I dlPyK9f2snGNZbEX2RiqEbtSe8bYKbgynd9RVfMSbx6UgeiDapyO1zG7PBXyjE68 pDoUxJKmYK525YzfbRdNLCn/Nhsxa3v4Xu/PuiNZv/wGs5b5lo/LIfp0pNyb9vzP tcfG92WyUCQtJe74pb0ydf7xpi629XEEv/zZ8V8vexoPmp0AapYIKJRlQyu2vI22 eGlTrZu14Oj2MwYJIRt6Q/GW5B6EjUBaZg==</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

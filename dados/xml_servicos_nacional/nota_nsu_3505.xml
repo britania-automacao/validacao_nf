@@ -1,0 +1,225 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+        
+    <infNFSe Id="NFS51052591219396244000163260000000000226056922867400">
+                
+        <xLocEmi>Lucas do Rio Verde</xLocEmi>
+                
+        <xLocPrestacao>Lucas do Rio Verde</xLocPrestacao>
+                
+        <nNFSe>2600000000002</nNFSe>
+                
+        <cLocIncid>5105259</cLocIncid>
+                
+        <xLocIncid>Lucas do Rio Verde</xLocIncid>
+                
+        <xTribNac>Organização de festas e recepções.</xTribNac>
+                
+        <xNBS>Fornecimento de alimentação para eventos</xNBS>
+                
+        <verAplic>1.1.0</verAplic>
+                
+        <ambGer>1</ambGer>
+                
+        <tpEmis>2</tpEmis>
+                
+        <cStat>100</cStat>
+                
+        <dhProc>2026-05-19T17:32:54-03:00</dhProc>
+                
+        <nDFSe>2600000000002</nDFSe>
+                
+        <emit>
+                        
+            <CNPJ>19396244000163</CNPJ>
+                        
+            <IM>28980</IM>
+                        
+            <xNome>SERGIO SILVA DE FRANCA &amp; CIA LTDA</xNome>
+                        
+            <enderNac>
+                                
+                <xLgr>AV LUIZ CARLOS TESSELE JUNIOR</xLgr>
+                                
+                <nro>1309 N</nro>
+                                
+                <xBairro>TESSELE JUNIOR</xBairro>
+                                
+                <cMun>5105259</cMun>
+                                
+                <UF>MT</UF>
+                                
+                <CEP>78460463</CEP>
+                           
+            </enderNac>
+                        
+            <email>paulazalrv@gmail.com</email>
+                   
+        </emit>
+                
+        <valores>
+                        
+            <vBC>5915.00</vBC>
+                        
+            <pAliqAplic>2.01</pAliqAplic>
+                        
+            <vISSQN>118.89</vISSQN>
+                        
+            <vTotalRet>0.00</vTotalRet>
+                        
+            <vLiq>5915.00</vLiq>
+                   
+        </valores>
+                
+        <DPS versao="1.01">
+                        
+            <infDPS Id="DPS510525921939624400016300001202600000000002">
+                                
+                <tpAmb>1</tpAmb>
+                                
+                <dhEmi>2026-05-19T17:12:53-03:00</dhEmi>
+                                
+                <verAplic>1.1.0</verAplic>
+                                
+                <serie>1</serie>
+                                
+                <nDPS>202600000000002</nDPS>
+                                
+                <dCompet>2026-05-19</dCompet>
+                                
+                <tpEmit>1</tpEmit>
+                                
+                <cLocEmi>5105259</cLocEmi>
+                                
+                <prest>
+                                        
+                    <CNPJ>19396244000163</CNPJ>
+                                        
+                    <IM>28980</IM>
+                                        
+                    <email>paulazalrv@gmail.com</email>
+                                        
+                    <regTrib>
+                                                
+                        <opSimpNac>3</opSimpNac>
+                                                
+                        <regApTribSN>1</regApTribSN>
+                                                
+                        <regEspTrib>0</regEspTrib>
+                                           
+                    </regTrib>
+                                   
+                </prest>
+                                
+                <toma>
+                                        
+                    <CNPJ>76492701000157</CNPJ>
+                                        
+                    <xNome>BRITANIA CURITIBA</xNome>
+                                        
+                    <end>
+                                                
+                        <endNac>
+                                                        
+                            <cMun>4106902</cMun>
+                                                        
+                            <CEP>82520060</CEP>
+                                                   
+                        </endNac>
+                                                
+                        <xLgr>AV. NOSSA SENHORA DA LUZ</xLgr>
+                                                
+                        <nro>1330</nro>
+                                                
+                        <xBairro>HUGO LANGE</xBairro>
+                                           
+                    </end>
+                                        
+                    <email>auditoria.at@britania.com.br</email>
+                                   
+                </toma>
+                                
+                <serv>
+                                        
+                    <locPrest>
+                                                
+                        <cLocPrestacao>5105259</cLocPrestacao>
+                                           
+                    </locPrest>
+                                        
+                    <cServ>
+                                                
+                        <cTribNac>171101</cTribNac>
+                                                
+                        <xDescServ>COFFEE BREAK Evento Cafe da manha para MARTINELL - Dia das Maes Data 08/05/26 das 9 as 10:30h da manhaNome do Item: Coffee Break para 300 pessoasNumero do MLA: 294159</xDescServ>
+                                                
+                        <cNBS>103013100</cNBS>
+                                                
+                        <cIntContrib>22521</cIntContrib>
+                                           
+                    </cServ>
+                                   
+                </serv>
+                                
+                <valores>
+                                        
+                    <vServPrest>
+                                                
+                        <vServ>5915.00</vServ>
+                                           
+                    </vServPrest>
+                                        
+                    <trib>
+                                                
+                        <tribMun>
+                                                        
+                            <tribISSQN>1</tribISSQN>
+                                                        
+                            <tpRetISSQN>1</tpRetISSQN>
+                                                   
+                        </tribMun>
+                                                
+                        <totTrib>
+                                                        
+                            <pTotTrib>
+                                                                
+                                <pTotTribFed>13.45</pTotTribFed>
+                                                                
+                                <pTotTribEst>0.00</pTotTribEst>
+                                                                
+                                <pTotTribMun>4.62</pTotTribMun>
+                                                           
+                            </pTotTrib>
+                                                   
+                        </totTrib>
+                                           
+                    </trib>
+                                   
+                </valores>
+                           
+            </infDPS>
+                   
+        </DPS>
+           
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS51052591219396244000163260000000000226056922867400">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>709iKoEJpbMPWHHf4NcrO9NO7RQ=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>RNpProUrITQsRsZ3HoX8hGXLR9oldkrJzuA+ASS98bkCK/4P+KE21LlhROry5G9uOa0NQfwELZHMdbgG3grJjDiHUnzSHj8r+ko48o65k5FNBkDbgmqE++p4Wd7ktMI9IzrtpmIGb1hHP/BG4dKEjQqTz1uvyOTMopjP1sHNkKqxrX5RmTYR1A2+wny4nzwi/y0GM96xVvLpD3a/G4O6ApGyWCmGwO5X5PRjKeUf0Tz0XResftdHfTmimMi0EiLLVSAwREWOsVimo2v4jijPhxhsAeAtgue8UjRia8fb/NtziFqPk7mMXR1KNA5H7L9u/FIACMi4t/Hd0K92qHQZUg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH8jCCBdqgAwIBAgIIRxZbko3ioWUwDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgU0FGRVdFQiBSRkIgdjUwHhcNMjUxMjMwMTQwOTE3WhcNMjYxMjMwMTQwOTE3WjCCAQkxCzAJBgNVBAYTAkJSMRMwEQYDVQQKEwpJQ1AtQnJhc2lsMQswCQYDVQQIEwJNVDEbMBkGA1UEBxMSTFVDQVMgRE8gUklPIFZFUkRFMTYwNAYDVQQLEy1TZWNyZXRhcmlhIGRhIFJlY2VpdGEgRmVkZXJhbCBkbyBCcmFzaWwgLSBSRkIxFjAUBgNVBAsTDVJGQiBlLUNOUEogQTExFzAVBgNVBAsTDjIxNjg0NDk4MDAwMTI5MRkwFwYDVQQLExB2aWRlb2NvbmZlcmVuY2lhMTcwNQYDVQQDEy5NVU5JQ0lQSU8gREUgTFVDQVMgRE8gUklPIFZFUkRFOjI0NzcyMjQ2MDAwMTQwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtYeTi0HxwFkRJZcKVcyKorVNvfLSqQM5aqNmHAn02RDwHS+FbfXXixZhI8IdR66Y2zpLA516S9QE8qRRtjISWFnRjCAuggL9+J7mhhDHg4rWnmB/ItgIxD7nUYnytNmoCiblPy6eSHatUobqcqbQk0SB0ASxWGRxAeHdnvM78/Rntx1OmRI53PIQlF4IJtLqQfxacrTGl9n41FXfqCWo8fZdwXQlV5jLrlAQy6iwXfU0J6KAiOUDvD4pFnGuAzWOKYQ9nf1KWVA6EDrHjtGoBSnGfuUV5KHiOzpIHX0z5h0PUkHOnj8qhH7Pf8EJ6xA86kLbl8MK+VwmKvghp1lN+QIDAQABo4IC7TCCAukwHwYDVR0jBBgwFoAUKV5L1UZMu/4Wp2PBHcQm8t3Y8wUwDgYDVR0PAQH/BAQDAgXgMGkGA1UdIARiMGAwXgYGYEwBAgEzMFQwUgYIKwYBBQUHAgEWRmh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvZHBjLWFjc2FmZXdlYnJmYi5wZGYwga4GA1UdHwSBpjCBozBPoE2gS4ZJaHR0cDovL3JlcG9zaXRvcmlvLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9sY3ItYWMtc2FmZXdlYnJmYnY1LmNybDBQoE6gTIZKaHR0cDovL3JlcG9zaXRvcmlvMi5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvbGNyLWFjLXNhZmV3ZWJyZmJ2NS5jcmwwgbcGCCsGAQUFBwEBBIGqMIGnMFEGCCsGAQUFBzAChkVodHRwOi8vcmVwb3NpdG9yaW8uYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwUgYIKwYBBQUHMAKGRmh0dHA6Ly9yZXBvc2l0b3JpbzIuYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwgbUGA1UdEQSBrTCBqoEbTUlHVUVMVkFaUFJFRkVJVE9AR01BSUwuQ09NoB0GBWBMAQMCoBQTEk1JR1VFTCBWQVogUklCRUlST6AZBgVgTAEDA6AQEw4yNDc3MjI0NjAwMDE0MKA4BgVgTAEDBKAvEy0wMjEwMTk2MzU0NjEyNTM1OTg3MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDCgFwYFYEwBAwegDhMMMDAwMDAwMDAwMDAwMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDBDAJBgNVHRMEAjAAMA0GCSqGSIb3DQEBCwUAA4ICAQA7sGKnSTBY2Hxik9Lhvi0ZsdT0MylbO5naJiWJevFrm6lYdbHNfvfiOmrZUdBvXI7uuBw/KJD6WXInM5ufmu9ODcUYCa8kbFEaCd6Dvl8kp1W7ArJ9FDwKtc1fVHuLDA90AF35MPSSJU9YvyktSToz/AngHX2YMJLM+VnPvsFQN3yslyKA6eCVl6rgaNhQYZy+QGJILDMIohrt3kEpqv1roxT7XgegMaD+M3G/l2scw7O4+sWx1Swb5Zj1ZO1At/KYL8VX4UAO47oZAi4l3Cpmtqb7pPgPCbdoxrIaOZlSSE+dcG8oK9oT6OTEpJWFcaBiaALc9bdmk1rkmZIDmhPR3KDpfKelXnA5t+ikoZzasBa9ryiekt6cc4P3r8quxTdIqiHD1xCFYDpRhAGCMtPV1xSijgHDx8ANB+5XLpkQ7RXR8VS0j6sjjaJi4gg0ytQeKd02DBKhuit+8+IxfdqS/lTJgs+Xi1lbKgnbbJUmm+4xR0efs2tXukYoOHCvr6wh+As0SDu2HyEsvDdBP614zG1lgoHU1k9Wb5Lj0n1hODGC8BaZnAyy79JM7MkOcWIHowEYaAKMvRDPY7CsNuIedpL7xQ2FmBMjezk+fbnLe3P/AZZxZiMnsfYvdx441GhUzVEcAS7b9tkxa4VSa3boWf92Zg9msQd3MhHVY3F2hg==</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

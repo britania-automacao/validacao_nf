@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS43051081258028425000199190000000001025088716422160">
+        <xLocEmi>Caxias do Sul</xLocEmi>
+        <xLocPrestacao>Caxias do Sul</xLocPrestacao>
+        <nNFSe>1900000000010</nNFSe>
+        <cLocIncid>4305108</cLocIncid>
+        <xLocIncid>Caxias do Sul</xLocIncid>
+        <xTribNac>Representacao de qualquer natureza, inclusive comercial.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-08-05T17:44:41-03:00</dhProc>
+        <nDFSe>1900000000010</nDFSe>
+        <emit>
+            <CNPJ>58028425000199</CNPJ>
+            <IM>274101</IM>
+            <xNome>D amp; C REPRESENTACAO COMERCIAL LTDA</xNome>
+            <enderNac>
+                <xLgr>ALGENY LAZAROTTO</xLgr>
+                <nro>99</nro>
+                <xBairro>BELA VISTA</xBairro>
+                <cMun>4305108</cMun>
+                <UF>RS</UF>
+                <CEP>95076162</CEP>
+            </enderNac>
+            <fone>5432145204</fone>
+            <email>CRPEZZI@TERRA.COM.BR</email>
+        </emit>
+        <valores>
+            <pAliqAplic>0.00</pAliqAplic>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>4901.36</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS430510825802842500019900019000000000000010">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-08-05T00:00:00-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>19</serie>
+                <nDPS>10</nDPS>
+                <dCompet>2025-08-05</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4305108</cLocEmi>
+                <prest>
+                    <CNPJ>58028425000199</CNPJ>
+                    <IM>274101</IM>
+                    <xNome>D amp; C REPRESENTACAO COMERCIAL LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4305108</cMun>
+                            <CEP>95076162</CEP>
+                        </endNac>
+                        <xLgr>ALGENY LAZAROTTO</xLgr>
+                        <nro>99</nro>
+                        <xBairro>BELA VISTA</xBairro>
+                    </end>
+                    <fone>5432145204</fone>
+                    <email>CRPEZZI@TERRA.COM.BR</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>CORPORATIVO@BRITANIA.COM.BR</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4305108</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>REPRESENTACOES COMERCIAIS</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>4901.36</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS43051081258028425000199190000000001025088716422160">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>nyjgShArORqtXtmETFis3tioCgA=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>TG4pSolv7gY5UE1+OxDaDuRl68qmRPPI6AuG3D+CeSAV1s6pHoqFyIRYybPfgz6uD4uT91Jq/SX5EAOWK+zZ/AjbR1/IQ8fzOJPQmy8DJM9GSdM7Ti64etvo58jJfrh/KNgbkXG01cVbZ9GnLjFAH3OA3yM4apfSWhv9ZPGsFSdjSzyU0IbUrMNRN8L/NtOSq+QaWSixRVCF805wHf+NkpT7+18WrdL4QoWR3wafIoV3sKuzZdckiOvA9PWtREFIalMMAD+zcXAgtb1Pn5piIxuZV4JgWQhwTq1mJ5kWb3S6QwXlQuJR+52KFIOL8gNuFPjBzB59qYY2yha+GVWpYw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

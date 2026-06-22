@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+    <infNFSe Id="NFS41191521212833911000189000000000017226050000000000">
+        <xLocEmi>Pinhais</xLocEmi>
+        <xLocPrestacao>Curitiba</xLocPrestacao>
+        <nNFSe>172</nNFSe>
+        <cLocIncid>4119152</cLocIncid>
+        <xLocIncid>Pinhais</xLocIncid>
+        <xTribNac>Assessoria ou consultoria de qualquer natureza, não contida em outros itens desta lista.</xTribNac>
+        <verAplic>1.01</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-05-14T13:36:27-03:00</dhProc>
+        <nDFSe>172</nDFSe>
+        <emit>
+            <CNPJ>12833911000189</CNPJ>
+            <IM>59895</IM>
+            <xNome>C2C ASSESSORIA ADMINISTRATIVA E LOGISTICA LTDA -  EPP</xNome>
+            <enderNac>
+                <xLgr>DOS ARACAS</xLgr>
+                <nro>71</nro>
+                <xBairro>ALPHAVILLE GRACIOSA</xBairro>
+                <cMun>4119152</cMun>
+                <UF>PR</UF>
+                <CEP>83327118</CEP>
+            </enderNac>
+            <fone>04131321917</fone>
+            <email>elson.processos@assessoriaprecision.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>20016.70</vBC>
+            <vISSQN>642.50</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>20016.70</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS411915221283391100018900001000000000000172">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-05-14T13:36:27-03:00</dhEmi>
+                <verAplic>1.01</verAplic>
+                <serie>1</serie>
+                <nDPS>172</nDPS>
+                <dCompet>2026-05-14</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4119152</cLocEmi>
+                <prest>
+                    <CNPJ>12833911000189</CNPJ>
+                    <IM>59895</IM>
+                    <fone>04131321917</fone>
+                    <email>elson.processos@assessoriaprecision.com.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>S/N</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>ARIELI.SUSIN@BRITANIA.COM.BR</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4106902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>170101</cTribNac>
+                        <xDescServ>Assessoria Administrativa.</xDescServ>
+                        <cNBS>114011500</cNBS>
+                        <cIntContrib>1276808</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>Valor do ISS R$ 642,50 calculado com base na alíquota de 3,2098%. Efetuar deposito em conta corrente, Banco Bradesco, Agencia: 0049-3, Conta: 0310260-2</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>20016.70</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>3.21</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>2692.25</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>952.79</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41191521212833911000189000000000017226050000000000">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>w2gC4Blio5pBuYwzRc7FLiXAffM=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>VKh/lr0ZdSputp7OZhwuKNK4a7Zshw4Q8T6O7O8TVsutZqTeEkWWIU3GrLf1meE+NUwzNlcbeBq8HqQ73NVXGRdHiorkIA+T77G7KP2ZOOdRLlbkfqBMViD+RIyxCOcgWd07M9nqGQ7cBmCtWcXRin1MAcP+9cRAjiR0FFi4fBTigFrTsfn/KYPp3zk5KkTrfmfpINakUhd1Klxh9AdumP41/ZCa6gNrKjHcphBsTmqHaFNxo2zJQB+fUn/9CfM0IXXJlv721P4iYOOWUyGqIyuzWPF0IOGrQd4+BCU5vRRq0yxnSDRjwjvVsL2q4dVizWFxzeR1atVATOXbbYurrQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

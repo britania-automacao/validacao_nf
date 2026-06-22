@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35525021215559756000142000000000164226030000000000">
+        <xLocEmi>SUZANO</xLocEmi>
+        <xLocPrestacao>SUZANO</xLocPrestacao>
+        <nNFSe>1642</nNFSe>
+        <cLocIncid>3552502</cLocIncid>
+        <xLocIncid>SUZANO</xLocIncid>
+        <xTribNac>Expediente, Secretaria Em Geral, Apoio E Infra-Estrutura Administrativa E Congêneres.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-03-18T09:39:28-03:00</dhProc>
+        <nDFSe>25764208</nDFSe>
+        <emit>
+            <CNPJ>15559756000142</CNPJ>
+            <IM>39248</IM>
+            <xNome>CHINA VISTOS ASSESSORIA LTDA</xNome>
+            <xFant>CHINA VISTOS ASSESSORIA LTDA</xFant>
+            <enderNac>
+                <xLgr>RUA KONOI ENDO</xLgr>
+                <nro>33</nro>
+                <xCpl>PAV 3 - SL 302</xCpl>
+                <xBairro>VILA BELA VISTA</xBairro>
+                <cMun>3552502</cMun>
+                <UF>SP</UF>
+                <CEP>08674320</CEP>
+            </enderNac>
+            <fone>1147522640</fone>
+            <email>marcos@chinavistos.com.br</email>
+        </emit>
+        <valores>
+            <vBC>1325.00</vBC>
+            <pAliqAplic>3.00</pAliqAplic>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>1325.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS355250221555975600014210000000000000001642">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-03-18T09:39:28-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>10000</serie>
+                <nDPS>1642</nDPS>
+                <dCompet>2026-03-18</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3552502</cLocEmi>
+                <prest>
+                    <CNPJ>15559756000142</CNPJ>
+                    <IM>39248</IM>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3552502</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>170202</cTribNac>
+                        <cTribMun>004</cTribMun>
+                        <xDescServ>Serviços combinados de escritório e apoio administrativo</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>1325.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35525021215559756000142000000000164226030000000000">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>X6H0OY72/ld8t+uBJhlrmv6KHVc=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>LKhYxiVYppf4ter0/Af+eV5exI1/aUu7KqnpPxD1aYKOUsplfP21zb91Ynorus5K8DcqdyZnnOm5BzGT1/23MLi/YcqC9eJ0/uyp+FXYcE9usbA14pBHuSmX8TheGI8FHHaV/zfrk2H1Qgr2hyu3fHSoKdbaza/eYyAje5lLqj11Aqmit349UcsqKFmwSesd4q4827LYd4EbyyHMnWymOLMwyjkUg3tmXBhNZq6UrWjl7zjBCupZO0F+ocGoFcZvKiCZjzWrP/m/WOqGAgxlAMp3JiWnIob2542BWpJ0b5UuKGRBmM+Yz4gauKn+fgdG9ti5w0AhitYFiQjJtJ4DWA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH9jCCBd6gAwIBAgIQQBp/SvNt4C4XyWvzPTFRajANBgkqhkiG9w0BAQsFADB1MQswCQYDVQQGEwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDE2MDQGA1UECxMtU2VjcmV0YXJpYSBkYSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRkwFwYDVQQDExBBQyBTSU5DT1IgUkZCIEc1MB4XDTI1MTIxOTExMzAzN1oXDTI2MTIxOTExMzAzN1owgfExCzAJBgNVBAYTAkJSMRMwEQYDVQQKDApJQ1AtQnJhc2lsMQswCQYDVQQIDAJTUDEPMA0GA1UEBwwGU3V6YW5vMRkwFwYDVQQLDBBWaWRlb0NvbmZlcmVuY2lhMRcwFQYDVQQLDA4wMzM2NTAwOTAwMDI3NTE2MDQGA1UECwwtU2VjcmV0YXJpYSBkYSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRYwFAYDVQQLDA1SRkIgZS1DTlBKIEExMSswKQYDVQQDDCJNVU5JQ0lQSU8gREUgU1VaQU5POjQ2NTIzMDU2MDAwMTIxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnh1CPusEfvAmSYDRBy5RVz4FKPhMEj/nfj21RLGNfnWqKsxndLc0qDUj+4v3YeIkWJY4PvbXZQXsM7whInUhUPONiG2YjUd5kpv2cJGQr6GBskFrliL+3eIxKXUKG6cVvwbtjotUChKB71F24jQgnDINBVWXS02ugWM8h+wAH38/yJYHcAJYW1CVA5QUxoGmlSJteXc3oudn+wcKuoRS1AEiyWwj0aY8lm+jjzjagpQqg9awY3qQ2RFAzX84nr6T31wgeaYNDGDWkuezSc+FBH8jHVKBCeu7pbyHD+4dkEb00hOqn89h6kxL7esZkhQHRepoum4UprfwCvAmXTg8EQIDAQABo4IDAzCCAv8wgcYGA1UdEQSBvjCBu6A9BgVgTAEDBKA0BDIxNDA4MTk5MDM2NzY1Nzg4ODA4MDAwMDAwMDAwMDAwMDAwMDA0Njc5NzQ5MTNzc3BTUKAnBgVgTAEDAqAeBBxQRURSTyBDSEFSTEVTIFNISVJBS0FXQSBJU0hJoBkGBWBMAQMDoBAEDjQ2NTIzMDU2MDAwMTIxoBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMIEdYWRyaWFuYS5tZWxvQHN1emFuby5zcC5nb3YuYnIwCQYDVR0TBAIwADAfBgNVHSMEGDAWgBRn50IRvvI4BhVJD4f/2gXeXY6UIjB4BgNVHSAEcTBvMG0GBmBMAQIBHDBjMGEGCCsGAQUFBwIBFlVodHRwOi8vaWNwLWJyYXNpbC5hY3NpbmNvci5jb20uYnIvcmVwb3NpdG9yaW8vZHBjL0FDX1NJTkNPUl9SRkIvRFBDX0FDX1NJTkNPUl9SRkIucGRmMIG2BgNVHR8Ega4wgaswVKBSoFCGTmh0dHA6Ly9pY3AtYnJhc2lsLmNlcnRpc2lnbi5jb20uYnIvcmVwb3NpdG9yaW8vbGNyL0FDU0lOQ09SUkZCRzUvTGF0ZXN0Q1JMLmNybDBToFGgT4ZNaHR0cDovL2ljcC1icmFzaWwub3V0cmFsY3IuY29tLmJyL3JlcG9zaXRvcmlvL2xjci9BQ1NJTkNPUlJGQkc1L0xhdGVzdENSTC5jcmwwDgYDVR0PAQH/BAQDAgXgMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDBDCBpQYIKwYBBQUHAQEEgZgwgZUwWwYIKwYBBQUHMAKGT2h0dHA6Ly9pY3AtYnJhc2lsLmFjc2luY29yLmNvbS5ici9yZXBvc2l0b3Jpby9jZXJ0aWZpY2Fkb3MvQUNfU0lOQ09SX1JGQl9HNS5wN2MwNgYIKwYBBQUHMAGGKmh0dHA6Ly9vY3NwLWFjLXNpbmNvci1yZmIuY2VydGlzaWduLmNvbS5icjANBgkqhkiG9w0BAQsFAAOCAgEAUPRY+3gRsKx7YV/oSj2mjjGD9B928IDayPpgnOyELtkaJpT02Nx2ppZnukL3/FBh3uNasI4LK/MobojNTWVF9bY9f4hPPX6yPtXVunysScm2POjhXS31NyRU+BL6Y+DoijGooqTA6Qvkr2NacNsYvxJ8e0iS647lom4EeXRwLvR/a9UwCW7XiL3ho/Dh3FUeq+rkeHLeq/gpG3mGfbTZaQ5l91NVx48tAgpxjwDpEnmlBt9uS9M1lkwAKkRThKGNuviqr9Jkt54hp2nwFWBeXJrysHR0B8bSih5xGLN4/SMjlo06Sax/Q7GmS0d58zbO8O3xj7HkjjTTFrQ0Rt79ljymPys8E8HFIoj784aCn5tSNnbhl6WF4ZZLFKTbkFsjYyEc47KrqwwXnkpKOv1krxBOeBG/zTzLMrEQvTlrf4gmdDey419q27ORTWVpdnWcpXRUdu49xF5x3f0A6qJu7BO5l0GPIk3ij9ymnGryIkXzQUyn7dBIha1m/1TlyR5wXc/GKMemu1BAeaA45onEL+88S0Q9IIa2vTbmvXrav8k0/ZxvGblJoWXw4X0QyPWQNDhv/71McT1ineX1BjLpzI4sP5DZlQs21XF8T6Akt/62NcLiIj5LbA9Oyd2rRg2LpORwGH4Joj97yJNqTeRTIk56k0zeu/5E+ncQu2YZPw0=</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

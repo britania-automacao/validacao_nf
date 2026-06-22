@@ -1,0 +1,174 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS26096001251984610000108260000000006126062664390048">
+        <xLocEmi>OLINDA</xLocEmi>
+        <xLocPrestacao>OLINDA</xLocPrestacao>
+        <nNFSe>2600000000061</nNFSe>
+        <cLocIncid>2609600</cLocIncid>
+        <xLocIncid>OLINDA</xLocIncid>
+        <xTribNac>Planejamento, organização e administração de feiras, exposições, e congêneres.</xTribNac>
+        <verAplic>1.01</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-06-10T15:09:42-00:00</dhProc>
+        <nDFSe>2600000000061</nDFSe>
+        <emit>
+            <CNPJ>51984610000108</CNPJ>
+            <IM>1075080</IM>
+            <xNome>WR MONTAGENS E PRODUCOES LTDA</xNome>
+            <enderNac>
+                <xLgr>RUA OSORIO DE MORAIS</xLgr>
+                <nro>285</nro>
+                <xCpl>CS C</xCpl>
+                <xBairro>SALGADINHO</xBairro>
+                <cMun>2609600</cMun>
+                <UF>PE</UF>
+                <CEP>53110450</CEP>
+            </enderNac>
+            <fone>81986190524</fone>
+            <email>JOSENILDOR.BARBOSA@HOTMAIL.COM</email>
+        </emit>
+        <valores>
+            <vBC>18000.00</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>900.00</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>18000.00</vLiq>
+        </valores>
+        <IBSCBS>
+            <cLocalidadeIncid>2609600</cLocalidadeIncid>
+            <xLocalidadeIncid>OLINDA</xLocalidadeIncid>
+            <valores>
+                <vBC>17100.00</vBC>
+                <uf>
+                    <pIBSUF>0.10</pIBSUF>
+                    <pRedAliqUF>0.00</pRedAliqUF>
+                    <pAliqEfetUF>0.00</pAliqEfetUF>
+                </uf>
+                <mun>
+                    <pIBSMun>0.00</pIBSMun>
+                    <pRedAliqMun>0.00</pRedAliqMun>
+                    <pAliqEfetMun>0.00</pAliqEfetMun>
+                </mun>
+                <fed>
+                    <pCBS>0.90</pCBS>
+                    <pRedAliqCBS>0.00</pRedAliqCBS>
+                    <pAliqEfetCBS>0.00</pAliqEfetCBS>
+                </fed>
+            </valores>
+            <totCIBS>
+                <vTotNF>18000.00</vTotNF>
+                <gIBS>
+                    <vIBSTot>17.10</vIBSTot>
+                    <gIBSUFTot>
+                        <vIBSUF>17.10</vIBSUF>
+                    </gIBSUFTot>
+                    <gIBSMunTot>
+                        <vIBSMun>0.00</vIBSMun>
+                    </gIBSMunTot>
+                </gIBS>
+                <gCBS>
+                    <vCBS>153.90</vCBS>
+                </gCBS>
+            </totCIBS>
+        </IBSCBS>
+        <DPS versao="1.01">
+            <infDPS Id="DPS260960025198461000010802026002600000000061">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-06-10T15:09:42-00:00</dhEmi>
+                <verAplic>1.01</verAplic>
+                <serie>2026</serie>
+                <nDPS>2600000000061</nDPS>
+                <dCompet>2026-06-10</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2609600</cLocEmi>
+                <prest>
+                    <CNPJ>51984610000108</CNPJ>
+                    <IM>1075080</IM>
+                    <fone>81986190524</fone>
+                    <email>JOSENILDOR.BARBOSA@HOTMAIL.COM</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICO SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2609600</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>171001</cTribNac>
+                        <xDescServ>LOCAÇÃO DE STAND MEDINDO 18M² (6,00X3,00) PARA O EVENTO ENCONTRO DOS INSTALADORES DO NORDESTE EM CARUARU/PE, NO PERÍODO DE 22 À 23 DE MAIO DE 2026.  DADOS BANCÁRIOS: SANTANDE  AG.:3757 C.:13010639-7 PIX:51.984.610/0001-08</xDescServ>
+                        <cNBS>118066300</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>18000.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>900.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+                <IBSCBS>
+                    <finNFSe>0</finNFSe>
+                    <indFinal>0</indFinal>
+                    <cIndOp>040101</cIndOp>
+                    <indDest>0</indDest>
+                    <valores>
+                        <trib>
+                            <gIBSCBS>
+                                <CST>000</CST>
+                                <cClassTrib>000001</cClassTrib>
+                            </gIBSCBS>
+                        </trib>
+                    </valores>
+                </IBSCBS>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="Id-47CEC7DE-9821-4CF6-B5A6-D313B1B55BCB">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS26096001251984610000108260000000006126062664390048">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>G/mLlO6YDcOqNNITplbGlCYc5Fk=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>Uika4MwBmTQ9XtxHHrtO6mNijR8BLkkBEFHKZI4jPL3nMLk7kCBMed17ipNwIWYinqC4xVYDHKHT/Ugzglx7GA8XtYOJIEa09nTTHMBHBQNUby2UGgZlbu8Or0TFjIc7bcxuYjAMCQVyu7s5R6s04OS4uHkRaM/tEc1kbsOGfP8brAdKNxyCFA7deSCHKZ8cohse6i9dN901W6OetbTajD72zPmOpR6ELIjayoGcLGfCpTXuvwI7DIpwh4w2IZEHXpIaLgWTMmTmQVjSt7s+jmj3YVd/68emnR4BhnYguCBL0BQXja9Uqd0HQp8/gcEWTwDHkijCoAsHq5/HYoU2KQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,189 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS42024041214073438000104000000000086326046905709213">
+        <xLocEmi>Blumenau</xLocEmi>
+        <xLocPrestacao>Blumenau</xLocPrestacao>
+        <nNFSe>863</nNFSe>
+        <cLocIncid>4202404</cLocIncid>
+        <xLocIncid>Blumenau</xLocIncid>
+        <xTribNac>Licenciamento ou cessão de direito de uso de programas de computação.</xTribNac>
+        <xNBS>Licenciamento de direitos de uso de programas de computador (software)</xNBS>
+        <verAplic>Simpliss_v1.1.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>1</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-04-02T18:58:12-03:00</dhProc>
+        <nDFSe>11209115</nDFSe>
+        <emit>
+            <CNPJ>14073438000104</CNPJ>
+            <IM>94470</IM>
+            <xNome>PAYTRACK TECNOLOGIA LTDA</xNome>
+            <xFant>PAYTRACK TECNOLOGIA LTDA</xFant>
+            <enderNac>
+                <xLgr>PAUL FRITZ KUEHNRICH</xLgr>
+                <nro>955</nro>
+                <xCpl>ANDAR 1</xCpl>
+                <xBairro>ITOUPAVA NORTE</xBairro>
+                <cMun>4202404</cMun>
+                <UF>SC</UF>
+                <CEP>89052381</CEP>
+            </enderNac>
+            <fone>47992557256</fone>
+            <email>financeiro@paytrack.com.br</email>
+        </emit>
+        <valores>
+            <vBC>4352.36</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>87.05</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>4352.36</vLiq>
+        </valores>
+        <IBSCBS>
+            <cLocalidadeIncid>4106902</cLocalidadeIncid>
+            <xLocalidadeIncid>Curitiba</xLocalidadeIncid>
+            <valores>
+                <vBC>4265.31</vBC>
+                <uf>
+                    <pIBSUF>0.10</pIBSUF>
+                    <pRedAliqUF>0.00</pRedAliqUF>
+                    <pAliqEfetUF>0.00</pAliqEfetUF>
+                </uf>
+                <mun>
+                    <pIBSMun>0.00</pIBSMun>
+                    <pRedAliqMun>0.00</pRedAliqMun>
+                    <pAliqEfetMun>0.00</pAliqEfetMun>
+                </mun>
+                <fed>
+                    <pCBS>0.90</pCBS>
+                    <pRedAliqCBS>0.00</pRedAliqCBS>
+                    <pAliqEfetCBS>0.00</pAliqEfetCBS>
+                </fed>
+            </valores>
+            <totCIBS>
+                <vTotNF>4352.36</vTotNF>
+                <gIBS>
+                    <vIBSTot>4.27</vIBSTot>
+                    <gIBSUFTot>
+                        <vIBSUF>4.27</vIBSUF>
+                    </gIBSUFTot>
+                    <gIBSMunTot>
+                        <vIBSMun>0.00</vIBSMun>
+                    </gIBSMunTot>
+                </gIBS>
+                <gCBS>
+                    <vCBS>38.39</vCBS>
+                </gCBS>
+            </totCIBS>
+        </IBSCBS>
+        <DPS versao="1.01">
+            <infDPS Id="DPS420240421407343800010400900000000000095458">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-04-02T18:58:11-03:00</dhEmi>
+                <verAplic>Omie 1.1</verAplic>
+                <serie>00900</serie>
+                <nDPS>95458</nDPS>
+                <dCompet>2026-04-02</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4202404</cLocEmi>
+                <prest>
+                    <CNPJ>14073438000104</CNPJ>
+                    <IM>94470</IM>
+                    <fone>47992557256</fone>
+                    <email>financeiro@paytrack.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>contasapagar@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4202404</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010501</cTribNac>
+                        <xDescServ>EXPENSE - Gerado via Integracao - 04/2026 - Qtde 1 x Valor Unit. R$ 4.352,34 = Total R$ 4.352,34.\s\nMOBILITY - Gerado via Integracao - 04/2026 - Qtde 1 x Valor Unit. R$ 0,01 = Total R$ 0,01.\s\nDADOS_INSIGHTS_EXPENSE - Gerado via Integracao - 04/2026 - Qtde 1 x Valor Unit. R$ 0,01 = Total R$ 0,01.\s\n</xDescServ>
+                        <cNBS>111032200</cNBS>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>Mensalidade SaaS\s\nRenovacao Contratual\s\n\s\n\s\nDados bancarios:\s\n\s\nPAYTRACK TECNOLOGIA LTDA\s\nBANCO: 085 - VIACREDI\s\nAGENCIA: 0101-5\s\nC/C: 878992-4\s\n\s\nPIX: 14.073.438/0001-04\s\n\s\nVencto. 30/04/2026\s\n</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>4352.36</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.00</pAliq>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>01</CST>
+                                <vBCPisCofins>4352.36</vBCPisCofins>
+                                <pAliqPis>0.00</pAliqPis>
+                                <pAliqCofins>0.00</pAliqCofins>
+                                <vPis>0.00</vPis>
+                                <vCofins>0.00</vCofins>
+                                <tpRetPisCofins>0</tpRetPisCofins>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+                <IBSCBS>
+                    <finNFSe>0</finNFSe>
+                    <indFinal>0</indFinal>
+                    <cIndOp>100501</cIndOp>
+                    <indDest>0</indDest>
+                    <valores>
+                        <trib>
+                            <gIBSCBS>
+                                <CST>000</CST>
+                                <cClassTrib>000001</cClassTrib>
+                            </gIBSCBS>
+                        </trib>
+                    </valores>
+                </IBSCBS>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42024041214073438000104000000000086326046905709213">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>2oTinJu44Oohm4i9Kham6dx0PJU=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>PaGxY451qsojFROUZNaY0t1e0z9f76d0fB99LenS4xO7PSS7z8xDYFNkVxD0u8TMPdTHucP09PV1l5vLO+QuntFhRDHafa66NEJjog3dBcF655ayKtwCFyJ/Q8St7AnSxz2Upn38LWw1P3174LXHeqOFZxGbXbvUPpVr5kAFmjEOn6uoZ9/SZ3CQoB4q5/k6Yk9i3WUDmUeL3XECfnh5TCT7CLj8BIiaNh5LrBL5AgMNKdB8mY4dLkdFp00pXg56PExcr+b8XBj0VvtwKhCri+eZNVhZSUOl1e1kG0LJiZq0jQHZ1MHe6Dyq08+v4j1E0Z3TMYwVOttGYSetX6n33Q==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

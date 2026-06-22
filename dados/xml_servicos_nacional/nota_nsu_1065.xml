@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS41152001207784953000137000000003101225121192784498">
+        <xLocEmi>Maringá</xLocEmi>
+        <xLocPrestacao>Maringá</xLocPrestacao>
+        <nNFSe>31012</nNFSe>
+        <cLocIncid>4115200</cLocIncid>
+        <xLocIncid>Maringá</xLocIncid>
+        <xTribNac>Licenciamento de uso de programas de computação.</xTribNac>
+        <xTribMun>Licenciamento ou cessão de direito de uso de programas de computação.</xTribMun>
+        <verAplic>FintelWeb_1.0.0.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-12-18T07:42:54-03:00</dhProc>
+        <nDFSe>119278449</nDFSe>
+        <emit>
+            <CNPJ>07784953000137</CNPJ>
+            <IM>104598</IM>
+            <xNome>VIVAWORKS - TECNOLOGIA PARA RH LTDA</xNome>
+            <xFant>VIVAWORKS</xFant>
+            <enderNac>
+                <xLgr>R. ARTHUR THOMAS</xLgr>
+                <nro>596</nro>
+                <xBairro>ZONA 50 - ZONA CENTRAL</xBairro>
+                <cMun>4115200</cMun>
+                <UF>PR</UF>
+                <CEP>87013250</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vBC>8007.00</vBC>
+            <pAliqAplic>3.00</pAliqAplic>
+            <vISSQN>240.21</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>8007.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS411520020778495300013700002000000000026402">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-12-18T07:42:54-03:00</dhEmi>
+                <verAplic>FintelWeb_1.0.0.0</verAplic>
+                <serie>2</serie>
+                <nDPS>26402</nDPS>
+                <dCompet>2025-12-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4115200</cLocEmi>
+                <prest>
+                    <CNPJ>07784953000137</CNPJ>
+                    <IM>104598</IM>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <IM>124508</IM>
+                    <xNome>BRITANIA ELETRONICOS S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040330</CEP>
+                        </endNac>
+                        <xLgr>R JOAO DAVID PERNETA</xLgr>
+                        <nro>555</nro>
+                        <xCpl>-</xCpl>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>0000000000</fone>
+                    <email>adm.mkt@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4115200</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010501</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>Licenciamento de uso de programas de computacao.\s\n\s\nSegue abaixo dados bancarios para pagamento:\s\nBANCO SICOOB - 756\s\nAg. 4340\s\nC/C: 76108-7\s\nCNPJ 07.784.953/0001-37\s\nPIX financeiro@vivaweb.net\s\nTrib aprox: R$ 0.00 (0.00% - Federal) e R$ 160.14 (2.0000000000% - Municipal). Fonte: IBPT</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>8007.00</vServ>
+                    </vServPrest>
+                    <vDescCondIncond/>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>3.00</pAliq>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>240.21</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS41152001207784953000137000000003101225121192784498">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>FyDhfJH5aiu5TTj5w/xrQxMhlNP2yJ29jQpT2uwJb10=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>mIsfu6yktL3BPakMijvgJpkMMQAdilS1Z7/ihywTUNJkSRyhOmYWa5ZwVYHrigiQOShUxkstTQxPz3E2gqmD4s1m96N2Pu478Cj93YP02781x2jFokjD+LSl749HETaFPYyP30UkuBp8xbNkXGRNV6HcTqbqi8gvx+Krw4iE3EDCQmLYTJwQmNo2hPGYC1Pclrco6hhqgOWx6CAhnSxPPL/9ItMcX+1M0s0mSlEKz5hduVaXG2ztJEHQP6k+SHKOEQG1ckZ7HBg5pHZBbuvXh0sB8Jc4fRIDYzFgG3n/x6cxGSSBL9d6k4Vfr7BfOT63QZFftF3v4IdEd53rwolh/w==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

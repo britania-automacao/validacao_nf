@@ -1,0 +1,152 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS41191521212833911000189000000000013423090000000033">
+        <xLocEmi>4119152</xLocEmi>
+        <xLocPrestacao>Curitiba</xLocPrestacao>
+        <nNFSe>134</nNFSe>
+        <cLocIncid>4119152</cLocIncid>
+        <xLocIncid>Pinhais</xLocIncid>
+        <xTribNac>Assessoria ou consultoria de qualquer natureza, não contida em outros itens desta lista; análise, exame, pesquisa, coleta, compilação e fornecimento de dados e informações de qualquer natureza, inclusive cadastro e similares.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2023-09-19T13:51:59-03:00</dhProc>
+        <nDFSe>134</nDFSe>
+        <emit>
+            <CNPJ>12833911000189</CNPJ>
+            <IM>59895</IM>
+            <xNome>C2C ASSESSORIA ADMINISTRATIVA E LOGISTICA LTDA -  EPP</xNome>
+            <enderNac>
+                <xLgr>DOS ARACAS</xLgr>
+                <nro>71</nro>
+                <xBairro>ALPHAVILLE GRACIOSA</xBairro>
+                <cMun>4119152</cMun>
+                <UF>PR</UF>
+                <CEP>83327118</CEP>
+            </enderNac>
+            <fone>04136681917</fone>
+            <email>elson.processos@assessoriaprecision.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>17314.26</vBC>
+            <pAliqAplic>2.55</pAliqAplic>
+            <vISSQN>440.98</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>17314.26</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS411915221283391100018900001000000000000134">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2023-09-19T13:51:59-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>134</nDPS>
+                <dCompet>2023-09-19</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4119152</cLocEmi>
+                <prest>
+                    <CNPJ>12833911000189</CNPJ>
+                    <IM>59895</IM>
+                    <xNome>C2C ASSESSORIA ADMINISTRATIVA E LOGISTICA LTDA -  EPP</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4119152</cMun>
+                            <CEP>83327118</CEP>
+                        </endNac>
+                        <xLgr>DOS ARACAS</xLgr>
+                        <nro>71</nro>
+                        <xBairro>ALPHAVILLE GRACIOSA</xBairro>
+                    </end>
+                    <fone>04136681917</fone>
+                    <email>elson.processos@assessoriaprecision.com.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>0</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>ARIELI.SUSIN@BRITANIA.COM.BR</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4106902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>017010</cTribNac>
+                        <xDescServ>.</xDescServ>
+                        <cIntContrib>1276808</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>Efetuar deposito em conta, Banco Bradesco, Agencia 0049-3, conta 0310260-2.</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>17314.26</vServ>
+                    </vServPrest>
+                    <vDescCondIncond>
+                        <vDescIncond>0.00</vDescIncond>
+                        <vDescCond>0.00</vDescCond>
+                    </vDescCondIncond>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <pAliq>2.55</pAliq>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                                <vPis>0.00</vPis>
+                                <vCofins>0.00</vCofins>
+                            </piscofins>
+                            <vRetCP>0.00</vRetCP>
+                            <vRetIRRF>0.00</vRetIRRF>
+                            <vRetCSLL>0.00</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>2328.77</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>824.16</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41191521212833911000189000000000013423090000000033">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>05/JgjBz2PoTBPzsjiarwU7ycG0=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>URc85qRsChH5MqBYceo+aQ0BpOoa2MlYv3nQZOxPm6y6DQgwsd9LJ+/vpGqKKv2cKu/Z/VK80lAi5/hqQHPj/8f5h4eNQsgfb92cmSL8f1ZO2hs3KGA8bbeQuglXTUoBbkiZmDmKIWIV2iyz0qLubd1sySOfrqQGHpUljxUe3TKBCy+L7MrrMO5rIt75CUrqGTyVwG75UW/bMN+VdS6MDbcRemsX+tI6FqwAUY0kiXZGZsFuX/s3qRYofImbHvFaQ9meDHtu3SuCFmAp9IB6u9TvJDBJXP0xaUVoAH6SOSHTf3l2vFi0xrSDvs5B//hD4kwXWlHFic5/Y6mluOZLCw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH9DCCBdygAwIBAgIIJdr+wJ4xaiUwDQYJKoZIhvcNAQELBQAwdDELMAkGA1UE BhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEg ZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEYMBYGA1UEAxMPQUMg VkFMSUQgUkZCIHY1MB4XDTIzMDUyNjE3MjEzN1oXDTI0MDUyNTE3MjEzN1owggEG MQswCQYDVQQGEwJCUjELMAkGA1UECBMCUFIxEDAOBgNVBAcTB1BJTkhBSVMxEzAR BgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0 YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBB MTERMA8GA1UECxMIQVIgQ0FSRFMxGTAXBgNVBAsTEFZpZGVvY29uZmVyZW5jaWEx FzAVBgNVBAsTDjI1NDQ5NDM1MDAwMTQ5MSwwKgYDVQQDEyNNVU5JQ0lQSU8gREUg UElOSEFJUzo5NTQyMzAwMDAwMDEwMDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC AQoCggEBALjAxlzI0xszYb80dlvXMDcN1s9MQksxF+4pttbakCiiITJJk1Olp/fa T65uvWgYDtLehIKt2X63sYRH7Yisy4XCj3RQtNccpxfF7smzpNT0gUZDtlkXLYdk DkqgdvMDTZRl9JEHQDNImRpwUe+vUl6Upd6vmv+ubUXzHfkN6DJ74m2waR5tZgXm p/NUeXH0wXmxNULaTAEnrBzysL9qu/qE61c3vsPSdsH11n6usO3wi0kuav9DD+ee xXGtYfiufyY3fW+aQCyIRzHuZ9JAf38kEx2uh9UDPfVg5qHsoXj+DwAOLj5Z2XR4 f1IryAHK482Fo4Kud+04Y04OMmYixJkCAwEAAaOCAvQwggLwMIGcBggrBgEFBQcB AQSBjzCBjDBVBggrBgEFBQcwAoZJaHR0cDovL2ljcC1icmFzaWwudmFsaWRjZXJ0 aWZpY2Fkb3JhLmNvbS5ici9hYy12YWxpZHJmYi9hYy12YWxpZHJmYnY1LnA3YjAz BggrBgEFBQcwAYYnaHR0cDovL29jc3B2NS52YWxpZGNlcnRpZmljYWRvcmEuY29t LmJyMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUU8ul5HVQmUAsvlsVRcm+yzCqicUw cAYDVR0gBGkwZzBlBgZgTAECASUwWzBZBggrBgEFBQcCARZNaHR0cDovL2ljcC1i cmFzaWwudmFsaWRjZXJ0aWZpY2Fkb3JhLmNvbS5ici9hYy12YWxpZHJmYi9kcGMt YWMtdmFsaWRyZmJ2NS5wZGYwgbYGA1UdHwSBrjCBqzBToFGgT4ZNaHR0cDovL2lj cC1icmFzaWwudmFsaWRjZXJ0aWZpY2Fkb3JhLmNvbS5ici9hYy12YWxpZHJmYi9s Y3ItYWMtdmFsaWRyZmJ2NS5jcmwwVKBSoFCGTmh0dHA6Ly9pY3AtYnJhc2lsMi52 YWxpZGNlcnRpZmljYWRvcmEuY29tLmJyL2FjLXZhbGlkcmZiL2xjci1hYy12YWxp ZHJmYnY1LmNybDAOBgNVHQ8BAf8EBAMCBeAwHQYDVR0lBBYwFAYIKwYBBQUHAwIG CCsGAQUFBwMEMIHIBgNVHREEgcAwgb2BIGNhcm9saW5lLnNpbHZhQHBpbmhhaXMu cHIuZ292LmJyoD0GBWBMAQMEoDQEMjE3MDkxOTY1NTA3NTExNjY5ODcwMDAwMDAw MDAwMDAwMDAwMDA0MDM1MDU3OFNTUFBSoCYGBWBMAQMCoB0EG1JPU0EgTUFSSUEg REUgSkVTVVMgQ09MT01CT6AZBgVgTAEDA6AQBA45NTQyMzAwMDAwMDEwMKAXBgVg TAEDB6AOBAwwMDAwMDAwMDAwMDAwDQYJKoZIhvcNAQELBQADggIBAAzDupT0g1Iw Z8Tjs9FFp4Ue9te4DJ+Ju8MFfd6AfwynYaSpvQ49XXCwvTXQjRZmqq2gLQG+6HKJ hCFFb72Y2BstJmuOytsuOi7MGvAbJoE9tpxIx9MEMhVMJJG1BA6D2pwI4LoGRoJH GY9L8E1i8j4Hy4esSe3OE8gTJOgcj7rNLhH0p1vp4ji3rybtycwixRLuGPmenwwX FVTccmZoeWsn58ppQBf8abhgc1vKBfnRaGBkhO65es7Bt2tEBzMGb5ljyRxxo2FK vmf5owtSc3Np60tNOOO1lwK6FSMPAT3shwj2Ii2vaopbpniCrCHgqxbn7iaWWWG+ i19Dz9VUtHV8wYYWJWATrMCzg9oAXWWpZ2fNYttvSSul4gQ9lWnTna5/lk0Jj0ic j94rB/PUY4EzZ6PqRjQCU2rhISk/wjEVtV50g2BX4LNX2QwOHDqIZliZvSSqfSIi Z5qfiJQ21dbhAAgq/pnPD7IkWoQ2T5V2tp6w6zMfwQFbIAELpTXO4cs1nG9i5fIW hqP17kQ9x1LkzRBXK+108S6VKfMYPiCRSyaCTl4pYsAOHXh3xV9VvcO8BlHd0N9b HU7fJ6N1PCQUsQOdaQowhKyRy3JlfH0aPWSKkyDcZKAvL0tgdPJ+yng0odrJZqOH lBZN1xsVDLtHxqioZJg48PYd5ZtvaNpH</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

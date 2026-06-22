@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS22110011212073219000108000000000058326010623563110">
+        <xLocEmi>TERESINA</xLocEmi>
+        <xLocPrestacao>TERESINA</xLocPrestacao>
+        <nNFSe>583</nNFSe>
+        <cLocIncid>2211001</cLocIncid>
+        <xLocIncid>TERESINA</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <xTribMun>Representação de qualquer natureza, inclusive comercial.</xTribMun>
+        <xNBS>Serviços de intermediação na distribuição de mercadorias</xNBS>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-06T15:50:35-03:00</dhProc>
+        <nDFSe>583</nDFSe>
+        <emit>
+            <CNPJ>12073219000108</CNPJ>
+            <IM>0416525</IM>
+            <xNome>CAMPOS SALES REPRESENTACOES LTDA</xNome>
+            <xFant>CAMPOS SALES REPRESENTACOES LTDA</xFant>
+            <enderNac>
+                <xLgr>JONATAS BATISTA</xLgr>
+                <nro>1893</nro>
+                <xBairro>MAFUA</xBairro>
+                <cMun>2211001</cMun>
+                <UF>PI</UF>
+                <CEP>64003077</CEP>
+            </enderNac>
+            <email>email@naoinformado.com</email>
+        </emit>
+        <valores>
+            <vLiq>159.45</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS221100121207321900010800001000000000000583">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-06T15:50:35-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>00001</serie>
+                <nDPS>583</nDPS>
+                <dCompet>2026-01-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2211001</cLocEmi>
+                <prest>
+                    <CNPJ>12073219000108</CNPJ>
+                    <IM>0416525</IM>
+                    <email>email@naoinformado.com</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITÂNIA ELETRODOMÉSTICOS LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>2211001</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>comissoes@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2211001</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <cTribMun>012</cTribMun>
+                        <xDescServ>COMISSÕES SOBRE VENDAS REFERENTE AO MÊS DE DEZEMBRO DE 2025DADOS BANCÁRIOS: BANCO NUBANK - AG: 0001 C/C: 38879783-2 PIX: j.wiston@hotmail.com</xDescServ>
+                        <cNBS>102010000</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>159.45</vServ>
+                    </vServPrest>
+                    <vDescCondIncond/>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS22110011212073219000108000000000058326010623563110">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>4oMqBqesZfLPfTVzF7+EYl5jF7E=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>BqprbDtJIugRXNVK1253XAXMTJ4nelVxKYICf6k0e6rIqA9rW8JWR3zZWi/EMJtEL354cHMJFysB/3esLpOtCU/rpIFIbIR5yUD4JrzZqrMqvyq1Hf/WhHsNX1LUDwIAB6Jq2JHccY6/OxxLXyCCJRHHkbMieuDStxcQl8V0EgkqJpxVRjWdxwG+z6ow63VSG3yXR9gzYy+NHWaMYn0h2sowT8m0CEBf+q0cOR4lrO6WbGCHOOl0f9cjvzSc3lnkLu0Q8vcGZ2KuKe9bR0IcjAaTuspffoV/ca5pEKk0x/HAC9oawUSmFV88Qvh49D7Xt856mJAZJVmOegSiJn3fxw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

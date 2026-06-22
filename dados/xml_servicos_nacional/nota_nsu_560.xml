@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS41069021281399123000149000000000645424021360227057">
+        <xLocEmi>4106902</xLocEmi>
+        <xLocPrestacao>CURITIBA</xLocPrestacao>
+        <nNFSe>6454</nNFSe>
+        <cLocIncid>4106902</cLocIncid>
+        <xLocIncid>CURITIBA</xLocIncid>
+        <xTribNac>Suporte técnico em informática, inclusive instalação, configuração e manutenção de programas de computação e bancos de dados.</xTribNac>
+        <verAplic>1</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2024-02-05T21:00:00-03:00</dhProc>
+        <nDFSe>4027</nDFSe>
+        <emit>
+            <CNPJ>81399123000149</CNPJ>
+            <IM>2191210</IM>
+            <xNome>SOLUSOFT INFORMATICA LTDA</xNome>
+            <enderNac>
+                <xLgr>GRA NICCO</xLgr>
+                <nro>000113204</nro>
+                <xBairro>MOSSUNGUÊ</xBairro>
+                <cMun>4106902</cMun>
+                <UF>PR</UF>
+                <CEP>82520060</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>4510.70</vBC>
+            <vISSQN>225.53</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>4510.70</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS410690228139912300014900000000000000004027">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2024-02-06T00:00:00-03:00</dhEmi>
+                <verAplic>1</verAplic>
+                <serie>0</serie>
+                <nDPS>4027</nDPS>
+                <dCompet>2024-02-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4106902</cLocEmi>
+                <prest>
+                    <CNPJ>81399123000149</CNPJ>
+                    <IM>2191210</IM>
+                    <xNome>SOLUSOFT INFORMATICA LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>82520060</CEP>
+                        </endNac>
+                        <xLgr>GRA NICCO</xLgr>
+                        <nro>000113204</nro>
+                        <xBairro>MOSSUNGUÊ</xBairro>
+                    </end>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS S.A.</xNome>
+                    <end>
+                        <xLgr>AV. NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4106902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>011100</cTribNac>
+                        <xDescServ>Taxa de manutencao IsoAnaliticoTaxa de manutenção da rotina de integração com isoCRMVENCIMENTO: 20/03/2024DADOS PARA PAGAMENTOBANCO BRADESCOAGENCIA: 3956C/C: 0211569-7ou PIX CHAVE: 81399123000149Carga tributária aproximada conforme Lei 12.741: 11,03%. Valor dos impostos: 497,53</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>4510.70</vServ>
+                    </vServPrest>
+                    <vDescCondIncond>
+                        <vDescIncond>0.00</vDescIncond>
+                    </vDescCondIncond>
+                    <vDedRed>
+                        <vDR>0.00</vDR>
+                    </vDedRed>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpImunidade>0</tpImunidade>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <pTotTrib>
+                                <pTotTribFed>0</pTotTribFed>
+                                <pTotTribEst>0</pTotTribEst>
+                                <pTotTribMun>0</pTotTribMun>
+                            </pTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41069021281399123000149000000000645424021360227057">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>8bxphWoj832hCoPVhztDHnqrE/0=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>NyBsByze5Ml/9Farb5UkhzpPREYqzd41s6A+Ms5AtsvTBq80X2bqQSnYnpguk7NDaAA9WpMAFbCGg9XPGPu42AuxEp8SRkYR2jV1d97+FTeE9yIgHUeSTCx/bDjG+lT7HusuTLadHEwZGwwGJ3AlVIGhLiX/eBPjHKXqRI5l4/doQrq06MAa/KNzOjn8MNMuAblJLv8xfcOIaO+oFoGJRNi6gDR3BnmnXeKVxRM3/EVR2xIHyxqEdQpaeXYCzQtsid4HI0bzS26yjkwucVWaCVThllSPdIqVrNwoO/q2CRmwWI1sinUqqn7F2CqOKhtgTEhkfNd02/Fx2QD3zaS0cQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,127 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35060031230821105000172000000000763626040532295756">
+        <xLocEmi>BAURU</xLocEmi>
+        <xLocPrestacao>Bauru</xLocPrestacao>
+        <nNFSe>7636</nNFSe>
+        <cLocIncid>3506003</cLocIncid>
+        <xLocIncid>Bauru</xLocIncid>
+        <xTribNac>Suporte técnico em informática, inclusive instalação, configuração e manutenção de programas de computação e bancos de dados.</xTribNac>
+        <verAplic>SilTecnologia_v1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-04-10T00:00:00-03:00</dhProc>
+        <nDFSe>53229575</nDFSe>
+        <emit>
+            <CNPJ>30821105000172</CNPJ>
+            <IM>576687</IM>
+            <xNome>HARPO TECNOLOGIA DE DADOS LTDA</xNome>
+            <enderNac>
+                <xLgr>RUA  JOAQUIM ANACLETO BUENO</xLgr>
+                <nro>1-42</nro>
+                <xCpl>ANEXO ESTACAO 80</xCpl>
+                <xBairro>JARDIM CONTORNO</xBairro>
+                <cMun>3506003</cMun>
+                <UF>SP</UF>
+                <CEP>17047281</CEP>
+            </enderNac>
+            <fone>1421066300</fone>
+            <email>CONTATO@HARPO.COM.BR</email>
+        </emit>
+        <valores>
+            <vBC>2360.00</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>47.20</vISSQN>
+            <vLiq>2360.00</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS350600323082110500017200900000000000004561">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-04-10T00:00:00-03:00</dhEmi>
+                <verAplic>SilTecnologia_v1.00</verAplic>
+                <serie>00900</serie>
+                <nDPS>4561</nDPS>
+                <dCompet>2026-04-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3506003</cLocEmi>
+                <prest>
+                    <CNPJ>30821105000172</CNPJ>
+                    <IM>576687</IM>
+                    <fone>1421066300</fone>
+                    <email>CONTATO@HARPO.COM.BR</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3506003</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010701</cTribNac>
+                        <xDescServ>1 HTC PLATAFORMA - ASSINATURA PLANO10. 200,006 HTC - POOL ANUAL. 2.160,00Banco do Brasil 001 / Ag 0037-x / Cc 71056-3 / CNPJ(PIX): 30.821.105/0001-72</xDescServ>
+                        <cNBS>115013000</cNBS>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>Trib aprox R$: 317,42 Federal, R$: 0,00 Estadual e R$: 63,72 Municipal Fonte: IBPT/empresometro.com.br   B46141</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>2360.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed/>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>47.20</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35060031230821105000172000000000763626040532295756">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>rvpKSU2oqzxtrtnlPcaYrbGNEBk=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>ipTdeiQIJfaXNfZKCZSRFzQa5/57xWzCmJPyYFjFTzugf7tRw6kU8TqvMnvt86tUJZyM+eOXnTQMPAfYqQrfSGyupBpqh5m5IDssarHf/UXRMZi1/n09pQDhkQGsY4d6438ecbvF/hDZEZuKtENDgJtTfnA/8v5LwAaNdA2ZyvQ85G6xx+udbtZ236/AJkslpgO/NPWkjStlZPs4kuAs5Qta5y1vFC/EG6pfDsmPHMcCiVqxEfP1y3ZfjcZrfDh9uyDGMs17NaX6TgHRwbSsGuuOXuaCxywSzQsGNuKXWmMdcrSxUWRIbyct2da8MzaAgzZhtaV8YD3mB6bNQKPPow==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH0zCCBbugAwIBAgIIW9uz4uf1ydEwDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgU0FGRVdFQiBSRkIgdjUwHhcNMjYwMjAzMjAzMjQzWhcNMjcwMjAzMjAzMjQzWjCB6TELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAlNQMQ4wDAYDVQQHEwVCQVVSVTE2MDQGA1UECxMtU2VjcmV0YXJpYSBkYSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRYwFAYDVQQLEw1SRkIgZS1DTlBKIEExMRcwFQYDVQQLEw4xMzAzNjU5MjAwMDE0MzETMBEGA1UECxMKcHJlc2VuY2lhbDEqMCgGA1UEAxMhTVVOSUNJUElPIERFIEJBVVJVOjQ2MTM3NDEwMDAwMTgwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtUYO574cs7dMGzTM4JPlCmOHSeHwewUOuwCmnAh05Biu4LnPEqYfm0erxQxOdb2nn0b87tgjRwlFyEIJaKl7FaZXYqJlF2YlmH/cYN8EfRHz8srfEL+fps1r5EL5gaNBhow4Dhwu6UyoT734waE1AtQMSmQefNu69yfwsEsFQUBfoGj4dFBaC+b3rVITvoF7/cUDg+sMPPJJARQyl2PU8siSgMU5md3z9i/Yq/obGyASjcxRje1GvX7EBsRRWpPcfVE3x6zcJK/FYniDW1Z5hhOw+Az4nC4okeWkc7dUOoWBMNCkqdxPQGN5x9PY5cOPTxoBdOWEqnv9pPAQ9PXLUQIDAQABo4IC7zCCAuswHwYDVR0jBBgwFoAUKV5L1UZMu/4Wp2PBHcQm8t3Y8wUwDgYDVR0PAQH/BAQDAgXgMGkGA1UdIARiMGAwXgYGYEwBAgEzMFQwUgYIKwYBBQUHAgEWRmh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvZHBjLWFjc2FmZXdlYnJmYi5wZGYwga4GA1UdHwSBpjCBozBPoE2gS4ZJaHR0cDovL3JlcG9zaXRvcmlvLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9sY3ItYWMtc2FmZXdlYnJmYnY1LmNybDBQoE6gTIZKaHR0cDovL3JlcG9zaXRvcmlvMi5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvbGNyLWFjLXNhZmV3ZWJyZmJ2NS5jcmwwgbcGCCsGAQUFBwEBBIGqMIGnMFEGCCsGAQUFBzAChkVodHRwOi8vcmVwb3NpdG9yaW8uYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwUgYIKwYBBQUHMAKGRmh0dHA6Ly9yZXBvc2l0b3JpbzIuYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwgbcGA1UdEQSBrzCBrIEcU1VFTExFTlJPU0lNQEJBVVJVLlNQLkdPVi5CUqAeBgVgTAEDAqAVExNTVUVMTEVOIFNJTFZBIFJPU0lNoBkGBWBMAQMDoBATDjQ2MTM3NDEwMDAwMTgwoDgGBWBMAQMEoC8TLTA3MDcxOTg4MDE3NzEyODUxODQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggIBABFEFKpZrPKEz/MhcvxxPjFBs/UWsd4xIc58kgS+0/uin4+MvpG6LQSRCcS4Coyrd0XsHYpGYEsjav7wvGZOcoc9uXkkoLVPlUxOZ+Y8I4749x+X8NzLRneZ7kpVHBzUIbQeL25JCvo0FFo9YMpMujx9N5AwdZ4fXGADAttVyXA/WMtDONi7Ep4Q9ITKodlw2doAmBuS7ENPhwnWQmTfLFaWamwUNTWj/V3ubmda9y34x1qFzqxx7TvhrZLJk+gdjFr6OkZ57GChR5u8AohEHJH5NnMJOtPaiyTD+HwwK8MJMUoPwlsjWuKGD8GCowP1RXUplJ0iJUolP1zK4kTl6sUdrwJQ6+/oTlSnHBlH+HLu7wfuUfcWUdbx4Iq4gtjWHfjt+Uze7BRqwiLd0eHfNJIBDaCY8FKiO6nTQzWox7WghbsqTsQzu73dYXvIcuxCWyUkN4qXeXTFBCxuM1uDVSHuJezZcE0BDTlZXGtqiNaUlY9/zdzUfPE9PIH5YHyIxJ/68k0Z4X75B/g3HG7M4BvNACwO0z6YA9V/yDpvtoU4H1TAJsFWK+c+32QCIjR60FKDauuR86TVqek+EDT7YSbo5vIsJkQc4WZCh5XoeARMBrHPqpEv/50IqvqAi1DZJdztJul6Eh2Tv4smZw33Aqqc0lhlklFYdXkZLHmYE82X</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

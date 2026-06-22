@@ -1,0 +1,153 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS42148051210859276000183000000002900624100000000006">
+        <xLocEmi>Rio do Sul</xLocEmi>
+        <xLocPrestacao>Rio do Sul</xLocPrestacao>
+        <nNFSe>29006</nNFSe>
+        <cLocIncid>4214805</cLocIncid>
+        <xLocIncid>Rio do Sul</xLocIncid>
+        <xTribNac>Advocacia.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2024-10-09T14:33:43-03:00</dhProc>
+        <nDFSe>29006</nDFSe>
+        <emit>
+            <CNPJ>10859276000183</CNPJ>
+            <IM>166055</IM>
+            <xNome>ANDRE TITO VOSS &amp; ADVOGADOS ASSOCIADOS</xNome>
+            <xFant>ANDRE TITO VOSS &amp; ADVOGADOS ASSOCIADOS</xFant>
+            <enderNac>
+                <xLgr>COELHO NETO</xLgr>
+                <nro>75</nro>
+                <xCpl>SL 23,24- 2ºANDAR</xCpl>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4214805</cMun>
+                <UF>SC</UF>
+                <CEP>89160912</CEP>
+            </enderNac>
+            <fone>4735212388</fone>
+            <email>escritorio_rsl@yahoo.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>2400.00</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>120.00</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>2400.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS421480521085927600018300001000000000029006">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2024-10-09T14:33:43-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>29006</nDPS>
+                <dCompet>2024-10-09</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4214805</cLocEmi>
+                <prest>
+                    <CNPJ>10859276000183</CNPJ>
+                    <IM>166055</IM>
+                    <xNome>ANDRE TITO VOSS &amp; ADVOGADOS ASSOCIADOS</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4214805</cMun>
+                            <CEP>89160912</CEP>
+                        </endNac>
+                        <xLgr>COELHO NETO</xLgr>
+                        <nro>75</nro>
+                        <xCpl>SL 23,24- 2ºANDAR</xCpl>
+                        <xBairro>CENTRO</xBairro>
+                    </end>
+                    <fone>4735212388</fone>
+                    <email>escritorio_rsl@yahoo.com.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA Nossa Senhora da Luz Av Nossa Senhora da Luz</xLgr>
+                        <nro>S/N</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>04132187700</fone>
+                    <email>arieli.susin@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4214805</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>171400</cTribNac>
+                        <xDescServ>Honorários sucumbenciais referentes ao processo nº0001843-27.2023.5.12.0004</xDescServ>
+                        <cIntContrib>441961</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>2400.00</vServ>
+                    </vServPrest>
+                    <vDescCondIncond>
+                        <vDescIncond>0.00</vDescIncond>
+                        <vDescCond>0.00</vDescCond>
+                    </vDescCondIncond>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <pAliq>5.00</pAliq>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                                <vPis>0.00</vPis>
+                                <vCofins>0.00</vCofins>
+                            </piscofins>
+                            <vRetCP>0.00</vRetCP>
+                            <vRetIRRF>0.00</vRetIRRF>
+                            <vRetCSLL>0.00</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>322.80</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>78.48</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42148051210859276000183000000002900624100000000006">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>yxrYHRWF6zhb4O7QdG092UA2KcE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>F7aPfo+5xmha8PXmdIMsm6tf74Ru58hst5VYAN6LA8yO67lFpSoDO8g1+mfMxjMIYr4ekpR40PVmdATl4F3gt2PDI2SCfTfW6Y2TMUJBvIFCbq0/tD3FN9R/s7RVh6Q7aptY3fqhjuyqcsLZ03pAhpTC0j7ZnAIMdGtoTXhhWV1ecIBl+r1tgNBrcIsXB8i37C1nuXpuI/SWketcZQW+w1FF3i+KIr3h93KCOBytmiyLKByTYzqm/PBfpbSnG9rOrl0m0EWsqgmL2veVxmZRSqIj3agh2/8rakVZFN1bGd/FjLGiHHdq6+leUI/ZHxXszVn0eJC1s/Vik9XoKERbJw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIIbDCCBlSgAwIBAgIQHsEFImoZp0FKWe7KIEqTlDANBgkqhkiG9w0BAQsFADCB gDELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNl Y3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEkMCIG A1UEAxMbQUMgSW5zdGl0dXRvIEZlbmFjb24gUkZCIEczMB4XDTI0MDQyMjEzMTUw NloXDTI1MDQyMjEzMTUwNlowggEcMQswCQYDVQQGEwJCUjETMBEGA1UECgwKSUNQ LUJyYXNpbDELMAkGA1UECAwCU0MxEzARBgNVBAcMClJJTyBETyBTVUwxFjAUBgNV BAsMDVJGQiBlLUNOUEogQTExNjA0BgNVBAsMLVNlY3JldGFyaWEgZGEgUmVjZWl0 YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEXMBUGA1UECwwOODM3OTcxOTEwMDAx OTExGTAXBgNVBAsMEFZJREVPQ09ORkVSRU5DSUExITAfBgNVBAsMGEFDIEluc3Rp dHV0byBGZW5hY29uIFJGQjEvMC0GA1UEAwwmTVVOSUNJUElPIERFIFJJTyBETyBT VUw6ODMxMDI1NzQwMDAxMDYwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB AQDWhgAYC9WVAjjr0FgsjnNznsHzX+V1wyFG9g+UDrzJe9OTNi+HEbMGvSENmcxh sQ3GtC/jX4p6B4V3n5XJ9ht+rFfZMr156KamJyvUfOdd4B1qtjeZoDMw/kTTeXkU 6GBi+thxzauwydPXhdrNdzvc3Ljy/Ew3tyAC8DYV2isFFaQVcfXIHmG1CwgxIdXu 0O+miF/0HWmNgHziTI+O/ERRZHfxZQodyX+FKaZysAvURr7Mh8BT90A6ub/kSYgr d0o02HiNZklGSKQwP+p9+NqqZZF/nVOkkzZ8wCAkBzChlm1O4P2nmR/oSGZCtSH9 PVNRQFhxKqQ91kqvurM3mQv9AgMBAAGjggNBMIIDPTCBywYDVR0RBIHDMIHAoEIG BWBMAQMEoDkENzI2MDcxOTg1MDU0MjE1MjQ5NTcwMDAwMDAwMDAwMDAwMDAwMDAw NDQzMTIxODAwMDAwU1NQU0OgJwYFYEwBAwKgHgQcSk9TRSBFRFVBUkRPIFJPVEhC QVJUSCBUSE9NRaAZBgVgTAEDA6AQBA44MzEwMjU3NDAwMDEwNqAXBgVgTAEDB6AO BAwwMDAwMDAwMDAwMDCBHWpvc2UudGhvbWVAcmlvZG9zdWwuc2MuZ292LmJyMAkG A1UdEwQCMAAwHwYDVR0jBBgwFoAUJseUPXqHfn9LeIqHPeDPtc6psNowgYYGA1Ud IAR/MH0wewYGYEwBAgEiMHEwbwYIKwYBBQUHAgEWY2h0dHA6Ly9pY3AtYnJhc2ls LmFjZmVuYWNvbi5jb20uYnIvcmVwb3NpdG9yaW8vZHBjL0FDLUluc3RpdHV0by1G ZW5hY29uLVJGQi9EUENfQUNfSUZlbmFjb25fUkZCLnBkZjCBygYDVR0fBIHCMIG/ MF6gXKBahlhodHRwOi8vaWNwLWJyYXNpbC5hY2ZlbmFjb24uY29tLmJyL3JlcG9z aXRvcmlvL2xjci9BQ0luc3RpdHV0b0ZlbmFjb25SRkJHMy9MYXRlc3RDUkwuY3Js MF2gW6BZhldodHRwOi8vaWNwLWJyYXNpbC5vdXRyYWxjci5jb20uYnIvcmVwb3Np dG9yaW8vbGNyL0FDSW5zdGl0dXRvRmVuYWNvblJGQkczL0xhdGVzdENSTC5jcmww DgYDVR0PAQH/BAQDAgXgMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDBDCB uwYIKwYBBQUHAQEEga4wgaswZgYIKwYBBQUHMAKGWmh0dHA6Ly9pY3AtYnJhc2ls LmFjZmVuYWNvbi5jb20uYnIvcmVwb3NpdG9yaW8vY2VydGlmaWNhZG9zL0FDX0lu c3RpdHV0b19GZW5hY29uX1JGQkczLnA3YzBBBggrBgEFBQcwAYY1aHR0cDovL29j c3AtYWMtaW5zdGl0dXRvLWZlbmFjb24tcmZiLmNlcnRpc2lnbi5jb20uYnIwDQYJ KoZIhvcNAQELBQADggIBAAMqBu/9JAfz0LG0wISlf/04zIM06D3FJbZnEYZ3PEPR oHOtQRmCfIi6Z7bzl7OrWJKI5P+588y29vVhOkBsT1ghAj7tn0wLR0hwu1+6E0OU Hz42jWLvINdvN/qQ/0BYy3zuRMBQQrHWOGqntVASnJ6QJ15xLtVteEwpohgG4EZk D8K0AFsRRsSiaYcFNRZ+v78rtwVkrOeREtlwVHmlXa7ku0UR1Riumib9xjI/8SXQ bnwHqfcBi46Jr088U2FiEPKjJlP/CRgGbt+P0JLZaqvSoo31ZgqyMJ6N7l+cGfHS lPN8K9iUdxZKWUFuQFQmKxcShMIYywc8ckwNN3RIBvVRVfAxONmazRwJoJvoNg2g Dl8zl/TTtv1+8Io7CQzvR2uYAXppC4mGGZNam20ngCIumoPPFQyWKJ4m3hreEX14 X4tuLzN61UWgDeXgTMZa8LDXeQlljRT2rS2ozaiDJHoNBUub61mhRAlfaaiuXXdW e/JBU5BI1IK9AnhGj8KlXwArgk3kipSM389NlDbx8tx4ZMzo44iPP8QlVE2BG2Bv uBus4DGN4Mh5MaGkigf7qHyK1wSam6O/g+OwvOieBhLuAV3DeTP4FHojrs0eMKd/ v1B7wftYTGH6SSVdpbBV65pcOGFU681wk/VJeVaCC5UycRJ5zpH1TMg7RmrN6Net</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

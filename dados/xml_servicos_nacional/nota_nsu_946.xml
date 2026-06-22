@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS29184071255957149000155251000000003225110049362588">
+        <xLocEmi>Juazeiro</xLocEmi>
+        <xLocPrestacao>Juazeiro</xLocPrestacao>
+        <nNFSe>2510000000032</nNFSe>
+        <cLocIncid>2918407</cLocIncid>
+        <xLocIncid>Juazeiro</xLocIncid>
+        <xTribNac>Advocacia.</xTribNac>
+        <xTribMun>Advocacia.</xTribMun>
+        <verAplic>Abrasf_202</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-11-27T11:36:31-03:00</dhProc>
+        <nDFSe>4936258</nDFSe>
+        <emit>
+            <CNPJ>55957149000155</CNPJ>
+            <IM>9005612223</IM>
+            <xNome>MACHADO &amp; GUERRA ADVOGADOS ASSOCIADOS</xNome>
+            <xFant>MACHADO &amp; GUERRA ADVOGADOS ASSOCIADOS</xFant>
+            <enderNac>
+                <xLgr>Rua Cícero Feitosa</xLgr>
+                <nro>407</nro>
+                <xBairro>Alagadiço</xBairro>
+                <cMun>2918407</cMun>
+                <UF>BA</UF>
+                <CEP>48903271</CEP>
+            </enderNac>
+            <fone>8799920887</fone>
+            <email>fiscal@contabilidaderigor.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>1500.00</vBC>
+            <pAliqAplic>3.00</pAliqAplic>
+            <vISSQN>45.00</vISSQN>
+            <vLiq>1500.00</vLiq>
+            <xOutInf>Optante do Simples Nacional. Trib. aprox. R$ 201,75 Federal e R$ 75,00 Municipal. Fonte: IBPT [5FF712]</xOutInf>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS291840725595714900015502025202510000000032">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-11-27T11:36:31-03:00</dhEmi>
+                <verAplic>Abrasf_202</verAplic>
+                <serie>2025</serie>
+                <nDPS>202510000000032</nDPS>
+                <dCompet>2025-11-27</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2918407</cLocEmi>
+                <prest>
+                    <CNPJ>55957149000155</CNPJ>
+                    <IM>9005612223</IM>
+                    <fone>8799920887</fone>
+                    <email>fiscal@contabilidaderigor.com.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>CORPORATIVO@BRITANIA.COM.BR</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2918407</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>171401</cTribNac>
+                        <xDescServ>Referente aos serviços jurídicos.</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>1500.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>3.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS29184071255957149000155251000000003225110049362588">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>dUlUXj5/952Yp0gTXC4ba7qRfDo=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>PMExxarfnfTp7F9lolgh9zIcam4BpTYSzdIYdxWI+Ch/LM4ldyIKBw8vpvyfTepdiRoLZekJIadYccP58Nm7dMEUfQ6/9WhzNdITn9yBoSGBSnVj0iZfzphDEVfel0ZAj8ogJk0QH5oGKyz4gaGavqCEKww7xUf5y/+xiemFQiGhbOGT/Nwi3NZUGySoGWDbx8icGEr86CjCSNKV/Ne852+FELPi008fhFAwD7cGUB261EyrcUggslqQlqZHApS1Oc54mfGNTT7Yot70tPjDsapCSQs+mUcEGPamHNtRsjvdPFFqBn7H/HRBLkrQoz1Vj0P1Fa4pCkqpV0NjQnB4/A==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH9TCCBd2gAwIBAgIIRNaCMKhDGLEwDQYJKoZIhvcNAQELBQAwezELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEfMB0GA1UEAxMWQUMgQ09OU1VMVEkgQlJBU0lMIFJGQjAeFw0yNTAxMTYyMTIzMTJaFw0yNjAxMTYyMTIzMTJaMIH1MQswCQYDVQQGEwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDELMAkGA1UECBMCQkExETAPBgNVBAcTCEpVQVpFSVJPMRcwFQYDVQQLEw4wODcxNDkyNzAwMDEwMzE2MDQGA1UECxMtU2VjcmV0YXJpYSBkYSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRYwFAYDVQQLEw1SRkIgZS1DTlBKIEExMRkwFwYDVQQLExB2aWRlb2NvbmZlcmVuY2lhMS0wKwYDVQQDEyRNVU5JQ0lQSU8gREUgSlVBWkVJUk86MTM5MTU2MzIwMDAxMjcwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDyYbk29G5gIBNXU9ak9OSBKMGHaVvV3O2X2HUHtn0DNzo4J3EmrJUwTxpS+OBpeQq8hq+AMLZhtHUd2Fi4RD6VxfqaG1yzrnFVDM6hZlrPZKi9hqNqTRydYAgbdUcX42VJ257hhhyybyNI8J+svRTZEJSQmzgO4SiOa5XvQ26LRgmzIY9pqMlj2ao5KIbWNI9gkgVdIWeYASKxNyG1ZZ8BWJpjoJWYDOJVpCzckW2kM8vU5e10goFr2dC8BQ///YuYPaOj2gCVl0EbNteHbGpmifEHRO8e8qFTtmA90zmweNMvIdG1j6/qS8v9iC/JS3u/mDYF9X3kObocTrCm3xHZAgMBAAGjggMAMIIC/DAfBgNVHSMEGDAWgBSu8aFwdhNq++eUd5wyLFfLFDhZ3zAOBgNVHQ8BAf8EBAMCBeAwgYAGA1UdIAR5MHcwdQYGYEwBAgFBMGswaQYIKwYBBQUHAgEWXWh0dHA6Ly9yZXBvc2l0b3Jpby5hY2NvbnN1bHRpYnJhc2lsLmNvbS5ici9hYy1hY2NvbnN1bHRpYnJhc2lscmZiL2RwYy1hY2NvbnN1bHRpYnJhc2lscmZiLnBkZjCB4AYDVR0fBIHYMIHVMGigZqBkhmJodHRwOi8vcmVwb3NpdG9yaW8uYWNjb25zdWx0aWJyYXNpbC5jb20uYnIvYWMtYWNjb25zdWx0aWJyYXNpbHJmYi9sY3ItYWMtYWNjb25zdWx0aWJyYXNpbHJmYnY0LmNybDBpoGegZYZjaHR0cDovL3JlcG9zaXRvcmlvMi5hY2NvbnN1bHRpYnJhc2lsLmNvbS5ici9hYy1hY2NvbnN1bHRpYnJhc2lscmZiL2xjci1hYy1hY2NvbnN1bHRpYnJhc2lscmZidjQuY3JsMHoGCCsGAQUFBwEBBG4wbDBqBggrBgEFBQcwAoZeaHR0cDovL3JlcG9zaXRvcmlvLmFjY29uc3VsdGlicmFzaWwuY29tLmJyL2FjLWFjY29uc3VsdGlicmFzaWxyZmIvYWMtYWNjb25zdWx0aWJyYXNpbHJmYnY0LnA3YjCBxwYDVR0RBIG/MIG8gRlNQVJDT1NfQU5EUkVJQEhPVE1BSUwuQ09NoDEGBWBMAQMCoCgTJk1BUkNPUyBBTkRSRUkgU09VWkEgR09OQ0FMVkVTIERBIFNJTFZBoBkGBWBMAQMDoBATDjEzOTE1NjMyMDAwMTI3oDgGBWBMAQMEoC8TLTE3MTAxOTg0MDU2MTk2OTg0MTYwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMA0GCSqGSIb3DQEBCwUAA4ICAQA/h6O9YayjwdMRWXp0coX7M01ZD4H4L5Rmgi+BQD9uaDmYIJuc/dy5DEyd6ycyk5vdQr0vsFLEzphCfip3nyAGnCLUoU5iPtlczMMvkB8Fgv/BykxMgBFAZCR5gn1lyAIMnPscYg8HIJYKFdPeE5/H94K134w3Yx21ob7eaqyimFw4e37xsiYD4RjeaoEtR2iMinbyAY0m12ra0nxrSVh3svdWxR/37/y1lTDqqMKWMvUTHcdbz6so31//yrYJiGXC6vychf253xl1Awb6FEIT03ngISHvOifgScG8Wfkekru2ufzLQ/J54GXja2bhNwlDF+rsbKnKQjP158qndVxTy+9GeYASOA+r/Fdg4Wzg01xNNdyX5Cos8TG7th4IYaRfA6MUsBZbAN8PN8VP03nAiThiISn1ULYED/vJXKjNHjFT8tJV+H00JBitWvRjZ2wx8vCiWo4k56ulnB/vs3smYlkK3e6LLj5GLy6dUpiRH1b/KnBCyxLEXecf1naiJnjxa7foOfnGJiIr1dZWXlipK58vKE1mvORZ3iLJyhZl0Fc48nuABuK0ZXIA5q84dWMF3lh3vnTRPoK97Zds7AnMRXdO9gwLsxuReO1C1saZjW3kIwQGfibGse5JG2FEjq4iw9dnSugFWB6PlajLO6Qrd2N0ujtSeU4SsjwQHBBGpw==</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

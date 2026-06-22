@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS41191521214362087000151000000000900225110000000005">
+        <xLocEmi>Pinhais</xLocEmi>
+        <xLocPrestacao>Pinhais</xLocPrestacao>
+        <nNFSe>9002</nNFSe>
+        <cLocIncid>4119152</cLocIncid>
+        <xLocIncid>Pinhais</xLocIncid>
+        <xTribNac>Outros serviços de transporte de natureza municipal.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-11-18T17:39:47-03:00</dhProc>
+        <nDFSe>9002</nDFSe>
+        <emit>
+            <CNPJ>14362087000151</CNPJ>
+            <IM>81058</IM>
+            <xNome>TFX SERVICOS LTDA</xNome>
+            <enderNac>
+                <xLgr>PRIMEIRO DE MAIO</xLgr>
+                <nro>442</nro>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4119152</cMun>
+                <UF>PR</UF>
+                <CEP>83323020</CEP>
+            </enderNac>
+            <fone>4130390051</fone>
+            <email>soc@estilocont.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>56.00</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>1.12</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>56.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS411915221436208700015100001000000000009002">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-11-18T17:39:47-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>9002</nDPS>
+                <dCompet>2025-11-18</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4119152</cLocEmi>
+                <prest>
+                    <CNPJ>14362087000151</CNPJ>
+                    <IM>81058</IM>
+                    <fone>4130390051</fone>
+                    <email>soc@estilocont.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>Britania Eletrodomesticos AS</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA avenida av nossa senhora da luz</xLgr>
+                        <nro>0</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>arieli.susin@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4119152</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>160201</cTribNac>
+                        <xDescServ>Servico Pontual</xDescServ>
+                        <cIntContrib>81713932</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>56.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>7.53</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>1.18</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41191521214362087000151000000000900225110000000005">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>/Z633wALeIcJqv9zO2DEilzdd/U=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>G94m995kSVGAFko1sgt2A7uhahvXfVYnYmgGOofug8HfW1a+CVWjDFWsfiCNbfWgnQP9WxnzK6j+072vgPK9YCHxjBPwnMH5rJY/H6pK+fds7W7iQgY/3WHgtp4ZRwujLcUMEfaQTAsn5MCTBVSz4xopPDn0hPCSkR/gvCTwiRajl9DC+Y3oBxWXjnSob2gbtYEYYpoiNCjs8swjckeJM0Err3WCjjjhRI/oZV5itkBJ4QEpnj60eQUBXeFasR5dw/tMQU8ObxLCJTbg4TGW5CgjlEYSVCzfPuvn/xkIiEO85QIwCpwtZ3WHYLyTk4QE/b0+IDdWH7arJiQfEJ6vHg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,195 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS41255062242130537000973000000000183826051042456962">
+        <xLocEmi>São José dos Pinhais</xLocEmi>
+        <xLocPrestacao>São José dos Pinhais</xLocPrestacao>
+        <nNFSe>1838</nNFSe>
+        <cLocIncid>4125506</cLocIncid>
+        <xLocIncid>São José dos Pinhais</xLocIncid>
+        <xTribNac>Serviços aeroportuários, utilização de aeroporto, movimentação de passageiros, armazenagem de qualquer natureza, capatazia, movimentação de aeronaves, serviços de apoio aeroportuários, serviços acessórios, movimentação de mercadorias, logística e congêneres.</xTribNac>
+        <xNBS>Serviços de operação aeroportuária, exceto manuseio de cargas</xNBS>
+        <verAplic>SefinNacional_1.6.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>1</procEmi>
+        <cStat>100</cStat>
+        <dhProc>2026-06-01T18:33:16-03:00</dhProc>
+        <nDFSe>3039162</nDFSe>
+        <emit>
+            <CNPJ>42130537000973</CNPJ>
+            <xNome>CONCESSIONARIA DO BLOCO SUL S.A.</xNome>
+            <enderNac>
+                <xLgr>AVENIDA ROCHA POMBO</xLgr>
+                <nro>S/N</nro>
+                <xBairro>AGUAS BELAS</xBairro>
+                <cMun>4125506</cMun>
+                <UF>PR</UF>
+                <CEP>83010900</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vBC>944.58</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>47.23</vISSQN>
+            <vLiq>944.58</vLiq>
+        </valores>
+        <IBSCBS>
+            <cLocalidadeIncid>4106902</cLocalidadeIncid>
+            <xLocalidadeIncid>Curitiba</xLocalidadeIncid>
+            <valores>
+                <vBC>809.99</vBC>
+                <vCalcReeRepRes>0.00</vCalcReeRepRes>
+                <uf>
+                    <pIBSUF>0.10</pIBSUF>
+                    <pAliqEfetUF>0.10</pAliqEfetUF>
+                </uf>
+                <mun>
+                    <pIBSMun>0.00</pIBSMun>
+                    <pAliqEfetMun>0.00</pAliqEfetMun>
+                </mun>
+                <fed>
+                    <pCBS>0.90</pCBS>
+                    <pAliqEfetCBS>0.90</pAliqEfetCBS>
+                </fed>
+            </valores>
+            <totCIBS>
+                <vTotNF>944.58</vTotNF>
+                <gIBS>
+                    <vIBSTot>0.81</vIBSTot>
+                    <gIBSUFTot>
+                        <vIBSUF>0.81</vIBSUF>
+                    </gIBSUFTot>
+                    <gIBSMunTot>
+                        <vIBSMun>0.00</vIBSMun>
+                    </gIBSMunTot>
+                </gIBS>
+                <gCBS>
+                    <vCBS>7.29</vCBS>
+                </gCBS>
+            </totCIBS>
+        </IBSCBS>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+            <infDPS Id="DPS412550624213053700097300001000000004054880">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-05-31T18:25:26-03:00</dhEmi>
+                <verAplic>1</verAplic>
+                <serie>1</serie>
+                <nDPS>4054880</nDPS>
+                <dCompet>2026-05-31</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4125506</cLocEmi>
+                <prest>
+                    <CNPJ>42130537000973</CNPJ>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <email>nf.receitasaeronauticas@motiva.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4125506</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>200201</cTribNac>
+                        <xDescServ>Pouso - Grupo II - domR$ 944.58## </xDescServ>
+                        <cNBS>106061100</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>944.58</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>01</CST>
+                                <vBCPisCofins>944.58</vBCPisCofins>
+                                <vPis>15.58</vPis>
+                                <vCofins>71.78</vCofins>
+                                <tpRetPisCofins>0</tpRetPisCofins>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>47.22</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+                <IBSCBS>
+                    <finNFSe>0</finNFSe>
+                    <cIndOp>100301</cIndOp>
+                    <indDest>0</indDest>
+                    <valores>
+                        <trib>
+                            <gIBSCBS>
+                                <CST>000</CST>
+                                <cClassTrib>000001</cClassTrib>
+                            </gIBSCBS>
+                        </trib>
+                    </valores>
+                </IBSCBS>
+            </infDPS>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+                <SignedInfo>
+                    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                    <Reference URI="#DPS412550624213053700097300001000000004054880">
+                        <Transforms>
+                            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                        </Transforms>
+                        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                        <DigestValue>qtQfzMSGpbWa22hEoIw1IZE4gdA=</DigestValue>
+                    </Reference>
+                </SignedInfo>
+                <SignatureValue>FSQ8FYPBlawUdIpxLwEbfFYjgXtiAj+RnAy4TRfw2v0Wt/Mq3zrJzzRTOrC5wkG/gfYHouOjTo3ywcdvoa12DtzjlfGN1mdhmTYAu3LCnMhE+yiWTML/6LyfUvBD87d4AD5DZMcMynpyWXhtCbrhSPc6sn9ZMy5BoUxasvExq7lY+x/z4YDt7wtjFzp/XxtHKQcVRlKYGGgFU9Huc1egb48afVy0EPD7Z84l6b1CKi+sFG9DHECW+/Bib7FvK6zkovRwIU8pjRgPOth4vlmC1X2y11OtNveOm9kPar1W1tTQ7abLzSONG2gimGls4p85RviQJVzxIfwVuy1cc+iumw==</SignatureValue>
+                <KeyInfo>
+                    <X509Data>
+                        <X509Certificate>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</X509Certificate>
+                    </X509Data>
+                </KeyInfo>
+            </Signature>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS41255062242130537000973000000000183826051042456962">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>zSSjHoHDbCLFF44VFJoX7TC2868JNOFh0waulf69Sb8=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>In89jWM18bR60uAAsVbXXwq8OEhIKxWC9nFwycy97Q1bcERMYqledHbASKkkt4plyq1cWaWycCN7QXduf2I8CCmoWg5Zq4Zzcz8wd1yGhSEXUxf2k/gVPRJeQq0IglgxY7Uf0V9CYkNY0+K3LwPYp71F8D/OWInTWfKvz7D26n+JkHP5L9bzjgdpziDoToXCkHr/kC8NeQ8+pEjWOLuseJ2lAS+5RWwO0T60mJDeY1SRsLAeqFfaqLcKoHrMTDMVBvbPwdhgTvy7tSK+kBd8ZhAYkUVsNHPwF8RaRfRXaRAuHkHUU0c2bb3a84/AAhX85bBeWIT/Lpgf1FqTzAOgAQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

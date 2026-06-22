@@ -11,16 +11,22 @@ class CaminhosProjeto:
         
         # Diretórios de entrada para os relatórios agendados do ERP TOTVS
         self.entrada_totvs = self.diretorio_base / "dados" / "entrada_totvs"
+
+        # Diretório de saída para conferência
+        self.saida_auditoria = diretorio_base / "dados" / "saida_auditoria"
         
         # Diretórios de entrada para os arquivos XML originais (Fontes de Verdade)
         self.xml_materiais_quirius = self.diretorio_base / "dados" / "xml_materiais_quirius"
         self.xml_servicos_nacional = self.diretorio_base / "dados" / "xml_servicos_nacional"
+
+        # O caminho direto para o seu arquivo mestre com as macros
+        self.planilha_mestre = diretorio_base / "dados" / "planilha_mestre.xlsm"
         
         # Diretório para armazenamento de histórico e arquivos de controle (ex: memória do NSU)
         self.historico_controle = self.diretorio_base / "dados" / "historico"
         
         # Caminho físico do Painel de Controle Excel (Planilha Mestre)
-        self.planilha_mestre = self.diretorio_base / "planilha_mestre" / "Analise de notas de serviços_V03.07.2025.xlsm"
+        self.planilha_mestre = self.diretorio_base / "planilha_mestre" / "planilha_mestre.xlsm"
 
     def obter_todos_diretorios_obrigatorios(self) -> list:
         """Retorna a lista com todos os caminhos de pastas necessários para a aplicação."""

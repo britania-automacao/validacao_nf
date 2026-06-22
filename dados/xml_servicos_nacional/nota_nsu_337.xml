@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS41069022233249812000124000000000002024105907791725">
+        <xLocEmi>Curitiba</xLocEmi>
+        <xLocPrestacao>São Paulo</xLocPrestacao>
+        <nNFSe>20</nNFSe>
+        <cLocIncid>3550308</cLocIncid>
+        <xLocIncid>São Paulo</xLocIncid>
+        <xTribNac>Execução de música.</xTribNac>
+        <verAplic>EmissorWeb_1.3.0.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>2</procEmi>
+        <cStat>100</cStat>
+        <dhProc>2024-10-23T21:09:15-03:00</dhProc>
+        <nDFSe>1286434</nDFSe>
+        <emit>
+            <CNPJ>33249812000124</CNPJ>
+            <xNome>RUY CORREIA FEUERSCHUETTE JUNIOR 03151482929</xNome>
+            <enderNac>
+                <xLgr>MURILO DO AMARAL FERREIRA</xLgr>
+                <nro>458</nro>
+                <xBairro>AGUA VERDE</xBairro>
+                <cMun>4106902</cMun>
+                <UF>PR</UF>
+                <CEP>80620120</CEP>
+            </enderNac>
+            <fone>4199998961</fone>
+            <email>RUYCF@HOTMAIL.COM</email>
+        </emit>
+        <valores>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>8000.00</vLiq>
+        </valores>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+            <infDPS Id="DPS410690223324981200012400900000000000000032">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2024-10-23T21:09:15-03:00</dhEmi>
+                <verAplic>EmissorWeb_1.3.0.0</verAplic>
+                <serie>900</serie>
+                <nDPS>32</nDPS>
+                <dCompet>2024-10-23</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4106902</cLocEmi>
+                <prest>
+                    <CNPJ>33249812000124</CNPJ>
+                    <fone>41999998961</fone>
+                    <email>ruyfeuer@gmail.com</email>
+                    <regTrib>
+                        <opSimpNac>2</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>121201</cTribNac>
+                        <xDescServ>Apresentação Musical</xDescServ>
+                    </cServ>
+                    <atvEvento>
+                        <xNome>Apresentação Musical no evento Philco realizado na cidade de São Paulo na data 22 de Outubro de 2014</xNome>
+                        <dtIni>2024-10-21</dtIni>
+                        <dtFim>2024-10-22</dtFim>
+                        <idAtvEvt>Ruy Correia Feuerschuette Jr</idAtvEvt>
+                    </atvEvento>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>8000.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41069022233249812000124000000000002024105907791725">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>exAob5Ho6881WRexHsqAin3OjH4=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>j79nU9R1YO0vKSM/f8iY91yLPYgnfep1FP182ybw+pJQ3iIAL+XCqc1OecHYTK93OH0i5jMNCVmYXVa5c9AA3ZYoqOnq4s2EAa0wbdr+ib8ntISJRcjYSFbQMeCvkGBUcdicc8jL7x7zcIjVlNeOsa0FdwOgPuA9qMGaY78CxJozKT+XsEQ9OQKe5oJ+HbfITP8HUPsuYOb7/BUY4F3ljyric1wChwdAhtBtT2+ijVNki1QlwQU4MEIzi7QYoC6mfBpX0K1SfKnRSH0mkEQtKI8U4j3n6fS5/JGS4mAaoLN3uBxX86+u+r4Ti5oCVynsgQaGKj/nSnLv5IGtU7T7+g==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIIcDCCBligAwIBAgINAL+C2t3533h3cvRkXDANBgkqhkiG9w0BAQsFADCBjDELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxNTAzBgNVBAsMLEF1dG9yaWRhZGUgQ2VydGlmaWNhZG9yYSBSYWl6IEJyYXNpbGVpcmEgdjEwMTEwLwYDVQQDDChBdXRvcmlkYWRlIENlcnRpZmljYWRvcmEgZG8gU0VSUFJPIFNTTHYxMB4XDTI0MDQzMDE0MDM1MloXDTI1MDQzMDE0MDM1MlowgcoxCzAJBgNVBAYTAkJSMQswCQYDVQQIDAJERjERMA8GA1UEBwwIQlJBU0lMSUExOTA3BgNVBAoMMFNFUlZJQ08gRkVERVJBTCBERSBQUk9DRVNTQU1FTlRPIERFIERBRE9TIFNFUlBSTzEXMBUGA1UEBRMOMzM2ODMxMTEwMDAxMDcxGDAWBgNVBAMMD3d3dy5uZnNlLmdvdi5icjEYMBYGA1UEDxMPQnVzaW5lc3MgRW50aXR5MRMwEQYLKwYBBAGCNzwCAQMTAkJSMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0AIH/mPRdtQg7XzOyioFy0jdrJ4JMQTGU9g7c+aeymhCEY4eh4Vv17hmgVjImiLRuGSiUFWy90Ju/zQBUFwn8kTELyv5ysCeGFhM35ekn/uQiO6syIsYTFPZgMGylM8q5Ambze0GAp7ifGyl2J2JWVkknGGfDuPx2ke8MkJzxxvEx8AqxJnYCg7+9ufBxuIdHZo/i1YxGbUp1miaHASD6x692WDSu2Bc4MAzU4zn/4diYlpyp9g13woxYdtPcAbfS2qrz9XYSBh45pn+ooEBXNBrfyN0j0O5kheaaBFIfhd/m7m/SozVYWICWR3S/q0SdWBGDdHjDgf1oLBNvjQiBwIDAQABo4IDjzCCA4swHwYDVR0jBBgwFoAUrRZPS/EMvsKKooUY1w1GJZMi480wgYgGA1UdHwSBgDB+MDygOqA4hjZodHRwOi8vcmVwb3NpdG9yaW8uc2VycHJvLmdvdi5ici9sY3IvYWNzZXJwcm9zc2x2MS5jcmwwPqA8oDqGOGh0dHA6Ly9jZXJ0aWZpY2Fkb3MyLnNlcnByby5nb3YuYnIvbGNyL2Fjc2VycHJvc3NsdjEuY3JsMIGHBggrBgEFBQcBAQR7MHkwQgYIKwYBBQUHMAKGNmh0dHA6Ly9yZXBvc2l0b3Jpby5zZXJwcm8uZ292LmJyL2NhZGVpYXMvc2VycHJvc3NsLnA3YjAzBggrBgEFBQcwAYYnaHR0cDovL29jc3Auc2VycHJvLmdvdi5ici9hY3NlcnByb3NzbHYxMD4GA1UdEQQ3MDWCD3d3dy5uZnNlLmdvdi5icoIRc2VmaW4ubmZzZS5nb3YuYnKCD2Fkbi5uZnNlLmdvdi5icjAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMGMGA1UdIARcMFowCAYGZ4EMAQICME4GBmBMAQIBaTBEMEIGCCsGAQUFBwIBFjZodHRwOi8vcmVwb3NpdG9yaW8uc2VycHJvLmdvdi5ici9kb2NzL2RwY3NlcnByb3NzbC5wZGYwggF9BgorBgEEAdZ5AgQCBIIBbQSCAWkBZwB1AE51oydcmhDDOFts1N8/Uusd8OCOG41pwLH6ZLFimjnfAAABjy9R24EAAAQDAEYwRAIgfTqFA1rBCS1coFGPYOO5fw+vpq3NwEb0+/TrlxOYrLMCIETZkhSrGKakgfQ46CnmaN7JV/HbDFAw0qAFEEFZYZEfAHYAzxFW7tUufK/zh1vZaS6b6RpxZ0qwF+ysAdJbd87MOwgAAAGPL1HjIAAABAMARzBFAiBPNfFvqPxtEgDvGilqm1ZXb7kw+XVMslCEsmAcol9SZgIhAKc1LJH0J1CvcUec8BYNeF5LScmhvutVKCRNyCAqsP9NAHYAKOKBOP2DIUXpqdaqdTdtg3eohRKzwH9yQUgh3L3pjGYAAAGPL1HzrQAABAMARzBFAiBZnxxEIAj4vSA23huSRk6BAVT317qcAL/4WO/wtG0MkgIhAJilRqI3WSj0vRYoQUzX43rPMJayveOK/KVvjJ0NR6NHMA0GCSqGSIb3DQEBCwUAA4ICAQDbWXqU81WDSo5ZFZmak5yfdhkSFGRpnwMYWB1D6kIMIBLV9h9ztovhYhRHENZJ/XE9s/4dzyXSe3fPFrgazo5zHulQvV8QL/0zLvqOAFKFZPugXnr7pS++/jR9Vqlt7qA3jN3YY5TizLtGnCgHxNhG7CmLJQ3Y10PEdBLOG8xaifhojT18R3jRI/CQYsRzf5SCxTZp76zA3Py1ifnq4uxVm/LtgJO33bUZ+RgXlCwORP3EnZs1k0Yvz/LaGxWntmMNv+y+7T78wb8NPd4/3bHvGcfh84lje1Fz7OkOyeKUsU8SA3wnYRS/hVrjnv02tU3szPB9oJRj7bMhjLKbdWcplnKQgwA8DPdOFARCUptq1Y2vwqlqRVHqTKDY4TyXjyVzyY090Vyax8Yr/D+Rl2aFfoFxFqGkrr0KlGhN/dFTWKeQ8brJVHDITToprGG7PESpmPT6s8BC7GD10MU4sV74sFaoweXgFE2+Tvqt3oMynlBZpvXjo5bFdA/Tm8oPG7gmZFXtGZnjyeIHuTQR+xflw5WF2SfXLhdD+B04iWWjP9lhT4dyES1RTFyEotUC51mB8b5j42+5xLaSelYbljOmo0rs7KXS+n1ej889etS+QgbHezOduzIAtrNxcHtsoiCuRLyVE0FoNJ1UgQRi3Kkw1goOUtxgixjlAAeONEqafA==</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

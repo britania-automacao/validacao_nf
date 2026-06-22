@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+    <infNFSe Id="NFS41199051256902819000107000000000040626025889566685">
+        <xLocEmi>PONTA GROSSA</xLocEmi>
+        <xLocPrestacao>PONTA GROSSA</xLocPrestacao>
+        <nNFSe>406</nNFSe>
+        <cLocIncid>4119905</cLocIncid>
+        <xLocIncid>PONTA GROSSA</xLocIncid>
+        <xTribNac>Agenciamento, corretagem ou intermediação de contratos quaisquer.</xTribNac>
+        <verAplic>2.03</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-02-05T16:14:16-03:00</dhProc>
+        <nDFSe>406</nDFSe>
+        <emit>
+            <CNPJ>56902819000107</CNPJ>
+            <IM>00208064</IM>
+            <xNome>REX PREMIACOES E EXPERIENCIAS LTDA</xNome>
+            <enderNac>
+                <xLgr>RUA AFONSO PENA</xLgr>
+                <nro>213</nro>
+                <xCpl>VILA ESTRELA | 5 - 001 - SO 18 5</xCpl>
+                <xBairro>ESTRELA</xBairro>
+                <cMun>4119905</cMun>
+                <UF>PR</UF>
+                <CEP>84040170</CEP>
+            </enderNac>
+            <fone>41984012659</fone>
+            <email>alexandre@nerycontadores.cnt.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>563.26</vBC>
+            <vISSQN>18.25</vISSQN>
+            <vLiq>563.26</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS411990525690281900010700002000000000000275">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-02-05T16:14:16-03:00</dhEmi>
+                <verAplic>2.03</verAplic>
+                <serie>2</serie>
+                <nDPS>275</nDPS>
+                <dCompet>2026-02-05</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4119905</cLocEmi>
+                <prest>
+                    <CNPJ>56902819000107</CNPJ>
+                    <IM>00208064</IM>
+                    <fone>41984012659</fone>
+                    <email>alexandre@nerycontadores.cnt.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4119905</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100202</cTribNac>
+                        <xDescServ>JOB: REX-29-19 - POUPANÇÃO JAN26 - BRITANIA E PHILCO ATACADOReferente SERVIÇO DE INTERMEDIAÇÃO</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>563.26</vServ>
+                    </vServPrest>
+                    <vDescCondIncond/>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41199051256902819000107000000000040626025889566685">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>ZdAnj6Q1H0MBMuHKhc1XZ2r67mI=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>eVYc/tOtgRfGR9UJq7gMa3g4hPk2cErIee6OHTkWMOyZ9mL4v+VS2RrZE7jq9tqNy4+Ejb7CZ409QavI/fIviX/F7nXSHP2DqnqYxPEvJ3+bZRumA3rPYVyw07FEIE6ZvJXCk5ZW3NksLd1IiZcGQNSeTqPeHklKmt1P1FoLrbYNK9p+/SMThqRbDtXe1exGLlixiLcyFU1g3sZMS0a9qoeFmTR8QMuZ4FULtVUXSlCScPc8sfAEiwOGSKjEH7+49su4NQlNy7JFA9kXT2d3NXo2gT2VgDr3ZOBJdUZt1f3HlRuQQPoD5EXcfsgwSx51da7rRgxyk0U5/vGqNHpMqQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

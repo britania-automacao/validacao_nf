@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS31707011209562014000173000000000098226032703978549">
+        <xLocEmi>Varginha</xLocEmi>
+        <xLocPrestacao>Varginha</xLocPrestacao>
+        <nNFSe>982</nNFSe>
+        <cLocIncid>3170701</cLocIncid>
+        <xLocIncid>Varginha</xLocIncid>
+        <xTribNac>Assistência técnica</xTribNac>
+        <xTribMun>Assistência técnica</xTribMun>
+        <verAplic>1.1.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-03-17T00:00:00-03:00</dhProc>
+        <nDFSe>309707081</nDFSe>
+        <emit>
+            <CNPJ>09562014000173</CNPJ>
+            <IM>018385</IM>
+            <xNome>FERNANDES MAURICIO DE CARLOS</xNome>
+            <xFant>CONTROL ELETRONICA</xFant>
+            <enderNac>
+                <xLgr>Silvianopolis - ate 130/131</xLgr>
+                <nro>104</nro>
+                <xBairro>Jardim Andere</xBairro>
+                <cMun>3170701</cMun>
+                <UF>MG</UF>
+                <CEP>37006353</CEP>
+            </enderNac>
+            <fone>3532228414</fone>
+        </emit>
+        <valores>
+            <vBC>809.51</vBC>
+            <pAliqAplic>3.00</pAliqAplic>
+            <vISSQN>24.29</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>809.51</vLiq>
+        </valores>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+            <infDPS Id="DPS317070120956201400017300001000000309707081">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-03-17T09:03:21-03:00</dhEmi>
+                <verAplic>1.1.0</verAplic>
+                <serie>00001</serie>
+                <nDPS>309707081</nDPS>
+                <dCompet>2026-03-17</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3170701</cLocEmi>
+                <prest>
+                    <CNPJ>09562014000173</CNPJ>
+                    <IM>018385</IM>
+                    <fone>3532228414</fone>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4209102</cMun>
+                            <CEP>89239270</CEP>
+                        </endNac>
+                        <xLgr>Rua Dona Francisca</xLgr>
+                        <nro>12.340</nro>
+                        <xBairro>Centro (Pirabeiraba)</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3170701</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>140201</cTribNac>
+                        <xDescServ>SERVICOS DE MANUTENCAO E REPARO DE APARELHOS ELETROELETRONICOS DOMESTICOS.</xDescServ>
+                        <cNBS>120018100</cNBS>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>NF REFERENTE AO EXTRATO 660103260180920</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>809.51</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0</vTotTribFed>
+                                <vTotTribEst>0</vTotTribEst>
+                                <vTotTribMun>0</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS31707011209562014000173000000000098226032703978549">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>IMlWsNSIoa8vcKNUEUVw8nKqxJE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>mkSLcg4wiAZKAlgdStrG7vmR8WtkoBuXOU16LAiVPMOsJxcnGXAoEuzNVp3FS6EcYYryiHm6i0LW96aqTfObOcpENN2uPCvdp2QoQu5YsmE6amHxAowygdeSo943uxu0AXuwe44V+Zg8glQX2nBXhbJptr8Ko6r6Ze0+qJq2JnIRXrKYgI7ChLDOibwfiy6gRvQbI2eF4DvYDyBpN2KsSkzERtOc82T1XTekXdDtUQka0DUtcL+EQXLa/M1W0AhKMpat+Zh7YvKbb0SR9hasJ9uMJBVVuhh5TnQPuKGnJwgyw129SRZkGuneCB/5IXyvGPunn14JBY90CGcCIVAzhg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH4TCCBcmgAwIBAgIIWPTrSR6qQNswDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgU0FGRVdFQiBSRkIgdjUwHhcNMjYwMTE1MTg1OTI5WhcNMjcwMTE1MTg1OTI5WjCB9TELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAk1HMREwDwYDVQQHEwhWQVJHSU5IQTE2MDQGA1UECxMtU2VjcmV0YXJpYSBkYSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRYwFAYDVQQLEw1SRkIgZS1DTlBKIEExMRcwFQYDVQQLEw4xMzAzNjU5MjAwMDE0MzEZMBcGA1UECxMQdmlkZW9jb25mZXJlbmNpYTEtMCsGA1UEAxMkTVVOSUNJUElPIERFIFZBUkdJTkhBOjE4MjQwMTE5MDAwMTA1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy2EjBidBqT8foQh/22WT5z9SlbwH88ekD6QWVxavXR/s2WBszXQ/GdHREZ/VvEXjd/Ay436VxxaWGqHIs+kn5yG3xLl1ggTeGiiMosZ6LyP/h2yb2bzEA1pbhJtqq8PWJgVfXfuihTmWxKqIVPovJA9td3ImoeE5kg/EBJtg/NgreUELO1aQhMikrCw6/hFCAisNhBDyK2KvHqwqdsJvo4BOUa/EEb2Us+Z09bJnqXxx1gKNqGUgi8zxzRcKAaCp+AcIV8sI0RLOkKLRuIRuwCC/SjKqJ+TMbG+us5r16Pt7kChBuJ0pvBrn+TlbgBZUj4aotuI9+kS4+WKxAA2TLQIDAQABo4IC8TCCAu0wHwYDVR0jBBgwFoAUKV5L1UZMu/4Wp2PBHcQm8t3Y8wUwDgYDVR0PAQH/BAQDAgXgMGkGA1UdIARiMGAwXgYGYEwBAgEzMFQwUgYIKwYBBQUHAgEWRmh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvZHBjLWFjc2FmZXdlYnJmYi5wZGYwga4GA1UdHwSBpjCBozBPoE2gS4ZJaHR0cDovL3JlcG9zaXRvcmlvLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9sY3ItYWMtc2FmZXdlYnJmYnY1LmNybDBQoE6gTIZKaHR0cDovL3JlcG9zaXRvcmlvMi5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvbGNyLWFjLXNhZmV3ZWJyZmJ2NS5jcmwwgbcGCCsGAQUFBwEBBIGqMIGnMFEGCCsGAQUFBzAChkVodHRwOi8vcmVwb3NpdG9yaW8uYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwUgYIKwYBBQUHMAKGRmh0dHA6Ly9yZXBvc2l0b3JpbzIuYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwgbkGA1UdEQSBsTCBroEbTEVPTkFSRE8uQ0lBQ0NJQEhPVE1BSUwuQ09NoCEGBWBMAQMCoBgTFkxFT05BUkRPIFZJTkhBUyBDSUFDQ0mgGQYFYEwBAwOgEBMOMTgyNDAxMTkwMDAxMDWgOAYFYEwBAwSgLxMtMDQxMDE5NjQ1NzEzMzg2NzY3MjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwoBcGBWBMAQMHoA4TDDAwMDAwMDAwMDAwMDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwCQYDVR0TBAIwADANBgkqhkiG9w0BAQsFAAOCAgEABD2PxU3GYIP4KtSElA2uVeDht0fGDkSB5ZmMlw1uNrQqJz2bfn2R11GeCINnb6v4oysnxmcy7usokuAFeyyYorWQyy6CcwF7eNPCuqmaCGswNBrw2d7AMDnCi+QuRJ2Q+G3EEOHYCgByTL2G0nYqraOxCA6a1NLUXuJglYKW5k80KWbTtngsmnOrcC3nb/BqmMQ+aYkrCFLhsCToopVcVopjytWTtySpd6zd0EpXn++eaCGxoxy6eD3j2/EgLYcDs9K0D2B84bN43vXLvOcTm/TnSmge/YxoaYge+9jvC4tjj4dYOQsnF60DjGoseFG4rQ+jQchnaLOpvVZrRr017U3vZSX9aSuXKPRkzZwLO5LoIxAXeJfPkTBNSiv7hTfPEQjuhHfsVuVArdnAKQhj6btZWmQz07sZc+HnU+nRvGkp3oYnf0Z+06n75/ak2sOFuzYva0JFJUlczOwheHEWgoBkc74sf72zBlicrTJNP65LnEwZ/r83DPH1HkNdxMwQ//0QgVcaGMv16pt/j4tV8JvWStAawmCfSr3aGwdLATTd2VA75VFFf5iWXV9hulkRy9boUDVHsHT+TEeWWkWCihY+ABtgqoXztklE3mzzAVYplpqoGlythe2wz9KRvij7Uxk0eyj4F4lvcB0ElyHmpdIuoIGyUWzfVU1CJM09nPM=</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

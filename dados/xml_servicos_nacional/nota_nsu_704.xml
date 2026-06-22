@@ -1,0 +1,152 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS41191521204990608000161000000001134325070000000000">
+        <xLocEmi>Pinhais</xLocEmi>
+        <xLocPrestacao>Pinhais</xLocPrestacao>
+        <nNFSe>11343</nNFSe>
+        <cLocIncid>4119152</cLocIncid>
+        <xLocIncid>Pinhais</xLocIncid>
+        <xTribNac>Composição gráfica, fotocomposição, clicheria, zincografia, litografia, fotolitografia.forma, a outra mercadoria que deva ser objeto de posterior circulação, tais como bulas, rótulos, etiquetas, caixas, cartuchos, embalagens e manuais técnicos e de instrução, quando ficarão sujeitos ao ICMS</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-07-31T11:47:04-03:00</dhProc>
+        <nDFSe>11343</nDFSe>
+        <emit>
+            <CNPJ>04990608000161</CNPJ>
+            <IM>51683</IM>
+            <xNome>IMAGEM BRASIL IND GRAFICA LTDA</xNome>
+            <enderNac>
+                <xLgr>MANDAGUARI</xLgr>
+                <nro>763</nro>
+                <xBairro>EMILIANO PERNETA</xBairro>
+                <cMun>4119152</cMun>
+                <UF>PR</UF>
+                <CEP>83324410</CEP>
+            </enderNac>
+            <fone>4130333003</fone>
+            <email>administrativo@imagembrasil.net</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>35800.00</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>716.00</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>35800.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS411915220499060800016100001000000000011343">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-07-31T11:47:04-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>11343</nDPS>
+                <dCompet>2025-07-31</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4119152</cLocEmi>
+                <prest>
+                    <CNPJ>04990608000161</CNPJ>
+                    <IM>51683</IM>
+                    <xNome>IMAGEM BRASIL IND GRAFICA LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4119152</cMun>
+                            <CEP>83324410</CEP>
+                        </endNac>
+                        <xLgr>MANDAGUARI</xLgr>
+                        <nro>763</nro>
+                        <xBairro>EMILIANO PERNETA</xBairro>
+                    </end>
+                    <fone>4130333003</fone>
+                    <email>administrativo@imagembrasil.net</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>Britania Eletrodomesticos SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA avenida av nossa senhora da luz</xLgr>
+                        <nro>0</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>arieli.susin@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4119152</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>130500</cTribNac>
+                        <xDescServ>10000 Un Impressao em 10.000 adesivos em L med: 26x32cm para Campanha de TV MLA 276833 Pedido: 646350</xDescServ>
+                        <cIntContrib>516830</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>PGTO.: 30 dias com Deposito Obs.: Empresa no regime tributario Lucro Real.. PIX CNPJ 04.990.608/0001-61 Imagem Brasil Industria Grafica Ltda| Banco Itau AG.2947 C/C 46793-8</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>35800.00</vServ>
+                    </vServPrest>
+                    <vDescCondIncond>
+                        <vDescIncond>0.00</vDescIncond>
+                        <vDescCond>0.00</vDescCond>
+                    </vDescCondIncond>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <pAliq>2.00</pAliq>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                                <vPis>0.00</vPis>
+                                <vCofins>0.00</vCofins>
+                            </piscofins>
+                            <vRetCP>0.00</vRetCP>
+                            <vRetIRRF>0.00</vRetIRRF>
+                            <vRetCSLL>0.00</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>4815.10</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>852.04</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41191521204990608000161000000001134325070000000000">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>X2dqU2kO/gKPdmXevAh+MdYtjkk=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>xNSZ5yZX85a9vd/lHwtEEuqJNAmAfhZ/o9qYCOaf9nW3znKLJ7xApkPnLaRYtXR9aW2IcP+LzNonaeCP93xYvgGfC6oZfoF8FGnU05S5t0dCsNugFxoIMArgy4i5KslHzgVwo/F5AcL3lN91hJ7PMeO5+RtRPmrBbofTPCtUpaiP7auW2CxZkW9ieu9WZbVqJXJ80qLzJmrKsd2qoXDDcptn2qUsgP3tGFfagDoRsM4h1PjtcFQew2bmVs86YFbIoJYrTQRpFQXGAbPznCOXEhm0SKx8I6g7koltpcTHugMP0qLaRKG3YhnfsiO0fJkhSiyARrnFFFDmonpQpZAgiQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH9zCCBd+gAwIBAgIISIOZHuENPlswDQYJKoZIhvcNAQELBQAwdDELMAkGA1UE BhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEg ZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEYMBYGA1UEAxMPQUMg VkFMSUQgUkZCIHY1MB4XDTI1MDUyNjEyNDIwNFoXDTI2MDUyNjEyNDIwNFowggEK MQswCQYDVQQGEwJCUjELMAkGA1UECBMCUFIxEDAOBgNVBAcTB1BJTkhBSVMxEzAR BgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0 YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBB MTEVMBMGA1UECxMMQVIgVE9UQUxDRVJUMRkwFwYDVQQLExBWaWRlb2NvbmZlcmVu Y2lhMRcwFQYDVQQLEw40NzQ2ODcxNzAwMDEyNjEsMCoGA1UEAxMjTVVOSUNJUElP IERFIFBJTkhBSVM6OTU0MjMwMDAwMDAxMDAwggEiMA0GCSqGSIb3DQEBAQUAA4IB DwAwggEKAoIBAQDKoCxxJcgrEo1cVWnBwKflNYfSs8ZLK/uIIgLoie0E+wvoqajM qcDDCLs8o1lmhPLMXSvtTSIQYiQaTa2yUvIqveYPM6SRIOVgAQeP2A5V/HxaBiEC L6qa3oggNIeoILNhHFTQZsVOIuNpvaJsZ6N4cXf9baY12xtof+hys2uKX470SUR9 +8AWW4ASm+coLvI2gqAW5BPx8+7UmBIMfXsD2BupI4ZsfVNYq7mHw6f8C8qMQU3P UwW6J+LgqY2lxvxqXHqKnH5Q64rCV+eje+99nsv7bc953xvLoni6d2tjK7ABFE+w KKl87cel2a39cSr1GKtnOxVQB3t/R8moHdIDAgMBAAGjggLzMIIC7zCBnAYIKwYB BQUHAQEEgY8wgYwwVQYIKwYBBQUHMAKGSWh0dHA6Ly9pY3AtYnJhc2lsLnZhbGlk Y2VydGlmaWNhZG9yYS5jb20uYnIvYWMtdmFsaWRyZmIvYWMtdmFsaWRyZmJ2NS5w N2IwMwYIKwYBBQUHMAGGJ2h0dHA6Ly9vY3NwdjUudmFsaWRjZXJ0aWZpY2Fkb3Jh LmNvbS5icjAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFFPLpeR1UJlALL5bFUXJvssw qonFMHAGA1UdIARpMGcwZQYGYEwBAgElMFswWQYIKwYBBQUHAgEWTWh0dHA6Ly9p Y3AtYnJhc2lsLnZhbGlkY2VydGlmaWNhZG9yYS5jb20uYnIvYWMtdmFsaWRyZmIv ZHBjLWFjLXZhbGlkcmZidjUucGRmMIG2BgNVHR8Ega4wgaswU6BRoE+GTWh0dHA6 Ly9pY3AtYnJhc2lsLnZhbGlkY2VydGlmaWNhZG9yYS5jb20uYnIvYWMtdmFsaWRy ZmIvbGNyLWFjLXZhbGlkcmZidjUuY3JsMFSgUqBQhk5odHRwOi8vaWNwLWJyYXNp bDIudmFsaWRjZXJ0aWZpY2Fkb3JhLmNvbS5ici9hYy12YWxpZHJmYi9sY3ItYWMt dmFsaWRyZmJ2NS5jcmwwDgYDVR0PAQH/BAQDAgXgMB0GA1UdJQQWMBQGCCsGAQUF BwMCBggrBgEFBQcDBDCBxwYDVR0RBIG/MIG8gR5yb3NhLmNvbG9tYm9AcGluaGFp cy5wci5nb3YuYnKgPgYFYEwBAwSgNQQzMTcwOTE5NjU1MDc1MTE2Njk4NzAwMDAw MDAwMDAwMDAwMDAwMDQwMzUwNTc4U0VTUFBSoCYGBWBMAQMCoB0EG1JPU0EgTUFS SUEgREUgSkVTVVMgQ09MT01CT6AZBgVgTAEDA6AQBA45NTQyMzAwMDAwMDEwMKAX BgVgTAEDB6AOBAwwMDAwMDAwMDAwMDAwDQYJKoZIhvcNAQELBQADggIBAA2rDabo Sw3LOIH9onp7PJhRSeADJ3irl8zIDLhY7efspBznBQoKqL0fVzrGc5fvBu1b1jJZ NxrHMl5lfssPlMFp3znI9TizLTNNjhs4nPNBJEGbJ/WDi2wbP7G8iI4RUgGGOAhI Yctfh0Vkxt+grm1MwI0mPmV/4yF4yGn3jIeM6SAjhFDW7MW2DyuiEJ/AOmWTbXsJ 0VZhJBU1OXH84DvzVKVuVggkIAI6mkwhVOhKF/LL5HD2tJ7uhy6EmlpT4g6OSd+4 fww5Ttpq4sD+ejeLStzvuhCtYUCMSfJO8M+TVY14k0il5M2PtDLYxP/x+JiM9s4w kx70OIpWR+3uvryARdpOronGIawjT7Vgwr4pzOs6ytKIEpsRi+Xptxs5QVetIlSm Oiq3nhnH/zbb4Nrw1gKjUaIbO4+Ug9YkUBIQA07ijLCXbwWeXn/RtSLhgB3fYEFo 2zFPZGRSnWYdE8P727QQ97vnRnfOpJo7GAstGO5Y93xB2zjre+pb6svQB1XjcmAe qOw6gMWruDVdiiMHrHPOGOXmj7REHXXeFolG0Qx482fpNT3JF8JIMGwqOBr523ew zi36GxhVS2yE8zNCdbtDc9G5srO28H8sqCEeJrmDM/uQNQx6Dgoi3hhM0U3UNyPY BaPx+pBqtHbt90njS5CgqnubHvzs5EdxMXbp</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

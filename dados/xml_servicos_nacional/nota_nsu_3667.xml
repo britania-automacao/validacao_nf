@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS32006071205305785000477260000005344326050002944598">
+        <xLocEmi>Aracruz</xLocEmi>
+        <xLocPrestacao>Aracruz</xLocPrestacao>
+        <nNFSe>2600000053443</nNFSe>
+        <cLocIncid>3200607</cLocIncid>
+        <xLocIncid>Aracruz</xLocIncid>
+        <xTribNac>Hospedagem em hotéis, hotelaria marítima e congêneres (o valor da alimentação e gorjeta, quando incluído no preço da diária, fica sujeito ao Imposto Sobre Serviços).</xTribNac>
+        <xTribMun>Hospedagem de qualquer natureza em hotéis, apart-service condominiais, flat, apart-hotéis, hotéis re</xTribMun>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-05-31T17:27:46-03:00</dhProc>
+        <nDFSe>2600000053443</nDFSe>
+        <emit>
+            <CNPJ>05305785000477</CNPJ>
+            <IM>0006177</IM>
+            <xNome>SERVICO SOCIAL DO COMERCIO SESC AR ES</xNome>
+            <enderNac>
+                <xLgr>Rodovia ES-010</xLgr>
+                <nro>S/Nº</nro>
+                <xBairro>SANTA CRUZ</xBairro>
+                <cMun>3200607</cMun>
+                <UF>ES</UF>
+                <CEP>29199548</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <tpBM>1</tpBM>
+            <vBC>1488.00</vBC>
+            <pAliqAplic>0.00</pAliqAplic>
+            <vISSQN>0.00</vISSQN>
+            <vLiq>1488.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS320060720530578500047700001260000000053443">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-05-31T17:27:46-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>00001</serie>
+                <nDPS>260000000053443</nDPS>
+                <dCompet>2026-05-31</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3200607</cLocEmi>
+                <prest>
+                    <CNPJ>05305785000477</CNPJ>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3200607</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>090101</cTribNac>
+                        <xDescServ>DIARIAS:  1.488.00//   Informacoes complementares:   Check-In: 29/05/2026 10:30 / Check-Out: 31/05/2026 11:07  /   Apto:       /   Reserva:  336941</xDescServ>
+                        <cNBS>103031100</cNBS>
+                        <cIntContrib>0901</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>1488.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS32006071205305785000477260000005344326050002944598">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>SMXFv78+guluDzpZfBCTXCy0IfY=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>wUJ+Z3wYUHn2Mbqsiia9gw3ubO3jOvl6K3VIyDQV39CeGI27VnP3VHXS2wjIa+p9/5wNJpyvztCvZ/nl5qMEkdFT0j+OKIh9WwPFKwKpjxBJwin9nJ7hn8uptkV0qAdNti+GsYJRXRuYzPyoFUb+b/qJEVS04ed+cTkaKTF2ikXqkLQHcT8IDJDr+gRQ27rvH/9Deqh+evTJphI63s0KIUEiepEtXVsEPTsugMWrFHyWDqH7ektjNE9NVICDJK4Bdq9yzy8RM+2g7jhrScFGzeAmBhV15nqn+NbPtf8yJlx+xAnasTf0w1DW/NBewL/Zq7YO435KLUoVQExP44TPkA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

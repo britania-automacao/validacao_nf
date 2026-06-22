@@ -1,0 +1,245 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+      
+    <infNFSe Id="NFS28003081229207695000169250000000176025051067931907">
+            
+        <xLocEmi>Aracaju</xLocEmi>
+            
+        <xLocPrestacao>Aracaju</xLocPrestacao>
+            
+        <nNFSe>2500000001760</nNFSe>
+            
+        <cLocIncid>2800308</cLocIncid>
+            
+        <xLocIncid>Aracaju</xLocIncid>
+            
+        <xTribNac>Exploração de salões de festas, centro de convenções, escritórios virtuais, stands, quadras esportivas, estádios, ginásios, auditórios, casas de espetáculos, parques de diversões, canchas e congêneres, para realização de eventos ou negócios de qualquer natureza.</xTribNac>
+            
+        <xTribMun>Exploração de salões de festas, centro de convenções, escritórios virtuais, stands, quadras esportivas, estádios, ginásios, auditórios, casas de espetáculos, parques de diversões, canchas e congêneres, para realização de eventos ou negócios de qualquer natureza.</xTribMun>
+            
+        <verAplic>Abrasf_202</verAplic>
+            
+        <ambGer>1</ambGer>
+            
+        <tpEmis>2</tpEmis>
+            
+        <cStat>100</cStat>
+            
+        <dhProc>2025-05-07T16:53:34-03:00</dhProc>
+            
+        <nDFSe>106793190</nDFSe>
+            
+        <emit>
+                  
+            <CNPJ>29207695000169</CNPJ>
+                  
+            <IM>1135825</IM>
+                  
+            <xNome>CONVIVA ESCRITORIOS COMPARTILHADOS LTDA</xNome>
+                  
+            <xFant>CONVIVA COWORKING</xFant>
+                  
+            <enderNac>
+                        
+                <xLgr>Rua Riachuelo</xLgr>
+                        
+                <nro>1200</nro>
+                        
+                <xBairro>Centro</xBairro>
+                        
+                <cMun>2800308</cMun>
+                        
+                <UF>SE</UF>
+                        
+                <CEP>49015160</CEP>
+                      
+            </enderNac>
+                  
+            <fone>7991312720</fone>
+                  
+            <email>admnewcontempresarial@gmail.com</email>
+                
+        </emit>
+            
+        <valores>
+                  
+            <vCalcDR>0.00</vCalcDR>
+                  
+            <vBC>420.00</vBC>
+                  
+            <pAliqAplic>4.10</pAliqAplic>
+                  
+            <vISSQN>17.22</vISSQN>
+                  
+            <vLiq>420.00</vLiq>
+                  
+            <xOutInf>Optante do Simples Nacional. Trib. aprox. R$ 56,49 Federal e R$ 21,00 Municipal. Fonte: IBPT [8AFAC7]</xOutInf>
+                
+        </valores>
+            
+        <DPS versao="1.00">
+                  
+            <infDPS Id="DPS280030822920769500016902025202500000001760">
+                        
+                <tpAmb>1</tpAmb>
+                        
+                <dhEmi>2025-05-07T16:53:34-03:00</dhEmi>
+                        
+                <verAplic>Abrasf_202</verAplic>
+                        
+                <serie>2025</serie>
+                        
+                <nDPS>202500000001760</nDPS>
+                        
+                <dCompet>2025-05-07</dCompet>
+                        
+                <tpEmit>1</tpEmit>
+                        
+                <cLocEmi>2800308</cLocEmi>
+                        
+                <prest>
+                              
+                    <CNPJ>29207695000169</CNPJ>
+                              
+                    <IM>1135825</IM>
+                              
+                    <xNome>CONVIVA ESCRITORIOS COMPARTILHADOS LTDA</xNome>
+                              
+                    <end>
+                                    
+                        <endNac>
+                                          
+                            <cMun>2800308</cMun>
+                                          
+                            <CEP>49015160</CEP>
+                                        
+                        </endNac>
+                                    
+                        <xLgr>Rua Riachuelo</xLgr>
+                                    
+                        <nro>1200</nro>
+                                    
+                        <xBairro>Centro</xBairro>
+                                  
+                    </end>
+                              
+                    <fone>7991312720</fone>
+                              
+                    <email>admnewcontempresarial@gmail.com</email>
+                              
+                    <regTrib>
+                                    
+                        <opSimpNac>3</opSimpNac>
+                                    
+                        <regEspTrib>0</regEspTrib>
+                                  
+                    </regTrib>
+                            
+                </prest>
+                        
+                <toma>
+                              
+                    <CNPJ>76492701000157</CNPJ>
+                              
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                              
+                    <end>
+                                    
+                        <endNac>
+                                          
+                            <cMun>4106902</cMun>
+                                          
+                            <CEP>80040330</CEP>
+                                        
+                        </endNac>
+                                    
+                        <xLgr>Av. Nossa Senhora da Luz</xLgr>
+                                    
+                        <nro>1330</nro>
+                                    
+                        <xCpl>TRADE MKT</xCpl>
+                                    
+                        <xBairro>Hugo Lange</xBairro>
+                                  
+                    </end>
+                              
+                    <fone>41985061767</fone>
+                              
+                    <email>vinicius.lins@britania.com.br</email>
+                            
+                </toma>
+                        
+                <serv>
+                              
+                    <locPrest>
+                                    
+                        <cLocPrestacao>2800308</cLocPrestacao>
+                                  
+                    </locPrest>
+                              
+                    <cServ>
+                                    
+                        <cTribNac>030300</cTribNac>
+                                    
+                        <xDescServ>Servicos prestados em Maio de 2025. Uso de sala rotativa. .</xDescServ>
+                                  
+                    </cServ>
+                            
+                </serv>
+                        
+                <valores>
+                              
+                    <vServPrest>
+                                    
+                        <vServ>420.00</vServ>
+                                  
+                    </vServPrest>
+                              
+                    <trib>
+                                    
+                        <tribMun>
+                                          
+                            <tribISSQN>1</tribISSQN>
+                                          
+                            <pAliq>4.10</pAliq>
+                                          
+                            <tpRetISSQN>1</tpRetISSQN>
+                                        
+                        </tribMun>
+                                    
+                        <totTrib>
+                                          
+                            <indTotTrib>0</indTotTrib>
+                                        
+                        </totTrib>
+                                  
+                    </trib>
+                            
+                </valores>
+                      
+            </infDPS>
+                
+        </DPS>
+          
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS28003081229207695000169250000000176025051067931907">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>2sFQgde9DkiYOP5pbE9k+Lq+lxQ=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>FyNYb4FwL5UG43Pc99zJyILL5vumrGrdRX8fEr9hccPGxwgnNJtKic/7zbzav2VYInBrj2hNKO3qb26hXO+OPzH1tZ9MhjNSbrcY/7Lx7ahVPk9tmwfZCeRywEYy7MgiuUGRSX3LOcnUQYt4EZy1jka7/KL+Tye4KckaQcyXHzfG2DM6uGam+VABjwVV/YaVdyNidIA3VS9Z8RQ0BX6PxlFTres8/iKeBdEMi8OkWVnzIU8nmhk2ckvKeJbYuha7YpyC+R39lpLMqDZNRpapx2CkIEwOQJ1SnqFI5Abv4cDL10c9nbYxi3l0iJVXjb2hXdG2vKC+jxuB0JnPZpx6tg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

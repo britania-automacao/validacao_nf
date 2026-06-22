@@ -1,157 +1,143 @@
-# src/nfse_fetcher.py
 import os
+import time
+import requests
 import base64
 import gzip
+import xml.etree.ElementTree as ET
+import xml.dom.minidom
+import logging
 from pathlib import Path
 from dotenv import load_dotenv
-from requests_pkcs12 import get
-from config import CaminhosProjeto
 
 load_dotenv()
 
-class BuscadorNfseNacional:
-    """
-    Classe responsável por conectar-se à API do Ambiente de Dados Nacional (ADN),
-    autenticar via Certificado Digital A1 e baixar os arquivos XML de forma sequencial por NSU.
-    """
-    def __init__(self, caminhos: CaminhosProjeto):
-        self.caminhos = caminhos
-        self.nome_certificado = os.getenv("CERTIFICADO_NOME")
-        self.senha_certificado = os.getenv("CERTIFICADO_SENHA")
-        self.cnpj_empresa = os.getenv("CNPJ_EMPRESA")
+class SincronizadorGoverno:
+    def __init__(self):
+        self.cnpj = os.getenv('CNPJ_EMPRESA', '76492701000157')
+        self.url_base = "https://adn.nfse.gov.br/contribuintes/DFe" 
+        self.cert_path = (os.getenv('CERT_PUB_PATH'), os.getenv('CERT_KEY_PATH'))
         
-        # URL Base do Ambiente de Produção Restrita (Testes), conforme o manual oficial da API
-        self.url_base_api = "https://adn.producaorestrita.nfse.gov.br/contribuintes"
-
-    def executar_ciclo_busca(self) -> bool:
-        """Orquestra o download contínuo dos XMLs consumindo a fila até encontrar o fim dela (Erro 404)."""
-        print(f"[FETCHER] Iniciando a sincronização de notas para o CNPJ: {self.cnpj_empresa}...")
+        # Configuração de Pastas e Caminhos
+        raiz_projeto = Path(__file__).resolve().parent.parent
+        self.pasta_historico = raiz_projeto / "dados" / "historico"
+        self.pasta_historico.mkdir(parents=True, exist_ok=True)
+        self.arquivo_nsu = self.pasta_historico / "ultimo_nsu.txt"
         
-        caminho_absoluto_certificado = self._obter_caminho_certificado()
-        if not caminho_absoluto_certificado:
-            return False
-
-        # Define o arquivo de texto que serve como memória de progresso
-        arquivo_memoria_nsu = self.caminhos.historico_controle / "ultimo_nsu.txt"
+        self.pasta_destino = raiz_projeto / "dados" / "xml_servicos_nacional"
+        self.pasta_destino.mkdir(parents=True, exist_ok=True)
         
-        # Recupera o último NSU processado ou inicia do primeiro se o arquivo não existir
-        if arquivo_memoria_nsu.exists():
-            nsu_atual = int(arquivo_memoria_nsu.read_text().strip())
-        else:
-            nsu_atual = 1
+        # Configuração do Logger
+        logging.basicConfig(
+            level=logging.INFO,
+            format='%(asctime)s - %(levelname)s - %(message)s',
+            handlers=[
+                logging.FileHandler(self.pasta_historico / "fetcher.log", encoding='utf-8'),
+                logging.StreamHandler()
+            ]
+        )
+        self.logger = logging.getLogger(__name__)
 
-        print(f"[FETCHER] Retomando os downloads a partir do NSU: {nsu_atual}...")
-        total_notas_baixadas = 0
+    def ler_ultimo_nsu(self) -> int:
+        if self.arquivo_nsu.exists():
+            with open(self.arquivo_nsu, "r") as f:
+                try: return int(f.read().strip())
+                except ValueError: return 0
+        return 0
 
-        # Loop de consumo da fila que só encerra quando o governo retornar 404 (fim da fila)
+    def salvar_ultimo_nsu(self, nsu: int):
+        with open(self.arquivo_nsu, "w") as f:
+            f.write(str(nsu))
+
+    def _descompactar_e_formatar(self, xml_resposta: str) -> str:
+        try:
+            raiz_envelope = ET.fromstring(xml_resposta)
+            nodo_arquivo = next((e for e in raiz_envelope.iter() if 'ArquivoXml' in e.tag), None)
+            
+            if nodo_arquivo is not None and nodo_arquivo.text:
+                dados_zipados = base64.b64decode(nodo_arquivo.text)
+                xml_verdadeiro = gzip.decompress(dados_zipados).decode('utf-8')
+                
+                # Embelezador de XML (formatação visual)
+                dom = xml.dom.minidom.parseString(xml_verdadeiro.replace("\n", "").replace("\r", ""))
+                return dom.toprettyxml(indent="    ")
+            return xml_resposta
+        except Exception as e:
+            self.logger.error(f"Falha ao processar/formatar XML: {e}")
+            return xml_resposta
+
+    def buscar_notas(self):
+        ult_nsu = self.ler_ultimo_nsu()
+        if ult_nsu == 0: ult_nsu = 1
+            
+        self.logger.info(f"Sincronização iniciada. CNPJ: {self.cnpj} | NSU Inicial: {ult_nsu}")
+
         while True:
-            sucesso_requisicao = self._requisitar_xml_por_nsu(caminho_absoluto_certificado, nsu_atual)
+            url_chamada = f"{self.url_base}/{ult_nsu}"
+            tentativas = 0
+            sucesso = False
             
-            if sucesso_requisicao:
-                total_notas_baixadas += 1
-                nsu_atual += 1
-                # Atualiza a memória do robô no disco imediatamente para evitar perda de tracking
-                arquivo_memoria_nsu.write_text(str(nsu_atual))
-            else:
-                print(f"[FETCHER] Fila de transmissão esgotada. Nenhuma nota nova encontrada após o NSU {nsu_atual - 1}.")
+            # Lógica de Retentativa para erros de rede/servidor (502, 503, 504 e 429)
+            while tentativas < 3:
+                try:
+                    resp = requests.get(
+                        url_chamada,
+                        params={'cnpjConsulta': self.cnpj},
+                        headers={'Accept': 'application/xml'},
+                        cert=self.cert_path,
+                        timeout=90,
+                        stream=True # Evita erros de IncompleteRead
+                    )
+                    
+                    # Trata limite de requisições
+                    if resp.status_code == 429:
+                        wait = 30 * (tentativas + 1)
+                        self.logger.warning(f"Limite excedido (429). Pausando por {wait}s...")
+                        time.sleep(wait)
+                        tentativas += 1
+                        continue
+
+                    # Trata instabilidade no servidor
+                    if resp.status_code in [502, 503, 504]:
+                        tentativas += 1
+                        self.logger.warning(f"Instabilidade no Governo (Erro {resp.status_code}). Tentativa {tentativas}/3...")
+                        time.sleep(10 * tentativas)
+                        continue
+                    
+                    if resp.status_code == 200:
+                        # Leitura em pedaços (streaming)
+                        conteudo = b""
+                        for chunk in resp.iter_content(chunk_size=8192):
+                            if chunk: conteudo += chunk
+                            
+                        xml_final = self._descompactar_e_formatar(conteudo.decode('utf-8'))
+                        
+                        with open(self.pasta_destino / f"nota_nsu_{ult_nsu}.xml", "w", encoding="utf-8") as f:
+                            f.write(xml_final)
+                        
+                        self.logger.info(f"Nota NSU {ult_nsu} processada!")
+                        ult_nsu += 1
+                        self.salvar_ultimo_nsu(ult_nsu)
+                        sucesso = True
+                        break
+                    
+                    elif resp.status_code in [404, 204]:
+                        self.logger.info("Fim da fila. Nenhuma nota nova encontrada.")
+                        return 
+                    
+                    else:
+                        self.logger.error(f"Erro inesperado: {resp.status_code} - {resp.text}")
+                        return
+
+                except Exception as e:
+                    self.logger.error(f"Falha na conexão: {e}")
+                    time.sleep(5)
+                    tentativas += 1
+            
+            if not sucesso:
+                self.logger.critical("Falha persistente na comunicação. Robô pausado.")
                 break
-                
-        print(f"[SUCESSO] Ciclo finalizado! Total de novos lotes salvos nesta sessão: {total_notas_baixadas}\n")
-        return True
-
-    def _obter_caminho_certificado(self) -> str:
-        """Valida as configurações do ambiente e retorna o caminho físico do certificado A1."""
-        if not self.nome_certificado:
-            print("[CRITICAL] Nome do certificado não configurado no arquivo .env")
-            return None
             
-        caminho_certificado = self.caminhos.diretorio_base / "dados" / "certificados" / self.nome_certificado
-        
-        if not caminho_certificado.exists():
-            print(f"[CRITICAL] Arquivo do certificado não encontrado em: {caminho_certificado}")
-            return None
-            
-        return str(caminho_certificado)
-
-    def _requisitar_xml_por_nsu(self, caminho_cert: str, nsu_consulta: int) -> bool:
-        """Executa a chamada HTTP GET assinando digitalmente a requisição com o certificado PFX."""
-        url_endpoint_completo = f"{self.url_base_api}/DFe/{nsu_consulta}"
-        
-        parametros_consulta = {
-            "cnpjConsulta": self.cnpj_empresa
-        }
-
-        print(f"[FETCHER] Consultando a posição de NSU {nsu_consulta} na Base Nacional...")
-
-        try:
-            resposta_servidor = get(
-                url=url_endpoint_completo,
-                params=parametros_consulta,
-                pkcs12_filename=caminho_cert,
-                pkcs12_password=self.senha_certificado,
-                timeout=30
-            )
-
-            # Status 200: Encontrou dados na fila
-            if resposta_servidor.status_code == 200:
-                dados_resposta_json = resposta_servidor.json()
-                lista_documentos_lote = dados_resposta_json.get("LoteDFe", [])
-                
-                if not lista_documentos_lote:
-                    return False
-                    
-                for documento_fiscal in lista_documentos_lote:
-                    self._decodificar_e_salvar_arquivo_xml(documento_fiscal)
-                    
-                return True
-                
-            # Status 404: Fim da fila ou índice não gerado ainda pelo fisco
-            elif resposta_servidor.status_code == 404:
-                print(f"[INFO] NSU {nsu_consulta} não localizado (Fim da fila alcançado).")
-                return False
-            elif resposta_servidor.status_code == 403:
-                print("[ERRO] Acesso Negado (403). O certificado não possui permissão para este CNPJ.")
-                return False
-            else:
-                print(f"[ERRO API] O servidor retornou o status {resposta_servidor.status_code}")
-                return False
-
-        except Exception as erro_conexao:
-            print(f"[CRITICAL] Falha na conexão segura SSL com o ambiente governamental: {erro_conexao}")
-            return False
-
-    def _decodificar_e_salvar_arquivo_xml(self, dados_documento: dict):
-        """Descompacta a string criptografada em Base64/GZIP gerando o arquivo XML legível em UTF-8."""
-        nsu_documento = dados_documento.get("NSU", "Desconhecido")
-        chave_acesso = dados_documento.get("ChaveAcesso", f"SemChave_{nsu_documento}")
-        string_base64_comprimida = dados_documento.get("ArquivoXml")
-
-        if not string_base64_comprimida:
-            print(f"[AVISO] O documento de NSU {nsu_documento} veio com o bloco XML vazio.")
-            return
-
-        try:
-            # Decodifica a base64 transformando em bytes binários compactados
-            bytes_comprimidos = base64.b64decode(string_base64_comprimida)
-            
-            # Descomprime o GZIP recuperando a string estruturada do XML original
-            texto_xml_puro = gzip.decompress(bytes_comprimidos).decode('utf-8')
-
-            # Grava o arquivo de texto limpo no diretório mapeado pelo ecossistema
-            caminho_final_arquivo = self.caminhos.xml_servicos_nacional / f"NFSe_{chave_acesso}.xml"
-            
-            with open(caminho_final_arquivo, 'w', encoding='utf-8') as arquivo_escrita:
-                arquivo_escrita.write(texto_xml_puro)
-                
-            print(f"[FETCHER] Arquivo gravado com sucesso: {caminho_final_arquivo.name}")
-
-        except Exception as erro_decodificacao:
-            print(f"[ERRO] Falha ao processar o desmembramento criptográfico do NSU {nsu_documento}: {erro_decodificacao}")
-
+            time.sleep(3) # Delay entre cada nota para respeitar o servidor
 
 if __name__ == "__main__":
-    RAIZ_PROJETO = Path(__file__).resolve().parent.parent
-    config_caminhos = CaminhosProjeto(diretorio_base=RAIZ_PROJETO)
-    
-    gerenciador_fetcher = BuscadorNfseNacional(caminhos=config_caminhos)
-    gerenciador_fetcher.executar_ciclo_busca()
+    SincronizadorGoverno().buscar_notas()

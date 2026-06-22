@@ -1,0 +1,129 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS28003081229207695000169250000000179025051068540470">
+        <xLocEmi>Aracaju</xLocEmi>
+        <xLocPrestacao>Aracaju</xLocPrestacao>
+        <nNFSe>2500000001790</nNFSe>
+        <cLocIncid>2800308</cLocIncid>
+        <xLocIncid>Aracaju</xLocIncid>
+        <xTribNac>Exploração de salões de festas, centro de convenções, escritórios virtuais, stands, quadras esportivas, estádios, ginásios, auditórios, casas de espetáculos, parques de diversões, canchas e congêneres, para realização de eventos ou negócios de qualquer natureza.</xTribNac>
+        <xTribMun>Exploração de salões de festas, centro de convenções, escritórios virtuais, stands, quadras esportivas, estádios, ginásios, auditórios, casas de espetáculos, parques de diversões, canchas e congêneres, para realização de eventos ou negócios de qualquer natureza.</xTribMun>
+        <verAplic>Abrasf_202</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-05-09T12:11:16-03:00</dhProc>
+        <nDFSe>106854047</nDFSe>
+        <emit>
+            <CNPJ>29207695000169</CNPJ>
+            <IM>1135825</IM>
+            <xNome>CONVIVA ESCRITORIOS COMPARTILHADOS LTDA</xNome>
+            <xFant>CONVIVA COWORKING</xFant>
+            <enderNac>
+                <xLgr>Rua Riachuelo</xLgr>
+                <nro>1200</nro>
+                <xBairro>Centro</xBairro>
+                <cMun>2800308</cMun>
+                <UF>SE</UF>
+                <CEP>49015160</CEP>
+            </enderNac>
+            <fone>7991312720</fone>
+            <email>CONTATO@CONVIVA.AJU.BR</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>1.00</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>0.05</vISSQN>
+            <vLiq>1.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS280030822920769500016902025202500000001790">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-05-09T12:11:16-03:00</dhEmi>
+                <verAplic>Abrasf_202</verAplic>
+                <serie>2025</serie>
+                <nDPS>202500000001790</nDPS>
+                <dCompet>2025-05-09</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2800308</cLocEmi>
+                <subst>
+                    <chSubstda>28003081229207695000169250000000176025051067931907</chSubstda>
+                    <cMotivo>99</cMotivo>
+                    <xMotivo>Substituição da nota: Substitução de Nota</xMotivo>
+                </subst>
+                <prest>
+                    <CNPJ>29207695000169</CNPJ>
+                    <IM>1135825</IM>
+                    <fone>7991312720</fone>
+                    <email>CONTATO@CONVIVA.AJU.BR</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040330</CEP>
+                        </endNac>
+                        <xLgr>Av. Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xCpl>TRADE MKT</xCpl>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <fone>41985061767</fone>
+                    <email>vinicius.lins@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2800308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>030301</cTribNac>
+                        <xDescServ>Servicos prestados em Maio de 2025. Uso de sala rotativa. .</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>1.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>5.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS28003081229207695000169250000000179025051068540470">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>DY4qv26cHPc+57eKOrADeran4gU=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>VhIANxFoN35RgHcSt5n+b99qgu+z371/JhYGP40Nr7sBbRkF9U9WQzgjSRIweeIfqi8H3hTBIoEBWEn+FdEuR5SK3su6l3LVNCUcxQmkXPziNu3zI+RM7JpyzYynP9l8/R+p6kYOAAnt3i2q9xGwo3wP/ZUnEVSXZm/zL7BtGcZjd/PDyVnS6PalBYwYBHCk0FsWFYdcYXaZ9+B/cfk+1Q1Iwt8JQ1+dypV35sAO15NsVAJefUkff2qaYFogocsr3/OEOirFu9irP7cy6f/sUxesqJI8xeZbLxDsmx7vyAlBoDd1LGeYTxwZIegL8L5s9lweAKZLNd/luGYjBPWOqg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,180 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+    <infNFSe Id="NFS42119001232202967000142000000000020826030000000000">
+        <xLocEmi>Palhoça</xLocEmi>
+        <xLocPrestacao>Palhoça</xLocPrestacao>
+        <nNFSe>208</nNFSe>
+        <cLocIncid>4211900</cLocIncid>
+        <xLocIncid>Palhoça</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <verAplic>1.01</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-03-05T17:03:08-03:00</dhProc>
+        <nDFSe>208</nDFSe>
+        <emit>
+            <CNPJ>32202967000142</CNPJ>
+            <IM>26453</IM>
+            <xNome>GUGAHE REPRESENTAÇÕES LTDA</xNome>
+            <enderNac>
+                <xLgr>PAULO ROBERTO VIDAL</xLgr>
+                <nro>1455</nro>
+                <xCpl>CASA 746</xCpl>
+                <xBairro>BELA VISTA</xBairro>
+                <cMun>4211900</cMun>
+                <UF>SC</UF>
+                <CEP>88132599</CEP>
+            </enderNac>
+            <fone>4830240305</fone>
+            <email>GUGAHE.PUC@GMAIL.COM</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>38455.79</vBC>
+            <pAliqAplic>3.00</pAliqAplic>
+            <vISSQN>1153.67</vISSQN>
+            <vTotalRet>576.83</vTotalRet>
+            <vLiq>37878.96</vLiq>
+        </valores>
+        <IBSCBS>
+            <cLocalidadeIncid>4211900</cLocalidadeIncid>
+            <xLocalidadeIncid>Palhoça</xLocalidadeIncid>
+            <valores>
+                <vBC>37302.12</vBC>
+                <uf>
+                    <pIBSUF>0.10</pIBSUF>
+                    <pRedAliqUF>0.00</pRedAliqUF>
+                    <pAliqEfetUF>0.00</pAliqEfetUF>
+                </uf>
+                <mun>
+                    <pIBSMun>0.00</pIBSMun>
+                    <pRedAliqMun>0.00</pRedAliqMun>
+                    <pAliqEfetMun>0.00</pAliqEfetMun>
+                </mun>
+                <fed>
+                    <pCBS>0.90</pCBS>
+                    <pRedAliqCBS>0.00</pRedAliqCBS>
+                    <pAliqEfetCBS>0.00</pAliqEfetCBS>
+                </fed>
+            </valores>
+            <totCIBS>
+                <vTotNF>37878.96</vTotNF>
+                <gIBS>
+                    <vIBSTot>37.30</vIBSTot>
+                    <gIBSUFTot>
+                        <vIBSUF>37.30</vIBSUF>
+                    </gIBSUFTot>
+                    <gIBSMunTot>
+                        <vIBSMun>0.00</vIBSMun>
+                    </gIBSMunTot>
+                </gIBS>
+                <gCBS>
+                    <vCBS>335.72</vCBS>
+                </gCBS>
+            </totCIBS>
+        </IBSCBS>
+        <DPS versao="1.01">
+            <infDPS Id="DPS421190023220296700014200001000000000000208">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-03-05T17:03:08-03:00</dhEmi>
+                <verAplic>1.01</verAplic>
+                <serie>1</serie>
+                <nDPS>208</nDPS>
+                <dCompet>2026-03-05</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4211900</cLocEmi>
+                <prest>
+                    <CNPJ>32202967000142</CNPJ>
+                    <IM>26453</IM>
+                    <fone>4830240305</fone>
+                    <email>GUGAHE.PUC@GMAIL.COM</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>ARIELI.SUSIN@BRITANIA.COM.BR</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4211900</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>Serviços de Representação</xDescServ>
+                        <cNBS>102010000</cNBS>
+                        <cIntContrib>39455645</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>38455.79</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>3.00</pAliq>
+                        </tribMun>
+                        <tribFed>
+                            <vRetIRRF>576.83</vRetIRRF>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>5172.30</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>1053.69</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+                <IBSCBS>
+                    <finNFSe>0</finNFSe>
+                    <cIndOp>100301</cIndOp>
+                    <indDest>0</indDest>
+                    <valores>
+                        <trib>
+                            <gIBSCBS>
+                                <CST>000</CST>
+                                <cClassTrib>000001</cClassTrib>
+                            </gIBSCBS>
+                        </trib>
+                    </valores>
+                </IBSCBS>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42119001232202967000142000000000020826030000000000">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>PkfrEyTU50mAiUWrve82+CzBj1s=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>E0DOUw3D437kyyW2zJ6u0i1sDC+tWLXpQzXcOSeOAd+/xciQzje+yFegahMV92LPWrbWDShz8fmzBjAe7BWwLZxApvMhvxywXxFUzmCjNSp8o59/rdANPjXroCSXTI14pYpUKXKtMlwjqTUFjmbAWp/AKebEqEJXKD4a+OOOtfdgDWAbva7mIf7P7XFJ4Sov6ZrHiwoKL60tFqZO4bcCe4B6D9QIq7JPUR7NxA/TY1HclSEjvUVfeRkDUWaTlmEJ6Cou0xNsDcx0GdWTJRCphECQplX+o8q7t4qVgiZ0Q7t1boUVQNC6kK5z+KmNOiye4uuTl3MQewkc7Oh1IF+PzA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35060031210508423000170000000003285826010512678280">
+        <xLocEmi>BAURU</xLocEmi>
+        <xLocPrestacao>Bauru</xLocPrestacao>
+        <nNFSe>32858</nNFSe>
+        <cLocIncid>3506003</cLocIncid>
+        <xLocIncid>Bauru</xLocIncid>
+        <xTribNac>Advocacia</xTribNac>
+        <verAplic>SilTecnologia_v1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-07T00:00:00-03:00</dhProc>
+        <nDFSe>51267828</nDFSe>
+        <emit>
+            <CNPJ>10508423000170</CNPJ>
+            <IM>508668</IM>
+            <xNome>MANDALITI E PRADO SOCIEDADE DE ADVOGADOS</xNome>
+            <enderNac>
+                <xLgr>17017-000 - AVENIDA GETULIO VARGAS, 3-03   1 andar</xLgr>
+                <nro>0</nro>
+                <xBairro>VILA GUEDES DE AZEVEDO</xBairro>
+                <cMun>3506003</cMun>
+                <UF>SP</UF>
+                <CEP>17017000</CEP>
+            </enderNac>
+            <fone>1432350800</fone>
+            <email>faturamento@mandaliti.com.br</email>
+        </emit>
+        <valores>
+            <vLiq>985.42</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS350600321050842300017000001000000000032858">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-07T00:00:00-03:00</dhEmi>
+                <verAplic>SilTecnologia_v1.00</verAplic>
+                <serie>00001</serie>
+                <nDPS>32858</nDPS>
+                <dCompet>2026-01-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3506003</cLocEmi>
+                <prest>
+                    <CNPJ>10508423000170</CNPJ>
+                    <IM>508668</IM>
+                    <fone>1432350800</fone>
+                    <email>faturamento@mandaliti.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>6</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3506003</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>171401</cTribNac>
+                        <xDescServ>HONORARIOS ADVOCATICIOSVencimento: 06/02/2026DADOS BANCARIOS:BANCO: 237AGENCIA: 3384CONTA CORRENTE: 8742-4Observacao: ADM - MULTAS DEZEMBRO 2025</xDescServ>
+                        <cNBS>113012000</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>1050.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>01</CST>
+                                <vBCPisCofins>1050.00</vBCPisCofins>
+                                <pAliqPis>0.65</pAliqPis>
+                                <pAliqCofins>3.00</pAliqCofins>
+                                <vPis>6.83</vPis>
+                                <vCofins>31.50</vCofins>
+                                <tpRetPisCofins>1</tpRetPisCofins>
+                            </piscofins>
+                            <vRetIRRF>15.75</vRetIRRF>
+                            <vRetCSLL>10.50</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>64.58</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35060031210508423000170000000003285826010512678280">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>uBNvtMEUj9vzton6A9uZYbsLLx8=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>lLwz6kmvbjI+3XwpK/l53RX1Q8/N1jT830LH5HgebFEEHvtdLIXdI0m+KcUGLjN62VVBDMnCP30nzE7LAgel6TAEJwCgcdPVI4x2s7/L0sw1pXhJ/R+raLYaXAEDMwlIBZk5lDLuEGWbLURz6jS/ayDgl3iyVoe38JgdW/MpAgFgwRW5M7kruOkiGEiojN5u0NqxE+SQtUuy1LtBreH1PKsvjdIUruBdCXKgOHur0B2mGeDzNFAhmc/rcpKV6c/D3zDRYGw7zWVxxECKj5K93/hjvYgJZ5W4Y7+M1mrZ4qNEFMSVqJnT+ia+s+iGMJ0ErovF2wMRGIAlSzQEleygjQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIHfzCCBWegAwIBAgIIY84nZMz6n38wDQYJKoZIhvcNAQELBQAwczELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEXMBUGA1UEAxMOQUMgTElOSyBSRkIgdjIwHhcNMjUwMjEwMTgzMzU4WhcNMjYwMjEwMTgzMzU4WjCB6TELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAlNQMQ4wDAYDVQQHEwVCQVVSVTEXMBUGA1UECxMOMTMwMzY1OTIwMDAxNDMxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTETMBEGA1UECxMKcHJlc2VuY2lhbDEqMCgGA1UEAxMhTVVOSUNJUElPIERFIEJBVVJVOjQ2MTM3NDEwMDAwMTgwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5pO3qbiuIy2wTjbSdjjIjsfKdmSvhSMXGEwHOxnSTaUtkeRIQ2sLRDtz9eyY6E50gjsxhMMih12ab7keUSK3W7MGcLqZ/ta9cRUMpbbN6bI8rDVoqTnfZ6rjkOvnHGwMByT8lsZzhm23UUQEWTRXwG8W3T0nlUM+G1Og/BdgTxU1GqQ+5iyGtzEtlGUf5dRhVpI7GkOWuOjWSBbBCNYuldELoutAbb/Hy/QLG/YUE7Xdd2hdNf0Zvh/gDDRC4bWYpYY5C6hykU/r9SrkIYunYMp0C03jzdMAXHH2vifNPBcXlLWIFDbcZrjFgUQABxMW7kosBv0lQv2NQuoRXQRpDQIDAQABo4ICnjCCApowHwYDVR0jBBgwFoAUDd/WR/QTTuUiWDIsZqbnLuRXvAIwDgYDVR0PAQH/BAQDAgXgMGwGA1UdIARlMGMwYQYGYEwBAgE7MFcwVQYIKwYBBQUHAgEWSWh0dHA6Ly9yZXBvc2l0b3Jpby5saW5rY2VydGlmaWNhY2FvLmNvbS5ici9hYy1saW5rcmZiL2FjLWxpbmstcmZiLWRwYy5wZGYwgbAGA1UdHwSBqDCBpTBQoE6gTIZKaHR0cDovL3JlcG9zaXRvcmlvLmxpbmtjZXJ0aWZpY2FjYW8uY29tLmJyL2FjLWxpbmtyZmIvbGNyLWFjLWxpbmtyZmJ2NS5jcmwwUaBPoE2GS2h0dHA6Ly9yZXBvc2l0b3JpbzIubGlua2NlcnRpZmljYWNhby5jb20uYnIvYWMtbGlua3JmYi9sY3ItYWMtbGlua3JmYnY1LmNybDBiBggrBgEFBQcBAQRWMFQwUgYIKwYBBQUHMAKGRmh0dHA6Ly9yZXBvc2l0b3Jpby5saW5rY2VydGlmaWNhY2FvLmNvbS5ici9hYy1saW5rcmZiL2FjLWxpbmtyZmJ2NS5wN2IwgbcGA1UdEQSBrzCBrIEcU1VFTExFTlJPU0lNQEJBVVJVLlNQLkdPVi5CUqAeBgVgTAEDAqAVExNTVUVMTEVOIFNJTFZBIFJPU0lNoBkGBWBMAQMDoBATDjQ2MTM3NDEwMDAwMTgwoDgGBWBMAQMEoC8TLTA3MDcxOTg4MDE3NzEyODUxODQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggIBAGEl3U6masM1e6KdFNTxhsQv7p8G9Pm1LCxsp0I25/c/L+CAg33P+js5DgmfUqb9jGjuJacx7zc6NOb4GnXcHefje+noRbVu2m3KrVgaKZkmjqahTvIypyyKC+QQdYnCpzQDNTmkvelgzJosH80Mg0ueiR7JpDnQp1GrQkMWAVd601AY2BIhglQ6/G4pfo6qd+Mk7MEc7QvK39D2FCpVwbjdr2Fend7lA31ephIK9/kMSX2a/YsU9pF5tE25IQdhqZccsCu9pGuqXV7IfZbHgCcPdOn2UfBu1Kd7Nrpu7WI/PUTyV0ptJu1D5VoTEgao7n6Z2Wa3LqfzVL/YPgmsJkkoyYSyA4HgtXH0CRI1R+/DEsEq6Rr7opFBHb39w2PorUOHgV8Jc8StrG4FOC4Y+bB/G/4BO1vMrFqZKXMWioDrs+vw/phj+lWUgop7Xd3XPDsHGYxyukUG4hsZwgMWai11W4QdFsya/Snn01JF9GGWi6fx47e5jTlBcd/TPLJyxxmuZMdJNS5kRfJKHtgix9EToRsMsAFkq1UdfS6UXQFnFL215vSQMRaXKemNSfVUSmaxR+L0m+p9Kn5gqhcNgotT2J3EwaTNDCqq1Cl86G+LozGSOQ/QJwsaKT7lcmsVzbbDM9JaejIz6IvU+lcHWyKUReMRrME6Bg0QH9M4Asg9</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS43172021210290207000100000000000041626010000000008">
+        <xLocEmi>Santa Rosa</xLocEmi>
+        <xLocPrestacao>Santa Rosa</xLocPrestacao>
+        <nNFSe>416</nNFSe>
+        <cLocIncid>4317202</cLocIncid>
+        <xLocIncid>Santa Rosa</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-06T15:35:51-03:00</dhProc>
+        <nDFSe>416</nDFSe>
+        <emit>
+            <CNPJ>10290207000100</CNPJ>
+            <IM>46571</IM>
+            <xNome>DMI REPRESENTACOES LTDA</xNome>
+            <enderNac>
+                <xLgr>JOAO ALBERTO SCHMITT</xLgr>
+                <nro>66</nro>
+                <xBairro>CENTRAL</xBairro>
+                <cMun>4317202</cMun>
+                <UF>RS</UF>
+                <CEP>98787702</CEP>
+            </enderNac>
+            <fone>5599589084</fone>
+            <email>dmi@dmirepresentacoes.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>344.04</vBC>
+            <pAliqAplic>2.01</pAliqAplic>
+            <vISSQN>6.92</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>344.04</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS431720221029020700010000001000000000000416">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-06T15:35:51-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>416</nDPS>
+                <dCompet>2026-01-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4317202</cLocEmi>
+                <prest>
+                    <CNPJ>10290207000100</CNPJ>
+                    <IM>46571</IM>
+                    <fone>5599589084</fone>
+                    <email>dmi@dmirepresentacoes.com.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>82520060</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA alameda avenida nossa senhora da luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>BACACHERI</xBairro>
+                    </end>
+                    <email>atendimento.procon@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4317202</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>Comissões de DEZEMBRO de 2025</xDescServ>
+                        <cNBS>102010000</cNBS>
+                        <cIntContrib>934658</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>banco banrisul 041 ag 0355 c.c  06.119001.0-8 chave pix cnpj 10.290.207/0001-00</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>344.04</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.01</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS43172021210290207000100000000000041626010000000008">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>RgPvoApzWLiNTOACZNSKwzKwm6A=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>Z4d7AUKhynKcWLVRzZTACDM9224izNZwRNr+iBLbJL2pLg5HwF76GDdjHIycLjC1u0NEXgethktsqqX9UQTJBfX7hA5cDyVbW3hkeV4TlipOgNRqBoOeFT90LFbYin4FNBQDwOTs/5VuMjOs4DWFhxTs0bim9cJtGtCt7nj7OYew4p9L9sY+jLbtW6pxG7tlWzfgTcMjnlYNdbBCzbloKDLkzwXKEetfkGZO90NT4e/F1p5NjCcZjLhgLD+wJmMPbMm8kxSKoJRvdZQghf3ghJo5kAkvNxIKXXFPhazI850m6OcGeNWWicNBG0NfU2YtJ3ifStmTHiWiCM/B2BtcRw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

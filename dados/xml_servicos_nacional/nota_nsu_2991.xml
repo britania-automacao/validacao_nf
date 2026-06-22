@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35344011253010379000187000000000003326044513892805">
+        <xLocEmi>RUA MADRE TERESA DE CALCUTÁ, 27 - Santa Maria ,06149-211</xLocEmi>
+        <xLocPrestacao>Rodovia dos Imigrantes 1500, 1 - 5 - Água Funda ,04329-900</xLocPrestacao>
+        <nNFSe>33</nNFSe>
+        <cLocIncid>3500105</cLocIncid>
+        <xTribNac>7.10 - Limpeza, manutenção e conservação de vias e logradouros públicos, imóveis, chaminés, piscinas, parques, jardins e congêneres.</xTribNac>
+        <verAplic>1.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-04-16T15:01:06-03:00</dhProc>
+        <nDFSe>33</nDFSe>
+        <emit>
+            <CNPJ>53010379000187</CNPJ>
+            <xNome>BBR FACILITIES PRESTACAO DE SERVICOS TERCEIRIZADOS LTDA</xNome>
+            <enderNac>
+                <xLgr>RUA - MADRE TERESA DE CALCUTÁ</xLgr>
+                <nro>27</nro>
+                <xBairro>Santa Maria</xBairro>
+                <cMun>3534401</cMun>
+                <UF>SP</UF>
+                <CEP>06149211</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vCalcDR>0</vCalcDR>
+            <vBC>2170.00</vBC>
+            <pAliqAplic>2.75</pAliqAplic>
+            <vISSQN>59.68</vISSQN>
+            <vLiq>2170.00</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS353440125301037900018700017000000000000033">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-04-16T15:01:06-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>00017</serie>
+                <nDPS>33</nDPS>
+                <dCompet>2026-04-16</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3534401</cLocEmi>
+                <prest>
+                    <CNPJ>53010379000187</CNPJ>
+                    <IM>182796</IM>
+                    <fone>1197883267</fone>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Av. - NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3500105</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>071001</cTribNac>
+                        <cTribMun>065</cTribMun>
+                        <xDescServ>7.10 - Limpeza, manutenção e conservação de vias e logradouros públicos, imóveis, chaminés, piscinas, parques, jardins e congêneres.</xDescServ>
+                        <cIntContrib>001</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>LOCAÇÃO DE EQUIPAMENTOS</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vReceb>0</vReceb>
+                        <vServ>2170.00</vServ>
+                    </vServPrest>
+                    <vDedRed>
+                        <vDR>0</vDR>
+                    </vDedRed>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.75</pAliq>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                                <pAliqPis>0</pAliqPis>
+                                <pAliqCofins>0</pAliqCofins>
+                                <vPis>0</vPis>
+                                <vCofins>0</vCofins>
+                                <tpRetPisCofins>0</tpRetPisCofins>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>59.68</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>pO2cb5KtqDkwSrj+5wCGFhvOzUUxlduBQ7H3APzvKCA=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>Rl162Da9b5uCJ93enLYY36JqwpK0qYsbx8Qo+4hSfWJVsKNE/bV7hQRzX9FmNK9byBi2wRp0MsxD16l1/PWDi3rWeBCxDEZWRF+2k1lsg07NhWRRasXD8atPwtFF/buED0d6Mwu2WBLi6nKhQkw4XlEeETO4bGJ054dfriuEnjVYqLzc3G6r0tcDANz8jL/8mlON06+YtOri13dTyUjgQacQCvpXF+uEuuLqLjqtkuMrlRV+MXWmzCEZfMUqmx0HYAVZwa3Jwcfla08K7pDQ/6zfAN6WpMAzQB7TtmVI8IAOp5suylF0zofAszWxysy9U/o5kQr+9IpSPuCzIuVPsA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

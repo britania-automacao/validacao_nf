@@ -1,0 +1,131 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS41069021277134294000179000000003920124021677509440">
+        <xLocEmi>4106902</xLocEmi>
+        <xLocPrestacao>CURITIBA</xLocPrestacao>
+        <nNFSe>39201</nNFSe>
+        <cLocIncid>4106902</cLocIncid>
+        <xLocIncid>CURITIBA</xLocIncid>
+        <xTribNac>Agenciamento, organização, promoção, intermediação e execução de programas de turismo, passeios, viagens, excursões, hospedagens e congêneres.</xTribNac>
+        <verAplic>1</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2024-02-29T22:13:00-03:00</dhProc>
+        <nDFSe>1</nDFSe>
+        <emit>
+            <CNPJ>77134294000179</CNPJ>
+            <IM>1647696</IM>
+            <xNome>SECULO XXI TURISMO LTDA - ME</xNome>
+            <enderNac>
+                <xLgr>CANDIDO DE ABREU</xLgr>
+                <nro>000526</nro>
+                <xBairro>CENTRO CÍVICO</xBairro>
+                <cMun>4106902</cMun>
+                <UF>PR</UF>
+                <CEP>80040265</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>5790.67</vBC>
+            <vISSQN>115.81</vISSQN>
+            <vTotalRet>0</vTotalRet>
+            <vLiq>5790.67</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS410690227713429400017900000000000000000001">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2024-02-29T17:13:08-03:00</dhEmi>
+                <verAplic>1</verAplic>
+                <serie>0</serie>
+                <nDPS>1</nDPS>
+                <dCompet>2024-02-29</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4106902</cLocEmi>
+                <prest>
+                    <CNPJ>77134294000179</CNPJ>
+                    <IM>1647696</IM>
+                    <xNome>SECULO XXI TURISMO LTDA - ME</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>CANDIDO DE ABREU</xLgr>
+                        <nro>000526</nro>
+                        <xBairro>CENTRO CÍVICO</xBairro>
+                    </end>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <IM>5238242</IM>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>001330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4106902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>004600</cTribNac>
+                        <xDescServ>COMISSÕES DIVERSAS VENDAS FEVEREIRO</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>5790.67</vServ>
+                    </vServPrest>
+                    <vDescCondIncond>
+                        <vDescIncond>0.00</vDescIncond>
+                    </vDescCondIncond>
+                    <vDedRed>
+                        <vDR>0.00</vDR>
+                    </vDedRed>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpImunidade>0</tpImunidade>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <pTotTrib>
+                                <pTotTribFed>0</pTotTribFed>
+                                <pTotTribEst>0</pTotTribEst>
+                                <pTotTribMun>0</pTotTribMun>
+                            </pTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41069021277134294000179000000003920124021677509440">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>oj6FEDm0NTaCSns/1dudPdBrMdU=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>Xz4D0eoZljgL3aFEeM10tvSZU++ofqDo8SNVZ/eECi0ogD50uzane+tBdR8c1nY2saxEEVWMwqSWRRo5vWI6pN9cOS31Gg6JFOHC9a6nkrWpUesucuNueGESpaCaUk7393vxDEC7WxZ8ESRBJp1MFHvmeSZUzlo5sjm8N7+Uy9gv3jWr1YCtRMJxJf0TYBD/VdQHqUFh0Ojna+yg8NHEmuJNkLsCfS3Cd6Cy3g60bDWSc8c896ZaFQt2SHVlkiaxn3b2pPAE4KqEz7jqoOzul9J6/sfzxNAyZMX9/ZK6AVc1xS13SMK0Ei6iFcK6p6CoNvi29CsKF0ttOHdLlnHWLA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,122 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35259041239145619000120000000000006226060000000000">
+        <xLocEmi>JUNDIAI</xLocEmi>
+        <xLocPrestacao>JUNDIAI</xLocPrestacao>
+        <nNFSe>62</nNFSe>
+        <cLocIncid>3525904</cLocIncid>
+        <xLocIncid>JUNDIAI</xLocIncid>
+        <xTribNac>Instrução, Treinamento, Orientação Pedagógica E Educacional, Avaliação De Conhecimentos De Qualquer Natureza.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-06-15T19:51:32-03:00</dhProc>
+        <nDFSe>83132294</nDFSe>
+        <emit>
+            <CNPJ>39145619000120</CNPJ>
+            <IM>141103</IM>
+            <xNome>NOHAU ESCOLA DE NEGOCIOS E TREINAMENTOS LTDA</xNome>
+            <xFant>NOHAU ESCOLA DE NEGOCIOS E TREINAMENTOS LTDA</xFant>
+            <enderNac>
+                <xLgr>999 Paulo Prado</xLgr>
+                <nro>281</nro>
+                <xCpl>FLEX II APTO 47A</xCpl>
+                <xBairro>Jardim Flórida</xBairro>
+                <cMun>3525904</cMun>
+                <UF>SP</UF>
+                <CEP>13208690</CEP>
+            </enderNac>
+            <fone>989146111</fone>
+            <email>contato@sltg.com.br</email>
+        </emit>
+        <valores>
+            <vBC>8398.94</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>8398.94</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS352590423914561900012010000000000000000062">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-06-15T19:51:32-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>10000</serie>
+                <nDPS>62</nDPS>
+                <dCompet>2026-06-15</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3525904</cLocEmi>
+                <prest>
+                    <CNPJ>39145619000120</CNPJ>
+                    <IM>141103</IM>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMÉSTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3525904</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>080201</cTribNac>
+                        <cTribMun>009</cTribMun>
+                        <xDescServ>NOTA FISCAL DE SERVICOS DE INSTRUCAO E TREINAMENTO - PROJETO DE GRAVAÇÃO E 1º WORKSHOP DE GESTÃO DE FORNECEDORES GRAVADO.- ORDEM DE COMPRA: 685.001- COMPRADOR RESP.: VANESSA GROSS- VALOR TOTAL: R'||chr(36)||' 8.398,94 (OITO MIL, TREZENTOS E NOVENTA E OITO REAIS E NOVENTA E QUATRO CENTAVOS)- CONDIÇÃO DE PAGAMENTO:    - 10/06/2026: R'||chr(36)||' 5.599,29 (CINCO MIL QUINHENTOS E NOVENTA E NOVE REAIS E VINTE E NOVE CENTAVOS) - REF. ADIANTAMENTO 1/3 DO PROJETO DE GRAVAÇÃO   - 20/07/2026: R'||chr(36)||' 2.799,65 (DOIS MIL SETECENTOS E NOVENTA E NOVE REAIS E SESSENTA E CINCO CENTAVOS) - REF. 1º WORKSHOP DE GESTAO DE FORNECEDORES GRAVADOFORMA DE PAGAMENTO: DEPÓSITO EM CONTA BANCARIADADOS BANCÁRIOS:- BENEFICIARIO: NOHAU ESCOLA- BANCO: 336 - BANCO C6 S.A - AG: 0001 - CONTA: 5115740-3- CHAVE PIX CNPJ: 39.145.619/0001-20</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>8398.94</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35259041239145619000120000000000006226060000000000">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>l/uOOEU9d/dRYNSI7WpbYqu6kkA=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>bLejL7FqNgAfJWl4m5uqD/4a6wuxa6j+FP3SvfaRTZcmxT1iyiif7Fv1QOlVnOo9JVJcNiD9E3b1760kvfxRbGfaXUc9p7CBYSs3JSalKgceiXzgC+rjSNHyqWsawqX7KcqPZq7iP6AhbbBC+qVd0cbbcfyf9buw6R/p1mVuPMkDW8uiLRaiVCpvodF00FDGE63Mo0GDIS2aHghOWSkvnHiwgrD/sYRzv1AAtkHgASGoYdbsJLFdBACyL9NMm/hI3AdqYR6/8qGaymxDem1ZBipk1gq9EnWr+n51/iEtGCFCD260e1fhY+To9zuhrFyZPagQDrHEopYRU2nDapq/cQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS31035041224363329000185000000000003126010000000023">
+        <xLocEmi>ARAGUARI</xLocEmi>
+        <xLocPrestacao>ARAGUARI</xLocPrestacao>
+        <nNFSe>31</nNFSe>
+        <cLocIncid>3103504</cLocIncid>
+        <xLocIncid>ARAGUARI</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <xTribMun>REPRESENTACÃO DE QUALQUER NATUREZA</xTribMun>
+        <verAplic>3.0002</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-06T14:43:13-03:00</dhProc>
+        <nDFSe>31</nDFSe>
+        <emit>
+            <CNPJ>24363329000185</CNPJ>
+            <IM>2500003635</IM>
+            <xNome>ITALY MEDIC SOLUCOES HOSPITALARES LTDA</xNome>
+            <xFant>ITALY MEDIC</xFant>
+            <enderNac>
+                <xLgr>SAMUEL SANTOS</xLgr>
+                <nro>0</nro>
+                <xBairro>CENTRO</xBairro>
+                <cMun>3103504</cMun>
+                <UF>MG</UF>
+                <CEP>38440110</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vBC>16386.00</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>327.72</vISSQN>
+            <vLiq>16386.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS310350422436332900018500001000000000000031">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-06T14:43:13-03:00</dhEmi>
+                <verAplic>3.0002</verAplic>
+                <serie>00001</serie>
+                <nDPS>31</nDPS>
+                <dCompet>2026-01-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3103504</cLocEmi>
+                <prest>
+                    <CNPJ>24363329000185</CNPJ>
+                    <IM>2500003635</IM>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>2</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITÂNIA ELETRODOMÉSTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Av. NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3103504</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>COMISSAO REFERENTE AO MES DE DEZEMBRO DE 2025 DADOS BANCARIOS SAO : BANCO SANTANDER 033 AG 3342 CONTA CORRENTE 13.007738-3 PIX CNPJ</xDescServ>
+                        <cNBS>102010000</cNBS>
+                        <cIntContrib>066874</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>16386.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS31035041224363329000185000000000003126010000000023">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>mpK+NwRYUB+QqgcpTGSOv7l7BYM=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>eVgTl4Bx7fyR0tgQ+4/M7tmGthwZV+9K+8wl8PoHjQseR/E2pxkIPr9Ov1WtTMnF3hXjJe3hnuuJsYXgi+j11tCXzh7izZEiIo55LQL8bT8xGzWRmfZv/FPZpE+bzXW0hGcOthIbCpCQ/CC7qhRfx5BzWo508jJlT4wRXLZgk87L6VUBde0ZwPUoVGS0GXu12CUd4f9q4jkuWN9JkjIkCXRr1R+TuarIFHfMhJnEDlTxKniSd73DCgAThWnTOcpOENkE6YIJzo94clmLThSbj3sQeJqi4QmkNGGQV1HedqccUX6B41CGJOGpqrr5ThruW4Milclsh2iDotcuGizCIg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

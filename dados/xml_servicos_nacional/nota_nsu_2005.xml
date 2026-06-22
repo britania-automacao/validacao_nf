@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS51034031207223314000100000000000102025011736157471">
+        <xLocEmi>CUIABÁ</xLocEmi>
+        <xLocPrestacao>CUIABÁ</xLocPrestacao>
+        <nNFSe>1020</nNFSe>
+        <cLocIncid>5103403</cLocIncid>
+        <xLocIncid>CUIABÁ</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-01-06T09:57:59-04:00</dhProc>
+        <nDFSe>1020</nDFSe>
+        <emit>
+            <CNPJ>07223314000100</CNPJ>
+            <IM>87988</IM>
+            <xNome>JJA - REPRESENTACOES COMERCIAIS LTDA</xNome>
+            <xFant>AGUIA REPRESENTACOES                                        </xFant>
+            <enderNac>
+                <xLgr>RUA F</xLgr>
+                <nro>14</nro>
+                <xCpl>QUADRA 14</xCpl>
+                <xBairro>SAO MATEUS</xBairro>
+                <cMun>5103403</cMun>
+                <UF>MT</UF>
+                <CEP>78095000</CEP>
+            </enderNac>
+            <fone>656631790</fone>
+        </emit>
+        <valores>
+            <vBC>26330.12</vBC>
+            <pAliqAplic>3.00</pAliqAplic>
+            <vISSQN>789.90</vISSQN>
+            <vLiq>25935.17</vLiq>
+        </valores>
+        <xOutInf>PROCON/MT- Rua Baltazar Navarros, 567 – Bairro Bandeirantes CEP: 78010-020 Fone:151 e (65)3613-2100- PROCON MUNICIPAL-FONE:3641-8325</xOutInf>
+        <DPS versao="1.00">
+            <infDPS Id="DPS510340320722331400010070013000000000001020">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-01-06T09:57:59-04:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>70013</serie>
+                <nDPS>1020</nDPS>
+                <dCompet>2025-01-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>5103403</cLocEmi>
+                <prest>
+                    <CNPJ>07223314000100</CNPJ>
+                    <IM>87988</IM>
+                    <fone>656631790</fone>
+                    <email>emilenecontadora@hotmail.com</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>5103403</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>SERVIÇO PRESTADO REFERENTE AO MÊS DE DEZEMBRO DE 2024 - BRITÂNIA</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>26330.12</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>3.00</pAliq>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                            </piscofins>
+                            <vRetIRRF>394.95</vRetIRRF>
+                        </tribFed>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS51034031207223314000100000000000102025011736157471">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>Sgm8VbOxp7DTZ8OTrCQgzv1duQo=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>B8hrE8CDMGG+qBEX+FsKIcuQrmhVjpn/x2CRRuc2fvOOoEMJvs4sUOBEnkdgMayxgLjtVOeSpW7VKQq+CDyXfouKgVOQTuBHxiMeWhAiA/2px+gxMGM/SYNPIzwuV1D2ihJVMN6JFtDnSldjiCajRY/TLbCquyq8NQ7L/vxz6wbIuzjYbJoNzWa3nWVfoxHw6Gwtp442aNHDHFbjEbrTrt5GgDH4nmnIhXNiy+r3vQiGyYwsvzsvahjn4VMfwsZffrUECrmZ6RHplEZkiPcVY0jPHe56Rrs4X7Aa1ESmsfwD5MpvIFJGEreZ/c8ldw7ZQnvforTjfsRyyWQORqtWOA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

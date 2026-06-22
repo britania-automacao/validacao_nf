@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35387091244832067000168000000000007425100420074431">
+        <xLocEmi>Piracicaba</xLocEmi>
+        <xLocPrestacao>Piracicaba</xLocPrestacao>
+        <nNFSe>74</nNFSe>
+        <cLocIncid>3538709</cLocIncid>
+        <xLocIncid>Piracicaba</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <xTribMun>Representação de qualquer natureza, inclusive comercial.</xTribMun>
+        <verAplic>Simpliss_v1.0.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-10-06T14:02:34-03:00</dhProc>
+        <nDFSe>102266</nDFSe>
+        <emit>
+            <CNPJ>44832067000168</CNPJ>
+            <IM>663392</IM>
+            <xNome>AATJ REPRESENTAÇÃO COMERCIAL LTDA</xNome>
+            <enderNac>
+                <xLgr>RUA CORONEL JOÃO MENDES PEREIRA DE ALMEIDA</xLgr>
+                <nro>739</nro>
+                <xCpl>BOX 41</xCpl>
+                <xBairro>NOVA AMÉRICA</xBairro>
+                <cMun>3538709</cMun>
+                <UF>SP</UF>
+                <CEP>13417550</CEP>
+            </enderNac>
+            <fone>1633116366</fone>
+            <email>fernando@marconatocontabilidade.com.br</email>
+        </emit>
+        <valores>
+            <vBC>1566.13</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>78.31</vISSQN>
+            <vLiq>1542.64</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS353870924483206700016880000000000000000074">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-10-06T14:02:34-03:00</dhEmi>
+                <verAplic>SimplissWeb_v1.0.0</verAplic>
+                <serie>80000</serie>
+                <nDPS>74</nDPS>
+                <dCompet>2025-10-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3538709</cLocEmi>
+                <prest>
+                    <CNPJ>44832067000168</CNPJ>
+                    <IM>663392</IM>
+                    <fone>1633116366</fone>
+                    <email>fernando@marconatocontabilidade.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS S.A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>atjtoni@gmail.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3538709</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>COMISSOES SOB.VENDAS</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vReceb>0.00</vReceb>
+                        <vServ>1566.13</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>5.00</pAliq>
+                        </tribMun>
+                        <tribFed>
+                            <vRetIRRF>23.49</vRetIRRF>
+                        </tribFed>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35387091244832067000168000000000007425100420074431">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>uX0MBXtP9GGw81jg/Sn9ixFNGaE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>BRcftsuKD/8ZGP/yINe0LXVNtdb1iJvu0cum9+DCzHI6DsdTERLHr5uocKipwbEEg73iujT9KW6YsbIjxMzIRYTkBt0+T1vU1ciaK3YBDp4jb16qcmXXC9nwirrCtCHdjm55F0pWzUZu+hzkDPVbFIFsgU3PeJc/j5/VvA9TKWu1l79sPwixdWAUeCyNbI+EuXeUR2dxLEk24RQFVLijIIEYdw27W8Ijv4Sb5PUILjfOe9+vHWgPBzxV20prt5lq3eJrLSXY5O3pXsV8p2TtMjwvi9C5opYhyyCBrWuFtgFl2eklEX4sYnr1OPL+ZQas3v4/WZqahPnOniPwar0jPA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

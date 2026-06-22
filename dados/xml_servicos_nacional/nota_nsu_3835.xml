@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35410001237333891000108000000000002326060000000000">
+        <xLocEmi>PRAIA GRANDE</xLocEmi>
+        <xLocPrestacao>PRAIA GRANDE</xLocPrestacao>
+        <nNFSe>23</nNFSe>
+        <cLocIncid>3541000</cLocIncid>
+        <xLocIncid>PRAIA GRANDE</xLocIncid>
+        <xTribNac>Lubrificação, Limpeza, Lustração, Revisão, Carga E Recarga, Conserto, Restauração, Blindagem, Manutenção E Conservação De Máquinas, Veículos, Aparelhos, Equipamentos, Motores, Elevadores Ou De Qualquer Objeto (Exceto Peças E Partes Empregadas, Que Ficam Sujeitas Ao Icms).</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-06-03T16:09:57-03:00</dhProc>
+        <nDFSe>80137736</nDFSe>
+        <emit>
+            <CNPJ>37333891000108</CNPJ>
+            <IM>588640001</IM>
+            <xNome>NASCIMENTO AR - PECAS E ACESSORIOS LTDA</xNome>
+            <xFant>NASCIMENTO AR - PECAS E ACESSORIOS LTDA</xFant>
+            <enderNac>
+                <xLgr>DO TRABALHADOR</xLgr>
+                <nro>1315</nro>
+                <xBairro>SÍTIO DO CAMPO</xBairro>
+                <cMun>3541000</cMun>
+                <UF>SP</UF>
+                <CEP>11725000</CEP>
+            </enderNac>
+            <fone>30342714</fone>
+            <email>secretariajpw@gmail.com</email>
+        </emit>
+        <valores>
+            <vBC>22600.00</vBC>
+            <pAliqAplic>3.00</pAliqAplic>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>22600.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS354100023733389100010810000000000000000023">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-06-03T16:09:57-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>10000</serie>
+                <nDPS>23</nDPS>
+                <dCompet>2026-06-03</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3541000</cLocEmi>
+                <prest>
+                    <CNPJ>37333891000108</CNPJ>
+                    <IM>588640001</IM>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITÂNIA ELETRODOMÉSTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Via Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3541000</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>140101</cTribNac>
+                        <cTribMun>058</cTribMun>
+                        <xDescServ>REFERENTE AO PATROCINIO DA FEIRA PENDURA BRABA 2026</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>22600.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35410001237333891000108000000000002326060000000000">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>Cvv+kVlJDjtKgaB2DzIbUVzoZDQ=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>VsSl1d/S8T2MBqgmQXKtrntq++W5EI+/F63hQ4TNCp1xHMw5dP4QuAfOKhQ6Zzwj93ArdQkcB51hToAU6NyHTSdE5rkCREnk64IvChh/fhhR/KDE8NsZC3GNClRGe98hriQUATaPog6VfMrHErf4452AMr2IKvE3F+9kY5HNuABszaqmcdQFczpHhDoblPGBRNKZNPl1Vf6+6kvOtoSZFzl6fBxWYVl6/DX63JOr3r8kjlYmXhwYYZNhNeT0RArvN0w+Hh0a4Gr3zW/sYSG0PCTGPym/yannnKcwIiA3gh8H5xuLrMMy3Tf6zfZtS88eet+l9shdiibwpqnWgsSY5Q==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

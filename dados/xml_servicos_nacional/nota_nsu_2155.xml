@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35387091223866237000155000000000087325120430779552">
+        <xLocEmi>Piracicaba</xLocEmi>
+        <xLocPrestacao>Piracicaba</xLocPrestacao>
+        <nNFSe>873</nNFSe>
+        <cLocIncid>3538709</cLocIncid>
+        <xLocIncid>Piracicaba</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <xTribMun>Representação de qualquer natureza, inclusive comercial.</xTribMun>
+        <verAplic>Simpliss_v1.0.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-12-10T14:24:06-03:00</dhProc>
+        <nDFSe>1140848</nDFSe>
+        <emit>
+            <CNPJ>23866237000155</CNPJ>
+            <IM>638251</IM>
+            <xNome>TAMARA J. E. TOTTI TONON REPRESENTAÇÕES EPP</xNome>
+            <enderNac>
+                <xLgr>JOAO BOTTENE</xLgr>
+                <nro>689</nro>
+                <xBairro>VILA MONTEIRO</xBairro>
+                <cMun>3538709</cMun>
+                <UF>SP</UF>
+                <CEP>13418555</CEP>
+            </enderNac>
+            <fone>1933779028</fone>
+            <email>tamara@tr3.com.br</email>
+        </emit>
+        <valores>
+            <vBC>94.69</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>4.73</vISSQN>
+            <vLiq>94.69</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS353870922386623700015580000000000000000873">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-12-10T14:24:06-03:00</dhEmi>
+                <verAplic>SimplissWeb_v1.0.0</verAplic>
+                <serie>80000</serie>
+                <nDPS>873</nDPS>
+                <dCompet>2025-12-10</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3538709</cLocEmi>
+                <prest>
+                    <CNPJ>23866237000155</CNPJ>
+                    <IM>638251</IM>
+                    <fone>1933779028</fone>
+                    <email>tamara@tr3.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITÂNIA ELETRODOMÉSTICOS S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>comissoes@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3538709</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>REF. COMISSÕES DE OUTUBRO DE 2025</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>94.69</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>5.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <pTotTrib>
+                                <pTotTribFed>13.45</pTotTribFed>
+                                <pTotTribEst>0</pTotTribEst>
+                                <pTotTribMun>4.11</pTotTribMun>
+                            </pTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35387091223866237000155000000000087325120430779552">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>AYPRXz8EM5etJaiGNHG9qbrbA58=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>f4tBU9EGWmsXhXvf7wqlr6Bugqo/cTLhfi2CqSiYpw1mi2XfJAnxLGVTsVfVcJaFBVEAGXJr73udbiJVGa0hOTNHzZUs/RgNdIkGrarw5QAkGm3ZJR26goO5CRZnlYp8Ey+KHNLNEtFfDbgQZDcLF4PEZ2lSPhmtLQGCPwYM7n06utq6qay/Sf1Y+MEkH272JJmwGlnjIXWMXyYfgZLrCd72LWilnNRMVyllwcn8QfUdvUKqwDk91wWg8dl1Jz3J33/IwEAANmRWavPEHBpcoZ1PAYY8tG4QW9JMCk7vfnyVDIvVmVvvE4Ppjsf9KBzYVuPvQLQrGmXpD1kZ4YkLOg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+    <infNFSe Id="NFS41268011254080962000127000000000002026058587317389">
+        <xLocEmi>Tapejara</xLocEmi>
+        <xLocPrestacao>Tapejara</xLocPrestacao>
+        <nNFSe>20</nNFSe>
+        <cLocIncid>4126801</cLocIncid>
+        <xLocIncid>Tapejara</xLocIncid>
+        <xTribNac>Propaganda e publicidade, inclusive promoção de vendas, planejamento de campanhas ou sistemas de publicidade, elaboração de desenhos, textos e demais materiais publicitários.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-05-06T16:10:43-03:00</dhProc>
+        <nDFSe>20</nDFSe>
+        <emit>
+            <CNPJ>54080962000127</CNPJ>
+            <xNome>FONSECA INFLUENCER MARKETING LTDA</xNome>
+            <xFant>TREND CREATORS</xFant>
+            <enderNac>
+                <xLgr>AVENIDA AVENIDA RUI BARBOSA</xLgr>
+                <nro>932</nro>
+                <xCpl>ANDAR SUPERIOR SALA ANEXA</xCpl>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4126801</cMun>
+                <UF>PR</UF>
+                <CEP>87430000</CEP>
+            </enderNac>
+            <email>FONSECA.LIDIA@YAHOO.COM.BR</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>2250.00</vBC>
+            <pAliqAplic>2.01</pAliqAplic>
+            <vISSQN>45.23</vISSQN>
+            <vLiq>2250.00</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS412680125408096200012700001000000000000020">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-05-06T16:10:43-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>1</serie>
+                <nDPS>20</nDPS>
+                <dCompet>2026-05-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4126801</cLocEmi>
+                <prest>
+                    <CNPJ>54080962000127</CNPJ>
+                    <email>FONSECA.LIDIA@YAHOO.COM.BR</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS LTDA.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>82520060</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xCpl>de 1211 a 1989 - lado ímpar</xCpl>
+                        <xBairro>Jardim Social</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4126801</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>170601</cTribNac>
+                        <xDescServ>Pagamento referente às entregas da assessoria do  influenciador Djenny Kock para campanha HAVAN PHILCO. Contrato assinado e registrado sob C-4508.Dados da conta:INTER - 077CNPJ: 54.080.962/0001-27Agência: 0001Conta: 34513184-3Pix:  54.080.962/0001-27</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>2250.00</vServ>
+                    </vServPrest>
+                    <vDescCondIncond/>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.01</pAliq>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                                <vBCPisCofins>2250.00</vBCPisCofins>
+                                <pAliqPis>0.17</pAliqPis>
+                                <pAliqCofins>0.77</pAliqCofins>
+                                <vPis>3.83</vPis>
+                                <vCofins>17.33</vCofins>
+                                <tpRetPisCofins>0</tpRetPisCofins>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41268011254080962000127000000000002026058587317389">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>p5MNaSmrO7TfODulVbnC39nXF/w=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>DVJGH7wGnrzlNCuXVnTScOhwnJb6cJwK0oEOZ5lLVOcQJfQf8VZ424e/otEyKCcPayPC1FHb+teo2cGiughogvKweLY0BUvl245NN/LufKUy8QBrKsEpi0CSixIly1B18lJ6bI/ELTL/YsnbyCdx/6hxF/WlqiI269iIHKRI5JwGknfflpVXo1IAxeU8aqcQwAnX8tZDqi79ovLuU7/vwXTX4KtltClIHhK2+Cbkvedizfy9IARbwl3KvpW01z4MO+Hi+asTAEc+uKlIYhY+/jO3YPHYslytgdsKtzf0GXIF9F/UWVxPILLFr9PdFNULAIYpaSbYx/UX/8sK3zqBdA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH3zCCBcegAwIBAgIIZMB2vDvGue0wDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgU0FGRVdFQiBSRkIgdjUwHhcNMjYwMTE0MjAyMjE1WhcNMjcwMTE0MjAyMjE1WjCB7zELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAlBSMREwDwYDVQQHEwhUQVBFSkFSQTE2MDQGA1UECxMtU2VjcmV0YXJpYSBkYSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRYwFAYDVQQLEw1SRkIgZS1DTlBKIEExMRcwFQYDVQQLEw40MDMxMjk5MzAwMDE1MTETMBEGA1UECxMKcHJlc2VuY2lhbDEtMCsGA1UEAxMkTVVOSUNJUElPIERFIFRBUEVKQVJBOjc2MjQ3MzQ1MDAwMTA2MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAx5+FKW5xckkJaLmw3JqobKPNeTOoJNvgG5c7k8fMbW/Lz8hKgs07+YpnCcIZK38K9TG52jBfJvGNL9ZDUYKDY3/0g0Pe/AvhW9sFJIQ7fKdE0OML5JDu+5inCAl061j+16ph6LbFHW1/ZLz2c7jBA0Rqd96Phg5zrKqqsxW9h7LBU5Ek+4XRiqOcl3m+cZBeUK8NAfQp8FCLqOfBH1erfEBjyszsOhM+fLlahpUm/y+vQ2oFdstn9k5Nt4GmD0G+d0h01Lbz+pDA98Bxcjyb1G8Ih+shNPT1b5grjJ+tkAThR3kDVE4/W2rL3jq86u6LiTwKZRlWtcpaL0pPCC48CQIDAQABo4IC9TCCAvEwHwYDVR0jBBgwFoAUKV5L1UZMu/4Wp2PBHcQm8t3Y8wUwDgYDVR0PAQH/BAQDAgXgMGkGA1UdIARiMGAwXgYGYEwBAgEzMFQwUgYIKwYBBQUHAgEWRmh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvZHBjLWFjc2FmZXdlYnJmYi5wZGYwga4GA1UdHwSBpjCBozBPoE2gS4ZJaHR0cDovL3JlcG9zaXRvcmlvLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9sY3ItYWMtc2FmZXdlYnJmYnY1LmNybDBQoE6gTIZKaHR0cDovL3JlcG9zaXRvcmlvMi5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvbGNyLWFjLXNhZmV3ZWJyZmJ2NS5jcmwwgbcGCCsGAQUFBwEBBIGqMIGnMFEGCCsGAQUFBzAChkVodHRwOi8vcmVwb3NpdG9yaW8uYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwUgYIKwYBBQUHMAKGRmh0dHA6Ly9yZXBvc2l0b3JpbzIuYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2Iwgb0GA1UdEQSBtTCBsoEbR0FCSU5FVEVAVEFQRUpBUkEuUFIuR09WLkJSoCUGBWBMAQMCoBwTGlJPTkFMRE8gQURSSUFOTyBWSUxBUyBCT0FToBkGBWBMAQMDoBATDjc2MjQ3MzQ1MDAwMTA2oDgGBWBMAQMEoC8TLTI1MDMxOTgwMDMwNDYwNjY5MzcwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggIBAAOq4oglYSeI3oEhhyDYxO6ZdMRUcHOW+5w7l7dzO7xxFWB/FA69vS2edRDkPIcYNbGJWfyGc3//GWsTwjcU6S56nziZRfFTP3UyI5/vCImT5CuMGI1hRiInmzT+XFBLvDLxP5pD5pttsCOQoNecMli4D3rShvJ8wwVWzStsJF7YZpL2pMwzD5pTfKUN9Ht/sfnU+DtjYtWFpgx/W7otAqDNdHdF0v6NhN0Hb47PR23Qb0IoTutHahCEQ4u80Nf1v5eK+yaZVNrCV1NZWpdhk2gMgStaejJwmcuWLTbpQodFpf6tusiBCZyeJKJEXQgSw95gPVwpBVH/ZqcdnBoUgC2YP5UsNfYYR/QETmVUaBvAHik2s6mLiVuyqiAI2GZVj191wzgtL4Vx0O/mPNzBDbrZ3/grZvLpA27kQ3DDTjcq6XynKoxNatM2g3IpNnAT8VRTyBcK/IJkkq9wfFxtEUXqi+iKK/puqhPVhwiUdl+MOfQ+vgPy0P2irPBP9f1F3xZlZFfkYKkXQNtwIZD6vaMLC532mR+2uAS71Fy8FynTonmf5T/Daz1PKkEVKXHFsdfxlfpW0y6/BGepnwV2ACjwT9iM0NplwkwD/Xc34891tIBDMs3e877jcnIo5Pf08lE5xKH/zXnZKWLKxp6ZQrd6F8hMO2QJVq85Pn4QdGeH</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

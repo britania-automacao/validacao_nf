@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35503081229835275000127000000000848826011616065310">
+        <xLocEmi>São Paulo</xLocEmi>
+        <xLocPrestacao>São Paulo</xLocPrestacao>
+        <nNFSe>8488</nNFSe>
+        <cLocIncid>3550308</cLocIncid>
+        <xTribNac>Inserção de textos, desenhos e outros materiais de propaganda e publicidade, em qualquer meio (excet</xTribNac>
+        <verAplic>1.0.4+4352B8</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-16T19:11:06-03:00</dhProc>
+        <nDFSe>8488</nDFSe>
+        <emit>
+            <CNPJ>29835275000127</CNPJ>
+            <IM>59087056</IM>
+            <xNome>ADSPLAY MIDIA S.A.</xNome>
+            <enderNac>
+                <xLgr>FERNAO DIAS</xLgr>
+                <nro>106</nro>
+                <xCpl>CONJ  10</xCpl>
+                <xBairro>PINHEIROS</xBairro>
+                <cMun>3550308</cMun>
+                <UF>SP</UF>
+                <CEP>05427000</CEP>
+            </enderNac>
+            <email>nfs@adsplay.com.br</email>
+        </emit>
+        <valores>
+            <vBC>90000.00</vBC>
+            <pAliqAplic>2.90</pAliqAplic>
+            <vISSQN>2610.00</vISSQN>
+            <vLiq>90000.00</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS355030822983527500012700001000000000008488">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-16T19:11:06-03:00</dhEmi>
+                <verAplic>1.0.4+4352B8</verAplic>
+                <serie>1</serie>
+                <nDPS>8488</nDPS>
+                <dCompet>2026-01-16</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3550308</cLocEmi>
+                <prest>
+                    <CNPJ>29835275000127</CNPJ>
+                    <IM>59087056</IM>
+                    <email>nfs@adsplay.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>financeiro.ti@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>172501</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>Midia Programatica Push Ads - Veiculacao de Midia PI 7726-11 Itau Ag. 2925 C.c. 22666-0 Adsplay Midia S.A. CNPJ (PIX) 29.835.275/0001-27 Contrato N. 2025/00868 - Vencto. 20/02/2026</xDescServ>
+                        <cNBS>999999999</cNBS>
+                        <cIntContrib>000000002347NFSE</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>90000.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.90</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>2610.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35503081229835275000127000000000848826011616065310">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>zF2hK6r5bwMxc7iZTlqZw9uBWvM=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>xoSlQ4l14snhItbcSxdJLSVoFJ3CqXXjan85igavRQcEZQ8zW/XSdMXW2wvnErHKo3JKMxt0U1kOHWFnv4JfaErTin0BBv0fiUuhp+VzbUglBNaqwjMlQLHLdLdBE73x0QDZ6YaHAM96/LssVG3+z4aqV9BYMLZ02mrAh0IBoX1MU7C1rp9vWfjhA3Q1F8uGwmOP9xnpfWxYhmRFfGwxJAzk1o6czRalzrNqVY/TEjJDQ5HSs9teLdf3UqFdoA2tiP4Eeo2c5kk7wYb9XqYNAFUfbFAMg2UflsWgN9Z1f/QBNJUIJRVXPbDrTZkTscNk/5GjgiAh+1cyf6nBKFIYDg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

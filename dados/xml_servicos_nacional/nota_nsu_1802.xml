@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35473041227858584000197000000000008926020771715237">
+        <xLocEmi>Santana de Parnaíba</xLocEmi>
+        <xLocPrestacao>Santana de Parnaíba</xLocPrestacao>
+        <nNFSe>89</nNFSe>
+        <cLocIncid>3547304</cLocIncid>
+        <xLocIncid>Santana de Parnaíba</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <verAplic>Simpliss_v1.0.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-02-04T10:20:09-03:00</dhProc>
+        <nDFSe>711448</nDFSe>
+        <emit>
+            <CNPJ>27858584000197</CNPJ>
+            <IM>78379</IM>
+            <xNome>W A DE OLIVEIRA REPRESENTACAO - ME</xNome>
+            <enderNac>
+                <xLgr>TERRAS ALTAS</xLgr>
+                <nro>433</nro>
+                <xCpl>CASA 12</xCpl>
+                <xBairro>TAMBORE.</xBairro>
+                <cMun>3547304</cMun>
+                <UF>SP</UF>
+                <CEP>06544515</CEP>
+            </enderNac>
+            <fone>11988632992</fone>
+            <email>wagner_promo2@hotmail.com</email>
+        </emit>
+        <valores>
+            <vBC>11495.35</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>229.91</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>11322.92</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS354730422785858400019780001000000000000089">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-02-04T10:20:09-03:00</dhEmi>
+                <verAplic>SimplissWeb_v1.0.1</verAplic>
+                <serie>80001</serie>
+                <nDPS>89</nDPS>
+                <dCompet>2026-02-04</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3547304</cLocEmi>
+                <prest>
+                    <CNPJ>27858584000197</CNPJ>
+                    <IM>78379</IM>
+                    <fone>11988632992</fone>
+                    <email>wagner_promo2@hotmail.com</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>3547304</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>comissoes@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3547304</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>REFERENTE A RELATORIOS DE COMISSOES DE JANEIRO DE 2026DADOS PARA PAGAMENTO:BANCO BRADESCOAGENCIA: 0422CONTA CORRENTE: 304857-8NOME DA EMPRESA: W A DE OLIVEIRA REPRESENTACAOCNPJ: 27.858.584/0001-97</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>11495.35</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.00</pAliq>
+                        </tribMun>
+                        <tribFed>
+                            <vRetIRRF>172.43</vRetIRRF>
+                        </tribFed>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35473041227858584000197000000000008926020771715237">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>sR16A03lfwM704G8WgdFiHy8F8I=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>viyjdUu3Q1WeDAyBN1oUDR9vQGNcbUDFRSyNfdP4FTjCnn4MRUEMjel1lgfFIf/x7nN0DR7rodzWwBlmIiAOL5O0ssWt3oowP/iEPSXipdRvN1HgTZbiHd9Bmtq1k/X6IcyosFtc/WOo+mT8HpPEmwfpNCVgSR9+Uc4KnO/aYxznbsgVc9y0vEdtQjhPc4UDlxEJhWADbiQvw/mDk9FdLAjHuY+dJknJqhPOzlKU4beuONHeW3oPvfJ99VeTOD++lOjZbIbC0fo6JZmvGVncIG30ZNz/xRRJ9XdIWoqpVnh+gTgxTzxXY+Bh+LcyeZwNvt6CgWEHlP0d1ORjyCGAJw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

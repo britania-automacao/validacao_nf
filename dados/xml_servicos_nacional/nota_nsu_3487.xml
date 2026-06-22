@@ -1,0 +1,135 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35060031218119069000102000000002161726050540224891">
+        <xLocEmi>BAURU</xLocEmi>
+        <xLocPrestacao>Bauru</xLocPrestacao>
+        <nNFSe>21617</nNFSe>
+        <cLocIncid>3506003</cLocIncid>
+        <xLocIncid>Bauru</xLocIncid>
+        <xTribNac>Assessoria e consultoria em informática.</xTribNac>
+        <verAplic>SilTecnologia_v1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-05-18T00:00:00-03:00</dhProc>
+        <nDFSe>54022489</nDFSe>
+        <emit>
+            <CNPJ>18119069000102</CNPJ>
+            <IM>532392</IM>
+            <xNome>NEXT SOLUCOES INTELIGENTES LTDA</xNome>
+            <enderNac>
+                <xLgr>RUA VIRGÍLIO MALTA</xLgr>
+                <nro>17-06</nro>
+                <xBairro>VILA MESQUITA</xBairro>
+                <cMun>3506003</cMun>
+                <UF>SP</UF>
+                <CEP>17014440</CEP>
+            </enderNac>
+            <fone>1432043512</fone>
+            <email>FINANCEIRO@NEXTSI.COM.BR</email>
+        </emit>
+        <valores>
+            <vBC>2401.43</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>48.03</vISSQN>
+            <vTotalRet>147.68</vTotalRet>
+            <vLiq>2253.75</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS350600321811906900010200017000000000022716">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-05-18T00:00:00-03:00</dhEmi>
+                <verAplic>SilTecnologia_v1.00</verAplic>
+                <serie>00017</serie>
+                <nDPS>22716</nDPS>
+                <dCompet>2026-05-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3506003</cLocEmi>
+                <prest>
+                    <CNPJ>18119069000102</CNPJ>
+                    <IM>532392</IM>
+                    <fone>1432043512</fone>
+                    <email>FINANCEIRO@NEXTSI.COM.BR</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3506003</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010601</cTribNac>
+                        <xDescServ>QT: 1,00 - Pedido de compras #00680.442 - Servicos Curso e Treinamentos - R$ 2.401,43 - Tot.R$ 2.401,43VENCIMENTO: 22/06/2026 - R$ 2.253,75 - FORMA PAGAMENTO: CARTEIRA</xDescServ>
+                        <cNBS>111032200</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>2401.43</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>01</CST>
+                                <vBCPisCofins>2401.43</vBCPisCofins>
+                                <pAliqPis>0.65</pAliqPis>
+                                <pAliqCofins>3.00</pAliqCofins>
+                                <vPis>15.61</vPis>
+                                <vCofins>72.04</vCofins>
+                                <tpRetPisCofins>3</tpRetPisCofins>
+                            </piscofins>
+                            <vRetIRRF>36.02</vRetIRRF>
+                            <vRetCSLL>111.66</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>147.68</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>48.03</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35060031218119069000102000000002161726050540224891">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>nDtCpZOREIgyM2uOFouW0JpzCo0=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>e00aou3j/IsZ9TCGMIOyW/GhjVrmg1To7857ByAT4XPQmUxEEVcGMAsGRSXLUNPX9b55GUBcQL425CaCI2tT+1j6UqtcBgYhJ4SE68YE5nvBJFKYuQPpZ7wl2wSugGdqzJ3uVgrL3BD8rst3Xa6mEcq9gq86gNekYW5a+6v0qdeUESfatA5TASGYr8l3SUwHtouDJtpYniMPWyGDlfEBY9pf/DJwPTXAG5Fp0I+jSbTlL5zniZpO4+VhdGWdiRp/4CpG5rYiZTVwukVLrrjzNGIJcL8M0nd9u2vi2ba/2tXqdeDpu8RB4JTRdrsT/1pVtG5kWY843j6M8LzOfWKB1A==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH0zCCBbugAwIBAgIIW9uz4uf1ydEwDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgU0FGRVdFQiBSRkIgdjUwHhcNMjYwMjAzMjAzMjQzWhcNMjcwMjAzMjAzMjQzWjCB6TELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAlNQMQ4wDAYDVQQHEwVCQVVSVTE2MDQGA1UECxMtU2VjcmV0YXJpYSBkYSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRYwFAYDVQQLEw1SRkIgZS1DTlBKIEExMRcwFQYDVQQLEw4xMzAzNjU5MjAwMDE0MzETMBEGA1UECxMKcHJlc2VuY2lhbDEqMCgGA1UEAxMhTVVOSUNJUElPIERFIEJBVVJVOjQ2MTM3NDEwMDAwMTgwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtUYO574cs7dMGzTM4JPlCmOHSeHwewUOuwCmnAh05Biu4LnPEqYfm0erxQxOdb2nn0b87tgjRwlFyEIJaKl7FaZXYqJlF2YlmH/cYN8EfRHz8srfEL+fps1r5EL5gaNBhow4Dhwu6UyoT734waE1AtQMSmQefNu69yfwsEsFQUBfoGj4dFBaC+b3rVITvoF7/cUDg+sMPPJJARQyl2PU8siSgMU5md3z9i/Yq/obGyASjcxRje1GvX7EBsRRWpPcfVE3x6zcJK/FYniDW1Z5hhOw+Az4nC4okeWkc7dUOoWBMNCkqdxPQGN5x9PY5cOPTxoBdOWEqnv9pPAQ9PXLUQIDAQABo4IC7zCCAuswHwYDVR0jBBgwFoAUKV5L1UZMu/4Wp2PBHcQm8t3Y8wUwDgYDVR0PAQH/BAQDAgXgMGkGA1UdIARiMGAwXgYGYEwBAgEzMFQwUgYIKwYBBQUHAgEWRmh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvZHBjLWFjc2FmZXdlYnJmYi5wZGYwga4GA1UdHwSBpjCBozBPoE2gS4ZJaHR0cDovL3JlcG9zaXRvcmlvLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9sY3ItYWMtc2FmZXdlYnJmYnY1LmNybDBQoE6gTIZKaHR0cDovL3JlcG9zaXRvcmlvMi5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvbGNyLWFjLXNhZmV3ZWJyZmJ2NS5jcmwwgbcGCCsGAQUFBwEBBIGqMIGnMFEGCCsGAQUFBzAChkVodHRwOi8vcmVwb3NpdG9yaW8uYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwUgYIKwYBBQUHMAKGRmh0dHA6Ly9yZXBvc2l0b3JpbzIuYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwgbcGA1UdEQSBrzCBrIEcU1VFTExFTlJPU0lNQEJBVVJVLlNQLkdPVi5CUqAeBgVgTAEDAqAVExNTVUVMTEVOIFNJTFZBIFJPU0lNoBkGBWBMAQMDoBATDjQ2MTM3NDEwMDAwMTgwoDgGBWBMAQMEoC8TLTA3MDcxOTg4MDE3NzEyODUxODQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggIBABFEFKpZrPKEz/MhcvxxPjFBs/UWsd4xIc58kgS+0/uin4+MvpG6LQSRCcS4Coyrd0XsHYpGYEsjav7wvGZOcoc9uXkkoLVPlUxOZ+Y8I4749x+X8NzLRneZ7kpVHBzUIbQeL25JCvo0FFo9YMpMujx9N5AwdZ4fXGADAttVyXA/WMtDONi7Ep4Q9ITKodlw2doAmBuS7ENPhwnWQmTfLFaWamwUNTWj/V3ubmda9y34x1qFzqxx7TvhrZLJk+gdjFr6OkZ57GChR5u8AohEHJH5NnMJOtPaiyTD+HwwK8MJMUoPwlsjWuKGD8GCowP1RXUplJ0iJUolP1zK4kTl6sUdrwJQ6+/oTlSnHBlH+HLu7wfuUfcWUdbx4Iq4gtjWHfjt+Uze7BRqwiLd0eHfNJIBDaCY8FKiO6nTQzWox7WghbsqTsQzu73dYXvIcuxCWyUkN4qXeXTFBCxuM1uDVSHuJezZcE0BDTlZXGtqiNaUlY9/zdzUfPE9PIH5YHyIxJ/68k0Z4X75B/g3HG7M4BvNACwO0z6YA9V/yDpvtoU4H1TAJsFWK+c+32QCIjR60FKDauuR86TVqek+EDT7YSbo5vIsJkQc4WZCh5XoeARMBrHPqpEv/50IqvqAi1DZJdztJul6Eh2Tv4smZw33Aqqc0lhlklFYdXkZLHmYE82X</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

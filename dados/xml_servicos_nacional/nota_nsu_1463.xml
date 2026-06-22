@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35503081202351877000829000000001055326019310660120">
+        <xLocEmi>São Paulo</xLocEmi>
+        <xLocPrestacao>São Paulo</xLocPrestacao>
+        <nNFSe>10553</nNFSe>
+        <cLocIncid>3550308</cLocIncid>
+        <xTribNac>Processamento de dados, textos, imagens, vídeos, páginas eletrônicas, aplicativos e sistemas de info</xTribNac>
+        <verAplic>1.0.4+92DEBD</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-13T11:46:04-03:00</dhProc>
+        <nDFSe>10553</nDFSe>
+        <emit>
+            <CNPJ>02351877000829</CNPJ>
+            <IM>71321616</IM>
+            <xNome>LWSA S/A</xNome>
+            <enderNac>
+                <xLgr>ITAPAIUNA</xLgr>
+                <nro>2434</nro>
+                <xCpl>ANDAR 2  PARTE III</xCpl>
+                <xBairro>JARDIM MORUMBI</xBairro>
+                <cMun>3550308</cMun>
+                <UF>SP</UF>
+                <CEP>05707001</CEP>
+            </enderNac>
+            <email>recebimento@locaweb.com.br</email>
+        </emit>
+        <valores>
+            <vBC>2159.10</vBC>
+            <pAliqAplic>2.90</pAliqAplic>
+            <vISSQN>62.61</vISSQN>
+            <vLiq>2159.10</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS355030820235187700082900001000000000010553">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-13T11:46:04-03:00</dhEmi>
+                <verAplic>1.0.4+92DEBD</verAplic>
+                <serie>1</serie>
+                <nDPS>10553</nDPS>
+                <dCompet>2026-01-13</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3550308</cLocEmi>
+                <prest>
+                    <CNPJ>02351877000829</CNPJ>
+                    <IM>71321616</IM>
+                    <email>recebimento@locaweb.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040330</CEP>
+                        </endNac>
+                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>nikolly.bitencourt@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>010301</cTribNac>
+                        <cTribMun>099</cTribMun>
+                        <xDescServ>OPT-16303 - AWS 1580 - Revenda AWS - Fator 1,23 - PTAX: 5,4970   408246543461 Britania Prd    R$ 458,71   $83,45  877084987324 Britania    R$ 29,27   $5,32  905611073321 Grupo Britania   R$ 1.661,87   $302,32  977577450608 Britania DR ($)   R$ 9,25   $1,68    Ref. Dez/2025 - Vencto. 20/02/2026</xDescServ>
+                        <cNBS>999999999</cNBS>
+                        <cIntContrib>000000008840NFSE</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>2159.10</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>2.90</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>62.61</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35503081202351877000829000000001055326019310660120">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>sai1Id+3NDTh4D+e7sk70Tzuw1k=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>bH6p152ZBr+rmYuPWpH29X7RnHIyD7N2fpop1Hflkm932v1uBs/rhJSa3LXdFEMTrAd8h+otmkN1m30ka0TyHBjWbCwEWa5rsF1oeMKnFxGF8e9WANb+apHxt3KCkt862aHZ0YIsU94QvS5R3tO416HpOKBR2SiH0vFe7rpioM8O6t8UreOjk6v2nbyjIu9d0SRuP2gAj+fh3HC1nft1c47e4Rt+MJQVhI2Nq1tXL3V13sAlfq4ZMTPXTCxMvAe8WMjMis6D8+JN2oFv9AqD/j7JdfE5YTcF1vAYiskQyF8rfERXJKcc5y1n/CokjEmU5l4kMaUYf4/vAfgo17cLow==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

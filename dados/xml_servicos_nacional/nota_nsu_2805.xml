@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS29274081237410584000183000000000027126047333483558">
+        <xLocEmi>2927408</xLocEmi>
+        <xLocPrestacao>Salvador</xLocPrestacao>
+        <nNFSe>271</nNFSe>
+        <cLocIncid>2927408</cLocIncid>
+        <xLocIncid>Salvador</xLocIncid>
+        <xTribNac>Propaganda e publicidade, inclusive promoção de vendas, planejamento de campanhas ou sistemas de publicidade, elaboração de desenhos, textos e demais materiais publicitários.</xTribNac>
+        <xNBS>Serviços de campanhas publicitárias</xNBS>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-04-03T10:29:37-03:00</dhProc>
+        <nDFSe>12754063</nDFSe>
+        <emit>
+            <CNPJ>37410584000183</CNPJ>
+            <IM>74583400101</IM>
+            <xNome>JUKEBOX PUBLICIDADE E AGENCIAMENTO LTDA</xNome>
+            <enderNac>
+                <xLgr>Arthur de Azevêdo Machado</xLgr>
+                <nro>1459</nro>
+                <xBairro>STIEP</xBairro>
+                <cMun>2927408</cMun>
+                <UF>BA</UF>
+                <CEP>41770790</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vLiq>2000.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS292740823741058400018302026000000003061163">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-04-02T11:49:13-03:00</dhEmi>
+                <verAplic>1.0</verAplic>
+                <serie>02026</serie>
+                <nDPS>3061163</nDPS>
+                <dCompet>2026-04-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2927408</cLocEmi>
+                <prest>
+                    <CNPJ>37410584000183</CNPJ>
+                    <IM>74583400101</IM>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2927408</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>170601</cTribNac>
+                        <cTribMun>170</cTribMun>
+                        <xDescServ>AGENCIAMENTO DE INFLUENCIADOR (Fercavs) PARA BRITÂNIADATA DA GRAVAÇÃO: 26/03/2026JUKEBOX PUBLICIDADE E AGENCIAMENTO LTDANubank PagamentosAgência: 0001 Conta Corrente: 25015569-7CNPJ: 37.410.584/0001-83PIX: contato@jukeboxagenciamento.comValor: R$2.000,00</xDescServ>
+                        <cNBS>114061100</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>2000.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS29274081237410584000183000000000027126047333483558">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>XCDh+HSuxQ4XgFtOgaWERrE0Y0k53tpVU/mV68HY3vU=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>d0+PHY5f65RCTNBWmkCT1BihV/hHsgG1rKTi8tTCa16uEPzPPTF4Tb45OotLGfzDIgGfEjCFlbIvy98Dbqfek/f1MT9lisc8gwJ1UCqtjC65tD6XJ+bOnUViV7r64Xi6XUYc1MXfuKHKWH16vEHmkyttIKLxnyM8k3mw1Uj5Ruj8AuPTuMH+BHFgkwmmz3vs05WzlzzZbdQ/T/foUJu9md3ls0ZHyndErAE2HarNAtw5PsKm5BdylZr9whyoIpkuYzgfLQWYPlFN7ckFeWEHdoBx64TBjwXNjhmrw8fLxTE88I25K2r48y2BxEoS1ahUbwrx3oIhjqoIDxCSBJQJfg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

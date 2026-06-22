@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS29274081241302174000196000000000020126031674789880">
+        <xLocEmi>2927408</xLocEmi>
+        <xLocPrestacao>Salvador</xLocPrestacao>
+        <nNFSe>201</nNFSe>
+        <cLocIncid>2927408</cLocIncid>
+        <xLocIncid>Salvador</xLocIncid>
+        <xTribNac>Expediente, secretaria em geral, apoio e infra-estrutura administrativa e congêneres.</xTribNac>
+        <xNBS>Serviços de tradução e de intérpretes</xNBS>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-03-05T07:54:33-03:00</dhProc>
+        <nDFSe>8741944</nDFSe>
+        <emit>
+            <CNPJ>41302174000196</CNPJ>
+            <IM>79341600165</IM>
+            <xNome>SANTANA GESTÃO EMPRESARIAL LTDA</xNome>
+            <enderNac>
+                <xLgr>Frederico Simões</xLgr>
+                <nro>000153</nro>
+                <xBairro>CAMINHO DAS ÁRVORES</xBairro>
+                <cMun>2927408</cMun>
+                <UF>BA</UF>
+                <CEP>41820774</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vLiq>415.56</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS292740824130217400019600001000000793416201">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-03-04T10:22:48-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>00001</serie>
+                <nDPS>793416201</nDPS>
+                <dCompet>2026-03-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>2927408</cLocEmi>
+                <prest>
+                    <CNPJ>41302174000196</CNPJ>
+                    <IM>79341600165</IM>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>2927408</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>170202</cTribNac>
+                        <cTribMun>170</cTribMun>
+                        <xDescServ>NF REFERENTE A COMISSÕES</xDescServ>
+                        <cNBS>114110000</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>415.56</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS29274081241302174000196000000000020126031674789880">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>6B7sDMHi9UCpQzIjxC2qWFhXpOvzfGRmAyIjqvuQqFE=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>UGCEoC2adpu4mdx0oT4TIbLFNGMErR5et/uTftypydJEEEGfFKWFpbHLXYFXM49x/FtQDLZb9eXduDlHa5L9vI9LspEvFLgtamdKP+panSZlS9G5ycnBBlX3k9ZO0v2qssnHpza1m3WtYIUYBO+ADkSLuhAGD/r7p13UYqqE+vlf7kvMdv8KMsG6ZZ52IzxAHeSLMTMq20wm8Fu43lZ7kmyfsPc8D/MNEgfcOrvvgL30g8wFM2twtW4N93KLv2dE/duLL8rJAXlXz30vMGZf5G7W1Ss/fVbvdDdjx1nRFXWFV4/JMUmdILrn69Vt4eTHTyCcwpMxqyS8mCa2voA9YQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

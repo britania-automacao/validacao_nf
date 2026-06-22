@@ -1,0 +1,134 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
+    <infNFSe Id="NFS43039051202297301000154000000000062926034846216466">
+        <xLocEmi>Campo Bom</xLocEmi>
+        <xLocPrestacao>Sao Paulo</xLocPrestacao>
+        <nNFSe>629</nNFSe>
+        <cLocIncid>3550308</cLocIncid>
+        <xLocIncid>Sao Paulo</xLocIncid>
+        <xTribNac>Feiras, exposicoes, congressos e congeneres.</xTribNac>
+        <xNBS>Servicos de assistencia e organizacao de convencoes</xNBS>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-03-20T14:02:39-03:00</dhProc>
+        <nDFSe>629</nDFSe>
+        <emit>
+            <CNPJ>02297301000154</CNPJ>
+            <IM>10928</IM>
+            <xNome>ORANGE amp; CIA LTDA</xNome>
+            <xFant>ORANGE ASSESSORIA EM EVENTOS</xFant>
+            <enderNac>
+                <xLgr>CAPAO DA CANOA</xLgr>
+                <nro>120</nro>
+                <xBairro>IMIGRANTE</xBairro>
+                <cMun>4303905</cMun>
+                <UF>RS</UF>
+                <CEP>93700000</CEP>
+            </enderNac>
+            <fone>51981125228</fone>
+        </emit>
+        <valores>
+            <pAliqAplic>0.00</pAliqAplic>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>202844.00</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS430390520229730100015400080000000000000629">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-03-20T14:02:39-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>80</serie>
+                <nDPS>629</nDPS>
+                <dCompet>2026-03-20</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4303905</cLocEmi>
+                <prest>
+                    <CNPJ>02297301000154</CNPJ>
+                    <IM>10928</IM>
+                    <fone>51981125228</fone>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>nfe22@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>120801</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>EXECUCAO DAS FEIRAS 2026, REFERENTE EVENTO YES MOVEL SHOW SP 2026 - NUMERO DO MLA 289916</xDescServ>
+                        <cNBS>118066100</cNBS>
+                    </cServ>
+                    <atvEvento>
+                        <xNome>YES MOVEL SHOW</xNome>
+                        <dtIni>2026-03-16</dtIni>
+                        <dtFim>2026-03-19</dtFim>
+                        <end>
+                            <CEP>02012021</CEP>
+                            <xLgr>1209</xLgr>
+                            <nro>1209</nro>
+                            <xBairro>SANTANA</xBairro>
+                        </end>
+                    </atvEvento>
+                    <infoCompl>
+                        <xInfComp>Documento emitido por ME/EPP optante pelo Simples Nacional, PEDIDO DE COMPRA: 00672.572ORDEM DE COMPRA: 8285.82</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>202844.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS43039051202297301000154000000000062926034846216466">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>Rppjw7Nj87KWcyFqAt7++a2LtwI=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>jSBiE6pehDFnPvK9iq+ufZvDr5xbC1gfF8EilImwppIYvdYqWteR/0REBOGoib7+DJxVW9LZHgY+Hige0Qwj7S0Yqi96ryyyquQ4IVqpq6cl2l8ml5NPMG5hCwsY7vLIHVyPEJlJMNwpE7LHNZRR+eCgfoDAgzTpW6BbPJipIQm+3ySp14W3hhdKM8CY4Xbp3DCGlTq98qU4+SDJaWogrY+ucA4kUYR41zEu/0afy6VzMEVsv3D7RlO425uyF+O1G6PxLtCrmRUgOdKP6LKZYhflvbdquPD8srL++Bxj7X706Bfl6uy56lajVRtBdHU94UpKQxhOKaleQq8ZtRPx/A==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIHdDCCBVygAwIBAgIIfUy1Sd876lcwDQYJKoZIhvcNAQELBQAwTzELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxEzARBgNVBAsTCkFDIFNBRkVXRUIxFjAUBgNVBAMTDUFDIFNBRkVXRUIgQ0QwHhcNMjUxMTA0MTgxMzE3WhcNMjYxMTA0MTgxMzE3WjCBzjELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxFjAUBgNVBAsTDUFDIFNBRkVXRUIgQ0QxGDAWBgNVBAsTD1NBRkVXRUIgZS1QSiBBMTEXMBUGA1UECxMOMTg5Mjk5MjAwMDAxNTQxGTAXBgNVBAsTEHZpZGVvY29uZmVyZW5jaWExFDASBgNVBAsTCyhFTSBCUkFOQ08pMS4wLAYDVQQDEyVNVU5JQ0lQSU8gREUgQ0FNUE8gQk9NOjkwODMyNjE5MDAwMTU1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsWCBcDXtsJrg0WduEFJgMfelvzweD1dp5sTICiqZUilXx28dmNsKczAtmCSt0JCeTXZvoqz2USPsOuGoXNrUSzc5vM9LknFUTDtUmH6Dtb4qeIGNTtGVjjoN5/lDHnOMREogGoRY31gRrkfysE1XCN6X4FHsgLAvBgtdIvzck+7FMd3sHkJul7VB7omb0lqMQS0387zzUZLEh7o6F3HMzWr8gJlgpMXOknQ+BqSimGN+GXB/Lr5JWQqqp5CIwnhcPSALBSBSLchTTasDW15IytOwynX2sBCPW1Xbb8JkqmraDq8PWprZtWzlJYHInGukmXrlugbfoUzjL2rbmeigKQIDAQABo4IC0jCCAs4wHwYDVR0jBBgwFoAUiZJ6VuK7rm0ankJjtFzuyjTvdh4wDgYDVR0PAQH/BAQDAgXgMGcGA1UdIARgMF4wXAYGYEwBAgFGMFIwUAYIKwYBBQUHAgEWRGh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJjZC9kcGMtYWNzYWZld2ViY2QucGRmMIGmBgNVHR8EgZ4wgZswS6BJoEeGRWh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJjZC9sY3ItYWMtc2FmZXdlYmNkLmNybDBMoEqgSIZGaHR0cDovL3JlcG9zaXRvcmlvMi5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJjZC9sY3ItYWMtc2FmZXdlYmNkLmNybDCBrwYIKwYBBQUHAQEEgaIwgZ8wTQYIKwYBBQUHMAKGQWh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJjZC9hYy1zYWZld2ViY2QucDdiME4GCCsGAQUFBzAChkJodHRwOi8vcmVwb3NpdG9yaW8yLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYmNkL2FjLXNhZmV3ZWJjZC5wN2IwgbcGA1UdEQSBrzCBrIEZTUlTQUVMQENBTVBPQk9NLlJTLkdPVi5CUqAhBgVgTAEDAqAYExZHSU9WQU5JIEJBVElTVEEgRkVMVEVToBkGBWBMAQMDoBATDjkwODMyNjE5MDAwMTU1oDgGBWBMAQMEoC8TLTEwMDQxOTU3MjY1ODY1NjgwNzIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMA0GCSqGSIb3DQEBCwUAA4ICAQCX4+Krd5M0vl27WYZSx/HEhPw/Gw+FTmsoN1K3i2Y+DII7dh4nQ16S9HmTMo9pKKyreIiodBd6W8/QGRGllgf5m6nJmajGcussQNd/8fj7Qpki2D+8UMZL5pngLmqcLhORk29+K5t5hQ+mraY8AL+uMxFRJ0C4vGjH4Pvd6BBoVTBIzLMvyhxu3GTeaoFYGwQ3QQnW9JBI85e4OuIwItk4l4QqrwEDfaD3rB0mi3+/FbpA9b2qDhUsc1c8qR+UZE4/NeGKaovhWhwaSe7plUKfWQD0npOj2YUxQR02XIR9QKTjN32hAeEqF1efc1ogykwsQWfLFfq5N4QY/pI810TlPWYDcHkSkbb0Szmej8VyZXBgWCD4wLgqGoDL5NIMcqF+gOuoiLVmdk5rM9LaBUdB5NhNnlsic4LoqA+hZxpR5pKXCmBhc48GzhSKG4XXGDyx+xjMl9QKgFrrJQy2zac973DfuQBTGS4Zdw+vqeAI13f3ZamvBu4ouoNUISCCfs9D6jOE7TcCmTp4EMzsH3++vwbpRn7DR2eg1SBhyrj1AWOHflf9P2lEBsihxjhyWXE5IRlPw15lex8fIVgPpsyKc62NT4eajxKid/K6Ug1aIhBuNbEjt/ksncURAOQbkhLV+mitmV+V6hxWuS+ny/ODlbkQYq8homKjMnsOmQr2HQ==</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

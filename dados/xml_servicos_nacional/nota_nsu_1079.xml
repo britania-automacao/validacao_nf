@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS41152001260420086000133000000000001025121194389241">
+        <xLocEmi>Maringá</xLocEmi>
+        <xLocPrestacao>Maringá</xLocPrestacao>
+        <nNFSe>10</nNFSe>
+        <cLocIncid>4115200</cLocIncid>
+        <xLocIncid>Maringá</xLocIncid>
+        <xTribNac>Agenciamento, corretagem ou intermediação de câmbio.</xTribNac>
+        <xTribMun>Agenciamento, corretagem ou intermediação de câmbio.</xTribMun>
+        <verAplic>FintelWeb_1.0.0.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2025-12-19T14:38:01-03:00</dhProc>
+        <nDFSe>119438924</nDFSe>
+        <emit>
+            <CNPJ>60420086000133</CNPJ>
+            <IM>329821</IM>
+            <xNome>AJC INTERMEDIACAO DE NEGOCIOS EM GERAL LTDA</xNome>
+            <enderNac>
+                <xLgr>JOÃO PAULINO VIEIRA FILHO</xLgr>
+                <nro>161</nro>
+                <xCpl>SALA COM.02 (2° PV),VG.127 (2° PV.) - Q.51-A/1</xCpl>
+                <xBairro>ZONA 01</xBairro>
+                <cMun>4115200</cMun>
+                <UF>PR</UF>
+                <CEP>87020015</CEP>
+            </enderNac>
+            <fone>41988524296</fone>
+            <email>a.pacheco@virtusgestao.net.br</email>
+        </emit>
+        <valores>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>52093.37</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS411520026042008600013300001000000000000010">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-12-19T14:38:01-03:00</dhEmi>
+                <verAplic>FintelWeb_1.0.0.0</verAplic>
+                <serie>1</serie>
+                <nDPS>10</nDPS>
+                <dCompet>2025-12-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4115200</cLocEmi>
+                <prest>
+                    <CNPJ>60420086000133</CNPJ>
+                    <IM>329821</IM>
+                    <fone>41988524296</fone>
+                    <email>a.pacheco@virtusgestao.net.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS LTDA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>82520060</CEP>
+                        </endNac>
+                        <xLgr>RUA SENHORA DA LUZ NOSSA</xLgr>
+                        <nro>1330</nro>
+                        <xCpl>AV NOSSA SENHORA DA LUZ</xCpl>
+                        <xBairro>S/I</xBairro>
+                    </end>
+                    <fone>0000000000</fone>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4115200</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100101</cTribNac>
+                        <cTribMun>000</cTribMun>
+                        <xDescServ>Descrição: Taxa de Administração sobre Premiação | Período: Dezembro/2025 | Tipo de Tributação: Tributável (Serviço) | Total de Pontos Distribuídos: R$ 651.167.12 | Taxa de Administração: 8% | Valor da Nota Fiscal: R$ 52.093.37</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>52093.37</vServ>
+                    </vServPrest>
+                    <vDescCondIncond/>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>00</CST>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS41152001260420086000133000000000001025121194389241">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>YzigpK0izjn0VVyAQA+GXCDmG1hrwrBDBE3uCJypTmI=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>rgbp78KyX5aJ83DqxEzzXPqkOARLcJPD8neLpSTeneKmwHtq3AzEAm6RsYGON1AgOlF6/gYEOSpllD8PtgHIh4xAykZWlVEZf49zWJtnedj9eITvvO8ySpmndoPnlEJHJbeB8SLfaGeT/1zHd2KT3g1DQzpvG8u9Htwkni4s6BZV1LLHlHGxPKu8mZGYXsXwQ/xtY556yC/rwsYUFal1+Jg23LeMfoOSyg6i1srijTvhXB6ySBObR/mLk3sjwGDc+V17cu3nGIUOtUFipmjnGEAtY3Hmg2fuc2ggJSwRiMfhcS6uurgg5kbcijQHKUcyprtjsIoJAMJ1T5PCiOqi5g==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

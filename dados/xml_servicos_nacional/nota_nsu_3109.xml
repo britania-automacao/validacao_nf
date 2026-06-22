@@ -1,0 +1,147 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS42054072283053140000155000000000632426041141034524">
+        <xLocEmi>Florianópolis</xLocEmi>
+        <xLocPrestacao>Florianópolis</xLocPrestacao>
+        <nNFSe>6324</nNFSe>
+        <cLocIncid>4205407</cLocIncid>
+        <xLocIncid>Florianópolis</xLocIncid>
+        <xTribNac>Hospedagem em hotéis, hotelaria marítima e congêneres (o valor da alimentação e gorjeta, quando incluído no preço da diária, fica sujeito ao Imposto Sobre Serviços).</xTribNac>
+        <xNBS>Serviços de hospedagem em quartos ou unidades de hospedagem para visitantes, com serviços diários de faxina</xNBS>
+        <verAplic>SefinNacional_1.6.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>1</procEmi>
+        <cStat>100</cStat>
+        <dhProc>2026-04-30T08:20:12-03:00</dhProc>
+        <nDFSe>12335007</nDFSe>
+        <emit>
+            <CNPJ>83053140000155</CNPJ>
+            <xNome>CASTELMAR EMPREENDIMENTOS HOTELEIROS LTDA</xNome>
+            <enderNac>
+                <xLgr>RUA FELIPE SCHMIDT</xLgr>
+                <nro>1260</nro>
+                <xBairro>CENTRO</xBairro>
+                <cMun>4205407</cMun>
+                <UF>SC</UF>
+                <CEP>88010002</CEP>
+            </enderNac>
+            <fone>4839523200</fone>
+            <email>contabilidade@castelmarhotel.com.br</email>
+        </emit>
+        <valores>
+            <vBC>2214.00</vBC>
+            <pAliqAplic>2.50</pAliqAplic>
+            <vISSQN>55.35</vISSQN>
+            <vLiq>2214.00</vLiq>
+        </valores>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+            <infDPS Id="DPS420540728305314000015500001000000000301797">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-04-30T00:00:00-03:00</dhEmi>
+                <verAplic>TSPD_2.1.1</verAplic>
+                <serie>1</serie>
+                <nDPS>301797</nDPS>
+                <dCompet>2026-04-30</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4205407</cLocEmi>
+                <prest>
+                    <CNPJ>83053140000155</CNPJ>
+                    <fone>4839523200</fone>
+                    <email>contabilidade@castelmarhotel.com.br</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xCpl>de 772 a 2370 - lado</xCpl>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <fone>99999999999</fone>
+                    <email>corporativo@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4205407</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>090101</cTribNac>
+                        <xDescServ>ISS 54,00|EQUIPAMENTOS 860,00|DIARIA DE SALAO 1.300,00|  RPS:301797 /UH: /Tipo UH: /Reserva: /Qtde: /  /  / /Checkin: /CheckOut: /Total de diarias: /EQUIPAMENTOS R$860/DIARIA DE SALAO R$1300/ISS R$54/DEPOSITO ANTECIPADO</xDescServ>
+                        <cNBS>103031100</cNBS>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>RPS:301797 /UH: /Tipo UH: /Reserva: /Qtde: /  /  / /Checkin: /CheckOut: /Total de diarias: /EQUIPAMENTOS R$860/DIARIA DE SALAO R$1300/ISS R$54/DEPOSITO ANTECIPADO</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>2214.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+                <SignedInfo>
+                    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                    <Reference URI="#DPS420540728305314000015500001000000000301797">
+                        <Transforms>
+                            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                        </Transforms>
+                        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                        <DigestValue>28jF4r8b5dfyJWkOM3JEVVHF4zY=</DigestValue>
+                    </Reference>
+                </SignedInfo>
+                <SignatureValue>dRaXHHavOGJGppqRY9gKPsldQq8j5f4DhmzzrBH2NfvUgu06oL/sYLmW4DYGb2ZWaPQ3fmmOolPlvJsT9s8gYtlpSDIvP4mDCq1pWtW542uQJ0gkbBwAqX3/ZNs0NEGdeoOuASVOGKGMF7VN2VkGt3N3NfTSuP3QxnT67iLG++RsdZmxNlYzZbDP1r6fjRRIiyYR3mqSQGg8dzjSesYJJQ8s1xfDXYHlp79otDI2HUe6LlOAZOnraLs/86VKCTZJhg+IWsBxhJTwqI6PGAg1IX/gl229ljYmt4OfTred6SZm5InZhEIKN10JYaMAkR+TrSGsaFq5hTbjBfsqtVFuDA==</SignatureValue>
+                <KeyInfo>
+                    <X509Data>
+                        <X509Certificate>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</X509Certificate>
+                    </X509Data>
+                </KeyInfo>
+            </Signature>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS42054072283053140000155000000000632426041141034524">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>wHxi2Xhtku1f6hXGs/9D8zVamDB91TG1ZlLofOlhvGA=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>GWQa1N7FB2Fe77//DalrZAzH5yJAvATMPwglOAKP+9H2V713kY4x6e1IM6i9Mz5AFap7uURbG6LOmH02rFy4FLM6i4MkqzC4FeXPMBhHO0/rLGSaXKEZi+qeTq/0A8lTtiW2bXbWkpnZv+yqr44JDLovqDzZWf8LZa0lbIpCw/B59wPzJlypAxFRdO0iyYnqjnaRI/uaYFuDGFXAaqx1EFvmNzYK4I6ztQMYii9/WiGozwckZhxKdkYD6UVdIih8s4RmVRySPPe7Z9otnxRqWPoHNs8c3BlAFwzpivJLZVNnt3XdiaJE8TOnQ6qmkYHKh3EeqZWeOtYF/ynB9CN4gg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

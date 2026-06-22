@@ -1,0 +1,135 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35130091239541569000108000000000538026057650815104">
+        <xLocEmi>Cotia</xLocEmi>
+        <xLocPrestacao>Cotia</xLocPrestacao>
+        <nNFSe>5380</nNFSe>
+        <cLocIncid>3513009</cLocIncid>
+        <xLocIncid>Cotia</xLocIncid>
+        <xTribNac>Hospedagem em hotéis, hotelaria marítima e congêneres (o valor da alimentação e gorjeta, quando incluído no preço da diária, fica sujeito ao Imposto Sobre Serviços).</xTribNac>
+        <xTribMun>Hospedagem em hotéis, hotelaria marítima e congêneres (o valor da alimentação e gorjeta, quando incluído no preço da diária, fica sujeito ao Imposto Sobre Serviços).</xTribMun>
+        <xNBS>Serviços de hospedagem em quartos ou unidades de hospedagem para estudantes em residências estudantis</xNBS>
+        <verAplic>1.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-06-15T23:34:53-03:00</dhProc>
+        <nDFSe>1371639</nDFSe>
+        <emit>
+            <CNPJ>39541569000108</CNPJ>
+            <IM>6025230</IM>
+            <xNome>HOTEL CHALET MONET LTDA</xNome>
+            <enderNac>
+                <xLgr>MONET</xLgr>
+                <nro>117</nro>
+                <xBairro>HORIZONTAL PARK</xBairro>
+                <cMun>3513009</cMun>
+                <UF>SP</UF>
+                <CEP>06710660</CEP>
+            </enderNac>
+            <email>FISCAL2@GVCONTABIL.COM.BR</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>795.00</vBC>
+            <pAliqAplic>4.38</pAliqAplic>
+            <vISSQN>34.82</vISSQN>
+            <vLiq>795.00</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS351300923954156900010800001000000000000327">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-05-14T11:17:48-03:00</dhEmi>
+                <verAplic>1.0</verAplic>
+                <serie>1</serie>
+                <nDPS>327</nDPS>
+                <dCompet>2026-05-14</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3513009</cLocEmi>
+                <prest>
+                    <CNPJ>39541569000108</CNPJ>
+                    <IM>6025230</IM>
+                    <email>FISCAL2@GVCONTABIL.COM.BR</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITÂNIA ELETRODOMÉSTICOS S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>WILLIANSCARANTE@HOTMAIL.COM</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3513009</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>090101</cTribNac>
+                        <xDescServ>NOTA FISCAL REFERENTE AO SERVIÇOS DE HOSPEDAGEM DO SR WILLIAN SCARANTE E GABRIEL MOLINARIRESERVA N° 2812493 E 2812502PERÍODO DE  14/05/2026 ATÉ  15/05/2026.</xDescServ>
+                        <cNBS>103041000</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>795.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>01</CST>
+                                <vBCPisCofins>795.00</vBCPisCofins>
+                                <pAliqPis>0.00</pAliqPis>
+                                <pAliqCofins>0.00</pAliqCofins>
+                                <vPis>0.00</vPis>
+                                <vCofins>0.00</vCofins>
+                                <tpRetPisCofins>2</tpRetPisCofins>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <pTotTrib>
+                                <pTotTribFed>0.00</pTotTribFed>
+                                <pTotTribEst>0.00</pTotTribEst>
+                                <pTotTribMun>4.38</pTotTribMun>
+                            </pTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>5seIWnF205ZnB+dg/WMVM2MDGVQ=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>qowzb/MxV2SGa+BGiJbTqxdX1ZLJ+CN1mF6gcODyAT/FFmm92AqNKHhq8oi18K46ZabfhzpcCmqb23J838NSz3ZNkoZZVxqsvPaxagXi5cvBsIdN1vQPOxCcVIITwEBQOnc+du4Oy0Cj3eSBH0FGy/o0ikMd6kaBQawqtHXvuFh4I5ImfHCnzri7vAaiKTqi1WbeBJh3uFv8KAmCWAC7A4YHwa1qE5KR3vWypyVedDJZZw/Csvq9FUJt0ifBU+Wln7njXXF0ZNMQRLQnAcvCNUbqVEGpycU/BliQ3t9ERz7EGms7ir4CVZhwwhLEom/CH23ApZH41vB3HZz3ppG5Xw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH3zCCBcegAwIBAgILALQGLCacGZh9t40wDQYJKoZIhvcNAQELBQAwWzELMAkGA1UEBhMCQlIxFjAUBgNVBAsMDUFDIFN5bmd1bGFySUQxEzARBgNVBAoMCklDUC1CcmFzaWwxHzAdBgNVBAMMFkFDIFN5bmd1bGFySUQgTXVsdGlwbGEwHhcNMjYwMzE3MTk0MDI2WhcNMjcwMzE3MTk0MDI2WjCBwTELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxIjAgBgNVBAsMGUNlcnRpZmljYWRvIERpZ2l0YWwgUEogQTExEzARBgNVBAsMClByZXNlbmNpYWwxFzAVBgNVBAsMDjQ4NzkxMTA0MDAwMTk4MR8wHQYDVQQLDBZBQyBTeW5ndWxhcklEIE11bHRpcGxhMSowKAYDVQQDDCFNVU5JQ0lQSU8gREUgQ09USUE6NDY1MjMwNDkwMDAxMjAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC3/3OghQzL5PJxrgPbko4iFIJS59rdMATP12aACWpxmEvwt6x//wvxkZaECTpw4QymSgStv5HggfHkH5+w+MhLy+59mHcnzj21f6bpYortU+7xtInUuARwNVkwHIVIcjOeqy+gz7wlRx4S0vGGIo+fABrrXO4Pyz4xbzfFn/ISLoRVkjeTamy8ycXjAo3mm1Fo4epXSmdaQ1KQGCMX4wN3AritNt9xtr0DK0yoegeFDJi6uBQzpTqo2yeDXUpqZxD5vd+s13Fw6KflaVRjS95Y4WTxgV3enl0Em1CEQqgwq+VYzDyoVPE3RJ2uqG5h875ZkhwTwdhwdKaJmkN+XiblAgMBAAGjggM7MIIDNzAOBgNVHQ8BAf8EBAMCBeAwHQYDVR0lBBYwFAYIKwYBBQUHAwQGCCsGAQUFBwMCMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUk+H/fh3l9eRN4TliiyFpleavchYwHQYDVR0OBBYEFAWnDCFnKivjVvq5ghZIZTAlovNzMH8GCCsGAQUFBwEBBHMwcTBvBggrBgEFBQcwAoZjaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvY2VydGlmaWNhZG9zL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEucDdiMIGCBgNVHSAEezB5MHcGB2BMAQIBgQUwbDBqBggrBgEFBQcCARZeaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvZHBjL2RwYy1hYy1zeW5ndWxhcklELW11bHRpcGxhLnBkZjCBzwYDVR0RBIHHMIHEoCYGBWBMAQMCoB0EG1dlbGluZ3RvbiBBcGFyZWNpZG8gQWxmcmVkb6AZBgVgTAEDA6AQBA40NjUyMzA0OTAwMDEyMKBCBgVgTAEDBKA5BDcyMTExMTk4NjM0NTA5NzA3ODAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwoBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMIEid2VsaW5ndG9uZm9ybWlnYWJyYXNpbDIwQGdtYWlsLmNvbTCB4gYDVR0fBIHaMIHXMGSgYqBghl5odHRwOi8vc3luZ3VsYXJpZC5jb20uYnIvcmVwb3NpdG9yaW8vYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS9sY3IvbGNyLWFjLXN5bmd1bGFyaWQtbXVsdGlwbGEuY3JsMG+gbaBrhmlodHRwOi8vaWNwLWJyYXNpbC5zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2xjci9sY3ItYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS5jcmwwDQYJKoZIhvcNAQELBQADggIBAJdecPaJmnmTygiSXU+UHeilfZYRP9Z9VyZoSPs0Dk9nfmtM1+Wdw+7Qa4Ujjm8EGheETi6YjtzHqwi4ZHwcSIABwWCA7bIv2r1pTu5DfL73UuO0CXe5rDHOpkcjAn6BTe/uK5S0wJSUJY/kzLr+9ruVhY7yXyC6DEb4+VSJg9Jd7bKD6yEPDgbgGtZ6wqsb7riYczoTRnqOuObufmP2OnUul/Me/teWT3RGEZjzyshL+8tHvQmolW3GPwhTrvL+FOODZZF7GicGZy/KqyYusNjp6SG5asHw73jj68mk8olyyLfuhH+eH8Hfc5lGd8hwehQ5CN6+LVB9ut3mKWW2x54dzX8P6pZJu1bOTHDBkbv/5lRwCfRIiinxiIcKsNuc9NmD47w/LDvdU3JVePUVd/Lid+JU8lrgDHLYazCmuCDkxfeDDDysCMh6STSR+tq+GzgwFiRKBYDzS5YSPqO8UCdKcnOMqSUIIKeoPTCFLEtRvCE0ltJlGxdO9479Mn7X4Ra3qvoJtWhxbH5CD/T9561EhCuKGkaBPjr15kZTe1dTkyObXoi5hZxf+d/7XaaAA8RsfbFaP4b5WHonlhPOoa3IClhpqTHEKf/fSFA7qmxifsu0kwE/ajlaMEc/JyjCea+jxIMsAZy6O30Npz2g3UzI0YFYy+SNTnrR9rKUvQ/6</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

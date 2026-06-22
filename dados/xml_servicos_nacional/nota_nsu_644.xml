@@ -1,0 +1,117 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS43149022204008902000125000000000003225060122759517">
+        <xLocEmi>Porto Alegre</xLocEmi>
+        <xLocPrestacao>Porto Alegre</xLocPrestacao>
+        <nNFSe>32</nNFSe>
+        <cLocIncid>4314902</cLocIncid>
+        <xLocIncid>Porto Alegre</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <xTribMun>Representação comercial.</xTribMun>
+        <verAplic>EmissorWeb_1.3.0.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>2</procEmi>
+        <cStat>100</cStat>
+        <dhProc>2025-06-06T09:10:09-03:00</dhProc>
+        <nDFSe>12364792</nDFSe>
+        <emit>
+            <CNPJ>04008902000125</CNPJ>
+            <xNome>UFFICIO DI SASCHI - REPRESENTACOES, CONSULTORIA E ASSESSORIA LTDA</xNome>
+            <enderNac>
+                <xLgr>ALIPIO CESAR</xLgr>
+                <nro>191</nro>
+                <xBairro>BOA VISTA</xBairro>
+                <cMun>4314902</cMun>
+                <UF>RS</UF>
+                <CEP>91340310</CEP>
+            </enderNac>
+            <fone>5193551211</fone>
+            <email>SERGIO@UFFICIOREPRESENTACOES.COM.BR</email>
+        </emit>
+        <valores>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>1383.49</vLiq>
+        </valores>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+            <infDPS Id="DPS431490220400890200012500900000000000000032">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-06-06T09:10:09-03:00</dhEmi>
+                <verAplic>EmissorWeb_1.3.0.0</verAplic>
+                <serie>900</serie>
+                <nDPS>32</nDPS>
+                <dCompet>2025-06-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4314902</cLocEmi>
+                <prest>
+                    <CNPJ>04008902000125</CNPJ>
+                    <fone>51993551211</fone>
+                    <email>sergio@ufficiorepresentacoes.com.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>nfe01@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4314902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <cTribMun>001</cTribMun>
+                        <xDescServ>Prestação de Serviços de Representação Comercial</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>1383.49</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <pTotTribSN>6.00</pTotTribSN>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS43149022204008902000125000000000003225060122759517">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>eugggXN8pdBJVjojbVZMOhmS6PY=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>lR8HGeLmViDj4mN5TeTm/Gaswn4wRIvHbu7w1DQvRgedh6+VexCVdmk+NeQ0KI5nPVZOSjQT9qUBPFpdHyx6UMSSgd4ziYL+j6vYgH23Zb7MtgEkZP94tdXDQyt1jOOaLmAsTLCZ8Fx1sBrmLdy9lP13GpU6c7QqtTGefF2JvDydMSqW8YjvfjvMhK2Ge7CBfTnIvlCEKvvGW+MfRGAKUsUmmwwybMvLAdExLoXScBcMAVLJzTnq2iaDiD0Hzvw2I2JeMo/LdQMSOXjzPrlQRjAOXxkETVu56sC/tUiifxRDSsvu8i2MJGh+V0ml3EjxeiavLcysOcJUcou8heckOA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

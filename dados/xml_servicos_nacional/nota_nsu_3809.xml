@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS42082031265384359000155000000000000126060259152482">
+        <xLocEmi>ITAJAÍ</xLocEmi>
+        <xLocPrestacao>ITAJAÍ</xLocPrestacao>
+        <nNFSe>1</nNFSe>
+        <cLocIncid>4208203</cLocIncid>
+        <xLocIncid>ITAJAÍ</xLocIncid>
+        <xTribNac>10.09.01 Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <verAplic>04.01.51.0003</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-06-05T18:01:42-03:00</dhProc>
+        <nDFSe>1</nDFSe>
+        <emit>
+            <CNPJ>65384359000155</CNPJ>
+            <IM>383319</IM>
+            <xNome>BOAZ REPRESENTAÇÕES LTDA</xNome>
+            <xFant>********</xFant>
+            <enderNac>
+                <xLgr>JOAO DALMOLIM</xLgr>
+                <nro>605</nro>
+                <xCpl>AREA A GALPAO 01 BOX 04</xCpl>
+                <xBairro>CANHANDUBA</xBairro>
+                <cMun>4208203</cMun>
+                <UF>SC</UF>
+                <CEP>88307700</CEP>
+            </enderNac>
+            <fone>4791916454</fone>
+        </emit>
+        <valores>
+            <vBC>2363.18</vBC>
+            <pAliqAplic>3.00</pAliqAplic>
+            <vISSQN>70.90</vISSQN>
+            <vTotalRet>35.44</vTotalRet>
+            <vLiq>2327.74</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS420820326538435900015506000000000000000001">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-06-05T18:01:42-03:00</dhEmi>
+                <verAplic>04.01.51.0003</verAplic>
+                <serie>6000</serie>
+                <nDPS>1</nDPS>
+                <dCompet>2026-06-05</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4208203</cLocEmi>
+                <prest>
+                    <CNPJ>65384359000155</CNPJ>
+                    <IM>383319</IM>
+                    <fone>4791916454</fone>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS S/A</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                    <fone>4132187965</fone>
+                    <email>auditoria.at@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4208203</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>prestação de serviços referente comissão mes 05/2026</xDescServ>
+                        <cIntContrib>50112367</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>| Natureza da operação: 101 - ISS devido a Itajaí, a ser recolhido pelo prestador do serviço | - Consulte a autenticidade desta Nota Fiscal no portal da NFS-e de Itajaí: http://nfse.itajai.sc.gov.br/- Documento Fiscal emitido por contribuinte NÃO optante pelo Simples Nacional</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>2363.18</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <vRetIRRF>35.44</vRetIRRF>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>317.85</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>64.75</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS42082031265384359000155000000000000126060259152482">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>SMcQVi4yWgXHYwjyJqteUUhACbM=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>C4BPnAyJLwtHGfVBdsq2bhz3PunkeCS6x3Ff1fDFQX5yiDhj7GBuGuohYtbL+9huTZPnZ5PP04a5c3OwS6FKM017FIGOwgUbeRTmSy1L0ElgNFlMvvC02gUyVaoCobQ4DjKHXO+uNQZ2QT4yVyIT3Hp2sDfd1MZ43FlmLvzIDxbcgG0KXD7Ax/CZuds2Iz6nLwguosY3vgoeqxpPjU1Wzlr7biXysGO0KYt7G5E8IPfROqEvIXUIDnOVixzoaOL2cLLG1pu8kYsj/ABhPce0T4wNKRE+55IG2QdBoKhSERSsEniIM5eVwNzQAgaXAm2eDPSODd/vL+MtYWJ90aMR3w==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

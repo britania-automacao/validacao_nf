@@ -1,0 +1,138 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35130091203016943000109000000000110126038711544912">
+        <xLocEmi>Cotia</xLocEmi>
+        <xLocPrestacao>Cotia</xLocPrestacao>
+        <nNFSe>1101</nNFSe>
+        <cLocIncid>3513009</cLocIncid>
+        <xLocIncid>Cotia</xLocIncid>
+        <xTribNac>Serviços de pesquisas e desenvolvimento de qualquer natureza.</xTribNac>
+        <xTribMun>Serviços de pesquisas e desenvolvimento de qualquer natureza.</xTribMun>
+        <xNBS>Serviços de pesquisa e desenvolvimento em ciências físicas</xNBS>
+        <verAplic>1.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-03-14T19:18:54-03:00</dhProc>
+        <nDFSe>599551</nDFSe>
+        <emit>
+            <CNPJ>03016943000109</CNPJ>
+            <IM>6042044</IM>
+            <xNome>GFK CUSTOM RESEARCH BRASIL PESQUISA DE MERCADO LTDA</xNome>
+            <enderNac>
+                <xLgr>Monte Castelo</xLgr>
+                <nro>55</nro>
+                <xBairro>Jardim Lambreta</xBairro>
+                <cMun>3513009</cMun>
+                <UF>SP</UF>
+                <CEP>06710675</CEP>
+            </enderNac>
+            <email>BRASILNFE@GFK.COM</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>68416.66</vBC>
+            <pAliqAplic>2.00</pAliqAplic>
+            <vISSQN>1368.33</vISSQN>
+            <vLiq>68416.66</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS351300920301694300010900001000000000000070">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-03-12T13:18:49-03:00</dhEmi>
+                <verAplic>1.0</verAplic>
+                <serie>1</serie>
+                <nDPS>70</nDPS>
+                <dCompet>2026-03-12</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3513009</cLocEmi>
+                <prest>
+                    <CNPJ>03016943000109</CNPJ>
+                    <IM>6042044</IM>
+                    <email>BRASILNFE@GFK.COM</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>82510020</CEP>
+                        </endNac>
+                        <xLgr>AV.NOSSASENHORADALUZ1330</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGOLANGE</xBairro>
+                    </end>
+                    <email>milena.murara@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3513009</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>020101</cTribNac>
+                        <xDescServ>Serviço Prestado Pesquisa de MercadoProducto: Deep Fryer y Food Prep.Período: 11.2025 a 10.2026 - março 2026Sujeito a Retenção de 6,15% PIS/COFINS/CSL/IRRFVencimento em 30 dias após a emissão.</xDescServ>
+                        <cNBS>112011100</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>68416.66</vServ>
+                    </vServPrest>
+                    <vDedRed>
+                        <vDR>0.00</vDR>
+                    </vDedRed>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>01</CST>
+                                <vBCPisCofins>68416.66</vBCPisCofins>
+                                <pAliqPis>0.65</pAliqPis>
+                                <pAliqCofins>3.00</pAliqCofins>
+                                <vPis>444.71</vPis>
+                                <vCofins>2052.50</vCofins>
+                                <tpRetPisCofins>2</tpRetPisCofins>
+                            </piscofins>
+                            <vRetIRRF>1026.25</vRetIRRF>
+                            <vRetCSLL>684.17</vRetCSLL>
+                        </tribFed>
+                        <totTrib>
+                            <pTotTrib>
+                                <pTotTribFed>6.15</pTotTribFed>
+                                <pTotTribEst>0.00</pTotTribEst>
+                                <pTotTribMun>2.00</pTotTribMun>
+                            </pTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>5jXf4cMZPzLp5BWsBv+DOO1YeBs=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>bLhmVfB+aOWvUmB9sh/71zD0AXebb3rl6UsGpPCwTCr4fOeEhUybnOFmqOqrJLk8KHp4HrlkFI9qCwDjNwrYQ7teS2tLEoSUTZxiqhUiUAk0f5NWn0NLgRdrPAiAnwIMkeryJQGAQ/B1Wrflm0aTua+PR7xCnivGBrRe+1Hdrg2e2m/apvqot1aiS71eR/KcpDUF4gjqsCy/nVDdKGCZJvEPGdYjibOHxFjfS3EPJPp9SdZhkluJQJ6ubBtxnfCKuXWXqKE0kgmD2QD3wx/IAi3gVOtH0zdB+W6JOUVPN6cGLPnTI4SnPNfhZhv3cWnMIXy7T9aozT4sy4CJ8yW+KA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH3zCCBcegAwIBAgILANXzrQZ+GHy8FdowDQYJKoZIhvcNAQELBQAwWzELMAkGA1UEBhMCQlIxFjAUBgNVBAsMDUFDIFN5bmd1bGFySUQxEzARBgNVBAoMCklDUC1CcmFzaWwxHzAdBgNVBAMMFkFDIFN5bmd1bGFySUQgTXVsdGlwbGEwHhcNMjUwMzI0MTU1MTEyWhcNMjYwMzI0MTU1MTEyWjCBwTELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxIjAgBgNVBAsMGUNlcnRpZmljYWRvIERpZ2l0YWwgUEogQTExEzARBgNVBAsMClByZXNlbmNpYWwxFzAVBgNVBAsMDjQ4NzkxMTA0MDAwMTk4MR8wHQYDVQQLDBZBQyBTeW5ndWxhcklEIE11bHRpcGxhMSowKAYDVQQDDCFNVU5JQ0lQSU8gREUgQ09USUE6NDY1MjMwNDkwMDAxMjAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCSMjXS+7Hey0wCdMzPCtsB1zifwX4Rv5oG1Fq1vns/3w2znJKJgCT4Y1HQBwnjehBCKsj65BW9H8d+GkiLkKqZb50ToMkmPXspdKLbD9cwSqFO7DlgSPLb/smhnxfqwqBziDVLEP55Za3cGi6HrvJrpHiMgOhHH5+NZJzBgFRx3iTBh09aAvJXjvZza4/34W4AOveHWKqboV9OP54CeegjuAQcDDp4Z9MsBQ/tWFGgmXpjkL8mo9u+UHVJh9YNV3UV9kdxqacVa0xaqzi7sBXTxpiJ2TqMGME/WGJJEVv8jbgjhTwigk39MWBYiVQb3brfAZS2HiwDh4KNbrnU8PlHAgMBAAGjggM7MIIDNzAOBgNVHQ8BAf8EBAMCBeAwHQYDVR0lBBYwFAYIKwYBBQUHAwQGCCsGAQUFBwMCMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUk+H/fh3l9eRN4TliiyFpleavchYwHQYDVR0OBBYEFH/p5KF2mtI/atGxTJYyA+GymgRNMH8GCCsGAQUFBwEBBHMwcTBvBggrBgEFBQcwAoZjaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvY2VydGlmaWNhZG9zL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEucDdiMIGCBgNVHSAEezB5MHcGB2BMAQIBgQUwbDBqBggrBgEFBQcCARZeaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvZHBjL2RwYy1hYy1zeW5ndWxhcklELW11bHRpcGxhLnBkZjCBzwYDVR0RBIHHMIHEoCYGBWBMAQMCoB0EG1dlbGluZ3RvbiBBcGFyZWNpZG8gQWxmcmVkb6AZBgVgTAEDA6AQBA40NjUyMzA0OTAwMDEyMKBCBgVgTAEDBKA5BDcyMTExMTk4NjM0NTA5NzA3ODAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwoBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMIEid2VsaW5ndG9uZm9ybWlnYWJyYXNpbDIwQGdtYWlsLmNvbTCB4gYDVR0fBIHaMIHXMG+gbaBrhmlodHRwOi8vaWNwLWJyYXNpbC5zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2xjci9sY3ItYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS5jcmwwZKBioGCGXmh0dHA6Ly9zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2xjci9sY3ItYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS5jcmwwDQYJKoZIhvcNAQELBQADggIBACaNge4EUczj4yY3dKfAsW5IYYhwII6qsSvVQs00lcHNGtxLEBInNjAhzHH6tCkrVAM4fjVU5KYIFDt6XYRw/In9U2u1FBVDLzRmPHqW8d24xgXpmdsl8XByubZ6h+IyKFYmM689e9TfF9GCtpXZ4hSN6GjotDjbJ8HeIQyZM2MUwTDHHrXmS0XZuYFrjFWBNbwiODVtrZrGs6h8x3crlp09YK7hRvCoeT4J3PCriHyGTW+pLHGRGgpCfuxLjpAWi1Bams16qM2YArGlBzxcffkKwll2yaW3NMbfdAt3B1XnDBIr2TcnYJ5osdi8ztGlJGLIFepA2TRZa5kkONr7X2rdyVk+fbgP8XHKVvsc67+jmCwew8RCzbXXdKgh+cG4bmrUr9xQY8dZH2rj0wgnr9SQMCo7QMNTIVJiXup0lQX5+KUySEfdO+iIRSjkLaj1TWEo0uLWje/RHCzWcN7RVAY0bAN6lhebGvlOdkReFqSU1NlSZ6ik7CRa9wW5A8hzbN4tr8X5ZUekl/EOXt4ipS9bu/OkQPmk4l9aT9aW/qDO4DREjYTP17qNXCuVa3uvz5JFQsOEkfS6tyDFZ43KpwVe46VvjvMR/HoDjpXe/DnjdMrdr0b0e11mU8sGTI3WPffIBPKlHvLqLaJhAqnHRg0zdkSWW2oEIOl0Pa7l5PEs</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

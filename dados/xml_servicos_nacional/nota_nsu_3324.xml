@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS50027041211734516000186000000000118126050667291639">
+        <xLocEmi>CAMPO GRANDE</xLocEmi>
+        <xLocPrestacao>CAMPO GRANDE</xLocPrestacao>
+        <nNFSe>1181</nNFSe>
+        <cLocIncid>5002704</cLocIncid>
+        <xLocIncid>CAMPO GRANDE</xLocIncid>
+        <xTribNac>Propaganda e publicidade, inclusive promoção de vendas, planejamento de campanhas ou sistemas de publicidade, elaboração de desenhos, textos e demais materiais publicitários.</xTribNac>
+        <xTribMun>PROMOCAO DE VENDAS</xTribMun>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-05-07T13:36:24-04:00</dhProc>
+        <nDFSe>1181</nDFSe>
+        <emit>
+            <CNPJ>11734516000186</CNPJ>
+            <IM>00145406005</IM>
+            <xNome>FCS REPRESENTACOES LTDA</xNome>
+            <xFant>FCS REPRESENTACOES LTDA</xFant>
+            <enderNac>
+                <xLgr>ANA BASILIA</xLgr>
+                <nro>1508</nro>
+                <xBairro>PARQUE RESIDENCIAL RITA VIEIRA</xBairro>
+                <cMun>5002704</cMun>
+                <UF>MS</UF>
+                <CEP>79052260</CEP>
+            </enderNac>
+            <email>fcsantos_24@yahoo.com.br</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>308.53</vBC>
+            <vISSQN>6.20</vISSQN>
+            <vTotalRet>6.20</vTotalRet>
+            <vLiq>308.53</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS500270421173451600018600001000000000001181">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-05-07T13:36:24-04:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>00001</serie>
+                <nDPS>1181</nDPS>
+                <dCompet>2026-05-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>5002704</cLocEmi>
+                <prest>
+                    <CNPJ>11734516000186</CNPJ>
+                    <IM>00145406005</IM>
+                    <email>fcsantos_24@yahoo.com.br</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITÂNIA ELETRODOMÉSTICOS S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>comissoes@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>5002704</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>170601</cTribNac>
+                        <cTribMun>003</cTribMun>
+                        <xDescServ>Comissões de ABRIL 2026 - 25579 FCS REPRESENTACOES - COD: 25579VALOR 308,53</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>308.53</vServ>
+                    </vServPrest>
+                    <vDescCondIncond/>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS50027041211734516000186000000000118126050667291639">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>iNIWnrXHFlFEOBI+233WcpWuYBA=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>QKX/v25Wdc1lrkIqjjZKG2fe7vPruCEvzVctwf91ZjS8rTqp0MTfRM5AD6Cxtpx/tGb1VESNNwBiDXjvTaIsPBUCjmDHZfjwqKctFL7wGIr2BY7bFMCdDWmVtvzkA9TSvn9kPbEpC+HPf4TtXWl0QnhBr/SobJfAnYl17O+q4onWubibmFeIysvYk6nkZxt3yRDdDlKvLcPjx2meM+oAL4Nkw3q7oGwFb3tb+5NG9sSu6wZUDmVGaJq1PnaYhwL/QUF0NAzyjGtRCsIX2mHNWTxdKV6OOFblQx+1oabOTh+0dDWaX82K9FJtU/3Rofk9N53XWVRzu3Oq6/244BZESw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

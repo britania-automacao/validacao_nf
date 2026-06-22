@@ -1,0 +1,133 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35130091220938203000130000000000025426031058324813">
+        <xLocEmi>Cotia</xLocEmi>
+        <xLocPrestacao>Cotia</xLocPrestacao>
+        <nNFSe>254</nNFSe>
+        <cLocIncid>3513009</cLocIncid>
+        <xLocIncid>Cotia</xLocIncid>
+        <xTribNac>Fotografia e cinematografia, inclusive revelação, ampliação, cópia, reprodução, trucagem e congêneres.</xTribNac>
+        <xTribMun>Fotografia e cinematografia, inclusive revelação, ampliação, cópia, reprodução, trucagem e congêneres.</xTribMun>
+        <xNBS>Serviços fotográficos de retratos</xNBS>
+        <verAplic>1.0</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-05-17T15:23:04-03:00</dhProc>
+        <nDFSe>751922</nDFSe>
+        <emit>
+            <CNPJ>20938203000130</CNPJ>
+            <IM>6009588</IM>
+            <xNome>LEONARDO G BACCI ENTRETENIMENTO - ME</xNome>
+            <enderNac>
+                <xLgr>RUA  ITAPEMIRIM</xLgr>
+                <nro>1252</nro>
+                <xBairro>GRANJA CARNEIRO VIANA</xBairro>
+                <cMun>3513009</cMun>
+                <UF>SP</UF>
+                <CEP>06704750</CEP>
+            </enderNac>
+            <email>platinusconta@gmail.com</email>
+        </emit>
+        <valores>
+            <vCalcDR>0.00</vCalcDR>
+            <vBC>6375.00</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>318.75</vISSQN>
+            <vLiq>6375.00</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS351300922093820300013000001000000000000009">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-03-27T12:12:21-03:00</dhEmi>
+                <verAplic>1.0</verAplic>
+                <serie>1</serie>
+                <nDPS>9</nDPS>
+                <dCompet>2026-03-27</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3513009</cLocEmi>
+                <prest>
+                    <CNPJ>20938203000130</CNPJ>
+                    <IM>6009588</IM>
+                    <email>platinusconta@gmail.com</email>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITÂNIA ELETRODOMÉSTICOS S/A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3513009</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>130301</cTribNac>
+                        <xDescServ>Ação: Britânia + Leo Bacci (job 878 - L3)Vencimento: 30/04/2026ID da Venda: 686c0c4b38b21837a2a9a200Dados BancáriosBanco Nubank Ag 0001Cc 54933105-9Banco 0260Pix é meu cnpj 20.938.203/0001-30</xDescServ>
+                        <cNBS>114081100</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>6375.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>01</CST>
+                                <vBCPisCofins>6375.00</vBCPisCofins>
+                                <pAliqPis>0.00</pAliqPis>
+                                <pAliqCofins>0.00</pAliqCofins>
+                                <vPis>0.00</vPis>
+                                <vCofins>0.00</vCofins>
+                                <tpRetPisCofins>2</tpRetPisCofins>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <pTotTrib>
+                                <pTotTribFed>0.00</pTotTribFed>
+                                <pTotTribEst>0.00</pTotTribEst>
+                                <pTotTribMun>5.00</pTotTribMun>
+                            </pTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>aQng2iyDMy96sXiqFL/B3WzZ8z8=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>LS1HpKLVBSIEXJS9wHXh90s7x/9gs0E/NruRyDqWWFpQmplktS5QIdPVudCqgl/djOV3daQ4T6dyEP7CIJE69JSdSYpwqra1D1BZ2Hf2b2FiHLr4Lubw1gtYhPCZV6n6Iv6iFHD8SXsKWe4eSmnu1cDcUU60sNKksys6hQwudbUYAF1d1lN8y2KWGNhHQE47H2wlUWumQ19pgra0AcvEPJcZJ0m02wgIOkAUdddnhKd1GeF42eb71mOUax6zExs9d1tacyaQUK5Qf+anmlE0perkk9y7GNte+pc9xcvG+0EWgEjtNDzK4/7RQxZV9V3SPtKh1RpP5U7H0ZH22RA7AA==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>MIIH3zCCBcegAwIBAgILALQGLCacGZh9t40wDQYJKoZIhvcNAQELBQAwWzELMAkGA1UEBhMCQlIxFjAUBgNVBAsMDUFDIFN5bmd1bGFySUQxEzARBgNVBAoMCklDUC1CcmFzaWwxHzAdBgNVBAMMFkFDIFN5bmd1bGFySUQgTXVsdGlwbGEwHhcNMjYwMzE3MTk0MDI2WhcNMjcwMzE3MTk0MDI2WjCBwTELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxIjAgBgNVBAsMGUNlcnRpZmljYWRvIERpZ2l0YWwgUEogQTExEzARBgNVBAsMClByZXNlbmNpYWwxFzAVBgNVBAsMDjQ4NzkxMTA0MDAwMTk4MR8wHQYDVQQLDBZBQyBTeW5ndWxhcklEIE11bHRpcGxhMSowKAYDVQQDDCFNVU5JQ0lQSU8gREUgQ09USUE6NDY1MjMwNDkwMDAxMjAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC3/3OghQzL5PJxrgPbko4iFIJS59rdMATP12aACWpxmEvwt6x//wvxkZaECTpw4QymSgStv5HggfHkH5+w+MhLy+59mHcnzj21f6bpYortU+7xtInUuARwNVkwHIVIcjOeqy+gz7wlRx4S0vGGIo+fABrrXO4Pyz4xbzfFn/ISLoRVkjeTamy8ycXjAo3mm1Fo4epXSmdaQ1KQGCMX4wN3AritNt9xtr0DK0yoegeFDJi6uBQzpTqo2yeDXUpqZxD5vd+s13Fw6KflaVRjS95Y4WTxgV3enl0Em1CEQqgwq+VYzDyoVPE3RJ2uqG5h875ZkhwTwdhwdKaJmkN+XiblAgMBAAGjggM7MIIDNzAOBgNVHQ8BAf8EBAMCBeAwHQYDVR0lBBYwFAYIKwYBBQUHAwQGCCsGAQUFBwMCMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUk+H/fh3l9eRN4TliiyFpleavchYwHQYDVR0OBBYEFAWnDCFnKivjVvq5ghZIZTAlovNzMH8GCCsGAQUFBwEBBHMwcTBvBggrBgEFBQcwAoZjaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvY2VydGlmaWNhZG9zL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEucDdiMIGCBgNVHSAEezB5MHcGB2BMAQIBgQUwbDBqBggrBgEFBQcCARZeaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvZHBjL2RwYy1hYy1zeW5ndWxhcklELW11bHRpcGxhLnBkZjCBzwYDVR0RBIHHMIHEoCYGBWBMAQMCoB0EG1dlbGluZ3RvbiBBcGFyZWNpZG8gQWxmcmVkb6AZBgVgTAEDA6AQBA40NjUyMzA0OTAwMDEyMKBCBgVgTAEDBKA5BDcyMTExMTk4NjM0NTA5NzA3ODAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwoBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMIEid2VsaW5ndG9uZm9ybWlnYWJyYXNpbDIwQGdtYWlsLmNvbTCB4gYDVR0fBIHaMIHXMGSgYqBghl5odHRwOi8vc3luZ3VsYXJpZC5jb20uYnIvcmVwb3NpdG9yaW8vYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS9sY3IvbGNyLWFjLXN5bmd1bGFyaWQtbXVsdGlwbGEuY3JsMG+gbaBrhmlodHRwOi8vaWNwLWJyYXNpbC5zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2xjci9sY3ItYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS5jcmwwDQYJKoZIhvcNAQELBQADggIBAJdecPaJmnmTygiSXU+UHeilfZYRP9Z9VyZoSPs0Dk9nfmtM1+Wdw+7Qa4Ujjm8EGheETi6YjtzHqwi4ZHwcSIABwWCA7bIv2r1pTu5DfL73UuO0CXe5rDHOpkcjAn6BTe/uK5S0wJSUJY/kzLr+9ruVhY7yXyC6DEb4+VSJg9Jd7bKD6yEPDgbgGtZ6wqsb7riYczoTRnqOuObufmP2OnUul/Me/teWT3RGEZjzyshL+8tHvQmolW3GPwhTrvL+FOODZZF7GicGZy/KqyYusNjp6SG5asHw73jj68mk8olyyLfuhH+eH8Hfc5lGd8hwehQ5CN6+LVB9ut3mKWW2x54dzX8P6pZJu1bOTHDBkbv/5lRwCfRIiinxiIcKsNuc9NmD47w/LDvdU3JVePUVd/Lid+JU8lrgDHLYazCmuCDkxfeDDDysCMh6STSR+tq+GzgwFiRKBYDzS5YSPqO8UCdKcnOMqSUIIKeoPTCFLEtRvCE0ltJlGxdO9479Mn7X4Ra3qvoJtWhxbH5CD/T9561EhCuKGkaBPjr15kZTe1dTkyObXoi5hZxf+d/7XaaAA8RsfbFaP4b5WHonlhPOoa3IClhpqTHEKf/fSFA7qmxifsu0kwE/ajlaMEc/JyjCea+jxIMsAZy6O30Npz2g3UzI0YFYy+SNTnrR9rKUvQ/6</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

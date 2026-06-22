@@ -1,0 +1,154 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS41069022222303462000110000000000107626051193629915">
+        <xLocEmi>Curitiba</xLocEmi>
+        <xLocPrestacao>Curitiba</xLocPrestacao>
+        <nNFSe>1076</nNFSe>
+        <cLocIncid>4106902</cLocIncid>
+        <xLocIncid>Curitiba</xLocIncid>
+        <xTribNac>Lubrificação, limpeza, lustração, revisão, carga e recarga, conserto, restauração, blindagem, manutenção e conservação de máquinas, veículos, aparelhos, equipamentos, motores, elevadores ou de qualquer objeto (exceto peças e partes empregadas, que ficam sujeitas ao ICMS).</xTribNac>
+        <verAplic>SefinNacional_1.6.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>1</procEmi>
+        <cStat>100</cStat>
+        <dhProc>2026-05-21T15:51:08-03:00</dhProc>
+        <nDFSe>36273398</nDFSe>
+        <emit>
+            <CNPJ>22303462000110</CNPJ>
+            <IM>11576005</IM>
+            <xNome>BARI IMPORTS VEICULOS LTDA</xNome>
+            <enderNac>
+                <xLgr>AV. VICTOR FERREIRA DO AMARAL</xLgr>
+                <nro>000984</nro>
+                <xBairro>Tarumã</xBairro>
+                <cMun>4106902</cMun>
+                <UF>PR</UF>
+                <CEP>82530230</CEP>
+            </enderNac>
+            <fone>4130124040</fone>
+            <email>CONTABILIDADE@GRUPOBARIGUI.COM.BR</email>
+        </emit>
+        <valores>
+            <vBC>429.78</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>21.49</vISSQN>
+            <vLiq>429.78</vLiq>
+        </valores>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+            <infDPS Id="DPS410690222230346200011003000000000000001082">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-05-21T15:50:00-03:00</dhEmi>
+                <verAplic>MonitorNFSe1.0.0.0</verAplic>
+                <serie>03000</serie>
+                <nDPS>1082</nDPS>
+                <dCompet>2026-05-21</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4106902</cLocEmi>
+                <prest>
+                    <CNPJ>22303462000110</CNPJ>
+                    <IM>11576005</IM>
+                    <fone>4130124040</fone>
+                    <email>CONTABILIDADE@GRUPOBARIGUI.COM.BR</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA (115775)</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>82520060</CEP>
+                        </endNac>
+                        <xLgr>AV. NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187700</fone>
+                    <email>diretoria@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4106902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>140101</cTribNac>
+                        <xDescServ>NS:1082 OS:6139 Placa:BCE9J91  KM: 9435 Chassi:LGXC74C42S0028807  .Prop.: BRITANIA ELETRODOMESTICOS SA DE - DESCARTE DE RESIDUOS LEI 12305 - 1.00 HrsREVSONGPLUS12K - REVISAO SONG PLUS 12 MIL KM OU 12 MESES - 1.46 Hrs Trib aprox R$: 57.80 Fed, R$ 0.00 Est e R$ 0.00 Mun. Fonte: IBPT/PR</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>429.78</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <tribFed>
+                            <piscofins>
+                                <CST>01</CST>
+                                <vBCPisCofins>429.78</vBCPisCofins>
+                                <pAliqPis>1.65</pAliqPis>
+                                <pAliqCofins>7.60</pAliqCofins>
+                                <vPis>7.09</vPis>
+                                <vCofins>32.66</vCofins>
+                                <tpRetPisCofins>0</tpRetPisCofins>
+                            </piscofins>
+                        </tribFed>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>57.80</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+                <SignedInfo>
+                    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                    <Reference URI="#DPS410690222230346200011003000000000000001082">
+                        <Transforms>
+                            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                        </Transforms>
+                        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                        <DigestValue>3KiuvFIj/5Nn7O9LvEKp0hYvlKU=</DigestValue>
+                    </Reference>
+                </SignedInfo>
+                <SignatureValue>XbXfGFmkPFrygtkZa2zsxOfd4r9eRt2/Ha0ti3nyRFpqrFO20VHXxaxQ2ugUn9nvOSBG7OiRhLiJrL+ho+ZWAHUzeik8HA5dYLurbqvhIjmrrZdxrTStznjLo65mziUZJ7DsK1o4kidt7XumnGNIFW+yyNjBYaqi93FJrSp9piGITANVgBoYTFACpszthm4daYml+6HK0YuqnGAOXryCH+qjSHMmw6Yf/epSYIIfaEz90SeVsMS8X3256Ua4IVPk5NpOWPYZqaQK2Q4O9cP9ePpbo5bxWEkhXgs39Rah20r2Lm1aIz3L/MKsxBHuIdmFJ2fJQvpt7urNnIairRfMCA==</SignatureValue>
+                <KeyInfo>
+                    <X509Data>
+                        <X509Certificate>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</X509Certificate>
+                    </X509Data>
+                </KeyInfo>
+            </Signature>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS41069022222303462000110000000000107626051193629915">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>w8sJRD2bGnT82lJoQZ6M8i7Hp/FH3hb7GNIO8fHz81M=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>X3ghn3PH6t+oApolTzS1x/mm4w8wj4dS8FsCNTOSeqDijSLU5x9THkWg5IJ2pkg3P9JkI2MQ/Lmr+SPnAXlTGCt6pSeXdr5vymWAm793lg0X0J/iyPW75PHdxxBhIvt+XkqdJmgqR9bQFgU43DakixfvKnHwE0zeAjlQ6hpK5quCDvXoZtHts7aubIObC1mRH1y/WOZ3NhCVz34571qWzHG3EyBg0aTCHPBv7jqvJJ6URxnLPNMJEuD4plWQVOuyKPZQAGYvndMkQdhKNmS/02H9xy++IrtuzNUFqFYf71a+6ABl3AOG7FYfzO5STIP1anRiPQeKfsvbdOUMCoSJ7w==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS41069022257542112000191000000000004125053405468294">
+        <xLocEmi>Curitiba</xLocEmi>
+        <xLocPrestacao>Curitiba</xLocPrestacao>
+        <nNFSe>41</nNFSe>
+        <cLocIncid>4106902</cLocIncid>
+        <xLocIncid>Curitiba</xLocIncid>
+        <xTribNac>Execução, por administração, de obras de construção civil, hidráulica ou elétrica e de outras obras semelhantes, inclusive sondagem, perfuração de poços, escavação, drenagem e irrigação, terraplanagem, pavimentação, concretagem e a instalação e montagem de produtos, peças e equipamentos (exceto o fornecimento de mercadorias produzidas pelo prestador de serviços fora do local da prestação dos serviços, que fica sujeito ao ICMS).</xTribNac>
+        <verAplic>EmissorWeb_1.3.0.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>2</procEmi>
+        <cStat>100</cStat>
+        <dhProc>2025-05-06T14:25:22-03:00</dhProc>
+        <nDFSe>1907919</nDFSe>
+        <emit>
+            <CNPJ>57542112000191</CNPJ>
+            <xNome>57.542.112 DAMARES SILVA DE SOUZA MOREIRA</xNome>
+            <enderNac>
+                <xLgr>JOAO CASAGRANDE</xLgr>
+                <nro>214</nro>
+                <xBairro>CIDADE INDUSTRIAL</xBairro>
+                <cMun>4106902</cMun>
+                <UF>PR</UF>
+                <CEP>81230020</CEP>
+            </enderNac>
+            <fone>41996435348</fone>
+            <email>edm.manutencaopredial@gmail.com</email>
+        </emit>
+        <valores>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>5200.00</vLiq>
+        </valores>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+            <infDPS Id="DPS410690225754211200019100900000000000000041">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-05-06T14:25:22-03:00</dhEmi>
+                <verAplic>EmissorWeb_1.3.0.0</verAplic>
+                <serie>900</serie>
+                <nDPS>41</nDPS>
+                <dCompet>2025-05-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4106902</cLocEmi>
+                <prest>
+                    <CNPJ>57542112000191</CNPJ>
+                    <fone>41996435348</fone>
+                    <email>edm.manutencaopredial@gmail.com</email>
+                    <regTrib>
+                        <opSimpNac>2</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4106902</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>070201</cTribNac>
+                        <xDescServ>Nivelamento do estacionamento com fresado</xDescServ>
+                    </cServ>
+                    <obra>
+                        <end>
+                            <CEP>80040265</CEP>
+                            <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                            <nro>1330</nro>
+                            <xBairro>HUGO LANGE</xBairro>
+                        </end>
+                    </obra>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>5200.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS41069022257542112000191000000000004125053405468294">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>MZ90noWCyNe84YUN7Q3wwduDcTY=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>S6HYsxHSn2W9tz8jLMnVzQFBE0aOex91eXV4hZ1l/Offk2sZo6COoUVIKZLpHsj1LCHcsJzzxARtz7DDXbFAxiQm4K8QczxaNPNtb91Qh8+pSXFd9RW2+MS+T6/p1TM3fBJQ0VMna6evjXFcqGLWPOLvXaUup4YaRr3m7RUbZzNG0khVsgGKfF1q13m0jvJejJLa54PCKIX8k0x29J69BfvslTkw7wf8vZDbaortXwVTLHYR3HhjuOFYfw8JoEXEs2LrRZ0tM4XATugd07q3Oex5npMLj+NGSrvH98vFR9xqOpHUbrwUYG3UC4fa93jLpEW9FRsb76BOPCwRlgkY1A==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

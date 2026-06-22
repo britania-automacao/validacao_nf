@@ -1,0 +1,123 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS35503081224313483000142000000000072226021868320314">
+        <xLocEmi>São Paulo</xLocEmi>
+        <xLocPrestacao>São Paulo</xLocPrestacao>
+        <nNFSe>722</nNFSe>
+        <cLocIncid>3550308</cLocIncid>
+        <xTribNac>Instrução, treinamento, orientação pedagógica e educacional, avaliação de conhecimentos de qualquer</xTribNac>
+        <verAplic>1.0.4+EFCA28</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-02-02T17:03:28-03:00</dhProc>
+        <nDFSe>722</nDFSe>
+        <emit>
+            <CNPJ>24313483000142</CNPJ>
+            <IM>54284848</IM>
+            <xNome>DNA CONTEUDO E PRODUCAO AUDIOVISUAL LTDA</xNome>
+            <enderNac>
+                <xLgr>BRIG FARIA LIMA</xLgr>
+                <nro>1744</nro>
+                <xCpl>SALA  41</xCpl>
+                <xBairro>JARDIM PAULISTANO</xBairro>
+                <cMun>3550308</cMun>
+                <UF>SP</UF>
+                <CEP>01451910</CEP>
+            </enderNac>
+            <email>contasapagar@dnaconteudo.com</email>
+        </emit>
+        <valores>
+            <vBC>14000.00</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>700.00</vISSQN>
+            <vLiq>14000.00</vLiq>
+        </valores>
+        <DPS versao="1.01">
+            <infDPS Id="DPS355030822431348300014200001000000000000722">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-02-02T17:03:28-03:00</dhEmi>
+                <verAplic>1.0.4+EFCA28</verAplic>
+                <serie>1</serie>
+                <nDPS>722</nDPS>
+                <dCompet>2026-02-02</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3550308</cLocEmi>
+                <prest>
+                    <CNPJ>24313483000142</CNPJ>
+                    <IM>54284848</IM>
+                    <email>contasapagar@dnaconteudo.com</email>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>AVENIDA NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <email>corporativo@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>080201</cTribNac>
+                        <cTribMun>003</cTribMun>
+                        <xDescServ>Servicos prestados Educomunicacao e VideoCast  Numero do Pedido 667881  Numero de Contrato Juridico C-4222 Numero de Contrato Sistemico 6506 Dados para pagamento:  DNA CONTEUDO P A LTDA Banco: Itau (341) Agencia: 0173 Conta Corrente: 12452-0 CNPJ: 24.313.483/0001-42 Vencimento: 02/03/2026</xDescServ>
+                        <cNBS>999999999</cNBS>
+                        <cIntContrib>000000000132NFSE</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>14000.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>5.00</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>700.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35503081224313483000142000000000072226021868320314">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>g6tNIcgyF4bJ/c9mwxnTgjnGAH0=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>jXmg9ixSzOcby3TJnEIhbfCglTwHIzPoY8WX9TLFNqL89mp/57bfSwmv40b6nf6oFmo01yeUN3lmEzQlMPC3+whK8Q5Q5moUorqhMY8ajWn3UC6MmXa7DJyhQEVHswT0K+JzswpFWASJH5sRQ394LP4zXrN+Sosgnclwk2sbkF3Mb9uiF29u4lx3SKCSrxm047Tnx0dPzKAChyHBn8JA7nm0xCfkXvtA6aiADn3S4jht9+gWzkMLp6af6En4lv1YEWPA6EC5J2GhUbxZDGhS+L7pVKGlDuhw8dISmPGkny/NrlSE5M4V64NfaivHuHUbDbWnVA3CrKoX74oJjZ18Tw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

@@ -1,0 +1,121 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35188001208697217000104000000000119126060000000000">
+        <xLocEmi>GUARULHOS</xLocEmi>
+        <xLocPrestacao>GUARULHOS</xLocPrestacao>
+        <nNFSe>1191</nNFSe>
+        <cLocIncid>3518800</cLocIncid>
+        <xLocIncid>GUARULHOS</xLocIncid>
+        <xTribNac>Composição Gráfica, Inclusive Confecção De Impressos Gráficos, Fotocomposição, Clicheria, Zincografia, Litografia E Fotolitografia, Exceto Se Destinados A Posterior Operação De Comercialização Ou Industrialização, Ainda Que Incorporados, De Qualquer Forma, A Outra Mercadoria Que Deva Ser Objeto De Posterior Circulação, Tais Como Bulas, Rótulos, Etiquetas, Caixas, Cartuchos, Embalagens E Manuais Técnicos E De Instrução, Quando Ficarão Sujeitos Ao Icms.</xTribNac>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-06-01T17:17:02-03:00</dhProc>
+        <nDFSe>78394109</nDFSe>
+        <emit>
+            <CNPJ>08697217000104</CNPJ>
+            <IM>143116</IM>
+            <xNome>ROMAPRINT GRAFICA LTDA</xNome>
+            <xFant>ROMAPRINT GRAFICA LTDA</xFant>
+            <enderNac>
+                <xLgr>RUA SOLDADO JOÃO ESPINARDI</xLgr>
+                <nro>531</nro>
+                <xBairro>VILA SILVEIRA</xBairro>
+                <cMun>3518800</cMun>
+                <UF>SP</UF>
+                <CEP>07093010</CEP>
+            </enderNac>
+            <fone>1120412242</fone>
+            <email>giovanna.bergamasco@alencarcontabilidade.com.br</email>
+        </emit>
+        <valores>
+            <vBC>52400.00</vBC>
+            <pAliqAplic>5.00</pAliqAplic>
+            <vISSQN>2620.00</vISSQN>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>52400.00</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS351880020869721700010410000000000000001191">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-06-01T17:17:02-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>10000</serie>
+                <nDPS>1191</nDPS>
+                <dCompet>2026-06-01</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3518800</cLocEmi>
+                <prest>
+                    <CNPJ>08697217000104</CNPJ>
+                    <IM>143116</IM>
+                    <regTrib>
+                        <opSimpNac>1</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>Britania Eletrodomesticos S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>82520060</CEP>
+                        </endNac>
+                        <xLgr>Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3518800</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>130501</cTribNac>
+                        <cTribMun>026</cTribMun>
+                        <xDescServ>1 MPDV CUIDADOS PESSOAIS BRITANIA  R$52.40000   \nPGTO.: 49 dias com Deposito        \nOBS.: PEDIDO: 678.194|NF DE REMESSA SERA EMITIDA POSTERIORMENTE|No DO MLA: 292458 / ORDEM DE COMPRA: 8340.02</xDescServ>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>52400.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>0.00</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35188001208697217000104000000000119126060000000000">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>gQSwO26EcQ03mSAoYWH/je7bv84=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>tkd1uOV4F4ebjllKrYXdkpPHlPGtJbH0jDY48wPF3cGlm/fmweZhvyBs4lniA5k7Y3rg95AW2U1v0RKhCpyTmWXdiIXX4ZCtXPVxLh8EtZO8E/O/l4BVs76N0Ndq0a9EhShjVC4zEt0kVgtG5p2fiksqO39JPW1UT+cxcyickm3iCFgP2KDVZprNR2HYDMuHyKrY7JTYR6htG+uiAOEmuFCNHgiMT3FezqNuXa0aRgh214w1lbObbczjzYbOrk/fRwr1nd42r2iCdR42i1hf+6OITX1dajWNoPCqLQrFnGQklTzM460zacG0Zhbk8B+eIFG8aA/m+K94yMMMurgm7A==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

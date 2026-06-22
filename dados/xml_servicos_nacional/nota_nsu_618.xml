@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+    <infNFSe Id="NFS35503082219881616000147000000000004225054259223491">
+        <xLocEmi>São Paulo</xLocEmi>
+        <xLocPrestacao>São Paulo</xLocPrestacao>
+        <nNFSe>42</nNFSe>
+        <cLocIncid>3550308</cLocIncid>
+        <xLocIncid>São Paulo</xLocIncid>
+        <xTribNac>Guias de turismo.</xTribNac>
+        <xNBS>Serviços de guias turísticos</xNBS>
+        <verAplic>EmissorWeb_1.3.0.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>2</procEmi>
+        <cStat>107</cStat>
+        <dhProc>2025-05-15T15:58:45-03:00</dhProc>
+        <nDFSe>10702428</nDFSe>
+        <emit>
+            <CNPJ>19881616000147</CNPJ>
+            <xNome>CAIO CASSOLARI SAPIA 25496285860</xNome>
+            <enderNac>
+                <xLgr>BENEDITO BRANCO DE ABREU</xLgr>
+                <nro>30</nro>
+                <xBairro>JARDIM DAS VERTENTES</xBairro>
+                <cMun>3550308</cMun>
+                <UF>SP</UF>
+                <CEP>5541090</CEP>
+            </enderNac>
+            <fone>1137393234</fone>
+            <email>caio.cassolari@terra.com.br</email>
+        </emit>
+        <valores>
+            <vTotalRet>0.00</vTotalRet>
+            <vLiq>7700.00</vLiq>
+        </valores>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+            <infDPS Id="DPS355030821988161600014700900000000000000042">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2025-05-15T15:58:45-03:00</dhEmi>
+                <verAplic>EmissorWeb_1.3.0.0</verAplic>
+                <serie>900</serie>
+                <nDPS>42</nDPS>
+                <dCompet>2025-05-15</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3550308</cLocEmi>
+                <prest>
+                    <CNPJ>19881616000147</CNPJ>
+                    <fone>1137393234</fone>
+                    <email>caio.cassolari@terra.com.br</email>
+                    <regTrib>
+                        <opSimpNac>2</opSimpNac>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3550308</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>090301</cTribNac>
+                        <xDescServ>Guia do grupo Britania de 20 a 26/5 Caio Cassolari Sapia Cpf 254.962.858-60Banco Santander Ag 4786 Conta 01000900-7Valor 7.700,00</xDescServ>
+                        <cNBS>118045000</cNBS>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>7700.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS35503082219881616000147000000000004225054259223491">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>QsZxZLWCcfOSk9QexIHmlo1xPjI=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>caYI4IKP0NHJdJScBRyPfBEWWTuuyCk0RFPJmUhh+Jy3XlRKWpkMWuH5Gnn5GGvoTIBHqZPF8utn2cjX14dd+h9Glmgz8tdeLfc+E3NJyNDS6YML8BMPyUAEpdZfkMEpN36966vRJACt9QupZXJyEM9tU46qEl7uWTcnEnEHdlUBRVIBvz7mTYl5qS2IcVn6CgZ+wGXaDGJIV8HvjgUhBr5psSsvmb7Q9RyuUySmdL/iD7i6y9VyMUdOfEbPAJPDPe8YSrUCYHT7IFVn4EDjeI8TL1UwuvFumkd+LG3ZatR2RPukXH6xhNtpGpfUBk60G+JYTPFgv04fFxgyKZGBDQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

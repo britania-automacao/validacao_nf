@@ -1,0 +1,136 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS41255062247145442000190000000000001926064942421888">
+        <xLocEmi>São José dos Pinhais</xLocEmi>
+        <xLocPrestacao>São José dos Pinhais</xLocPrestacao>
+        <nNFSe>19</nNFSe>
+        <cLocIncid>4125506</cLocIncid>
+        <xLocIncid>São José dos Pinhais</xLocIncid>
+        <xTribNac>Lubrificação, limpeza, lustração, revisão, carga e recarga, conserto, restauração, blindagem, manutenção e conservação de máquinas, veículos, aparelhos, equipamentos, motores, elevadores ou de qualquer objeto (exceto peças e partes empregadas, que ficam sujeitas ao ICMS).</xTribNac>
+        <xNBS>Serviços de manutenção e reparação de veículos rodoviários motorizados</xNBS>
+        <verAplic>SefinNacional_1.6.0</verAplic>
+        <ambGer>2</ambGer>
+        <tpEmis>1</tpEmis>
+        <procEmi>1</procEmi>
+        <cStat>100</cStat>
+        <dhProc>2026-06-03T18:14:47-03:00</dhProc>
+        <nDFSe>3087722</nDFSe>
+        <emit>
+            <CNPJ>47145442000190</CNPJ>
+            <xNome>SJP COMERCIO E DESENVOLVIMENTO LTDA</xNome>
+            <enderNac>
+                <xLgr>RUA JOINVILLE</xLgr>
+                <nro>3897</nro>
+                <xBairro>SAO PEDRO</xBairro>
+                <cMun>4125506</cMun>
+                <UF>PR</UF>
+                <CEP>83020000</CEP>
+            </enderNac>
+            <fone>4131565050</fone>
+            <email>CONTABILIDADECWBBRASIL@GMAIL.COM</email>
+        </emit>
+        <valores>
+            <vLiq>320.00</vLiq>
+        </valores>
+        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
+            <infDPS Id="DPS412550624714544200019000900000000000000020">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-06-03T00:00:00-03:00</dhEmi>
+                <verAplic>LF-4.38.11.0</verAplic>
+                <serie>900</serie>
+                <nDPS>20</nDPS>
+                <dCompet>2026-06-03</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>4125506</cLocEmi>
+                <prest>
+                    <CNPJ>47145442000190</CNPJ>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ 1330</xLgr>
+                        <nro>0</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>4125506</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>140101</cTribNac>
+                        <xDescServ>MONTAGEM DE PNEU  4.00UN  R$ 30.00 BALANCEAMENTO  4.00UN  R$ 30.00 ALINHAMENTO DIRECAO   1.00UN  R$ 80.00</xDescServ>
+                        <cNBS>120013110</cNBS>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>Veiculo: AVB9091  VOLKSWAGEN VW TOUAREG 4.2 V8, 13/14, Gasolina, BRANCA Quilometragem: 63995</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>320.00</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <pTotTribSN>4.06</pTotTribSN>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+                <SignedInfo>
+                    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                    <Reference URI="#DPS412550624714544200019000900000000000000020">
+                        <Transforms>
+                            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                        </Transforms>
+                        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                        <DigestValue>kY9Z9Hv9Xc1NCuukQ3dax83t994=</DigestValue>
+                    </Reference>
+                </SignedInfo>
+                <SignatureValue>jgHSlMwJMmgvQI8ZDpLUOdV5k5qe6PeNfNU8QHY9cdXxXXqXjiN67wjv05UOlFo4iyrp/nYfZqnOXFJgmUbfTR7h1u9ij9y55aRLStOLlhKBPoCHMSDyEB+B0JvAYf/PlFaWLwKkOZdyHJIr3lwbcbuU8bHvNo25Li//BhOVfWSJQOtvmBWQTZHft7H2mIDLbZ5uDcI62H97hwPaB7eHfUvq5Az07ob34/WFK3oliUhAObWOjKF0ldsk9tMEN1isd62y5OThvSSxK9Ww6PzmWuZk6dVjuu67YK3mt00F05Of30UNmLC1ACM207467Kc7ZASN5dHVjWDmfRRCiUlpag==</SignatureValue>
+                <KeyInfo>
+                    <X509Data>
+                        <X509Certificate>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</X509Certificate>
+                    </X509Data>
+                </KeyInfo>
+            </Signature>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <Reference URI="#NFS41255062247145442000190000000000001926064942421888">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#WithComments"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <DigestValue>+U4+QsWk4yfoJBM7ca696SilYRKZa03W+elGef9SOOI=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>Y3PhQCdAxvhKAnaGW+ZRFfOX8/K+UWzvay/RpRpA5UkfSfuRGS6neCRQvfS5s4LDz7fF3ua0HLMVAxTZTftjdLxf2/bt67z9VltWvBgQK2XqcUctXYExIcEYxBUZIbHCC6k/wRFCM15nxKNZlwl57myFgMEusPdM8eU03+VA0jV+rHSt2baUxRSjPwLMXMkk2RZI3/F8KOksEecL+PiFCaA8Gbyok6gXwWItgKZZRWh7P71AB3HLMvsXNlnH6BUNqqYPamGkbdKOxTBfpNK5w8Vnlvv2We9tTCgTiz/WY+FnHAMGp+7CFNOQI/BE0PQkg5+LirC1RyVtGg8GhcKkwQ==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

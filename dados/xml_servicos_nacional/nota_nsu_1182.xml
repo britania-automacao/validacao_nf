@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
+    <infNFSe Id="NFS11002051254093767000131260000000006726010000154864">
+        <xLocEmi>Porto Velho</xLocEmi>
+        <xLocPrestacao>Porto Velho</xLocPrestacao>
+        <nNFSe>2600000000067</nNFSe>
+        <cLocIncid>1100205</cLocIncid>
+        <xLocIncid>Porto Velho</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <xTribMun>REPRESENTACAO DE QUALQUER NATUREZA, INCLUSIVE COMERCIAL</xTribMun>
+        <verAplic>1.00</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>2</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-01-06T16:01:06-03:00</dhProc>
+        <nDFSe>2600000000067</nDFSe>
+        <emit>
+            <CNPJ>54093767000131</CNPJ>
+            <IM>42364098</IM>
+            <xNome>FOCO REPRESENTAÇÕES LTDA</xNome>
+            <enderNac>
+                <xLgr>Rua DOS BURITIS</xLgr>
+                <nro>4094</nro>
+                <xBairro>Nova Floresta</xBairro>
+                <cMun>1100205</cMun>
+                <UF>RO</UF>
+                <CEP>76807152</CEP>
+            </enderNac>
+        </emit>
+        <valores>
+            <vBC>1651.55</vBC>
+            <pAliqAplic>2.01</pAliqAplic>
+            <vISSQN>33.20</vISSQN>
+            <vLiq>1651.55</vLiq>
+        </valores>
+        <DPS versao="1.00">
+            <infDPS Id="DPS110020525409376700013100001260000000000067">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-01-06T16:01:06-03:00</dhEmi>
+                <verAplic>1.00</verAplic>
+                <serie>00001</serie>
+                <nDPS>260000000000067</nDPS>
+                <dCompet>2026-01-06</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>1100205</cLocEmi>
+                <prest>
+                    <CNPJ>54093767000131</CNPJ>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <xNome>Britânia Eletrodomésticos S.A.</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>Hugo Lange</xBairro>
+                    </end>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>1100205</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <xDescServ>REFERENTE A COMISSÕES NO MÊS 12/25.</xDescServ>
+                        <cNBS>102010000</cNBS>
+                        <cIntContrib>1009</cIntContrib>
+                    </cServ>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>1651.55</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                        </tribMun>
+                        <totTrib>
+                            <indTotTrib>0</indTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS11002051254093767000131260000000006726010000154864">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>BTbvR6AA2NkBsbiM450qFC+d4H8=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>ix+/7I6dJe1HKezdnItJ8nzEGJRBAm8tPrva/Xuh40YeDr4LR3ls+mXzNgz7XbADMEMItGb36nZ3y2nX7Gh6+HRDJH+Tr6oMjKYer5PhkZfbImmqqlHpAyVu/+sMgphureRlq4NVzAwbpaaxQo1NrtBgtmQkVhaz1bRhXirO6wHs2TorKSvey8xnyXTbQhSyvBsKz56jDBmfzpVYTnMB5mndx9/wq5eIzaOKuyKefLcCRRg73UqLfQlgeHSH2K25pVLjzs/ywAdX/io2mT9gOH4pp4SbKeBqDZX2aRAE+fzRbOKugdZe7K20WY2JtF+woW+XD7LMYl1YG7Hv1K7tIw==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>

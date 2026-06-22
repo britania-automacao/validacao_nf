@@ -1,0 +1,150 @@
+<?xml version="1.0" ?>
+<NFSe xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+    <infNFSe Id="NFS33055051203918260000139000000000001026059504964113">
+        <xLocEmi>Saquarema</xLocEmi>
+        <xLocPrestacao>Saquarema</xLocPrestacao>
+        <nNFSe>10</nNFSe>
+        <cLocIncid>3305505</cLocIncid>
+        <xLocIncid>Saquarema</xLocIncid>
+        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
+        <xTribMun>Representantes comerciais e agentes do comércio de mercadorias em gera</xTribMun>
+        <xNBS>Serviços de intermediação na distribuição de mercadorias</xNBS>
+        <verAplic>ISSDIGITAL5260201031</verAplic>
+        <ambGer>1</ambGer>
+        <tpEmis>1</tpEmis>
+        <cStat>100</cStat>
+        <dhProc>2026-05-05T18:53:23-03:00</dhProc>
+        <nDFSe>10</nDFSe>
+        <emit>
+            <CNPJ>03918260000139</CNPJ>
+            <IM>82925</IM>
+            <xNome>FAISLON &amp; PEIXOTO REPRESENTACOES COMERCIAIS LTDA</xNome>
+            <xFant>FAISLON &amp; PEIXOTO REPRESENTACOES COMERCIAIS LTDA</xFant>
+            <enderNac>
+                <xLgr>Rua CORONEL MADUREIRA</xLgr>
+                <nro>40</nro>
+                <xCpl>LOJA 11 PARTE</xCpl>
+                <xBairro>CENTRO</xBairro>
+                <cMun>3305505</cMun>
+                <UF>RJ</UF>
+                <CEP>28990756</CEP>
+            </enderNac>
+            <fone>21964068102</fone>
+            <email>rpfaislonr@gmail.com</email>
+        </emit>
+        <valores>
+            <vBC>23712.05</vBC>
+            <pAliqAplic>3.76</pAliqAplic>
+            <vISSQN>891.57</vISSQN>
+            <vLiq>23712.05</vLiq>
+        </valores>
+        <DPS xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
+            <infDPS Id="DPS330550520391826000013949999000000000000010">
+                <tpAmb>1</tpAmb>
+                <dhEmi>2026-05-05T18:53:23-03:00</dhEmi>
+                <verAplic>ISSDIGITAL5260201031</verAplic>
+                <serie>49999</serie>
+                <nDPS>10</nDPS>
+                <dCompet>2026-05-05</dCompet>
+                <tpEmit>1</tpEmit>
+                <cLocEmi>3305505</cLocEmi>
+                <prest>
+                    <CNPJ>03918260000139</CNPJ>
+                    <regTrib>
+                        <opSimpNac>3</opSimpNac>
+                        <regApTribSN>1</regApTribSN>
+                        <regEspTrib>0</regEspTrib>
+                    </regTrib>
+                </prest>
+                <toma>
+                    <CNPJ>76492701000157</CNPJ>
+                    <IM>Não se Aplica</IM>
+                    <xNome>Britania Eletrodomestico Ltda</xNome>
+                    <end>
+                        <endNac>
+                            <cMun>4106902</cMun>
+                            <CEP>80040265</CEP>
+                        </endNac>
+                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
+                        <nro>1330</nro>
+                        <xBairro>HUGO LANGE</xBairro>
+                    </end>
+                    <fone>4132187855</fone>
+                    <email>cleverson.bru@britania.com.br</email>
+                </toma>
+                <serv>
+                    <locPrest>
+                        <cLocPrestacao>3305505</cLocPrestacao>
+                    </locPrest>
+                    <cServ>
+                        <cTribNac>100901</cTribNac>
+                        <cTribMun>015</cTribMun>
+                        <xDescServ>Comissão de Vendas Abril/25</xDescServ>
+                        <cNBS>102010000</cNBS>
+                        <cIntContrib>4619200</cIntContrib>
+                    </cServ>
+                    <infoCompl>
+                        <xInfComp>NOTA EMITIDA POR ME OU EPP OPTANTE PELO SIMPLES NACIONAL / NÃO GERA DIREITO A CRÉDITO FISCAL DE IPI / Lei 12741/2012: Mun: R$891,57; Est: R$0,00; Fed: R$0,00; Total Aprox: R$891,57.</xInfComp>
+                    </infoCompl>
+                </serv>
+                <valores>
+                    <vServPrest>
+                        <vServ>23712.05</vServ>
+                    </vServPrest>
+                    <trib>
+                        <tribMun>
+                            <tribISSQN>1</tribISSQN>
+                            <tpRetISSQN>1</tpRetISSQN>
+                            <pAliq>3.76</pAliq>
+                        </tribMun>
+                        <totTrib>
+                            <vTotTrib>
+                                <vTotTribFed>0.00</vTotTribFed>
+                                <vTotTribEst>0.00</vTotTribEst>
+                                <vTotTribMun>891.57</vTotTribMun>
+                            </vTotTrib>
+                        </totTrib>
+                    </trib>
+                </valores>
+            </infDPS>
+            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+                <SignedInfo>
+                    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                    <Reference URI="#DPS330550520391826000013949999000000000000010">
+                        <Transforms>
+                            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                        </Transforms>
+                        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                        <DigestValue>RugrfJ+pI9KmW15J25Q11hLbKow=</DigestValue>
+                    </Reference>
+                </SignedInfo>
+                <SignatureValue>AXExgWVJjnTxflDl7CppZJmuzASDWYEXDMyJBdUvyRy1XhvU//2SXqKUkkmHVO3MGX5J2/cUjY3dZiQ6qdVlrIWaWTExCqZg/HU0FiezLVYd30NFXW7bvFqAA1FgQV7uSAtAAC4yqkZjarPYHsQMZcMalAuEF+Bemo9midKjPOIH+39GRIyzxefBOZ7OtoVq6JvZX99QGxHSCuhmx/l3z8RT2YdO3jsxN8J8XqjU31exUOaakWBYXORW948TiLE8U1lVRCzYHbmpI4cQ7BVNDrGi6T8XWKCYtFraVOURXAf1yqHuY653sPHYg7DIa9PHrkb606cQ5aSYHDiINVftcA==</SignatureValue>
+                <KeyInfo>
+                    <X509Data>
+                        <X509Certificate>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</X509Certificate>
+                    </X509Data>
+                </KeyInfo>
+            </Signature>
+        </DPS>
+    </infNFSe>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="#NFS33055051203918260000139000000000001026059504964113">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>cdBTaDiLJSQHNz0iWc2/zQaiWmg=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>fgBYwyX5waEZH/d6YrMzoakn1GNOkjfgLBQ88YvpRLfttn5B31qdF0MQESTh7gvXvtmXlwtPpKKCXM493ArkN0l05GXifOEEjo96AMvyiyRYpYYYmMik6h+ISX0a5L7URKg0XX4kzXAH1fBK5hpyU/x50/nsh5tDO9yPd7TSIPM166j9N5+F4uYTLHfnsmqFTm4fbWMB7tXpLYU9t2gcg+jDQjGEDwRnkYvDtKDjXhGrc1o4Xb4cwRb35TMY9slPOZE5Mj1fvUZPjwgK1VmHbgZs8Dv9vuwfhQdkaXn07+VBvr2UubAAkSHsFBkqiDl6AtfZipDnX69UcPWYRAqzhg==</SignatureValue>
+        <KeyInfo>
+            <X509Data>
+                <X509Certificate>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</X509Certificate>
+            </X509Data>
+        </KeyInfo>
+    </Signature>
+</NFSe>
