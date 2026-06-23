@@ -217,4 +217,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-dados/certificados/
+dados
+certificado.pem
+chave_privada.key

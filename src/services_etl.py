@@ -1,5 +1,6 @@
 # src/services_etl.py
 import os
+import re
 import smtplib
 from email.message import EmailMessage
 import pandas as pd
@@ -26,11 +27,11 @@ class LeitorSimplesNacional:
 
     def carregar(self) -> pd.DataFrame:
         if not self.pasta.exists():
-            print("[AVISO] Pasta de Consulta Simples Nacional não encontrada. (dados/consulta_simples_nacional)")
+            print("[AVISO] Pasta de Consulta Simples Nacional não encontrada.")
             return pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN'])
             
         arquivos = list(self.pasta.glob("*.xlsx")) + list(self.pasta.glob("*.csv"))
-        if not arquivos:
+        if not arquivos:  
             print("[AVISO] Nenhum arquivo de Consulta Simples Nacional encontrado na pasta.")
             return pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN'])
             
@@ -102,6 +103,15 @@ class LeitorXmlNacional:
                 arvore = ET.parse(caminho)
                 raiz = arvore.getroot()
 
+                # --- Captura do NSU ---
+                nome_arquivo = caminho.name
+                match_nsu = re.search(r'nsu_(\d+)', nome_arquivo, re.IGNORECASE)
+                if match_nsu:
+                    nsu_xml = match_nsu.group(1)
+                else:
+                    numeros_nome = ''.join(filter(str.isdigit, nome_arquivo))
+                    nsu_xml = numeros_nome if numeros_nome else caminho.stem
+
                 numero_bruto = self._get_text(raiz, ['nNFSe', 'Numero', 'nNFS-e'])
                 numero_normalizado = self._normalizar_numero_nota(numero_bruto)
 
@@ -115,9 +125,22 @@ class LeitorXmlNacional:
                         cnpj = ''.join(filter(str.isdigit, str(cnpj_bruto))).zfill(14)
                     nome_xml = self._get_text(nodo_forn, ['xNome', 'RazaoSocial'], "Fornecedor Desconhecido")
 
+                # --- EXTRAÇÃO ALARGADA (Datas, Códigos, Bases) ---
+                dh_emi = self._get_text(raiz, ['dhEmi', 'DataEmissao', 'Competencia'])
+                data_emissao = dh_emi[:10] if dh_emi and len(dh_emi) >= 10 else ""
+                
+                cod_verificacao = self._get_text(raiz, ['cVerif', 'CodigoVerificacao'])
+                item_servico = self._get_text(raiz, ['cServ', 'ItemListaServico'])
+                mun_prestacao = self._get_text(raiz, ['xLocPrestacao', 'CodigoMunicipio', 'cMun'])
+                
                 valor_bruto = self._get_float(raiz, ['vServ', 'ValorServicos'])
                 if valor_bruto == 0.0: 
                     valor_bruto = self._get_float(raiz, ['vBC', 'BaseCalculo'])
+
+                base_calculo = self._get_float(raiz, ['vBC', 'BaseCalculo'])
+                v_liquido = self._get_float(raiz, ['vLiq', 'ValorLiquidoNfse'])
+                v_deducoes = self._get_float(raiz, ['vDeducao', 'ValorDeducoes'])
+                aliq_iss = self._get_float(raiz, ['pISSQN', 'Aliquota', 'pAliq'])
 
                 flag_ret_iss = self._get_text(raiz, ['tpRetISSQN', 'IssRetido'], '1')
                 op_simp_nac = self._get_text(raiz, ['opSimpNac', 'OptanteSimplesNacional'], '2')
@@ -126,10 +149,19 @@ class LeitorXmlNacional:
                     chave = f"{cnpj}_{numero_normalizado}"
                     registros.append({
                         "Chave": chave, 
+                        "NSU_XML": nsu_xml, 
                         "CNPJ_XML": cnpj, 
                         "Nota_XML": numero_normalizado,
                         "Nome_XML": nome_xml, 
+                        "DataEmissao_XML": data_emissao,
+                        "CodVerificacao_XML": cod_verificacao,
+                        "ItemServico_XML": item_servico,
+                        "MunPrestacao_XML": mun_prestacao,
                         "Valor_XML": valor_bruto,
+                        "BaseCalculo_XML": base_calculo,
+                        "ValorLiquido_XML": v_liquido,
+                        "ValorDeducoes_XML": v_deducoes,
+                        "AliquotaISS_XML": aliq_iss,
                         "ISS_XML": self._get_float(raiz, ['vISSQN', 'ValorIss']),
                         "Flag_Ret_ISS": flag_ret_iss,
                         "opSimpNac_XML": op_simp_nac,
@@ -144,7 +176,7 @@ class LeitorXmlNacional:
             except Exception:
                 pass 
 
-        print(f"[ETL XML] Sucesso! {len(registros)} Fatos Geradores mapeados.")
+        print(f"[ETL XML] Sucesso! {len(registros)} Fatos Geradores mapeados com detalhes avançados.")
         return pd.DataFrame(registros)
 
 
@@ -217,7 +249,9 @@ class LeitorRelatorioTotvs:
                 df_totvs['Nota_TOTVS'] = df_totvs['Docto'].apply(self._limpar_numero_nota)
                 df_totvs['CNPJ_TOTVS'] = df_totvs['CNPJ emit'].apply(self._limpar_cnpj)
                 
+                # Conversão de todas as rubricas financeiras
                 df_totvs['Valor_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'Tot. Nota')
+                df_totvs['BaseCalc_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'Base Calc.')
                 df_totvs['ISS_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'ISS')
                 df_totvs['IRRF_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'IRRF')
                 df_totvs['INSS_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'INSS')
@@ -227,6 +261,18 @@ class LeitorRelatorioTotvs:
                 
                 df_totvs['Chave'] = df_totvs.apply(lambda row: f"{row['CNPJ_TOTVS']}_{row['Nota_TOTVS']}" if row['CNPJ_TOTVS'] and row['Nota_TOTVS'] else None, axis=1)
                 df_totvs = df_totvs.dropna(subset=['Chave']).copy()
+                
+                print(f"[ETL TOTVS] A consolidar linhas fatiadas por Centro de Custo/Itens...")
+                cols_numericas = ['Valor_TOTVS', 'BaseCalc_TOTVS', 'ISS_TOTVS', 'IRRF_TOTVS', 'INSS_TOTVS', 'PIS_TOTVS', 'COFINS_TOTVS', 'CSLL_TOTVS']
+                
+                regras_agrupamento = {}
+                for coluna in df_totvs.columns:
+                    if coluna in cols_numericas:
+                        regras_agrupamento[coluna] = 'sum'
+                    elif coluna != 'Chave':
+                        regras_agrupamento[coluna] = 'first'
+                        
+                df_totvs = df_totvs.groupby('Chave', as_index=False).agg(regras_agrupamento)
                 
                 print(f"[ETL TOTVS] Lançamentos finais enviados para o cruzamento: {len(df_totvs)}")
                 return df_totvs
@@ -240,7 +286,7 @@ class LeitorRelatorioTotvs:
 
 class AuditorFiscal:
     def cruzar_dados(self, df_xml: pd.DataFrame, df_totvs: pd.DataFrame, df_simples: pd.DataFrame) -> pd.DataFrame:
-        print("[AUDITORIA] A executar a Malha Fina Tributária...")
+        print("[AUDITORIA] A executar a Malha Fina Tributária Avançada...")
         if df_xml.empty or df_totvs.empty:
             return pd.DataFrame()
             
@@ -257,35 +303,50 @@ class AuditorFiscal:
             if col in df_cruzamento.columns:
                 df_cruzamento[col] = df_cruzamento[col].fillna(df_cruzamento[col_fallback])
         
+        def formata_data_totvs(dt_str):
+            if pd.isna(dt_str) or not dt_str: return ""
+            dt_str = str(dt_str).strip()
+            if len(dt_str) >= 10 and dt_str[2] == '/' and dt_str[5] == '/':
+                return f"{dt_str[6:10]}-{dt_str[3:5]}-{dt_str[0:2]}"
+            if len(dt_str) >= 10 and dt_str[4] == '-':
+                return dt_str[:10]
+            return dt_str
+
         def validar_impostos(row):
             if row['_merge'] == 'right_only': return "FALTA_XML"
             if row['_merge'] == 'left_only': return "" 
             
             erros_encontrados = []
             
-            if abs(row['Valor_XML'] - row['Valor_TOTVS']) > 0.10:
+            # --- 1. VERIFICAÇÃO DE DATAS ---
+            dt_xml = str(row.get('DataEmissao_XML', '')).strip()[:10]
+            dt_totvs = formata_data_totvs(row.get('Dt.Emiss', ''))
+            if dt_xml and dt_totvs and dt_xml != dt_totvs:
+                erros_encontrados.append("DATA_EMISSAO")
+
+            # --- 2. VERIFICAÇÃO DE VALOR BRUTO ---
+            if abs(row.get('Valor_XML', 0.0) - row.get('Valor_TOTVS', 0.0)) > 0.10:
                 erros_encontrados.append("VALOR_BRUTO")
                 
+            # --- 3. VERIFICAÇÃO DE ISS ---
             flag_ret = str(row.get('Flag_Ret_ISS', '1'))
             iss_esperado = row.get('ISS_XML', 0.0) if flag_ret == '2' else 0.0
             if abs(iss_esperado - row.get('ISS_TOTVS', 0.0)) > 0.10:
                 erros_encontrados.append("ISS")
                 
+            # --- 4. VERIFICAÇÃO SIMPLES NACIONAL (Trava de DARF) ---
             is_simples = (str(row.get('Simples_SN', 'NÃO')).strip().upper() == 'SIM') or (str(row.get('opSimpNac_XML', '2')) == '1')
-            
             teve_erro_simples = False
             if is_simples:
                 soma_federais_totvs = sum([
-                    row.get('IRRF_TOTVS', 0.0),
-                    row.get('INSS_TOTVS', 0.0),
-                    row.get('CSLL_TOTVS', 0.0),
-                    row.get('PIS_TOTVS', 0.0),
-                    row.get('COFINS_TOTVS', 0.0)
+                    row.get('IRRF_TOTVS', 0.0), row.get('INSS_TOTVS', 0.0), 
+                    row.get('CSLL_TOTVS', 0.0), row.get('PIS_TOTVS', 0.0), row.get('COFINS_TOTVS', 0.0)
                 ])
                 if soma_federais_totvs > 0.05:
                     erros_encontrados.append("SIMPLES_RET_INDEVIDA")
                     teve_erro_simples = True
 
+            # --- 5. VERIFICAÇÃO DE FEDERAIS ---
             if not teve_erro_simples:
                 for nome, col_xml, col_erp in [('IR', 'IRRF_XML', 'IRRF_TOTVS'), ('INSS', 'INSS_XML', 'INSS_TOTVS'), ('CS', 'CSLL_XML', 'CSLL_TOTVS')]:
                     if abs(row.get(col_xml, 0.0) - row.get(col_erp, 0.0)) > 0.10:
@@ -316,6 +377,9 @@ class AuditorFiscal:
             if tem_iss: return "Verf. ISS"
             if tem_inss: return "Verf. INSS"
             if tem_cs: return "Verf. CS"
+            
+            if "DATA_EMISSAO" in obs and not "VALOR_BRUTO" in obs: return "Divergência de Data"
+            if "VALOR_BRUTO" in obs: return "Outras Divergências"
             return "Outras Divergências"
                 
         df_cruzamento['Observações'] = df_cruzamento.apply(validar_impostos, axis=1)
@@ -323,6 +387,63 @@ class AuditorFiscal:
         df_cruzamento['Apontamento_Mapeado'] = df_cruzamento['Observações'].apply(mapear_apontamento)
         
         return df_cruzamento
+
+    def _escrever_aba_formatada(self, ws, df):
+        if df.empty:
+            ws.append(["Nenhum dado encontrado."])
+            return
+            
+        df = df.fillna("")
+        colunas = list(df.columns)
+        ws.append(colunas)
+        
+        fill_header = PatternFill(fill_type="solid", fgColor="0E2841")
+        font_header = Font(bold=True, color="FFFFFF")
+        
+        for col_idx, col_name in enumerate(colunas, 1):
+            celula = ws.cell(row=1, column=col_idx)
+            celula.font = font_header
+            celula.fill = fill_header
+            ws.column_dimensions[get_column_letter(col_idx)].width = 20
+            
+        for r in df.itertuples(index=False):
+            ws.append(list(r))
+            
+        ws.freeze_panes = "A2"
+        ultima_coluna = get_column_letter(ws.max_column)
+        ws.auto_filter.ref = f"A1:{ultima_coluna}{ws.max_row}"
+
+    def exportar_detalhes_divergentes(self, df_resultado: pd.DataFrame, df_xml: pd.DataFrame, df_totvs: pd.DataFrame, caminho_saida: Path) -> Path:
+        print(f"[EXPORTAÇÃO] A extrair ficheiro detalhado das bases brutas para divergências...")
+        if df_resultado.empty: return None
+
+        df_divergentes = df_resultado[df_resultado['Valid. FINAL'] == 'DIVERGENTE']
+        if df_divergentes.empty:
+            return None
+
+        chaves_div = df_divergentes['Chave'].unique()
+        
+        xml_div = df_xml[df_xml['Chave'].isin(chaves_div)].copy()
+        totvs_div = df_totvs[df_totvs['Chave'].isin(chaves_div)].copy()
+
+        cols_xml = list(xml_div.columns)
+        if 'NSU_XML' in cols_xml:
+            cols_xml.insert(0, cols_xml.pop(cols_xml.index('NSU_XML')))
+            xml_div = xml_div[cols_xml]
+
+        arquivo_detalhes = caminho_saida / "Detalhes_Divergentes_Bases_Crus.xlsx"
+        wb = Workbook()
+        
+        ws_xml = wb.active
+        ws_xml.title = "XML_Divergentes"
+        self._escrever_aba_formatada(ws_xml, xml_div)
+
+        ws_totvs = wb.create_sheet("TOTVS_Divergentes")
+        self._escrever_aba_formatada(ws_totvs, totvs_div)
+        
+        wb.save(arquivo_detalhes)
+        print(f"[SUCESSO] Detalhes Brutos gerados em: {arquivo_detalhes}")
+        return arquivo_detalhes
 
     def exportar_relatorio_divergencias(self, df_resultado: pd.DataFrame, caminho_saida: Path) -> Path:
         print(f"[EXPORTAÇÃO] A desenhar painel executivo e a pintar colunas de erro...")
@@ -363,7 +484,8 @@ class AuditorFiscal:
             (10, "Verf. CS/INSS"),
             (11, "Verf. IR/ISS/INSS"),
             (12, "Verf. IR/INSS"),
-            (13, "Nota sem XML na Receita")
+            (13, "Nota sem XML na Receita"),
+            (14, "Divergência de Data")
         ]
         erros_contagem = df_erros['Apontamento_Mapeado'].value_counts().to_dict()
         dados_apontamentos = []
@@ -455,13 +577,30 @@ class AuditorFiscal:
             c_val = ws.cell(row=row, column=15)
             c_val.number_format = 'R$ #,##0.00'
 
-        # =======================================================
-        # ABA 2: VALIDAÇÃO COM CÉLULAS PINTADAS
-        # =======================================================
         ws_val = wb.create_sheet("Validação")
-        colunas_tecnicas = ['Chave', 'CNPJ_XML', 'Nota_XML', 'Nome_XML', 'Valor_XML', 'ISS_XML', 'Flag_Ret_ISS', 'IRRF_XML', 'INSS_XML', 'PIS_XML', 'COFINS_XML', 'CSLL_XML', 'Origem_XML', 'Nota_TOTVS', 'CNPJ_TOTVS', 'Valor_TOTVS', 'ISS_TOTVS', 'IRRF_TOTVS', 'INSS_TOTVS', 'PIS_TOTVS', 'COFINS_TOTVS', 'CSLL_TOTVS', '_merge', 'Apontamento_Mapeado']
-        colunas_originais = [col for col in df_resultado.columns if col not in colunas_tecnicas and col not in ['Observações', 'Valid. FINAL', 'CNPJ_Merge', 'CNPJ_Limpo', 'Simples_SN']]
-        colunas_finais = ['Observações', 'Valid. FINAL'] + colunas_originais
+        
+        colunas_comparacao = [
+            'CNPJ_TOTVS', 'Nota_TOTVS',
+            'DataEmissao_XML', 'Dt.Emiss',
+            'Valor_XML', 'Valor_TOTVS',
+            'BaseCalculo_XML', 'BaseCalc_TOTVS',
+            'ISS_XML', 'ISS_TOTVS',
+            'IRRF_XML', 'IRRF_TOTVS',
+            'INSS_XML', 'INSS_TOTVS',
+            'CSLL_XML', 'CSLL_TOTVS',
+            'PIS_XML', 'PIS_TOTVS',
+            'COFINS_XML', 'COFINS_TOTVS'
+        ]
+
+        colunas_tecnicas = [
+            'Chave', 'CNPJ_XML', 'Nota_XML', 'NSU_XML', 'Nome_XML', 'Origem_XML', '_merge', 
+            'Apontamento_Mapeado', 'CNPJ_Merge', 'CNPJ_Limpo', 'Simples_SN', 'Flag_Ret_ISS', 
+            'opSimpNac_XML', 'CodVerificacao_XML', 'ItemServico_XML', 'MunPrestacao_XML', 
+            'ValorLiquido_XML', 'ValorDeducoes_XML', 'AliquotaISS_XML'
+        ]
+        
+        colunas_originais = [col for col in df_resultado.columns if col not in colunas_tecnicas and col not in colunas_comparacao and col not in ['Observações', 'Valid. FINAL']]
+        colunas_finais = ['Observações', 'Valid. FINAL'] + colunas_comparacao + colunas_originais
         
         ws_val.append(colunas_finais)
         for col_idx, col_name in enumerate(colunas_finais, 1):
@@ -477,17 +616,15 @@ class AuditorFiscal:
             df_export = df_erros[colunas_finais].copy()
             df_export = df_export.fillna("")
             
-            # --- DEFINIÇÃO DO ESTILO VISUAL DOS ERROS ---
             col_idx_map = {col_name: idx for idx, col_name in enumerate(colunas_finais, 1)}
-            fill_erro = PatternFill(fill_type="solid", fgColor="FFC7CE") # Fundo Vermelho Claro
-            font_erro = Font(color="9C0006", bold=True)                  # Texto Vermelho Escuro
+            fill_erro = PatternFill(fill_type="solid", fgColor="FFC7CE") 
+            font_erro = Font(color="9C0006", bold=True)                  
             
             for r_idx, r in enumerate(df_export.itertuples(index=False), start=2):
                 ws_val.append(list(r))
                 
-                obs = str(r[0]) # A coluna Observações é sempre o índice 0 na iteração
+                obs = str(r[0])
                 
-                # Função rápida para pintar o par de colunas que está errado
                 def pintar_celulas(col_xml, col_totvs):
                     if col_xml in col_idx_map:
                         ws_val.cell(row=r_idx, column=col_idx_map[col_xml]).fill = fill_erro
@@ -496,20 +633,19 @@ class AuditorFiscal:
                         ws_val.cell(row=r_idx, column=col_idx_map[col_totvs]).fill = fill_erro
                         ws_val.cell(row=r_idx, column=col_idx_map[col_totvs]).font = font_erro
 
-                # Condicionais que disparam a "pintura"
+                if "DATA_EMISSAO" in obs: pintar_celulas("DataEmissao_XML", "Dt.Emiss")
                 if "VALOR_BRUTO" in obs: pintar_celulas("Valor_XML", "Valor_TOTVS")
                 if "ISS" in obs: pintar_celulas("ISS_XML", "ISS_TOTVS")
                 if "IR" in obs: pintar_celulas("IRRF_XML", "IRRF_TOTVS")
                 if "INSS" in obs: pintar_celulas("INSS_XML", "INSS_TOTVS")
                 if "CS" in obs: pintar_celulas("CSLL_XML", "CSLL_TOTVS")
                 
-                # Se for erro de DARF do Simples Nacional, pinta as colunas que o ERP reteve indevidamente
                 if "SIMPLES_RET_INDEVIDA" in obs:
                     for fed_col in ["IRRF_TOTVS", "INSS_TOTVS", "CSLL_TOTVS", "PIS_TOTVS", "COFINS_TOTVS"]:
                         if fed_col in col_idx_map:
                             try:
-                                val = float(r[col_idx_map[fed_col] - 1])
-                                if val > 0:
+                                val = r[col_idx_map[fed_col] - 1]
+                                if val and float(val) > 0:
                                     ws_val.cell(row=r_idx, column=col_idx_map[fed_col]).fill = fill_erro
                                     ws_val.cell(row=r_idx, column=col_idx_map[fed_col]).font = font_erro
                             except ValueError:
@@ -525,7 +661,7 @@ class AuditorFiscal:
 
 
 class NotificadorEmail:
-    def enviar_relatorio(self, caminho_arquivo: Path):
+    def enviar_relatorio(self, caminhos_arquivos: list):
         print(f"[EMAIL] A preparar envio para destinatário...")
         
         remetente = os.getenv('EMAIL_REMETENTE')
@@ -535,7 +671,7 @@ class NotificadorEmail:
         smtp_port = int(os.getenv('SMTP_PORT', 587))
 
         if not all([remetente, senha, destinatario, smtp_server]):
-            print("[AVISO] Credenciais de e-mail ausentes no .env. A ignorar envio.")
+            print("[AVISO] Credenciais de e-mail ausentes no .env. Ignorando envio.")
             return
 
         try:
@@ -543,19 +679,22 @@ class NotificadorEmail:
             msg['Subject'] = '📊 Relatório Diário: Malha Fina e Apontamentos'
             msg['From'] = remetente
             msg['To'] = destinatario
-            msg.set_content("Bom dia,\n\nA auditoria foi concluída.\nEm anexo, a folha de cálculo executiva.\n\nCom os melhores cumprimentos,\nAutomação")
+            msg.set_content("Bom dia,\n\nA auditoria foi concluída.\nEm anexo, o Dashboard consolidado e o Arquivo Auxiliar com os dados brutos das divergências.\n\nCom os melhores cumprimentos,\nAutomação")
 
-            with open(caminho_arquivo, 'rb') as f:
-                msg.add_attachment(f.read(), maintype='application', subtype='vnd.openxmlformats-officedocument.spreadsheetml.sheet', filename=caminho_arquivo.name)
+            for caminho in caminhos_arquivos:
+                if caminho and caminho.exists():
+                    with open(caminho, 'rb') as f:
+                        msg.add_attachment(f.read(), maintype='application', subtype='vnd.openxmlformats-officedocument.spreadsheetml.sheet', filename=caminho.name)
 
             with smtplib.SMTP(smtp_server, smtp_port) as server:
                 server.starttls()
                 server.login(remetente, senha)
                 server.send_message(msg)
                 
-            print("[SUCESSO] E-mail enviado!")
+            print(f"[SUCESSO] E-mail enviado com {len(caminhos_arquivos)} ficheiros anexados!")
         except Exception as e:
             print(f"[ERRO EMAIL] Falha ao enviar o e-mail: {e}")
+
 
 if __name__ == "__main__":
     RAIZ_PROJETO = Path(__file__).resolve().parent.parent
@@ -582,8 +721,12 @@ if __name__ == "__main__":
         print(f"-> Notas no TOTVS SEM XML no Governo: {qtd_so_totvs}")
         
         config_caminhos.saida_auditoria.mkdir(parents=True, exist_ok=True)
-        arquivo_excel = auditor.exportar_relatorio_divergencias(df_resultado=resultado, caminho_saida=config_caminhos.saida_auditoria)
         
-        if arquivo_excel:
-            print("\n[!] Painel Gerado e Guardado na Pasta. Analise o ficheiro Excel para ver as células pintadas!")
-            NotificadorEmail().enviar_relatorio(arquivo_excel)
+        arquivo_excel = auditor.exportar_relatorio_divergencias(df_resultado=resultado, caminho_saida=config_caminhos.saida_auditoria)
+        arquivo_detalhes = auditor.exportar_detalhes_divergentes(df_resultado=resultado, df_xml=tabela_xml, df_totvs=tabela_totvs, caminho_saida=config_caminhos.saida_auditoria)
+        
+        arquivos_para_enviar = [arq for arq in [arquivo_excel, arquivo_detalhes] if arq is not None]
+        
+        if arquivos_para_enviar:
+            print("\n[!] Painéis Gerados e Guardados na Pasta. A disparar e-mails...")
+            NotificadorEmail().enviar_relatorio(arquivos_para_enviar)
