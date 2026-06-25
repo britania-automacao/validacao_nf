@@ -1,18 +1,22 @@
 # Motor de Tratamento de Dados e Engenharia de Dados (ETL)
 pandas>=2.2.0
 openpyxl>=3.1.2
+python-dateutil>=2.8.2
 
-# Consumo de APIs e Validações Externas
+# Consumo de APIs e Variáveis de Ambiente
 requests>=2.31.0
+python-dotenv>=1.0.0
 
 # Automação Web (Portal Quirius)
 selenium>=4.18.0
+webdriver-manager>=4.0.1
 playwright>=1.42.0
 
-# Integração Nativa com o Windows (Envio de E-mails via Outlook)
+# Integração Nativa com o Windows
 pywin32>=306; sys_platform == 'win32'
 
 # Compilação e Distribuição da Aplicação (.exe)
 pyinstaller>=6.4.0
 
+# Segurança e Criptografia
 cryptography
