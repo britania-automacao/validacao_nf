@@ -1,4 +1,3 @@
-# src/services_etl.py
 import os
 import re
 import smtplib
@@ -7,11 +6,9 @@ import pandas as pd
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from dotenv import load_dotenv
-
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
-
 from config import CaminhosProjeto
 
 load_dotenv()
@@ -37,7 +34,7 @@ class LeitorSimplesNacional:
             
         caminho = arquivos[0]
         try:
-            print(f"[ETL SIMPLES] A ler base de Consulta Simples Nacional: {caminho.name}")
+            print(f"[ETL SIMPLES] Lendo base de Consulta Simples Nacional: {caminho.name}")
             if caminho.suffix.lower() == '.xlsx':
                 df = pd.read_excel(caminho, dtype=str)
             else:
@@ -59,9 +56,11 @@ class LeitorSimplesNacional:
             return pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN'])
 
 
-class LeitorXmlNacional:
+class GeradorCsvGoverno:
+    """Extrai os dados dos XMLs com inteligência de Carga Incremental"""
     def __init__(self, caminhos: CaminhosProjeto):
         self.caminhos = caminhos
+        self.arquivo_saida_csv = self.caminhos.diretorio_base / "dados" / "Base_XML_Governo_Consolidada.csv"
 
     def _get_node(self, raiz, tags_possiveis):
         for elem in raiz.iter():
@@ -89,28 +88,58 @@ class LeitorXmlNacional:
         if not num_limpo: return str(numero_bruto).strip()
         return str(int(num_limpo))
 
-    def processar_diretorio_xml(self) -> pd.DataFrame:
-        print("[ETL XML] A iniciar a extração do Fato Gerador (Governo)...")
+    def _achatar_xml(self, nodo, prefixo=''):
+        dados = {}
+        if nodo.attrib:
+            for attr_nome, attr_valor in nodo.attrib.items():
+                chave = f"{prefixo}_{attr_nome}" if prefixo else attr_nome
+                dados[chave] = attr_valor
+                
+        for filho in nodo:
+            tag = filho.tag.split('}')[-1]
+            chave = f"{prefixo}_{tag}" if prefixo else tag
+            
+            if len(filho) > 0:
+                dados.update(self._achatar_xml(filho, chave))
+            
+            if filho.text and filho.text.strip():
+                dados[chave] = filho.text.strip()
+                
+        return dados
+
+    def gerar_csv(self) -> Path:
+        print("[ETL XML] Verificando XMLs Nacionais para atualização da Base CSV...")
         lista_arquivos_xml = list(self.caminhos.xml_servicos_nacional.glob("*.xml"))
         
         if not lista_arquivos_xml:
             print("[AVISO] A pasta de XMLs está vazia.")
-            return pd.DataFrame()
+            return None
 
-        registros = []
+        arquivos_ja_processados = set()
+        if self.arquivo_saida_csv.exists():
+            try:
+                # Lê apenas a coluna do nome do arquivo para não gastar memória
+                df_existente = pd.read_csv(self.arquivo_saida_csv, sep=';', usecols=['Origem_XML'], encoding='utf-8-sig')
+                arquivos_ja_processados = set(df_existente['Origem_XML'].dropna().tolist())
+                print(f"[ETL XML] A base atual possui {len(arquivos_ja_processados)} notas registadas.")
+            except Exception as e:
+                print(f"[AVISO] Não foi possível ler o CSV atual. Recriando do zero. Erro: {e}")
+
+        registros_novos = []
         for caminho in lista_arquivos_xml:
+            # Se o XML já está no CSV, ele ignora e passa para o próximo instantaneamente!
+            if caminho.name in arquivos_ja_processados:
+                continue
+
             try:
                 arvore = ET.parse(caminho)
                 raiz = arvore.getroot()
 
-                # --- Captura do NSU ---
+                registro = self._achatar_xml(raiz)
+
                 nome_arquivo = caminho.name
                 match_nsu = re.search(r'nsu_(\d+)', nome_arquivo, re.IGNORECASE)
-                if match_nsu:
-                    nsu_xml = match_nsu.group(1)
-                else:
-                    numeros_nome = ''.join(filter(str.isdigit, nome_arquivo))
-                    nsu_xml = numeros_nome if numeros_nome else caminho.stem
+                nsu_xml = match_nsu.group(1) if match_nsu else ( ''.join(filter(str.isdigit, nome_arquivo)) or caminho.stem )
 
                 numero_bruto = self._get_text(raiz, ['nNFSe', 'Numero', 'nNFS-e'])
                 numero_normalizado = self._normalizar_numero_nota(numero_bruto)
@@ -125,59 +154,78 @@ class LeitorXmlNacional:
                         cnpj = ''.join(filter(str.isdigit, str(cnpj_bruto))).zfill(14)
                     nome_xml = self._get_text(nodo_forn, ['xNome', 'RazaoSocial'], "Fornecedor Desconhecido")
 
-                # --- EXTRAÇÃO ALARGADA (Datas, Códigos, Bases) ---
                 dh_emi = self._get_text(raiz, ['dhEmi', 'DataEmissao', 'Competencia'])
                 data_emissao = dh_emi[:10] if dh_emi and len(dh_emi) >= 10 else ""
-                
-                cod_verificacao = self._get_text(raiz, ['cVerif', 'CodigoVerificacao'])
-                item_servico = self._get_text(raiz, ['cServ', 'ItemListaServico'])
-                mun_prestacao = self._get_text(raiz, ['xLocPrestacao', 'CodigoMunicipio', 'cMun'])
                 
                 valor_bruto = self._get_float(raiz, ['vServ', 'ValorServicos'])
                 if valor_bruto == 0.0: 
                     valor_bruto = self._get_float(raiz, ['vBC', 'BaseCalculo'])
-
-                base_calculo = self._get_float(raiz, ['vBC', 'BaseCalculo'])
-                v_liquido = self._get_float(raiz, ['vLiq', 'ValorLiquidoNfse'])
-                v_deducoes = self._get_float(raiz, ['vDeducao', 'ValorDeducoes'])
-                aliq_iss = self._get_float(raiz, ['pISSQN', 'Aliquota', 'pAliq'])
 
                 flag_ret_iss = self._get_text(raiz, ['tpRetISSQN', 'IssRetido'], '1')
                 op_simp_nac = self._get_text(raiz, ['opSimpNac', 'OptanteSimplesNacional'], '2')
 
                 if cnpj and numero_normalizado:
                     chave = f"{cnpj}_{numero_normalizado}"
-                    registros.append({
-                        "Chave": chave, 
-                        "NSU_XML": nsu_xml, 
-                        "CNPJ_XML": cnpj, 
-                        "Nota_XML": numero_normalizado,
-                        "Nome_XML": nome_xml, 
-                        "DataEmissao_XML": data_emissao,
-                        "CodVerificacao_XML": cod_verificacao,
-                        "ItemServico_XML": item_servico,
-                        "MunPrestacao_XML": mun_prestacao,
-                        "Valor_XML": valor_bruto,
-                        "BaseCalculo_XML": base_calculo,
-                        "ValorLiquido_XML": v_liquido,
-                        "ValorDeducoes_XML": v_deducoes,
-                        "AliquotaISS_XML": aliq_iss,
-                        "ISS_XML": self._get_float(raiz, ['vISSQN', 'ValorIss']),
-                        "Flag_Ret_ISS": flag_ret_iss,
-                        "opSimpNac_XML": op_simp_nac,
-                        "IRRF_XML": self._get_float(raiz, ['vRetIRRF', 'ValorIr']),
-                        "INSS_XML": self._get_float(raiz, ['vRetCP', 'ValorInss']),
-                        "PIS_XML": self._get_float(raiz, ['vRetPIS', 'ValorPis']),
-                        "COFINS_XML": self._get_float(raiz, ['vRetCOFINS', 'ValorCofins']),
-                        "CSLL_XML": self._get_float(raiz, ['vRetCSLL', 'ValorCsll']),
-                        "Origem_XML": caminho.name
-                    })
+                    
+                    registro["Chave"] = chave
+                    registro["NSU_XML"] = nsu_xml
+                    registro["CNPJ_XML"] = cnpj
+                    registro["Nota_XML"] = numero_normalizado
+                    registro["Nome_XML"] = nome_xml
+                    registro["DataEmissao_XML"] = data_emissao
+                    registro["Valor_XML"] = valor_bruto
+                    registro["BaseCalculo_XML"] = self._get_float(raiz, ['vBC', 'BaseCalculo'])
+                    registro["ISS_XML"] = self._get_float(raiz, ['vISSQN', 'ValorIss'])
+                    registro["Flag_Ret_ISS"] = flag_ret_iss
+                    registro["opSimpNac_XML"] = op_simp_nac
+                    registro["IRRF_XML"] = self._get_float(raiz, ['vRetIRRF', 'ValorIr'])
+                    registro["INSS_XML"] = self._get_float(raiz, ['vRetCP', 'ValorInss'])
+                    registro["PIS_XML"] = self._get_float(raiz, ['vRetPIS', 'ValorPis'])
+                    registro["COFINS_XML"] = self._get_float(raiz, ['vRetCOFINS', 'ValorCofins'])
+                    registro["CSLL_XML"] = self._get_float(raiz, ['vRetCSLL', 'ValorCsll'])
+                    registro["Origem_XML"] = caminho.name
+                    
+                    registros_novos.append(registro)
 
             except Exception:
                 pass 
 
-        print(f"[ETL XML] Sucesso! {len(registros)} Fatos Geradores mapeados com detalhes avançados.")
-        return pd.DataFrame(registros)
+        # --- SALVANDO DADOS (Carga Otimizada) ---
+        if registros_novos:
+            df_novos = pd.DataFrame(registros_novos)
+            
+            if self.arquivo_saida_csv.exists() and len(arquivos_ja_processados) > 0:
+                # Mode='a' (Append): Adiciona as linhas no fim do arquivo sem recriar o cabeçalho
+                df_novos.to_csv(self.arquivo_saida_csv, mode='a', header=False, sep=';', index=False, encoding='utf-8-sig')
+                print(f"[ETL XML] Processamento Rápido! +{len(df_novos)} NOVAS notas adicionadas à Base CSV.")
+            else:
+                # Arquivo não existe: Cria do zero
+                df_novos.to_csv(self.arquivo_saida_csv, sep=';', index=False, encoding='utf-8-sig')
+                print(f"[ETL XML] Sucesso! CSV Base do Governo criado do zero com {len(df_novos)} notas.")
+        else:
+            print("[ETL XML] Nenhuma nota nova na pasta. O CSV do Governo já está 100% atualizado!")
+            
+        return self.arquivo_saida_csv
+
+
+class LeitorBaseGoverno:
+    """Lê o Data Lake (CSV) gerado para enviar à Malha Fina"""
+    def __init__(self, caminho_csv: Path):
+        self.caminho_csv = caminho_csv
+
+    def carregar(self) -> pd.DataFrame:
+        if not self.caminho_csv or not self.caminho_csv.exists():
+            return pd.DataFrame()
+            
+        print("[ETL GOVERNO] Carregando dados da Base Consolidada (CSV)...")
+        df = pd.read_csv(self.caminho_csv, sep=';', encoding='utf-8-sig', dtype=str)
+        
+        cols_numericas = ['Valor_XML', 'BaseCalculo_XML', 'ISS_XML', 'IRRF_XML', 'INSS_XML', 'PIS_XML', 'COFINS_XML', 'CSLL_XML']
+        for col in cols_numericas:
+            if col in df.columns:
+                df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0.0)
+                
+        return df
 
 
 class LeitorRelatorioTotvs:
@@ -249,7 +297,6 @@ class LeitorRelatorioTotvs:
                 df_totvs['Nota_TOTVS'] = df_totvs['Docto'].apply(self._limpar_numero_nota)
                 df_totvs['CNPJ_TOTVS'] = df_totvs['CNPJ emit'].apply(self._limpar_cnpj)
                 
-                # Conversão de todas as rubricas financeiras
                 df_totvs['Valor_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'Tot. Nota')
                 df_totvs['BaseCalc_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'Base Calc.')
                 df_totvs['ISS_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'ISS')
@@ -318,23 +365,19 @@ class AuditorFiscal:
             
             erros_encontrados = []
             
-            # --- 1. VERIFICAÇÃO DE DATAS ---
             dt_xml = str(row.get('DataEmissao_XML', '')).strip()[:10]
             dt_totvs = formata_data_totvs(row.get('Dt.Emiss', ''))
             if dt_xml and dt_totvs and dt_xml != dt_totvs:
                 erros_encontrados.append("DATA_EMISSAO")
 
-            # --- 2. VERIFICAÇÃO DE VALOR BRUTO ---
             if abs(row.get('Valor_XML', 0.0) - row.get('Valor_TOTVS', 0.0)) > 0.10:
                 erros_encontrados.append("VALOR_BRUTO")
                 
-            # --- 3. VERIFICAÇÃO DE ISS ---
             flag_ret = str(row.get('Flag_Ret_ISS', '1'))
             iss_esperado = row.get('ISS_XML', 0.0) if flag_ret == '2' else 0.0
             if abs(iss_esperado - row.get('ISS_TOTVS', 0.0)) > 0.10:
                 erros_encontrados.append("ISS")
                 
-            # --- 4. VERIFICAÇÃO SIMPLES NACIONAL (Trava de DARF) ---
             is_simples = (str(row.get('Simples_SN', 'NÃO')).strip().upper() == 'SIM') or (str(row.get('opSimpNac_XML', '2')) == '1')
             teve_erro_simples = False
             if is_simples:
@@ -346,7 +389,6 @@ class AuditorFiscal:
                     erros_encontrados.append("SIMPLES_RET_INDEVIDA")
                     teve_erro_simples = True
 
-            # --- 5. VERIFICAÇÃO DE FEDERAIS ---
             if not teve_erro_simples:
                 for nome, col_xml, col_erp in [('IR', 'IRRF_XML', 'IRRF_TOTVS'), ('INSS', 'INSS_XML', 'INSS_TOTVS'), ('CS', 'CSLL_XML', 'CSLL_TOTVS')]:
                     if abs(row.get(col_xml, 0.0) - row.get(col_erp, 0.0)) > 0.10:
@@ -583,7 +625,6 @@ class AuditorFiscal:
             'CNPJ_TOTVS', 'Nota_TOTVS',
             'DataEmissao_XML', 'Dt.Emiss',
             'Valor_XML', 'Valor_TOTVS',
-            'BaseCalculo_XML', 'BaseCalc_TOTVS',
             'ISS_XML', 'ISS_TOTVS',
             'IRRF_XML', 'IRRF_TOTVS',
             'INSS_XML', 'INSS_TOTVS',
@@ -595,8 +636,7 @@ class AuditorFiscal:
         colunas_tecnicas = [
             'Chave', 'CNPJ_XML', 'Nota_XML', 'NSU_XML', 'Nome_XML', 'Origem_XML', '_merge', 
             'Apontamento_Mapeado', 'CNPJ_Merge', 'CNPJ_Limpo', 'Simples_SN', 'Flag_Ret_ISS', 
-            'opSimpNac_XML', 'CodVerificacao_XML', 'ItemServico_XML', 'MunPrestacao_XML', 
-            'ValorLiquido_XML', 'ValorDeducoes_XML', 'AliquotaISS_XML'
+            'opSimpNac_XML', 'BaseCalculo_XML', 'BaseCalc_TOTVS'
         ]
         
         colunas_originais = [col for col in df_resultado.columns if col not in colunas_tecnicas and col not in colunas_comparacao and col not in ['Observações', 'Valid. FINAL']]
@@ -700,7 +740,11 @@ if __name__ == "__main__":
     RAIZ_PROJETO = Path(__file__).resolve().parent.parent
     config_caminhos = CaminhosProjeto(diretorio_base=RAIZ_PROJETO)
     
-    tabela_xml = LeitorXmlNacional(caminhos=config_caminhos).processar_diretorio_xml()
+    gerador_csv = GeradorCsvGoverno(caminhos=config_caminhos)
+    caminho_base_governo = gerador_csv.gerar_csv()
+    
+    tabela_xml = LeitorBaseGoverno(caminho_csv=caminho_base_governo).carregar()
+    
     tabela_totvs = LeitorRelatorioTotvs(caminhos=config_caminhos).processar_relatorio()
     tabela_simples = LeitorSimplesNacional(diretorio_base=RAIZ_PROJETO).carregar()
     
