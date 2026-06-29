@@ -1,5 +1,8 @@
+# src/services_etl.py
 import os
 import re
+import time
+import requests
 import smtplib
 from email.message import EmailMessage
 import pandas as pd
@@ -16,43 +19,108 @@ load_dotenv()
 class LeitorSimplesNacional:
     def __init__(self, diretorio_base: Path):
         self.pasta = diretorio_base / "dados" / "consulta_simples_nacional"
+        self.pasta.mkdir(parents=True, exist_ok=True)
 
     def _limpar_cnpj(self, cnpj_bruto) -> str:
         if pd.isna(cnpj_bruto): return ""
         limpo = ''.join(filter(str.isdigit, str(cnpj_bruto)))
         return limpo.zfill(14) if limpo else ""
 
-    def carregar(self) -> pd.DataFrame:
-        if not self.pasta.exists():
-            print("[AVISO] Pasta de Consulta Simples Nacional não encontrada.")
-            return pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN'])
-            
-        arquivos = list(self.pasta.glob("*.xlsx")) + list(self.pasta.glob("*.csv"))
-        if not arquivos:  
-            print("[AVISO] Nenhum arquivo de Consulta Simples Nacional encontrado na pasta.")
-            return pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN'])
-            
-        caminho = arquivos[0]
+    def _consultar_api(self, cnpj: str) -> str:
+        """Consulta a BrasilAPI para verificar se o CNPJ é optante pelo Simples."""
+        if not cnpj or len(cnpj) != 14: 
+            return "NÃO"
         try:
-            print(f"[ETL SIMPLES] Lendo base de Consulta Simples Nacional: {caminho.name}")
-            if caminho.suffix.lower() == '.xlsx':
-                df = pd.read_excel(caminho, dtype=str)
-            else:
-                df = pd.read_csv(caminho, sep=',', encoding='utf-8', dtype=str)
-                if len(df.columns) == 1:
-                    df = pd.read_csv(caminho, sep=';', encoding='latin1', dtype=str)
+            url = f"https://brasilapi.com.br/api/cnpj/v1/{cnpj}"
+            response = requests.get(url, timeout=10)
+            if response.status_code == 200:
+                dados = response.json()
+                opcao = dados.get("opcao_pelo_simples")
+                # Se for True é SIM. Se for False ou null, é NÃO.
+                return "SIM" if opcao is True else "NÃO"
+        except Exception:
+            pass # Se a API falhar (cair a internet, etc), assume NÃO por segurança.
+        return "NÃO"
+
+    def carregar(self, cnpjs_alvo=None) -> pd.DataFrame:
+        arquivos = list(self.pasta.glob("*.xlsx")) + list(self.pasta.glob("*.csv"))
+        
+        df_original = pd.DataFrame()
+        col_cnpj, col_simples = "CNPJ", "SIMPLES"
+        caminho_salvar = None
+
+        if arquivos:
+            caminho_salvar = arquivos[0]
+            try:
+                print(f"[ETL SIMPLES] Lendo base de Consulta Simples Nacional: {caminho_salvar.name}")
+                if caminho_salvar.suffix.lower() == '.xlsx':
+                    df_original = pd.read_excel(caminho_salvar, dtype=str)
+                else:
+                    df_original = pd.read_csv(caminho_salvar, sep=',', encoding='utf-8', dtype=str)
+                    if len(df_original.columns) == 1:
+                        df_original = pd.read_csv(caminho_salvar, sep=';', encoding='latin1', dtype=str)
+                        
+                col_cnpj = [c for c in df_original.columns if 'CNPJ' in c.upper()][0]
+                col_simples = [c for c in df_original.columns if 'SIMPLES' in c.upper()][0]
+                
+                df_original['CNPJ_Limpo'] = df_original[col_cnpj].apply(self._limpar_cnpj)
+                df_original['Simples_SN'] = df_original[col_simples].str.strip().str.upper()
+                
+            except Exception as e:
+                print(f"[ERRO SIMPLES] Falha ao estruturar a base do Simples Nacional: {e}")
+                df_original = pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN'])
+        else:
+            print("[AVISO] Nenhum arquivo de Simples Nacional encontrado. Criando base zerada...")
+            caminho_salvar = self.pasta / "consulta_simples_nacional.xlsx"
+            df_original = pd.DataFrame(columns=['CNPJ', 'SIMPLES', 'CNPJ_Limpo', 'Simples_SN'])
+
+        # --- LÓGICA DE API (AUTO-HEALING) ---
+        if cnpjs_alvo:
+            cnpjs_existentes = set()
+            if not df_original.empty and 'CNPJ_Limpo' in df_original.columns:
+                cnpjs_existentes = set(df_original['CNPJ_Limpo'].dropna().tolist())
+
+            # Filtra os CNPJs que temos em mãos, mas que não estão na nossa base local
+            cnpjs_faltantes = {c for c in cnpjs_alvo if isinstance(c, str) and len(c) == 14} - cnpjs_existentes
+
+            if cnpjs_faltantes:
+                print(f"[API SIMPLES] {len(cnpjs_faltantes)} CNPJs novos detectados! Consultando BrasilAPI...")
+                novos_registros = []
+                
+                for idx, cnpj in enumerate(cnpjs_faltantes, 1):
+                    status = self._consultar_api(cnpj)
+                    nova_linha = {
+                        col_cnpj: cnpj, 
+                        col_simples: status,
+                        'CNPJ_Limpo': cnpj,
+                        'Simples_SN': status
+                    }
+                    novos_registros.append(nova_linha)
                     
-            col_cnpj = [c for c in df.columns if 'CNPJ' in c.upper()][0]
-            col_simples = [c for c in df.columns if 'SIMPLES' in c.upper()][0]
-            
-            df['CNPJ_Limpo'] = df[col_cnpj].apply(self._limpar_cnpj)
-            df['Simples_SN'] = df[col_simples].str.strip().str.upper()
-            
-            df = df.drop_duplicates(subset=['CNPJ_Limpo'])
-            return df[['CNPJ_Limpo', 'Simples_SN']]
-            
-        except Exception as e:
-            print(f"[ERRO SIMPLES] Falha ao estruturar a base do Simples Nacional: {e}")
+                    if idx % 10 == 0:
+                        print(f"  -> Consultados {idx}/{len(cnpjs_faltantes)}...")
+                    time.sleep(0.4) # Previne bloqueio da BrasilAPI (Rate Limit)
+
+                # Adiciona os novos resultados no DataFrame original
+                df_novos = pd.DataFrame(novos_registros)
+                df_original = pd.concat([df_original, df_novos], ignore_index=True)
+                
+                # Salva o arquivo permanentemente para não consultar de novo amanhã
+                try:
+                    df_salvar = df_original.drop(columns=['CNPJ_Limpo', 'Simples_SN'], errors='ignore')
+                    if caminho_salvar.suffix.lower() == '.xlsx':
+                        df_salvar.to_excel(caminho_salvar, index=False)
+                    else:
+                        df_salvar.to_csv(caminho_salvar, sep=';', index=False, encoding='utf-8-sig')
+                    print(f"[SUCESSO] Arquivo '{caminho_salvar.name}' atualizado permanentemente com os novos CNPJs!")
+                except Exception as e:
+                    print(f"[ERRO] Não foi possível salvar o arquivo atualizado: {e}")
+
+        # Retorno limpo para a Malha Fina
+        if not df_original.empty and 'CNPJ_Limpo' in df_original.columns:
+            df_retorno = df_original.drop_duplicates(subset=['CNPJ_Limpo'])
+            return df_retorno[['CNPJ_Limpo', 'Simples_SN']]
+        else:
             return pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN'])
 
 
@@ -118,7 +186,6 @@ class GeradorCsvGoverno:
         arquivos_ja_processados = set()
         if self.arquivo_saida_csv.exists():
             try:
-                # Lê apenas a coluna do nome do arquivo para não gastar memória
                 df_existente = pd.read_csv(self.arquivo_saida_csv, sep=';', usecols=['Origem_XML'], encoding='utf-8-sig')
                 arquivos_ja_processados = set(df_existente['Origem_XML'].dropna().tolist())
                 print(f"[ETL XML] A base atual possui {len(arquivos_ja_processados)} notas registadas.")
@@ -127,7 +194,6 @@ class GeradorCsvGoverno:
 
         registros_novos = []
         for caminho in lista_arquivos_xml:
-            # Se o XML já está no CSV, ele ignora e passa para o próximo instantaneamente!
             if caminho.name in arquivos_ja_processados:
                 continue
 
@@ -190,16 +256,13 @@ class GeradorCsvGoverno:
             except Exception:
                 pass 
 
-        # --- SALVANDO DADOS (Carga Otimizada) ---
         if registros_novos:
             df_novos = pd.DataFrame(registros_novos)
             
             if self.arquivo_saida_csv.exists() and len(arquivos_ja_processados) > 0:
-                # Mode='a' (Append): Adiciona as linhas no fim do arquivo sem recriar o cabeçalho
                 df_novos.to_csv(self.arquivo_saida_csv, mode='a', header=False, sep=';', index=False, encoding='utf-8-sig')
                 print(f"[ETL XML] Processamento Rápido! +{len(df_novos)} NOVAS notas adicionadas à Base CSV.")
             else:
-                # Arquivo não existe: Cria do zero
                 df_novos.to_csv(self.arquivo_saida_csv, sep=';', index=False, encoding='utf-8-sig')
                 print(f"[ETL XML] Sucesso! CSV Base do Governo criado do zero com {len(df_novos)} notas.")
         else:
@@ -740,13 +803,23 @@ if __name__ == "__main__":
     RAIZ_PROJETO = Path(__file__).resolve().parent.parent
     config_caminhos = CaminhosProjeto(diretorio_base=RAIZ_PROJETO)
     
+    # 1. ACHATA OS XMLs E GERA O CSV CONSOLIDADO
     gerador_csv = GeradorCsvGoverno(caminhos=config_caminhos)
     caminho_base_governo = gerador_csv.gerar_csv()
     
+    # 2. LÊ O CSV PARA A MALHA FINA E O ERP
     tabela_xml = LeitorBaseGoverno(caminho_csv=caminho_base_governo).carregar()
-    
     tabela_totvs = LeitorRelatorioTotvs(caminhos=config_caminhos).processar_relatorio()
-    tabela_simples = LeitorSimplesNacional(diretorio_base=RAIZ_PROJETO).carregar()
+    
+    # 3. EXTRAI TODOS OS CNPJs ENCONTRADOS PARA CONSULTAR NA API SE NECESSÁRIO
+    cnpjs_para_consultar = set()
+    if not tabela_xml.empty and 'CNPJ_XML' in tabela_xml.columns:
+        cnpjs_para_consultar.update(tabela_xml['CNPJ_XML'].dropna().tolist())
+    if not tabela_totvs.empty and 'CNPJ_TOTVS' in tabela_totvs.columns:
+        cnpjs_para_consultar.update(tabela_totvs['CNPJ_TOTVS'].dropna().tolist())
+        
+    # 4. CARREGA O SIMPLES NACIONAL (COM AUTO-HEALING VIA BRASILAPI)
+    tabela_simples = LeitorSimplesNacional(diretorio_base=RAIZ_PROJETO).carregar(cnpjs_alvo=cnpjs_para_consultar)
     
     auditor = AuditorFiscal()
     resultado = auditor.cruzar_dados(df_xml=tabela_xml, df_totvs=tabela_totvs, df_simples=tabela_simples)
