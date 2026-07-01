@@ -3,8 +3,11 @@ import os
 import time
 import shutil
 import zipfile
+import logging
+import argparse
 from pathlib import Path
 from datetime import datetime
+from dataclasses import dataclass
 from dateutil.relativedelta import relativedelta
 from dotenv import load_dotenv
 
@@ -24,8 +27,34 @@ from config import CaminhosProjeto
 
 load_dotenv()
 
+logger = logging.getLogger("quirius_fetcher")
+
+
+def setup_logger(diretorio_base: Path) -> logging.Logger:
+    historico_dir = diretorio_base / "dados" / "historico"
+    historico_dir.mkdir(parents=True, exist_ok=True)
+    
+    logger_obj = logging.getLogger("quirius_fetcher")
+    logger_obj.setLevel(logging.INFO)
+    
+    if not logger_obj.handlers:
+        formatter = logging.Formatter('%(asctime)s - %(levelname)s - [%(name)s] %(message)s')
+        
+        # File handler
+        file_handler = logging.FileHandler(historico_dir / "quirius.log", encoding='utf-8')
+        file_handler.setFormatter(formatter)
+        logger_obj.addHandler(file_handler)
+        
+        # Console stream handler
+        stream_handler = logging.StreamHandler()
+        stream_handler.setFormatter(formatter)
+        logger_obj.addHandler(stream_handler)
+        
+    return logger_obj
+
+
 def get_driver(headless: bool = False, download_dir: Path | None = None, insecure_origin: str | None = None) -> WebDriver:
-    print("Driver: Instantiating...")
+    logger.info("Initializing Chrome WebDriver...")
     
     options = Options()
     # Commented out to allow dynamic download directory preferences to work without prompt dialogs
@@ -35,7 +64,9 @@ def get_driver(headless: bool = False, download_dir: Path | None = None, insecur
     options.add_argument("--disable-plugins-discovery")
     options.add_argument("--disable-notifications")
     options.add_argument("--disable-popup-blocking")
-    options.add_argument(f"--unsafely-treat-insecure-origin-as-secure={insecure_origin}")
+    
+    if insecure_origin:
+        options.add_argument(f"--unsafely-treat-insecure-origin-as-secure={insecure_origin}")
 
     if download_dir:
         download_dir = Path(download_dir).resolve()
@@ -67,11 +98,119 @@ def get_driver(headless: bool = False, download_dir: Path | None = None, insecur
         })
 
     if headless:
-        driver.set_window_size(1920, 1080) # type: ignore[reportUnknownMemberType]
+        driver.set_window_size(1920, 1080)
     else:
         driver.maximize_window()
-    print("Driver: instantiated.")
+        
+    logger.info("Driver successfully instantiated.")
     return driver
+
+
+@dataclass
+class QuiriusExtractionTask:
+    company_id: str
+    filter_name: str
+    download_dir: Path
+    output_dir: Path
+    username: str = ""
+    password: str = ""
+    insecure_origin: str = ""
+    date_range_days: int = 0  # 0 means only 1 day (yesterday)
+
+    def run(self, run_date: datetime, headless: bool) -> Path | None:
+        # 1. Resolve configuration values
+        username = self.username or os.getenv("QUIRIUS_USER") or ""
+        password = self.password or os.getenv("QUIRIUS_PASS") or ""
+        insecure_origin = self.insecure_origin or os.getenv("QUIRIUS_URL") or "http://10.0.10.57:600"
+        
+        if not username or not password:
+            logger.error(f"Credentials missing for company ID '{self.company_id}'. Skipping task.")
+            return None
+
+        pasta_temp = Path(self.download_dir).resolve()
+        pasta_destino = Path(self.output_dir).resolve()
+        
+        pasta_temp.mkdir(parents=True, exist_ok=True)
+        pasta_destino.mkdir(parents=True, exist_ok=True)
+        
+        # Clean temporary folder before starting
+        for file_path in pasta_temp.iterdir():
+            try:
+                if file_path.is_file():
+                    file_path.unlink()
+            except Exception as e:
+                logger.warning(f"Could not clean up temporary file {file_path.name}: {e}")
+                
+        # Calculate dates
+        data_fim = run_date - relativedelta(days=1)
+        data_inicio = data_fim - relativedelta(days=self.date_range_days)
+        str_inicio = data_inicio.strftime("%d/%m/%Y")
+        str_fim = data_fim.strftime("%d/%m/%Y")
+        
+        logger.info(f"=== Starting task for Company ID: {self.company_id} ===")
+        logger.info(f"Query Period: {str_inicio} to {str_fim} | Headless: {headless}")
+        
+        driver: WebDriver | None = None
+        try:
+            driver = get_driver(headless=headless, download_dir=pasta_temp, insecure_origin=insecure_origin)
+            actions = QuiriusActions(driver)
+            
+            # Log in and navigate to the reports page
+            actions.login(username=username, password=password)
+            actions.selecionar_empresa(self.company_id)
+            actions.selecionar_modulo("DF-e")
+            actions.selecionar_tab("Relatórios")
+            actions.selecionar_submenu("Resumo NF-e")
+            actions.switch_to_main_iframe()
+            
+            # Apply filters and run query
+            actions.selecionar_filtro(self.filter_name)
+            actions.selecionar_data_emissao(str_inicio, str_fim)
+            actions.pesquisar()
+            
+            if actions.pesquisa_tem_retorno(timeout=1200):
+                downloaded_file = actions.exportar_nfe(pasta_temp, timeout=1200)
+                logger.info(f"Download complete: {downloaded_file}")
+                
+                if downloaded_file and downloaded_file.suffix == '.zip':
+                    logger.info(f"Extracting Excel report from {downloaded_file.name}...")
+                    with zipfile.ZipFile(downloaded_file, 'r') as zip_ref:
+                        lista_interna = zip_ref.namelist()
+                        arquivo_excel = next((f for f in lista_interna if f.endswith(('.xlsx', '.csv'))), None)
+                        
+                        if arquivo_excel:
+                            zip_ref.extract(arquivo_excel, pasta_temp)
+                            caminho_extraido = pasta_temp / arquivo_excel
+                            
+                            nome_final = f"NFe_Materiais_Quirius_{self.company_id}_{int(time.time())}.xlsx"
+                            caminho_final = pasta_destino / nome_final
+                            shutil.move(str(caminho_extraido), str(caminho_final))
+                            logger.info(f"[SUCCESS] Materials report ready for ETL at: {caminho_final.name}")
+                            return caminho_final
+                        else:
+                            logger.error("ZIP package did not contain any valid spreadsheet file (.xlsx/.csv).")
+                else:
+                    logger.warning(f"Downloaded file {downloaded_file.name} is not a ZIP. Leaving it in temp.")
+                    return downloaded_file
+            else:
+                logger.info("Search query returned zero results.")
+                return None
+                
+        except Exception as e:
+            logger.exception(f"[CRITICAL ERROR] Quirius extraction failed: {e}")
+            return None
+        finally:
+            if driver:
+                logger.info("Tearing down Chrome browser.")
+                driver.quit()
+            # Post-execution temporary files cleanup
+            for file_path in pasta_temp.iterdir():
+                try:
+                    if file_path.is_file():
+                        file_path.unlink()
+                except Exception:
+                    pass
+
 
 class QuiriusActions:
     URL_LOGIN = "http://10.0.10.57:600/UIM/Admin/Login.aspx" 
@@ -83,31 +222,27 @@ class QuiriusActions:
         BTN_CONFIRMAR_SELECAO_EMPRESA = (By.ID, "ButtonSelecionarEmpresa1")
         DROPDOWN_FILTER = (By.XPATH, '//*[@id="ctl00_ContentPlaceHolder_SearchControlBO_ddlFiltersSaved"]')
         BUTTON_EXPORT_NFE = (By.XPATH, '//*[@id="ctl00_ContentPlaceHolder_btnExportarNFe"]')
-        
 
     def __init__(self, driver: WebDriver):
         self.driver = driver
         self.wait = WebDriverWait(driver, 30)
 
     def switch_to_main_iframe(self):
-        print("Switching to iframe...")
+        logger.info("Switching to form iframe...")
         iframe = self.wait.until(
             EC.presence_of_element_located((By.XPATH, "//iframe[contains(@src, 'Forms/ReceiverForms/Crud/frm')]"))
         )
         self.driver.switch_to.frame(iframe)
 
     def login(self, username: str, password: str):
-        print("[QUIRIUS] Acessando tela de login...")
-        # Preenche Usuário e Senha
+        logger.info(f"Navigating to login page: {self.URL_LOGIN}")
         self.driver.get(self.URL_LOGIN)
         self.wait.until(EC.presence_of_element_located(self.Elements.INPUT_LOGIN)).send_keys(username)
         self.wait.until(EC.presence_of_element_located(self.Elements.INPUT_SENHA)).send_keys(password)
         scroll_and_click(self.driver, self.wait, self.Elements.BTN_ENTRAR)
-        #self.wait.until(EC.presence_of_element_located(self.Elements.BTN_ENTRAR)).click()
 
     def selecionar_empresa(self, id_empresa: str):        
-        print(f"[QUIRIUS] Login efetuado. Selecionando a empresa {id_empresa}...")
-        # Lógica para forçar a seleção da empresa no dropdown
+        logger.info(f"Selecting company with ID: {id_empresa}")
         script_js = """
         const select = document.getElementById('ddlEmpresa');
         if (select) {
@@ -117,21 +252,14 @@ class QuiriusActions:
         """
         self.driver.execute_script(script_js, str(id_empresa))
         time.sleep(2)
-        
-        # Clica em Confirmar/Enviar (Ajuste o ID se o botão confirmar chamar outra coisa)
         scroll_and_click(self.driver, self.wait, self.Elements.BTN_CONFIRMAR_SELECAO_EMPRESA)
-        #btn_confirmar = self.wait.until(EC.element_to_be_clickable(self.Elements.BTN_CONFIRMAR_SELECAO_EMPRESA))
-        #btn_confirmar.click()
 
     def selecionar_modulo(self, module: str) -> None:
-        print(f"[QUIRIUS] Selecionando módulo {module}...")
-
+        logger.info(f"Navigating to module: {module}")
         scroll_and_click(self.driver, self.wait, (By.XPATH, f"//input[@type='image' and @title='{module}']"))
-        #module_btn = self.wait.until(EC.element_to_be_clickable((By.XPATH, f"//input[@type='image' and @title='{module}']")))
-        #module_btn.click()
 
     def selecionar_tab(self, tab: str):
-        print(f"[QUIRIUS] Selecionando tab {tab}...")
+        logger.info(f"Selecting menu tab: {tab}")
         try:
             locator = (By.XPATH, f"//input[(contains(@class, 'menuAba1') or contains(@class, 'menuAba2')) and @type='submit' and @value='{tab}']")
             scroll_and_click(self.driver, self.wait, locator, scroll=True, to_be_clickable=True, js_click=True)
@@ -139,14 +267,15 @@ class QuiriusActions:
             raise TimeoutException(f"Couldn't find/click '{tab}' tab.") from None
 
     def selecionar_submenu(self, parent: str = 'Resumo NFS-e', submenu: str | None = None):
-        print(f"[QUIRIUS] Selecionando submenu {parent} -> {submenu}...")
+        logger.info(f"Selecting submenu: {parent} -> {submenu}")
         try:
             menu_locator = (By.XPATH, f"//span[text()[normalize-space()='{parent}']]")
             scroll_and_click(self.driver, self.wait, menu_locator, scroll=True, to_be_clickable=True, js_click=True)
         except TimeoutException:
             raise TimeoutException(f"Couldn't find/click '{parent}' menu.") from None
 
-        if not submenu: return
+        if not submenu:
+            return
 
         try:
             submenu_locator = (By.XPATH, f"//tr[@id='{parent}']//span[normalize-space(text())='{submenu}']")
@@ -155,125 +284,69 @@ class QuiriusActions:
             raise TimeoutException(f"Couldn't find/click '{submenu}' submenu.") from None
 
     def selecionar_filtro(self, name: str) -> None:
-        print(f"[QUIRIUS] Selecionando filtro '{name}'...")
+        logger.info(f"Applying filter: '{name}'")
         filter_select_element = self.wait.until(
             EC.presence_of_element_located(self.Elements.DROPDOWN_FILTER),
             f"Filter select '{name}' not found"
         )
-
         try:
             select = Select(filter_select_element)
             select.select_by_visible_text(name)
         except Exception as e:
-            print(f"[QUIRIUS] Erro ao selecionar filtro {name}: {e}")
+            logger.error(f"Failed to select filter '{name}': {e}")
             raise
 
     def selecionar_data_emissao(self, de: str, ate: str):
-        """
-        Altera o valor da data no filtro 'Data Emissão'.
-        Args:
-            de (str): data no formato DD/MM/AAAA (ex: "30/07/2025").
-            ate (str): data no formato DD/MM/AAAA (ex: "30/07/2025").
-        """
-        print(f"[QUIRIUS] Setando data de emissão para {de} até {ate}...")
-
-
+        logger.info(f"Setting emission date filter to: {de} to {ate}")
         try:
-            print(f"[QUIRIUS] Encontrando campo de data...")
-            #field_select = self.wait.until(
-            #    EC.presence_of_element_located((By.XPATH, "//select[contains(@id, 'ddlFieldsLine')]/option[@selected='selected' and contains(text(), 'Data Emissão')]/parent::select"))
-            #)
-
-            # Sobe para o <tr> e desce até o <input> do campo de data
-            #print("Finding row from: 'Data Emissão'...")
-            #container_row = field_select.find_element(By.XPATH, "./ancestor::tr")
-            #print(f"Finding input from: 'Data Emissão'...")
-            #date_input = container_row.find_element(By.XPATH, ".//input[contains(@id, 'tbxData1Line3')]")
-            #date_input_2 = container_row.find_element(By.XPATH, ".//input[contains(@id, 'tbxData2Line3')]")
-
             date_input = self.wait.until(EC.presence_of_element_located((By.XPATH, ".//input[contains(@id, 'tbxData1Line3')]")))
             date_input_2 = self.wait.until(EC.presence_of_element_located((By.XPATH, ".//input[contains(@id, 'tbxData2Line3')]")))
 
-            # Limpa e insere nova data
-            print(f"Setting field value from: 'Data Emissão' to '{de} até {ate}'...")
+            # Clear and enter new dates
             date_input.clear()
             date_input.send_keys(de)
             date_input_2.clear()
             date_input_2.send_keys(ate)
-            print("[QUIRIUS] Data de emissão setada.")
-
+            logger.info("Emission dates set successfully.")
         except TimeoutException:
             raise TimeoutException("Couldn't find/set 'Data Emissão' filter.") from None
 
     def pesquisar(self) -> None:
         try:
-            print("[QUIRIUS] Encontrando botão de pesquisar...")
+            logger.info("Executing search query...")
             locator = (By.XPATH, "//input[@type='submit' and @title='Pesquisar']")
-            print("[QUIRIUS] Clicando em pesquisar...")
             scroll_and_click(self.driver, self.wait, locator)
         except TimeoutException:
-            raise TimeoutException("[QUIRIUS] Não foi possível encontrar/clicar no botão pesquisar.") from None
+            raise TimeoutException("Could not find/click the search button.") from None
 
     def pesquisa_tem_retorno(self, timeout: int = 30) -> bool:
         wait = WebDriverWait(self.driver, timeout)
         try:
             table = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="ctl00_ContentPlaceHolder_GridViewBO"]')))
-
             if "Não foram encontrados registros que atendam as condições." in table.text:
                 return False
-            else:
-                return True
+            return True
         except Exception as e:
-            print(f"Error: {e}")
+            logger.warning(f"Error checking search results: {e}")
             return False
-
-    def wait_for_download(self, download_dir: Path, timeout: int = 60):
-        """
-        Waits until Chrome finishes downloading files in the folder, while skipping
-        the files in the ignore_files list if any.
-        
-        :param timeout: Maximum wait time in seconds.
-        :param ignore_files: List of files to ignore (optional).
-        :return: List of completed files.
-        """
-        ignore_files = os.listdir(download_dir)
-        print(f"Ignoring {len(ignore_files)} files.")
-
-        print("Waiting for download...")
-        end_time = time.time() + timeout
-
-        while time.time() < end_time:
-            files = os.listdir(download_dir)
-            # Chrome marks in-progress downloads as *.crdownload
-            in_progress = [f for f in files if f.endswith((".crdownload", '.htm', '.tmp')) and f not in ignore_files]
-            completed = [f for f in files if not f.endswith((".crdownload", '.htm', '.tmp')) and f not in ignore_files]
-
-            # If no in-progress downloads and some completed ones, return completed files
-            if completed and not in_progress:
-                return [os.path.join(download_dir, filename) for filename in completed]
-
-            time.sleep(1)
-
-        raise TimeoutException("Download did not complete in time.")
 
     def exportar_nfe(self, download_dir: Path, timeout: int = 1800) -> Path:
         download_dir = Path(download_dir).resolve()
         download_dir.mkdir(parents=True, exist_ok=True)
         
-        # Get files existing before download starts
+        # Capture files that exist before clicking export
         initial_files = set(os.listdir(download_dir))
         
-        print("Finding export button...")
+        logger.info("Clicking the Export button...")
         scroll_and_click(self.driver, self.wait, self.Elements.BUTTON_EXPORT_NFE)
 
-
-        print("Waiting for download to start and complete...")
+        logger.info("Waiting for file download to start and complete...")
         end_time = time.time() + timeout
         while time.time() < end_time:
             current_files = set(os.listdir(download_dir))
             new_files = current_files - initial_files
             
-            # Identify completed and in-progress files
+            # Filter in-progress and complete downloads
             completed_new_files = [
                 f for f in new_files 
                 if not f.endswith((".crdownload", ".tmp", ".download", ".part"))
@@ -286,12 +359,12 @@ class QuiriusActions:
             if completed_new_files and not in_progress_new_files:
                 file_path = download_dir / completed_new_files[0]
                 
-                # Check for file stability (wait 1 second and check if size remains stable and is not 0)
+                # Check for file stability
                 try:
                     initial_size = file_path.stat().st_size
                     time.sleep(1)
                     if file_path.stat().st_size == initial_size and initial_size > 0:
-                        print(f"Download complete: {file_path}")
+                        logger.info(f"Download complete: {file_path}")
                         return file_path
                 except OSError:
                     pass
@@ -301,172 +374,75 @@ class QuiriusActions:
         raise TimeoutException(f"Download did not complete within {timeout} seconds.")
 
 
-    def aguardar_e_extrair_download(self, pasta_temp: Path, pasta_dest: Path):
-        print("[QUIRIUS] Aguardando download do ZIP finalizar...")
-        tempo_decorrido = 0
-        timeout = 300 # Espera até 5 minutos pelo relatório pesado
-        arquivo_zip = None
-
-        while tempo_decorrido < timeout:
-            arquivos = list(pasta_temp.iterdir())
-            baixando = any(f.suffix == '.crdownload' for f in arquivos)
-            
-            if not baixando:
-                zips = [f for f in arquivos if f.suffix == '.zip']
-                if zips:
-                    arquivo_zip = zips[0]
-                    break
-                    
-            time.sleep(2)
-            tempo_decorrido += 2
-
-        if not arquivo_zip:
-            raise TimeoutError("O download do Quirius demorou muito e falhou.")
-
-        print(f"[QUIRIUS] Download concluído: {arquivo_zip.name}. Extraindo Excel...")
-        
-        with zipfile.ZipFile(arquivo_zip, 'r') as zip_ref:
-            lista_interna = zip_ref.namelist()
-            arquivo_excel = next((f for f in lista_interna if f.endswith(('.xlsx', '.csv'))), None)
-            
-            if arquivo_excel:
-                zip_ref.extract(arquivo_excel, pasta_temp)
-                caminho_extraido = pasta_temp / arquivo_excel
-                
-                # Move o Excel para a pasta definitiva de Materiais
-                nome_final = f"NFe_Materiais_Quirius_{int(time.time())}.xlsx"
-                caminho_final = pasta_dest / nome_final
-                shutil.move(str(caminho_extraido), str(caminho_final))
-                print(f"[SUCESSO] Relatório de Materiais pronto para o ETL em: {caminho_final.name}")
-            else:
-                print("[ERRO] O ZIP baixado não continha nenhum arquivo Excel.")
-
-class QuiriusExtractor:
-    def __init__(self, caminhos: CaminhosProjeto):
-        self.caminhos = caminhos
-        
-        # Credenciais e URLs (Ajuste o IP conforme o servidor Quirius da Britânia)
-        self.usuario = os.getenv("QUIRIUS_USER") or ""
-        self.senha = os.getenv("QUIRIUS_PASS") or ""
-        
-        # Gestão de Pastas
-        self.pasta_temp = self.caminhos.diretorio_base / "dados" / "temp_downloads"
-        self.pasta_destino = self.caminhos.xml_materiais_quirius
-        
-        self.pasta_temp.mkdir(parents=True, exist_ok=True)
-        self.pasta_destino.mkdir(parents=True, exist_ok=True)
-    
-
-    def _limpar_pasta_temporaria(self):
-        """Garante que a pasta de downloads está vazia antes de começar."""
-        for arquivo in self.pasta_temp.iterdir():
-            try:
-                arquivo.unlink()
-            except Exception as e:
-                print(f"[AVISO] Não foi possível apagar arquivo temporário: {e}")
-
-    def iniciar_navegador(self):
-        print("[QUIRIUS] Iniciando o Chrome WebDriver...")
-        options = Options()
-        
-        # Força o Chrome a baixar arquivos para a nossa pasta temporária
-        prefs = {
-            "download.default_directory": str(self.pasta_temp),
-            "download.prompt_for_download": False,
-            "download.directory_upgrade": True,
-            "safebrowsing.enabled": True
-        }
-        options.add_experimental_option("prefs", prefs)
-        options.add_argument("--window-size=1920,1080")
-        
-        # Descomente a linha abaixo quando quiser que o robô rode "invisível" (em background)
-        # options.add_argument("--headless=new") 
-
-        servico = Service(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=servico, options=options)
-        return driver
-
-    def executar(self, id_empresa: str):
-        self._limpar_pasta_temporaria()
-        self.iniciar_navegador()
-        #self.fazer_login_e_selecionar_empresa(id_empresa)
-        #self.navegar_para_relatorios()
-        #self.aplicar_filtros_e_exportar()
-        #self.aguardar_e_extrair_download()
-            
-
-    def run(self, run_date: datetime | None = None):
-        print("[QUIRIUS] Run")
-        run_date = run_date or datetime.now()
-        usuario = os.getenv("QUIRIUS_USER") or ""
-        senha = os.getenv("QUIRIUS_PASS") or ""
-
-        data_fim = run_date - relativedelta(days=1)
-        #data_inicio = data_fim - relativedelta(months=3)
-        data_inicio = data_fim
-        str_inicio = data_inicio.strftime("%d/%m/%Y")
-        str_fim = data_fim.strftime("%d/%m/%Y")
-        print(f"[QUIRIUS] Run date: {run_date.strftime('%d/%m/%Y')} | Periodo: {str_inicio} até {str_fim}")
-
-        print("[QUIRIUS] Iniciando navegador...")
-        driver: WebDriver | None = None
-        try:    
-            driver = get_driver(download_dir=self.pasta_temp, insecure_origin="http://10.0.10.57:600")
-            actions = QuiriusActions(driver)
-            actions.login(username=usuario, password=senha)
-            actions.selecionar_empresa("1")
-            actions.selecionar_modulo("DF-e")
-            actions.selecionar_tab("Relatórios")
-            actions.selecionar_submenu("Resumo NF-e")
-            actions.switch_to_main_iframe()
-            actions.selecionar_filtro("validacao_nf_material")
-            actions.selecionar_data_emissao(str_inicio, str_fim)
-            actions.pesquisar()
-            if actions.pesquisa_tem_retorno(timeout=1200):
-                downloaded_file = actions.exportar_nfe(self.pasta_temp, timeout=1200)
-                print(f"[QUIRIUS] Arquivo baixado com sucesso: {downloaded_file}")
-                
-                # Extract and move the downloaded ZIP file to final destination
-                if downloaded_file and downloaded_file.suffix == '.zip':
-                    print(f"[QUIRIUS] Extraindo Excel de {downloaded_file.name}...")
-                    with zipfile.ZipFile(downloaded_file, 'r') as zip_ref:
-                        lista_interna = zip_ref.namelist()
-                        arquivo_excel = next((f for f in lista_interna if f.endswith(('.xlsx', '.csv'))), None)
-                        
-                        if arquivo_excel:
-                            zip_ref.extract(arquivo_excel, self.pasta_temp)
-                            caminho_extraido = self.pasta_temp / arquivo_excel
-                            
-                            nome_final = f"NFe_Materiais_Quirius_{int(time.time())}.xlsx"
-                            caminho_final = self.pasta_destino / nome_final
-                            shutil.move(str(caminho_extraido), str(caminho_final))
-                            print(f"[SUCESSO] Relatório de Materiais pronto para o ETL em: {caminho_final.name}")
-                        else:
-                            print("[ERRO] O ZIP baixado não continha nenhum arquivo Excel/CSV.")
-
-            input("Continuar?")
-        except Exception as e:
-            print(f"[FALHA CRÍTICA] Erro na automação do Quirius: {e}")
-            import traceback
-            traceback.print_exc()
-        finally:
-            if driver:
-                print("[QUIRIUS] Fechando o navegador.")
-                driver.quit()
-
-
-
 def main():
-    RAIZ_PROJETO = Path(__file__).resolve().parent.parent
-    config = CaminhosProjeto(diretorio_base=RAIZ_PROJETO)
+    # Resolve base paths
+    raiz_projeto = Path(__file__).resolve().parent.parent
+    caminhos = CaminhosProjeto(diretorio_base=raiz_projeto)
     
-    # 1 representa o ID da Empresa Britânia (Ajuste conforme o Quirius)
-    robo = QuiriusExtractor(caminhos=config)
-    #robo.executar(id_empresa="1")
+    # Initialize logging configuration
+    setup_logger(raiz_projeto)
+    
+    # CLI setup
+    parser = argparse.ArgumentParser(description="Task-based RPA extractor for Quirius Portal reports.")
+    parser.add_argument(
+        "--company", "-c",
+        type=str,
+        required=True,
+        help="Target company ID in the dropdown (e.g. '1')."
+    )
+    parser.add_argument(
+        "--filter", "-f",
+        type=str,
+        required=True,
+        help="Saved search filter name in Quirius (e.g. 'validacao_nf_material')."
+    )
+    parser.add_argument(
+        "--date", "-d",
+        type=str,
+        default=None,
+        help="Reference run date in YYYY-MM-DD format. Default is today. Period ends at (date - 1 day)."
+    )
+    parser.add_argument(
+        "--date-range-days", "-r",
+        type=int,
+        default=0,
+        help="Number of days before the end date to query (default: 0, which queries yesterday only)."
+    )
+    parser.add_argument(
+        "--headless", "-hl",
+        action="store_true",
+        help="Run browser in headless mode."
+    )
+    
+    args = parser.parse_args()
+    
+    # Parse run date
+    if args.date:
+        try:
+            run_date = datetime.strptime(args.date, "%Y-%m-%d")
+        except ValueError:
+            logger.error("Invalid date format. Please use YYYY-MM-DD.")
+            return
+    else:
+        run_date = datetime.now()
+        
+    # Construct task directly from CLI arguments
+    task = QuiriusExtractionTask(
+        company_id=args.company,
+        filter_name=args.filter,
+        download_dir=caminhos.diretorio_base / "dados" / "temp_downloads",
+        output_dir=caminhos.xml_materiais_quirius,
+        date_range_days=args.date_range_days
+    )
+    
+    logger.info(f"Starting execution of task for company ID: {task.company_id}...")
+    
+    result = task.run(run_date, args.headless)
+    if result:
+        logger.info(f"Task for company ID '{task.company_id}' succeeded.")
+    else:
+        logger.error(f"Task for company ID '{task.company_id}' failed.")
 
-    robo.run()
 
 if __name__ == "__main__":
-    #driver = get_driver()
-    #driver.get("")
     main()
