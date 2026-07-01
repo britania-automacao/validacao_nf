@@ -7,15 +7,17 @@ import xml.etree.ElementTree as ET
 import xml.dom.minidom
 import logging
 from pathlib import Path
-from dotenv import load_dotenv
-
-load_dotenv()
+from config import settings
 
 class SincronizadorGoverno:
     def __init__(self):
-        self.cnpj = os.getenv('CNPJ_EMPRESA', '76492701000157')
+        self.cnpj = settings.cnpj_empresa
         self.url_base = "https://adn.nfse.gov.br/contribuintes/DFe" 
-        self.cert_path = (os.getenv('CERT_PUB_PATH'), os.getenv('CERT_KEY_PATH'))
+        
+        if settings.cert_pub_path and settings.cert_key_path:
+            self.cert_path = (settings.cert_pub_path, settings.cert_key_path)
+        else:
+            self.cert_path = None
         
         # Configuração de Pastas e Caminhos
         raiz_projeto = Path(__file__).resolve().parent.parent

@@ -5,13 +5,10 @@ from email.message import EmailMessage
 import pandas as pd
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from dotenv import load_dotenv
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
-from config import CaminhosProjeto
-
-load_dotenv()
+from config import CaminhosProjeto, settings
 
 class LeitorSimplesNacional:
     def __init__(self, diretorio_base: Path):
@@ -704,11 +701,11 @@ class NotificadorEmail:
     def enviar_relatorio(self, caminhos_arquivos: list):
         print(f"[EMAIL] A preparar envio para destinatário...")
         
-        remetente = os.getenv('EMAIL_REMETENTE')
-        senha = os.getenv('EMAIL_SENHA')
-        destinatario = os.getenv('EMAIL_DESTINATARIO')
-        smtp_server = os.getenv('SMTP_SERVER')
-        smtp_port = int(os.getenv('SMTP_PORT', 587))
+        remetente = settings.email_remetente
+        senha = settings.email_senha
+        destinatario = settings.email_destinatario
+        smtp_server = settings.smtp_server
+        smtp_port = settings.smtp_port
 
         if not all([remetente, senha, destinatario, smtp_server]):
             print("[AVISO] Credenciais de e-mail ausentes no .env. Ignorando envio.")
