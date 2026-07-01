@@ -1,5 +1,40 @@
 # src/config.py
 from pathlib import Path
+from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import Field
+
+class ConfigSettings(BaseSettings):
+    model_config = SettingsConfigDict(
+        env_file=str(Path(__file__).resolve().parent.parent / '.env'),
+        env_file_encoding='utf-8',
+        extra='ignore'
+    )
+
+    # Quirius Configuration
+    quirius_user: str = Field(default="", validation_alias="QUIRIUS_USER")
+    quirius_pass: str = Field(default="", validation_alias="QUIRIUS_PASS")
+    quirius_url: str = Field(default="http://10.0.10.57:600", validation_alias="QUIRIUS_URL")
+
+    # National NFSe / Government Configuration
+    cnpj_empresa: str = Field(default="76492701000157", validation_alias="CNPJ_EMPRESA")
+    cert_pub_path: str | None = Field(default=None, validation_alias="CERT_PUB_PATH")
+    cert_key_path: str | None = Field(default=None, validation_alias="CERT_KEY_PATH")
+
+    # Email Configuration
+    email_remetente: str | None = Field(default=None, validation_alias="EMAIL_REMETENTE")
+    email_senha: str | None = Field(default=None, validation_alias="EMAIL_SENHA")
+    email_destinatario: str | None = Field(default=None, validation_alias="EMAIL_DESTINATARIO")
+    smtp_server: str | None = Field(default=None, validation_alias="SMTP_SERVER")
+    smtp_port: int = Field(default=587, validation_alias="SMTP_PORT")
+
+    # Certificates (for pfx extraction if needed)
+    certificado_nome: str = Field(default="certificado.pfx", validation_alias="CERTIFICADO_NOME")
+    certificado_senha: str = Field(default="", validation_alias="CERTIFICADO_SENHA")
+
+
+# Singleton instance
+settings = ConfigSettings()
+
 
 class CaminhosProjeto:
     """
