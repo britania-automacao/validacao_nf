@@ -24,16 +24,33 @@ from config import CaminhosProjeto
 
 load_dotenv()
 
-def get_driver(headless: bool = False) -> WebDriver:
+def get_driver(headless: bool = False, download_dir: Path | None = None, insecure_origin: str | None = None) -> WebDriver:
     print("Driver: Instantiating...")
     
     options = Options()
-    options.add_argument("--guest")
+    # Commented out to allow dynamic download directory preferences to work without prompt dialogs
+    # options.add_argument("--guest")
+    # options.add_argument("--incognito")
     options.add_argument("--window-size=1280,720")
-    options.add_argument("--incognito")
     options.add_argument("--disable-plugins-discovery")
     options.add_argument("--disable-notifications")
     options.add_argument("--disable-popup-blocking")
+    options.add_argument(f"--unsafely-treat-insecure-origin-as-secure={insecure_origin}")
+
+    if download_dir:
+        download_dir = Path(download_dir).resolve()
+        download_dir.mkdir(parents=True, exist_ok=True)
+        prefs = {
+            "download.default_directory": str(download_dir),
+            "download.prompt_for_download": False,
+            "download.directory_upgrade": True,
+            "safebrowsing.enabled": False,
+            "safebrowsing.disable_download_protection": True,
+            "download.restrictions": 0,
+            "profile.default_content_settings.popups": 0,
+            "profile.default_content_setting_values.automatic_downloads": 1
+        }
+        options.add_experimental_option("prefs", prefs)
 
     if headless:
         options.add_argument("--headless=new")
@@ -41,8 +58,14 @@ def get_driver(headless: bool = False) -> WebDriver:
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
 
-    # driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager(driver_version=Constants.Chrome.VERSION).install()), options=options)
     driver = webdriver.Chrome(options=options)
+    
+    if headless and download_dir:
+        driver.execute_cdp_cmd("Page.setDownloadBehavior", {
+            "behavior": "allow",
+            "downloadPath": str(download_dir)
+        })
+
     if headless:
         driver.set_window_size(1920, 1080) # type: ignore[reportUnknownMemberType]
     else:
@@ -79,7 +102,8 @@ class QuiriusActions:
         self.driver.get(self.URL_LOGIN)
         self.wait.until(EC.presence_of_element_located(self.Elements.INPUT_LOGIN)).send_keys(username)
         self.wait.until(EC.presence_of_element_located(self.Elements.INPUT_SENHA)).send_keys(password)
-        self.wait.until(EC.presence_of_element_located(self.Elements.BTN_ENTRAR)).click()
+        scroll_and_click(self.driver, self.wait, self.Elements.BTN_ENTRAR)
+        #self.wait.until(EC.presence_of_element_located(self.Elements.BTN_ENTRAR)).click()
 
     def selecionar_empresa(self, id_empresa: str):        
         print(f"[QUIRIUS] Login efetuado. Selecionando a empresa {id_empresa}...")
@@ -95,17 +119,16 @@ class QuiriusActions:
         time.sleep(2)
         
         # Clica em Confirmar/Enviar (Ajuste o ID se o botão confirmar chamar outra coisa)
-        btn_confirmar = self.wait.until(EC.element_to_be_clickable(self.Elements.BTN_CONFIRMAR_SELECAO_EMPRESA))
-        btn_confirmar.click()
+        scroll_and_click(self.driver, self.wait, self.Elements.BTN_CONFIRMAR_SELECAO_EMPRESA)
+        #btn_confirmar = self.wait.until(EC.element_to_be_clickable(self.Elements.BTN_CONFIRMAR_SELECAO_EMPRESA))
+        #btn_confirmar.click()
 
     def selecionar_modulo(self, module: str) -> None:
         print(f"[QUIRIUS] Selecionando módulo {module}...")
 
-        module_btn = self.wait.until(
-            EC.element_to_be_clickable((By.XPATH, f"//input[@type='image' and @title='{module}']"))
-        )
-
-        module_btn.click()
+        scroll_and_click(self.driver, self.wait, (By.XPATH, f"//input[@type='image' and @title='{module}']"))
+        #module_btn = self.wait.until(EC.element_to_be_clickable((By.XPATH, f"//input[@type='image' and @title='{module}']")))
+        #module_btn.click()
 
     def selecionar_tab(self, tab: str):
         print(f"[QUIRIUS] Selecionando tab {tab}...")
@@ -157,9 +180,9 @@ class QuiriusActions:
 
         try:
             print(f"[QUIRIUS] Encontrando campo de data...")
-            field_select = self.wait.until(
-                EC.presence_of_element_located((By.XPATH, "//select[contains(@id, 'ddlFieldsLine')]/option[@selected='selected' and contains(text(), 'Data Emissão')]/parent::select"))
-            )
+            #field_select = self.wait.until(
+            #    EC.presence_of_element_located((By.XPATH, "//select[contains(@id, 'ddlFieldsLine')]/option[@selected='selected' and contains(text(), 'Data Emissão')]/parent::select"))
+            #)
 
             # Sobe para o <tr> e desce até o <input> do campo de data
             #print("Finding row from: 'Data Emissão'...")
@@ -233,67 +256,50 @@ class QuiriusActions:
 
         raise TimeoutException("Download did not complete in time.")
 
-    def exportar_nfe_detalhado(self, download_dir: Path, timeout: int = 1800):
+    def exportar_nfe(self, download_dir: Path, timeout: int = 1800) -> Path:
+        download_dir = Path(download_dir).resolve()
+        download_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Get files existing before download starts
+        initial_files = set(os.listdir(download_dir))
+        
         print("Finding export button...")
-        button_export = self.wait.until(
-            EC.element_to_be_clickable(self.Elements.BUTTON_EXPORT_NFE),
-            "Couldn't find export button"
-        )
-        print("Pressing export")
-        button_export.click()
-
-        input()
-
-        #downloaded = self.wait_for_download(download_dir=download_dir, timeout=timeout)
-        #time.sleep(3)
-        print("Download complete.")
-        return []
+        scroll_and_click(self.driver, self.wait, self.Elements.BUTTON_EXPORT_NFE)
 
 
-    def navegar_para_relatorios(self):
-        print("[QUIRIUS] Navegando para DF-e > Relatórios > Resumo NF-e...")
-        
-        # 1. Clica no Módulo DF-e (Ajuste o XPath conforme o ícone do seu painel)
-        btn_dfe = self.wait.until(EC.element_to_be_clickable((By.ID, "ctl00_ctl12")))
-        btn_dfe.click()
-        
-        # 2. Clica no Menu Relatórios
-        btn_relatorios = self.wait.until(EC.element_to_be_clickable((By.ID, "ctl00_ctl00_ctl00_ctl00_GeneralContent_BaseAjaxContent_BaseDefaultAjaxContent_MenuGuideControl1_Relatórios")))
-        btn_relatorios.click()
-        
-        # 3. Clica no Submenu "Resumo NF-e"
-        btn_resumo = self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[contains(text(), 'Resumo NF-e')]")))
-        btn_resumo.click()
+        print("Waiting for download to start and complete...")
+        end_time = time.time() + timeout
+        while time.time() < end_time:
+            current_files = set(os.listdir(download_dir))
+            new_files = current_files - initial_files
+            
+            # Identify completed and in-progress files
+            completed_new_files = [
+                f for f in new_files 
+                if not f.endswith((".crdownload", ".tmp", ".download", ".part"))
+            ]
+            in_progress_new_files = [
+                f for f in new_files 
+                if f.endswith((".crdownload", ".tmp", ".download", ".part"))
+            ]
+            
+            if completed_new_files and not in_progress_new_files:
+                file_path = download_dir / completed_new_files[0]
+                
+                # Check for file stability (wait 1 second and check if size remains stable and is not 0)
+                try:
+                    initial_size = file_path.stat().st_size
+                    time.sleep(1)
+                    if file_path.stat().st_size == initial_size and initial_size > 0:
+                        print(f"Download complete: {file_path}")
+                        return file_path
+                except OSError:
+                    pass
+                    
+            time.sleep(1)
 
-    def aplicar_filtros_e_exportar(self):
-        print("[QUIRIUS] Aplicando filtro salvo e datas (D-90 a D-1)...")
-        
-        # --- Cálculo de Datas (Últimos 3 meses a partir de ontem) ---
-        data_fim = datetime.now() - relativedelta(days=1)
-        data_inicio = data_fim - relativedelta(months=3)
-        str_inicio = data_inicio.strftime("%d/%m/%Y")
-        str_fim = data_fim.strftime("%d/%m/%Y")
-        print(f"          -> Período: {str_inicio} até {str_fim}")
+        raise TimeoutException(f"Download did not complete within {timeout} seconds.")
 
-        # 1. Seleciona o filtro "validacao_NF_material" no Dropdown de filtros salvos
-        # (Ajuste o ID do select de filtros se necessário)
-        dropdown_filtro = self.wait.until(EC.presence_of_element_located((By.ID, "id_do_dropdown_filtros_salvos")))
-        dropdown_filtro.send_keys("validacao_NF_material")
-        time.sleep(2)
-
-        # 2. Preenche as Datas (Ajuste os IDs dos campos de data)
-        input_dt_ini = self.driver.find_element(By.ID, "id_campo_data_inicial")
-        input_dt_ini.clear()
-        input_dt_ini.send_keys(str_inicio)
-        
-        input_dt_fim = self.driver.find_element(By.ID, "id_campo_data_final")
-        input_dt_fim.clear()
-        input_dt_fim.send_keys(str_fim)
-        
-        # 3. Clica em Exportar NF-e Detalhado
-        print("[QUIRIUS] Solicitando exportação...")
-        btn_exportar = self.driver.find_element(By.XPATH, "//span[contains(text(), 'Exportar NF-e Detalhado')]/..")
-        btn_exportar.click()
 
     def aguardar_e_extrair_download(self, pasta_temp: Path, pasta_dest: Path):
         print("[QUIRIUS] Aguardando download do ZIP finalizar...")
@@ -396,7 +402,8 @@ class QuiriusExtractor:
         senha = os.getenv("QUIRIUS_PASS") or ""
 
         data_fim = run_date - relativedelta(days=1)
-        data_inicio = data_fim - relativedelta(months=3)
+        #data_inicio = data_fim - relativedelta(months=3)
+        data_inicio = data_fim
         str_inicio = data_inicio.strftime("%d/%m/%Y")
         str_fim = data_fim.strftime("%d/%m/%Y")
         print(f"[QUIRIUS] Run date: {run_date.strftime('%d/%m/%Y')} | Periodo: {str_inicio} até {str_fim}")
@@ -404,7 +411,7 @@ class QuiriusExtractor:
         print("[QUIRIUS] Iniciando navegador...")
         driver: WebDriver | None = None
         try:    
-            driver = get_driver()
+            driver = get_driver(download_dir=self.pasta_temp, insecure_origin="http://10.0.10.57:600")
             actions = QuiriusActions(driver)
             actions.login(username=usuario, password=senha)
             actions.selecionar_empresa("1")
@@ -416,9 +423,26 @@ class QuiriusExtractor:
             actions.selecionar_data_emissao(str_inicio, str_fim)
             actions.pesquisar()
             if actions.pesquisa_tem_retorno(timeout=1200):
-                downloaded = actions.exportar_nfe_detalhado(Path("./downloads"), timeout=1200)
-                print(downloaded)
+                downloaded_file = actions.exportar_nfe(self.pasta_temp, timeout=1200)
+                print(f"[QUIRIUS] Arquivo baixado com sucesso: {downloaded_file}")
                 
+                # Extract and move the downloaded ZIP file to final destination
+                if downloaded_file and downloaded_file.suffix == '.zip':
+                    print(f"[QUIRIUS] Extraindo Excel de {downloaded_file.name}...")
+                    with zipfile.ZipFile(downloaded_file, 'r') as zip_ref:
+                        lista_interna = zip_ref.namelist()
+                        arquivo_excel = next((f for f in lista_interna if f.endswith(('.xlsx', '.csv'))), None)
+                        
+                        if arquivo_excel:
+                            zip_ref.extract(arquivo_excel, self.pasta_temp)
+                            caminho_extraido = self.pasta_temp / arquivo_excel
+                            
+                            nome_final = f"NFe_Materiais_Quirius_{int(time.time())}.xlsx"
+                            caminho_final = self.pasta_destino / nome_final
+                            shutil.move(str(caminho_extraido), str(caminho_final))
+                            print(f"[SUCESSO] Relatório de Materiais pronto para o ETL em: {caminho_final.name}")
+                        else:
+                            print("[ERRO] O ZIP baixado não continha nenhum arquivo Excel/CSV.")
 
             input("Continuar?")
         except Exception as e:
