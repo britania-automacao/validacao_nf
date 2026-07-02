@@ -3,6 +3,9 @@ pandas>=2.2.0
 openpyxl>=3.1.2
 python-dateutil>=2.8.2
 
+# Pasta da Rede
+smbprotocol>=1.15.0
+
 # Consumo de APIs e Variáveis de Ambiente
 requests>=2.31.0
 python-dotenv>=1.0.0
