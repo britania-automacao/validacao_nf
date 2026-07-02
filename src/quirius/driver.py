@@ -9,7 +9,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 logger = logging.getLogger("quirius_fetcher.driver")
 
 
-def get_driver(headless: bool = False, download_dir: Path | None = None, insecure_origin: str | None = None) -> WebDriver:
+def get_driver(headless: bool = False, download_dir: Path | None = None, insecure_origins: list[str] | None = None) -> WebDriver:
     logger.info("Initializing Chrome WebDriver...")
     
     options = Options()
@@ -20,9 +20,12 @@ def get_driver(headless: bool = False, download_dir: Path | None = None, insecur
     options.add_argument("--disable-plugins-discovery")
     options.add_argument("--disable-notifications")
     options.add_argument("--disable-popup-blocking")
+    options.add_argument("--allow-running-insecure-content")
+    options.add_argument("--disable-web-security")
     
-    if insecure_origin:
-        options.add_argument(f"--unsafely-treat-insecure-origin-as-secure={insecure_origin}")
+    if insecure_origins:
+        origins_str = ",".join(insecure_origins)
+        options.add_argument(f"--unsafely-treat-insecure-origin-as-secure={origins_str}")
 
     if download_dir:
         download_dir = Path(download_dir).resolve()
@@ -63,8 +66,8 @@ def get_driver(headless: bool = False, download_dir: Path | None = None, insecur
 
 
 @contextmanager
-def browser_session(headless: bool = False, download_dir: Path | None = None, insecure_origin: str | None = None):
-    driver = get_driver(headless=headless, download_dir=download_dir, insecure_origin=insecure_origin)
+def browser_session(headless: bool = False, download_dir: Path | None = None, insecure_origins: list[str] | None = None):
+    driver = get_driver(headless=headless, download_dir=download_dir, insecure_origins=insecure_origins)
     try:
         yield driver
     finally:

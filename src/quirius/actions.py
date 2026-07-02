@@ -52,7 +52,7 @@ class QuiriusActions:
             select.dispatchEvent(new Event('change', { bubbles: true }));
         }
         """
-        self.driver.execute_script(script_js, str(id_empresa))
+        self.driver.execute_script(script_js, str(id_empresa)) # pyright: ignore[reportUnknownMemberType]
         time.sleep(2)
         scroll_and_click(self.driver, self.wait, self.Elements.BTN_CONFIRMAR_SELECAO_EMPRESA)
 

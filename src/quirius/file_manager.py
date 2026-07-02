@@ -43,7 +43,7 @@ class ReportFileManager:
                     zip_ref.extract(arquivo_excel, self.temp_dir)
                     caminho_extraido = self.temp_dir / arquivo_excel
                     
-                    nome_final = f"NFe_Materiais_Quirius_{company_id}_{int(time.time())}.xlsx"
+                    nome_final = "NFe_Materiais_Quirius.xlsx"
                     caminho_final = self.output_dir / nome_final
                     shutil.move(str(caminho_extraido), str(caminho_final))
                     logger.info(f"[SUCCESS] Materials report ready for ETL at: {caminho_final.name}")

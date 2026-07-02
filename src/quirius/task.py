@@ -21,7 +21,6 @@ class QuiriusExtractionTask:
     output_dir: Path
     username: str
     password: str
-    insecure_origin: str = ""
     date_range_days: int = 0  # 0 means only 1 day (yesterday)
 
     # O nome do filtro é fixo para extração de materiais do escopo do projeto
@@ -33,7 +32,8 @@ class QuiriusExtractionTask:
             return None
 
         # Instantiate file manager and clear temp download directories
-        file_manager = ReportFileManager(self.download_dir, self.output_dir)
+        output_dir = self.output_dir / self.company_id
+        file_manager = ReportFileManager(self.download_dir, output_dir)
         file_manager.clear_temp_dir()
 
         # Calculate dates

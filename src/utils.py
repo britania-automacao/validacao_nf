@@ -1,8 +1,26 @@
+import logging
+import os
 import time
 
 from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
+
+
+class RelativePathFormatter(logging.Formatter):
+    def __init__(self, *args, project_root=None, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.project_root = str(project_root) if project_root else os.getcwd()
+
+    def format(self, record):
+        if record.pathname:
+            try:
+                record.rel_pathname = os.path.relpath(record.pathname, self.project_root)
+            except Exception:
+                record.rel_pathname = record.pathname
+        else:
+            record.rel_pathname = "unknown"
+        return super().format(record)
 
 
 def scroll_and_click(driver: WebDriver, wait: WebDriverWait[WebDriver], locator: tuple[str, str], scroll: bool = True, to_be_clickable: bool = True, js_click: bool = False) -> None:

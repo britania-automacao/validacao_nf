@@ -7,6 +7,7 @@ from datetime import datetime
 
 from config import CaminhosProjeto, settings
 from quirius import QuiriusExtractionTask, browser_session
+from utils import RelativePathFormatter
 
 logger = logging.getLogger("quirius_fetcher")
 
@@ -19,7 +20,10 @@ def setup_logger(diretorio_base: Path) -> logging.Logger:
     logger_obj.setLevel(logging.INFO)
     
     if not logger_obj.handlers:
-        formatter = logging.Formatter('%(asctime)s - %(levelname)s - [%(name)s] %(message)s')
+        formatter = RelativePathFormatter(
+            '%(asctime)s - %(levelname)s - %(rel_pathname)s:%(lineno)d - %(message)s',
+            project_root=diretorio_base
+        )
         
         # File handler
         file_handler = logging.FileHandler(historico_dir / "quirius.log", encoding='utf-8')
@@ -81,9 +85,16 @@ def main():
         run_date = datetime.now()
         
     # Resolve download and output directories
-    download_dir = caminhos.diretorio_base / "dados" / "temp_downloads"
+    download_dir = caminhos.diretorio_base / "dados" / "temp_downloads" / f"{args.company}"
     output_dir = caminhos.xml_materiais_quirius
-    insecure_origin = settings.quirius_url
+    
+    insecure_origins = [
+        settings.quirius_url,
+        "http://10.0.10.57:600",
+        "http://10.0.10.57",
+        "http://pr-s057:600",
+        "http://pr-s057"
+    ]
     
     # Construct task directly from CLI arguments
     task = QuiriusExtractionTask(
@@ -92,14 +103,13 @@ def main():
         password=settings.quirius_pass,
         download_dir=download_dir,
         output_dir=output_dir,
-        insecure_origin=insecure_origin,
         date_range_days=args.date_range_days
     )
     
     logger.info(f"Starting execution of task for company ID: {task.company_id}...")
     
     # Use browser_session context manager to control the browser lifecycle
-    with browser_session(headless=args.headless, download_dir=download_dir, insecure_origin=insecure_origin) as driver:
+    with browser_session(headless=args.headless, download_dir=download_dir, insecure_origins=insecure_origins) as driver:
         result = task.run(driver, run_date)
         
     if result:
