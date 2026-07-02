@@ -31,9 +31,24 @@ class ConfigSettings(BaseSettings):
     certificado_nome: str = Field(default="certificado.pfx", validation_alias="CERTIFICADO_NOME")
     certificado_senha: str = Field(default="", validation_alias="CERTIFICADO_SENHA")
 
+    # SMB Storage Configuration
+    smb_user: str | None = Field(default=None, validation_alias="SMB_USER")
+    smb_pass: str | None = Field(default=None, validation_alias="SMB_PASS")
+
 
 # Singleton instance
 settings = ConfigSettings()
+
+
+def get_storage():
+    from unistorage import LocalStorage, SMBStorage
+    from unistorage.router import StorageRouter
+    
+    local = LocalStorage()
+    smb = None
+    if settings.smb_user and settings.smb_pass:
+        smb = SMBStorage(username=settings.smb_user, password=settings.smb_pass)
+    return StorageRouter(local=local, smb=smb)
 
 
 class CaminhosProjeto:

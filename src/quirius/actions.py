@@ -132,7 +132,7 @@ class QuiriusActions:
             logger.warning(f"Error checking search results: {e}")
             return False
 
-    def exportar_nfe(self, download_dir: Path, timeout: int = 1800) -> Path:
+    def exportar_nfe(self, download_dir: Path | str, timeout: int = 1800) -> Path:
         download_dir = Path(download_dir).resolve()
         download_dir.mkdir(parents=True, exist_ok=True)
         

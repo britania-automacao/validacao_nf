@@ -1,11 +1,10 @@
 # src/quirius_fetcher.py
-import os
 import logging
 import argparse
 from pathlib import Path
 from datetime import datetime
 
-from config import CaminhosProjeto, settings
+from config import CaminhosProjeto, settings, get_storage
 from quirius import QuiriusExtractionTask, browser_session
 from utils import RelativePathFormatter
 
@@ -71,6 +70,12 @@ def main():
         action="store_true",
         help="Run browser in headless mode."
     )
+    parser.add_argument(
+        "--output", "-o",
+        type=str,
+        default=None,
+        help="Output directory path (defaults to target configuration directory)."
+    )
     
     args = parser.parse_args()
     
@@ -86,7 +91,7 @@ def main():
         
     # Resolve download and output directories
     download_dir = caminhos.diretorio_base / "dados" / "temp_downloads" / f"{args.company}"
-    output_dir = caminhos.xml_materiais_quirius
+    output_dir = args.output if args.output else caminhos.xml_materiais_quirius
     
     insecure_origins = [
         settings.quirius_url,
@@ -96,6 +101,9 @@ def main():
         "http://pr-s057"
     ]
     
+    # Get storage router instance
+    storage = get_storage()
+    
     # Construct task directly from CLI arguments
     task = QuiriusExtractionTask(
         company_id=args.company,
@@ -103,6 +111,7 @@ def main():
         password=settings.quirius_pass,
         download_dir=download_dir,
         output_dir=output_dir,
+        storage=storage,
         date_range_days=args.date_range_days
     )
     

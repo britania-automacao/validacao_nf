@@ -8,6 +8,7 @@ from dateutil.relativedelta import relativedelta
 from selenium.webdriver.remote.webdriver import WebDriver
 
 from config import settings
+from unistorage import Storage
 from .actions import QuiriusActions
 from .file_manager import ReportFileManager
 
@@ -17,23 +18,24 @@ logger = logging.getLogger("quirius_fetcher.task")
 @dataclass
 class QuiriusExtractionTask:
     company_id: str
-    download_dir: Path
-    output_dir: Path
+    download_dir: Path | str
+    output_dir: Path | str
     username: str
     password: str
+    storage: Storage
     date_range_days: int = 0  # 0 means only 1 day (yesterday)
 
     # O nome do filtro é fixo para extração de materiais do escopo do projeto
     FILTER_NAME = "validacao_nf_material"
 
-    def run(self, driver: WebDriver, run_date: datetime) -> Path | None:
+    def run(self, driver: WebDriver, run_date: datetime) -> str | None:
         if not self.username or not self.password:
             logger.error(f"Credentials missing for company ID '{self.company_id}'. Skipping task.")
             return None
 
         # Instantiate file manager and clear temp download directories
-        output_dir = self.output_dir / self.company_id
-        file_manager = ReportFileManager(self.download_dir, output_dir)
+        output_dir = f"{self.output_dir}/{self.company_id}"
+        file_manager = ReportFileManager(self.download_dir, output_dir, self.storage)
         file_manager.clear_temp_dir()
 
         # Calculate dates
