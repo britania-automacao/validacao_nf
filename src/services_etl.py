@@ -33,10 +33,9 @@ class LeitorSimplesNacional:
             if response.status_code == 200:
                 dados = response.json()
                 opcao = dados.get("opcao_pelo_simples")
-                # Se for True é SIM. Se for False ou null, é NÃO.
                 return "SIM" if opcao is True else "NÃO"
         except Exception:
-            pass # Se a API falhar (cair a internet, etc), assume NÃO por segurança.
+            pass 
         return "NÃO"
 
     def carregar(self, cnpjs_alvo=None) -> pd.DataFrame:
@@ -71,13 +70,11 @@ class LeitorSimplesNacional:
             caminho_salvar = self.pasta / "consulta_simples_nacional.xlsx"
             df_original = pd.DataFrame(columns=['CNPJ', 'SIMPLES', 'CNPJ_Limpo', 'Simples_SN'])
 
-        # --- LÓGICA DE API (AUTO-HEALING) ---
         if cnpjs_alvo:
             cnpjs_existentes = set()
             if not df_original.empty and 'CNPJ_Limpo' in df_original.columns:
                 cnpjs_existentes = set(df_original['CNPJ_Limpo'].dropna().tolist())
 
-            # Filtra os CNPJs que temos em mãos, mas que não estão na nossa base local
             cnpjs_faltantes = {c for c in cnpjs_alvo if isinstance(c, str) and len(c) == 14} - cnpjs_existentes
 
             if cnpjs_faltantes:
@@ -96,15 +93,15 @@ class LeitorSimplesNacional:
                     
                     if idx % 10 == 0:
                         print(f"  -> Consultados {idx}/{len(cnpjs_faltantes)}...")
-                    time.sleep(0.4) # Previne bloqueio da BrasilAPI (Rate Limit)
+                    time.sleep(0.4) 
 
-                # Adiciona os novos resultados no DataFrame original
                 df_novos = pd.DataFrame(novos_registros)
                 df_original = pd.concat([df_original, df_novos], ignore_index=True)
                 
-                # Salva o arquivo permanentemente para não consultar de novo amanhã
                 try:
                     df_salvar = df_original.drop(columns=['CNPJ_Limpo', 'Simples_SN'], errors='ignore')
+                    df_salvar[col_cnpj] = df_salvar[col_cnpj].apply(lambda x: str(x).zfill(14) if pd.notna(x) else x)
+                    
                     if caminho_salvar.suffix.lower() == '.xlsx':
                         df_salvar.to_excel(caminho_salvar, index=False)
                     else:
@@ -113,7 +110,6 @@ class LeitorSimplesNacional:
                 except Exception as e:
                     print(f"[ERRO] Não foi possível salvar o arquivo atualizado: {e}")
 
-        # Retorno limpo para a Malha Fina
         if not df_original.empty and 'CNPJ_Limpo' in df_original.columns:
             df_retorno = df_original.drop_duplicates(subset=['CNPJ_Limpo'])
             return df_retorno[['CNPJ_Limpo', 'Simples_SN']]
@@ -122,7 +118,6 @@ class LeitorSimplesNacional:
 
 
 class GeradorCsvGoverno:
-    """Extrai os dados dos XMLs com inteligência de Carga Incremental"""
     def __init__(self, caminhos: CaminhosProjeto):
         self.caminhos = caminhos
         self.arquivo_saida_csv = self.caminhos.diretorio_base / "dados" / "Base_XML_Governo_Consolidada.csv"
@@ -187,7 +182,7 @@ class GeradorCsvGoverno:
                 arquivos_ja_processados = set(df_existente['Origem_XML'].dropna().tolist())
                 print(f"[ETL XML] A base atual possui {len(arquivos_ja_processados)} notas registadas.")
             except Exception as e:
-                print(f"[AVISO] Não foi possível ler o CSV atual. Recriando do zero. Erro: {e}")
+                print(f"[AVISO] Não foi possível ler o CSV atual. Erro: {e}")
 
         registros_novos = []
         for caminho in lista_arquivos_xml:
@@ -224,8 +219,20 @@ class GeradorCsvGoverno:
                 if valor_bruto == 0.0: 
                     valor_bruto = self._get_float(raiz, ['vBC', 'BaseCalculo'])
 
+                val_nacional = self._get_text(raiz, ['opSimpNac'])
+                val_abrasf = self._get_text(raiz, ['OptanteSimplesNacional'])
+                
+                simples_xml_resolvido = "NÃO"
+                if val_nacional in ['2', '3', '4']: 
+                    simples_xml_resolvido = "SIM"
+                elif val_nacional == '1': 
+                    simples_xml_resolvido = "NÃO"
+                elif val_abrasf == '1':   
+                    simples_xml_resolvido = "SIM"
+                elif val_abrasf == '2':
+                    simples_xml_resolvido = "NÃO"
+
                 flag_ret_iss = self._get_text(raiz, ['tpRetISSQN', 'IssRetido'], '1')
-                op_simp_nac = self._get_text(raiz, ['opSimpNac', 'OptanteSimplesNacional'], '2')
 
                 if cnpj and numero_normalizado:
                     chave = f"{cnpj}_{numero_normalizado}"
@@ -240,7 +247,7 @@ class GeradorCsvGoverno:
                     registro["BaseCalculo_XML"] = self._get_float(raiz, ['vBC', 'BaseCalculo'])
                     registro["ISS_XML"] = self._get_float(raiz, ['vISSQN', 'ValorIss'])
                     registro["Flag_Ret_ISS"] = flag_ret_iss
-                    registro["opSimpNac_XML"] = op_simp_nac
+                    registro["Simples_XML_Resolvido"] = simples_xml_resolvido
                     registro["IRRF_XML"] = self._get_float(raiz, ['vRetIRRF', 'ValorIr'])
                     registro["INSS_XML"] = self._get_float(raiz, ['vRetCP', 'ValorInss'])
                     registro["PIS_XML"] = self._get_float(raiz, ['vRetPIS', 'ValorPis'])
@@ -257,8 +264,13 @@ class GeradorCsvGoverno:
             df_novos = pd.DataFrame(registros_novos)
             
             if self.arquivo_saida_csv.exists() and len(arquivos_ja_processados) > 0:
-                df_novos.to_csv(self.arquivo_saida_csv, mode='a', header=False, sep=';', index=False, encoding='utf-8-sig')
-                print(f"[ETL XML] Processamento Rápido! +{len(df_novos)} NOVAS notas adicionadas à Base CSV.")
+                try:
+                    df_existente = pd.read_csv(self.arquivo_saida_csv, sep=';', encoding='utf-8-sig', dtype=str)
+                    df_final = pd.concat([df_existente, df_novos], ignore_index=True)
+                    df_final.to_csv(self.arquivo_saida_csv, sep=';', index=False, encoding='utf-8-sig')
+                    print(f"[ETL XML] Processamento Rápido e Seguro! +{len(df_novos)} NOVAS notas adicionadas à Base CSV.")
+                except Exception as e:
+                    print(f"[ERRO XML] Falha ao atualizar CSV de forma segura: {e}")
             else:
                 df_novos.to_csv(self.arquivo_saida_csv, sep=';', index=False, encoding='utf-8-sig')
                 print(f"[ETL XML] Sucesso! CSV Base do Governo criado do zero com {len(df_novos)} notas.")
@@ -269,7 +281,6 @@ class GeradorCsvGoverno:
 
 
 class LeitorBaseGoverno:
-    """Lê o Data Lake (CSV) gerado para enviar à Malha Fina"""
     def __init__(self, caminho_csv: Path):
         self.caminho_csv = caminho_csv
 
@@ -290,11 +301,18 @@ class LeitorBaseGoverno:
 
 class LeitorRelatorioTotvs:
     def __init__(self, caminhos: CaminhosProjeto):
-        self.caminhos = caminhos
+        # Direciona especificamente para a subpasta REB405
+        self.pasta = caminhos.entrada_totvs / "REB405"
+        self.pasta.mkdir(parents=True, exist_ok=True)
 
     def _limpar_cnpj(self, cnpj_bruto) -> str:
         if pd.isna(cnpj_bruto): return ""
-        limpo = ''.join(filter(str.isdigit, str(cnpj_bruto)))
+        val = str(cnpj_bruto).strip()
+        if val.endswith('.0'): val = val[:-2]
+        if 'E' in val.upper(): 
+            try: val = str(int(float(val)))
+            except: pass
+        limpo = ''.join(filter(str.isdigit, val))
         return limpo.zfill(14) if limpo else ""
 
     def _limpar_numero_nota(self, numero_bruto) -> str:
@@ -303,7 +321,7 @@ class LeitorRelatorioTotvs:
         if num_limpo: return str(int(num_limpo))
         return str(numero_bruto).strip()
 
-    def _converter_moeda_totvs(self, df, nome_coluna):
+    def _converter_moeda(self, df, nome_coluna):
         if nome_coluna not in df.columns:
             return 0.0
             
@@ -320,10 +338,10 @@ class LeitorRelatorioTotvs:
         return df[nome_coluna].apply(limpar_moeda)
 
     def processar_relatorio(self) -> pd.DataFrame:
-        print("[ETL TOTVS] A iniciar a leitura do ERP...")
-        arquivos_totvs = list(self.caminhos.entrada_totvs.glob("*.xlsx")) + list(self.caminhos.entrada_totvs.glob("*.csv"))
+        print(f"[ETL TOTVS] A iniciar a leitura do ERP na pasta: {self.pasta.name}...")
+        arquivos_totvs = list(self.pasta.glob("*.xlsx")) + list(self.pasta.glob("*.csv"))
         if not arquivos_totvs:
-            print("[AVISO] Nenhum relatório do TOTVS encontrado.")
+            print(f"[AVISO] Nenhum relatório do TOTVS encontrado na pasta {self.pasta.name}.")
             return pd.DataFrame()
 
         lista_dfs = []
@@ -357,14 +375,14 @@ class LeitorRelatorioTotvs:
                 df_totvs['Nota_TOTVS'] = df_totvs['Docto'].apply(self._limpar_numero_nota)
                 df_totvs['CNPJ_TOTVS'] = df_totvs['CNPJ emit'].apply(self._limpar_cnpj)
                 
-                df_totvs['Valor_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'Tot. Nota')
-                df_totvs['BaseCalc_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'Base Calc.')
-                df_totvs['ISS_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'ISS')
-                df_totvs['IRRF_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'IRRF')
-                df_totvs['INSS_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'INSS')
-                df_totvs['PIS_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'PIS')
-                df_totvs['COFINS_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'COFINS')
-                df_totvs['CSLL_TOTVS'] = self._converter_moeda_totvs(df_totvs, 'Valor CS')
+                df_totvs['Valor_TOTVS'] = self._converter_moeda(df_totvs, 'Tot. Nota')
+                df_totvs['BaseCalc_TOTVS'] = self._converter_moeda(df_totvs, 'Base Calc.')
+                df_totvs['ISS_TOTVS'] = self._converter_moeda(df_totvs, 'ISS')
+                df_totvs['IRRF_TOTVS'] = self._converter_moeda(df_totvs, 'IRRF')
+                df_totvs['INSS_TOTVS'] = self._converter_moeda(df_totvs, 'INSS')
+                df_totvs['PIS_TOTVS'] = self._converter_moeda(df_totvs, 'PIS')
+                df_totvs['COFINS_TOTVS'] = self._converter_moeda(df_totvs, 'COFINS')
+                df_totvs['CSLL_TOTVS'] = self._converter_moeda(df_totvs, 'Valor CS')
                 
                 df_totvs['Chave'] = df_totvs.apply(lambda row: f"{row['CNPJ_TOTVS']}_{row['Nota_TOTVS']}" if row['CNPJ_TOTVS'] and row['Nota_TOTVS'] else None, axis=1)
                 df_totvs = df_totvs.dropna(subset=['Chave']).copy()
@@ -438,7 +456,11 @@ class AuditorFiscal:
             if abs(iss_esperado - row.get('ISS_TOTVS', 0.0)) > 0.10:
                 erros_encontrados.append("ISS")
                 
-            is_simples = (str(row.get('Simples_SN', 'NÃO')).strip().upper() == 'SIM') or (str(row.get('opSimpNac_XML', '2')) == '1')
+            val_simples_planilha = str(row.get('Simples_SN', 'NÃO')).strip().upper()
+            val_simples_xml = str(row.get('Simples_XML_Resolvido', 'NÃO')).strip().upper()
+            
+            is_simples = (val_simples_planilha == 'SIM') or (val_simples_xml == 'SIM')
+            
             teve_erro_simples = False
             if is_simples:
                 soma_federais_totvs = sum([
@@ -696,7 +718,7 @@ class AuditorFiscal:
         colunas_tecnicas = [
             'Chave', 'CNPJ_XML', 'Nota_XML', 'NSU_XML', 'Nome_XML', 'Origem_XML', '_merge', 
             'Apontamento_Mapeado', 'CNPJ_Merge', 'CNPJ_Limpo', 'Simples_SN', 'Flag_Ret_ISS', 
-            'opSimpNac_XML', 'BaseCalculo_XML', 'BaseCalc_TOTVS'
+            'Simples_XML_Resolvido', 'BaseCalculo_XML', 'BaseCalc_TOTVS'
         ]
         
         colunas_originais = [col for col in df_resultado.columns if col not in colunas_tecnicas and col not in colunas_comparacao and col not in ['Observações', 'Valid. FINAL']]
@@ -764,11 +786,11 @@ class NotificadorEmail:
     def enviar_relatorio(self, caminhos_arquivos: list):
         print(f"[EMAIL] A preparar envio para destinatário...")
         
-        remetente = settings.email_remetente
-        senha = settings.email_senha
-        destinatario = settings.email_destinatario
-        smtp_server = settings.smtp_server
-        smtp_port = settings.smtp_port
+        remetente = os.getenv('EMAIL_REMETENTE')
+        senha = os.getenv('EMAIL_SENHA')
+        destinatario = os.getenv('EMAIL_DESTINATARIO')
+        smtp_server = os.getenv('SMTP_SERVER')
+        smtp_port = int(os.getenv('SMTP_PORT', 587))
 
         if not all([remetente, senha, destinatario, smtp_server]):
             print("[AVISO] Credenciais de e-mail ausentes no .env. Ignorando envio.")
