@@ -25,9 +25,9 @@ class QuiriusActions:
         DROPDOWN_FILTER = (By.XPATH, '//*[@id="ctl00_ContentPlaceHolder_SearchControlBO_ddlFiltersSaved"]')
         BUTTON_EXPORT_NFE = (By.XPATH, '//*[@id="ctl00_ContentPlaceHolder_btnExportarNFe"]')
 
-    def __init__(self, driver: WebDriver):
+    def __init__(self, driver: WebDriver, timeout: int = 30):
         self.driver = driver
-        self.wait = WebDriverWait(driver, 30)
+        self.wait = WebDriverWait(driver, timeout)
 
     def switch_to_main_iframe(self):
         logger.info("Switching to form iframe...")
@@ -101,8 +101,8 @@ class QuiriusActions:
     def selecionar_data_emissao(self, de: str, ate: str):
         logger.info(f"Setting emission date filter to: {de} to {ate}")
         try:
-            date_input = self.wait.until(EC.presence_of_element_located((By.XPATH, ".//input[contains(@id, 'tbxData1Line3')]")))
-            date_input_2 = self.wait.until(EC.presence_of_element_located((By.XPATH, ".//input[contains(@id, 'tbxData2Line3')]")))
+            date_input = self.wait.until(EC.presence_of_element_located((By.XPATH, ".//input[contains(@id, 'tbxData1Line2')]")))
+            date_input_2 = self.wait.until(EC.presence_of_element_located((By.XPATH, ".//input[contains(@id, 'tbxData2Line2')]")))
 
             # Clear and enter new dates
             date_input.clear()
@@ -120,6 +120,29 @@ class QuiriusActions:
             scroll_and_click(self.driver, self.wait, locator)
         except TimeoutException:
             raise TimeoutException("Could not find/click the search button.") from None
+        
+    def esperar_carregar(self, timeout: int = 60):
+        from selenium.common.exceptions import UnexpectedAlertPresentException
+        time.sleep(5)
+        
+        logger.debug("Loading...")
+        try:
+            WebDriverWait(self.driver, timeout).until(
+                EC.invisibility_of_element_located((By.XPATH, "//div[@id='ctl00_ContentPlaceHolder_updateProgress']"))
+            )
+            WebDriverWait(self.driver, timeout).until(
+                EC.invisibility_of_element_located((By.XPATH, "//div[@id='ctl00_updPanelProgress']"))
+            )
+        except UnexpectedAlertPresentException as e:
+            alert_text = e.alert_text or ""
+            logger.info(f"Alert appeared during loading wait: {alert_text}")
+            try:
+                alert = self.driver.switch_to.alert
+                alert.accept()
+            except Exception:
+                pass
+        except TimeoutException:
+            raise TimeoutException("Loading wait has timed out") from None
 
     def pesquisa_tem_retorno(self, timeout: int = 30) -> bool:
         wait = WebDriverWait(self.driver, timeout)
@@ -140,7 +163,10 @@ class QuiriusActions:
         initial_files = set(os.listdir(download_dir))
         
         logger.info("Clicking the Export button...")
-        scroll_and_click(self.driver, self.wait, self.Elements.BUTTON_EXPORT_NFE)
+        #scroll_and_click(self.driver, self.wait, self.Elements.BUTTON_EXPORT_NFE)
+        #btn = self.wait.until(EC.presence_of_element_located(self.Elements.BUTTON_EXPORT_NFE))
+        #btn.click()
+        scroll_and_click(self.driver, self.wait, self.Elements.BUTTON_EXPORT_NFE, to_be_clickable=False, js_click=True)
 
         logger.info("Waiting for file download to start and complete...")
         end_time = time.time() + timeout

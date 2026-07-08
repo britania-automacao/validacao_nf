@@ -28,12 +28,13 @@ def scroll_and_click(driver: WebDriver, wait: WebDriverWait[WebDriver], locator:
         btn = wait.until(EC.presence_of_element_located(locator))
         if scroll:
             driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", btn)  # type: ignore[reportUnknownMemberType]
-
+        print(scroll)
         if to_be_clickable:
             btn = wait.until(EC.element_to_be_clickable(locator))
-
+        print(to_be_clickable)
         if js_click:
             driver.execute_script("arguments[0].click();", btn)  # type: ignore[reportUnknownMemberType]
+            print(js_click)
         else:
             btn.click()
     except Exception as e:
@@ -51,6 +52,10 @@ def scroll_and_click(driver: WebDriver, wait: WebDriverWait[WebDriver], locator:
                 driver.execute_script("arguments[0].click();", btn)  # type: ignore[reportUnknownMemberType]
             else:
                 btn.click()
+            print(scroll)
+            print(to_be_clickable)
+            print(js_click)
+
         except Exception as e2:
             print(f"Retry failed ({e2}), using JavaScript click fallback...")
             try:

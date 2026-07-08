@@ -28,7 +28,7 @@ class QuiriusExtractionTask:
     # O nome do filtro é fixo para extração de materiais do escopo do projeto
     FILTER_NAME = "validacao_nf_material"
 
-    def run(self, driver: WebDriver, run_date: datetime) -> str | None:
+    def run(self, driver: WebDriver, run_date: datetime, timeout: int = 30) -> str | None:
         if not self.username or not self.password:
             logger.error(f"Credentials missing for company ID '{self.company_id}'. Skipping task.")
             return None
@@ -47,7 +47,7 @@ class QuiriusExtractionTask:
         logger.info(f"=== Starting task for Company ID: {self.company_id} ===")
         logger.info(f"Query Period: {str_inicio} to {str_fim}")
         
-        actions = QuiriusActions(driver)
+        actions = QuiriusActions(driver, timeout=timeout)
         
         # Log in and navigate to the reports page
         actions.login(username=self.username, password=self.password)
@@ -61,9 +61,12 @@ class QuiriusExtractionTask:
         actions.selecionar_filtro(self.FILTER_NAME)
         actions.selecionar_data_emissao(str_inicio, str_fim)
         actions.pesquisar()
+        logger.info("Esperando pesquisa terminar de carregar")
+        actions.esperar_carregar(timeout=120)
         
         if actions.pesquisa_tem_retorno(timeout=1200):
-            downloaded_file = actions.exportar_nfe(self.download_dir, timeout=1200)
+            #driver.switch_to.default_content()
+            downloaded_file = actions.exportar_nfe(self.download_dir, timeout=50 * 60)
             logger.info(f"Download completed. File path: {downloaded_file}")
             
             # Delegate file extraction and clean up of temp items to ReportFileManager

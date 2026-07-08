@@ -50,6 +50,8 @@ def get_driver(headless: bool = False, download_dir: Path | None = None, insecur
 
     driver = webdriver.Chrome(options=options)
     
+    # driver.command_executor.set_timeout(600)
+
     if headless and download_dir:
         driver.execute_cdp_cmd("Page.setDownloadBehavior", {
             "behavior": "allow",
