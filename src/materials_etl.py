@@ -80,7 +80,7 @@ class LeitorQuiriusNFe:
                 if cand.lower() == col.lower() or cand.lower() in col.lower():
                     return col
                     
-        # Fallback genérico blindado contra CBS/IBS/ST
+        # Fallback genérico blindado
         for col in df.columns:
             nome_limpo = col.lower()
             if 'vlr' in nome_limpo and 'total' in nome_limpo:
@@ -125,8 +125,7 @@ class LeitorQuiriusNFe:
         else:
             df_quirius['Valor_QRI'] = 0.0
 
-        # CORREÇÃO DA MULTIPLICAÇÃO DE VALOR (MUDOU DE 'sum' PARA 'first')
-        # A coluna "Vlr. Total da Nota" já tem o valor cheio repetido em cada item.
+        # Agrupamento pegando o Total absoluto na primeira ocorrência da nota
         df_quirius = df_quirius.groupby('Chave_Acesso', as_index=False).agg({
             'Valor_QRI': 'first',
             'Nº NF-e': 'first',
@@ -135,6 +134,9 @@ class LeitorQuiriusNFe:
             'Data Emissão': 'first',
             'Pasta_Origem': 'first'
         })
+        
+        # Renomeia para clareza no cruzamento final
+        df_quirius.rename(columns={'Data Emissão': 'Data Emissão Quirius'}, inplace=True)
 
         print(f"[ETL QUIRIUS] Carregadas e agrupadas {len(df_quirius)} NF-es únicas.")
         return df_quirius
@@ -195,16 +197,27 @@ class LeitorOFBMateriais:
 
         df_totvs['Valor_Item_OFB'] = df_totvs['Vlr Item'].apply(self._converter_moeda)
 
-        # Para o TOTVS, a nota está dividida nos itens "Vlr Item", portanto AQUI usamos o sum()!
-        df_totvs = df_totvs.groupby('Chave_Acesso', as_index=False).agg({
+        # Mapeia a coluna de data (Emissão ou Dt Docto)
+        col_emissao = 'Emissão' if 'Emissão' in df_totvs.columns else ('Dt Docto' if 'Dt Docto' in df_totvs.columns else None)
+
+        agg_dict = {
             'Valor_Item_OFB': 'sum',
             'Doc Fisc': 'first',
             'Nome': 'first',
             'Estabelecimento': 'first',
             'Nome do Usuario': 'first'
-        })
+        }
+        if col_emissao:
+            agg_dict[col_emissao] = 'first'
+
+        df_totvs = df_totvs.groupby('Chave_Acesso', as_index=False).agg(agg_dict)
         
         df_totvs.rename(columns={'Valor_Item_OFB': 'Valor_OFB'}, inplace=True)
+        if col_emissao:
+            df_totvs.rename(columns={col_emissao: 'Data Emissão TOTVS'}, inplace=True)
+        else:
+            df_totvs['Data Emissão TOTVS'] = ""
+
         print(f"[ETL TOTVS] Consolidadas {len(df_totvs)} NF-es únicas vindas dos itens.")
         return df_totvs
 
@@ -219,15 +232,38 @@ class AuditorMateriais:
 
         df_cruzamento = pd.merge(df_quirius, df_totvs, on='Chave_Acesso', how='outer', indicator=True)
 
+        def formatar_data(dt_str):
+            """Transforma qualquer data para o formato YYYY-MM-DD para comparação justa"""
+            if pd.isna(dt_str) or not str(dt_str).strip(): return ""
+            dt_str = str(dt_str).strip()
+            # Padrão TOTVS (DD/MM/YYYY)
+            if len(dt_str) >= 10 and dt_str[2] == '/' and dt_str[5] == '/':
+                return f"{dt_str[6:10]}-{dt_str[3:5]}-{dt_str[0:2]}"
+            # Padrão Quirius (YYYY-MM-DD HH:MM:SS)
+            if len(dt_str) >= 10 and dt_str[4] == '-':
+                return dt_str[:10]
+            return dt_str
+
         def validar_status(row):
             if row['_merge'] == 'left_only':
                 return 'FALTA NO TOTVS'
             elif row['_merge'] == 'right_only':
                 return 'FALTA NO QUIRIUS'
             else:
+                erros = []
+                # Validação Matemática
                 dif = round(row.get('Valor_QRI', 0.0) - row.get('Valor_OFB', 0.0), 2)
                 if abs(dif) > 0.10:
-                    return 'DIVERGÊNCIA DE VALOR'
+                    erros.append('VALOR')
+                
+                # Validação de Datas
+                dt_qri = formatar_data(row.get('Data Emissão Quirius', ''))
+                dt_ofb = formatar_data(row.get('Data Emissão TOTVS', ''))
+                if dt_qri and dt_ofb and dt_qri != dt_ofb:
+                    erros.append('DATA')
+
+                if erros:
+                    return 'DIVERGÊNCIA DE ' + ' E '.join(erros)
                 return 'CONCILIADO OK'
 
         df_cruzamento['Validação'] = df_cruzamento.apply(validar_status, axis=1)
@@ -241,7 +277,8 @@ class AuditorMateriais:
 
         colunas_finais = [
             'Validação', 'Dif. QRI x OFB', 'Valor_QRI', 'Valor_OFB',
-            'Chave_Acesso', 'Nº NF-e', 'Doc Fisc', 'Data Emissão', 
+            'Data Emissão Quirius', 'Data Emissão TOTVS',
+            'Chave_Acesso', 'Nº NF-e', 'Doc Fisc', 
             'CNPJ Emissor', 'Razão Social Emissor', 'Nome', 
             'Pasta_Origem', 'Estabelecimento', 'Nome do Usuario'
         ]
@@ -280,6 +317,7 @@ class AuditorMateriais:
         for r_idx, r in enumerate(df_resultado.itertuples(index=False), start=2):
             ws.append(list(r))
             
+            # Formatação Monetária nas colunas B, C e D (Índices 2, 3, 4 no Excel)
             ws.cell(row=r_idx, column=2).number_format = 'R$ #,##0.00'
             ws.cell(row=r_idx, column=3).number_format = 'R$ #,##0.00'
             ws.cell(row=r_idx, column=4).number_format = 'R$ #,##0.00'

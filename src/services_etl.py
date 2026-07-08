@@ -8,10 +8,15 @@ from email.message import EmailMessage
 import pandas as pd
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from dotenv import load_dotenv
+
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
-from config import CaminhosProjeto, settings
+
+from config import CaminhosProjeto
+
+load_dotenv()
 
 class LeitorSimplesNacional:
     def __init__(self, diretorio_base: Path):
@@ -20,13 +25,19 @@ class LeitorSimplesNacional:
 
     def _limpar_cnpj(self, cnpj_bruto) -> str:
         if pd.isna(cnpj_bruto): return ""
-        limpo = ''.join(filter(str.isdigit, str(cnpj_bruto)))
+        val = str(cnpj_bruto).strip()
+        if val.endswith('.0'): val = val[:-2]
+        if 'E' in val.upper(): 
+            try: val = str(int(float(val)))
+            except: pass
+        
+        limpo = ''.join(filter(str.isdigit, val))
         return limpo.zfill(14) if limpo else ""
 
     def _consultar_api(self, cnpj: str) -> str:
         """Consulta a BrasilAPI para verificar se o CNPJ é optante pelo Simples."""
         if not cnpj or len(cnpj) != 14: 
-            return "NÃO"
+            return "PENDENTE_CONSULTA" # Substitui a Macro21 (Fornecedores sem status)
         try:
             url = f"https://brasilapi.com.br/api/cnpj/v1/{cnpj}"
             response = requests.get(url, timeout=10)
@@ -36,7 +47,7 @@ class LeitorSimplesNacional:
                 return "SIM" if opcao is True else "NÃO"
         except Exception:
             pass 
-        return "NÃO"
+        return "PENDENTE_CONSULTA"
 
     def carregar(self, cnpjs_alvo=None) -> pd.DataFrame:
         arquivos = list(self.pasta.glob("*.xlsx")) + list(self.pasta.glob("*.csv"))
@@ -70,6 +81,7 @@ class LeitorSimplesNacional:
             caminho_salvar = self.pasta / "consulta_simples_nacional.xlsx"
             df_original = pd.DataFrame(columns=['CNPJ', 'SIMPLES', 'CNPJ_Limpo', 'Simples_SN'])
 
+        # --- LÓGICA DE API (AUTO-HEALING) ---
         if cnpjs_alvo:
             cnpjs_existentes = set()
             if not df_original.empty and 'CNPJ_Limpo' in df_original.columns:
@@ -101,7 +113,6 @@ class LeitorSimplesNacional:
                 try:
                     df_salvar = df_original.drop(columns=['CNPJ_Limpo', 'Simples_SN'], errors='ignore')
                     df_salvar[col_cnpj] = df_salvar[col_cnpj].apply(lambda x: str(x).zfill(14) if pd.notna(x) else x)
-                    
                     if caminho_salvar.suffix.lower() == '.xlsx':
                         df_salvar.to_excel(caminho_salvar, index=False)
                     else:
@@ -301,7 +312,6 @@ class LeitorBaseGoverno:
 
 class LeitorRelatorioTotvs:
     def __init__(self, caminhos: CaminhosProjeto):
-        # Direciona especificamente para a subpasta REB405
         self.pasta = caminhos.entrada_totvs / "REB405"
         self.pasta.mkdir(parents=True, exist_ok=True)
 
@@ -422,7 +432,7 @@ class AuditorFiscal:
         if not df_simples.empty:
             df_cruzamento = pd.merge(df_cruzamento, df_simples, left_on='CNPJ_Merge', right_on='CNPJ_Limpo', how='left')
         else:
-            df_cruzamento['Simples_SN'] = 'NÃO'
+            df_cruzamento['Simples_SN'] = 'PENDENTE_CONSULTA'
             
         for col, col_fallback in [('CNPJ emit', 'CNPJ_XML'), ('Docto', 'Nota_XML'), ('Nome Abrev', 'Nome_XML'), ('Tot. Nota', 'Valor_XML')]:
             if col in df_cruzamento.columns:
@@ -438,29 +448,23 @@ class AuditorFiscal:
             return dt_str
 
         def validar_impostos(row):
-            if row['_merge'] == 'right_only': return "FALTA_XML"
             if row['_merge'] == 'left_only': return "" 
             
             erros_encontrados = []
             
             dt_xml = str(row.get('DataEmissao_XML', '')).strip()[:10]
             dt_totvs = formata_data_totvs(row.get('Dt.Emiss', ''))
-            if dt_xml and dt_totvs and dt_xml != dt_totvs:
-                erros_encontrados.append("DATA_EMISSAO")
-
-            if abs(row.get('Valor_XML', 0.0) - row.get('Valor_TOTVS', 0.0)) > 0.10:
-                erros_encontrados.append("VALOR_BRUTO")
-                
-            flag_ret = str(row.get('Flag_Ret_ISS', '1'))
-            iss_esperado = row.get('ISS_XML', 0.0) if flag_ret == '2' else 0.0
-            if abs(iss_esperado - row.get('ISS_TOTVS', 0.0)) > 0.10:
-                erros_encontrados.append("ISS")
-                
-            val_simples_planilha = str(row.get('Simples_SN', 'NÃO')).strip().upper()
+            
+            # --- Regras Universais do Simples Nacional ---
+            val_simples_planilha = str(row.get('Simples_SN', 'PENDENTE_CONSULTA')).strip().upper()
             val_simples_xml = str(row.get('Simples_XML_Resolvido', 'NÃO')).strip().upper()
             
             is_simples = (val_simples_planilha == 'SIM') or (val_simples_xml == 'SIM')
             
+            # Flag para a 'Macro21' - Dispara envio de e-mail p/ consulta manual
+            if val_simples_planilha == 'PENDENTE_CONSULTA' or val_simples_xml == 'PENDENTE_CONSULTA':
+                erros_encontrados.append("SIMPLES_RET_INDEVIDA") 
+                
             teve_erro_simples = False
             if is_simples:
                 soma_federais_totvs = sum([
@@ -471,11 +475,41 @@ class AuditorFiscal:
                     erros_encontrados.append("SIMPLES_RET_INDEVIDA")
                     teve_erro_simples = True
 
-            if not teve_erro_simples:
-                for nome, col_xml, col_erp in [('IR', 'IRRF_XML', 'IRRF_TOTVS'), ('INSS', 'INSS_XML', 'INSS_TOTVS'), ('CS', 'CSLL_XML', 'CSLL_TOTVS')]:
-                    if abs(row.get(col_xml, 0.0) - row.get(col_erp, 0.0)) > 0.10:
-                        erros_encontrados.append(nome)
-            
+            # --- CASO 1: NOTA EXISTE NO ERP E NO GOVERNO ---
+            if row['_merge'] == 'both':
+                if dt_xml and dt_totvs and dt_xml != dt_totvs:
+                    erros_encontrados.append("DATA_EMISSAO")
+
+                if abs(row.get('Valor_XML', 0.0) - row.get('Valor_TOTVS', 0.0)) > 0.10:
+                    erros_encontrados.append("VALOR_BRUTO")
+                    
+                flag_ret = str(row.get('Flag_Ret_ISS', '1'))
+                iss_esperado = row.get('ISS_XML', 0.0) if flag_ret == '2' else 0.0
+                if abs(iss_esperado - row.get('ISS_TOTVS', 0.0)) > 0.10:
+                    erros_encontrados.append("ISS")
+                    
+                if not teve_erro_simples:
+                    for nome, col_xml, col_erp in [('IR', 'IRRF_XML', 'IRRF_TOTVS'), ('INSS', 'INSS_XML', 'INSS_TOTVS'), ('CS', 'CSLL_XML', 'CSLL_TOTVS')]:
+                        if abs(row.get(col_xml, 0.0) - row.get(col_erp, 0.0)) > 0.10:
+                            erros_encontrados.append(nome)
+
+            # --- CASO 2: NOTA "CEGA" (SÓ EXISTE NO TOTVS - APLICA REGRAS DA MACRO VBA) ---
+            elif row['_merge'] == 'right_only':
+                erros_encontrados.append("FALTA_XML")
+                
+                if not teve_erro_simples:
+                    # Ao invés de ignorar, o Python simula o cruzamento com a "Base De Ret." da Macro:
+                    # Ele analisa matematicamente o que o TOTVS fez e sinaliza para o analista 
+                    # validar as retenções de acordo com as regras da empresa.
+                    erros_totvs = []
+                    if row.get('IRRF_TOTVS', 0.0) > 0.10: erros_totvs.append("IR")
+                    if row.get('INSS_TOTVS', 0.0) > 0.10: erros_totvs.append("INSS")
+                    if sum([row.get('CSLL_TOTVS', 0.0), row.get('PIS_TOTVS', 0.0), row.get('COFINS_TOTVS', 0.0)]) > 0.10: erros_totvs.append("CS")
+                    if row.get('ISS_TOTVS', 0.0) > 0.10: erros_totvs.append("ISS")
+                    
+                    if erros_totvs:
+                        erros_encontrados.append("_".join(erros_totvs)) # Ex: Mapeia para 'Verf. IR/CS'
+
             return ",".join(erros_encontrados) if erros_encontrados else "OK"
             
         def status_curto(row):
@@ -486,7 +520,6 @@ class AuditorFiscal:
             
         def mapear_apontamento(obs):
             if obs in ['OK', '']: return "Sem Erro"
-            if obs == 'FALTA_XML': return "Nota sem XML na Receita"
             if "SIMPLES_RET_INDEVIDA" in obs: return "Sem Consulta Simples nacional"
             
             tem_ir, tem_cs, tem_inss, tem_iss = "IR" in obs, "CS" in obs, "INSS" in obs, "ISS" in obs
@@ -501,6 +534,8 @@ class AuditorFiscal:
             if tem_iss: return "Verf. ISS"
             if tem_inss: return "Verf. INSS"
             if tem_cs: return "Verf. CS"
+            
+            if "FALTA_XML" in obs: return "Nota sem XML na Receita"
             
             if "DATA_EMISSAO" in obs and not "VALOR_BRUTO" in obs: return "Divergência de Data"
             if "VALOR_BRUTO" in obs: return "Outras Divergências"
@@ -798,10 +833,29 @@ class NotificadorEmail:
 
         try:
             msg = EmailMessage()
-            msg['Subject'] = '📊 Relatório Diário: Malha Fina e Apontamentos'
+            msg['Subject'] = '📊 Relatório Diário: Malha Fina de Serviços'
             msg['From'] = remetente
             msg['To'] = destinatario
-            msg.set_content("Bom dia,\n\nA auditoria foi concluída.\nEm anexo, o Dashboard consolidado e o Arquivo Auxiliar com os dados brutos das divergências.\n\nCom os melhores cumprimentos,\nAutomação")
+            
+            # Texto inteligente avisando da Macro21 caso o anexo esteja presente
+            texto_email = (
+                "Bom dia,\n\n"
+                "A auditoria fiscal de Serviços foi concluída com sucesso.\n"
+                "Em anexo, o Dashboard consolidado e o arquivo auxiliar com os dados brutos das divergências.\n\n"
+            )
+            
+            tem_acao_manual = any("Acao_Necessaria" in Path(c).name for c in caminhos_arquivos if c)
+            if tem_acao_manual:
+                texto_email += (
+                    "⚠️ ATENÇÃO: Constam fornecedores no anexo 'Acao_Necessaria_Consulta_Simples_Nacional' "
+                    "cuja validação automática falhou (API indisponível ou CNPJ irregular). "
+                    "Favor realizar a consulta manual do status no portal do Simples Nacional "
+                    "para validar as retenções.\n\n"
+                )
+                
+            texto_email += "Com os melhores cumprimentos,\nAutomação"
+            
+            msg.set_content(texto_email)
 
             for caminho in caminhos_arquivos:
                 if caminho and caminho.exists():
@@ -822,22 +876,18 @@ if __name__ == "__main__":
     RAIZ_PROJETO = Path(__file__).resolve().parent.parent
     config_caminhos = CaminhosProjeto(diretorio_base=RAIZ_PROJETO)
     
-    # 1. ACHATA OS XMLs E GERA O CSV CONSOLIDADO
     gerador_csv = GeradorCsvGoverno(caminhos=config_caminhos)
     caminho_base_governo = gerador_csv.gerar_csv()
     
-    # 2. LÊ O CSV PARA A MALHA FINA E O ERP
     tabela_xml = LeitorBaseGoverno(caminho_csv=caminho_base_governo).carregar()
     tabela_totvs = LeitorRelatorioTotvs(caminhos=config_caminhos).processar_relatorio()
     
-    # 3. EXTRAI TODOS OS CNPJs ENCONTRADOS PARA CONSULTAR NA API SE NECESSÁRIO
     cnpjs_para_consultar = set()
     if not tabela_xml.empty and 'CNPJ_XML' in tabela_xml.columns:
         cnpjs_para_consultar.update(tabela_xml['CNPJ_XML'].dropna().tolist())
     if not tabela_totvs.empty and 'CNPJ_TOTVS' in tabela_totvs.columns:
         cnpjs_para_consultar.update(tabela_totvs['CNPJ_TOTVS'].dropna().tolist())
         
-    # 4. CARREGA O SIMPLES NACIONAL (COM AUTO-HEALING VIA BRASILAPI)
     tabela_simples = LeitorSimplesNacional(diretorio_base=RAIZ_PROJETO).carregar(cnpjs_alvo=cnpjs_para_consultar)
     
     auditor = AuditorFiscal()
@@ -862,6 +912,19 @@ if __name__ == "__main__":
         arquivo_detalhes = auditor.exportar_detalhes_divergentes(df_resultado=resultado, df_xml=tabela_xml, df_totvs=tabela_totvs, caminho_saida=config_caminhos.saida_auditoria)
         
         arquivos_para_enviar = [arq for arq in [arquivo_excel, arquivo_detalhes] if arq is not None]
+        
+        # MACRO 21: Isolar notas "Sem Consulta Simples nacional" e preparar anexo especial
+        df_simples_pendente = resultado[resultado['Apontamento_Mapeado'] == 'Sem Consulta Simples nacional'].copy()
+        if not df_simples_pendente.empty:
+            print(f"\n[MACRO 21] Detectados {len(df_simples_pendente)} fornecedores requerendo consulta manual do Simples Nacional!")
+            arquivo_pendencias = config_caminhos.saida_auditoria / "Acao_Necessaria_Consulta_Simples_Nacional.xlsx"
+            
+            # Filtra apenas as colunas úteis para a equipe consultar
+            colunas_macro = ['CNPJ_TOTVS', 'Nome Abrev', 'Nota_TOTVS', 'Valor_TOTVS', 'IRRF_TOTVS', 'INSS_TOTVS', 'CSLL_TOTVS', 'ISS_TOTVS', 'Apontamento_Mapeado']
+            cols_disponiveis = [c for c in colunas_macro if c in df_simples_pendente.columns]
+            
+            df_simples_pendente[cols_disponiveis].to_excel(arquivo_pendencias, index=False)
+            arquivos_para_enviar.append(arquivo_pendencias)
         
         if arquivos_para_enviar:
             print("\n[!] Painéis Gerados e Guardados na Pasta. A disparar e-mails...")
