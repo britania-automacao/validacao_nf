@@ -287,59 +287,181 @@ class AuditorMateriais:
             if col not in df_cruzamento.columns:
                 df_cruzamento[col] = ""
                 
-        return df_cruzamento[colunas_finais].sort_values(by='Validação')
+        return df_cruzamento[colunas_finais]
 
     def exportar_dashboard(self, df_resultado: pd.DataFrame, caminho_saida: Path):
-        print("[EXPORTAÇÃO] Gerando Dashboard Pixel Perfect de Materiais...")
+        print("[EXPORTAÇÃO] Gerando Dashboard Executivo de Materiais...")
+        if df_resultado.empty: return None
+
+        df_erros = df_resultado[df_resultado['Validação'] != 'CONCILIADO OK'].copy()
+
+        if 'Valor_OFB' in df_resultado.columns:
+            df_resultado['Valor_OFB'] = pd.to_numeric(df_resultado['Valor_OFB'], errors='coerce').fillna(0)
         
-        arquivo_saida = caminho_saida / "Dashboard_Materiais_Validacao.xlsx"
+        total_nfs = len(df_resultado)
+        total_verificar = len(df_erros)
+
+        # Levantamento por Estabelecimento
+        est_col = 'Estabelecimento'
+        if est_col in df_resultado.columns:
+            df_estab = df_resultado.groupby(est_col).size().reset_index(name='Total NFS')
+            erros_estab = df_erros.groupby(est_col).size().reset_index(name='Para Verificar')
+            df_estab = pd.merge(df_estab, erros_estab, on=est_col, how='left').fillna(0)
+            df_estab['Para Verificar'] = df_estab['Para Verificar'].astype(int)
+        else:
+            df_estab = pd.DataFrame(columns=['Estabelecimento', 'Total NFS', 'Para Verificar'])
+
+        # Levantamento de Apontamentos (Erros)
+        erros_contagem = df_erros['Validação'].value_counts().reset_index()
+        erros_contagem.columns = ['Descrição', 'Quantidades']
+        erros_contagem.insert(0, 'Ordem', range(1, 1 + len(erros_contagem)))
+        dados_apontamentos = erros_contagem.values.tolist()
+
+        # Top 10 Fornecedores de Materiais
+        if 'CNPJ Emissor' in df_resultado.columns and 'Razão Social Emissor' in df_resultado.columns:
+            df_forn = df_resultado.groupby(['CNPJ Emissor', 'Razão Social Emissor']).size().reset_index(name='Quantidade')
+            df_forn = df_forn.sort_values(by='Quantidade', ascending=False).head(10)
+        else:
+            df_forn = pd.DataFrame(columns=['CNPJ Emissor', 'Razão Social Emissor', 'Quantidade'])
+
+        # Top 5 Usuários (Lançamentos)
+        if 'Nome do Usuario' in df_resultado.columns:
+            df_user = df_resultado.groupby(['Nome do Usuario']).size().reset_index(name='Quantidades')
+            df_user = df_user.sort_values(by='Quantidades', ascending=False).head(5)
+            df_user.insert(0, 'Cód.', '-') # Adaptação visual para manter as 3 colunas padrão
+        else:
+            df_user = pd.DataFrame(columns=['Cód.', 'Nome do Usuario', 'Quantidades'])
+
+        # Totais Financeiros
+        totais_gerais = [
+            ("Valor Total NFS (OFB)", df_resultado['Valor_OFB'].sum())
+        ]
+
+        # MODIFICAÇÃO: Renomeado para relatorio_materiais.xlsx
+        arquivo_saida = caminho_saida / "relatorio_materiais.xlsx"
         wb = Workbook()
+        
+        # === ABA DASHBOARD ===
         ws = wb.active
-        ws.title = "Validação OFB x Quirius"
-        
-        colunas = list(df_resultado.columns)
-        ws.append(colunas)
-        
-        fill_header = PatternFill(fill_type="solid", fgColor="0E2841")
-        font_header = Font(bold=True, color="FFFFFF")
-        
-        for col_idx, col_name in enumerate(colunas, 1):
-            celula = ws.cell(row=1, column=col_idx)
-            celula.font = font_header
-            celula.fill = fill_header
-            ws.column_dimensions[get_column_letter(col_idx)].width = 22
+        ws.title = "Dashboard"
+        ws.sheet_view.showGridLines = False
 
+        fill_title = PatternFill(fill_type="solid", fgColor="0E2841")
+        fill_header = PatternFill(fill_type="solid", fgColor="FFC000")
+        font_title = Font(bold=True, color="FFFFFF")
+        font_header = Font(bold=True, color="000000")
+        borda = Border(left=Side(style='thin'), right=Side(style='thin'), top=Side(style='thin'), bottom=Side(style='thin'))
+
+        def criar_titulo_secao(ws, col_start, col_end, row, texto):
+            ws.merge_cells(start_row=row, start_column=col_start, end_row=row, end_column=col_end)
+            c = ws.cell(row=row, column=col_start, value=texto)
+            c.font = font_title
+            c.fill = fill_title
+            c.alignment = Alignment(horizontal="center", vertical="center")
+            for col in range(col_start, col_end + 1):
+                ws.cell(row=row, column=col).border = borda
+
+        def criar_tabela(ws, col_start, row_start, headers, dados):
+            for i, h in enumerate(headers):
+                c = ws.cell(row=row_start, column=col_start+i, value=h)
+                c.font = font_header
+                c.fill = fill_header
+                c.alignment = Alignment(horizontal="center", vertical="center")
+                c.border = borda
+            for r_idx, row_data in enumerate(dados, 1):
+                for c_idx, val in enumerate(row_data):
+                    c = ws.cell(row=row_start+r_idx, column=col_start+c_idx, value=val)
+                    c.border = borda
+                    if isinstance(val, (int, float)): 
+                        c.alignment = Alignment(horizontal="center", vertical="center")
+
+        larguras = {'B': 12, 'C': 15, 'D': 18, 'E': 3, 'F': 8, 'G': 35, 'H': 15, 'I': 3, 'J': 18, 'K': 35, 'L': 15, 'M': 3, 'N': 20, 'O': 20}
+        for col, width in larguras.items():
+            ws.column_dimensions[col].width = width
+
+        # Criação dos blocos do Dashboard (Igual ao de Serviços)
+        criar_titulo_secao(ws, 2, 4, 2, "RESUMO DE NFS")
+        ws.cell(row=3, column=2, value="Total de NFS").font = Font(bold=True)
+        ws.cell(row=3, column=3, value=total_nfs).alignment = Alignment(horizontal="left")
+        ws.cell(row=4, column=2, value="Total NFS Para Verificar").font = Font(bold=True)
+        ws.cell(row=4, column=3, value=total_verificar).alignment = Alignment(horizontal="left")
+        
+        criar_tabela(ws, 2, 6, ["Estabelecimento", "Total NFS", "Para Verificar"], df_estab.values.tolist())
+        
+        criar_titulo_secao(ws, 6, 8, 2, "APONTAMENTOS")
+        criar_tabela(ws, 6, 3, ["Ordem", "Descrição", "Quantidades"], dados_apontamentos)
+        
+        criar_titulo_secao(ws, 10, 12, 2, "10 MAIORES FORNECEDORES DE EMISSÃO")
+        criar_tabela(ws, 10, 3, ["CNPJ Emit.", "Razão Social", "Quantidade"], df_forn.values.tolist())
+        
+        row_user = 3 + len(df_forn) + 2
+        criar_titulo_secao(ws, 10, 12, row_user, "5 MAIORES USUÁRIOS (LANÇAMENTOS)")
+        criar_tabela(ws, 10, row_user+1, ["-", "Nome do Usuario", "Quantidades"], df_user.values.tolist())
+
+        criar_titulo_secao(ws, 14, 15, 2, "TOTAL GERAL")
+        criar_tabela(ws, 14, 3, ["Descrição", "Valor"], totais_gerais)
+        
+        for row in range(4, 4 + len(totais_gerais)):
+            c_val = ws.cell(row=row, column=15)
+            c_val.number_format = 'R$ #,##0.00'
+
+        # === ABA VALIDAÇÃO ===
+        ws_val = wb.create_sheet("Validação")
+        
+        colunas_finais = list(df_resultado.columns)
+        ws_val.append(colunas_finais)
+        
+        for col_idx, col_name in enumerate(colunas_finais, 1):
+            celula = ws_val.cell(row=1, column=col_idx)
+            celula.font = font_title
+            celula.fill = fill_title
+            ws_val.column_dimensions[celula.column_letter].width = 20
+            
+        df_export = df_resultado.fillna("")
+        
+        # Ordenação inteligente: Coloca as divergências no topo
+        df_export['Ordem_Sort'] = df_export['Validação'].apply(lambda x: 1 if 'CONCILIADO OK' in x else 0)
+        df_export = df_export.sort_values(by=['Ordem_Sort', 'Validação']).drop(columns=['Ordem_Sort'])
+
+        col_idx_map = {col_name: idx for idx, col_name in enumerate(colunas_finais, 1)}
         fill_erro = PatternFill(fill_type="solid", fgColor="FFC7CE") 
-        font_erro = Font(color="9C0006", bold=True)
-        fill_ok = PatternFill(fill_type="solid", fgColor="C6EFCE")
-        font_ok = Font(color="006100", bold=True)
-
-        for r_idx, r in enumerate(df_resultado.itertuples(index=False), start=2):
-            ws.append(list(r))
+        font_erro = Font(color="9C0006", bold=True)                  
+        
+        for r_idx, r in enumerate(df_export.itertuples(index=False), start=2):
+            ws_val.append(list(r))
             
-            # Formatação Monetária nas colunas B, C e D (Índices 2, 3, 4 no Excel)
-            ws.cell(row=r_idx, column=2).number_format = 'R$ #,##0.00'
-            ws.cell(row=r_idx, column=3).number_format = 'R$ #,##0.00'
-            ws.cell(row=r_idx, column=4).number_format = 'R$ #,##0.00'
+            # Formatação Monetária
+            ws_val.cell(row=r_idx, column=col_idx_map.get('Dif. QRI x OFB', 2)).number_format = 'R$ #,##0.00'
+            ws_val.cell(row=r_idx, column=col_idx_map.get('Valor_QRI', 3)).number_format = 'R$ #,##0.00'
+            ws_val.cell(row=r_idx, column=col_idx_map.get('Valor_OFB', 4)).number_format = 'R$ #,##0.00'
 
-            status = str(r[0])
-            celula_status = ws.cell(row=r_idx, column=1)
+            obs = str(r[0])
             
-            if status == 'CONCILIADO OK':
-                celula_status.fill = fill_ok
-                celula_status.font = font_ok
-            else:
-                celula_status.fill = fill_erro
-                celula_status.font = font_erro
-                for c_idx in range(1, len(colunas) + 1):
-                    ws.cell(row=r_idx, column=c_idx).fill = fill_erro
-                    
-        ws.freeze_panes = "A2"
-        ultima_coluna = get_column_letter(ws.max_column)
-        ws.auto_filter.ref = f"A1:{ultima_coluna}{ws.max_row}"
+            def pintar_celulas(col_qri, col_totvs):
+                if col_qri in col_idx_map:
+                    ws_val.cell(row=r_idx, column=col_idx_map[col_qri]).fill = fill_erro
+                    ws_val.cell(row=r_idx, column=col_idx_map[col_qri]).font = font_erro
+                if col_totvs in col_idx_map:
+                    ws_val.cell(row=r_idx, column=col_idx_map[col_totvs]).fill = fill_erro
+                    ws_val.cell(row=r_idx, column=col_idx_map[col_totvs]).font = font_erro
+
+            # Pintura Condicional baseada no erro detectado
+            if obs != 'CONCILIADO OK':
+                ws_val.cell(row=r_idx, column=col_idx_map.get('Validação', 1)).fill = fill_erro
+                ws_val.cell(row=r_idx, column=col_idx_map.get('Validação', 1)).font = font_erro
+                
+                if "DATA" in obs: pintar_celulas("Data Emissão Quirius", "Data Emissão TOTVS")
+                if "VALOR" in obs: pintar_celulas("Valor_QRI", "Valor_OFB")
+                if "FALTA NO TOTVS" in obs: pintar_celulas("Chave_Acesso", "Nº NF-e")
+                if "FALTA NO QUIRIUS" in obs: pintar_celulas("Chave_Acesso", "Doc Fisc")
+                
+        ws_val.freeze_panes = "A2"
+        ultima_coluna = get_column_letter(ws_val.max_column)
+        ws_val.auto_filter.ref = f"A1:{ultima_coluna}{ws_val.max_row}"
 
         wb.save(arquivo_saida)
         print(f"[SUCESSO] Dashboard Finalizado: {arquivo_saida}")
+        return arquivo_saida
 
 
 if __name__ == "__main__":
