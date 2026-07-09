@@ -3,8 +3,6 @@ import os
 import re
 import time
 import requests
-import smtplib
-from email.message import EmailMessage
 import pandas as pd
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -37,7 +35,7 @@ class LeitorSimplesNacional:
     def _consultar_api(self, cnpj: str) -> str:
         """Consulta a BrasilAPI para verificar se o CNPJ é optante pelo Simples."""
         if not cnpj or len(cnpj) != 14: 
-            return "PENDENTE_CONSULTA" # Substitui a Macro21 (Fornecedores sem status)
+            return "PENDENTE_CONSULTA"
         try:
             url = f"https://brasilapi.com.br/api/cnpj/v1/{cnpj}"
             response = requests.get(url, timeout=10)
@@ -455,13 +453,11 @@ class AuditorFiscal:
             dt_xml = str(row.get('DataEmissao_XML', '')).strip()[:10]
             dt_totvs = formata_data_totvs(row.get('Dt.Emiss', ''))
             
-            # --- Regras Universais do Simples Nacional ---
             val_simples_planilha = str(row.get('Simples_SN', 'PENDENTE_CONSULTA')).strip().upper()
             val_simples_xml = str(row.get('Simples_XML_Resolvido', 'NÃO')).strip().upper()
             
             is_simples = (val_simples_planilha == 'SIM') or (val_simples_xml == 'SIM')
             
-            # Flag para a 'Macro21' - Dispara envio de e-mail p/ consulta manual
             if val_simples_planilha == 'PENDENTE_CONSULTA' or val_simples_xml == 'PENDENTE_CONSULTA':
                 erros_encontrados.append("SIMPLES_RET_INDEVIDA") 
                 
@@ -475,7 +471,6 @@ class AuditorFiscal:
                     erros_encontrados.append("SIMPLES_RET_INDEVIDA")
                     teve_erro_simples = True
 
-            # --- CASO 1: NOTA EXISTE NO ERP E NO GOVERNO ---
             if row['_merge'] == 'both':
                 if dt_xml and dt_totvs and dt_xml != dt_totvs:
                     erros_encontrados.append("DATA_EMISSAO")
@@ -493,14 +488,10 @@ class AuditorFiscal:
                         if abs(row.get(col_xml, 0.0) - row.get(col_erp, 0.0)) > 0.10:
                             erros_encontrados.append(nome)
 
-            # --- CASO 2: NOTA "CEGA" (SÓ EXISTE NO TOTVS - APLICA REGRAS DA MACRO VBA) ---
             elif row['_merge'] == 'right_only':
                 erros_encontrados.append("FALTA_XML")
                 
                 if not teve_erro_simples:
-                    # Ao invés de ignorar, o Python simula o cruzamento com a "Base De Ret." da Macro:
-                    # Ele analisa matematicamente o que o TOTVS fez e sinaliza para o analista 
-                    # validar as retenções de acordo com as regras da empresa.
                     erros_totvs = []
                     if row.get('IRRF_TOTVS', 0.0) > 0.10: erros_totvs.append("IR")
                     if row.get('INSS_TOTVS', 0.0) > 0.10: erros_totvs.append("INSS")
@@ -508,7 +499,7 @@ class AuditorFiscal:
                     if row.get('ISS_TOTVS', 0.0) > 0.10: erros_totvs.append("ISS")
                     
                     if erros_totvs:
-                        erros_encontrados.append("_".join(erros_totvs)) # Ex: Mapeia para 'Verf. IR/CS'
+                        erros_encontrados.append("_".join(erros_totvs))
 
             return ",".join(erros_encontrados) if erros_encontrados else "OK"
             
@@ -816,62 +807,6 @@ class AuditorFiscal:
         print(f"[SUCESSO] Dashboard Pixel Perfect gerado em: {arquivo_saida}")
         return arquivo_saida
 
-
-class NotificadorEmail:
-    def enviar_relatorio(self, caminhos_arquivos: list):
-        print(f"[EMAIL] A preparar envio para destinatário...")
-        
-        remetente = os.getenv('EMAIL_REMETENTE')
-        senha = os.getenv('EMAIL_SENHA')
-        destinatario = os.getenv('EMAIL_DESTINATARIO')
-        smtp_server = os.getenv('SMTP_SERVER')
-        smtp_port = int(os.getenv('SMTP_PORT', 587))
-
-        if not all([remetente, senha, destinatario, smtp_server]):
-            print("[AVISO] Credenciais de e-mail ausentes no .env. Ignorando envio.")
-            return
-
-        try:
-            msg = EmailMessage()
-            msg['Subject'] = '📊 Relatório Diário: Malha Fina de Serviços'
-            msg['From'] = remetente
-            msg['To'] = destinatario
-            
-            # Texto inteligente avisando da Macro21 caso o anexo esteja presente
-            texto_email = (
-                "Bom dia,\n\n"
-                "A auditoria fiscal de Serviços foi concluída com sucesso.\n"
-                "Em anexo, o Dashboard consolidado e o arquivo auxiliar com os dados brutos das divergências.\n\n"
-            )
-            
-            tem_acao_manual = any("Acao_Necessaria" in Path(c).name for c in caminhos_arquivos if c)
-            if tem_acao_manual:
-                texto_email += (
-                    "⚠️ ATENÇÃO: Constam fornecedores no anexo 'Acao_Necessaria_Consulta_Simples_Nacional' "
-                    "cuja validação automática falhou (API indisponível ou CNPJ irregular). "
-                    "Favor realizar a consulta manual do status no portal do Simples Nacional "
-                    "para validar as retenções.\n\n"
-                )
-                
-            texto_email += "Com os melhores cumprimentos,\nAutomação"
-            
-            msg.set_content(texto_email)
-
-            for caminho in caminhos_arquivos:
-                if caminho and caminho.exists():
-                    with open(caminho, 'rb') as f:
-                        msg.add_attachment(f.read(), maintype='application', subtype='vnd.openxmlformats-officedocument.spreadsheetml.sheet', filename=caminho.name)
-
-            with smtplib.SMTP(smtp_server, smtp_port) as server:
-                server.starttls()
-                server.login(remetente, senha)
-                server.send_message(msg)
-                
-            print(f"[SUCESSO] E-mail enviado com {len(caminhos_arquivos)} ficheiros anexados!")
-        except Exception as e:
-            print(f"[ERRO EMAIL] Falha ao enviar o e-mail: {e}")
-
-
 if __name__ == "__main__":
     RAIZ_PROJETO = Path(__file__).resolve().parent.parent
     config_caminhos = CaminhosProjeto(diretorio_base=RAIZ_PROJETO)
@@ -911,21 +846,4 @@ if __name__ == "__main__":
         arquivo_excel = auditor.exportar_relatorio_divergencias(df_resultado=resultado, caminho_saida=config_caminhos.saida_auditoria)
         arquivo_detalhes = auditor.exportar_detalhes_divergentes(df_resultado=resultado, df_xml=tabela_xml, df_totvs=tabela_totvs, caminho_saida=config_caminhos.saida_auditoria)
         
-        arquivos_para_enviar = [arq for arq in [arquivo_excel, arquivo_detalhes] if arq is not None]
-        
-        # MACRO 21: Isolar notas "Sem Consulta Simples nacional" e preparar anexo especial
-        df_simples_pendente = resultado[resultado['Apontamento_Mapeado'] == 'Sem Consulta Simples nacional'].copy()
-        if not df_simples_pendente.empty:
-            print(f"\n[MACRO 21] Detectados {len(df_simples_pendente)} fornecedores requerendo consulta manual do Simples Nacional!")
-            arquivo_pendencias = config_caminhos.saida_auditoria / "Acao_Necessaria_Consulta_Simples_Nacional.xlsx"
-            
-            # Filtra apenas as colunas úteis para a equipe consultar
-            colunas_macro = ['CNPJ_TOTVS', 'Nome Abrev', 'Nota_TOTVS', 'Valor_TOTVS', 'IRRF_TOTVS', 'INSS_TOTVS', 'CSLL_TOTVS', 'ISS_TOTVS', 'Apontamento_Mapeado']
-            cols_disponiveis = [c for c in colunas_macro if c in df_simples_pendente.columns]
-            
-            df_simples_pendente[cols_disponiveis].to_excel(arquivo_pendencias, index=False)
-            arquivos_para_enviar.append(arquivo_pendencias)
-        
-        if arquivos_para_enviar:
-            print("\n[!] Painéis Gerados e Guardados na Pasta. A disparar e-mails...")
-            NotificadorEmail().enviar_relatorio(arquivos_para_enviar)
+        print("\n[!] Painéis de Serviços Gerados e Guardados na Pasta de Auditoria.")
