@@ -125,9 +125,11 @@ class LeitorQuiriusNFe:
         else:
             df_quirius['Valor_QRI'] = 0.0
 
-        # Agrupamento pegando o Total absoluto na primeira ocorrência da nota
+        # CORREÇÃO: Usando 'sum' para o Valor e 'first' para descrições.
+        # Assim, se uma nota possuir múltiplos CFOPs ou quebras de itens no Quirius, 
+        # o Python irá consolidar somando as linhas de uma mesma Chave de Acesso.
         df_quirius = df_quirius.groupby('Chave_Acesso', as_index=False).agg({
-            'Valor_QRI': 'first',
+            'Valor_QRI': 'sum',
             'Nº NF-e': 'first',
             'CNPJ Emissor': 'first',
             'Razão Social Emissor': 'first',
@@ -251,7 +253,7 @@ class AuditorMateriais:
                 return 'FALTA NO QUIRIUS'
             else:
                 erros = []
-                # Validação Matemática
+                # Validação Matemática (Margem de tolerância ajustada de 10 centavos)
                 dif = round(row.get('Valor_QRI', 0.0) - row.get('Valor_OFB', 0.0), 2)
                 if abs(dif) > 0.10:
                     erros.append('VALOR')
@@ -337,7 +339,6 @@ class AuditorMateriais:
             ("Valor Total NFS (OFB)", df_resultado['Valor_OFB'].sum())
         ]
 
-        # MODIFICAÇÃO: Renomeado para relatorio_materiais.xlsx
         arquivo_saida = caminho_saida / "relatorio_materiais.xlsx"
         wb = Workbook()
         
@@ -379,7 +380,7 @@ class AuditorMateriais:
         for col, width in larguras.items():
             ws.column_dimensions[col].width = width
 
-        # Criação dos blocos do Dashboard (Igual ao de Serviços)
+        # Criação dos blocos do Dashboard
         criar_titulo_secao(ws, 2, 4, 2, "RESUMO DE NFS")
         ws.cell(row=3, column=2, value="Total de NFS").font = Font(bold=True)
         ws.cell(row=3, column=3, value=total_nfs).alignment = Alignment(horizontal="left")

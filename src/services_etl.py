@@ -538,63 +538,6 @@ class AuditorFiscal:
         
         return df_cruzamento
 
-    def _escrever_aba_formatada(self, ws, df):
-        if df.empty:
-            ws.append(["Nenhum dado encontrado."])
-            return
-            
-        df = df.fillna("")
-        colunas = list(df.columns)
-        ws.append(colunas)
-        
-        fill_header = PatternFill(fill_type="solid", fgColor="0E2841")
-        font_header = Font(bold=True, color="FFFFFF")
-        
-        for col_idx, col_name in enumerate(colunas, 1):
-            celula = ws.cell(row=1, column=col_idx)
-            celula.font = font_header
-            celula.fill = fill_header
-            ws.column_dimensions[get_column_letter(col_idx)].width = 20
-            
-        for r in df.itertuples(index=False):
-            ws.append(list(r))
-            
-        ws.freeze_panes = "A2"
-        ultima_coluna = get_column_letter(ws.max_column)
-        ws.auto_filter.ref = f"A1:{ultima_coluna}{ws.max_row}"
-
-    def exportar_detalhes_divergentes(self, df_resultado: pd.DataFrame, df_xml: pd.DataFrame, df_totvs: pd.DataFrame, caminho_saida: Path) -> Path:
-        print(f"[EXPORTAÇÃO] A extrair ficheiro detalhado das bases brutas para divergências...")
-        if df_resultado.empty: return None
-
-        df_divergentes = df_resultado[df_resultado['Valid. FINAL'] == 'DIVERGENTE']
-        if df_divergentes.empty:
-            return None
-
-        chaves_div = df_divergentes['Chave'].unique()
-        
-        xml_div = df_xml[df_xml['Chave'].isin(chaves_div)].copy()
-        totvs_div = df_totvs[df_totvs['Chave'].isin(chaves_div)].copy()
-
-        cols_xml = list(xml_div.columns)
-        if 'NSU_XML' in cols_xml:
-            cols_xml.insert(0, cols_xml.pop(cols_xml.index('NSU_XML')))
-            xml_div = xml_div[cols_xml]
-
-        arquivo_detalhes = caminho_saida / "Detalhes_Divergentes_Bases_Crus.xlsx"
-        wb = Workbook()
-        
-        ws_xml = wb.active
-        ws_xml.title = "XML_Divergentes"
-        self._escrever_aba_formatada(ws_xml, xml_div)
-
-        ws_totvs = wb.create_sheet("TOTVS_Divergentes")
-        self._escrever_aba_formatada(ws_totvs, totvs_div)
-        
-        wb.save(arquivo_detalhes)
-        print(f"[SUCESSO] Detalhes Brutos gerados em: {arquivo_detalhes}")
-        return arquivo_detalhes
-
     def exportar_relatorio_divergencias(self, df_resultado: pd.DataFrame, caminho_saida: Path) -> Path:
         print(f"[EXPORTAÇÃO] A desenhar painel executivo e a pintar colunas de erro...")
         if df_resultado.empty: return None
@@ -844,6 +787,5 @@ if __name__ == "__main__":
         config_caminhos.saida_auditoria.mkdir(parents=True, exist_ok=True)
         
         arquivo_excel = auditor.exportar_relatorio_divergencias(df_resultado=resultado, caminho_saida=config_caminhos.saida_auditoria)
-        arquivo_detalhes = auditor.exportar_detalhes_divergentes(df_resultado=resultado, df_xml=tabela_xml, df_totvs=tabela_totvs, caminho_saida=config_caminhos.saida_auditoria)
         
         print("\n[!] Painéis de Serviços Gerados e Guardados na Pasta de Auditoria.")

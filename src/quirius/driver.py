@@ -13,15 +13,15 @@ def get_driver(headless: bool = False, download_dir: Path | None = None, insecur
     logger.info("Initializing Chrome WebDriver...")
     
     options = Options()
-    # Commented out to allow dynamic download directory preferences to work without prompt dialogs
-    # options.add_argument("--guest")
-    # options.add_argument("--incognito")
     options.add_argument("--window-size=1280,720")
     options.add_argument("--disable-plugins-discovery")
     options.add_argument("--disable-notifications")
     options.add_argument("--disable-popup-blocking")
     options.add_argument("--allow-running-insecure-content")
     options.add_argument("--disable-web-security")
+    
+    # Configuração de estratégia normal para não interromper requisições complexas
+    options.page_load_strategy = 'normal'
     
     if insecure_origins:
         origins_str = ",".join(insecure_origins)
@@ -50,7 +50,18 @@ def get_driver(headless: bool = False, download_dir: Path | None = None, insecur
 
     driver = webdriver.Chrome(options=options)
     
-    # driver.command_executor.set_timeout(600)
+    # --- CORREÇÃO CRÍTICA DO TIMEOUT ---
+    # Eleva a paciência da renderização no browser para 50 minutos (3000s)
+    driver.set_page_load_timeout(3000)
+    driver.set_script_timeout(3000)
+    
+    # Hack profundo no urllib3 para forçar o Timeout da conexão de rede
+    # Impede que a biblioteca corte a conexão se o Quirius demorar mais de 120s
+    try:
+        driver.command_executor._client_config._timeout = 3000
+    except Exception as e:
+        logger.warning(f"Não foi possível sobrescrever a config profunda do urllib3: {e}")
+    # -----------------------------------
 
     if headless and download_dir:
         driver.execute_cdp_cmd("Page.setDownloadBehavior", {
