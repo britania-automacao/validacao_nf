@@ -471,6 +471,8 @@ class AuditorFiscal:
                     erros_encontrados.append("SIMPLES_RET_INDEVIDA")
                     teve_erro_simples = True
 
+            limite_isencao = 10.0 # Impostos menores ou iguais a R$10 são isentos de retenção na fonte
+
             if row['_merge'] == 'both':
                 if dt_xml and dt_totvs and dt_xml != dt_totvs:
                     erros_encontrados.append("DATA_EMISSAO")
@@ -480,12 +482,12 @@ class AuditorFiscal:
                     
                 flag_ret = str(row.get('Flag_Ret_ISS', '1'))
                 iss_esperado = row.get('ISS_XML', 0.0) if flag_ret == '2' else 0.0
-                if abs(iss_esperado - row.get('ISS_TOTVS', 0.0)) > 0.10:
+                if abs(iss_esperado - row.get('ISS_TOTVS', 0.0)) > limite_isencao:
                     erros_encontrados.append("ISS")
                     
                 if not teve_erro_simples:
                     for nome, col_xml, col_erp in [('IR', 'IRRF_XML', 'IRRF_TOTVS'), ('INSS', 'INSS_XML', 'INSS_TOTVS'), ('CS', 'CSLL_XML', 'CSLL_TOTVS')]:
-                        if abs(row.get(col_xml, 0.0) - row.get(col_erp, 0.0)) > 0.10:
+                        if abs(row.get(col_xml, 0.0) - row.get(col_erp, 0.0)) > limite_isencao:
                             erros_encontrados.append(nome)
 
             elif row['_merge'] == 'right_only':
@@ -493,10 +495,10 @@ class AuditorFiscal:
                 
                 if not teve_erro_simples:
                     erros_totvs = []
-                    if row.get('IRRF_TOTVS', 0.0) > 0.10: erros_totvs.append("IR")
-                    if row.get('INSS_TOTVS', 0.0) > 0.10: erros_totvs.append("INSS")
-                    if sum([row.get('CSLL_TOTVS', 0.0), row.get('PIS_TOTVS', 0.0), row.get('COFINS_TOTVS', 0.0)]) > 0.10: erros_totvs.append("CS")
-                    if row.get('ISS_TOTVS', 0.0) > 0.10: erros_totvs.append("ISS")
+                    if row.get('IRRF_TOTVS', 0.0) > limite_isencao: erros_totvs.append("IR")
+                    if row.get('INSS_TOTVS', 0.0) > limite_isencao: erros_totvs.append("INSS")
+                    if sum([row.get('CSLL_TOTVS', 0.0), row.get('PIS_TOTVS', 0.0), row.get('COFINS_TOTVS', 0.0)]) > limite_isencao: erros_totvs.append("CS")
+                    if row.get('ISS_TOTVS', 0.0) > limite_isencao: erros_totvs.append("ISS")
                     
                     if erros_totvs:
                         erros_encontrados.append("_".join(erros_totvs))
