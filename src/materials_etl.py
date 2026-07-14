@@ -73,7 +73,7 @@ class LeitorQuiriusNFe:
             return 0.0
 
     def _encontrar_coluna_valor(self, df: pd.DataFrame) -> str:
-        # Prioridade máxima: Buscar pelo nome EXATO do relatório do Governo
+        # Prioridade máxima: Buscar pelo Vlr. Total da Nota (que inclui IPI, ST, Frete, etc)
         candidatas_exatas = ['Vlr. Total da Nota', 'Vlr. Total da NF-e', 'Valor Total', 'Tot. Nota']
         for cand in candidatas_exatas:
             for col in df.columns:
@@ -125,11 +125,11 @@ class LeitorQuiriusNFe:
         else:
             df_quirius['Valor_QRI'] = 0.0
 
-        # CORREÇÃO: Usando 'sum' para o Valor e 'first' para descrições.
-        # Assim, se uma nota possuir múltiplos CFOPs ou quebras de itens no Quirius, 
-        # o Python irá consolidar somando as linhas de uma mesma Chave de Acesso.
+        # CORREÇÃO INTELIGENTE: Ao invés de somar (o que triplica notas de múltiplos itens),
+        # usamos 'first' na coluna Vlr. Total da Nota. Isso garante que ele pegue o valor cheio 
+        # (já com IPI e ST calculados) uma única vez por Chave de Acesso.
         df_quirius = df_quirius.groupby('Chave_Acesso', as_index=False).agg({
-            'Valor_QRI': 'sum',
+            'Valor_QRI': 'first',
             'Nº NF-e': 'first',
             'CNPJ Emissor': 'first',
             'Razão Social Emissor': 'first',
@@ -203,7 +203,7 @@ class LeitorOFBMateriais:
         col_emissao = 'Emissão' if 'Emissão' in df_totvs.columns else ('Dt Docto' if 'Dt Docto' in df_totvs.columns else None)
 
         agg_dict = {
-            'Valor_Item_OFB': 'sum',
+            'Valor_Item_OFB': 'sum', # SOMA o valor de todos os itens da nota no TOTVS
             'Doc Fisc': 'first',
             'Nome': 'first',
             'Estabelecimento': 'first',
@@ -246,14 +246,14 @@ class AuditorMateriais:
                 return dt_str[:10]
             return dt_str
 
-        def validar_status(row):
+        def validar_erros(row):
             if row['_merge'] == 'left_only':
-                return 'FALTA NO TOTVS'
+                return 'FALTA_NO_TOTVS'
             elif row['_merge'] == 'right_only':
-                return 'FALTA NO QUIRIUS'
+                return 'FALTA_NO_QUIRIUS'
             else:
                 erros = []
-                # Validação Matemática (Margem de tolerância ajustada de 10 centavos)
+                # Compara o valor agrupado
                 dif = round(row.get('Valor_QRI', 0.0) - row.get('Valor_OFB', 0.0), 2)
                 if abs(dif) > 0.10:
                     erros.append('VALOR')
@@ -264,11 +264,30 @@ class AuditorMateriais:
                 if dt_qri and dt_ofb and dt_qri != dt_ofb:
                     erros.append('DATA')
 
-                if erros:
-                    return 'DIVERGÊNCIA DE ' + ' E '.join(erros)
-                return 'CONCILIADO OK'
+                return ",".join(erros) if erros else "OK"
 
-        df_cruzamento['Validação'] = df_cruzamento.apply(validar_status, axis=1)
+        def status_final(obs):
+            if obs == "OK": return "CONCILIADO"
+            if obs in ["FALTA_NO_TOTVS", "FALTA_NO_QUIRIUS"]: return "FALTA XML"
+            return "DIVERGENTE"
+
+        def mapear_apontamento(obs):
+            if obs == "OK": return "Sem Erro"
+            if "FALTA_NO_TOTVS" in obs: return "Nota lançada no Governo, não no TOTVS"
+            if "FALTA_NO_QUIRIUS" in obs: return "Nota lançada no TOTVS, não no Governo"
+            
+            tem_data = "DATA" in obs
+            tem_valor = "VALOR" in obs
+            
+            if tem_data and tem_valor: return "Divergência de Valor e Data"
+            if tem_valor: return "Divergência de Valor"
+            if tem_data: return "Divergência de Data"
+            return "Outras Divergências"
+
+        df_cruzamento['Observações Brutas'] = df_cruzamento.apply(validar_erros, axis=1)
+        df_cruzamento['Valid. FINAL'] = df_cruzamento['Observações Brutas'].apply(status_final)
+        df_cruzamento['Apontamento_Mapeado'] = df_cruzamento['Observações Brutas'].apply(mapear_apontamento)
+        
         df_cruzamento['Dif. QRI x OFB'] = df_cruzamento['Valor_QRI'].fillna(0) - df_cruzamento['Valor_OFB'].fillna(0)
         
         if 'Nº NF-e' in df_cruzamento.columns and 'Doc Fisc' in df_cruzamento.columns:
@@ -278,7 +297,7 @@ class AuditorMateriais:
             df_cruzamento['Razão Social Emissor'] = df_cruzamento['Razão Social Emissor'].fillna(df_cruzamento['Nome'])
 
         colunas_finais = [
-            'Validação', 'Dif. QRI x OFB', 'Valor_QRI', 'Valor_OFB',
+            'Apontamento_Mapeado', 'Valid. FINAL', 'Dif. QRI x OFB', 'Valor_QRI', 'Valor_OFB',
             'Data Emissão Quirius', 'Data Emissão TOTVS',
             'Chave_Acesso', 'Nº NF-e', 'Doc Fisc', 
             'CNPJ Emissor', 'Razão Social Emissor', 'Nome', 
@@ -295,7 +314,7 @@ class AuditorMateriais:
         print("[EXPORTAÇÃO] Gerando Dashboard Executivo de Materiais...")
         if df_resultado.empty: return None
 
-        df_erros = df_resultado[df_resultado['Validação'] != 'CONCILIADO OK'].copy()
+        df_erros = df_resultado[df_resultado['Valid. FINAL'] != 'CONCILIADO'].copy()
 
         if 'Valor_OFB' in df_resultado.columns:
             df_resultado['Valor_OFB'] = pd.to_numeric(df_resultado['Valor_OFB'], errors='coerce').fillna(0)
@@ -313,11 +332,20 @@ class AuditorMateriais:
         else:
             df_estab = pd.DataFrame(columns=['Estabelecimento', 'Total NFS', 'Para Verificar'])
 
-        # Levantamento de Apontamentos (Erros)
-        erros_contagem = df_erros['Validação'].value_counts().reset_index()
-        erros_contagem.columns = ['Descrição', 'Quantidades']
-        erros_contagem.insert(0, 'Ordem', range(1, 1 + len(erros_contagem)))
-        dados_apontamentos = erros_contagem.values.tolist()
+        # Levantamento de Apontamentos (Erros mapeados para bater com a capa)
+        lista_apontamentos = [
+            (1, "Divergência de Valor e Data"),
+            (2, "Divergência de Valor"),
+            (3, "Divergência de Data"),
+            (4, "Nota lançada no Governo, não no TOTVS"),
+            (5, "Nota lançada no TOTVS, não no Governo"),
+        ]
+        
+        erros_contagem = df_erros['Apontamento_Mapeado'].value_counts().to_dict()
+        dados_apontamentos = []
+        for ordem, desc in lista_apontamentos:
+            qtd = erros_contagem.get(desc, 0)
+            dados_apontamentos.append((ordem, desc, qtd))
 
         # Top 10 Fornecedores de Materiais
         if 'CNPJ Emissor' in df_resultado.columns and 'Razão Social Emissor' in df_resultado.columns:
@@ -381,7 +409,7 @@ class AuditorMateriais:
             ws.column_dimensions[col].width = width
 
         # Criação dos blocos do Dashboard
-        criar_titulo_secao(ws, 2, 4, 2, "RESUMO DE NFS")
+        criar_titulo_secao(ws, 2, 4, 2, "RESUMO DE NFS (MATERIAIS)")
         ws.cell(row=3, column=2, value="Total de NFS").font = Font(bold=True)
         ws.cell(row=3, column=3, value=total_nfs).alignment = Alignment(horizontal="left")
         ws.cell(row=4, column=2, value="Total NFS Para Verificar").font = Font(bold=True)
@@ -421,8 +449,8 @@ class AuditorMateriais:
         df_export = df_resultado.fillna("")
         
         # Ordenação inteligente: Coloca as divergências no topo
-        df_export['Ordem_Sort'] = df_export['Validação'].apply(lambda x: 1 if 'CONCILIADO OK' in x else 0)
-        df_export = df_export.sort_values(by=['Ordem_Sort', 'Validação']).drop(columns=['Ordem_Sort'])
+        df_export['Ordem_Sort'] = df_export['Valid. FINAL'].apply(lambda x: 1 if 'CONCILIADO' in x else 0)
+        df_export = df_export.sort_values(by=['Ordem_Sort', 'Valid. FINAL']).drop(columns=['Ordem_Sort'])
 
         col_idx_map = {col_name: idx for idx, col_name in enumerate(colunas_finais, 1)}
         fill_erro = PatternFill(fill_type="solid", fgColor="FFC7CE") 
@@ -432,11 +460,11 @@ class AuditorMateriais:
             ws_val.append(list(r))
             
             # Formatação Monetária
-            ws_val.cell(row=r_idx, column=col_idx_map.get('Dif. QRI x OFB', 2)).number_format = 'R$ #,##0.00'
-            ws_val.cell(row=r_idx, column=col_idx_map.get('Valor_QRI', 3)).number_format = 'R$ #,##0.00'
-            ws_val.cell(row=r_idx, column=col_idx_map.get('Valor_OFB', 4)).number_format = 'R$ #,##0.00'
+            ws_val.cell(row=r_idx, column=col_idx_map.get('Dif. QRI x OFB', 3)).number_format = 'R$ #,##0.00'
+            ws_val.cell(row=r_idx, column=col_idx_map.get('Valor_QRI', 4)).number_format = 'R$ #,##0.00'
+            ws_val.cell(row=r_idx, column=col_idx_map.get('Valor_OFB', 5)).number_format = 'R$ #,##0.00'
 
-            obs = str(r[0])
+            obs = str(r[0]) # Apontamento Mapeado
             
             def pintar_celulas(col_qri, col_totvs):
                 if col_qri in col_idx_map:
@@ -447,14 +475,14 @@ class AuditorMateriais:
                     ws_val.cell(row=r_idx, column=col_idx_map[col_totvs]).font = font_erro
 
             # Pintura Condicional baseada no erro detectado
-            if obs != 'CONCILIADO OK':
-                ws_val.cell(row=r_idx, column=col_idx_map.get('Validação', 1)).fill = fill_erro
-                ws_val.cell(row=r_idx, column=col_idx_map.get('Validação', 1)).font = font_erro
+            if obs != 'Sem Erro':
+                ws_val.cell(row=r_idx, column=col_idx_map.get('Apontamento_Mapeado', 1)).fill = fill_erro
+                ws_val.cell(row=r_idx, column=col_idx_map.get('Apontamento_Mapeado', 1)).font = font_erro
                 
-                if "DATA" in obs: pintar_celulas("Data Emissão Quirius", "Data Emissão TOTVS")
-                if "VALOR" in obs: pintar_celulas("Valor_QRI", "Valor_OFB")
-                if "FALTA NO TOTVS" in obs: pintar_celulas("Chave_Acesso", "Nº NF-e")
-                if "FALTA NO QUIRIUS" in obs: pintar_celulas("Chave_Acesso", "Doc Fisc")
+                if "Data" in obs: pintar_celulas("Data Emissão Quirius", "Data Emissão TOTVS")
+                if "Valor" in obs: pintar_celulas("Valor_QRI", "Valor_OFB")
+                if "não no TOTVS" in obs: pintar_celulas("Chave_Acesso", "Nº NF-e")
+                if "não no Governo" in obs: pintar_celulas("Chave_Acesso", "Doc Fisc")
                 
         ws_val.freeze_panes = "A2"
         ultima_coluna = get_column_letter(ws_val.max_column)

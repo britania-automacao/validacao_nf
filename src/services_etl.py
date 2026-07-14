@@ -377,6 +377,7 @@ class LeitorRelatorioTotvs:
 
         try:
             df_totvs.dropna(how='all', inplace=True)
+            # Remove white spaces from column names to avoid matching issues
             df_totvs.columns = df_totvs.columns.str.strip().str.replace('\n', ' ').str.replace('\r', '')
 
             if 'Docto' in df_totvs.columns and 'CNPJ emit' in df_totvs.columns:
@@ -385,25 +386,33 @@ class LeitorRelatorioTotvs:
                 
                 df_totvs['Valor_TOTVS'] = self._converter_moeda(df_totvs, 'Tot. Nota')
                 df_totvs['BaseCalc_TOTVS'] = self._converter_moeda(df_totvs, 'Base Calc.')
+                
+                # Impostos Retidos
                 df_totvs['ISS_TOTVS'] = self._converter_moeda(df_totvs, 'ISS')
                 df_totvs['IRRF_TOTVS'] = self._converter_moeda(df_totvs, 'IRRF')
                 df_totvs['INSS_TOTVS'] = self._converter_moeda(df_totvs, 'INSS')
-                df_totvs['PIS_TOTVS'] = self._converter_moeda(df_totvs, 'PIS')
-                df_totvs['COFINS_TOTVS'] = self._converter_moeda(df_totvs, 'COFINS')
-                df_totvs['CSLL_TOTVS'] = self._converter_moeda(df_totvs, 'Valor CS')
+                df_totvs['CSRF_TOTVS'] = self._converter_moeda(df_totvs, 'CSRF')
+                
+                # Alíquotas para validação da regra de Simples/CSRF
+                df_totvs['Aliq_IRRF_TOTVS'] = self._converter_moeda(df_totvs, 'Aliq IRRF')
+                df_totvs['Aliq_INSS_TOTVS'] = self._converter_moeda(df_totvs, 'Aliq INSS')
+                df_totvs['Aliq_ISS_TOTVS'] = self._converter_moeda(df_totvs, 'Aliq ISS')
+                df_totvs['Aliq_CSRF_TOTVS'] = self._converter_moeda(df_totvs, 'Aliq CSRF')
                 
                 df_totvs['Chave'] = df_totvs.apply(lambda row: f"{row['CNPJ_TOTVS']}_{row['Nota_TOTVS']}" if row['CNPJ_TOTVS'] and row['Nota_TOTVS'] else None, axis=1)
                 df_totvs = df_totvs.dropna(subset=['Chave']).copy()
                 
                 print(f"[ETL TOTVS] A consolidar linhas fatiadas por Centro de Custo/Itens...")
-                cols_numericas = ['Valor_TOTVS', 'BaseCalc_TOTVS', 'ISS_TOTVS', 'IRRF_TOTVS', 'INSS_TOTVS', 'PIS_TOTVS', 'COFINS_TOTVS', 'CSLL_TOTVS']
+                cols_numericas = [
+                    'Valor_TOTVS', 'BaseCalc_TOTVS', 'ISS_TOTVS', 'IRRF_TOTVS', 'INSS_TOTVS', 'CSRF_TOTVS'
+                ]
                 
                 regras_agrupamento = {}
                 for coluna in df_totvs.columns:
                     if coluna in cols_numericas:
                         regras_agrupamento[coluna] = 'sum'
                     elif coluna != 'Chave':
-                        regras_agrupamento[coluna] = 'first'
+                        regras_agrupamento[coluna] = 'first' # Alíquotas pegam a primeira, por design
                         
                 df_totvs = df_totvs.groupby('Chave', as_index=False).agg(regras_agrupamento)
                 
@@ -455,24 +464,39 @@ class AuditorFiscal:
             
             val_simples_planilha = str(row.get('Simples_SN', 'PENDENTE_CONSULTA')).strip().upper()
             val_simples_xml = str(row.get('Simples_XML_Resolvido', 'NÃO')).strip().upper()
-            
             is_simples = (val_simples_planilha == 'SIM') or (val_simples_xml == 'SIM')
             
             if val_simples_planilha == 'PENDENTE_CONSULTA' or val_simples_xml == 'PENDENTE_CONSULTA':
                 erros_encontrados.append("SIMPLES_RET_INDEVIDA") 
                 
             teve_erro_simples = False
+            
+            # --- REGRA 1: Optantes pelo Simples Nacional NÃO devem sofrer retenção de impostos ---
+            # Verifica se há valores lançados nestas colunas E se possuem Alíquota indicando retenção.
             if is_simples:
-                soma_federais_totvs = sum([
-                    row.get('IRRF_TOTVS', 0.0), row.get('INSS_TOTVS', 0.0), 
-                    row.get('CSLL_TOTVS', 0.0), row.get('PIS_TOTVS', 0.0), row.get('COFINS_TOTVS', 0.0)
-                ])
-                if soma_federais_totvs > 0.05:
+                retencoes_indevidas = []
+                # Puxamos as retenções e as alíquotas lidas do TOTVS
+                if row.get('IRRF_TOTVS', 0.0) > 0 and row.get('Aliq_IRRF_TOTVS', 0.0) > 0: retencoes_indevidas.append('IRRF')
+                if row.get('INSS_TOTVS', 0.0) > 0 and row.get('Aliq_INSS_TOTVS', 0.0) > 0: retencoes_indevidas.append('INSS')
+                if row.get('ISS_TOTVS', 0.0) > 0 and row.get('Aliq_ISS_TOTVS', 0.0) > 0: retencoes_indevidas.append('ISS')
+                if row.get('CSRF_TOTVS', 0.0) > 0 and row.get('Aliq_CSRF_TOTVS', 0.0) > 0: retencoes_indevidas.append('CSRF')
+                
+                if retencoes_indevidas:
                     erros_encontrados.append("SIMPLES_RET_INDEVIDA")
                     teve_erro_simples = True
+            
+            # --- REGRA 2: Validação da Alíquota de CSRF (deve ser 4.65%) ---
+            # A CSRF engloba PIS, COFINS e CSLL. Se houver CSRF retida, a alíquota deve bater.
+            if row.get('CSRF_TOTVS', 0.0) > 0:
+                aliq_csrf = row.get('Aliq_CSRF_TOTVS', 0.0)
+                # Aceita uma margem de segurança entre 4.6% e 4.7%
+                if not (4.6 <= aliq_csrf <= 4.7):
+                    erros_encontrados.append("CSRF_ALIQ_ERRADA")
 
-            limite_isencao = 10.0 # Impostos menores ou iguais a R$10 são isentos de retenção na fonte
+            # Impostos menores ou iguais a R$10 não são retidos no Governo, mas o ERP pode lançar
+            limite_isencao = 10.0 
 
+            # --- CASO A: NOTA TEM XML E EXISTE NO ERP ---
             if row['_merge'] == 'both':
                 if dt_xml and dt_totvs and dt_xml != dt_totvs:
                     erros_encontrados.append("DATA_EMISSAO")
@@ -486,18 +510,21 @@ class AuditorFiscal:
                     erros_encontrados.append("ISS")
                     
                 if not teve_erro_simples:
-                    for nome, col_xml, col_erp in [('IR', 'IRRF_XML', 'IRRF_TOTVS'), ('INSS', 'INSS_XML', 'INSS_TOTVS'), ('CS', 'CSLL_XML', 'CSLL_TOTVS')]:
-                        if abs(row.get(col_xml, 0.0) - row.get(col_erp, 0.0)) > limite_isencao:
-                            erros_encontrados.append(nome)
+                    # Validando o IR e o INSS contra o XML
+                    if abs(row.get('IRRF_XML', 0.0) - row.get('IRRF_TOTVS', 0.0)) > limite_isencao:
+                        erros_encontrados.append('IR')
+                    if abs(row.get('INSS_XML', 0.0) - row.get('INSS_TOTVS', 0.0)) > limite_isencao:
+                        erros_encontrados.append('INSS')
 
+            # --- CASO B: NOTA SÓ EXISTE NO ERP (SEM XML) ---
             elif row['_merge'] == 'right_only':
                 erros_encontrados.append("FALTA_XML")
                 
                 if not teve_erro_simples:
                     erros_totvs = []
+                    # Para notas cegas, validamos internamente o que o TOTVS diz que reteve
                     if row.get('IRRF_TOTVS', 0.0) > limite_isencao: erros_totvs.append("IR")
                     if row.get('INSS_TOTVS', 0.0) > limite_isencao: erros_totvs.append("INSS")
-                    if sum([row.get('CSLL_TOTVS', 0.0), row.get('PIS_TOTVS', 0.0), row.get('COFINS_TOTVS', 0.0)]) > limite_isencao: erros_totvs.append("CS")
                     if row.get('ISS_TOTVS', 0.0) > limite_isencao: erros_totvs.append("ISS")
                     
                     if erros_totvs:
@@ -514,24 +541,23 @@ class AuditorFiscal:
         def mapear_apontamento(obs):
             if obs in ['OK', '']: return "Sem Erro"
             if "SIMPLES_RET_INDEVIDA" in obs: return "Sem Consulta Simples nacional"
+            if "CSRF_ALIQ_ERRADA" in obs: return "Alíquota CSRF Divergente"
             
-            tem_ir, tem_cs, tem_inss, tem_iss = "IR" in obs, "CS" in obs, "INSS" in obs, "ISS" in obs
+            tem_ir, tem_inss, tem_iss = "IR" in obs, "INSS" in obs, "ISS" in obs
             
-            if tem_ir and tem_cs and tem_iss and tem_inss: return "Verf. IR/CS/ISS/INSS"
-            if tem_ir and tem_cs and tem_inss: return "Verf. IR/CS/INSS"
             if tem_ir and tem_iss and tem_inss: return "Verf. IR/ISS/INSS"
-            if tem_ir and tem_cs: return "Verf. IR/CS"
             if tem_ir and tem_inss: return "Verf. IR/INSS"
-            if tem_cs and tem_inss: return "Verf. CS/INSS"
+            if tem_ir and tem_iss: return "Verf. IR/ISS"
+            if tem_iss and tem_inss: return "Verf. ISS/INSS"
+            
             if tem_ir: return "Verf. IR"
             if tem_iss: return "Verf. ISS"
             if tem_inss: return "Verf. INSS"
-            if tem_cs: return "Verf. CS"
             
             if "FALTA_XML" in obs: return "Nota sem XML na Receita"
-            
             if "DATA_EMISSAO" in obs and not "VALOR_BRUTO" in obs: return "Divergência de Data"
             if "VALOR_BRUTO" in obs: return "Outras Divergências"
+            
             return "Outras Divergências"
                 
         df_cruzamento['Observações'] = df_cruzamento.apply(validar_impostos, axis=1)
@@ -549,7 +575,7 @@ class AuditorFiscal:
             
         df_erros = df_lancadas[df_lancadas['Valid. FINAL'].isin(['DIVERGENTE', 'FALTA XML'])].copy()
 
-        cols_financeiras = ['Valor_TOTVS', 'IRRF_TOTVS', 'CSLL_TOTVS', 'INSS_TOTVS', 'ISS_TOTVS']
+        cols_financeiras = ['Valor_TOTVS', 'IRRF_TOTVS', 'CSRF_TOTVS', 'INSS_TOTVS', 'ISS_TOTVS']
         for c in cols_financeiras:
             if c in df_lancadas.columns:
                 df_lancadas[c] = pd.to_numeric(df_lancadas[c], errors='coerce').fillna(0)
@@ -568,19 +594,16 @@ class AuditorFiscal:
         
         lista_apontamentos = [
             (1, "Sem Consulta Simples nacional"),
-            (2, "S/ Cadast Base Ret"),
-            (3, "Verf. IR/CS/ISS/INSS"),
-            (4, "Verf. IR"),
-            (5, "Verf. IR/CS"),
-            (6, "Verf. IR/CS/INSS"),
+            (2, "Verf. IR/ISS/INSS"),
+            (3, "Verf. IR/INSS"),
+            (4, "Verf. IR/ISS"),
+            (5, "Verf. ISS/INSS"),
+            (6, "Verf. IR"),
             (7, "Verf. ISS"),
             (8, "Verf. INSS"),
-            (9, "Verf. CS"),
-            (10, "Verf. CS/INSS"),
-            (11, "Verf. IR/ISS/INSS"),
-            (12, "Verf. IR/INSS"),
-            (13, "Nota sem XML na Receita"),
-            (14, "Divergência de Data")
+            (9, "Alíquota CSRF Divergente"),
+            (10, "Nota sem XML na Receita"),
+            (11, "Divergência de Data")
         ]
         erros_contagem = df_erros['Apontamento_Mapeado'].value_counts().to_dict()
         dados_apontamentos = []
@@ -603,7 +626,7 @@ class AuditorFiscal:
         totais_gerais = [
             ("Valor Total NFS", df_lancadas['Valor_TOTVS'].sum()),
             ("Total IRRF", df_lancadas['IRRF_TOTVS'].sum()),
-            ("Total CSRF", df_lancadas['CSLL_TOTVS'].sum()),
+            ("Total CSRF", df_lancadas['CSRF_TOTVS'].sum()),
             ("TOTAL INSS", df_lancadas['INSS_TOTVS'].sum()),
             ("TOTAL I.S.S", df_lancadas['ISS_TOTVS'].sum())
         ]
@@ -681,15 +704,14 @@ class AuditorFiscal:
             'ISS_XML', 'ISS_TOTVS',
             'IRRF_XML', 'IRRF_TOTVS',
             'INSS_XML', 'INSS_TOTVS',
-            'CSLL_XML', 'CSLL_TOTVS',
-            'PIS_XML', 'PIS_TOTVS',
-            'COFINS_XML', 'COFINS_TOTVS'
+            'CSRF_TOTVS', 'Aliq_CSRF_TOTVS'
         ]
 
         colunas_tecnicas = [
             'Chave', 'CNPJ_XML', 'Nota_XML', 'NSU_XML', 'Nome_XML', 'Origem_XML', '_merge', 
             'Apontamento_Mapeado', 'CNPJ_Merge', 'CNPJ_Limpo', 'Simples_SN', 'Flag_Ret_ISS', 
-            'Simples_XML_Resolvido', 'BaseCalculo_XML', 'BaseCalc_TOTVS'
+            'Simples_XML_Resolvido', 'BaseCalculo_XML', 'BaseCalc_TOTVS',
+            'Aliq_IRRF_TOTVS', 'Aliq_INSS_TOTVS', 'Aliq_ISS_TOTVS'
         ]
         
         colunas_originais = [col for col in df_resultado.columns if col not in colunas_tecnicas and col not in colunas_comparacao and col not in ['Observações', 'Valid. FINAL']]
@@ -731,10 +753,12 @@ class AuditorFiscal:
                 if "ISS" in obs: pintar_celulas("ISS_XML", "ISS_TOTVS")
                 if "IR" in obs: pintar_celulas("IRRF_XML", "IRRF_TOTVS")
                 if "INSS" in obs: pintar_celulas("INSS_XML", "INSS_TOTVS")
-                if "CS" in obs: pintar_celulas("CSLL_XML", "CSLL_TOTVS")
+                
+                if "CSRF_ALIQ_ERRADA" in obs:
+                    pintar_celulas("CSRF_TOTVS", "Aliq_CSRF_TOTVS")
                 
                 if "SIMPLES_RET_INDEVIDA" in obs:
-                    for fed_col in ["IRRF_TOTVS", "INSS_TOTVS", "CSLL_TOTVS", "PIS_TOTVS", "COFINS_TOTVS"]:
+                    for fed_col in ["IRRF_TOTVS", "INSS_TOTVS", "CSRF_TOTVS", "ISS_TOTVS"]:
                         if fed_col in col_idx_map:
                             try:
                                 val = r[col_idx_map[fed_col] - 1]
