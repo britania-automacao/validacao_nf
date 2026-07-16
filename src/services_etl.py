@@ -377,7 +377,6 @@ class LeitorRelatorioTotvs:
 
         try:
             df_totvs.dropna(how='all', inplace=True)
-            # Remove white spaces from column names to avoid matching issues
             df_totvs.columns = df_totvs.columns.str.strip().str.replace('\n', ' ').str.replace('\r', '')
 
             if 'Docto' in df_totvs.columns and 'CNPJ emit' in df_totvs.columns:
@@ -412,7 +411,7 @@ class LeitorRelatorioTotvs:
                     if coluna in cols_numericas:
                         regras_agrupamento[coluna] = 'sum'
                     elif coluna != 'Chave':
-                        regras_agrupamento[coluna] = 'first' # Alíquotas pegam a primeira, por design
+                        regras_agrupamento[coluna] = 'first'
                         
                 df_totvs = df_totvs.groupby('Chave', as_index=False).agg(regras_agrupamento)
                 
@@ -472,10 +471,8 @@ class AuditorFiscal:
             teve_erro_simples = False
             
             # --- REGRA 1: Optantes pelo Simples Nacional NÃO devem sofrer retenção de impostos ---
-            # Verifica se há valores lançados nestas colunas E se possuem Alíquota indicando retenção.
             if is_simples:
                 retencoes_indevidas = []
-                # Puxamos as retenções e as alíquotas lidas do TOTVS
                 if row.get('IRRF_TOTVS', 0.0) > 0 and row.get('Aliq_IRRF_TOTVS', 0.0) > 0: retencoes_indevidas.append('IRRF')
                 if row.get('INSS_TOTVS', 0.0) > 0 and row.get('Aliq_INSS_TOTVS', 0.0) > 0: retencoes_indevidas.append('INSS')
                 if row.get('ISS_TOTVS', 0.0) > 0 and row.get('Aliq_ISS_TOTVS', 0.0) > 0: retencoes_indevidas.append('ISS')
@@ -486,14 +483,11 @@ class AuditorFiscal:
                     teve_erro_simples = True
             
             # --- REGRA 2: Validação da Alíquota de CSRF (deve ser 4.65%) ---
-            # A CSRF engloba PIS, COFINS e CSLL. Se houver CSRF retida, a alíquota deve bater.
             if row.get('CSRF_TOTVS', 0.0) > 0:
                 aliq_csrf = row.get('Aliq_CSRF_TOTVS', 0.0)
-                # Aceita uma margem de segurança entre 4.6% e 4.7%
                 if not (4.6 <= aliq_csrf <= 4.7):
                     erros_encontrados.append("CSRF_ALIQ_ERRADA")
 
-            # Impostos menores ou iguais a R$10 não são retidos no Governo, mas o ERP pode lançar
             limite_isencao = 10.0 
 
             # --- CASO A: NOTA TEM XML E EXISTE NO ERP ---
@@ -510,7 +504,6 @@ class AuditorFiscal:
                     erros_encontrados.append("ISS")
                     
                 if not teve_erro_simples:
-                    # Validando o IR e o INSS contra o XML
                     if abs(row.get('IRRF_XML', 0.0) - row.get('IRRF_TOTVS', 0.0)) > limite_isencao:
                         erros_encontrados.append('IR')
                     if abs(row.get('INSS_XML', 0.0) - row.get('INSS_TOTVS', 0.0)) > limite_isencao:
@@ -518,7 +511,7 @@ class AuditorFiscal:
 
             # --- CASO B: NOTA SÓ EXISTE NO ERP (SEM XML) ---
             elif row['_merge'] == 'right_only':
-                erros_encontrados.append("FALTA_XML")
+                tem_outro_erro = teve_erro_simples or ("CSRF_ALIQ_ERRADA" in erros_encontrados)
                 
                 if not teve_erro_simples:
                     erros_totvs = []
@@ -529,13 +522,19 @@ class AuditorFiscal:
                     
                     if erros_totvs:
                         erros_encontrados.append("_".join(erros_totvs))
+                        tem_outro_erro = True
+                        
+                # Nova regra: Retirar das inconsistências as notas que apenas faltam XML
+                if tem_outro_erro:
+                    erros_encontrados.append("FALTA_XML")
 
             return ",".join(erros_encontrados) if erros_encontrados else "OK"
             
         def status_curto(row):
-            if row['_merge'] == 'right_only': return 'FALTA XML'
-            elif row['_merge'] == 'left_only': return 'IGNORAR'
-            elif row['Observações'] != 'OK': return 'DIVERGENTE'
+            if row['_merge'] == 'left_only': return 'IGNORAR'
+            elif row['Observações'] != 'OK': 
+                if 'FALTA_XML' in row['Observações']: return 'FALTA XML'
+                return 'DIVERGENTE'
             else: return 'CONCILIADO'
             
         def mapear_apontamento(obs):

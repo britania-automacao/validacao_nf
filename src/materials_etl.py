@@ -190,6 +190,15 @@ class LeitorOFBMateriais:
 
         df_totvs = pd.concat(lista_dfs, ignore_index=True)
 
+        # Desconsiderar notas de frete onde o usuário é "RPW - SERVICO"
+
+        if 'Nome do Usuario' in df_totvs.columns:
+            qtd_antes = len(df_totvs)
+            df_totvs = df_totvs[~df_totvs['Nome do Usuario'].astype(str).str.upper().str.contains('RPW - SERVICO', na=False)].copy()
+            qtd_depois = len(df_totvs)
+            if qtd_antes != qtd_depois:
+                print(f"[ETL TOTVS] {qtd_antes - qtd_depois} registros de frete (RPW - SERVICO) ignorados para evitar duplicidade.")
+
         if 'Chave Acesso' not in df_totvs.columns:
             print("[ERRO CRÍTICO] Coluna 'Chave Acesso' não encontrada no relatório OFB!")
             return pd.DataFrame()
