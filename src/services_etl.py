@@ -3,6 +3,7 @@ import os
 import re
 import time
 import requests
+import urllib3
 import pandas as pd
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -13,6 +14,9 @@ from openpyxl.styles import Alignment, Font, PatternFill, Border, Side
 from openpyxl.utils import get_column_letter
 
 from config import CaminhosProjeto
+
+# Desativa os avisos de requisição insegura no terminal
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 load_dotenv()
 
@@ -33,18 +37,58 @@ class LeitorSimplesNacional:
         return limpo.zfill(14) if limpo else ""
 
     def _consultar_api(self, cnpj: str) -> str:
-        """Consulta a BrasilAPI para verificar se o CNPJ é optante pelo Simples."""
+        """Consulta APIs de CNPJ com sistema de fallback (Cascata) obedecendo a ordem solicitada."""
         if not cnpj or len(cnpj) != 14: 
             return "PENDENTE_CONSULTA"
-        try:
-            url = f"https://brasilapi.com.br/api/cnpj/v1/{cnpj}"
-            response = requests.get(url, timeout=10)
-            if response.status_code == 200:
-                dados = response.json()
-                opcao = dados.get("opcao_pelo_simples")
-                return "SIM" if opcao is True else "NÃO"
-        except Exception:
-            pass 
+            
+        # 1. ReceitaWS | 2. Minha Receita | 3. BrasilAPI
+        apis = [
+            {"nome": "ReceitaWS", "url": f"https://receitaws.com.br/v1/cnpj/{cnpj}"},
+            {"nome": "MinhaReceita", "url": f"https://minhareceita.org/{cnpj}"},
+            {"nome": "BrasilAPI", "url": f"https://brasilapi.com.br/api/cnpj/v1/{cnpj}"}
+        ]
+
+        for api in apis:
+            nome_api = api["nome"]
+            url = api["url"]
+            
+            try:
+                response = requests.get(url, timeout=10, verify=False)
+                
+                if response.status_code == 200:
+                    dados = response.json()
+                    
+                    # Tratamento específico para a estrutura JSON do ReceitaWS
+                    if nome_api == "ReceitaWS":
+                        if dados.get("status") == "ERROR":
+                            print(f"  [API AVISO] {nome_api} retornou erro (CNPJ inválido/rejeitado). Pulando para a próxima...")
+                            continue
+                            
+                        simples = dados.get("simples")
+                        if isinstance(simples, dict):
+                            opcao = simples.get("optante")
+                            return "SIM" if opcao is True else "NÃO"
+                        return "NÃO"
+                        
+                    # Tratamento para Minha Receita e BrasilAPI (ambas usam 'opcao_pelo_simples')
+                    elif nome_api in ["MinhaReceita", "BrasilAPI"]:
+                        opcao = dados.get("opcao_pelo_simples")
+                        return "SIM" if opcao is True else "NÃO"
+                        
+                elif response.status_code == 429:
+                    print(f"  [API AVISO] Limite atingido (429) na {nome_api} para o CNPJ {cnpj}. Acionando fallback...")
+                    continue 
+                    
+                else:
+                    print(f"  [API AVISO] {nome_api} retornou erro {response.status_code}. Acionando fallback...")
+                    continue 
+                    
+            except Exception as e:
+                print(f"  [API ERRO] Falha de conexão na {nome_api}: {e}. Acionando fallback...")
+                continue
+                
+        # Se as 3 APIs falharem para o mesmo CNPJ, mantém pendente para a próxima execução
+        print(f"  [ALERTA MÁXIMO] Todas as 3 APIs falharam para o CNPJ {cnpj}.")
         return "PENDENTE_CONSULTA"
 
     def carregar(self, cnpjs_alvo=None) -> pd.DataFrame:
@@ -83,12 +127,15 @@ class LeitorSimplesNacional:
         if cnpjs_alvo:
             cnpjs_existentes = set()
             if not df_original.empty and 'CNPJ_Limpo' in df_original.columns:
+                
+                # Remove pendentes para forçar nova consulta
+                df_original = df_original[df_original['Simples_SN'] != 'PENDENTE_CONSULTA'].copy()
                 cnpjs_existentes = set(df_original['CNPJ_Limpo'].dropna().tolist())
 
             cnpjs_faltantes = {c for c in cnpjs_alvo if isinstance(c, str) and len(c) == 14} - cnpjs_existentes
 
             if cnpjs_faltantes:
-                print(f"[API SIMPLES] {len(cnpjs_faltantes)} CNPJs novos detectados! Consultando BrasilAPI...")
+                print(f"[API SIMPLES] {len(cnpjs_faltantes)} CNPJs pendentes/novos detectados! Consultando cascata de APIs...")
                 novos_registros = []
                 
                 for idx, cnpj in enumerate(cnpjs_faltantes, 1):
@@ -103,7 +150,11 @@ class LeitorSimplesNacional:
                     
                     if idx % 10 == 0:
                         print(f"  -> Consultados {idx}/{len(cnpjs_faltantes)}...")
-                    time.sleep(0.4) 
+                    
+                    # REGRA APLICADA: Pausa rígida de 20 segundos entre consultas.
+                    # Matemática: 60 segundos / 20 = Exatamente 3 requisições por minuto.
+                    # Isso garante que a ReceitaWS e a MinhaReceita nunca estourem o limite.
+                    time.sleep(20) 
 
                 df_novos = pd.DataFrame(novos_registros)
                 df_original = pd.concat([df_original, df_novos], ignore_index=True)
@@ -120,7 +171,7 @@ class LeitorSimplesNacional:
                     print(f"[ERRO] Não foi possível salvar o arquivo atualizado: {e}")
 
         if not df_original.empty and 'CNPJ_Limpo' in df_original.columns:
-            df_retorno = df_original.drop_duplicates(subset=['CNPJ_Limpo'])
+            df_retorno = df_original.drop_duplicates(subset=['CNPJ_Limpo'], keep='last')
             return df_retorno[['CNPJ_Limpo', 'Simples_SN']]
         else:
             return pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN'])
@@ -202,69 +253,91 @@ class GeradorCsvGoverno:
                 arvore = ET.parse(caminho)
                 raiz = arvore.getroot()
 
-                registro = self._achatar_xml(raiz)
-
-                nome_arquivo = caminho.name
-                match_nsu = re.search(r'nsu_(\d+)', nome_arquivo, re.IGNORECASE)
-                nsu_xml = match_nsu.group(1) if match_nsu else ( ''.join(filter(str.isdigit, nome_arquivo)) or caminho.stem )
-
-                numero_bruto = self._get_text(raiz, ['nNFSe', 'Numero', 'nNFS-e'])
-                numero_normalizado = self._normalizar_numero_nota(numero_bruto)
-
-                cnpj = None
-                nome_xml = "Fornecedor Desconhecido"
+                # NOVO: Procura múltiplas notas (Lotes) dentro do mesmo XML
+                nodos_nota = []
+                for elem in raiz.iter():
+                    tag_limpa = elem.tag.split('}')[-1].lower()
+                    if tag_limpa in ['nfse', 'nfs-e']:
+                        nodos_nota.append(elem)
                 
-                nodo_forn = self._get_node(raiz, ['prest', 'PrestadorServico', 'emit', 'Emitente'])
-                if nodo_forn is not None:
-                    cnpj_bruto = self._get_text(nodo_forn, ['CNPJ', 'Cnpj'])
-                    if cnpj_bruto: 
-                        cnpj = ''.join(filter(str.isdigit, str(cnpj_bruto))).zfill(14)
-                    nome_xml = self._get_text(nodo_forn, ['xNome', 'RazaoSocial'], "Fornecedor Desconhecido")
+                # Fallback para padrão ABRASF se não achar o padrão Nacional
+                if not nodos_nota:
+                    for elem in raiz.iter():
+                        tag_limpa = elem.tag.split('}')[-1].lower()
+                        if tag_limpa == 'compnfse':
+                            nodos_nota.append(elem)
+                            
+                # Fallback final: se não achar blocos, assume que a raiz é a nota
+                if not nodos_nota:
+                    nodos_nota = [raiz]
 
-                dh_emi = self._get_text(raiz, ['dhEmi', 'DataEmissao', 'Competencia'])
-                data_emissao = dh_emi[:10] if dh_emi and len(dh_emi) >= 10 else ""
-                
-                valor_bruto = self._get_float(raiz, ['vServ', 'ValorServicos'])
-                if valor_bruto == 0.0: 
-                    valor_bruto = self._get_float(raiz, ['vBC', 'BaseCalculo'])
+                # Itera sobre cada nota encontrada dentro do arquivo
+                for nodo in nodos_nota:
+                    registro = self._achatar_xml(nodo)
 
-                val_nacional = self._get_text(raiz, ['opSimpNac'])
-                val_abrasf = self._get_text(raiz, ['OptanteSimplesNacional'])
-                
-                simples_xml_resolvido = "NÃO"
-                if val_nacional in ['2', '3', '4']: 
-                    simples_xml_resolvido = "SIM"
-                elif val_nacional == '1': 
-                    simples_xml_resolvido = "NÃO"
-                elif val_abrasf == '1':   
-                    simples_xml_resolvido = "SIM"
-                elif val_abrasf == '2':
-                    simples_xml_resolvido = "NÃO"
+                    nome_arquivo = caminho.name
+                    match_nsu = re.search(r'nsu_(\d+)', nome_arquivo, re.IGNORECASE)
+                    nsu_xml = match_nsu.group(1) if match_nsu else ( ''.join(filter(str.isdigit, nome_arquivo)) or caminho.stem )
 
-                flag_ret_iss = self._get_text(raiz, ['tpRetISSQN', 'IssRetido'], '1')
+                    numero_bruto = self._get_text(nodo, ['nNFSe', 'Numero', 'nNFS-e'])
+                    numero_normalizado = self._normalizar_numero_nota(numero_bruto)
 
-                if cnpj and numero_normalizado:
-                    chave = f"{cnpj}_{numero_normalizado}"
+                    cnpj = None
+                    nome_xml = "Fornecedor Desconhecido"
                     
-                    registro["Chave"] = chave
-                    registro["NSU_XML"] = nsu_xml
-                    registro["CNPJ_XML"] = cnpj
-                    registro["Nota_XML"] = numero_normalizado
-                    registro["Nome_XML"] = nome_xml
-                    registro["DataEmissao_XML"] = data_emissao
-                    registro["Valor_XML"] = valor_bruto
-                    registro["BaseCalculo_XML"] = self._get_float(raiz, ['vBC', 'BaseCalculo'])
-                    registro["ISS_XML"] = self._get_float(raiz, ['vISSQN', 'ValorIss'])
-                    registro["Flag_Ret_ISS"] = flag_ret_iss
-                    registro["Simples_XML_Resolvido"] = simples_xml_resolvido
-                    registro["IRRF_XML"] = self._get_float(raiz, ['vRetIRRF', 'ValorIr'])
-                    registro["INSS_XML"] = self._get_float(raiz, ['vRetCP', 'ValorInss'])
-                    registro["PIS_XML"] = self._get_float(raiz, ['vRetPIS', 'ValorPis'])
-                    registro["COFINS_XML"] = self._get_float(raiz, ['vRetCOFINS', 'ValorCofins'])
-                    registro["CSLL_XML"] = self._get_float(raiz, ['vRetCSLL', 'ValorCsll'])
-                    registro["Origem_XML"] = caminho.name
+                    nodo_forn = self._get_node(nodo, ['prest', 'PrestadorServico', 'emit', 'Emitente'])
+                    if nodo_forn is not None:
+                        cnpj_bruto = self._get_text(nodo_forn, ['CNPJ', 'Cnpj'])
+                        if cnpj_bruto: 
+                            cnpj = ''.join(filter(str.isdigit, str(cnpj_bruto))).zfill(14)
+                        nome_xml = self._get_text(nodo_forn, ['xNome', 'RazaoSocial'], "Fornecedor Desconhecido")
+
+                    dh_emi = self._get_text(nodo, ['dhEmi', 'DataEmissao', 'Competencia'])
+                    data_emissao = dh_emi[:10] if dh_emi and len(dh_emi) >= 10 else ""
                     
-                    registros_novos.append(registro)
+                    valor_bruto = self._get_float(nodo, ['vServ', 'ValorServicos'])
+                    if valor_bruto == 0.0: 
+                        valor_bruto = self._get_float(nodo, ['vBC', 'BaseCalculo'])
+
+                    val_nacional = self._get_text(nodo, ['opSimpNac'])
+                    val_abrasf = self._get_text(nodo, ['OptanteSimplesNacional'])
+                    
+                    simples_xml_resolvido = "NÃO"
+                    if val_nacional in ['2', '3', '4']: 
+                        simples_xml_resolvido = "SIM"
+                    elif val_nacional == '1': 
+                        simples_xml_resolvido = "NÃO"
+                    elif val_abrasf == '1':   
+                        simples_xml_resolvido = "SIM"
+                    elif val_abrasf == '2':
+                        simples_xml_resolvido = "NÃO"
+
+                    flag_ret_iss = self._get_text(nodo, ['tpRetISSQN', 'IssRetido'], '1')
+
+                    if cnpj and numero_normalizado:
+                        # NOVO: Extrai o Ano e Mês (YYYY-MM) para a chave
+                        mes_ano_xml = data_emissao[:7] if len(data_emissao) >= 7 else "0000-00"
+                        chave = f"{cnpj}_{numero_normalizado}_{mes_ano_xml}"
+                        
+                        registro["Chave"] = chave
+                        registro["NSU_XML"] = nsu_xml
+                        registro["CNPJ_XML"] = cnpj
+                        registro["Nota_XML"] = numero_normalizado
+                        registro["Nome_XML"] = nome_xml
+                        registro["DataEmissao_XML"] = data_emissao
+                        registro["Valor_XML"] = valor_bruto
+                        registro["BaseCalculo_XML"] = self._get_float(nodo, ['vBC', 'BaseCalculo'])
+                        registro["ISS_XML"] = self._get_float(nodo, ['vISSQN', 'ValorIss'])
+                        registro["Flag_Ret_ISS"] = flag_ret_iss
+                        registro["Simples_XML_Resolvido"] = simples_xml_resolvido
+                        registro["IRRF_XML"] = self._get_float(nodo, ['vRetIRRF', 'ValorIr'])
+                        registro["INSS_XML"] = self._get_float(nodo, ['vRetCP', 'ValorInss'])
+                        registro["PIS_XML"] = self._get_float(nodo, ['vRetPIS', 'ValorPis'])
+                        registro["COFINS_XML"] = self._get_float(nodo, ['vRetCOFINS', 'ValorCofins'])
+                        registro["CSLL_XML"] = self._get_float(nodo, ['vRetCSLL', 'ValorCsll'])
+                        registro["Origem_XML"] = caminho.name
+                        
+                        registros_novos.append(registro)
 
             except Exception:
                 pass 
@@ -299,6 +372,11 @@ class LeitorBaseGoverno:
             
         print("[ETL GOVERNO] Carregando dados da Base Consolidada (CSV)...")
         df = pd.read_csv(self.caminho_csv, sep=';', encoding='utf-8-sig', dtype=str)
+        
+        # NOVO: Atualiza dinamicamente as chaves legadas do CSV para o novo padrão (CNPJ_Nota_Ano-Mes)
+        if 'CNPJ_XML' in df.columns and 'Nota_XML' in df.columns and 'DataEmissao_XML' in df.columns:
+            df['MesAno_XML'] = df['DataEmissao_XML'].apply(lambda x: str(x)[:7] if pd.notna(x) and len(str(x)) >= 7 else "0000-00")
+            df['Chave'] = df['CNPJ_XML'] + "_" + df['Nota_XML'] + "_" + df['MesAno_XML']
         
         cols_numericas = ['Valor_XML', 'BaseCalculo_XML', 'ISS_XML', 'IRRF_XML', 'INSS_XML', 'PIS_XML', 'COFINS_XML', 'CSLL_XML']
         for col in cols_numericas:
@@ -383,6 +461,26 @@ class LeitorRelatorioTotvs:
                 df_totvs['Nota_TOTVS'] = df_totvs['Docto'].apply(self._limpar_numero_nota)
                 df_totvs['CNPJ_TOTVS'] = df_totvs['CNPJ emit'].apply(self._limpar_cnpj)
                 
+                # NOVO: Extrai o Mês e Ano da Dt.Emiss do TOTVS para compor a chave (Converte DD/MM/YYYY para YYYY-MM)
+                def extract_mes_ano(dt_str):
+                    if pd.isna(dt_str) or not dt_str: return "0000-00"
+                    dt_str = str(dt_str).strip()
+                    if len(dt_str) >= 10 and dt_str[2] == '/' and dt_str[5] == '/':
+                        return f"{dt_str[6:10]}-{dt_str[3:5]}"
+                    if len(dt_str) >= 10 and dt_str[4] == '-':
+                        return dt_str[:7]
+                    return "0000-00"
+                
+                df_totvs['MesAno_TOTVS'] = df_totvs.get('Dt.Emiss', pd.Series(dtype=str)).apply(extract_mes_ano)
+                
+                # NOVO: Chave agora é CNPJ + Nota + Ano-Mês
+                df_totvs['Chave'] = df_totvs.apply(
+                    lambda row: f"{row['CNPJ_TOTVS']}_{row['Nota_TOTVS']}_{row['MesAno_TOTVS']}" 
+                    if row['CNPJ_TOTVS'] and row['Nota_TOTVS'] else None, axis=1
+                )
+                
+                df_totvs = df_totvs.dropna(subset=['Chave']).copy()
+                
                 df_totvs['Valor_TOTVS'] = self._converter_moeda(df_totvs, 'Tot. Nota')
                 df_totvs['BaseCalc_TOTVS'] = self._converter_moeda(df_totvs, 'Base Calc.')
                 
@@ -397,9 +495,6 @@ class LeitorRelatorioTotvs:
                 df_totvs['Aliq_INSS_TOTVS'] = self._converter_moeda(df_totvs, 'Aliq INSS')
                 df_totvs['Aliq_ISS_TOTVS'] = self._converter_moeda(df_totvs, 'Aliq ISS')
                 df_totvs['Aliq_CSRF_TOTVS'] = self._converter_moeda(df_totvs, 'Aliq CSRF')
-                
-                df_totvs['Chave'] = df_totvs.apply(lambda row: f"{row['CNPJ_TOTVS']}_{row['Nota_TOTVS']}" if row['CNPJ_TOTVS'] and row['Nota_TOTVS'] else None, axis=1)
-                df_totvs = df_totvs.dropna(subset=['Chave']).copy()
                 
                 print(f"[ETL TOTVS] A consolidar linhas fatiadas por Centro de Custo/Itens...")
                 cols_numericas = [
