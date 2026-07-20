@@ -7,6 +7,28 @@ from dotenv import load_dotenv
 
 from config import CaminhosProjeto
 
+import logging
+import sys
+
+# --- INÍCIO DA CONFIGURAÇÃO DE LOG ---
+pasta_historico = Path(__file__).resolve().parent.parent / "dados" / "historico"
+pasta_historico.mkdir(parents=True, exist_ok=True)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(message)s',
+    handlers=[
+        logging.FileHandler(pasta_historico / "email.log", encoding='utf-8'),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
+
+def print(*args, **kwargs):
+    sep = kwargs.get("sep", " ")
+    logger.info(sep.join(map(str, args)))
+# --- FIM DA CONFIGURAÇÃO DE LOG ---
+
 load_dotenv()
 
 class NotificadorGlobal:

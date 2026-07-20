@@ -10,6 +10,29 @@ from openpyxl.utils import get_column_letter
 
 from config import CaminhosProjeto
 
+import logging
+import sys
+
+# --- INÍCIO DA CONFIGURAÇÃO DE LOG ---
+pasta_historico = Path(__file__).resolve().parent.parent / "dados" / "historico"
+pasta_historico.mkdir(parents=True, exist_ok=True)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(message)s',
+    handlers=[
+        logging.FileHandler(pasta_historico / "etl_materiais.log", encoding='utf-8'),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
+
+# Sobrescreve o print nativo do Python neste arquivo
+def print(*args, **kwargs):
+    sep = kwargs.get("sep", " ")
+    logger.info(sep.join(map(str, args)))
+# --- FIM DA CONFIGURAÇÃO DE LOG ---
+
 load_dotenv()
 
 def ler_arquivo_robusto(caminho: Path) -> pd.DataFrame:
@@ -191,7 +214,6 @@ class LeitorOFBMateriais:
         df_totvs = pd.concat(lista_dfs, ignore_index=True)
 
         # Desconsiderar notas de frete onde o usuário é "RPW - SERVICO"
-
         if 'Nome do Usuario' in df_totvs.columns:
             qtd_antes = len(df_totvs)
             df_totvs = df_totvs[~df_totvs['Nome do Usuario'].astype(str).str.upper().str.contains('RPW - SERVICO', na=False)].copy()

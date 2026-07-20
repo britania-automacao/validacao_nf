@@ -15,6 +15,28 @@ from openpyxl.utils import get_column_letter
 
 from config import CaminhosProjeto
 
+import logging
+import sys
+
+# --- INÍCIO DA CONFIGURAÇÃO DE LOG ---
+pasta_historico = Path(__file__).resolve().parent.parent / "dados" / "historico"
+pasta_historico.mkdir(parents=True, exist_ok=True)
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(message)s',
+    handlers=[
+        logging.FileHandler(pasta_historico / "etl_servicos.log", encoding='utf-8'),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
+
+def print(*args, **kwargs):
+    sep = kwargs.get("sep", " ")
+    logger.info(sep.join(map(str, args)))
+# --- FIM DA CONFIGURAÇÃO DE LOG ---
+
 # Desativa os avisos de requisição insegura no terminal
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -315,7 +337,7 @@ class GeradorCsvGoverno:
                     flag_ret_iss = self._get_text(nodo, ['tpRetISSQN', 'IssRetido'], '1')
 
                     if cnpj and numero_normalizado:
-                        # NOVO: Extrai o Ano e Mês (YYYY-MM) para a chave
+                        # Extrai o Ano e Mês (YYYY-MM) para a chave
                         mes_ano_xml = data_emissao[:7] if len(data_emissao) >= 7 else "0000-00"
                         chave = f"{cnpj}_{numero_normalizado}_{mes_ano_xml}"
                         
@@ -373,7 +395,7 @@ class LeitorBaseGoverno:
         print("[ETL GOVERNO] Carregando dados da Base Consolidada (CSV)...")
         df = pd.read_csv(self.caminho_csv, sep=';', encoding='utf-8-sig', dtype=str)
         
-        # NOVO: Atualiza dinamicamente as chaves legadas do CSV para o novo padrão (CNPJ_Nota_Ano-Mes)
+        # Atualiza dinamicamente as chaves legadas do CSV para o novo padrão (CNPJ_Nota_Ano-Mes)
         if 'CNPJ_XML' in df.columns and 'Nota_XML' in df.columns and 'DataEmissao_XML' in df.columns:
             df['MesAno_XML'] = df['DataEmissao_XML'].apply(lambda x: str(x)[:7] if pd.notna(x) and len(str(x)) >= 7 else "0000-00")
             df['Chave'] = df['CNPJ_XML'] + "_" + df['Nota_XML'] + "_" + df['MesAno_XML']
@@ -461,7 +483,7 @@ class LeitorRelatorioTotvs:
                 df_totvs['Nota_TOTVS'] = df_totvs['Docto'].apply(self._limpar_numero_nota)
                 df_totvs['CNPJ_TOTVS'] = df_totvs['CNPJ emit'].apply(self._limpar_cnpj)
                 
-                # NOVO: Extrai o Mês e Ano da Dt.Emiss do TOTVS para compor a chave (Converte DD/MM/YYYY para YYYY-MM)
+                # Extrai o Mês e Ano da Dt.Emiss do TOTVS para compor a chave (Converte DD/MM/YYYY para YYYY-MM)
                 def extract_mes_ano(dt_str):
                     if pd.isna(dt_str) or not dt_str: return "0000-00"
                     dt_str = str(dt_str).strip()
@@ -473,7 +495,7 @@ class LeitorRelatorioTotvs:
                 
                 df_totvs['MesAno_TOTVS'] = df_totvs.get('Dt.Emiss', pd.Series(dtype=str)).apply(extract_mes_ano)
                 
-                # NOVO: Chave agora é CNPJ + Nota + Ano-Mês
+                # Chave agora é CNPJ + Nota + Ano-Mês
                 df_totvs['Chave'] = df_totvs.apply(
                     lambda row: f"{row['CNPJ_TOTVS']}_{row['Nota_TOTVS']}_{row['MesAno_TOTVS']}" 
                     if row['CNPJ_TOTVS'] and row['Nota_TOTVS'] else None, axis=1
