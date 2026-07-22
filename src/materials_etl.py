@@ -193,7 +193,7 @@ class LeitorOFBMateriais:
 
     def carregar(self) -> pd.DataFrame:
         print(f"[ETL TOTVS] Iniciando leitura do relatório OFB na pasta: {self.pasta.name}...")
-        arquivos = list(self.pasta.glob("*.xlsx")) + list(self.pasta.glob("*.csv")) + list(self.pasta.glob("*.txt"))
+        arquivos = list(self.pasta.rglob("*.xlsx")) + list(self.pasta.rglob("*.csv")) + list(self.pasta.rglob("*.txt"))
         
         if not arquivos:
             print(f"[AVISO] Nenhum relatório do TOTVS encontrado na pasta {self.pasta.name}.")
@@ -265,6 +265,12 @@ class AuditorMateriais:
 
         df_cruzamento = pd.merge(df_quirius, df_totvs, on='Chave_Acesso', how='outer', indicator=True)
 
+        # --- NOVA REGRA APLICADA ---
+        # Ignora as notas que estão no Quirius mas ainda não foram lançadas no TOTVS (FALTA_NO_TOTVS / left_only)
+        qtd_ignoradas = len(df_cruzamento[df_cruzamento['_merge'] == 'left_only'])
+        df_cruzamento = df_cruzamento[df_cruzamento['_merge'] != 'left_only'].copy()
+        print(f"[AUDITORIA] {qtd_ignoradas} notas presentes no Governo mas não no TOTVS foram ignoradas.")
+
         def formatar_data(dt_str):
             """Transforma qualquer data para o formato YYYY-MM-DD para comparação justa"""
             if pd.isna(dt_str) or not str(dt_str).strip(): return ""
@@ -278,6 +284,7 @@ class AuditorMateriais:
             return dt_str
 
         def validar_erros(row):
+            # A condição left_only não ocorrerá mais, mas mantida como fallback de segurança
             if row['_merge'] == 'left_only':
                 return 'FALTA_NO_TOTVS'
             elif row['_merge'] == 'right_only':
@@ -364,12 +371,12 @@ class AuditorMateriais:
             df_estab = pd.DataFrame(columns=['Estabelecimento', 'Total NFS', 'Para Verificar'])
 
         # Levantamento de Apontamentos (Erros mapeados para bater com a capa)
+        # NOTA: O apontamento "Nota lançada no Governo, não no TOTVS" foi removido da matriz.
         lista_apontamentos = [
             (1, "Divergência de Valor e Data"),
             (2, "Divergência de Valor"),
             (3, "Divergência de Data"),
-            (4, "Nota lançada no Governo, não no TOTVS"),
-            (5, "Nota lançada no TOTVS, não no Governo"),
+            (4, "Nota lançada no TOTVS, não no Governo"),
         ]
         
         erros_contagem = df_erros['Apontamento_Mapeado'].value_counts().to_dict()

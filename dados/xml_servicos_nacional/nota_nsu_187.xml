@@ -1,134 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
-    <infNFSe Id="NFS31062001238828779000100240000000010724061983979678">
-        <xLocEmi>BELO HORIZONTE</xLocEmi>
-        <xLocPrestacao>BELO HORIZONTE</xLocPrestacao>
-        <nNFSe>2400000000107</nNFSe>
-        <cLocIncid>3106200</cLocIncid>
-        <xLocIncid>BELO HORIZONTE</xLocIncid>
-        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
-        <xTribMun>Representação de qualquer natureza, inclusive comercial.</xTribMun>
-        <verAplic>1.00</verAplic>
-        <ambGer>1</ambGer>
-        <tpEmis>2</tpEmis>
-        <cStat>100</cStat>
-        <dhProc>2024-06-06T15:47:58-03:00</dhProc>
-        <nDFSe>2400000000107</nDFSe>
-        <emit>
-            <CNPJ>38828779000100</CNPJ>
-            <IM>12517390012</IM>
-            <xNome>TRIAD GESTAO DE MERCADO E REPRESENTACOES LTDA</xNome>
-            <enderNac>
-                <xLgr>RUA PROFESSOR BAETA VIANA</xLgr>
-                <nro>429</nro>
-                <xCpl>APT 402</xCpl>
-                <xBairro>Itapoã</xBairro>
-                <cMun>3106200</cMun>
-                <UF>MG</UF>
-                <CEP>31710220</CEP>
-            </enderNac>
-        </emit>
-        <valores>
-            <vBC>21121.74</vBC>
-            <pAliqAplic>2.50</pAliqAplic>
-            <vISSQN>528.04</vISSQN>
-            <vTotalRet>316.83</vTotalRet>
-            <vLiq>20804.91</vLiq>
-            <xOutInf>Chave de acesso no Ambiente de Dados Nacional: 31062001238828779000100240000000010724061983979678.</xOutInf>
-        </valores>
-        <DPS versao="1.00">
-            <infDPS Id="DPS310620023882877900010075000002400000000107">
-                <tpAmb>1</tpAmb>
-                <dhEmi>2024-06-06T15:47:58-03:00</dhEmi>
-                <verAplic>1.00</verAplic>
-                <serie>75000</serie>
-                <nDPS>2400000000107</nDPS>
-                <dCompet>2024-06-06</dCompet>
-                <tpEmit>1</tpEmit>
-                <cLocEmi>3106200</cLocEmi>
-                <prest>
-                    <CNPJ>38828779000100</CNPJ>
-                    <IM>12517390012</IM>
-                    <xNome>TRIAD GESTAO DE MERCADO E REPRESENTACOES LTDA</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>3106200</cMun>
-                            <CEP>31710220</CEP>
-                        </endNac>
-                        <xLgr>RUA PROFESSOR BAETA VIANA</xLgr>
-                        <nro>429</nro>
-                        <xCpl>APT 402</xCpl>
-                        <xBairro>Itapoã</xBairro>
-                    </end>
-                    <regTrib>
-                        <opSimpNac>1</opSimpNac>
-                        <regEspTrib>0</regEspTrib>
-                    </regTrib>
-                </prest>
-                <toma>
-                    <CNPJ>76492701000157</CNPJ>
-                    <xNome>Britânia Eletrodomésticos S.A.</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>4106902</cMun>
-                            <CEP>80040265</CEP>
-                        </endNac>
-                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
-                        <nro>1330</nro>
-                        <xBairro>Hugo Lange</xBairro>
-                    </end>
-                    <fone>4132187814</fone>
-                    <email>juan.carneiro@britania.com.br</email>
-                </toma>
-                <serv>
-                    <locPrest>
-                        <cLocPrestacao>3106200</cLocPrestacao>
-                    </locPrest>
-                    <cServ>
-                        <cTribNac>100901</cTribNac>
-                        <cTribMun>001</cTribMun>
-                        <xDescServ>Comissão referente ao mês de maio 2024.|Banco Inter|Agência: 0001|Conta: 84753064|PIX (CNPJ): 38.828.779/0001-00</xDescServ>
-                    </cServ>
-                </serv>
-                <valores>
-                    <vServPrest>
-                        <vServ>21121.74</vServ>
-                    </vServPrest>
-                    <trib>
-                        <tribMun>
-                            <tribISSQN>1</tribISSQN>
-                            <pAliq>2.50</pAliq>
-                            <tpRetISSQN>1</tpRetISSQN>
-                        </tribMun>
-                        <tribFed>
-                            <vRetIRRF>316.83</vRetIRRF>
-                        </tribFed>
-                        <totTrib>
-                            <indTotTrib>0</indTotTrib>
-                        </totTrib>
-                    </trib>
-                </valores>
-            </infDPS>
-        </DPS>
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS31062001238828779000100240000000010724061983979678">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>m8RfLyY91U4UhLsUl1DmkXUONSk=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>VUiXiqWAAMh52hOvReK050k8mwn51vlUKsl9aEOFTHzkMd0oAJGFfL0N+Vx+tmPtMU7Um6F17ajOZlXdRmh39eNCz9uuUh54iQNeCRKaXB7KFeygXMWGWeloypbHyLDpVbxobUI+ZZBaL65sxuE22P1/6blG4DfzcanvtcprVvwL9Kl1RUPYt047yxincmuxi7gQNvomF7+FVvKDa84E5lICNqOPjM9Xt2Env01PnKwBtzJyE7zl0OHZqy31TV8C7uxH0xdAJ0J4hF5ya9gnGX/2OqdCP5rSxgoEX1Pq44l9jTU2bI3IQ8hFWM0as3hSFK/oH+D4J5nRFEgDUTuY+g==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIIHTCCBgWgAwIBAgIQVfLdykQIR3oXsJDM9RuWODANBgkqhkiG9w0BAQsFADB0MQswCQYDVQQGEwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDEtMCsGA1UECxMkQ2VydGlzaWduIENlcnRpZmljYWRvcmEgRGlnaXRhbCBTLkEuMSEwHwYDVQQDExhBQyBDZXJ0aXNpZ24gTXVsdGlwbGEgRzcwHhcNMjMwOTEyMTgwMzExWhcNMjQwOTExMTgwMzExWjCB7jELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxCzAJBgNVBAgMAk1HMRcwFQYDVQQHDA5CZWxvIEhvcml6b250ZTEZMBcGA1UECwwQVmlkZW9Db25mZXJlbmNpYTEXMBUGA1UECwwOMDE1NTQyODUwMDAxNzUxHjAcBgNVBAsMFUFDIENlcnRpc2lnbiBNdWx0aXBsYTEbMBkGA1UECwwSQXNzaW5hdHVyYSBUaXBvIEExMTMwMQYDVQQDDCpNVU5JQ0lQSU8gREUgQkVMTyBIT1JJWk9OVEU6MTg3MTUzODMwMDAxNDAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCLudcEE/EB//cJStC57qDZtydNGf8wozGgc4YMZxuQCCP/dRgcX7aSzcnpO0KNYk2nqbhVlQEAGYXf0uBmKdgPzDS02lAvF5MXy9VP6ymFNf+IRTCLhvlOPXRooQGTmz83DodmEL+U7MtHyghOxuVwfPgZM1WN7WU1S07w22wlEJMJ45qGHgiVXs/HsvXM6s9TArCPbt2L4IYcCVgWCUguprXb/CSzmYjvJlYz2y6x6ZuG69g4om0G0iWm8aAEzMt0PQX8BGT16FKgWLg28uTCJlLNaw6Q9ABemlgauzMPtIbVB5+Hh05KyC59iKFRtKt8edys/tPxxLQkyASptN/xAgMBAAGjggMuMIIDKjCBvAYDVR0RBIG0MIGxoDgGBWBMAQMEoC8ELTI4MDgxOTYxNDk2MDY1MzA2MDQxMjI3MDc1NTk3MDAwMDAwMDAwMDAwMDAwMKAtBgVgTAEDAqAkBCJFVUdFTklPIEVVU1RBUVVJTyBWRUxPU08gRkVSTkFOREVToBkGBWBMAQMDoBAEDjE4NzE1MzgzMDAwMTQwoBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMIESZXZlbG9zb0BwYmguZ292LmJyMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUXXIMvzPSu+OGpuhMBnF+VVwHoNYwgYsGA1UdIASBgzCBgDB+BgZgTAECAQswdDByBggrBgEFBQcCARZmaHR0cDovL2ljcC1icmFzaWwuY2VydGlzaWduLmNvbS5ici9yZXBvc2l0b3Jpby9kcGMvQUNfQ2VydGlzaWduX011bHRpcGxhL0RQQ19BQ19DZXJ0aVNpZ25fTXVsdGlwbGEucGRmMIHGBgNVHR8Egb4wgbswXKBaoFiGVmh0dHA6Ly9pY3AtYnJhc2lsLmNlcnRpc2lnbi5jb20uYnIvcmVwb3NpdG9yaW8vbGNyL0FDQ2VydGlzaWduTXVsdGlwbGFHNy9MYXRlc3RDUkwuY3JsMFugWaBXhlVodHRwOi8vaWNwLWJyYXNpbC5vdXRyYWxjci5jb20uYnIvcmVwb3NpdG9yaW8vbGNyL0FDQ2VydGlzaWduTXVsdGlwbGFHNy9MYXRlc3RDUkwuY3JsMA4GA1UdDwEB/wQEAwIF4DAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwgbYGCCsGAQUFBwEBBIGpMIGmMGQGCCsGAQUFBzAChlhodHRwOi8vaWNwLWJyYXNpbC5jZXJ0aXNpZ24uY29tLmJyL3JlcG9zaXRvcmlvL2NlcnRpZmljYWRvcy9BQ19DZXJ0aXNpZ25fTXVsdGlwbGFfRzcucDdjMD4GCCsGAQUFBzABhjJodHRwOi8vb2NzcC1hYy1jZXJ0aXNpZ24tbXVsdGlwbGEuY2VydGlzaWduLmNvbS5icjANBgkqhkiG9w0BAQsFAAOCAgEAN3ALF0SVes6XN6WvukBGd0D4Am2di+zsbaYCoVrHmTOS9W8jnj2MGvDfCPU1f0gxDB0Cb2O/uU7v4MqGcKaQe26Sh20HtMT4VU1Ue/PxXlFKPuhieior1bwY0g7v/tTYPcilUsNIYAg7HWkfWYQrO8VGvdwXy4j/QPkUHIS+FEtw7hSNxnKy5uf1bqmvJxfkhQWnLtJjwOUXj/8h592xK7jgVTdZYc5oiB6xOCy99OjNGDd1WTvbJQ3qacJXo5FzShFKtJCeZRf3D9Lmkh0Yuemwwmmz3oGG6Q4xpgfDfPYrOXJbegOd+CBC+WBws+UXalRq7iMBpYhJJf2fbcbhB7Swj1YLxtR9WIronW8DtbAtKhyxZxBc5eZjblVYSTE4TdmWC7sC0OowVwY3zbVbk5/4xtSMsE7y6nXEnj/olBnp3Vg/+5mcOogTQQN4NhRSOdGCuJgxYZ1gMq7TbMNSRxLnF7B7ku7DcPS7rfriV1+47Oh5LET+RyIKdPDm9Q8WdDJ9DVBADDFr//XEAMwg6lkzrd8aFrq9x2DtG4g9VfzOP02xgjLJuYNPxCABpB89d9EhX9jI32DycRILsSqBRV/DkC8yg/oYTb6VDlcdyogwuUQ2FkkHUK6x0eMYl8DDolgqNRCnPyUorR5PqSoEPzIVTsfs7RJcCE6gykfWU40=</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

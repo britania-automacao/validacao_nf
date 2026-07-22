@@ -251,7 +251,7 @@ class GeradorCsvGoverno:
 
     def gerar_csv(self) -> Path:
         print("[ETL XML] Verificando XMLs Nacionais para atualização da Base CSV...")
-        lista_arquivos_xml = list(self.caminhos.xml_servicos_nacional.glob("*.xml"))
+        lista_arquivos_xml = list(self.caminhos.xml_servicos_nacional.rglob("*.xml"))
         
         if not lista_arquivos_xml:
             print("[AVISO] A pasta de XMLs está vazia.")
@@ -447,7 +447,7 @@ class LeitorRelatorioTotvs:
 
     def processar_relatorio(self) -> pd.DataFrame:
         print(f"[ETL TOTVS] A iniciar a leitura do ERP na pasta: {self.pasta.name}...")
-        arquivos_totvs = list(self.pasta.glob("*.xlsx")) + list(self.pasta.glob("*.csv"))
+        arquivos_totvs = list(self.pasta.rglob("*.xlsx")) + list(self.pasta.rglob("*.csv"))
         if not arquivos_totvs:
             print(f"[AVISO] Nenhum relatório do TOTVS encontrado na pasta {self.pasta.name}.")
             return pd.DataFrame()

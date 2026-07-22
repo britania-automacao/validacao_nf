@@ -1,233 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
-        
-    <infNFSe Id="NFS42091021201415517000104000000001216926030205028881">
-                
-        <xLocEmi>JOINVILLE</xLocEmi>
-                
-        <xLocPrestacao>JOINVILLE</xLocPrestacao>
-                
-        <nNFSe>12169</nNFSe>
-                
-        <cLocIncid>4209102</cLocIncid>
-                
-        <xLocIncid>JOINVILLE</xLocIncid>
-                
-        <xTribNac>1.05 - Licenciamento ou cessão de direito de uso de programas de computação.</xTribNac>
-                
-        <verAplic>04.01.49.0000</verAplic>
-                
-        <ambGer>1</ambGer>
-                
-        <tpEmis>2</tpEmis>
-                
-        <cStat>100</cStat>
-                
-        <dhProc>2026-03-12T09:35:47-03:00</dhProc>
-                
-        <nDFSe>12169</nDFSe>
-                
-        <emit>
-                        
-            <CNPJ>01415517000104</CNPJ>
-                        
-            <IM>53318</IM>
-                        
-            <xNome>DINAMIO TECNOLOGIA LTDA</xNome>
-                        
-            <xFant>DINAMIO TECNOLOGIA LTDA</xFant>
-                        
-            <enderNac>
-                                
-                <xLgr>Do Principe</xLgr>
-                                
-                <nro>777</nro>
-                                
-                <xCpl>SALA 05</xCpl>
-                                
-                <xBairro>CENTRO</xBairro>
-                                
-                <cMun>4209102</cMun>
-                                
-                <UF>SC</UF>
-                                
-                <CEP>89201001</CEP>
-                            
-            </enderNac>
-                        
-            <fone>4730328100</fone>
-                        
-            <email>admfin@dinamio.com.br</email>
-                    
-        </emit>
-                
-        <valores>
-                        
-            <vBC>25854.18</vBC>
-                        
-            <pAliqAplic>2.00</pAliqAplic>
-                        
-            <vISSQN>517.08</vISSQN>
-                        
-            <vLiq>25854.18</vLiq>
-                    
-        </valores>
-                
-        <DPS versao="1.01">
-                        
-            <infDPS Id="DPS420910220141551700010403000000000000012108">
-                                
-                <tpAmb>1</tpAmb>
-                                
-                <dhEmi>2026-03-12T00:00:01-03:00</dhEmi>
-                                
-                <verAplic>04.01.49.0000</verAplic>
-                                
-                <serie>3000</serie>
-                                
-                <nDPS>12108</nDPS>
-                                
-                <dCompet>2026-03-12</dCompet>
-                                
-                <tpEmit>1</tpEmit>
-                                
-                <cLocEmi>4209102</cLocEmi>
-                                
-                <prest>
-                                        
-                    <CNPJ>01415517000104</CNPJ>
-                                        
-                    <IM>53318</IM>
-                                        
-                    <fone>4730328100</fone>
-                                        
-                    <email>admfin@dinamio.com.br</email>
-                                        
-                    <regTrib>
-                                                
-                        <opSimpNac>1</opSimpNac>
-                                                
-                        <regEspTrib>0</regEspTrib>
-                                            
-                    </regTrib>
-                                    
-                </prest>
-                                
-                <toma>
-                                        
-                    <CNPJ>76492701000157</CNPJ>
-                                        
-                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
-                                        
-                    <end>
-                                                
-                        <endNac>
-                                                        
-                            <cMun>4106902</cMun>
-                                                        
-                            <CEP>80040265</CEP>
-                                                    
-                        </endNac>
-                                                
-                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
-                                                
-                        <nro>1330</nro>
-                                                
-                        <xBairro>HUGO LANGE</xBairro>
-                                            
-                    </end>
-                                        
-                    <fone>4132187700</fone>
-                                        
-                    <email>financeiro.ti@britania.com.br</email>
-                                    
-                </toma>
-                                
-                <serv>
-                                        
-                    <locPrest>
-                                                
-                        <cLocPrestacao>4209102</cLocPrestacao>
-                                            
-                    </locPrest>
-                                        
-                    <cServ>
-                                                
-                        <cTribNac>010501</cTribNac>
-                                                
-                        <xDescServ>1 LIC - Licenciamento Produto. 25.854,18Referente a Renovacao Suporte Corpia IGA v5.12  Contrato Anual e Corpia Password Reset v2.0 Aluguel com 1 ano de manutencao inclusa acima de 1.000 usuarios. PEDIDO DE COMPRA 00663.528. Ordem Compra 8214.62.Vencimento: 20/04/2026Dados deposito: Banco Itau: 341 Agencia: 0154 Conta Corrente: 45810-3PIX: CNPJ - 01.415.517/0001-04.Trib aprox R$: 3.477,39 Federal, R$: 0,00 Estadual e R$: 855,77 Municipal Fonte: IBPT/empresometro.com.br   3CA397</xDescServ>
-                                                
-                        <cIntContrib>99143204</cIntContrib>
-                                            
-                    </cServ>
-                                        
-                    <infoCompl>
-                                                
-                        <xInfComp>| Natureza da operação: 101 - ISS devido para JoinvilleDados deposito: Banco Ita&amp;uacute;: 341 Ag&amp;ecirc;ncia: 0154 Conta Corrente: 45810-3. PIX: CNPJ - 01.415.517/0001-04&lt;p&gt;Dados deposito: Banco Ita&amp;uacute;: 341 Ag&amp;ecirc;ncia: 0154 Conta Corrente: 45810-3. PIX: CNPJ - 01.415.517/0001-04&lt;/p&gt; | - Esta NF-em foi gerada com fundamento na Lei Complementar Municipal n. 286, de 21 de novembro de 2008, regulamentada pelo Decreto Municipal n. 30.798, de 08 de março de 2018.</xInfComp>
-                                            
-                    </infoCompl>
-                                    
-                </serv>
-                                
-                <valores>
-                                        
-                    <vServPrest>
-                                                
-                        <vServ>25854.18</vServ>
-                                            
-                    </vServPrest>
-                                        
-                    <trib>
-                                                
-                        <tribMun>
-                                                        
-                            <tribISSQN>1</tribISSQN>
-                                                        
-                            <tpRetISSQN>1</tpRetISSQN>
-                                                    
-                        </tribMun>
-                                                
-                        <totTrib>
-                                                        
-                            <vTotTrib>
-                                                                
-                                <vTotTribFed>3477.39</vTotTribFed>
-                                                                
-                                <vTotTribEst>0.00</vTotTribEst>
-                                                                
-                                <vTotTribMun>855.77</vTotTribMun>
-                                                            
-                            </vTotTrib>
-                                                    
-                        </totTrib>
-                                            
-                    </trib>
-                                    
-                </valores>
-                            
-            </infDPS>
-                    
-        </DPS>
-            
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS42091021201415517000104000000001216926030205028881">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>MTUKUM/CRAPTfzJjxqwE2uIwoho=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>q0SEc1RQ23+o4yhmeXCS33XOgrQF39lK8wh40H3zfx408lF1dDo1WoPCrF2fc9XGni4Ldj/hDQCnX2/b2sLWUNX0YlW1B985gHVz145jkkxbqZtGOOzAsrNoyyr436geE4OyZ8At7MCMlEMFIQhIbNSNwLTfmJ/5WVBKaLw9Ri+I/XJ7qjZo4YwZgI7hgSdLgBt1E6YzXXHBtG3df4eZzmRK8auQ45xIMcgjJPZ+TZyfZ24JEv19rrurRlB5eo6tfnk1yQW35rFv/OcBDcAKPirBAjBArvHYyo3M6StbyikbfONx8s4fHyfD6XLkfBhhBum9RCHjtSDP4T+QCVRcNg==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIH6jCCBdKgAwIBAgIIf+V13XkO5QMwDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgU0FGRVdFQiBSRkIgdjUwHhcNMjYwMTIzMTExMTAxWhcNMjcwMTIzMTExMTAxWjCB8TELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAlNDMRIwEAYDVQQHEwlKT0lOVklMTEUxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTEXMBUGA1UECxMOMjQxNDk1MDAwMDAxNTgxEzARBgNVBAsTCnByZXNlbmNpYWwxLjAsBgNVBAMTJU1VTklDSVBJTyBERSBKT0lOVklMTEU6ODMxNjk2MjMwMDAxMTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC1UoxFiZAQ+hrQDe80eio2lqDwi+cvqMUHWtrdQThcKfbXfgtQCmP+TU+K0JR5dAau/z41lYR9iXke5njR29KvOtc1/C/yMwD0pKlYRhEwb7ahkEo5nFGgit9h/D4yle/V86uSiu35ARa5fziz1AWyi+g6WGXJtUDsRoQulFRLCr/smSBLnYDrGl5B1C+oEOw8FVXwNjn7RmYpJPKqs/Udiv+d1CSmfbs+sDxwuiRtopdScmL1KMhgFGQhPiWvGYdREmGH5QldGCJQlWi5+nu5OcMy8m4UkULGSc6tnsbMQroudtGfrDOhFpKyoe0fN9F5brvZPByoRpCQJj4B12StAgMBAAGjggL+MIIC+jAfBgNVHSMEGDAWgBQpXkvVRky7/hanY8EdxCby3djzBTAOBgNVHQ8BAf8EBAMCBeAwaQYDVR0gBGIwYDBeBgZgTAECATMwVDBSBggrBgEFBQcCARZGaHR0cDovL3JlcG9zaXRvcmlvLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9kcGMtYWNzYWZld2VicmZiLnBkZjCBrgYDVR0fBIGmMIGjME+gTaBLhklodHRwOi8vcmVwb3NpdG9yaW8uYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2xjci1hYy1zYWZld2VicmZidjUuY3JsMFCgTqBMhkpodHRwOi8vcmVwb3NpdG9yaW8yLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9sY3ItYWMtc2FmZXdlYnJmYnY1LmNybDCBtwYIKwYBBQUHAQEEgaowgacwUQYIKwYBBQUHMAKGRWh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvYWMtc2FmZXdlYnJmYnY1LnA3YjBSBggrBgEFBQcwAoZGaHR0cDovL3JlcG9zaXRvcmlvMi5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvYWMtc2FmZXdlYnJmYnY1LnA3YjCBxgYDVR0RBIG+MIG7gSZHQUJJTkVURURPUFJFRkVJVE9ASk9JTlZJTExFLlNDLkdPVi5CUqAjBgVgTAEDAqAaExhBRFJJQU5PIEJPUk5TQ0hFSU4gU0lMVkGgGQYFYEwBAwOgEBMOODMxNjk2MjMwMDAxMTCgOAYFYEwBAwSgLxMtMDEwMzE5NzgwMTc1NTQ4ODk3MTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwoBcGBWBMAQMHoA4TDDAwMDAwMDAwMDAwMDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwCQYDVR0TBAIwADANBgkqhkiG9w0BAQsFAAOCAgEANZmXiI2I+4XvHxYd+txzd7b2zifBKIdDI7F2/bF/4nXX5YCvn5nj4svbrcAH4qlplgrfJNUoN4ak9PKuOuTlvtpNucVptBjkFyrutIUvmPlUePF4PtCUBuaMzxLKR5fwpy/KMd8fdPyngZ5ZV0iiOvvWxvWYUN3jzrNgKhwfPnsIo0bDL5IZqakHxsssAfao12DYF/1fdbkAyKQ1tzRJCpuDcACtCBb6z89zkIKFo+xr/N4+AAN50JinBMfFlE63//8sEgmnyuzpR59qYYhoPdIQMz8Pt4UoRB0NYO9OabKFmELMkZGiIi0HZBVsGDYshsCMpLcBzl0gjQNmaI5O46ZomttjHWSLaJ1E9yML4AWPVOoPPh4N+pRc1d2tCjxcaJQs47HxWgZ/M58Z8ASp2mzFdFGFzjH9noDYNWgJfxPB9DoSaCupIH84d7iAvOxjGOCiBkgwuHZx0jSWN2wA0beKWadOL3xe+uAA+cpgNf0GQqWZGADHm6M0mzZCPxjG8TkeJHSv5kVuYt2O9vI3giXFQbmU1pLL3sxDYVwEMX8ixpBoGJKMOp6X4a0hTGlN7C51RZrhpaw45zgKPY6aoaEA7TaB7bgSmRTd4E8fjjbzjF2WRB1uVTMhRz17IIP1D4eXjl0m++l09Y1bVO93yarHgjyIG9egq/1wzGnFCyU=</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

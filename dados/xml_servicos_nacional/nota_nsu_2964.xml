@@ -1,147 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
-    <infNFSe Id="NFS11001221250825382000160000000000007026043235824692">
-        <xLocEmi>JI PARANA</xLocEmi>
-        <xLocPrestacao>JI PARANA</xLocPrestacao>
-        <nNFSe>70</nNFSe>
-        <cLocIncid>1100122</cLocIncid>
-        <xLocIncid>JI PARANA</xLocIncid>
-        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
-        <xNBS>Serviços de intermediação na distribuição de mercadorias</xNBS>
-        <verAplic>1.5.1-SNAPSHOT</verAplic>
-        <ambGer>1</ambGer>
-        <tpEmis>2</tpEmis>
-        <cStat>100</cStat>
-        <dhProc>2026-04-10T14:10:44-03:00</dhProc>
-        <nDFSe>410381</nDFSe>
-        <emit>
-            <CNPJ>50825382000160</CNPJ>
-            <IM>000033847</IM>
-            <xNome>EVOLUCAO REPRESENTACOES LTDA</xNome>
-            <xFant>EVOLUCAO REPRESENTACOES</xFant>
-            <enderNac>
-                <xLgr>JOSE MARTINS VAILANTE</xLgr>
-                <nro>166</nro>
-                <xBairro>RESIDENCIAL COLINA PARK I</xBairro>
-                <cMun>1100122</cMun>
-                <UF>RO</UF>
-                <CEP>76906650</CEP>
-            </enderNac>
-            <email>ozielcacoalrep@gmail.com</email>
-        </emit>
-        <valores>
-            <vCalcDR>0.00</vCalcDR>
-            <vBC>146.35</vBC>
-            <pAliqAplic>2.01</pAliqAplic>
-            <vISSQN>2.94</vISSQN>
-            <vTotalRet>0.00</vTotalRet>
-            <vLiq>146.35</vLiq>
-        </valores>
-        <DPS versao="1.00">
-            <infDPS Id="DPS110012225082538200016000002000000000000070">
-                <tpAmb>1</tpAmb>
-                <dhEmi>2026-04-10T14:10:44-03:00</dhEmi>
-                <verAplic>3.8.3</verAplic>
-                <serie>00002</serie>
-                <nDPS>70</nDPS>
-                <dCompet>2026-04-10</dCompet>
-                <tpEmit>1</tpEmit>
-                <cLocEmi>1100122</cLocEmi>
-                <prest>
-                    <CNPJ>50825382000160</CNPJ>
-                    <IM>000033847</IM>
-                    <email>ozielcacoalrep@gmail.com</email>
-                    <regTrib>
-                        <opSimpNac>3</opSimpNac>
-                        <regApTribSN>1</regApTribSN>
-                        <regEspTrib>0</regEspTrib>
-                    </regTrib>
-                </prest>
-                <toma>
-                    <CNPJ>76492701000157</CNPJ>
-                    <xNome>BRITANIA ELETRODOMESTICOS S/A - CURITIBA</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>4106902</cMun>
-                            <CEP>80040265</CEP>
-                        </endNac>
-                        <xLgr>AV. NOSSA SENHORA DA LUZ</xLgr>
-                        <nro>1330</nro>
-                        <xBairro>HUGO LANGE</xBairro>
-                    </end>
-                    <fone>4132187965</fone>
-                    <email>auditoria.at@britania.com.br</email>
-                </toma>
-                <serv>
-                    <locPrest>
-                        <cLocPrestacao>1100122</cLocPrestacao>
-                    </locPrest>
-                    <cServ>
-                        <cTribNac>100901</cTribNac>
-                        <xDescServ><![CDATA[serviço de representação Comercial]]></xDescServ>
-                        <cNBS>102010000</cNBS>
-                    </cServ>
-                </serv>
-                <valores>
-                    <vServPrest>
-                        <vServ>146.35</vServ>
-                    </vServPrest>
-                    <trib>
-                        <tribMun>
-                            <tribISSQN>1</tribISSQN>
-                            <tpRetISSQN>1</tpRetISSQN>
-                        </tribMun>
-                        <tribFed/>
-                        <totTrib>
-                            <vTotTrib>
-                                <vTotTribFed>0.00</vTotTribFed>
-                                <vTotTribEst>0.00</vTotTribEst>
-                                <vTotTribMun>0.00</vTotTribMun>
-                            </vTotTrib>
-                        </totTrib>
-                    </trib>
-                </valores>
-            </infDPS>
-            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-                <SignedInfo>
-                    <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-                    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-                    <Reference URI="">
-                        <Transforms>
-                            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                            <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-                        </Transforms>
-                        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                        <DigestValue>BsNgUExLJ2p+qGqus+aE0b8DYBY=</DigestValue>
-                    </Reference>
-                </SignedInfo>
-                <SignatureValue>nJY7McXNJl+/X03ICPGspLN699R8LafUubAbdQ4iz8gSaffTvkPifQwykpk6VS2aG4wullpR+jSffxbO8qQEH4jLFXxvb/I3r92FP28l7C56P/zRpRb0OU3VsI8OmKY3crzaLM3H2uQHrWtnJilpmgj3ofcPqaIOPzu2DLQJZOmcbB5HmDOmIidcQzCt5QraaaP42WKUajItBYeZmP1LwS8G6G/fNHJ1lb+BOr3JkG+LG6z76pkS2huSSHwWMNb4YadnYNxl/Qtm0YdMB8nlZXP4cxWMQvy0X+b6GjVZlonxP6h3BuMQoSa7q9FG/cmh+6+VwAIuucmfukxfd79ecg==</SignatureValue>
-                <KeyInfo>
-                    <X509Data>
-                        <X509Certificate>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</X509Certificate>
-                    </X509Data>
-                </KeyInfo>
-            </Signature>
-        </DPS>
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>ka64tVKlQnneFY8Br9WqgYS4vQo=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>N3CVmm1+LCn+mlYJLgHn6A5ahirYWacQkJkoGANgLJff7okXCOcH+eeMzbEORynAfg/W2BM1Q2Wy8NOGIgVthfMcOmIc+hAhpn6EPQhmViI+5Hev9qw/aa0vdUx+Kvaa9q49KZvCHeyuAHLRq3K7ggQmqgPLX9KahVDF7l7xRT47kuBUM5dBiMbk65+FzIuN0GANBueU2vyQgyMvz9ZSJ5ikvjhMsSk7PvS9v4GCGmksM1ZAa1nqXYeuP7yKqnk3lkRqeeZJ6O7KE5MVgYxnHdTIxXUzKpZ12oSRcYcI7txlSRUtBhGS8aPp07n2rWk4Qr7AzX2L+f6Sufh5hsRxtA==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIHdjCCBV6gAwIBAgIIeUZJUjchJCcwDQYJKoZIhvcNAQELBQAwczELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEXMBUGA1UEAxMOQUMgQ05ETCBSRkIgdjMwHhcNMjYwMTA3MTU1OTIwWhcNMjcwMTA3MTU1OTIwWjCB9zELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAlJPMRIwEAYDVQQHEwlKSS1QQVJBTkExFzAVBgNVBAsTDjA0MzgwMTY4MDAwMTIwMTYwNAYDVQQLEy1TZWNyZXRhcmlhIGRhIFJlY2VpdGEgRmVkZXJhbCBkbyBCcmFzaWwgLSBSRkIxFjAUBgNVBAsTDVJGQiBlLUNOUEogQTExGTAXBgNVBAsTEHZpZGVvY29uZmVyZW5jaWExLjAsBgNVBAMTJU1VTklDSVBJTyBERSBKSSBQQVJBTkE6MDQwOTI2NzIwMDAxMjUwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC4u/yEKZLcyDs7uCPqIW1RYB83kyypyyDj0Crs+x3yDGqMI9O9ruklLCkuGhCXy0FnGBgBZUZfLIb5qrBrAaJAybwFo+Hit/F9sRrPfCIdjuuAektSmvQt2FVhL1xr7wiJ4r3bX5z1I42k4EEAU0hcQGt1sgIt6hngSJfpjO9hkGbNLs8nGKtpdGVvjyPB0nzmJnVPFJL711L8ZO0JC0STSRw4BVklTCvJmdrzcKMA7jvuoXKzdiy4SzcLvPKnUaU+HxSZtCh/Qk/32K4cNHQIb5SkmmizP05BFKljta9b3pS8BBHeswPKWGied3ISt6NOWOuNA9wn0UrhhVSblj2RAgMBAAGjggKHMIICgzAfBgNVHSMEGDAWgBRrHzQVQRrqmx7KItLO3e+76TLKiTAOBgNVHQ8BAf8EBAMCBeAwZwYDVR0gBGAwXjBcBgZgTAECATQwUjBQBggrBgEFBQcCARZEaHR0cDovL3JlcG9zaXRvcmlvLmFjc3BjYnJhc2lsLm9yZy5ici9hYy1jbmRscmZiL2FjLWNuZGwtcmZiLWRwYy5wZGYwgaYGA1UdHwSBnjCBmzBLoEmgR4ZFaHR0cDovL3JlcG9zaXRvcmlvLmFjc3BjYnJhc2lsLm9yZy5ici9hYy1jbmRscmZiL2xjci1hYy1jbmRscmZidjUuY3JsMEygSqBIhkZodHRwOi8vcmVwb3NpdG9yaW8yLmFjc3BjYnJhc2lsLm9yZy5ici9hYy1jbmRscmZiL2xjci1hYy1jbmRscmZidjUuY3JsMF0GCCsGAQUFBwEBBFEwTzBNBggrBgEFBQcwAoZBaHR0cDovL3JlcG9zaXRvcmlvLmFjc3BjYnJhc2lsLm9yZy5ici9hYy1jbmRscmZiL2FjLWNuZGxyZmJ2NS5wN2IwgbQGA1UdEQSBrDCBqYEVQUZGT05TT0FDQEhPVE1BSUwuQ09NoCIGBWBMAQMCoBkTF0FGRk9OU08gQU5UT05JTyBDQU5ESURPoBkGBWBMAQMDoBATDjA0MDkyNjcyMDAwMTI1oDgGBWBMAQMEoC8TLTE5MDcxOTkwNzc4MDAzMTEyODcwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggIBAADiHizBSncHPP7jSKkudqYCoZrbszQwUSvboRAA3Virh+MW7arsokO/93EYg3OYV/kCMCavSPigr/GlMFXUPCmq78Y2abDTpWgEah2RgE/zbSuTU1okQGZL0aeF9Bhce4+6zHY9ruDsxkh5yqV0Z2tRT6oS4vPVAlHaX50b+xsW4DNB6Of0SbfwXSUvmSfI9k9miFwmedyk1bjSDgRLC3BBCPSSkI5TACVdDfYjEjn13tLoEAaClxwA/zsLtv3sJV/GIexpRK/Gu3jH6bgzeC2CE1o4Vf3V5Gq6kI3O1qk7wRnrrm7g4pUrZRJ89EAP+2/PxJNoYOkUM7cGB1MDXk+h/Rsjj4TpMrWMmlqv7zs+KSt5FwnHccK7r0Xb3uoN3tyheJKDkYXOIk7cCXd2gX8T+bLKZSv3zDwtcHccCll9cUoez4NwPbnQ33x7ENppkzL7oud9KtF1+nvc8pbB90KnRANd+uvIZ+L0vNIIXHU0/hioS9b0WWnR0eH1DIMDcieiJHjyXuemRvhlgdKOhaT5oRDjGGS8iB36qd69fQi00s4KA2CTTOUKhzC/CAn2eOdimVNa3fHq/GzMLAjRHck7RdQBTfwQlWjgyCNTDlwEz43+Me+h5xSU76uIF/F4ASnxtvWLDn8jDzpQ+7UFpUcOwhG3hJYMcHPgE44aFInG</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

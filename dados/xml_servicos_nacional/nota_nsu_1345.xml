@@ -1,261 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
-        
-    <infNFSe Id="NFS42091021204055601000152000000009013026010386391676">
-                
-        <xLocEmi>JOINVILLE</xLocEmi>
-                
-        <xLocPrestacao>JOINVILLE</xLocPrestacao>
-                
-        <nNFSe>90130</nNFSe>
-                
-        <cLocIncid>4209102</cLocIncid>
-                
-        <xLocIncid>JOINVILLE</xLocIncid>
-                
-        <xTribNac>17.01 - Assessoria ou consultoria de qualquer natureza, não contida em outros itens desta lista; análise, exame, pesquisa, coleta, compilação e fornecimento de dados e informações de qualquer natureza, inclusive cadastro e similares.</xTribNac>
-                
-        <verAplic>04.01.46.0022</verAplic>
-                
-        <ambGer>1</ambGer>
-                
-        <tpEmis>2</tpEmis>
-                
-        <cStat>100</cStat>
-                
-        <dhProc>2026-01-10T20:54:25-03:00</dhProc>
-                
-        <nDFSe>90130</nDFSe>
-                
-        <emit>
-                        
-            <CNPJ>04055601000152</CNPJ>
-                        
-            <IM>94621</IM>
-                        
-            <xNome>BECOMEX CONSULTORIA LTDA</xNome>
-                        
-            <xFant>BECOMEX CONSULTING</xFant>
-                        
-            <enderNac>
-                                
-                <xLgr>Santos Dumont</xLgr>
-                                
-                <nro>935</nro>
-                                
-                <xCpl>ANDAR 3</xCpl>
-                                
-                <xBairro>Santo Antonio</xBairro>
-                                
-                <cMun>4209102</cMun>
-                                
-                <UF>SC</UF>
-                                
-                <CEP>89218105</CEP>
-                            
-            </enderNac>
-                        
-            <fone>4734250025</fone>
-                        
-            <email>faturamento@becomex.com.br</email>
-                    
-        </emit>
-                
-        <valores>
-                        
-            <vBC>2115.83</vBC>
-                        
-            <pAliqAplic>5.00</pAliqAplic>
-                        
-            <vISSQN>105.79</vISSQN>
-                        
-            <vLiq>1985.71</vLiq>
-                    
-        </valores>
-                
-        <DPS versao="1.01">
-                        
-            <infDPS Id="DPS420910220405560100015203000000000000094305">
-                                
-                <tpAmb>1</tpAmb>
-                                
-                <dhEmi>2026-01-10T20:50:25-03:00</dhEmi>
-                                
-                <verAplic>04.01.46.0022</verAplic>
-                                
-                <serie>3000</serie>
-                                
-                <nDPS>94305</nDPS>
-                                
-                <dCompet>2026-01-10</dCompet>
-                                
-                <tpEmit>1</tpEmit>
-                                
-                <cLocEmi>4209102</cLocEmi>
-                                
-                <prest>
-                                        
-                    <CNPJ>04055601000152</CNPJ>
-                                        
-                    <IM>94621</IM>
-                                        
-                    <fone>4734250025</fone>
-                                        
-                    <email>faturamento@becomex.com.br</email>
-                                        
-                    <regTrib>
-                                                
-                        <opSimpNac>1</opSimpNac>
-                                                
-                        <regEspTrib>0</regEspTrib>
-                                            
-                    </regTrib>
-                                    
-                </prest>
-                                
-                <toma>
-                                        
-                    <CNPJ>76492701000157</CNPJ>
-                                        
-                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
-                                        
-                    <end>
-                                                
-                        <endNac>
-                                                        
-                            <cMun>4106902</cMun>
-                                                        
-                            <CEP>80040265</CEP>
-                                                    
-                        </endNac>
-                                                
-                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
-                                                
-                        <nro>SN</nro>
-                                                
-                        <xCpl>.</xCpl>
-                                                
-                        <xBairro>HUGO LANGE</xBairro>
-                                            
-                    </end>
-                                        
-                    <fone>04132187767</fone>
-                                        
-                    <email>nfcomex@philco.com.br</email>
-                                    
-                </toma>
-                                
-                <serv>
-                                        
-                    <locPrest>
-                                                
-                        <cLocPrestacao>4209102</cLocPrestacao>
-                                            
-                    </locPrest>
-                                        
-                    <cServ>
-                                                
-                        <cTribNac>170101</cTribNac>
-                                                
-                        <xDescServ>Consultoria especializada em BAIXA DO SISCOMEX com padrao Transfer Pricing valor mensal Dados para deposito: Banco do Brasil - 001 Agencia: 3155-0 Conta corrente: 210.630-2 ou Banco Itau 341 Agencia 0154 Conta Corrente 28100 -0 Contrato 1627. R$ 2.115,83 Valor Total NF: 2.115,83 Valor aproximado dos tributos: 284,58 Perc. 13.45</xDescServ>
-                                                
-                        <cIntContrib>97029748</cIntContrib>
-                                            
-                    </cServ>
-                                        
-                    <infoCompl>
-                                                
-                        <xInfComp>| Natureza da operação: 101 - ISS devido para Joinville | Forma de pagamento: Parcela: 1 Vencimento: 10/02/2026 Tipo: Á vista Valor: 2.115,83000 |  | - Esta NF-em foi gerada com fundamento na Lei Complementar Municipal n. 286, de 21 de novembro de 2008, regulamentada pelo Decreto Municipal n. 30.798, de 08 de março de 2018.</xInfComp>
-                                            
-                    </infoCompl>
-                                    
-                </serv>
-                                
-                <valores>
-                                        
-                    <vServPrest>
-                                                
-                        <vServ>2115.83</vServ>
-                                            
-                    </vServPrest>
-                                        
-                    <trib>
-                                                
-                        <tribMun>
-                                                        
-                            <tribISSQN>1</tribISSQN>
-                                                        
-                            <tpRetISSQN>1</tpRetISSQN>
-                                                    
-                        </tribMun>
-                                                
-                        <tribFed>
-                                                        
-                            <piscofins>
-                                                                
-                                <CST>01</CST>
-                                                                
-                                <vBCPisCofins>2115.83</vBCPisCofins>
-                                                                
-                                <pAliqPis>0.65</pAliqPis>
-                                                                
-                                <pAliqCofins>3.00</pAliqCofins>
-                                                                
-                                <vPis>13.75</vPis>
-                                                                
-                                <vCofins>63.47</vCofins>
-                                                                
-                                <tpRetPisCofins>1</tpRetPisCofins>
-                                                            
-                            </piscofins>
-                                                        
-                            <vRetIRRF>31.74</vRetIRRF>
-                                                        
-                            <vRetCSLL>21.16</vRetCSLL>
-                                                    
-                        </tribFed>
-                                                
-                        <totTrib>
-                                                        
-                            <vTotTrib>
-                                                                
-                                <vTotTribFed>284.58</vTotTribFed>
-                                                                
-                                <vTotTribEst>0.00</vTotTribEst>
-                                                                
-                                <vTotTribMun>0.00</vTotTribMun>
-                                                            
-                            </vTotTrib>
-                                                    
-                        </totTrib>
-                                            
-                    </trib>
-                                    
-                </valores>
-                            
-            </infDPS>
-                    
-        </DPS>
-            
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS42091021204055601000152000000009013026010386391676">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>eF4eKxEIl5w5biNXNjdrEqLkbsA=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>LQvlqM1C4JH/bfyauHoppOJtpFMt4OUt7CR3CIHk8I0pbcjigGLX5Bl5ZKCDmpqMTwd0JN0/K6hB+dRbP485mWRuXytWxaXtLt5DbeILj/5xJEzcrk/WwvK3lbD5I24dCKKwW1KY/T26NuUM+ri9bRULeHITESlX/U8GEXz7TMw4q2nGcWwDsk425lQMWag04N2z7eX8OJdbvvzntNTRfof15JYtzlb7E9dE+dOtJ7Y420NXPyDOqVJbYGpi/o0o7gh5JVTnYBhvMULudsbBjLZFzQ9MnfOXVSsYopO6m6G+r6KOOzjXgjcyRI02KTj34tAP2CN2nt+0Z1rO1VvFiQ==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIHaTCCBVGgAwIBAgIIEd4lASJmheIwDQYJKoZIhvcNAQELBQAwdTELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEZMBcGA1UEAxMQQUMgU09MVVRJIFJGQiBWNTAeFw0yNTAxMjIxOTQzMDBaFw0yNjAxMjIxOTQzMDBaMIH6MQswCQYDVQQGEwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDELMAkGA1UECBMCU0MxEjAQBgNVBAcTCUpvaW52aWxsZTEcMBoGA1UECxMTQ2VydGlmaWNhZG8gRGlnaXRhbDEXMBUGA1UECxMOMDk0NjE2NDcwMDAxOTUxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTEuMCwGA1UEAxMlTVVOSUNJUElPIERFIEpPSU5WSUxMRTo4MzE2OTYyMzAwMDExMDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALBGuQHbjgqNc0p2jSeH7X3S0YR1oJkuU2EMwgzzqB6X3OETAom1h+fN96hGwF6GrUnSrCyTEnrRuxWksuck99HT96Dz8kaZ3BQGDclnN75SF7YAMDCmkULyIzAaZg+pyh+NbNKi+Ahp+C1RErqlnK8NF4VssRMDfMqE6kpDdxhpFHg2ww+lNPNY0aOyNMiJ68Zm+JgtRpSCMikhE9Jst9JF4zKyLX04w3nuta+dW+sbs533+UsE3nPgrDF43QqsM803Wm6Ofch1DJAgqQKEwP7l/cdyfZ5IKMysajmRmUsPsxKxcBYd+vtNFL0ebfbjdRLeJkwXvNMbp0jFNyD5Ko8CAwEAAaOCAnUwggJxMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAU/PKCALL4vZ/VgttgICczPMK+zJkwTwYIKwYBBQUHAQEEQzBBMD8GCCsGAQUFBzAChjNodHRwOi8vY2NkLmFjc29sdXRpLmNvbS5ici9sY3IvYWMtc29sdXRpLXJmYi12NS5wN2IwgcYGA1UdEQSBvjCBu4EmZ2FiaW5ldGVkb3ByZWZlaXRvQGpvaW52aWxsZS5zYy5nb3YuYnKgIwYFYEwBAwKgGhMYQURSSUFOTyBCT1JOU0NIRUlOIFNJTFZBoBkGBWBMAQMDoBATDjgzMTY5NjIzMDAwMTEwoDgGBWBMAQMEoC8TLTAxMDMxOTc4MDE3NTU0ODg5NzEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwWAYDVR0gBFEwTzBNBgZgTAECASgwQzBBBggrBgEFBQcCARY1aHR0cDovL2NjZC5hY3NvbHV0aS5jb20uYnIvZG9jcy9kcGMtYWMtc29sdXRpLXJmYi5wZGYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMIGABgNVHR8EeTB3MDmgN6A1hjNodHRwOi8vY2NkLmFjc29sdXRpLmNvbS5ici9sY3IvYWMtc29sdXRpLXJmYi12NS5jcmwwOqA4oDaGNGh0dHA6Ly9jY2QyLmFjc29sdXRpLmNvbS5ici9sY3IvYWMtc29sdXRpLXJmYi12NS5jcmwwHQYDVR0OBBYEFLbAMupOg+5uryitfdKIct7daYnAMA4GA1UdDwEB/wQEAwIF4DANBgkqhkiG9w0BAQsFAAOCAgEAHV6jWIkZTzJDM31d9cuduE91/F3hfOkqCWI7g52MdUUrUSiMAVqvkIIx7gTLzYcYKkKKs2tp+IlzwtmnL75xbUrTuq7bhK2oMQKD1Ju3/7aLUjoD8/G18GncEr9V0NoDAFigLNWXIfEwOjr5JHvRC9zc6mq3cyXQ/eF2r/nBDKJ0vB+bO3JiNDOG9IYLDdwAj/xf3a6Pg3aWIi1QdLlLX1f2wJbp4FxCtVWlQzmLBRDnaltKnsVBZG6VzDW+4p37FDTeELpteSC6gC63gH08QpNqII0veTtgJZ2ueWBJvEn0/uimLESgrFCvF9vVT+iJ7cxUs3+Wi+MTP7Lcxt1IyfQwORCkwUR/ZZbyJBwIxGWCoCJpdOhbOXwJgCanEGOR7mp7gQ9YbfqlBAUYfPGYSBYEhQ6yrRjhtj+tf3yGUtYdCkgylhzO/RK8OA5AALoSTngeZfCdWC2+2sQFHEYtJjVdsJ1Pb4xcwOh9mIQXECiRJYKsHNknQAgRMrwW1N0P7b6ZBpZ4hkoY4DawtBj07T1x0GHF2WnB7eV/EQqf52ydyfMC2Xy83yHHzWKT+OyZ5Ym2IPgCQiBN1738vrIhjk+1/6iLXRpHs48/U3ckorkIGwd5sOARY00HuvnbOShhKgXNa9NLJ7aA1unzqV4jNYMXGmTbH1oSBrg8hnn1IlI=</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

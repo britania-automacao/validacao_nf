@@ -1,121 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
-    <infNFSe Id="NFS21113001227549742000127000000000001226032554307375">
-        <xLocEmi>São Luís</xLocEmi>
-        <xLocPrestacao>SAO LUIS</xLocPrestacao>
-        <nNFSe>12</nNFSe>
-        <cLocIncid>2111300</cLocIncid>
-        <xLocIncid>SAO LUIS</xLocIncid>
-        <xTribNac>100901 - Representação de qualquer natureza, inclusive comercial.</xTribNac>
-        <verAplic>STM_v1.0</verAplic>
-        <ambGer>1</ambGer>
-        <tpEmis>2</tpEmis>
-        <cStat>100</cStat>
-        <dhProc>2026-03-12T15:58:13-03:00</dhProc>
-        <nDFSe>12</nDFSe>
-        <emit>
-            <CNPJ>27549742000127</CNPJ>
-            <IM>3682487621</IM>
-            <xNome>TR REPRESENTACOES E CONSULTORIA LTDA</xNome>
-            <enderNac>
-                <xLgr>R NOVA JERUSALEM 1 QUADRA 230 LOTE 01 A</xLgr>
-                <nro>Nº 1</nro>
-                <xBairro>JARDIM SAO CRISTOVAO</xBairro>
-                <cMun>2111300</cMun>
-                <UF>MA</UF>
-                <CEP>65055380</CEP>
-            </enderNac>
-            <fone>991032344</fone>
-            <email>nfacilita@gmail.com</email>
-        </emit>
-        <valores>
-            <vBC>1418.91</vBC>
-            <pAliqAplic>2.00</pAliqAplic>
-            <vISSQN>28.38</vISSQN>
-            <vTotalRet>0.00</vTotalRet>
-            <vLiq>1418.91</vLiq>
-        </valores>
-        <DPS versao="1.00">
-            <infDPS Id="DPS211130022754974200012700001000000000000012">
-                <tpAmb>1</tpAmb>
-                <dhEmi>2026-03-12T15:58:13-03:00</dhEmi>
-                <verAplic>STM_v1.0</verAplic>
-                <serie>1</serie>
-                <nDPS>12</nDPS>
-                <dCompet>2026-03-12</dCompet>
-                <tpEmit>1</tpEmit>
-                <cLocEmi>2111300</cLocEmi>
-                <prest>
-                    <CNPJ>27549742000127</CNPJ>
-                    <IM>3682487621</IM>
-                    <fone>98991032344</fone>
-                    <email>nfacilita@gmail.com</email>
-                    <regTrib>
-                        <opSimpNac>3</opSimpNac>
-                        <regApTribSN>1</regApTribSN>
-                        <regEspTrib>0</regEspTrib>
-                    </regTrib>
-                </prest>
-                <toma>
-                    <CNPJ>76492701000157</CNPJ>
-                    <IM>5238242</IM>
-                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>4106902</cMun>
-                            <CEP>80040265</CEP>
-                        </endNac>
-                        <xLgr>AV AV NOSSA SENHORA DA LUZ 1330 1330</xLgr>
-                        <nro>1330</nro>
-                        <xBairro>HUGO LANGE</xBairro>
-                    </end>
-                    <fone>4132187727</fone>
-                    <email>auditoria.at@britania.com.br</email>
-                </toma>
-                <serv>
-                    <locPrest>
-                        <cLocPrestacao>2111300</cLocPrestacao>
-                    </locPrest>
-                    <cServ>
-                        <cTribNac>100901</cTribNac>
-                        <xDescServ>100901 - Representação de qualquer natureza, inclusive comercial.</xDescServ>
-                        <cNBS>102010000</cNBS>
-                    </cServ>
-                </serv>
-                <valores>
-                    <vServPrest>
-                        <vServ>1418.91</vServ>
-                    </vServPrest>
-                    <trib>
-                        <tribMun>
-                            <tribISSQN>1</tribISSQN>
-                            <tpRetISSQN>1</tpRetISSQN>
-                        </tribMun>
-                        <totTrib>
-                            <indTotTrib>0</indTotTrib>
-                        </totTrib>
-                    </trib>
-                </valores>
-            </infDPS>
-        </DPS>
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS21113001227549742000127000000000001226032554307375">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>UMUk6cw+eTMefRUsqNlCbH/RjeU=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>B/y4M4DOQdTXCfwb29cfrEDq9RMsq5uvip+5EvNBlLTRbhIPTCtmSDbZbmwaj9p+xLB1vpZnU1wrvrIFnAPju2L+qW/m2BlYIkRuZyEm8OKzj0ET+duEK33vJXoCVOpOHDPxxbHBz9csZp9PnKH5GqjCdI7Sat7z2X/nMhMHZ8V8CEUWkUAT+e/g423jPZqhtNSSmGvUizKvVZQh2pn8I9v2gAgVrfCOFn2gFeM5Yui6Pvuz/DdWwkZLuy9OS54X0JgJPYezmymly3MtUThSbh6i0RtZCCMwrzvMuKXQm8/S8Wdd7XUEhzkgpiWy1UVZMcl23Fy3s1ImuRQDged5jQ==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIHSDCCBTCgAwIBAgIITlImARQ6lPAwDQYJKoZIhvcNAQELBQAwWTELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxFTATBgNVBAsTDEFDIFNPTFVUSSB2NTEeMBwGA1UEAxMVQUMgU09MVVRJIE11bHRpcGxhIHY1MB4XDTI2MDExNDEyNDMwMFoXDTI3MDExNDEyNDMwMFowgeQxCzAJBgNVBAYTAkJSMRMwEQYDVQQKEwpJQ1AtQnJhc2lsMQswCQYDVQQIEwJNQTERMA8GA1UEBxMIU2FvIEx1aXMxHjAcBgNVBAsTFUFDIFNPTFVUSSBNdWx0aXBsYSB2NTEXMBUGA1UECxMOMTIxMDk4ODYwMDAxOTUxHDAaBgNVBAsTE0NlcnRpZmljYWRvIERpZ2l0YWwxGjAYBgNVBAsTEUNlcnRpZmljYWRvIFBKIEExMS0wKwYDVQQDEyRNVU5JQ0lQSU8gREUgU0FPIExVSVM6MDYzMDcxMDIwMDAxMzAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCFCm9XGhKQDZF6cgIasXZr4vt7qTi/g5Qr+v3yTX6i/GZY7Z9g2woawTDUBdcTx42pFCzeDVp4TiNRwgmG9rLNy0xMAmFLZfgiompjrngzeswuVf0JMJGjanJLkvq+diAOUZaD12tRFUvsdJ3sQ4BUr9mFavxGeuVs2aDLNFhiWtOdDibvAlzZ1QQSk35uUZqX7nM6u7PGMLZlffi30bL7zu1hBAzM4fQQKDuGsckxm/Me+P1wyAjPDhSUFhp5z6+TGnAlapgYa+AR03C5Asnn53/VhA16ENiNsDxuiyCwz4yh7FhCCCXRFQWN1urN4laYPKnC8nxstsHJGPw8CHdVAgMBAAGjggKGMIICgjAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFMVS7SWACd+cgsifR8bdtF8x3bmxMFQGCCsGAQUFBwEBBEgwRjBEBggrBgEFBQcwAoY4aHR0cDovL2NjZC5hY3NvbHV0aS5jb20uYnIvbGNyL2FjLXNvbHV0aS1tdWx0aXBsYS12NS5wN2IwgcEGA1UdEQSBuTCBtoElZ2FiaW5ldGVAcHJlZmVpdHVyYS5zYW9sdWlzLm1hLmdvdi5icqAfBgVgTAEDAqAWExRFRFVBUkRPIFNBTElNIEJSQUlERaAZBgVgTAEDA6AQEw4wNjMwNzEwMjAwMDEzMKA4BgVgTAEDBKAvEy0xMjAxMTk3NjU1MDY4NDgwMzA0MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDCgFwYFYEwBAwegDhMMMDAwMDAwMDAwMDAwMF0GA1UdIARWMFQwUgYGYEwBAgEmMEgwRgYIKwYBBQUHAgEWOmh0dHA6Ly9jY2QuYWNzb2x1dGkuY29tLmJyL2RvY3MvZHBjLWFjLXNvbHV0aS1tdWx0aXBsYS5wZGYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMIGMBgNVHR8EgYQwgYEwPqA8oDqGOGh0dHA6Ly9jY2QuYWNzb2x1dGkuY29tLmJyL2xjci9hYy1zb2x1dGktbXVsdGlwbGEtdjUuY3JsMD+gPaA7hjlodHRwOi8vY2NkMi5hY3NvbHV0aS5jb20uYnIvbGNyL2FjLXNvbHV0aS1tdWx0aXBsYS12NS5jcmwwHQYDVR0OBBYEFBz80bRjhimSwQ2RdxUDFHZHerYxMA4GA1UdDwEB/wQEAwIF4DANBgkqhkiG9w0BAQsFAAOCAgEApHALwx7hHk3rFsppjAO0bIKIicnAJ7OXo9iSBuW3H87ENM9wjjcR161m2n5BrFHmodVUPv3SK4J4oE67shQWGoJr2k1DOZZ2kid9RNWKExDVLbgw1q3W9Td0dE9bsNJjYHMYyj4mxgayLyZB/rUpkT9YG/uyyfe2BfUIcbi0FasSignVkVv2gVLXk8urh3U9vy3EgSSSXFjr2G3QDUQrs0Xb0kTQLdizAroMgscttju2WvRca0f1/NJUdFnmb1qyrDkQAB8uZEycdiFZVgBBgbUwyRnUpg1LF5bcWLc2ooKTKH0MiTaTPvdGVoDBdvxYRD7xWWMV5RomzHc+AIhspmPQ8rIFAQv1Wx1Kmo/xlL3+NcX9GljeHFzckotisVZyzrb70mznVu0iZzbNLOroB9ItQtDbftRwazsVGoSdmHLqvXMiRO4h4o7SIpGjPlGfaMX7b0FFoa3yZIijyt12jFUqvcUPdsTWXDCVl4A6VOPrsXboAKI5za3pWth1bDQyYdl/ivJI8LjjhQXfCAn2kHCHXZaxO/BF1KgVf6IbPbQQhWQqJqgVkTU1q1cM9CVG5Qy3y32EwAngP5wWR+7yjk+UDGCFbW2Wk9aQXveaLw3WJ0aus9s4fNpvE/0cqh0kVn3ePyr3uX3IwH/YNzFKS+0E+JgDphMHvb8IqW9DnMI=</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

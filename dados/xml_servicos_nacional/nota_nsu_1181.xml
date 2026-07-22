@@ -1,215 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
-        
-    <infNFSe Id="NFS41084031282079807000126000000000036426011234567890">
-                
-        <xLocEmi>Francisco Beltrão</xLocEmi>
-                
-        <xLocPrestacao>Francisco Beltrão</xLocPrestacao>
-                
-        <nNFSe>364</nNFSe>
-                
-        <cLocIncid>4108403</cLocIncid>
-                
-        <xLocIncid>Francisco Beltrão</xLocIncid>
-                
-        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
-                
-        <xTribMun>Representação de qualquer natureza, inclusive comercial.</xTribMun>
-                
-        <xNBS>Serviços pessoais não classificados em posições anteriores</xNBS>
-                
-        <verAplic>1.0.0.0</verAplic>
-                
-        <ambGer>1</ambGer>
-                
-        <tpEmis>1</tpEmis>
-                
-        <cStat>100</cStat>
-                
-        <dhProc>2026-01-06T20:14:42-03:00</dhProc>
-                
-        <nDFSe>364</nDFSe>
-                
-        <emit>
-                        
-            <CNPJ>82079807000126</CNPJ>
-                        
-            <xNome>TRIO REPRESENTACOES COMERCIAIS LTDA</xNome>
-                        
-            <enderNac>
-                                
-                <xLgr>RUA PATO BRANCO</xLgr>
-                                
-                <nro>277</nro>
-                                
-                <xCpl>LOTE 17 QUADRA671</xCpl>
-                                
-                <xBairro>SAO CRISTOVAO</xBairro>
-                                
-                <cMun>4108403</cMun>
-                                
-                <UF>PR</UF>
-                                
-                <CEP>85601350</CEP>
-                            
-            </enderNac>
-                    
-        </emit>
-                
-        <valores>
-                        
-            <vBC>9903.31</vBC>
-                        
-            <pAliqAplic>2.17</pAliqAplic>
-                        
-            <vISSQN>214.90</vISSQN>
-                        
-            <vTotalRet>0.00</vTotalRet>
-                        
-            <vLiq>9903.31</vLiq>
-                    
-        </valores>
-                
-        <DPS versao="1.00">
-                        
-            <infDPS Id="DPS410840328207980700012601000000000000000364">
-                                
-                <tpAmb>1</tpAmb>
-                                
-                <dhEmi>2026-01-06T20:14:42-03:00</dhEmi>
-                                
-                <verAplic>1.0.0.0</verAplic>
-                                
-                <serie>01000</serie>
-                                
-                <nDPS>364</nDPS>
-                                
-                <dCompet>2026-01-06</dCompet>
-                                
-                <tpEmit>1</tpEmit>
-                                
-                <cLocEmi>4108403</cLocEmi>
-                                
-                <prest>
-                                        
-                    <CNPJ>82079807000126</CNPJ>
-                                        
-                    <fone>4699904045</fone>
-                                        
-                    <email>ctb1sl@proserv.com.br</email>
-                                        
-                    <regTrib>
-                                                
-                        <opSimpNac>3</opSimpNac>
-                                                
-                        <regApTribSN>3</regApTribSN>
-                                                
-                        <regEspTrib>0</regEspTrib>
-                                            
-                    </regTrib>
-                                    
-                </prest>
-                                
-                <toma>
-                                        
-                    <CNPJ>76492701000157</CNPJ>
-                                        
-                    <xNome>Britânia Eletrodomésticos S.A.</xNome>
-                                        
-                    <end>
-                                                
-                        <endNac>
-                                                        
-                            <cMun>4106902</cMun>
-                                                        
-                            <CEP>82520060</CEP>
-                                                    
-                        </endNac>
-                                                
-                        <xLgr>AV. NOSSA SENHORA DA LUZ</xLgr>
-                                                
-                        <nro>1330</nro>
-                                                
-                        <xBairro>HUGO LANGE</xBairro>
-                                            
-                    </end>
-                                    
-                </toma>
-                                
-                <serv>
-                                        
-                    <locPrest>
-                                                
-                        <cLocPrestacao>4108403</cLocPrestacao>
-                                            
-                    </locPrest>
-                                        
-                    <cServ>
-                                                
-                        <cTribNac>100901</cTribNac>
-                                                
-                        <cTribMun>000</cTribMun>
-                                                
-                        <xDescServ>Comissões de DEZEMBRO de 2025</xDescServ>
-                                                
-                        <cNBS>126060000</cNBS>
-                                            
-                    </cServ>
-                                    
-                </serv>
-                                
-                <valores>
-                                        
-                    <vServPrest>
-                                                
-                        <vServ>9903.31</vServ>
-                                            
-                    </vServPrest>
-                                        
-                    <trib>
-                                                
-                        <tribMun>
-                                                        
-                            <tribISSQN>1</tribISSQN>
-                                                        
-                            <tpRetISSQN>1</tpRetISSQN>
-                                                    
-                        </tribMun>
-                                                
-                        <totTrib>
-                                                        
-                            <indTotTrib>0</indTotTrib>
-                                                    
-                        </totTrib>
-                                            
-                    </trib>
-                                    
-                </valores>
-                            
-            </infDPS>
-                    
-        </DPS>
-            
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#DPS410840328207980700012601000000000000000364">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>GZi9c/uRYxiN73IPwROOU6SRM3E=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>O2iTLN7RpBXC3SXvK9+F+4a6qn3XiPGd7jY/K3+dUeDQMbbbWmnpxWTEwHImyV8TsnLAl0721zT14zMHJXlW1ouQgFyLyuW2BROzfMKItUvdX7mGLsjLAAfK6M86RTr7nI/skhPz63sB26exCUZMY5pU56r9rBEf9mDHwU68UJgC15nypcz7JGHc0To1xxgYaAyHM0UK5x7FnkRyT3Hh3VPSm6wYOZEIk1snzJvgmU/VF8ggh4lqdEEqrQCbrRKApBQd5gRjrJ/n9l6eU5FozhrTA0WPE93T59aoHqqw7vlo1FewbZgJpo0hDHsufR4tyB2+TutSQUHeCdPMOnO3vA==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIH5DCCBcygAwIBAgIIc+75JlbOY88wDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgU0FGRVdFQiBSRkIgdjUwHhcNMjUwMTA5MTcwNjQ2WhcNMjYwMTA5MTcwNjQ2WjCCAQExCzAJBgNVBAYTAkJSMRMwEQYDVQQKEwpJQ1AtQnJhc2lsMQswCQYDVQQIEwJQUjEaMBgGA1UEBxMRRlJBTkNJU0NPIEJFTFRSQU8xNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTEXMBUGA1UECxMONzYwODU2MjAwMDAxMzIxEzARBgNVBAsTCnByZXNlbmNpYWwxNjA0BgNVBAMTLU1VTklDSVBJTyBERSBGUkFOQ0lTQ08gQkVMVFJBTzo3NzgxNjUxMDAwMDE2NjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALT3YMF1d7CPMOQgWPHTxxSWvxf8b9kjfMZSuWUEzcK8dJFs9dKkkJebSoHZXY1b57OzDEkWwJVLtCdpOD00+lJy/BZ6JCXXCFX7vHyAHzewJaZcyvQS7r91zRuDLOjRf8X91DOjyQnPByMUEW0cJOIZ5y4hQk6aNGREBzQlh4E+QHbMByD/k9nArxBmLADI3BaIByoeZZFWltcVcUjWBlLfWG33oR4quwMAQpAU9o5xPJ4Ba0OTNEMp3f8CPz1ttbz70aGi0K6JSWcQML7C9DI7qjWgkuRXuhhdOyfKVaPfWDJWlFfmIsSZdUt8hHXLcKVLjDh68R8qQTIFTI17vJUCAwEAAaOCAucwggLjMB8GA1UdIwQYMBaAFCleS9VGTLv+FqdjwR3EJvLd2PMFMA4GA1UdDwEB/wQEAwIF4DBpBgNVHSAEYjBgMF4GBmBMAQIBMzBUMFIGCCsGAQUFBwIBFkZodHRwOi8vcmVwb3NpdG9yaW8uYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2RwYy1hY3NhZmV3ZWJyZmIucGRmMIGuBgNVHR8EgaYwgaMwT6BNoEuGSWh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvbGNyLWFjLXNhZmV3ZWJyZmJ2NS5jcmwwUKBOoEyGSmh0dHA6Ly9yZXBvc2l0b3JpbzIuYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2xjci1hYy1zYWZld2VicmZidjUuY3JsMIG3BggrBgEFBQcBAQSBqjCBpzBRBggrBgEFBQcwAoZFaHR0cDovL3JlcG9zaXRvcmlvLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9hYy1zYWZld2VicmZidjUucDdiMFIGCCsGAQUFBzAChkZodHRwOi8vcmVwb3NpdG9yaW8yLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9hYy1zYWZld2VicmZidjUucDdiMIGvBgNVHREEgacwgaSBGUFOVE9OSU9QRURST05GQkBHTUFJTC5DT02gGQYFYEwBAwKgEBMOQU5UT05JTyBQRURST06gGQYFYEwBAwOgEBMONzc4MTY1MTAwMDAxNjagOAYFYEwBAwSgLxMtMDcwMzE5NTUxOTY5MDU2ODk0OTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwoBcGBWBMAQMHoA4TDDAwMDAwMDAwMDAwMDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwCQYDVR0TBAIwADANBgkqhkiG9w0BAQsFAAOCAgEAdnQKAlK18dFEH+1FX9uOdp6QJtQpR6g9o+VBbTuoQNeVDeu4MgQhTajkZrz0U8BKcNdluEmhNiqB04r8T6WAXp8cX/iMZHf694meMLMJhIs/ftwIhdZa64fBOcDEujTXNIexrLolNh1O3gi44qHBklyBfBl1LMuSJPkBPZ7++RJBIz1DD8sOXZG8EbjOq8jIMISmBS6u9kFooCXI+7fSzCgvI3OGY8UshH2D7nFZSHoUBP9WkADD4YQCgW9GQf/YMVLEoizoEuXo37a3XMOaF2f9BjCrek5oIgNzvl3tMFapSSMo9FZ/Vw4Y3nqOgey+p0kWmUztbTgpLcQaYlRCsujdirvAS29N7ZwvoV7+bWJm3E+b/QZElyn+4xsf7MaeC6bWzgOS8MzRNnLk6ruHv3sVHUlWq94tL9wPzfU1+4wnLsSp7gnmPKPlAneeFZmxpyvGCDnZLRga9ur0JIW0gNiSRhMWGwn3H6Uzs5HVcujkuxa8q56pjhF7OjhMX5h6LHVdfZCOUIlEunjqhU9LLXSkoYJbzdAobfJvTzN/NvXa+5Jn1SR8JCps3IFJrovndzJUTXAm1Sbxc96MJd47tcO54+9FADqm/ACKi62JjDiyloSCW/QV0oHhxDXlh22oTWqTU8+qAEjH7c48TpayPQWqpUpI6uoa5wX7VI547nI=</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

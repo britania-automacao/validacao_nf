@@ -1,124 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
-    <infNFSe Id="NFS51079091233281219000165260000000000426030190104349">
-        <xLocEmi>SINOP</xLocEmi>
-        <xLocPrestacao>SINOP</xLocPrestacao>
-        <nNFSe>2600000000004</nNFSe>
-        <cLocIncid>5107909</cLocIncid>
-        <xLocIncid>SINOP</xLocIncid>
-        <xTribNac>Propaganda e publicidade, inclusive promocao de vendas, planejamento de campanhas ou sistemas de publicidade, elaboracao de desenhos, textos e demais materiais publicitarios.</xTribNac>
-        <verAplic>1.00</verAplic>
-        <ambGer>1</ambGer>
-        <tpEmis>2</tpEmis>
-        <cStat>100</cStat>
-        <dhProc>2026-03-12T16:38:15-03:00</dhProc>
-        <nDFSe>19010434</nDFSe>
-        <emit>
-            <CNPJ>33281219000165</CNPJ>
-            <IM>33502</IM>
-            <xNome>REIS CRIATIVA LTDA</xNome>
-            <xFant>BARBARA REIS</xFant>
-            <enderNac>
-                <xLgr>RUA DAS PRIMAVERAS</xLgr>
-                <nro>3097</nro>
-                <xCpl>APT D</xCpl>
-                <xBairro>SETOR RESIDENCIAL SUL</xBairro>
-                <cMun>5107909</cMun>
-                <UF>MT</UF>
-                <CEP>78550021</CEP>
-            </enderNac>
-            <fone>6697140340</fone>
-        </emit>
-        <valores>
-            <vBC>8925.00</vBC>
-            <vISSQN>0.00</vISSQN>
-            <vLiq>8925.00</vLiq>
-        </valores>
-        <xOutInf>/ VALOR APROXIMADO DOS TRIBUTOS R$         1584.19( 17.75%) FONTE: IBPT, CONFORME LEI 12.741/2012.  /  CONTRIBUINTE OPTANTE DO SIMPLES NACIONAL  / ESTA NOTA PODE SER CANCELADA EM 24 HORAS APOS A GERACAO. / PROCON/MT: Rua BALTAZAR NAVARROS, no 567 - Bairro BANDEIRANTES - CUIABA/MT FONE: 151 E (65)3613 8500</xOutInf>
-        <DPS versao="1.01">
-            <infDPS Id="DPS510790923328121900016500001000000019010434">
-                <tpAmb>1</tpAmb>
-                <dhEmi>2026-03-12T16:38:15-03:00</dhEmi>
-                <verAplic>1.01</verAplic>
-                <serie>1</serie>
-                <nDPS>19010434</nDPS>
-                <dCompet>2026-03-12</dCompet>
-                <tpEmit>1</tpEmit>
-                <cLocEmi>5107909</cLocEmi>
-                <prest>
-                    <CNPJ>33281219000165</CNPJ>
-                    <IM>33502</IM>
-                    <fone>6697140340</fone>
-                    <regTrib>
-                        <opSimpNac>3</opSimpNac>
-                        <regApTribSN>1</regApTribSN>
-                        <regEspTrib>0</regEspTrib>
-                    </regTrib>
-                </prest>
-                <toma>
-                    <CNPJ>76492701000157</CNPJ>
-                    <xNome>BRITANIA ELETRODOMESTICOS S/A</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>4106902</cMun>
-                            <CEP>80040265</CEP>
-                        </endNac>
-                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
-                        <nro>1330</nro>
-                        <xBairro>HUGO LANGE</xBairro>
-                    </end>
-                    <fone>4132187700</fone>
-                </toma>
-                <serv>
-                    <locPrest>
-                        <cLocPrestacao>5107909</cLocPrestacao>
-                    </locPrest>
-                    <cServ>
-                        <cTribNac>170601</cTribNac>
-                        <xDescServ>A/C FAROL INFLUENCIADORES LTDA - CNPJ: 43.102/351/0001-16Projeto: philco | ar condicionadoPhilco x Barbara Reis</xDescServ>
-                        <cNBS>114061900</cNBS>
-                    </cServ>
-                </serv>
-                <valores>
-                    <vServPrest>
-                        <vServ>8925.00</vServ>
-                    </vServPrest>
-                    <trib>
-                        <tribMun>
-                            <tribISSQN>1</tribISSQN>
-                            <tpRetISSQN>1</tpRetISSQN>
-                        </tribMun>
-                        <tribFed>
-                            <piscofins>
-                                <CST>00</CST>
-                            </piscofins>
-                        </tribFed>
-                        <totTrib>
-                            <indTotTrib>0</indTotTrib>
-                        </totTrib>
-                    </trib>
-                </valores>
-            </infDPS>
-        </DPS>
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS51079091233281219000165260000000000426030190104349">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>vHsjCIbzNNcIlKQNXIJTLpfK/ps=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>Ff0hpyr0VdXMb1DQxhMefggzpIhL8c5BtipUUfgYqiVCLz218Pd7dbdpla9a67vJc1AdFqkR+xtm6K2WtdK+CweomxhHN7EeLy8u7WEW2pXqjwtfvhOBjOHhVo0PTcHQAtIuWqQQGfcC5IpuyBq0oyzI0UJG+xwRITWzsBl+L1nL6cfbb9UI57qBoxkSM/ggdOKjPDYoLzt1Ui9NR/Y+sgUtuIVR/SPVVyI/Vz6swlf9q5i0uhm2O2QS7XMypTWV692SnqhakK606VPmr+yfmGbv4n/IxsOXdwpr0+9FEVlLQ5GKSVt9L4gdrNKqjDVXwOeuTwV7Vi108/EFGzDQgw==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIH0DCCBbigAwIBAgIIY0H/pGdNBhkwDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgU0FGRVdFQiBSRkIgdjUwHhcNMjUwODI5MTYwMDAxWhcNMjYwODI5MTYwMDAxWjCB7zELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAk1UMQ4wDAYDVQQHEwVTSU5PUDE2MDQGA1UECxMtU2VjcmV0YXJpYSBkYSBSZWNlaXRhIEZlZGVyYWwgZG8gQnJhc2lsIC0gUkZCMRYwFAYDVQQLEw1SRkIgZS1DTlBKIEExMRcwFQYDVQQLEw4xMTU4Nzk3NTAwMDE4NDEZMBcGA1UECxMQdmlkZW9jb25mZXJlbmNpYTEqMCgGA1UEAxMhTVVOSUNJUElPIERFIFNJTk9QOjE1MDI0MDAzMDAwMTMyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxe889PNuedyND/wfZv2kgcgSLwwAZKYnQsX+ZXlubm47cDOfknJ6Xk0EZwS279uYPB+MBelTgYH2ivD5t154HdzuTwOvxmG8lcBPCBkkxAGFE9O77TaV6liaJJio6N6yj88r0ZADmRn624Fw+jSQWQ3EtrCNITdgceEHw9T0QGmhjRSbOJRmmnqubwi5WtzdGNdDFDzsNic5wIcV6nVtPOMy5WO2kh1jhoyjpGbhLT7iBDHJVrpT9hu9Cw5Dw6Q5+deFHmHczsGiQRHKxRGDFLQtE54PBzIvcW+3DnnSqmnxREBBbTg4UUStIjb48Of0QmIOzeSMZZPLea/1PAEKVQIDAQABo4IC5jCCAuIwHwYDVR0jBBgwFoAUKV5L1UZMu/4Wp2PBHcQm8t3Y8wUwDgYDVR0PAQH/BAQDAgXgMGkGA1UdIARiMGAwXgYGYEwBAgEzMFQwUgYIKwYBBQUHAgEWRmh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvZHBjLWFjc2FmZXdlYnJmYi5wZGYwga4GA1UdHwSBpjCBozBPoE2gS4ZJaHR0cDovL3JlcG9zaXRvcmlvLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9sY3ItYWMtc2FmZXdlYnJmYnY1LmNybDBQoE6gTIZKaHR0cDovL3JlcG9zaXRvcmlvMi5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvbGNyLWFjLXNhZmV3ZWJyZmJ2NS5jcmwwgbcGCCsGAQUFBwEBBIGqMIGnMFEGCCsGAQUFBzAChkVodHRwOi8vcmVwb3NpdG9yaW8uYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2IwUgYIKwYBBQUHMAKGRmh0dHA6Ly9yZXBvc2l0b3JpbzIuYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2FjLXNhZmV3ZWJyZmJ2NS5wN2Iwga4GA1UdEQSBpjCBo4EYR0FCSU5FVEVAU0lOT1AuTVQuR09WLkJSoBkGBWBMAQMCoBATDlJPQkVSVE8gRE9STkVSoBkGBWBMAQMDoBATDjE1MDI0MDAzMDAwMTMyoDgGBWBMAQMEoC8TLTA2MDQxOTQ4MTI3MDkxMTU5NzIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggIBAB3g8Arh4+LZu9LMaIs+mcTCc768v2GJWHGBESt0su0G+IXgfBe8lkLIwky9WqER35cJSEcKVZuTPEKSKSR6102bgo4jS17PAD26sgPW0l2G2Q8RNaqfTmp+sk/2BR28dRyDQ42Xrj8G3FBs8WPs3xoTKr0s+m+rJ6BBTgesCBErs9BmODAcm5NZ1NLxWhJ4JUUxfsZd+K4iapCh/YWLBTcfzs4zvOLEq+AINmy3a+q1x6WOMXm64OthiXKhJnLzwQadxLqcjClQOj3XIBsa573VqEBFkpI43nt8+jv0Ja8Di61r57KFE6KmFORswsHRrRfVR68bYJD53ezSlFFfAOo1R/J1mmnzFhcOIrbgoyha4pDloyvVr+N+9XqTq5+4DguMoaV74tfmDK+LtYwzDpKe4GGtTh8ObzW/762BdIBlVyKWk5tkzmPPocBnrFRZSLgMYuKaMXLXyLPV6rQbheqfYMt7BIwJ8PrFG0lkzX5hCjIyKe5Pic11I9bSeOr8lP6YlYwEOdez5DwgK6NKoUUQA+OHP3kG2Yqxo3DGhWrNFOPFzhJ26JFOnjEsz3SQDqjzF7Vo8nSYB2RYxVLHkZU89WxBkXpVoiWz+oNjh1IflsT5JXIuBlTyZaFc/H1jQfp0RIhEgaIlpGh/UgAl7Y9klUrciLGH6l5rSdffN4o3</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

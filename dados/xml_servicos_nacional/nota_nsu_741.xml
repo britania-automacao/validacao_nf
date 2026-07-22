@@ -1,137 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
-    <infNFSe Id="NFS31062001203816418000160250000000111225083983363302">
-        <xLocEmi>BELO HORIZONTE</xLocEmi>
-        <xLocPrestacao>BALNEARIO CAMBORIU</xLocPrestacao>
-        <nNFSe>2500000001112</nNFSe>
-        <cLocIncid>4202008</cLocIncid>
-        <xLocIncid>BALNEARIO CAMBORIU</xLocIncid>
-        <xTribNac>Planejamento, organização e administração de feiras, exposições, e congêneres.</xTribNac>
-        <xTribMun>Planejamento, organização e administração de feiras, exposições, congressos e congêneres.</xTribMun>
-        <verAplic>1.00</verAplic>
-        <ambGer>1</ambGer>
-        <tpEmis>2</tpEmis>
-        <cStat>100</cStat>
-        <dhProc>2025-08-28T10:17:53-03:00</dhProc>
-        <nDFSe>2500000001112</nDFSe>
-        <emit>
-            <CNPJ>03816418000160</CNPJ>
-            <IM>08243890023</IM>
-            <xNome>ORGANIZACOES YES EVENTOS E VIAGENS LTDA</xNome>
-            <xFant>YES MOVEL SHOW, YES EVENTOS E ORGANIZACOES YES</xFant>
-            <enderNac>
-                <xLgr>AVE AFONSO PENA</xLgr>
-                <nro>867</nro>
-                <xCpl>SALA 813;SALA 814</xCpl>
-                <xBairro>Centro</xBairro>
-                <cMun>3106200</cMun>
-                <UF>MG</UF>
-                <CEP>30130905</CEP>
-            </enderNac>
-            <fone>3130245979</fone>
-            <email>financeiro@eventosyes.com.br</email>
-        </emit>
-        <valores>
-            <vBC>23763.60</vBC>
-            <pAliqAplic>2.50</pAliqAplic>
-            <vISSQN>594.09</vISSQN>
-            <vLiq>23763.60</vLiq>
-            <xOutInf>Chave de acesso no Ambiente de Dados Nacional: 31062001203816418000160250000000111225083983363302.</xOutInf>
-        </valores>
-        <DPS versao="1.00">
-            <infDPS Id="DPS310620020381641800016045000000000000001112">
-                <tpAmb>1</tpAmb>
-                <dhEmi>2025-08-28T00:00:00-03:00</dhEmi>
-                <verAplic>1.00</verAplic>
-                <serie>45000</serie>
-                <nDPS>1112</nDPS>
-                <dCompet>2025-08-28</dCompet>
-                <tpEmit>1</tpEmit>
-                <cLocEmi>3106200</cLocEmi>
-                <prest>
-                    <CNPJ>03816418000160</CNPJ>
-                    <IM>08243890023</IM>
-                    <xNome>ORGANIZACOES YES EVENTOS E VIAGENS LTDA</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>3106200</cMun>
-                            <CEP>30130905</CEP>
-                        </endNac>
-                        <xLgr>AVE AFONSO PENA</xLgr>
-                        <nro>867</nro>
-                        <xCpl>SALA 813;SALA 814</xCpl>
-                        <xBairro>Centro</xBairro>
-                    </end>
-                    <fone>3130245979</fone>
-                    <email>financeiro@eventosyes.com.br</email>
-                    <regTrib>
-                        <opSimpNac>1</opSimpNac>
-                        <regEspTrib>0</regEspTrib>
-                    </regTrib>
-                </prest>
-                <toma>
-                    <CNPJ>76492701000157</CNPJ>
-                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>4106902</cMun>
-                            <CEP>80040265</CEP>
-                        </endNac>
-                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
-                        <nro>1330</nro>
-                        <xBairro>HUGO LANGE</xBairro>
-                    </end>
-                    <email>rodolfo.dias@britania.com.br</email>
-                </toma>
-                <serv>
-                    <locPrest>
-                        <cLocPrestacao>4202008</cLocPrestacao>
-                    </locPrest>
-                    <cServ>
-                        <cTribNac>171001</cTribNac>
-                        <cTribMun>001</cTribMun>
-                        <xDescServ>EVENTO YES MOVEL SHOW SANTA CATARINA 2025 ***Serviço Prestado:17.10****** ***</xDescServ>
-                    </cServ>
-                    <infoCompl>
-                        <xInfComp>NFS-e gerada com o número de série do RPS alfanumérico de acordo com o modelo de BH, com valor de: 11.</xInfComp>
-                    </infoCompl>
-                </serv>
-                <valores>
-                    <vServPrest>
-                        <vServ>23763.60</vServ>
-                    </vServPrest>
-                    <trib>
-                        <tribMun>
-                            <tribISSQN>1</tribISSQN>
-                            <pAliq>2.50</pAliq>
-                            <tpRetISSQN>1</tpRetISSQN>
-                        </tribMun>
-                        <totTrib>
-                            <indTotTrib>0</indTotTrib>
-                        </totTrib>
-                    </trib>
-                </valores>
-            </infDPS>
-        </DPS>
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS31062001203816418000160250000000111225083983363302">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>05JUWfsVIt8Q0859ildp3Gf7Ic8=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>AfXMTINNSdqPlrvgC5vAZsiNaKC/aUYwuiBPQiDWI7K0yRjVONxwbLLEocyRsXBzk9noBKwcdMNXqTgVubWLfHqcKDnFFTSNlx04ebEJHyTKC5qNsVqn/+9UaXUaJDIScglg25f68EH3oLSeKnOLWaCvYwbo6MZfwww64P22m9zDyDpt5IIw77J3Cp151sXWxs8EWJpHki33OCxH2NEZNi8nzFIga58Q4BDuHUym6eMyYR55lTaL+AQODOUgyxKUACCiqc1DC1aNJE7BuTqftXBytL/7ma83LukJB6M8ShpbzooZ9kjTgwLJdh87JwhY5/JbSJNwZvGYbdT/gZbuEQ==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIIJzCCBg+gAwIBAgIQcusbQZXKcMgv0/hHkmsrOTANBgkqhkiG9w0BAQsFADB0MQswCQYDVQQGEwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDEtMCsGA1UECxMkQ2VydGlzaWduIENlcnRpZmljYWRvcmEgRGlnaXRhbCBTLkEuMSEwHwYDVQQDExhBQyBDZXJ0aXNpZ24gTXVsdGlwbGEgRzcwHhcNMjQxMTI4MTkwMzM3WhcNMjUxMTI4MTkwMzM3WjCB7jELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxCzAJBgNVBAgMAk1HMRcwFQYDVQQHDA5CZWxvIEhvcml6b250ZTEZMBcGA1UECwwQVmlkZW9Db25mZXJlbmNpYTEXMBUGA1UECwwOMzAyMzUyMDEwMDAxMzkxHjAcBgNVBAsMFUFDIENlcnRpc2lnbiBNdWx0aXBsYTEbMBkGA1UECwwSQXNzaW5hdHVyYSBUaXBvIEExMTMwMQYDVQQDDCpNVU5JQ0lQSU8gREUgQkVMTyBIT1JJWk9OVEU6MTg3MTUzODMwMDAxNDAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCX1qPwTdisqrlZ6VtewgSotmNMA7S2DCc9ct/lvqx5/sWm2zlO3IQ32z2sFddxXcRa3JMhBSevXp2wTg47FkdvlDf5YYP34I8fqlkTWN3nS0Jk6rdJHRA01oxxRa0XNGYd0EpXe1Sz/mk9HdazbHamEQR02CI3mHQmb0PHyP1iRCRKzDn7fD3o7cGAIAPukZmAwoa86KvL8ldvietP+pShOSGn33bn9bPuuZJXf65LInXxQXokx2GbICtcd1TxPzSvPPOgUG5u7GMBOjhGHiCtWDVH7fPtx7hh6kJKROE25juYax9bjn67fo4jljmWhz/d6l8cX+MW0Go+leAcrdyxAgMBAAGjggM4MIIDNDCBxgYDVR0RBIG+MIG7oDgGBWBMAQMEoC8ELTIyMDkxOTc3NTA5MDkzMDQyMjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKA0BgVgTAEDAqArBClGRVJOQU5ETyBIVUJFUiBQSUNBTkNPIERFIE9MSVZFSVJBIEpVTklPUqAZBgVgTAEDA6AQBA4xODcxNTM4MzAwMDE0MKAXBgVgTAEDB6AOBAwwMDAwMDAwMDAwMDCBFWZlcm5hbmRvaHBAcGJoLmdvdi5icjAJBgNVHRMEAjAAMB8GA1UdIwQYMBaAFF1yDL8z0rvjhqboTAZxflVcB6DWMIGLBgNVHSAEgYMwgYAwfgYGYEwBAgELMHQwcgYIKwYBBQUHAgEWZmh0dHA6Ly9pY3AtYnJhc2lsLmNlcnRpc2lnbi5jb20uYnIvcmVwb3NpdG9yaW8vZHBjL0FDX0NlcnRpc2lnbl9NdWx0aXBsYS9EUENfQUNfQ2VydGlTaWduX011bHRpcGxhLnBkZjCBxgYDVR0fBIG+MIG7MFygWqBYhlZodHRwOi8vaWNwLWJyYXNpbC5jZXJ0aXNpZ24uY29tLmJyL3JlcG9zaXRvcmlvL2xjci9BQ0NlcnRpc2lnbk11bHRpcGxhRzcvTGF0ZXN0Q1JMLmNybDBboFmgV4ZVaHR0cDovL2ljcC1icmFzaWwub3V0cmFsY3IuY29tLmJyL3JlcG9zaXRvcmlvL2xjci9BQ0NlcnRpc2lnbk11bHRpcGxhRzcvTGF0ZXN0Q1JMLmNybDAOBgNVHQ8BAf8EBAMCBeAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMIG2BggrBgEFBQcBAQSBqTCBpjBkBggrBgEFBQcwAoZYaHR0cDovL2ljcC1icmFzaWwuY2VydGlzaWduLmNvbS5ici9yZXBvc2l0b3Jpby9jZXJ0aWZpY2Fkb3MvQUNfQ2VydGlzaWduX011bHRpcGxhX0c3LnA3YzA+BggrBgEFBQcwAYYyaHR0cDovL29jc3AtYWMtY2VydGlzaWduLW11bHRpcGxhLmNlcnRpc2lnbi5jb20uYnIwDQYJKoZIhvcNAQELBQADggIBAJjkJhR4qPr9XaMqQDuZhDDme8olyHm4mMjZPPtJAij0CgHe1Rmf8zbw8X/r55Gb3+803tDGXaY966F6HdRR/xy7ACqjmglOHOAc+rFF+C4P9GfT9yajdiYJX1pU8wZ/aNQOdVf47T2qnkHxy2zxUXX+JjP4N+v3pcIpJ5dovAkFXeOyciqmMo+QBqe2BjxKm6fxXeMkmSPlyWgD/f4FxcIh9VFhoBqkBqPlGv+leLKHJyKNfyUGYYOQK2CdE1764z/KU/+7cZqLHTtSyFXggZt7l8VdC5tJVnjumgACq8ZSNexWivldfHhWa9iQwPBJfUmFkGrikQlcowhcrL3h26naJY07Yt9HxRHaly3Iba6xYAHz2CUBqb3GKhRyC2S9ayxgr/NVXcL0hEqKuMFnN2vQ3aWgEjdw94yN8U1rI4rMA7h7ZEsPN/Bg4ABgyOnSpS51tx697GXYCBrHZfa3X8iSeYa+JwTgbkyPJs5hVhDliJ5Q2y374Aek3x8thDrTyUIwPkO2HL0av6JhkKbEmuBRW9Pz0BEHTVt2JqOyrNHzg9asYU4+84OkROX6ljEpehRyaNOrvaNmfSPmKTLHdcJDSf6XEJlK5gZdMz7/e/fyIP0zTVyPla4e+opLaCGX9E7U2xIgX7J7gGiuSWKYnI7jk4O1OvfWAkGcMxfMyoZm</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

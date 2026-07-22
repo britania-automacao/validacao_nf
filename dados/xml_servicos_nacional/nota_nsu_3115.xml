@@ -1,233 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
-        
-    <infNFSe Id="NFS42091021283864819000124000000021262926040618555471">
-                
-        <xLocEmi>JOINVILLE</xLocEmi>
-                
-        <xLocPrestacao>JOINVILLE</xLocPrestacao>
-                
-        <nNFSe>212629</nNFSe>
-                
-        <cLocIncid>4209102</cLocIncid>
-                
-        <xLocIncid>JOINVILLE</xLocIncid>
-                
-        <xTribNac>9.01 - Hospedagem de qualquer natureza em hotéis, apart - service condominiais, flat, apart - hotéis, hotéis residência, residence - service, suite service, hotelaria marítima, motéis, pensões e congêneres; ocupação por temporada com fornecimento de serviço (o valor da alimentação e gorjeta, quando incluído na diária, fica sujeito ao Imposto Sobre Serviços). .</xTribNac>
-                
-        <verAplic>04.01.50.0003</verAplic>
-                
-        <ambGer>1</ambGer>
-                
-        <tpEmis>2</tpEmis>
-                
-        <cStat>100</cStat>
-                
-        <dhProc>2026-04-30T09:16:33-03:00</dhProc>
-                
-        <nDFSe>212629</nDFSe>
-                
-        <emit>
-                        
-            <CNPJ>83864819000124</CNPJ>
-                        
-            <IM>55144</IM>
-                        
-            <xNome>POUSATUR- POUSADAS, HOTEIS E TURISMO LTDA</xNome>
-                        
-            <xFant>POUSATUR- POUSADAS, HOTEIS E TURISMO LTDA</xFant>
-                        
-            <enderNac>
-                                
-                <xLgr>Quinze De Novembro</xLgr>
-                                
-                <nro>2075</nro>
-                                
-                <xBairro>Gloria</xBairro>
-                                
-                <cMun>4209102</cMun>
-                                
-                <UF>SC</UF>
-                                
-                <CEP>89201602</CEP>
-                            
-            </enderNac>
-                        
-            <fone>4734335033</fone>
-                        
-            <email>administrativo@lecanard.com.br</email>
-                    
-        </emit>
-                
-        <valores>
-                        
-            <vBC>554.14</vBC>
-                        
-            <pAliqAplic>3.00</pAliqAplic>
-                        
-            <vISSQN>16.62</vISSQN>
-                        
-            <vLiq>554.14</vLiq>
-                    
-        </valores>
-                
-        <DPS versao="1.01">
-                        
-            <infDPS Id="DPS420910228386481900012402000000000000286453">
-                                
-                <tpAmb>1</tpAmb>
-                                
-                <dhEmi>2026-04-30T00:00:00-03:00</dhEmi>
-                                
-                <verAplic>04.01.50.0003</verAplic>
-                                
-                <serie>2000</serie>
-                                
-                <nDPS>286453</nDPS>
-                                
-                <dCompet>2026-04-30</dCompet>
-                                
-                <tpEmit>1</tpEmit>
-                                
-                <cLocEmi>4209102</cLocEmi>
-                                
-                <prest>
-                                        
-                    <CNPJ>83864819000124</CNPJ>
-                                        
-                    <IM>55144</IM>
-                                        
-                    <fone>4734335033</fone>
-                                        
-                    <email>administrativo@lecanard.com.br</email>
-                                        
-                    <regTrib>
-                                                
-                        <opSimpNac>1</opSimpNac>
-                                                
-                        <regEspTrib>0</regEspTrib>
-                                            
-                    </regTrib>
-                                    
-                </prest>
-                                
-                <toma>
-                                        
-                    <CNPJ>76492701000157</CNPJ>
-                                        
-                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
-                                        
-                    <end>
-                                                
-                        <endNac>
-                                                        
-                            <cMun>4106902</cMun>
-                                                        
-                            <CEP>80040265</CEP>
-                                                    
-                        </endNac>
-                                                
-                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
-                                                
-                        <nro>1330</nro>
-                                                
-                        <xCpl>de 772 a 2370 - lado</xCpl>
-                                                
-                        <xBairro>Hugo Lange</xBairro>
-                                            
-                    </end>
-                                        
-                    <fone>99999999999</fone>
-                                        
-                    <email>corporativo@britania.com.br</email>
-                                    
-                </toma>
-                                
-                <serv>
-                                        
-                    <locPrest>
-                                                
-                        <cLocPrestacao>4209102</cLocPrestacao>
-                                            
-                    </locPrest>
-                                        
-                    <cServ>
-                                                
-                        <cTribNac>090101</cTribNac>
-                                                
-                        <xDescServ>ISS 16,14Diaria 538,00  RPS:286453 /UH:224 /Tipo UH:Executivo Casal /Reserva:2541971 /Qtde:1 /EMILYN AZUMA BATISTA/Checkin:28/04/2026 /CheckOut:30/04/2026 /Total de diarias:03/01/1900 /Diaria R$538/ISS R$16,14/A Faturar</xDescServ>
-                                                
-                        <cIntContrib>100835495</cIntContrib>
-                                            
-                    </cServ>
-                                        
-                    <infoCompl>
-                                                
-                        <xInfComp>| Natureza da operação: 101 - ISS devido para JoinvilleRPS:286453 /UH:224 /Tipo UH:Executivo Casal /Reserva:2541971 /Qtde:1 /EMILYN AZUMA BATISTA/Checkin:28/04/2026 /CheckOut:30/04/2026 /Total de diarias:03/01/1900 /Diaria R$538/ISS R$16,14/A Faturar | - Esta NF-em foi gerada com fundamento na Lei Complementar Municipal n. 286, de 21 de novembro de 2008, regulamentada pelo Decreto Municipal n. 30.798, de 08 de março de 2018.</xInfComp>
-                                            
-                    </infoCompl>
-                                    
-                </serv>
-                                
-                <valores>
-                                        
-                    <vServPrest>
-                                                
-                        <vServ>554.14</vServ>
-                                            
-                    </vServPrest>
-                                        
-                    <trib>
-                                                
-                        <tribMun>
-                                                        
-                            <tribISSQN>1</tribISSQN>
-                                                        
-                            <tpRetISSQN>1</tpRetISSQN>
-                                                    
-                        </tribMun>
-                                                
-                        <totTrib>
-                                                        
-                            <vTotTrib>
-                                                                
-                                <vTotTribFed>74.53</vTotTribFed>
-                                                                
-                                <vTotTribEst>0.00</vTotTribEst>
-                                                                
-                                <vTotTribMun>15.74</vTotTribMun>
-                                                            
-                            </vTotTrib>
-                                                    
-                        </totTrib>
-                                            
-                    </trib>
-                                    
-                </valores>
-                            
-            </infDPS>
-                    
-        </DPS>
-            
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS42091021283864819000124000000021262926040618555471">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>fc3jWu90bUvF/Ddc6NF0Qq7D+N0=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>IaghDtSr/zILykRI4IWo2pw8TFHVeWH8GwLK/Rw6BnyW7+zlDBTU7qSlnulaDfGwSfWJ/3PiQoi0PKx6fHOlnvH36K1UwsK+gKkK9ECzwUKJqOcMFvk7ScrQ+J7j7FzhT+wg48e+TakbWMDDkQV1lTKStE25Dx+HSgwn4cWouxG7hwqDExd324VlOXx2qXMx05hbVxLsRp5L3C1xk5V1uXVNjH6zMsh2vvaAWDZ+r94mu4S5Q4Dkh5BExTmH5nCn9LqTugw8VuN1TBqFX0PRIY9bi4CnUQQ2a2vNxFkzZb/Ckm2EAleNTLJQ+LLSlN/9feNEZObUka2Vwhiu26OcAQ==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIH3jCCBcagAwIBAgIKPuOTtp77yino5jANBgkqhkiG9w0BAQsFADBbMQswCQYDVQQGEwJCUjEWMBQGA1UECwwNQUMgU3luZ3VsYXJJRDETMBEGA1UECgwKSUNQLUJyYXNpbDEfMB0GA1UEAwwWQUMgU3luZ3VsYXJJRCBNdWx0aXBsYTAeFw0yNjA0MjcxOTMwMjFaFw0yNzA0MjcxOTMwMjFaMIHLMQswCQYDVQQGEwJCUjETMBEGA1UECgwKSUNQLUJyYXNpbDEiMCAGA1UECwwZQ2VydGlmaWNhZG8gRGlnaXRhbCBQSiBBMTEZMBcGA1UECwwQVmlkZW9jb25mZXJlbmNpYTEXMBUGA1UECwwOMzA5OTQxODQwMDAxMTMxHzAdBgNVBAsMFkFDIFN5bmd1bGFySUQgTXVsdGlwbGExLjAsBgNVBAMMJU1VTklDSVBJTyBERSBKT0lOVklMTEU6ODMxNjk2MjMwMDAxMTAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDJHMIEW5zjULogyBmURi/N4UiIdS0Jn57DODnyfJNd/gOuQT6f2eSfu/gBX2cl/v6rsm2tw5+cx7t3nJZloIHeCDDWT3SnEfuXV5RdvPKkbcMK/Nj3WTbt5ms17PnSwKOAxAV1MHNGNmsfj3n8KX0N2PMqctCAmu+8jZM7/FlfWfquxZpzrvryMj3NEVYVLRFSKSD9qEXF3EuYmwZsjomdIEG1TjUvh7r2+qZLXjiyhuzakI9k2eW1SQIUIkCgebs/TvJOTRmwyMwG6xQINA14QDauIHwq1K3X3aQSCxchAaXdYaD9QyasimgdnfMTzJmGWvSpDMjGQmGIC82S9vPDAgMBAAGjggMxMIIDLTAOBgNVHQ8BAf8EBAMCBeAwHQYDVR0lBBYwFAYIKwYBBQUHAwQGCCsGAQUFBwMCMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUk+H/fh3l9eRN4TliiyFpleavchYwHQYDVR0OBBYEFMq7cIsqWlstSqSNVQmvCGmRSBa3MH8GCCsGAQUFBwEBBHMwcTBvBggrBgEFBQcwAoZjaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvY2VydGlmaWNhZG9zL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEucDdiMIGCBgNVHSAEezB5MHcGB2BMAQIBgQUwbDBqBggrBgEFBQcCARZeaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvZHBjL2RwYy1hYy1zeW5ndWxhcklELW11bHRpcGxhLnBkZjCBxQYDVR0RBIG9MIG6oBgGBWBMAQMCoA8EDVJFSkFORSBHQU1CSU6gGQYFYEwBAwOgEAQOODMxNjk2MjMwMDAxMTCgQgYFYEwBAwSgOQQ3MTEwNTE5Njc0OTkzMjY4MzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOBAwwMDAwMDAwMDAwMDCBJmdhYmluZXRlZG9wcmVmZWl0b0Bqb2ludmlsbGUuc2MuZ292LmJyMIHiBgNVHR8EgdowgdcwZKBioGCGXmh0dHA6Ly9zeW5ndWxhcmlkLmNvbS5ici9yZXBvc2l0b3Jpby9hYy1zeW5ndWxhcmlkLW11bHRpcGxhL2xjci9sY3ItYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS5jcmwwb6BtoGuGaWh0dHA6Ly9pY3AtYnJhc2lsLnN5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvbGNyL2xjci1hYy1zeW5ndWxhcmlkLW11bHRpcGxhLmNybDANBgkqhkiG9w0BAQsFAAOCAgEAiQaLxsikP9CIIUYZLiHWrX+siWvts1ITTs+F8SJOWGExc/390n+cXGeXeC8sn2ZUwGL2YKvYexEGoF9Btcxcl9ImwDG1StJJwpcSRkDXGBw/CvtHab5h8ZvrpWmatb05RQxAGVDdd/LxflvfnYYO6pRk4ev3qx0845E86xZIlBeWztA1QQv+vPf1A6l3frOfANi+72IT1DTsjqksAoA1a+SFKIBTvWESC8zMrgzt6mNj/fDgQo59sh2lUCESx/21O4vFKRUPh89lCWYJN9Mlhu/O6HsiLQJa3R+zO1npOQW5OHOPV3RetuoqHvQQj9f+VkAcBQktdfDxahx9rWegFYkMNDVVj2XlSMY15LSHXtHL33KMWwxCQaQuFF6ggr744rQRB0Ka2ARD7RmcTdhSD8dFDvKR/aeh2st0pap9iNndNLuHbJx/WryCM4WjZtgCEWd09mf0y2WWrou+XpWsDZ/0iOpARhLEzaP5oSryDW0tDIKjIm0unbOdllgd/+ZXJX9nQkgnyVXWrsHH+5qDyGB3E3eFmJJfbTbPoGqpV5NfKVRg7dsVPkwgp+Hgpg/j5Y4YoH0VGC9mQWomBWs/Gn77XlnbwWZA3dZxfkSWubmuQXZvdKGrovEI6POXiQH5jFSlGZe+ipiNTM1vKgc02xIGCRzEfssYEVTjCdJE+eg=</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

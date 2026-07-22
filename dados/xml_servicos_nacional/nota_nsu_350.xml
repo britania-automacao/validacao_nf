@@ -1,125 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.00">
-    <infNFSe Id="NFS31062001246786223000127240000000002124115995055206">
-        <xLocEmi>BELO HORIZONTE</xLocEmi>
-        <xLocPrestacao>BELO HORIZONTE</xLocPrestacao>
-        <nNFSe>2400000000021</nNFSe>
-        <cLocIncid>3106200</cLocIncid>
-        <xLocIncid>BELO HORIZONTE</xLocIncid>
-        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
-        <xTribMun>Representação de qualquer natureza, inclusive comercial.</xTribMun>
-        <verAplic>1.00</verAplic>
-        <ambGer>1</ambGer>
-        <tpEmis>2</tpEmis>
-        <cStat>100</cStat>
-        <dhProc>2024-11-05T09:51:27-03:00</dhProc>
-        <nDFSe>2400000000021</nDFSe>
-        <emit>
-            <CNPJ>46786223000127</CNPJ>
-            <IM>13974040012</IM>
-            <xNome>ELLO VENDAS E REPRESENTACOES LTDA</xNome>
-            <xFant>ELLO VENDAS E REPRESENTACOES LTDA</xFant>
-            <enderNac>
-                <xLgr>AVE PORTUGAL</xLgr>
-                <nro>381</nro>
-                <xBairro>Jardim Atlântico</xBairro>
-                <cMun>3106200</cMun>
-                <UF>MG</UF>
-                <CEP>31550000</CEP>
-            </enderNac>
-        </emit>
-        <valores>
-            <vBC>1435.72</vBC>
-            <vLiq>1435.72</vLiq>
-            <xOutInf>Chave de acesso no Ambiente de Dados Nacional: 31062001246786223000127240000000002124115995055206.</xOutInf>
-        </valores>
-        <DPS versao="1.00">
-            <infDPS Id="DPS310620024678622300012775000002400000000021">
-                <tpAmb>1</tpAmb>
-                <dhEmi>2024-11-05T09:51:27-03:00</dhEmi>
-                <verAplic>1.00</verAplic>
-                <serie>75000</serie>
-                <nDPS>2400000000021</nDPS>
-                <dCompet>2024-11-05</dCompet>
-                <tpEmit>1</tpEmit>
-                <cLocEmi>3106200</cLocEmi>
-                <prest>
-                    <CNPJ>46786223000127</CNPJ>
-                    <IM>13974040012</IM>
-                    <xNome>ELLO VENDAS E REPRESENTACOES LTDA</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>3106200</cMun>
-                            <CEP>31550000</CEP>
-                        </endNac>
-                        <xLgr>AVE PORTUGAL</xLgr>
-                        <nro>381</nro>
-                        <xBairro>Jardim Atlântico</xBairro>
-                    </end>
-                    <regTrib>
-                        <opSimpNac>3</opSimpNac>
-                        <regEspTrib>0</regEspTrib>
-                    </regTrib>
-                </prest>
-                <toma>
-                    <CNPJ>76492701000157</CNPJ>
-                    <xNome>Britânia Eletrodomésticos S.A.</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>4106902</cMun>
-                            <CEP>80040265</CEP>
-                        </endNac>
-                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
-                        <nro>1330</nro>
-                        <xBairro>Hugo Lange</xBairro>
-                    </end>
-                    <email>nfe01@britania.com.br</email>
-                </toma>
-                <serv>
-                    <locPrest>
-                        <cLocPrestacao>3106200</cLocPrestacao>
-                    </locPrest>
-                    <cServ>
-                        <cTribNac>100901</cTribNac>
-                        <cTribMun>001</cTribMun>
-                        <xDescServ>Referente Comissões - codigo 9716 ELLO VENDAS E REPRESENTACOES LTDA</xDescServ>
-                    </cServ>
-                </serv>
-                <valores>
-                    <vServPrest>
-                        <vServ>1435.72</vServ>
-                    </vServPrest>
-                    <trib>
-                        <tribMun>
-                            <tribISSQN>1</tribISSQN>
-                            <tpRetISSQN>1</tpRetISSQN>
-                        </tribMun>
-                        <totTrib>
-                            <indTotTrib>0</indTotTrib>
-                        </totTrib>
-                    </trib>
-                </valores>
-            </infDPS>
-        </DPS>
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS31062001246786223000127240000000002124115995055206">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>yt2OQhrRBu4ZT6qTjOIcLPQh/h4=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>IErpbm22v3BFBP8XfioFeBeUcoZYCMHkG/lvnbtMtnyKY2arg5XiXKQFni5MOhWbtyW5oXSdEjzEL3A97VBSlIBIVlZsbh0bFeQfXKf/xBCs5HYRjmPZUxrXD+bZFJP7P8Y/Y4PL/W52yhN8YZcrho+9QqKebw/EUUk9DPlxQFzj9vipIcZZe7AHpyxs7gNitKvGiY738caygorHRZaPpMcy64sXYDl/OyMrXh686I1zND+tPHAkcD9tB6Uz0UOIjU231MqNc9fztISFA21g2uwvSCXEeSrjk8L6KpvmaUGIhQVrq8ep5Ut0M87MfDZ9GS0JXidAIhj/eFzlgETxMw==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIIHTCCBgWgAwIBAgIQfQMbea6FENi8AvZQd3ABXTANBgkqhkiG9w0BAQsFADB0MQswCQYDVQQGEwJCUjETMBEGA1UEChMKSUNQLUJyYXNpbDEtMCsGA1UECxMkQ2VydGlzaWduIENlcnRpZmljYWRvcmEgRGlnaXRhbCBTLkEuMSEwHwYDVQQDExhBQyBDZXJ0aXNpZ24gTXVsdGlwbGEgRzcwHhcNMjQwODI3MTY0ODQ5WhcNMjUwODI3MTY0ODQ5WjCB7jELMAkGA1UEBhMCQlIxEzARBgNVBAoMCklDUC1CcmFzaWwxCzAJBgNVBAgMAk1HMRcwFQYDVQQHDA5CZWxvIEhvcml6b250ZTEZMBcGA1UECwwQVmlkZW9Db25mZXJlbmNpYTEXMBUGA1UECwwOMTc0NDk2MTIwMDAxNjkxHjAcBgNVBAsMFUFDIENlcnRpc2lnbiBNdWx0aXBsYTEbMBkGA1UECwwSQXNzaW5hdHVyYSBUaXBvIEExMTMwMQYDVQQDDCpNVU5JQ0lQSU8gREUgQkVMTyBIT1JJWk9OVEU6MTg3MTUzODMwMDAxNDAwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCJykyvEiKHBtffSP4Tn82LsBq0r71MKLjBgBbGTDHZe1sCbvgrrYG+RMZHxp8VNBuzvNI2sXoDfDZwi2GnFPGmTmE/JLTBpGaBBZqkNj9FvRVlYimQa8nxvFVwPvpKlK7yxeWP1s+dmSbWHtE4CqZ+YJgLRTX0uroJJBbYe16hCjdzWr0Lc4WEJXpCLaliVY/TLXV9FBHzmCnDPl7Tn4EGtNs5ln/KyEb1f5t7sZSEums5zmXR3eLndfC1mkmu4pGnV+J/Rn6sE8PSzgMwANyQ4aA7ECQRES+YYIQEv5E0RtxW/+iJqAymf8zOQsO0zYcoNcK9WZfGAUAOJb+UPAaDAgMBAAGjggMuMIIDKjCBvAYDVR0RBIG0MIGxoDgGBWBMAQMEoC8ELTI4MDgxOTYxNDk2MDY1MzA2MDQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAtBgVgTAEDAqAkBCJFVUdFTklPIEVVU1RBUVVJTyBWRUxPU08gRkVSTkFOREVToBkGBWBMAQMDoBAEDjE4NzE1MzgzMDAwMTQwoBcGBWBMAQMHoA4EDDAwMDAwMDAwMDAwMIESZXZlbG9zb0BwYmguZ292LmJyMAkGA1UdEwQCMAAwHwYDVR0jBBgwFoAUXXIMvzPSu+OGpuhMBnF+VVwHoNYwgYsGA1UdIASBgzCBgDB+BgZgTAECAQswdDByBggrBgEFBQcCARZmaHR0cDovL2ljcC1icmFzaWwuY2VydGlzaWduLmNvbS5ici9yZXBvc2l0b3Jpby9kcGMvQUNfQ2VydGlzaWduX011bHRpcGxhL0RQQ19BQ19DZXJ0aVNpZ25fTXVsdGlwbGEucGRmMIHGBgNVHR8Egb4wgbswXKBaoFiGVmh0dHA6Ly9pY3AtYnJhc2lsLmNlcnRpc2lnbi5jb20uYnIvcmVwb3NpdG9yaW8vbGNyL0FDQ2VydGlzaWduTXVsdGlwbGFHNy9MYXRlc3RDUkwuY3JsMFugWaBXhlVodHRwOi8vaWNwLWJyYXNpbC5vdXRyYWxjci5jb20uYnIvcmVwb3NpdG9yaW8vbGNyL0FDQ2VydGlzaWduTXVsdGlwbGFHNy9MYXRlc3RDUkwuY3JsMA4GA1UdDwEB/wQEAwIF4DAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwgbYGCCsGAQUFBwEBBIGpMIGmMGQGCCsGAQUFBzAChlhodHRwOi8vaWNwLWJyYXNpbC5jZXJ0aXNpZ24uY29tLmJyL3JlcG9zaXRvcmlvL2NlcnRpZmljYWRvcy9BQ19DZXJ0aXNpZ25fTXVsdGlwbGFfRzcucDdjMD4GCCsGAQUFBzABhjJodHRwOi8vb2NzcC1hYy1jZXJ0aXNpZ24tbXVsdGlwbGEuY2VydGlzaWduLmNvbS5icjANBgkqhkiG9w0BAQsFAAOCAgEApaSjPFbqd31ZIxxCyXmdLzeC6PvP9/v3Sw2PQey9B1fP9UqejDXDN5y4ryk+hDlOLCK63aHO92b1uEQhOLV+bNUi4Ct0FzD+w8F8qFQab/w6Fb10HTVnotleOviJJiLNSqPf+IyxJNiWZs+yk5xAwomb/cNJuOebITA/ZaMtzsDfploJS+RmR65eAPVk+lwFfhYOTYDcuzyqa/YGZKL3kvIoB7IR1MKjVoTCyBilM4JalNjo5iaaFruVDpzlCTQyhM/m8K6zx1EVK/MXu2bRzcKbDjSI0K5Ml8L+Tyh5eitqADgtKZ58V04UoSJhhyIH++NywKWP5L4piNfMeRr7/fBq8a2qBAsLcNHJi97X0pvgKxrLmQlaWU7gXyz/WkjUKtOUbtk/fMTCWg70KJhnw+7Y7ERjsASs/JTnumpbBgRV4q6f1MQigLDwZheRj6zfN6yYQ79eVDvnSQ8MCb1mStVO0BTW/96iqiPpSg6m/KLhTz2FXF6Ev+2NCItoJB7Eihvk191dlUOYywxeWt5/ay4U4iabxCDirA+wGGeqA8mYQIo2ICxwn0sWGETe8K3A3RHQUjRQi1c/SX6PRGr2kevEmLLcKyIC3BWYaMYuql+mcJ9lIY7/aHUsk1Za9XHY1Toi5sFefAdszKEhCDjq83Lcg0TQ1StzV+8V6zuioFU=</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

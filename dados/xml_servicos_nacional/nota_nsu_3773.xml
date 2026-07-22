@@ -1,217 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
-        
-    <infNFSe Id="NFS41084031282079807000126000000000040426061234567891">
-                
-        <xLocEmi>Francisco Beltrão</xLocEmi>
-                
-        <xLocPrestacao>Francisco Beltrão</xLocPrestacao>
-                
-        <nNFSe>404</nNFSe>
-                
-        <cLocIncid>4108403</cLocIncid>
-                
-        <xLocIncid>Francisco Beltrão</xLocIncid>
-                
-        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
-                
-        <xTribMun>Representação de qualquer natureza, inclusive comercial.</xTribMun>
-                
-        <xNBS>Serviços pessoais não classificados em posições anteriores</xNBS>
-                
-        <verAplic>1.0.0.0</verAplic>
-                
-        <ambGer>1</ambGer>
-                
-        <tpEmis>1</tpEmis>
-                
-        <cStat>100</cStat>
-                
-        <dhProc>2026-06-04T11:45:00-03:00</dhProc>
-                
-        <nDFSe>404</nDFSe>
-                
-        <emit>
-                        
-            <CNPJ>82079807000126</CNPJ>
-                        
-            <xNome>TRIO REPRESENTACOES COMERCIAIS LTDA</xNome>
-                        
-            <enderNac>
-                                
-                <xLgr>RUA PATO BRANCO</xLgr>
-                                
-                <nro>277</nro>
-                                
-                <xCpl>LOTE 17 QUADRA671</xCpl>
-                                
-                <xBairro>SAO CRISTOVAO</xBairro>
-                                
-                <cMun>4108403</cMun>
-                                
-                <UF>PR</UF>
-                                
-                <CEP>85601350</CEP>
-                            
-            </enderNac>
-                    
-        </emit>
-                
-        <valores>
-                        
-            <vBC>8739.07</vBC>
-                        
-            <pAliqAplic>2.17</pAliqAplic>
-                        
-            <vISSQN>189.63</vISSQN>
-                        
-            <vTotalRet>0.00</vTotalRet>
-                        
-            <vLiq>8739.07</vLiq>
-                    
-        </valores>
-                
-        <DPS versao="1.00">
-                        
-            <infDPS Id="DPS410840328207980700012601000000000000000404">
-                                
-                <tpAmb>1</tpAmb>
-                                
-                <dhEmi>2026-06-04T11:45:00-03:00</dhEmi>
-                                
-                <verAplic>1.0.0.0</verAplic>
-                                
-                <serie>01000</serie>
-                                
-                <nDPS>404</nDPS>
-                                
-                <dCompet>2026-06-04</dCompet>
-                                
-                <tpEmit>1</tpEmit>
-                                
-                <cLocEmi>4108403</cLocEmi>
-                                
-                <prest>
-                                        
-                    <CNPJ>82079807000126</CNPJ>
-                                        
-                    <fone>4699904045</fone>
-                                        
-                    <email>claudiorepres@hotmail.com</email>
-                                        
-                    <regTrib>
-                                                
-                        <opSimpNac>3</opSimpNac>
-                                                
-                        <regApTribSN>3</regApTribSN>
-                                                
-                        <regEspTrib>0</regEspTrib>
-                                            
-                    </regTrib>
-                                    
-                </prest>
-                                
-                <toma>
-                                        
-                    <CNPJ>76492701000157</CNPJ>
-                                        
-                    <xNome>Britânia Eletrodomésticos S.A.</xNome>
-                                        
-                    <end>
-                                                
-                        <endNac>
-                                                        
-                            <cMun>4106902</cMun>
-                                                        
-                            <CEP>82520060</CEP>
-                                                    
-                        </endNac>
-                                                
-                        <xLgr>AV. NOSSA SENHORA DA LUZ</xLgr>
-                                                
-                        <nro>1330</nro>
-                                                
-                        <xBairro>HUGO LANGE</xBairro>
-                                            
-                    </end>
-                                        
-                    <email>soares.rafael@britania.com.br</email>
-                                    
-                </toma>
-                                
-                <serv>
-                                        
-                    <locPrest>
-                                                
-                        <cLocPrestacao>4108403</cLocPrestacao>
-                                            
-                    </locPrest>
-                                        
-                    <cServ>
-                                                
-                        <cTribNac>100901</cTribNac>
-                                                
-                        <xDescServ>Comissões de MAIO de 2026</xDescServ>
-                                                
-                        <cNBS>126060000</cNBS>
-                                            
-                    </cServ>
-                                    
-                </serv>
-                                
-                <valores>
-                                        
-                    <vServPrest>
-                                                
-                        <vServ>8739.07</vServ>
-                                            
-                    </vServPrest>
-                                        
-                    <trib>
-                                                
-                        <tribMun>
-                                                        
-                            <tribISSQN>1</tribISSQN>
-                                                        
-                            <tpRetISSQN>1</tpRetISSQN>
-                                                        
-                            <pAliq>2.17</pAliq>
-                                                    
-                        </tribMun>
-                                                
-                        <totTrib>
-                                                        
-                            <indTotTrib>0</indTotTrib>
-                                                    
-                        </totTrib>
-                                            
-                    </trib>
-                                    
-                </valores>
-                            
-            </infDPS>
-                    
-        </DPS>
-            
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#DPS410840328207980700012601000000000000000404">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>TAuWrhukV70sgYdhlwqEI4vL1gc=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>bfIVXSPKdo7ZMd7Er3icDxl2NhrjoOa7Twa/oty4lyxyPaFH+b9VGX8KAe7HsqRqOW9Nwj3TdmsgA6eJItt+21HafXUyNV81wSEIcKXpjqfxmWM05oVI6lJzCDGKxhcQW36+ffe3LukBmrqk5vkZ3yuO/6vWQWukV69AjnrdzUgXF/Cin1eeVTq+yT514Rgc0anCnqyoUj16Jp4teixsgOcH+S+kpl2vUV4Xqdozif6FmAWW5+2qE0Q/j6DYcnX60QasSazwmo2TrPJhE9WkybkCV1Ak7gNSTlckOxdqpkR/u61lOPfjt30aDDioNOqH+/ndfnHBDiAg4HnuwqE0JA==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIH6jCCBdKgAwIBAgIIfYSjwxAVYlswDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgU0FGRVdFQiBSRkIgdjUwHhcNMjYwMTA5MTQ0NzIwWhcNMjcwMTA5MTQ0NzIwWjCCAQcxCzAJBgNVBAYTAkJSMRMwEQYDVQQKEwpJQ1AtQnJhc2lsMQswCQYDVQQIEwJQUjEaMBgGA1UEBxMRRlJBTkNJU0NPIEJFTFRSQU8xNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTEXMBUGA1UECxMONzYwODU2MjAwMDAxMzIxGTAXBgNVBAsTEHZpZGVvY29uZmVyZW5jaWExNjA0BgNVBAMTLU1VTklDSVBJTyBERSBGUkFOQ0lTQ08gQkVMVFJBTzo3NzgxNjUxMDAwMDE2NjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK23ZmhIfRpwt5kUT2aFTr72onYscwoXJY2VNDiI2VigI0ARZJwmMRLOOoHX9q9Toaa+G/SAlNKCjO//rRAoIZPeUiUhnyUD7mKbfg96NDKIaImXv4XfYGLu+RnFt9Q0Vt9ul3ArU56SYB500664FfUbcFNfn29KQCPOVOM4ZIs87o59/rn/rhqFuncjUXdenijk75vzSssb7QDRAuwqcB4/ZbHyU21bUOCVmJC+4nJZ2c2uRHREuzrwBBEaZZSSaxBwbqZIw7fwlhqMS0GWnogDlShtax++kgZxJd3ilw9QRiccIO9WNjKOs9uK1fDeS/jmIfNtzC7XU75trISP8cUCAwEAAaOCAucwggLjMB8GA1UdIwQYMBaAFCleS9VGTLv+FqdjwR3EJvLd2PMFMA4GA1UdDwEB/wQEAwIF4DBpBgNVHSAEYjBgMF4GBmBMAQIBMzBUMFIGCCsGAQUFBwIBFkZodHRwOi8vcmVwb3NpdG9yaW8uYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2RwYy1hY3NhZmV3ZWJyZmIucGRmMIGuBgNVHR8EgaYwgaMwT6BNoEuGSWh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvbGNyLWFjLXNhZmV3ZWJyZmJ2NS5jcmwwUKBOoEyGSmh0dHA6Ly9yZXBvc2l0b3JpbzIuYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2xjci1hYy1zYWZld2VicmZidjUuY3JsMIG3BggrBgEFBQcBAQSBqjCBpzBRBggrBgEFBQcwAoZFaHR0cDovL3JlcG9zaXRvcmlvLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9hYy1zYWZld2VicmZidjUucDdiMFIGCCsGAQUFBzAChkZodHRwOi8vcmVwb3NpdG9yaW8yLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9hYy1zYWZld2VicmZidjUucDdiMIGvBgNVHREEgacwgaSBGUFOVE9OSU9QRURST05GQkBHTUFJTC5DT02gGQYFYEwBAwKgEBMOQU5UT05JTyBQRURST06gGQYFYEwBAwOgEBMONzc4MTY1MTAwMDAxNjagOAYFYEwBAwSgLxMtMDcwMzE5NTUxOTY5MDU2ODk0OTAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwoBcGBWBMAQMHoA4TDDAwMDAwMDAwMDAwMDAdBgNVHSUEFjAUBggrBgEFBQcDAgYIKwYBBQUHAwQwCQYDVR0TBAIwADANBgkqhkiG9w0BAQsFAAOCAgEAc43RCMOaI9AdrosWNs2+yBVhB9yyvIMnC8YXrIKPSG/beWb20LwUp6n7YPPxxyFT9Cbjopbhw4otit0Ndg84kgqLOLguWr7xo8pBju/kZgasj4GnCZUJ1sEr/wxme4gG3YiuETU+Cc9JUL4ngOrGYSMNwFsFEUz0Hoo4ZmNnaMT3Vt4+SPDQWnXouZEMN9aiWR80e06vok4To4TJgbzuiWWeOQu3kKIuQcNUeJ93PP79D4eKKZTSkRt05XCq77iYIAGi1O7uxX/m6MwtYhu8qCXR51VStW/OkJ7rbOaLXIKv65m0BkDbBvu9tZL/3kJ0xeg9tExgr+03aYm9tAycHfCZ5XwKExTfn+ofugTdAL6M1SDwxJRQjangQMxvzaKa5poKMfiYmUg6hva/OspOtfTX4DUOGUO6qbdpG5zUmgrHg6Q1DXKF5ckYq3q146hyOsEDoojRRqNl/NDXv0w9c5FDuAlAiDwFL3fG1S11JUWYvj3hKp5lylJI2y6OgZ+pXrsh4CkkKqc83h+zhur4ZeuK9TAB0oMH3zAo/ijNyNnHSeVOYfBgK08gyf1MiduzfPTkbVEFuzqaYgB/p4n93TT9XXSxtp8cbcS0qIucD5cut30egh7eASTxE28mHohfR7w7yHUmgIfhcOJuNGBlFXN1TatAWgXaRtSn3Mf78iA=</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

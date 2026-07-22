@@ -1,115 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
-    <infNFSe Id="NFS35060031218119069000102000000002054826019902802780">
-        <xLocEmi>Bauru</xLocEmi>
-        <xLocPrestacao>Bauru</xLocPrestacao>
-        <nNFSe>20548</nNFSe>
-        <cLocIncid>3506003</cLocIncid>
-        <xLocIncid>Bauru</xLocIncid>
-        <xTribNac>010501</xTribNac>
-        <verAplic>ACBrNFSeX-1.00</verAplic>
-        <ambGer>1</ambGer>
-        <tpEmis>2</tpEmis>
-        <cStat>100</cStat>
-        <dhProc>2026-01-06T17:38:14-03:00</dhProc>
-        <nDFSe>990280278</nDFSe>
-        <emit>
-            <CNPJ>18119069000102</CNPJ>
-            <IM>532392</IM>
-            <xNome>NEXT SOLUCOES INTELIGENTES LTDA - ME</xNome>
-            <enderNac>
-                <xLgr>RUA VIRGILIO MALTA</xLgr>
-                <nro>1706</nro>
-                <xBairro>VILA MESQUITA</xBairro>
-                <cMun>3506003</cMun>
-                <UF>SP</UF>
-                <CEP>17014440</CEP>
-            </enderNac>
-        </emit>
-        <valores>
-            <vBC>3057.53</vBC>
-            <pAliqAplic>2.00</pAliqAplic>
-            <vISSQN>61.15</vISSQN>
-            <vLiq>3057.53</vLiq>
-        </valores>
-        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
-            <infDPS Id="DPS350600321811906900010200017000000000021647">
-                <tpAmb>1</tpAmb>
-                <dhEmi>2026-01-06T00:00:00-03:00</dhEmi>
-                <verAplic>ACBrNFSeX-1.00</verAplic>
-                <serie>17</serie>
-                <nDPS>21647</nDPS>
-                <dCompet>2026-01-06</dCompet>
-                <tpEmit>1</tpEmit>
-                <cLocEmi>3506003</cLocEmi>
-                <prest>
-                    <CNPJ>18119069000102</CNPJ>
-                    <regTrib>
-                        <opSimpNac>3</opSimpNac>
-                        <regApTribSN>1</regApTribSN>
-                        <regEspTrib>0</regEspTrib>
-                    </regTrib>
-                </prest>
-                <toma>
-                    <CNPJ>76492701000157</CNPJ>
-                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>4106902</cMun>
-                            <CEP>80040265</CEP>
-                        </endNac>
-                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
-                        <nro>1330</nro>
-                        <xBairro>HUGO LANGE</xBairro>
-                    </end>
-                    <email>FINANCEIRO.TI@BRITANIA.COM.BR</email>
-                </toma>
-                <serv>
-                    <locPrest>
-                        <cLocPrestacao>3506003</cLocPrestacao>
-                    </locPrest>
-                    <cServ>
-                        <cTribNac>010501</cTribNac>
-                        <cTribMun>001</cTribMun>
-                        <xDescServ>QT: 1,00 - EVOLUCAO TECNOLOGICA E SUPORTE (MENSAL) Prop. Comercial 012122 contrato n. 3050 - R$ 2.482,03 - Tot.R$ 2.482,03QT: 1,00 - BP - EVOLUCAO TECNOLOGICA E SUPORTE (MENSAL) - Prop 078136 - R$ 575,50 - Tot.R$ 575,50 VENCIMENTO: 10/02/2026 - R$ 3.057,53 - FORMA PAGAMENTO: CARTEIRA</xDescServ>
-                        <cNBS>111032200</cNBS>
-                    </cServ>
-                </serv>
-                <valores>
-                    <vServPrest>
-                        <vServ>3057.53</vServ>
-                    </vServPrest>
-                    <trib>
-                        <tribMun>
-                            <tribISSQN>1</tribISSQN>
-                            <tpRetISSQN>1</tpRetISSQN>
-                        </tribMun>
-                        <totTrib>
-                            <pTotTribSN>2.00</pTotTribSN>
-                        </totTrib>
-                    </trib>
-                </valores>
-            </infDPS>
-        </DPS>
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS35060031218119069000102000000002054826019902802780">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>jGZu2sx+Y4KnX55417GCSxFugV0=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>JDW/FfGXeONjSjPrdiffnG6vax3phhc0BjFejsnyx52Snqbs+iFwWeoB5VK5Zb3O3DewhuszVSa/b64v+vreG49H0zTsVcfXIcoNcsRJYfxt5tDr25kkZIgI1Cc4J1j074AQpm+13xnNQaoLppUxmVw0jI0YPc8CfjlYnjZcrHnY9Phk18t3GsD94FaGtXYKAaEPHk7TEkuPUV5yHLe8vTTCFZdpq+E2qLNJGpjgt/2QS6kraRCHzJ5qGHXX4Dmy3PsBPbjTDC+wtL0hngrWRJ6qZU3LTALLEW6SwgV2taLb4Zf+6imaSmvOS8zgAcMdAhqXta9SOn21Vpdcgc5aaQ==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIHfzCCBWegAwIBAgIIY84nZMz6n38wDQYJKoZIhvcNAQELBQAwczELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEXMBUGA1UEAxMOQUMgTElOSyBSRkIgdjIwHhcNMjUwMjEwMTgzMzU4WhcNMjYwMjEwMTgzMzU4WjCB6TELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAlNQMQ4wDAYDVQQHEwVCQVVSVTEXMBUGA1UECxMOMTMwMzY1OTIwMDAxNDMxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTETMBEGA1UECxMKcHJlc2VuY2lhbDEqMCgGA1UEAxMhTVVOSUNJUElPIERFIEJBVVJVOjQ2MTM3NDEwMDAwMTgwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5pO3qbiuIy2wTjbSdjjIjsfKdmSvhSMXGEwHOxnSTaUtkeRIQ2sLRDtz9eyY6E50gjsxhMMih12ab7keUSK3W7MGcLqZ/ta9cRUMpbbN6bI8rDVoqTnfZ6rjkOvnHGwMByT8lsZzhm23UUQEWTRXwG8W3T0nlUM+G1Og/BdgTxU1GqQ+5iyGtzEtlGUf5dRhVpI7GkOWuOjWSBbBCNYuldELoutAbb/Hy/QLG/YUE7Xdd2hdNf0Zvh/gDDRC4bWYpYY5C6hykU/r9SrkIYunYMp0C03jzdMAXHH2vifNPBcXlLWIFDbcZrjFgUQABxMW7kosBv0lQv2NQuoRXQRpDQIDAQABo4ICnjCCApowHwYDVR0jBBgwFoAUDd/WR/QTTuUiWDIsZqbnLuRXvAIwDgYDVR0PAQH/BAQDAgXgMGwGA1UdIARlMGMwYQYGYEwBAgE7MFcwVQYIKwYBBQUHAgEWSWh0dHA6Ly9yZXBvc2l0b3Jpby5saW5rY2VydGlmaWNhY2FvLmNvbS5ici9hYy1saW5rcmZiL2FjLWxpbmstcmZiLWRwYy5wZGYwgbAGA1UdHwSBqDCBpTBQoE6gTIZKaHR0cDovL3JlcG9zaXRvcmlvLmxpbmtjZXJ0aWZpY2FjYW8uY29tLmJyL2FjLWxpbmtyZmIvbGNyLWFjLWxpbmtyZmJ2NS5jcmwwUaBPoE2GS2h0dHA6Ly9yZXBvc2l0b3JpbzIubGlua2NlcnRpZmljYWNhby5jb20uYnIvYWMtbGlua3JmYi9sY3ItYWMtbGlua3JmYnY1LmNybDBiBggrBgEFBQcBAQRWMFQwUgYIKwYBBQUHMAKGRmh0dHA6Ly9yZXBvc2l0b3Jpby5saW5rY2VydGlmaWNhY2FvLmNvbS5ici9hYy1saW5rcmZiL2FjLWxpbmtyZmJ2NS5wN2IwgbcGA1UdEQSBrzCBrIEcU1VFTExFTlJPU0lNQEJBVVJVLlNQLkdPVi5CUqAeBgVgTAEDAqAVExNTVUVMTEVOIFNJTFZBIFJPU0lNoBkGBWBMAQMDoBATDjQ2MTM3NDEwMDAwMTgwoDgGBWBMAQMEoC8TLTA3MDcxOTg4MDE3NzEyODUxODQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggIBAGEl3U6masM1e6KdFNTxhsQv7p8G9Pm1LCxsp0I25/c/L+CAg33P+js5DgmfUqb9jGjuJacx7zc6NOb4GnXcHefje+noRbVu2m3KrVgaKZkmjqahTvIypyyKC+QQdYnCpzQDNTmkvelgzJosH80Mg0ueiR7JpDnQp1GrQkMWAVd601AY2BIhglQ6/G4pfo6qd+Mk7MEc7QvK39D2FCpVwbjdr2Fend7lA31ephIK9/kMSX2a/YsU9pF5tE25IQdhqZccsCu9pGuqXV7IfZbHgCcPdOn2UfBu1Kd7Nrpu7WI/PUTyV0ptJu1D5VoTEgao7n6Z2Wa3LqfzVL/YPgmsJkkoyYSyA4HgtXH0CRI1R+/DEsEq6Rr7opFBHb39w2PorUOHgV8Jc8StrG4FOC4Y+bB/G/4BO1vMrFqZKXMWioDrs+vw/phj+lWUgop7Xd3XPDsHGYxyukUG4hsZwgMWai11W4QdFsya/Snn01JF9GGWi6fx47e5jTlBcd/TPLJyxxmuZMdJNS5kRfJKHtgix9EToRsMsAFkq1UdfS6UXQFnFL215vSQMRaXKemNSfVUSmaxR+L0m+p9Kn5gqhcNgotT2J3EwaTNDCqq1Cl86G+LozGSOQ/QJwsaKT7lcmsVzbbDM9JaejIz6IvU+lcHWyKUReMRrME6Bg0QH9M4Asg9</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

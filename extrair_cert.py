@@ -1,9 +1,14 @@
 from cryptography.hazmat.primitives.serialization import pkcs12
 from cryptography.hazmat.primitives import serialization
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 # === COLOQUE SEUS DADOS AQUI ===
-CAMINHO_PFX = r"C:\Users\angelo.jorge\Desktop\Projetos\validacao_notas\validacao_nf\dados\certificados\1 - Britânia Eletrodomésticos S.A. - 0001-57.pfx"
-SENHA_PFX = b"Britania@2025"  # Mantenha o 'b' antes da string da senha
+CAMINHO_PFX = r"C:\Users\angelo.jorge\Desktop\Projetos\validacao_notas\validacao_nf\dados\certificados\1\1 - Britânia Eletrodomésticos S.A. - 0001-57.pfx"
+SENHA_PFX = {os.getenv('CERTIFICADO_SENHA')}
 # ===============================
 
 def extrair():

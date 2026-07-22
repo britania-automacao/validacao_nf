@@ -1,3 +1,4 @@
+# src/nfse_fetcher.py
 import os
 import time
 import requests
@@ -8,40 +9,87 @@ import xml.dom.minidom
 import logging
 import pandas as pd
 from pathlib import Path
-from config import settings
+import urllib3
+
+from config import get_empresa_config
+
+try:
+    from cryptography.hazmat.primitives.serialization import pkcs12
+    from cryptography.hazmat.primitives import serialization
+except ImportError:
+    raise ImportError("A biblioteca 'cryptography' é necessária para converter PFX. Execute: pip install cryptography")
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 
 class SincronizadorGoverno:
-    def __init__(self):
-        self.cnpj = settings.cnpj_empresa
+    def __init__(self, empresa_id):
+        self.empresa_id = str(empresa_id)
+        cfg = get_empresa_config(self.empresa_id)
+        self.cnpj = cfg['cnpj']
         self.url_base = "https://adn.nfse.gov.br/contribuintes/DFe" 
         
-        if settings.cert_pub_path and settings.cert_key_path:
-            self.cert_path = (settings.cert_pub_path, settings.cert_key_path)
-        else:
-            self.cert_path = None
-        
-        # Configuração de Pastas e Caminhos
         raiz_projeto = Path(__file__).resolve().parent.parent
-        self.pasta_historico = raiz_projeto / "dados" / "historico"
+        
+        # 1. Configurar Pastas Base e Criar o LOGGER primeiro!
+        self.pasta_historico = raiz_projeto / "dados" / "historico" / self.empresa_id
         self.pasta_historico.mkdir(parents=True, exist_ok=True)
+        
+        self.logger = logging.getLogger(f"Sincronizador_{self.empresa_id}")
+        self.logger.setLevel(logging.INFO)
+        if self.logger.hasHandlers():
+            self.logger.handlers.clear()
+            
+        fmt = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        fh = logging.FileHandler(self.pasta_historico / "sincronizador.log", encoding='utf-8')
+        sh = logging.StreamHandler()
+        fh.setFormatter(fmt)
+        sh.setFormatter(fmt)
+        self.logger.addHandler(fh)
+        self.logger.addHandler(sh)
+
+        # 2. Configuração de Certificados (Agora o logger já existe para ser usado)
+        pasta_cert = raiz_projeto / "dados" / "certificados" / self.empresa_id
+        pasta_cert.mkdir(parents=True, exist_ok=True)
+        self.cert_path = self._garantir_certificados_pem(pasta_cert, cfg['cert_nome'], cfg['cert_senha'])
+        
+        # 3. Configurar restante dos arquivos
         self.arquivo_nsu = self.pasta_historico / "ultimo_nsu.txt"
         
-        self.pasta_destino = raiz_projeto / "dados" / "xml_servicos_nacional"
+        self.pasta_destino = raiz_projeto / "dados" / "xml_servicos_nacional" / self.empresa_id
         self.pasta_destino.mkdir(parents=True, exist_ok=True)
         
-        # Arquivo Excel onde os dados serão consolidados
-        self.arquivo_excel = self.pasta_destino / "Resumo_Notas_Nacional.xlsx"
+        self.arquivo_excel = self.pasta_destino / f"Resumo_Notas_Nacional_{self.empresa_id}.xlsx"
+
+    def _garantir_certificados_pem(self, pasta_cert: Path, cert_nome: str, cert_senha: str):
+        """Transforma o certificado .pfx em arquivos .pem para a API em Python"""
+        cert_pub_path = pasta_cert / "cert_publico.pem"
+        cert_key_path = pasta_cert / "chave.pem"
         
-        # Configuração do Logger
-        logging.basicConfig(
-            level=logging.INFO,
-            format='%(asctime)s - %(levelname)s - %(message)s',
-            handlers=[
-                logging.FileHandler(self.pasta_historico / "sincronizador.log", encoding='utf-8'),
-                logging.StreamHandler()
-            ]
-        )
-        self.logger = logging.getLogger("SincronizadorNacional")
+        if not cert_pub_path.exists() or not cert_key_path.exists():
+            pfx_path = pasta_cert / cert_nome
+            if not pfx_path.exists():
+                raise FileNotFoundError(f"Arquivo de certificado PFX não encontrado: {pfx_path}")
+            
+            self.logger.info(f"Extraindo chaves .pem do certificado PFX {cert_nome}...")
+            with open(pfx_path, "rb") as f:
+                pfx_data = f.read()
+                
+            private_key, certificate, _ = pkcs12.load_key_and_certificates(
+                pfx_data, cert_senha.encode() if cert_senha else None
+            )
+            
+            with open(cert_key_path, "wb") as f:
+                f.write(private_key.private_bytes(
+                    encoding=serialization.Encoding.PEM,
+                    format=serialization.PrivateFormat.TraditionalOpenSSL,
+                    encryption_algorithm=serialization.NoEncryption()
+                ))
+                
+            with open(cert_pub_path, "wb") as f:
+                f.write(certificate.public_bytes(serialization.Encoding.PEM))
+                
+        return (str(cert_pub_path), str(cert_key_path))
 
     def ler_ultimo_nsu(self) -> int:
         if self.arquivo_nsu.exists():
@@ -57,56 +105,41 @@ class SincronizadorGoverno:
             f.write(str(nsu))
 
     def _descompactar_e_formatar(self, conteudo_resposta: str) -> tuple[bool, str]:
-        """
-        Interpreta a resposta da API.
-        Retorna (Sucesso, XML_Formatado). 
-        Se Sucesso=False, retorna o código de erro.
-        """
         try:
-            # 1. Tenta identificar se é XML (pode ser o envelope ou a nota pronta)
             try:
                 raiz = ET.fromstring(conteudo_resposta)
             except ET.ParseError:
                 return False, "XML_INVALIDO"
 
-            # 2. Verifica se a API retornou fim de fila (137) ou bloqueio (656)
             for elem in raiz.iter():
                 if elem.tag.endswith('cStat'):
                     if elem.text == '137': return False, "137"
                     if elem.text == '656': return False, "656"
 
-            # 3. Busca o arquivo zipado dentro do XML 
-            # (Pode vir como docZip, nfseZip ou ArquivoXml dependendo da nota)
             base64_str = None
             for elem in raiz.iter():
                 if elem.tag.endswith('docZip') or elem.tag.endswith('nfseZip') or elem.tag.endswith('ArquivoXml'):
                     base64_str = elem.text
                     break
             
-            # 4. Processamento
             if base64_str:
-                # Descompacta o conteúdo Base64 -> GZIP -> XML Puro
                 dados_binarios = base64.b64decode(base64_str)
                 xml_bruto = gzip.decompress(dados_binarios).decode('utf-8')
                 xml_final = xml_bruto
             else:
-                # Se não tem tag com base64, assume que é a nota pronta em texto claro
                 xml_final = conteudo_resposta
             
-            # 5. Formata
             dom = xml.dom.minidom.parseString(xml_final)
             xml_formatado = dom.toprettyxml(indent="  ")
             linhas = [linha for linha in xml_formatado.split('\n') if linha.strip()]
             return True, '\n'.join(linhas)
             
         except Exception as e:
-            # Em último caso, se der qualquer erro bizarro, tenta retornar cru
             if "<" in conteudo_resposta and ">" in conteudo_resposta:
                  return True, conteudo_resposta
             return False, f"ERRO_GERAL: {e}"
             
     def _converter_xml_para_dict(self, xml_string: str, nsu: int) -> dict:
-        """Achata (flatten) as tags do XML para transformá-las em colunas do Excel"""
         try:
             raiz = ET.fromstring(xml_string)
             dados = {'NSU_API': str(nsu)}
@@ -142,12 +175,12 @@ class SincronizadorGoverno:
                 df_final = df_novos
                 
             df_final.to_excel(self.arquivo_excel, index=False)
-            self.logger.info(f"Sucesso! {len(notas_extraidas)} nota(s) processada(s) e salva(s) em {self.arquivo_excel.name}.")
+            self.logger.info(f"Sucesso! {len(notas_extraidas)} nota(s) salva(s) no Resumo.")
         except Exception as e:
             self.logger.error(f"Falha ao salvar os dados no Excel: {e}")
 
     def _sincronizar_xmls_locais(self):
-        self.logger.info("Verificando se há XMLs locais pendentes de integração com o Excel...")
+        self.logger.info("Verificando se há XMLs locais pendentes...")
         nsus_no_excel = set()
         if self.arquivo_excel.exists():
             try:
@@ -169,7 +202,7 @@ class SincronizadorGoverno:
                 except Exception: pass
 
         if notas_pendentes:
-            self.logger.info(f"Encontrados {len(notas_pendentes)} XML(s) na pasta que não estavam no Excel. Atualizando...")
+            self.logger.info(f"Atualizando Excel com {len(notas_pendentes)} XML(s) que já existiam na pasta...")
             self._atualizar_excel(notas_pendentes)
 
     def buscar_notas(self):
@@ -177,7 +210,7 @@ class SincronizadorGoverno:
         ult_nsu = self.ler_ultimo_nsu()
         if ult_nsu == 0: ult_nsu = 1
         
-        self.logger.info(f"Iniciando busca a partir do NSU: {ult_nsu}")
+        self.logger.info(f"Iniciando busca no Governo a partir do NSU: {ult_nsu}")
         notas_para_excel = []
 
         while True:
@@ -194,7 +227,6 @@ class SincronizadorGoverno:
                         for chunk in resp.iter_content(chunk_size=8192):
                             if chunk: conteudo += chunk
                             
-                        # Análise de sucesso da extração
                         sucesso_descomp, resultado = self._descompactar_e_formatar(conteudo.decode('utf-8'))
                         
                         if not sucesso_descomp:
@@ -244,5 +276,15 @@ class SincronizadorGoverno:
             if not sucesso: break
             time.sleep(3)
 
+
 if __name__ == "__main__":
-    SincronizadorGoverno().buscar_notas()
+    empresas = ["1", "15", "30", "35"]
+    
+    for emp in empresas:
+        print(f"\n{'='*50}")
+        print(f" Iniciando sincronização do Governo - Empresa {emp}")
+        print(f"{'='*50}")
+        try:
+            SincronizadorGoverno(empresa_id=emp).buscar_notas()
+        except Exception as e:
+            print(f"[ERRO CRÍTICO] Falha ao processar a Empresa {emp}: {e}")

@@ -1,179 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" xmlns:ns2="http://www.w3.org/2000/09/xmldsig#" versao="1.01">
-    <infNFSe Id="NFS43046061244491379000155000000000059526056929412580">
-        <xLocEmi>Canoas</xLocEmi>
-        <xLocPrestacao>Canoas</xLocPrestacao>
-        <nNFSe>595</nNFSe>
-        <cLocIncid>4304606</cLocIncid>
-        <xLocIncid>Canoas</xLocIncid>
-        <xTribNac>Representacao de qualquer natureza, inclusive comercial.</xTribNac>
-        <xNBS>Servicos de intermediacao na distribuicao de mercadorias</xNBS>
-        <verAplic>1.00</verAplic>
-        <ambGer>1</ambGer>
-        <tpEmis>2</tpEmis>
-        <cStat>100</cStat>
-        <dhProc>2026-05-08T19:10:15-03:00</dhProc>
-        <nDFSe>595</nDFSe>
-        <emit>
-            <CNPJ>44491379000155</CNPJ>
-            <IM>6909136</IM>
-            <xNome>EBILHALVA REPRESENTACOES LTDA</xNome>
-            <xFant>EBILHALVA REPRESENTACOES LTDA</xFant>
-            <enderNac>
-                <xLgr>RUA - SETE POVOS</xLgr>
-                <nro>330</nro>
-                <xCpl>SALA SALA 502</xCpl>
-                <xBairro>MARECHAL RONDON</xBairro>
-                <cMun>4304606</cMun>
-                <UF>RS</UF>
-                <CEP>92025570</CEP>
-            </enderNac>
-            <fone>51980199100</fone>
-            <email>vendas@ebilhalva.com.br</email>
-        </emit>
-        <valores>
-            <vBC>168.50</vBC>
-            <pAliqAplic>3.00</pAliqAplic>
-            <vISSQN>5.05</vISSQN>
-            <vTotalRet>2.53</vTotalRet>
-            <vLiq>165.97</vLiq>
-        </valores>
-        <IBSCBS>
-            <cLocalidadeIncid>4106902</cLocalidadeIncid>
-            <xLocalidadeIncid>Curitiba/PR</xLocalidadeIncid>
-            <valores>
-                <vBC>163.45</vBC>
-                <uf>
-                    <pIBSUF>0.10</pIBSUF>
-                    <pRedAliqUF>0.00</pRedAliqUF>
-                    <pAliqEfetUF>0.00</pAliqEfetUF>
-                </uf>
-                <mun>
-                    <pIBSMun>0.00</pIBSMun>
-                    <pRedAliqMun>0.00</pRedAliqMun>
-                    <pAliqEfetMun>0.00</pAliqEfetMun>
-                </mun>
-                <fed>
-                    <pCBS>0.90</pCBS>
-                    <pRedAliqCBS>0.00</pRedAliqCBS>
-                    <pAliqEfetCBS>0.00</pAliqEfetCBS>
-                </fed>
-            </valores>
-            <totCIBS>
-                <vTotNF>165.97</vTotNF>
-                <gIBS>
-                    <vIBSTot>0.16</vIBSTot>
-                    <gIBSUFTot>
-                        <vIBSUF>0.16</vIBSUF>
-                    </gIBSUFTot>
-                    <gIBSMunTot>
-                        <vIBSMun>0.00</vIBSMun>
-                    </gIBSMunTot>
-                </gIBS>
-                <gCBS>
-                    <vCBS>1.47</vCBS>
-                </gCBS>
-            </totCIBS>
-        </IBSCBS>
-        <DPS versao="1.01">
-            <infDPS Id="DPS430460624449137900015500999000000000000595">
-                <tpAmb>1</tpAmb>
-                <dhEmi>2026-05-08T19:10:15-03:00</dhEmi>
-                <verAplic>1.00</verAplic>
-                <serie>999</serie>
-                <nDPS>595</nDPS>
-                <dCompet>2026-05-08</dCompet>
-                <tpEmit>1</tpEmit>
-                <cLocEmi>4304606</cLocEmi>
-                <prest>
-                    <CNPJ>44491379000155</CNPJ>
-                    <IM>6909136</IM>
-                    <fone>51980199100</fone>
-                    <email>vendas@ebilhalva.com.br</email>
-                    <regTrib>
-                        <opSimpNac>1</opSimpNac>
-                        <regEspTrib>0</regEspTrib>
-                    </regTrib>
-                </prest>
-                <toma>
-                    <CNPJ>76492701000157</CNPJ>
-                    <xNome>Britania Eletrodomesticos SA</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>4106902</cMun>
-                            <CEP>80040265</CEP>
-                        </endNac>
-                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
-                        <nro>1330</nro>
-                        <xBairro>Hugo Lange</xBairro>
-                    </end>
-                    <email>nfe01@britania.com.br</email>
-                </toma>
-                <serv>
-                    <locPrest>
-                        <cLocPrestacao>4304606</cLocPrestacao>
-                    </locPrest>
-                    <cServ>
-                        <cTribNac>100901</cTribNac>
-                        <cTribMun>001</cTribMun>
-                        <xDescServ>Comissoes sobre mes de abril de 2026..</xDescServ>
-                        <cNBS>102010000</cNBS>
-                    </cServ>
-                    <infoCompl/>
-                </serv>
-                <valores>
-                    <vServPrest>
-                        <vServ>168.50</vServ>
-                    </vServPrest>
-                    <trib>
-                        <tribMun>
-                            <tribISSQN>1</tribISSQN>
-                            <tpRetISSQN>1</tpRetISSQN>
-                            <pAliq>3.00</pAliq>
-                        </tribMun>
-                        <tribFed>
-                            <vRetIRRF>2.53</vRetIRRF>
-                        </tribFed>
-                        <totTrib>
-                            <indTotTrib>0</indTotTrib>
-                        </totTrib>
-                    </trib>
-                </valores>
-                <IBSCBS>
-                    <finNFSe>0</finNFSe>
-                    <indFinal>0</indFinal>
-                    <cIndOp>100301</cIndOp>
-                    <indDest>0</indDest>
-                    <valores>
-                        <trib>
-                            <gIBSCBS>
-                                <CST>000</CST>
-                                <cClassTrib>000001</cClassTrib>
-                            </gIBSCBS>
-                        </trib>
-                    </valores>
-                </IBSCBS>
-            </infDPS>
-        </DPS>
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS43046061244491379000155000000000059526056929412580">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>7L+9sQn1t2kBQ0/brsoLJRNKLyo=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>MV8c3pLSHLqkV/+k+7mynUn6aqc4NdADzRX9bgE4uzz5yjinCaiq8rDaju7KU2GXf4q9h+JmXk2f/5nIgZabn9p2liGUPw3GZtCMVdu4cJQs3k5onpMqQOtfiNtDU0F9vhatFvV0V60IGmfMDEzumUEKqqqtbbTq9jPp7Y96+9+FbpwVTAAD/j5nbwStN4pPp0YiR7OqX2XXIjm4R+Ut1DBeKGq6XJrnPO1MzKDO3qszpWrBhjE/VpyhLFVHuirN4bQzvP3sa+0IE6irNoqZ6jQ5nS/G4pdqELKxYTGx2WPUsGZ2zF4jPsaX04vlX7HFDsQ0b+Redvo8EoWxvok5Cg==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIH4jCCBcqgAwIBAgIIc7bf1cYJ8h8wDQYJKoZIhvcNAQELBQAwdjELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEaMBgGA1UEAxMRQUMgU0FGRVdFQiBSRkIgdjUwHhcNMjYwMTE0MTk0NzQ2WhcNMjcwMTE0MTk0NzQ2WjCB8TELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAlJTMQ8wDQYDVQQHEwZDQU5PQVMxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTEXMBUGA1UECxMOMTE1ODc5NzUwMDAxODQxGTAXBgNVBAsTEHZpZGVvY29uZmVyZW5jaWExKzApBgNVBAMTIk1VTklDSVBJTyBERSBDQU5PQVM6ODg1Nzc0MTYwMDAxMTgwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDNjFpFB0A1K57HbG21rH7yUBhLLvHb0/fgpfX/dB1f+4JNgR92jLJraXMYSPYbmMlqIQ8jgs+uN56jq2ZDTWwvM82J/BfBQcSkARMX5TAfMu36NlOFPotVvOdyms6SAsIVLZOr2gLMcsCu1ikfGwD6aa4FGl5gINwITII3V8O/CE0mNuF15vOcMHIzJck3PV4jVJdirKjIdWUK6J4ej27HlZHubtQCrW4hCu/SEcVJga6hAXsRyQL3hTLPK4M94bOHUnk0VbQuY5WgObtaqMKtmwKpJzd31qBZVhwdWayXPS4fCySSSY/z/B4qVnPoL8PxiDqWUjyUPP5NF+9h88XFAgMBAAGjggL2MIIC8jAfBgNVHSMEGDAWgBQpXkvVRky7/hanY8EdxCby3djzBTAOBgNVHQ8BAf8EBAMCBeAwaQYDVR0gBGIwYDBeBgZgTAECATMwVDBSBggrBgEFBQcCARZGaHR0cDovL3JlcG9zaXRvcmlvLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9kcGMtYWNzYWZld2VicmZiLnBkZjCBrgYDVR0fBIGmMIGjME+gTaBLhklodHRwOi8vcmVwb3NpdG9yaW8uYWNzYWZld2ViLmNvbS5ici9hYy1zYWZld2VicmZiL2xjci1hYy1zYWZld2VicmZidjUuY3JsMFCgTqBMhkpodHRwOi8vcmVwb3NpdG9yaW8yLmFjc2FmZXdlYi5jb20uYnIvYWMtc2FmZXdlYnJmYi9sY3ItYWMtc2FmZXdlYnJmYnY1LmNybDCBtwYIKwYBBQUHAQEEgaowgacwUQYIKwYBBQUHMAKGRWh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvYWMtc2FmZXdlYnJmYnY1LnA3YjBSBggrBgEFBQcwAoZGaHR0cDovL3JlcG9zaXRvcmlvMi5hY3NhZmV3ZWIuY29tLmJyL2FjLXNhZmV3ZWJyZmIvYWMtc2FmZXdlYnJmYnY1LnA3YjCBvgYDVR0RBIG2MIGzgSJHQUJJTkVURS5QUkVGRUlUT0BDQU5PQVMuUlMuR09WLkJSoB8GBWBMAQMCoBYTFEFJUlRPTiBKT1NFIERFIFNPVVpBoBkGBWBMAQMDoBATDjg4NTc3NDE2MDAwMTE4oDgGBWBMAQMEoC8TLTA2MDExOTY3NDcxNTI2NzIwOTEwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggIBACDpPOG0OCJloR1XwNUopw2iqRb4o16QlFxSZ9W/VP86D5Hk0+biQci0EYOXTWGIPQHVpJWZnmCzpfB9GPRVIfTAmla3QcfX8VU7yZtPxT5Q1CzqBXkpavbdMPwKvhczPE8xKiW68ZGDXhtHlwUhdtLPl+iB8lfo0EsDfXDLBxRPt0zZIFvtOzSQ8fiECA6CBvlrGo2zGrrwRP1qtFPgaH4IG2dsWY6OK4KPhGpeVHiBxpunEbiauxa+B1Ff56KWAbmQOWGW3rX4nIptIILX96tNOX+iuhAsa3kHqHSSfxb5K/n0pLffDyFzpQZnwrRmwox5LGo3MpYNLbc0ALlxCykbw63U9QZs4yElGtBeKh10auCkUh/tiaO44Z1JpycvUqDPZ9ZQysjydR7YYnAStnxqzvwadhF81SKKeUquIbfO038lgUi5Ldq1N4oJAz4RqUmpCcQV83DAOvzkA7NaA+EPkfXholXLRug/xW91NrXBCSlf7Rjv9qBmJ0FGhv/0Vmo1GK6nGc/uXEWSB6K+ohg2rf8/U7nfHvD1nOe3voskkIFbBkgtQ6joeOWjSn9JwmUznwj2bPqfwH5//Dpjc9T9Gnw2kMlxDnsijamOTiOVfAd1y95PgxlA33rfyyZGJ4DyomMG7GXkh0RkWjEVuoH82RKoEn2jtUTrlFdIJ5G9</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

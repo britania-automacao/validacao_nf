@@ -1,125 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
-    <infNFSe Id="NFS29021041249463347000160000000000012826055662880252">
-        <xLocEmi>ARACI</xLocEmi>
-        <xLocPrestacao>ARACI</xLocPrestacao>
-        <nNFSe>128</nNFSe>
-        <cLocIncid>2902104</cLocIncid>
-        <xLocIncid>ARACI</xLocIncid>
-        <xTribNac>Representação de qualquer natureza, inclusive comercial.</xTribNac>
-        <xTribMun>Representação de qualquer natureza, inclusive comercial.</xTribMun>
-        <xNBS>Serviços de intermediação na distribuição de mercadorias</xNBS>
-        <verAplic>NFSe-Smart4Sistemas</verAplic>
-        <ambGer>1</ambGer>
-        <tpEmis>2</tpEmis>
-        <cStat>100</cStat>
-        <dhProc>2026-05-05T17:14:28-03:00</dhProc>
-        <nDFSe>128</nDFSe>
-        <emit>
-            <CNPJ>49463347000160</CNPJ>
-            <IM>00574613</IM>
-            <xNome>SALES ALPHA REPRESENTACAO LTDA</xNome>
-            <enderNac>
-                <xLgr>R ANTONIO OLIVEIRA MOTA</xLgr>
-                <nro>174</nro>
-                <xBairro>CENTRO</xBairro>
-                <cMun>2902104</cMun>
-                <UF>BA</UF>
-                <CEP>48760000</CEP>
-            </enderNac>
-            <email>salesalphaadm@gmail.com</email>
-        </emit>
-        <valores>
-            <vBC>979.99</vBC>
-            <pAliqAplic>2.00</pAliqAplic>
-            <vISSQN>19.60</vISSQN>
-            <vLiq>979.99</vLiq>
-        </valores>
-        <DPS versao="1.01">
-            <infDPS Id="DPS290210424946334700016002026000000000000128">
-                <tpAmb>1</tpAmb>
-                <dhEmi>2026-05-05T17:14:28-03:00</dhEmi>
-                <verAplic>NFSe-Smart4Sistemas</verAplic>
-                <serie>2026</serie>
-                <nDPS>128</nDPS>
-                <dCompet>2026-05-05</dCompet>
-                <tpEmit>1</tpEmit>
-                <cLocEmi>2902104</cLocEmi>
-                <prest>
-                    <CNPJ>49463347000160</CNPJ>
-                    <regTrib>
-                        <opSimpNac>3</opSimpNac>
-                        <regApTribSN>1</regApTribSN>
-                        <regEspTrib>0</regEspTrib>
-                    </regTrib>
-                </prest>
-                <toma>
-                    <CNPJ>76492701000157</CNPJ>
-                    <xNome>BRITÂNIA ELETRODOMÉSTICOS S.A.</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>4106902</cMun>
-                            <CEP>80040265</CEP>
-                        </endNac>
-                        <xLgr>AV NOSSA SENHORA DA LUZ</xLgr>
-                        <nro>1.330</nro>
-                        <xBairro>HUGO LANGE</xBairro>
-                    </end>
-                </toma>
-                <serv>
-                    <locPrest>
-                        <cLocPrestacao>2902104</cLocPrestacao>
-                    </locPrest>
-                    <cServ>
-                        <cTribNac>100901</cTribNac>
-                        <xDescServ>REPRESENTAÇÃO DE QUALQUER NATUREZA INCLUSIVE COMERCIAL</xDescServ>
-                        <cNBS>102010000</cNBS>
-                        <cIntContrib>620716</cIntContrib>
-                    </cServ>
-                    <infoCompl>
-                        <xInfComp>COMISSÃO REF VENDAS DO MÊS DE ABR26</xInfComp>
-                    </infoCompl>
-                </serv>
-                <valores>
-                    <vServPrest>
-                        <vServ>979.99</vServ>
-                    </vServPrest>
-                    <trib>
-                        <tribMun>
-                            <tribISSQN>1</tribISSQN>
-                            <tpRetISSQN>1</tpRetISSQN>
-                        </tribMun>
-                        <tribFed/>
-                        <totTrib>
-                            <vTotTrib>
-                                <vTotTribFed>0.00</vTotTribFed>
-                                <vTotTribEst>0.00</vTotTribEst>
-                                <vTotTribMun>19.60</vTotTribMun>
-                            </vTotTrib>
-                        </totTrib>
-                    </trib>
-                </valores>
-            </infDPS>
-        </DPS>
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS29021041249463347000160000000000012826055662880252">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>WW+xkCpaLR3oVBQF3c+2FTyNvy4=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>Yv5ymemu4LXLaOtQjXh64ZPuFA7DFJgS0WuTpZb8OHXENc/csm0bjVp2b5EvzOXf8bdTqkAt4iNkdDU1KoN5D4oli6A96EB0sstXhLUHDTrf5RcTa57V8LmguEZVPpeHlL2Vcq1EzKeaSXfY/6Bn6mzAEu0nAEa2HLPaMDiT4Q4c4b1PmrCwz6V0EPMxMhNpr2qzFg56egDHkd5tcnR4lXe0HXp+yU/8tQSCrNBkirDfXhGwS2GNbN+a2t+X9pEwNGKRVBnoPw9DlNgqb/OrXe9oqWY1AOyZhMWwb8behQCVuIltEqzLjsb3fbLO4XghZa2SQGD9PZxB8LpGserFNg==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIH1zCCBb+gAwIBAgIKWrpaVptFb+gsXDANBgkqhkiG9w0BAQsFADBbMQswCQYDVQQGEwJCUjEWMBQGA1UECwwNQUMgU3luZ3VsYXJJRDETMBEGA1UECgwKSUNQLUJyYXNpbDEfMB0GA1UEAwwWQUMgU3luZ3VsYXJJRCBNdWx0aXBsYTAeFw0yNjAzMTMxODI1MTVaFw0yNzAzMTMxODI1MTVaMIHBMQswCQYDVQQGEwJCUjETMBEGA1UECgwKSUNQLUJyYXNpbDEiMCAGA1UECwwZQ2VydGlmaWNhZG8gRGlnaXRhbCBQSiBBMTETMBEGA1UECwwKUHJlc2VuY2lhbDEXMBUGA1UECwwOMjkzMTA2MjYwMDAxODYxHzAdBgNVBAsMFkFDIFN5bmd1bGFySUQgTXVsdGlwbGExKjAoBgNVBAMMIU1VTklDSVBJTyBERSBBUkFDSToxNDIzMjA4NjAwMDE5MjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALvfnPZk3/9tmtb6lP9HCtH5JFvVCtGF+iL6706Q+cguHiMHwtonbEpi7G+bZvLz0ak+FsAzHnFPJ/5WxS1DJuU/mo4EhLgJqC6ue/BLxB1rPV5/IkAfJzwCw8dikbpbyVDDutSdnF2T0ULdK/88P8fOneIUby8fwTDbNDJVjY1y16F9Z4Tykol6aE8AC5E52gR55ow8VcAyxegQOSaeDcuZhBEBINb8FPiXztcaYEtsjXu3cHckkVGtiuE6v42SaQm/r7cKUH1mRsofzv+QncAalQ2ShfoqbZqchmd9RK5CCH+03w5V/kHIsPd20PXRdXCWNPOi5K0sfXpvU6ip61cCAwEAAaOCAzQwggMwMA4GA1UdDwEB/wQEAwIF4DAdBgNVHSUEFjAUBggrBgEFBQcDBAYIKwYBBQUHAwIwCQYDVR0TBAIwADAfBgNVHSMEGDAWgBST4f9+HeX15E3hOWKLIWmV5q9yFjAdBgNVHQ4EFgQU7AhP/PFUS2oLQsFF/GBOSJPRzSEwfwYIKwYBBQUHAQEEczBxMG8GCCsGAQUFBzAChmNodHRwOi8vc3luZ3VsYXJpZC5jb20uYnIvcmVwb3NpdG9yaW8vYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS9jZXJ0aWZpY2Fkb3MvYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS5wN2IwgYIGA1UdIAR7MHkwdwYHYEwBAgGBBTBsMGoGCCsGAQUFBwIBFl5odHRwOi8vc3luZ3VsYXJpZC5jb20uYnIvcmVwb3NpdG9yaW8vYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS9kcGMvZHBjLWFjLXN5bmd1bGFySUQtbXVsdGlwbGEucGRmMIHIBgNVHREEgcAwgb2gKAYFYEwBAwKgHwQdTUFSSUEgQkVUSVZBTklBIExJTUEgREEgU0lMVkGgGQYFYEwBAwOgEAQOMTQyMzIwODYwMDAxOTKgQgYFYEwBAwSgOQQ3MDgwNjE5NzE3NDI2MjMwMDU4NzAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOBAwwMDAwMDAwMDAwMDCBGWtlaW5oYS5hcmFjaUB5YWhvby5jb20uYnIwgeIGA1UdHwSB2jCB1zBkoGKgYIZeaHR0cDovL3N5bmd1bGFyaWQuY29tLmJyL3JlcG9zaXRvcmlvL2FjLXN5bmd1bGFyaWQtbXVsdGlwbGEvbGNyL2xjci1hYy1zeW5ndWxhcmlkLW11bHRpcGxhLmNybDBvoG2ga4ZpaHR0cDovL2ljcC1icmFzaWwuc3luZ3VsYXJpZC5jb20uYnIvcmVwb3NpdG9yaW8vYWMtc3luZ3VsYXJpZC1tdWx0aXBsYS9sY3IvbGNyLWFjLXN5bmd1bGFyaWQtbXVsdGlwbGEuY3JsMA0GCSqGSIb3DQEBCwUAA4ICAQAsJgZ9mdzeSJIG/C+hae4l2TVS5wpRiEy64AmjvBS2haBi34Llk7r5f3Iu8yYcwFgznA40vGi0JFD3YtvYc9DXOwCWsZUPM6Uik2h/lubJmf2BJI+xNvQYAVZrww4rMxBlXl5PPohSQaQRvajyqZDeTlYlShnS8Jl3/NNtinzOVxjigvp1yZ9FOo0yd06woxJ8Xrj5OxixEjQSEd7Z/6Y63UqMLC2l2KBdHT5c0LPxDnu6inNbt801vAYiu/1za4CoUQNgQZXhLfZJLwLjzNJV5npkG6mK1hUMIrsnbVY56yQ53q2PqvygHWV7Ex9P0CB/0GUJswvBFmu4FiLjKvr/s0hN5S7PUNbw/wkzSVH7u3lyXRZRqZBURfQmeuD8yKj2wbhH3sMt+ykXSDlueVwpe/nmW479P1UPLk2pdAKsXEGxZRARinA/+iGmWbvWo8eRCsvt40R50WSAJpOx20Y2pvbq8d7bOAEIz8ca4v+42K4rN/4ZnaLKnNHclE7Ou99p8ZqDhjGjKXWTBKMgSSRV4d7Kw/FlThF5MM8lOhW5mbRVosHuBhZFNPX2H0uXF6a4uuwlpsHbpceE2Stdg9zUxm1w6Js8qVm9LFVxUFn+DQJ0hHcYzPPoViIimf1qIDQSj2oTzGAGPWfWxelv6ari1NFd/lFZ7N8Iuu0v5qqA/A==</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

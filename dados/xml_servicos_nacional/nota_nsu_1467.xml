@@ -1,125 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
-    <infNFSe Id="NFS35060031246250835000109000000000063026013315119586">
-        <xLocEmi>Bauru</xLocEmi>
-        <xLocPrestacao>Bauru</xLocPrestacao>
-        <nNFSe>630</nNFSe>
-        <cLocIncid>3506003</cLocIncid>
-        <xLocIncid>Bauru</xLocIncid>
-        <xTribNac>Análise e desenvolvimento de sistemas.</xTribNac>
-        <verAplic>SilTecnologia_v1.00</verAplic>
-        <ambGer>1</ambGer>
-        <tpEmis>2</tpEmis>
-        <cStat>100</cStat>
-        <dhProc>2026-01-13T17:45:23-03:00</dhProc>
-        <nDFSe>630</nDFSe>
-        <emit>
-            <CNPJ>46250835000109</CNPJ>
-            <IM>619813</IM>
-            <xNome>DATA GUVI LTDA</xNome>
-            <xFant>Data Guvi</xFant>
-            <enderNac>
-                <xLgr>JOAQUIM ANACLETO BUENO</xLgr>
-                <nro>01-42</nro>
-                <xBairro>JARDIM CONTORNO</xBairro>
-                <cMun>3506003</cMun>
-                <UF>SP</UF>
-                <CEP>17047281</CEP>
-            </enderNac>
-            <fone>1430425050</fone>
-            <email>UNIKCONTABIL@HOTMAIL.COM</email>
-        </emit>
-        <valores>
-            <vBC>29865.75</vBC>
-            <pAliqAplic>4.16</pAliqAplic>
-            <vISSQN>1242.42</vISSQN>
-            <vTotalRet>0.00</vTotalRet>
-            <vLiq>29865.75</vLiq>
-        </valores>
-        <DPS versao="1.00">
-            <infDPS Id="DPS350600324625083500010900001000000000000630">
-                <tpAmb>1</tpAmb>
-                <dhEmi>2026-01-13T17:30:23-03:00</dhEmi>
-                <verAplic>notagateway_v2.03</verAplic>
-                <serie>1</serie>
-                <nDPS>630</nDPS>
-                <dCompet>2026-01-13</dCompet>
-                <tpEmit>1</tpEmit>
-                <cLocEmi>3506003</cLocEmi>
-                <prest>
-                    <CNPJ>46250835000109</CNPJ>
-                    <IM>619813</IM>
-                    <fone>1430425050</fone>
-                    <email>UNIKCONTABIL@HOTMAIL.COM</email>
-                    <regTrib>
-                        <opSimpNac>3</opSimpNac>
-                        <regApTribSN>1</regApTribSN>
-                        <regEspTrib>0</regEspTrib>
-                    </regTrib>
-                </prest>
-                <toma>
-                    <CNPJ>76492701000157</CNPJ>
-                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>4106902</cMun>
-                            <CEP>80040265</CEP>
-                        </endNac>
-                        <xLgr>NOSSA SENHORA DA LUZ</xLgr>
-                        <nro>1330</nro>
-                        <xBairro>HUGO LANGE</xBairro>
-                    </end>
-                    <fone>4132187700</fone>
-                    <email>vanessa.gross@britania.com.br</email>
-                </toma>
-                <serv>
-                    <locPrest>
-                        <cLocPrestacao>3506003</cLocPrestacao>
-                    </locPrest>
-                    <cServ>
-                        <cTribNac>010101</cTribNac>
-                        <xDescServ>1 Servico de BI. 29.865,751.07 SUPORTE TECNICO EM INFORMATICA, INCLUSIVE INSTALACAOImplantacao - Pacote de Horas Tecnicas para execucao Projeto - 150 HorasNumero do MLA: 279488Pedido de compra 663.453</xDescServ>
-                        <cNBS>115024000</cNBS>
-                    </cServ>
-                    <infoCompl>
-                        <xInfComp>Trib aprox R$: 4.016,94 Federal, R$: 0,00 Estadual e R$: 1.164,76 Municipal Fonte: IBPT/empresometro.com.br   1C2537</xInfComp>
-                    </infoCompl>
-                </serv>
-                <valores>
-                    <vServPrest>
-                        <vServ>29865.75</vServ>
-                    </vServPrest>
-                    <trib>
-                        <tribMun>
-                            <tribISSQN>1</tribISSQN>
-                            <tpRetISSQN>1</tpRetISSQN>
-                        </tribMun>
-                        <totTrib>
-                            <pTotTribSN>4.16</pTotTribSN>
-                        </totTrib>
-                    </trib>
-                </valores>
-            </infDPS>
-        </DPS>
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS35060031246250835000109000000000063026013315119586">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>uTXRe9MFAOcttKvqGGKZSDNOUVI=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>3X3bqnj7o3wFjKr4II5NiiSiOmSdx9bU/Lyuu/zRMO3obH0AVPJoaoTpS9b3SUJFoHtYpQKwQ+C2i2gjFMAwRq2lwap9us4kTlCGuPdyHUHjZJFULKz9ckGQWtP8fmfRcF/RG/vqREpTaZ1mYRlC8pFM+MFgk+Fm/sDAEMYwpKXQa3rfRIl3rWUCxAaXPb4AwVU7XV9rgI36tle81Dd3XlonE2o/cdnqEatDP5cSzFA9qHjZ+JV+LdL98yJ372a+B6gG1/79z3vDV66v/PEljW5Yu20MrpBDxDUjjerBXoQCKfJk01yobuC7o8cinM0UGe779TVvtAECsB2mYYNDUg==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIHfzCCBWegAwIBAgIIY84nZMz6n38wDQYJKoZIhvcNAQELBQAwczELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEXMBUGA1UEAxMOQUMgTElOSyBSRkIgdjIwHhcNMjUwMjEwMTgzMzU4WhcNMjYwMjEwMTgzMzU4WjCB6TELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAlNQMQ4wDAYDVQQHEwVCQVVSVTEXMBUGA1UECxMOMTMwMzY1OTIwMDAxNDMxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTETMBEGA1UECxMKcHJlc2VuY2lhbDEqMCgGA1UEAxMhTVVOSUNJUElPIERFIEJBVVJVOjQ2MTM3NDEwMDAwMTgwMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5pO3qbiuIy2wTjbSdjjIjsfKdmSvhSMXGEwHOxnSTaUtkeRIQ2sLRDtz9eyY6E50gjsxhMMih12ab7keUSK3W7MGcLqZ/ta9cRUMpbbN6bI8rDVoqTnfZ6rjkOvnHGwMByT8lsZzhm23UUQEWTRXwG8W3T0nlUM+G1Og/BdgTxU1GqQ+5iyGtzEtlGUf5dRhVpI7GkOWuOjWSBbBCNYuldELoutAbb/Hy/QLG/YUE7Xdd2hdNf0Zvh/gDDRC4bWYpYY5C6hykU/r9SrkIYunYMp0C03jzdMAXHH2vifNPBcXlLWIFDbcZrjFgUQABxMW7kosBv0lQv2NQuoRXQRpDQIDAQABo4ICnjCCApowHwYDVR0jBBgwFoAUDd/WR/QTTuUiWDIsZqbnLuRXvAIwDgYDVR0PAQH/BAQDAgXgMGwGA1UdIARlMGMwYQYGYEwBAgE7MFcwVQYIKwYBBQUHAgEWSWh0dHA6Ly9yZXBvc2l0b3Jpby5saW5rY2VydGlmaWNhY2FvLmNvbS5ici9hYy1saW5rcmZiL2FjLWxpbmstcmZiLWRwYy5wZGYwgbAGA1UdHwSBqDCBpTBQoE6gTIZKaHR0cDovL3JlcG9zaXRvcmlvLmxpbmtjZXJ0aWZpY2FjYW8uY29tLmJyL2FjLWxpbmtyZmIvbGNyLWFjLWxpbmtyZmJ2NS5jcmwwUaBPoE2GS2h0dHA6Ly9yZXBvc2l0b3JpbzIubGlua2NlcnRpZmljYWNhby5jb20uYnIvYWMtbGlua3JmYi9sY3ItYWMtbGlua3JmYnY1LmNybDBiBggrBgEFBQcBAQRWMFQwUgYIKwYBBQUHMAKGRmh0dHA6Ly9yZXBvc2l0b3Jpby5saW5rY2VydGlmaWNhY2FvLmNvbS5ici9hYy1saW5rcmZiL2FjLWxpbmtyZmJ2NS5wN2IwgbcGA1UdEQSBrzCBrIEcU1VFTExFTlJPU0lNQEJBVVJVLlNQLkdPVi5CUqAeBgVgTAEDAqAVExNTVUVMTEVOIFNJTFZBIFJPU0lNoBkGBWBMAQMDoBATDjQ2MTM3NDEwMDAwMTgwoDgGBWBMAQMEoC8TLTA3MDcxOTg4MDE3NzEyODUxODQwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMKAXBgVgTAEDB6AOEwwwMDAwMDAwMDAwMDAwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMAkGA1UdEwQCMAAwDQYJKoZIhvcNAQELBQADggIBAGEl3U6masM1e6KdFNTxhsQv7p8G9Pm1LCxsp0I25/c/L+CAg33P+js5DgmfUqb9jGjuJacx7zc6NOb4GnXcHefje+noRbVu2m3KrVgaKZkmjqahTvIypyyKC+QQdYnCpzQDNTmkvelgzJosH80Mg0ueiR7JpDnQp1GrQkMWAVd601AY2BIhglQ6/G4pfo6qd+Mk7MEc7QvK39D2FCpVwbjdr2Fend7lA31ephIK9/kMSX2a/YsU9pF5tE25IQdhqZccsCu9pGuqXV7IfZbHgCcPdOn2UfBu1Kd7Nrpu7WI/PUTyV0ptJu1D5VoTEgao7n6Z2Wa3LqfzVL/YPgmsJkkoyYSyA4HgtXH0CRI1R+/DEsEq6Rr7opFBHb39w2PorUOHgV8Jc8StrG4FOC4Y+bB/G/4BO1vMrFqZKXMWioDrs+vw/phj+lWUgop7Xd3XPDsHGYxyukUG4hsZwgMWai11W4QdFsya/Snn01JF9GGWi6fx47e5jTlBcd/TPLJyxxmuZMdJNS5kRfJKHtgix9EToRsMsAFkq1UdfS6UXQFnFL215vSQMRaXKemNSfVUSmaxR+L0m+p9Kn5gqhcNgotT2J3EwaTNDCqq1Cl86G+LozGSOQ/QJwsaKT7lcmsVzbbDM9JaejIz6IvU+lcHWyKUReMRrME6Bg0QH9M4Asg9</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

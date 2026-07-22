@@ -1,125 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
-    <infNFSe Id="NFS42089061258387859000185000000000068526021993657223">
-        <xLocEmi>Jaraguá do Sul</xLocEmi>
-        <xLocPrestacao>Jaraguá do Sul</xLocPrestacao>
-        <nNFSe>685</nNFSe>
-        <cLocIncid>4208906</cLocIncid>
-        <xLocIncid>Jaraguá do Sul</xLocIncid>
-        <xTribNac>Licenciamento ou cessão de direito de uso de programas de computação.</xTribNac>
-        <xTribMun>Licenciamento ou cessão de direito de uso de programas de computação.</xTribMun>
-        <verAplic>1.1.0</verAplic>
-        <ambGer>1</ambGer>
-        <tpEmis>2</tpEmis>
-        <cStat>100</cStat>
-        <dhProc>2026-02-04T00:00:00-03:00</dhProc>
-        <nDFSe>304320558</nDFSe>
-        <emit>
-            <CNPJ>58387859000185</CNPJ>
-            <IM>1021870</IM>
-            <xNome>SIMPLIFICAMAIS SOFTWARE E INOVAÇÃO LTDA</xNome>
-            <enderNac>
-                <xLgr>FELICIANO BORTOLINI</xLgr>
-                <nro>1040</nro>
-                <xCpl>SALA 05 E 06</xCpl>
-                <xBairro>Barra do Rio Cerro</xBairro>
-                <cMun>4208906</cMun>
-                <UF>SC</UF>
-                <CEP>89260180</CEP>
-            </enderNac>
-        </emit>
-        <valores>
-            <vBC>3450.00</vBC>
-            <pAliqAplic>2.00</pAliqAplic>
-            <vISSQN>69.00</vISSQN>
-            <vTotalRet>0.00</vTotalRet>
-            <vLiq>3450.00</vLiq>
-        </valores>
-        <DPS xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.01">
-            <infDPS Id="DPS420890625838785900018500001000000000000873">
-                <tpAmb>1</tpAmb>
-                <dhEmi>2026-02-04T13:43:03-03:00</dhEmi>
-                <verAplic>1.1.0</verAplic>
-                <serie>1</serie>
-                <nDPS>873</nDPS>
-                <dCompet>2026-02-04</dCompet>
-                <tpEmit>1</tpEmit>
-                <cLocEmi>4208906</cLocEmi>
-                <prest>
-                    <CNPJ>58387859000185</CNPJ>
-                    <IM>1021870</IM>
-                    <regTrib>
-                        <opSimpNac>1</opSimpNac>
-                        <regEspTrib>0</regEspTrib>
-                    </regTrib>
-                </prest>
-                <toma>
-                    <CNPJ>76492701000157</CNPJ>
-                    <xNome>BRITANIA ELETRODOMESTICOS SA</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>4106902</cMun>
-                            <CEP>80040265</CEP>
-                        </endNac>
-                        <xLgr>Avenida Nossa Senhora Da Luz</xLgr>
-                        <nro>1330</nro>
-                        <xBairro>Hugo Lange</xBairro>
-                    </end>
-                    <fone>4132187700</fone>
-                    <email>equipeacr@britania.com.br</email>
-                </toma>
-                <serv>
-                    <locPrest>
-                        <cLocPrestacao>4208906</cLocPrestacao>
-                    </locPrest>
-                    <cServ>
-                        <cTribNac>010501</cTribNac>
-                        <xDescServ>Licenciamento\Direito de Uso de Software REFERENTE PLATAFORMA. SIMPLIFICAMAIS. COMPETENCIA DE Fevereiro de 2026.. .</xDescServ>
-                        <cNBS>111032200</cNBS>
-                    </cServ>
-                    <infoCompl>
-                        <xInfComp>Nota emitida via DPS</xInfComp>
-                    </infoCompl>
-                </serv>
-                <valores>
-                    <vServPrest>
-                        <vServ>3450.00</vServ>
-                    </vServPrest>
-                    <trib>
-                        <tribMun>
-                            <tribISSQN>1</tribISSQN>
-                            <tpRetISSQN>1</tpRetISSQN>
-                        </tribMun>
-                        <totTrib>
-                            <vTotTrib>
-                                <vTotTribFed>0</vTotTribFed>
-                                <vTotTribEst>0</vTotTribEst>
-                                <vTotTribMun>0</vTotTribMun>
-                            </vTotTrib>
-                        </totTrib>
-                    </trib>
-                </valores>
-            </infDPS>
-        </DPS>
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS42089061258387859000185000000000068526021993657223">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>lB/90LdW4sErzUIlcW/n0U6OLvw=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>bxRS6pmcVzokq6Qi/Y1Ov8LtHjFWyTfwMP7GLZtZLJHeVwrqF0WRb8Vuy0BDYtgJtm5MQ8y7lYX52Y6fNDKwKahHRWJNZFZ2JvOPjM/AXWHoeu8pjgCuKV6JLj0oyBc6NvfHOLNsTG1lbOtm7uoScDxghfR1nxHifjetgBHG6wfYgKuP04ThTiqa1Pv+Rk/ytyWvvG5JweBuP2GtExCKirTedPKT9gMmPoiVGBngaEFaMtWiZ3luBTdQN6fbOQUEJY7i0kjClIqdakEzSILNWirXkKl4y1OeE8KNoXZfb5RSUoNsZkLWb2q0JrIA4GIsGH/zeBcUNkPeWqFvb7Hp1A==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIHfTCCBWWgAwIBAgIIYLASLfxKcKswDQYJKoZIhvcNAQELBQAwczELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEXMBUGA1UEAxMOQUMgQ05ETCBSRkIgdjMwHhcNMjUwMjI3MTYzNzU3WhcNMjYwMjI3MTYzNzU3WjCB+zELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxCzAJBgNVBAgTAlNDMRcwFQYDVQQHEw5KQVJBR1VBIERPIFNVTDEXMBUGA1UECxMOODI3MzkwNjEwMDAxMzAxNjA0BgNVBAsTLVNlY3JldGFyaWEgZGEgUmVjZWl0YSBGZWRlcmFsIGRvIEJyYXNpbCAtIFJGQjEWMBQGA1UECxMNUkZCIGUtQ05QSiBBMTETMBEGA1UECxMKcHJlc2VuY2lhbDEzMDEGA1UEAxMqTVVOSUNJUElPIERFIEpBUkFHVUEgRE8gU1VMOjgzMTAyNDU5MDAwMTIzMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArRXWTUj5Z+pXY5CO0DohRZo23ka5SdiOa0CGZbJ5NIS7fGd1ntUyt+dOUyGPhDzkJYBujQ3U/ujbbCT+053gjwT3aP4w4/PmlvM458DAOGAEn2CgJcKhCxtoru1VwQ2u9IVecTSxOTpTZZ3s0AARhLstpcSDTJuOiUjbCDaeVPWIN3dtWqd7uSsFVbdu+oY5BXr2FDpM+1gizedLwSj9d+B1FMGA69hRWnI0mtvxm6emy6oQ07KY4reX7NtrQNgkq6Dv7/DrdhkM0jogreNzo+2wsSJa4hI3xciU3zR9aW1vktA2FmDRQQJMIuB2JDXGH+RQ/wbO5v8w9y2vU8X26QIDAQABo4ICijCCAoYwHwYDVR0jBBgwFoAUax80FUEa6pseyiLSzt3vu+kyyokwDgYDVR0PAQH/BAQDAgXgMGcGA1UdIARgMF4wXAYGYEwBAgE0MFIwUAYIKwYBBQUHAgEWRGh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NwY2JyYXNpbC5vcmcuYnIvYWMtY25kbHJmYi9hYy1jbmRsLXJmYi1kcGMucGRmMIGmBgNVHR8EgZ4wgZswS6BJoEeGRWh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NwY2JyYXNpbC5vcmcuYnIvYWMtY25kbHJmYi9sY3ItYWMtY25kbHJmYnY1LmNybDBMoEqgSIZGaHR0cDovL3JlcG9zaXRvcmlvMi5hY3NwY2JyYXNpbC5vcmcuYnIvYWMtY25kbHJmYi9sY3ItYWMtY25kbHJmYnY1LmNybDBdBggrBgEFBQcBAQRRME8wTQYIKwYBBQUHMAKGQWh0dHA6Ly9yZXBvc2l0b3Jpby5hY3NwY2JyYXNpbC5vcmcuYnIvYWMtY25kbHJmYi9hYy1jbmRscmZidjUucDdiMIG3BgNVHREEga8wgayBHUlEODE4NEBKQVJBR1VBRE9TVUwuU0MuR09WLkJSoB0GBWBMAQMCoBQTEkpPU0UgSkFJUiBGUkFOWk5FUqAZBgVgTAEDA6AQEw44MzEwMjQ1OTAwMDEyM6A4BgVgTAEDBKAvEy0wNDA1MTk2MDM1MjQzOTUzOTIwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDCgFwYFYEwBAwegDhMMMDAwMDAwMDAwMDAwMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDBDAJBgNVHRMEAjAAMA0GCSqGSIb3DQEBCwUAA4ICAQBaFtP1KSAlLllvu/iTao+n9MfljWM4r4MrrBWJ9Jo0fopNPzA+8RZfXey4z0RAW1ZBLbZB00KAUpDVnFl3lyU71VN47AstVdlLLCGkXcpA/oWo2SyB+5tgodUAIoXzL7cM2Y0EX0ZGNOIboQfm8SXuUZIx+3EnNRQq4iW2EM9TMovvKm/vL9ak8TMlrJ+3n6fHkATbcAVjnF1p0TYleruGHs32gcFOyd7tMKA2aLwcUiCEhev2DyJGAjicShXgiRs6DHuWrRvxiw18Zh47yayUo/Do7blm28AaHbnu1ZKQyObuK0a418XXAU+SuMHi7F9RnohHHz3xS22MhlxJsG7RZzFCYB31jlsyVwa/HcH+Fby+arTpShWjHg2UOcfhUUBCJWkGjPScHUb+BIU6Z5AVuBAZ+GQC/oh+6iZWJxZ3y82Hd49GUffanXCCrBBx0G1Qj4Vix/z4we0LHQ4Z662QPeIWRcNI2zVAUfHTBoUPnrFJU8WpIEeRcRDlD3S1Jl7h26NYcvuktpNrGMcIfyE6yPw50iyhcLsNBWPqxohTE0j7W8kkqRgjA+qSBvSW8HO9kEonbLxovdqjyhQCVsNRseP/R2zNgFdLTgJmZ3aYSAwAev/6eybjKaYDYOZPzIE8kHxZeWOHKFepNNYCCHf+YbuXTMhjBfIRIYb/P1bpbQ==</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>

@@ -1,145 +1,0 @@
-<?xml version="1.0" ?>
-<NFSe xmlns="http://www.sped.fazenda.gov.br/nfse" versao="1.00">
-    <infNFSe Id="NFS31241041235541646000160000000000003926057357851278">
-        <xLocEmi>ESMERALDAS</xLocEmi>
-        <xLocPrestacao>ESMERALDAS</xLocPrestacao>
-        <nNFSe>39</nNFSe>
-        <cLocIncid>3124104</cLocIncid>
-        <xLocIncid>ESMERALDAS</xLocIncid>
-        <xTribNac>Propaganda e publicidade, inclusive promoção de vendas, planejamento de campanhas ou sistemas de publicidade, elaboração de desenhos, textos e demais materiais publicitários.</xTribNac>
-        <xNBS>Serviços de campanhas publicitárias</xNBS>
-        <verAplic>1.6.1</verAplic>
-        <ambGer>1</ambGer>
-        <tpEmis>2</tpEmis>
-        <cStat>100</cStat>
-        <dhProc>2026-05-05T12:54:21-03:00</dhProc>
-        <nDFSe>23788</nDFSe>
-        <emit>
-            <CNPJ>35541646000160</CNPJ>
-            <IM>34103</IM>
-            <xNome>YARA CECILIA COIMBRA ALVES</xNome>
-            <enderNac>
-                <xLgr>MONTEIRO LOBATO</xLgr>
-                <nro>269</nro>
-                <xCpl>CASA 1</xCpl>
-                <xBairro>SAO PEDRO</xBairro>
-                <cMun>3124104</cMun>
-                <UF>MG</UF>
-                <CEP>32809364</CEP>
-            </enderNac>
-            <email>contato@agenciatripe.com.br</email>
-        </emit>
-        <valores>
-            <vCalcDR>0.00</vCalcDR>
-            <vBC>2480.40</vBC>
-            <pAliqAplic>2.60</pAliqAplic>
-            <vISSQN>64.49</vISSQN>
-            <vTotalRet>0.00</vTotalRet>
-            <vLiq>2480.40</vLiq>
-        </valores>
-        <DPS versao="1.00">
-            <infDPS Id="DPS312410423554164600016000015000000000000039">
-                <tpAmb>1</tpAmb>
-                <dhEmi>2026-05-05T12:54:21-03:00</dhEmi>
-                <verAplic>3.8.3</verAplic>
-                <serie>00015</serie>
-                <nDPS>39</nDPS>
-                <dCompet>2026-05-05</dCompet>
-                <tpEmit>1</tpEmit>
-                <cLocEmi>3124104</cLocEmi>
-                <prest>
-                    <CNPJ>35541646000160</CNPJ>
-                    <IM>34103</IM>
-                    <email>contato@agenciatripe.com.br</email>
-                    <regTrib>
-                        <opSimpNac>3</opSimpNac>
-                        <regApTribSN>1</regApTribSN>
-                        <regEspTrib>0</regEspTrib>
-                    </regTrib>
-                </prest>
-                <toma>
-                    <CNPJ>76492701000157</CNPJ>
-                    <xNome>BRITÂNIA ELETRODOMÉSTICOS S.A.</xNome>
-                    <end>
-                        <endNac>
-                            <cMun>4106902</cMun>
-                            <CEP>80040265</CEP>
-                        </endNac>
-                        <xLgr>Avenida Nossa Senhora da Luz</xLgr>
-                        <nro>1330</nro>
-                        <xBairro>Hugo Lange</xBairro>
-                    </end>
-                </toma>
-                <serv>
-                    <locPrest>
-                        <cLocPrestacao>3124104</cLocPrestacao>
-                    </locPrest>
-                    <cServ>
-                        <cTribNac>170601</cTribNac>
-                        <xDescServ><![CDATA[Pagamento referente às entregas da influenciadora Dudu Godinho para campanha Mixer PMX40A. Contrato assinado e registrado sob C-4449.&#13;Conta bancária:&#13;Banco: 336 - Banco C6 S.A.&#13;Agência: 0001&#13;Conta corrente: 31198409-6&#13;Pix: 35.541.646/0001-60]]></xDescServ>
-                        <cNBS>114061100</cNBS>
-                    </cServ>
-                </serv>
-                <valores>
-                    <vServPrest>
-                        <vServ>2480.40</vServ>
-                    </vServPrest>
-                    <trib>
-                        <tribMun>
-                            <tribISSQN>1</tribISSQN>
-                            <tpRetISSQN>1</tpRetISSQN>
-                        </tribMun>
-                        <tribFed/>
-                        <totTrib>
-                            <vTotTrib>
-                                <vTotTribFed>0.00</vTotTribFed>
-                                <vTotTribEst>0.00</vTotTribEst>
-                                <vTotTribMun>0.00</vTotTribMun>
-                            </vTotTrib>
-                        </totTrib>
-                    </trib>
-                </valores>
-            </infDPS>
-            <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-                <SignedInfo>
-                    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-                    <Reference URI="#DPS312410423554164600016000015000000000000039">
-                        <Transforms>
-                            <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                            <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                        </Transforms>
-                        <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                        <DigestValue>IR9DPkf+NlCXIDwe+6S0iS2H2D8=</DigestValue>
-                    </Reference>
-                </SignedInfo>
-                <SignatureValue>SHOdwU6c3LKRAuNybyUybCZmd3rF84/3DNV2PsaoS8CzvmUFYxPjb7H9ujEh1RNgrsICVxslOPxA1JjSv++JJIDMjBOtATlUocEOfhuVwse6avjUQFvJTLCEkYRgaBbNlyDQci9CHf7slqkEvewJxDp/VckP1OCTFrWrgvNlwv7f8KHSmOpO22gdiNikJnCTeDyOmIoQNjxby6+qNOQJAGpZzX2vIZx/ySnTLFPM3irFTa90Nq8vZ/gjntElveOXks2iImjOhqXXBs+V/7t7aqqWF+ZgWCxLUSJDzExfEPemGJ6tM5Zf5i89bpKRl4QEHsEu/2JCkzdB+JFIqAjvxA==</SignatureValue>
-                <KeyInfo>
-                    <X509Data>
-                        <X509Certificate>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</X509Certificate>
-                    </X509Data>
-                </KeyInfo>
-            </Signature>
-        </DPS>
-    </infNFSe>
-    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
-        <SignedInfo>
-            <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
-            <Reference URI="#NFS31241041235541646000160000000000003926057357851278">
-                <Transforms>
-                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
-                    <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
-                </Transforms>
-                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
-                <DigestValue>Pg78NoEq0RTkFFS/4yPCnS3o4n8=</DigestValue>
-            </Reference>
-        </SignedInfo>
-        <SignatureValue>QTw4ramp3kE/4c6bmx1VSQFPB6SLU+RXw/h0oyT6A3WCQvEj9f9Wj+xCbxkTFn8OYlX6+mnQLBrmm0pstCzL8wXV90uVh1Bm71/6bzlHPKEX7+eQ6DE4hoRKOSEIJ/VZhhwSOgo+8c2dso6bsnUsRIT/SqI+zv0hLhusBwtRUitsj9udHUwJs6g5hjbI258RNtyaMbljCgy+6o1goW0lWsZ3iYVns1x5pxRJxpGlIq4KXBP9YrdHVVLRiQSwWCcw5H5A4R/56e0lje24PsGRCim+3DdxXP4jQ/o8rIQL+6JtvGDoyuGC4TH9tZF5vcLN10yXP4dpaMh+syBiXEUa8g==</SignatureValue>
-        <KeyInfo>
-            <X509Data>
-                <X509Certificate>MIIHRTCCBS2gAwIBAgIIVCIlBzFSN1gwDQYJKoZIhvcNAQELBQAwWTELMAkGA1UEBhMCQlIxEzARBgNVBAoTCklDUC1CcmFzaWwxFTATBgNVBAsTDEFDIFNPTFVUSSB2NTEeMBwGA1UEAxMVQUMgU09MVVRJIE11bHRpcGxhIHY1MB4XDTI1MDczMTE4MDAwMFoXDTI2MDczMTE4MDAwMFowgeUxCzAJBgNVBAYTAkJSMRMwEQYDVQQKEwpJQ1AtQnJhc2lsMQswCQYDVQQIEwJNRzETMBEGA1UEBxMKRXNtZXJhbGRhczEeMBwGA1UECxMVQUMgU09MVVRJIE11bHRpcGxhIHY1MRcwFQYDVQQLEw4zOTE1NzAyNzAwMDEyODEZMBcGA1UECxMQVmlkZW9jb25mZXJlbmNpYTEaMBgGA1UECxMRQ2VydGlmaWNhZG8gUEogQTExLzAtBgNVBAMTJk1VTklDSVBJTyBERSBFU01FUkFMREFTOjE4NzE1NDY2MDAwMTM5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAo8Rhds9nE2SWyMD26UqyAgk+H2xKsQs7fD4UxtVXlhHmxOCqdcjCkc2bJfsk4y+bsWVJf6vgsRuRsxnIyAG4VkAHuFyJr08BPvHyKX9WqjMDEEUVFQwI/CQUa8RYBp74E6nCmcklpyxnz8pe6UA7TOxiqHfTBJMFrAiY2v84KCuOR2wIid22rC09zQk21Xowvc5I9+LjIy4W6LHrS7SGA6Y7YKXMiJpSZ8Q3XHC95/h9x1BG5ssCsDZ+ugm41Sx7wxmlppicTnNW/yzlGVNRWCZ/Gt9xfkUpgvvXKqAXZn1GoaTiqa5jsDKHKRcZlvx/5xCc6XES5OW977BWpewoQQIDAQABo4ICgjCCAn4wCQYDVR0TBAIwADAfBgNVHSMEGDAWgBTFUu0lgAnfnILIn0fG3bRfMd25sTBUBggrBgEFBQcBAQRIMEYwRAYIKwYBBQUHMAKGOGh0dHA6Ly9jY2QuYWNzb2x1dGkuY29tLmJyL2xjci9hYy1zb2x1dGktbXVsdGlwbGEtdjUucDdiMIG9BgNVHREEgbUwgbKBHGZhemVuZGFAZXNtZXJhbGRhcy5tZy5nb3YuYnKgJAYFYEwBAwKgGxMZTUFSQ0VMTyBOT05BVE8gRklHVUVJUkVET6AZBgVgTAEDA6AQEw4xODcxNTQ2NjAwMDEzOaA4BgVgTAEDBKAvEy0xNDA0MTk3MTgyNjIwNTIwNjQ5MDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDCgFwYFYEwBAwegDhMMMDAwMDAwMDAwMDAwMF0GA1UdIARWMFQwUgYGYEwBAgEmMEgwRgYIKwYBBQUHAgEWOmh0dHA6Ly9jY2QuYWNzb2x1dGkuY29tLmJyL2RvY3MvZHBjLWFjLXNvbHV0aS1tdWx0aXBsYS5wZGYwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMIGMBgNVHR8EgYQwgYEwPqA8oDqGOGh0dHA6Ly9jY2QuYWNzb2x1dGkuY29tLmJyL2xjci9hYy1zb2x1dGktbXVsdGlwbGEtdjUuY3JsMD+gPaA7hjlodHRwOi8vY2NkMi5hY3NvbHV0aS5jb20uYnIvbGNyL2FjLXNvbHV0aS1tdWx0aXBsYS12NS5jcmwwHQYDVR0OBBYEFOmOEYtxUp43jZefM7zIui6Ob1auMA4GA1UdDwEB/wQEAwIF4DANBgkqhkiG9w0BAQsFAAOCAgEAh8D5ZCSmVWI3Gpn/M/L9ZEAxmlcWvoXr8N8XnF5oE6dADNBGuknRlZzHqruDRLu79mzyZdjxz1I2zafLuc+EbUhMrfdTQTGwntAlby/D5FgMOYCzStNxJB3D3h4f2AFMheuhy9uPsXnkje3GkGerR3jQOQDQgzB+HyV40q6IFqFZDKshO8HHxiKcjScmu4jXE7jjtl/dNy7UTBP6RLyjY4TFRmOeqH6nSSpf+sBS4ojvh72Sir1A1Kfu0Ma1rjM/hnpdZE2Yh+ZnZOoeVW9X1BMtkZyX/fD7Enw8gwePBf0OTpXkn+CWFmLn/B+XDqrAULwcDscCWsCODMQMZ3eylda5dI9uHy3buz9CjUq5+iWzsOMzQnMnmO8k5kMoYbMWtKEMBcOV8HYegjOTjgc7iJsweZR9xwRwEBO0GekbKFKpW8Y3vXGAgQbbTiDgZhA1kvk6/4aFodL/ERiDVM/gRbCzX642BjRCBBfyzRM3GIklQiOKFWK8xbgext119TgNa2Tynh9lHK4EpdpThRVrf+qdWB3A4lnXU8+CrEPpqtnwfHN/6lcz0166ikiGTnOUOTXflCFpapUCyIKMnzo14JXYiPrrZe03uFW04u+NrwyXfBO42hCsgDfrSh5XM96uNB1/z8Q42ryyc8aXTQpIYxSH6gh2Y3ehgepz6f0D+1I=</X509Certificate>
-            </X509Data>
-        </KeyInfo>
-    </Signature>
-</NFSe>
