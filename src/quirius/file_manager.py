@@ -25,7 +25,7 @@ class ReportFileManager:
         except Exception as e:
             logger.warning(f"Could not clean up temporary directory {self.temp_dir}: {e}")
 
-    def extract_and_move_report(self, zip_path: Path | str, company_id: str) -> str | None:
+    def extract_and_move_report(self, zip_path: Path | str, company_id: str, suffix: str = "") -> str | None:
         """
         Extracts spreadsheet reports from a ZIP file and relocates them to the final output directory.
         """
@@ -45,7 +45,8 @@ class ReportFileManager:
                     
                     if arquivo_excel:
                         excel_content = zip_ref.read(arquivo_excel)
-                        nome_final = "NFe_Materiais_Quirius.xlsx"
+                        # Aplica o sufixo para criar os arquivos parte1, parte2, etc.
+                        nome_final = f"NFe_Materiais_Quirius{suffix}.xlsx"
                         caminho_final = f"{self.output_dir}/{nome_final}"
                         self.storage.write(caminho_final, excel_content)
                         logger.info(f"[SUCCESS] Materials report ready for ETL at: {caminho_final}")

@@ -65,11 +65,14 @@ def main():
         default=0,
         help="Number of days before the end date to query (default: 0, which queries yesterday only)."
     )
+    
+    # O parâmetro abaixo serve apenas se você quiser FORÇAR o navegador a aparecer para testes.
     parser.add_argument(
-        "--headless", "-hl",
+        "--show-browser", "-ui",
         action="store_true",
-        help="Run browser in headless mode."
+        help="Run browser in visible mode (disables headless)."
     )
+    
     parser.add_argument(
         "--output", "-o",
         type=str,
@@ -117,8 +120,11 @@ def main():
     
     logger.info(f"Starting execution of task for company ID: {task.company_id}...")
     
+    # Variável define se o headless está ativo (será True sempre, a não ser que use -ui)
+    modo_invisivel = not args.show_browser
+    
     # Use browser_session context manager to control the browser lifecycle
-    with browser_session(headless=args.headless, download_dir=download_dir, insecure_origins=insecure_origins) as driver:
+    with browser_session(headless=modo_invisivel, download_dir=download_dir, insecure_origins=insecure_origins) as driver:
         result = task.run(driver, run_date)
         
     if result:

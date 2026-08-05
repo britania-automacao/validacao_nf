@@ -53,13 +53,18 @@ class SincronizadorGoverno:
         pasta_cert.mkdir(parents=True, exist_ok=True)
         self.cert_path = self._garantir_certificados_pem(pasta_cert, cfg['cert_nome'], cfg['cert_senha'])
         
-        # 3. Configurar restante dos arquivos
+        # 3. Configurar restante dos arquivos locais
         self.arquivo_nsu = self.pasta_historico / "ultimo_nsu.txt"
         
         self.pasta_destino = raiz_projeto / "dados" / "xml_servicos_nacional" / self.empresa_id
         self.pasta_destino.mkdir(parents=True, exist_ok=True)
         
         self.arquivo_excel = self.pasta_destino / f"Resumo_Notas_Nacional_{self.empresa_id}.xlsx"
+        
+        # 4. Configurar caminho para CÓPIA NA REDE
+        # Aponta para P:\FISCAL\GERAL\05 - KPIs RECEBIMENTO FISCAL\8. Automacao Validacao NF\xml_servicos_nacional
+        self.pasta_rede = Path(r"P:\FISCAL\GERAL\05 - KPIs RECEBIMENTO FISCAL\8. Automacao Validacao NF\xml_servicos_nacional") / self.empresa_id
+        self.arquivo_excel_rede = self.pasta_rede / f"Resumo_Notas_Nacional_{self.empresa_id}.xlsx"
 
     def _garantir_certificados_pem(self, pasta_cert: Path, cert_nome: str, cert_senha: str):
         """Transforma o certificado .pfx em arquivos .pem para a API em Python"""
@@ -174,8 +179,17 @@ class SincronizadorGoverno:
             else:
                 df_final = df_novos
                 
+            # Salva na pasta LOCAL (C:)
             df_final.to_excel(self.arquivo_excel, index=False)
-            self.logger.info(f"Sucesso! {len(notas_extraidas)} nota(s) salva(s) no Resumo.")
+            
+            # Garante que a pasta na REDE existe e salva a CÓPIA nela
+            try:
+                self.pasta_rede.mkdir(parents=True, exist_ok=True)
+                df_final.to_excel(self.arquivo_excel_rede, index=False)
+                self.logger.info(f"Sucesso! {len(notas_extraidas)} nota(s) salva(s) no Resumo Local e na Cópia da Rede.")
+            except Exception as e_rede:
+                self.logger.warning(f"Resumo Local salvo, mas falha ao salvar cópia na Rede (P:): {e_rede}")
+
         except Exception as e:
             self.logger.error(f"Falha ao salvar os dados no Excel: {e}")
 

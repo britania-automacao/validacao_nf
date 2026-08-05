@@ -42,9 +42,48 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 load_dotenv()
 
+
+class LeitorRegrasRetencao:
+    """Carrega a planilha onde o Fiscal cadastra as regras mandatórias por COD ITEM"""
+    def __init__(self, caminhos: CaminhosProjeto):
+        self.pasta = caminhos.diretorio_base / "planilha_de_regras"
+        self.pasta.mkdir(parents=True, exist_ok=True)
+        self.arquivo = self.pasta / "regras_retencao.xlsx"
+        
+    def carregar(self) -> dict:
+        if not self.arquivo.exists():
+            print(f"[AVISO] Planilha de regras não encontrada em: {self.arquivo.name}. A validação por Cód. Item será ignorada.")
+            return {}
+            
+        try:
+            print(f"[ETL REGRAS] Lendo regras de retenção do arquivo: {self.arquivo.name}...")
+            df_regras = pd.read_excel(self.arquivo)
+            
+            # Remove linhas sem código de item
+            df_regras = df_regras.dropna(subset=['COD ITEM'])
+            
+            # Limpa o COD ITEM para garantir match exato (tira o .0 que o pandas coloca lendo como float)
+            df_regras['COD ITEM'] = df_regras['COD ITEM'].astype(str).str.replace('.0', '', regex=False).str.strip()
+            
+            regras = {}
+            for _, row in df_regras.iterrows():
+                cod = row['COD ITEM']
+                regras[cod] = {
+                    'IR': str(row.get('Ret. IR', '')).strip().upper(),
+                    'CS': str(row.get('Ret. CS', '')).strip().upper(),
+                    'ISS': str(row.get('Ret. I.S.S', '')).strip().upper(),
+                    'INSS': str(row.get('Ret. INSS', '')).strip().upper()
+                }
+            print(f"[ETL REGRAS] Sucesso! Foram mapeadas regras para {len(regras)} Códigos de Item.")
+            return regras
+        except Exception as e:
+            print(f"[ERRO REGRAS] Falha ao ler a planilha de regras de retenção: {e}")
+            return {}
+
+
 class LeitorSimplesNacional:
-    def __init__(self, diretorio_base: Path):
-        self.pasta = diretorio_base / "dados" / "consulta_simples_nacional"
+    def __init__(self, caminhos: CaminhosProjeto):
+        self.pasta = caminhos.consulta_simples_nacional
         self.pasta.mkdir(parents=True, exist_ok=True)
 
     def _limpar_cnpj(self, cnpj_bruto) -> str:
@@ -59,11 +98,9 @@ class LeitorSimplesNacional:
         return limpo.zfill(14) if limpo else ""
 
     def _consultar_api(self, cnpj: str) -> str:
-        """Consulta APIs de CNPJ com sistema de fallback (Cascata) obedecendo a ordem solicitada."""
         if not cnpj or len(cnpj) != 14: 
             return "PENDENTE_CONSULTA"
             
-        # 1. ReceitaWS | 2. Minha Receita | 3. BrasilAPI
         apis = [
             {"nome": "ReceitaWS", "url": f"https://receitaws.com.br/v1/cnpj/{cnpj}"},
             {"nome": "MinhaReceita", "url": f"https://minhareceita.org/{cnpj}"},
@@ -79,41 +116,32 @@ class LeitorSimplesNacional:
                 
                 if response.status_code == 200:
                     dados = response.json()
-                    
-                    # Tratamento específico para a estrutura JSON do ReceitaWS
                     if nome_api == "ReceitaWS":
                         if dados.get("status") == "ERROR":
                             print(f"  [API AVISO] {nome_api} retornou erro (CNPJ inválido/rejeitado). Pulando para a próxima...")
                             continue
-                            
                         simples = dados.get("simples")
                         if isinstance(simples, dict):
                             opcao = simples.get("optante")
                             return "SIM" if opcao is True else "NÃO"
                         return "NÃO"
-                        
-                    # Tratamento para Minha Receita e BrasilAPI (ambas usam 'opcao_pelo_simples')
                     elif nome_api in ["MinhaReceita", "BrasilAPI"]:
                         opcao = dados.get("opcao_pelo_simples")
                         return "SIM" if opcao is True else "NÃO"
-                        
                 elif response.status_code == 429:
-                    print(f"  [API AVISO] Limite atingido (429) na {nome_api} para o CNPJ {cnpj}. Acionando fallback...")
+                    print(f"  [API AVISO] Limite atingido (429) na {nome_api}. Acionando fallback...")
                     continue 
-                    
                 else:
                     print(f"  [API AVISO] {nome_api} retornou erro {response.status_code}. Acionando fallback...")
                     continue 
-                    
             except Exception as e:
                 print(f"  [API ERRO] Falha de conexão na {nome_api}: {e}. Acionando fallback...")
                 continue
                 
-        # Se as 3 APIs falharem para o mesmo CNPJ, mantém pendente para a próxima execução
         print(f"  [ALERTA MÁXIMO] Todas as 3 APIs falharam para o CNPJ {cnpj}.")
         return "PENDENTE_CONSULTA"
 
-    def carregar(self, cnpjs_alvo=None) -> pd.DataFrame:
+    def carregar(self, cnpjs_alvo=None, mapa_emitente=None) -> pd.DataFrame:
         arquivos = list(self.pasta.glob("*.xlsx")) + list(self.pasta.glob("*.csv"))
         
         df_original = pd.DataFrame()
@@ -137,33 +165,52 @@ class LeitorSimplesNacional:
                 df_original['CNPJ_Limpo'] = df_original[col_cnpj].apply(self._limpar_cnpj)
                 df_original['Simples_SN'] = df_original[col_simples].str.strip().str.upper()
                 
+                if 'Emit.' not in df_original.columns:
+                    df_original['Emit.'] = ""
+                
             except Exception as e:
                 print(f"[ERRO SIMPLES] Falha ao estruturar a base do Simples Nacional: {e}")
-                df_original = pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN'])
+                df_original = pd.DataFrame(columns=['CNPJ_Limpo', 'Simples_SN', 'Emit.'])
         else:
             print("[AVISO] Nenhum arquivo de Simples Nacional encontrado. Criando base zerada...")
             caminho_salvar = self.pasta / "consulta_simples_nacional.xlsx"
-            df_original = pd.DataFrame(columns=['CNPJ', 'SIMPLES', 'CNPJ_Limpo', 'Simples_SN'])
+            df_original = pd.DataFrame(columns=['CNPJ', 'Emit.', 'SIMPLES', 'CNPJ_Limpo', 'Simples_SN'])
 
-        # --- LÓGICA DE API (AUTO-HEALING) ---
+        houve_alteracao = False
+
+        if mapa_emitente and not df_original.empty:
+            def atualizar_emitente(row):
+                emit_atual = str(row.get('Emit.', '')).strip()
+                if emit_atual == "" or emit_atual.lower() in ["nan", "none"]:
+                    return str(mapa_emitente.get(row['CNPJ_Limpo'], ""))
+                return emit_atual
+            
+            emit_antes = df_original['Emit.'].astype(str).str.strip().copy()
+            df_original['Emit.'] = df_original.apply(atualizar_emitente, axis=1)
+            
+            if not df_original['Emit.'].astype(str).str.strip().equals(emit_antes):
+                houve_alteracao = True
+                print("[ETL SIMPLES] Códigos 'Emit.' retroativos preenchidos com base no TOTVS.")
+
         if cnpjs_alvo:
             cnpjs_existentes = set()
             if not df_original.empty and 'CNPJ_Limpo' in df_original.columns:
-                
-                # Remove pendentes para forçar nova consulta
                 df_original = df_original[df_original['Simples_SN'] != 'PENDENTE_CONSULTA'].copy()
                 cnpjs_existentes = set(df_original['CNPJ_Limpo'].dropna().tolist())
 
             cnpjs_faltantes = {c for c in cnpjs_alvo if isinstance(c, str) and len(c) == 14} - cnpjs_existentes
 
             if cnpjs_faltantes:
+                houve_alteracao = True
                 print(f"[API SIMPLES] {len(cnpjs_faltantes)} CNPJs pendentes/novos detectados! Consultando cascata de APIs...")
                 novos_registros = []
                 
                 for idx, cnpj in enumerate(cnpjs_faltantes, 1):
                     status = self._consultar_api(cnpj)
+                    emit_novo = str(mapa_emitente.get(cnpj, "")) if mapa_emitente else ""
                     nova_linha = {
                         col_cnpj: cnpj, 
+                        'Emit.': emit_novo,
                         col_simples: status,
                         'CNPJ_Limpo': cnpj,
                         'Simples_SN': status
@@ -172,25 +219,29 @@ class LeitorSimplesNacional:
                     
                     if idx % 10 == 0:
                         print(f"  -> Consultados {idx}/{len(cnpjs_faltantes)}...")
-                    
-                    # REGRA APLICADA: Pausa rígida de 20 segundos entre consultas.
-                    # Matemática: 60 segundos / 20 = Exatamente 3 requisições por minuto.
-                    # Isso garante que a ReceitaWS e a MinhaReceita nunca estourem o limite.
                     time.sleep(20) 
 
                 df_novos = pd.DataFrame(novos_registros)
                 df_original = pd.concat([df_original, df_novos], ignore_index=True)
                 
-                try:
-                    df_salvar = df_original.drop(columns=['CNPJ_Limpo', 'Simples_SN'], errors='ignore')
-                    df_salvar[col_cnpj] = df_salvar[col_cnpj].apply(lambda x: str(x).zfill(14) if pd.notna(x) else x)
-                    if caminho_salvar.suffix.lower() == '.xlsx':
-                        df_salvar.to_excel(caminho_salvar, index=False)
-                    else:
-                        df_salvar.to_csv(caminho_salvar, sep=';', index=False, encoding='utf-8-sig')
-                    print(f"[SUCESSO] Arquivo '{caminho_salvar.name}' atualizado permanentemente com os novos CNPJs!")
-                except Exception as e:
-                    print(f"[ERRO] Não foi possível salvar o arquivo atualizado: {e}")
+        if houve_alteracao:
+            try:
+                df_salvar = df_original.drop(columns=['CNPJ_Limpo', 'Simples_SN'], errors='ignore')
+                cols = list(df_salvar.columns)
+                if 'Emit.' in cols:
+                    cols.remove('Emit.')
+                    idx_cnpj = cols.index(col_cnpj) if col_cnpj in cols else 0
+                    cols.insert(idx_cnpj + 1, 'Emit.')
+                df_salvar = df_salvar[cols]
+                df_salvar[col_cnpj] = df_salvar[col_cnpj].apply(lambda x: str(x).zfill(14) if pd.notna(x) else x)
+                
+                if caminho_salvar.suffix.lower() == '.xlsx':
+                    df_salvar.to_excel(caminho_salvar, index=False)
+                else:
+                    df_salvar.to_csv(caminho_salvar, sep=';', index=False, encoding='utf-8-sig')
+                print(f"[SUCESSO] Arquivo '{caminho_salvar.name}' atualizado e enriquecido permanentemente!")
+            except Exception as e:
+                print(f"[ERRO] Não foi possível salvar o arquivo atualizado: {e}")
 
         if not df_original.empty and 'CNPJ_Limpo' in df_original.columns:
             df_retorno = df_original.drop_duplicates(subset=['CNPJ_Limpo'], keep='last')
@@ -275,25 +326,21 @@ class GeradorCsvGoverno:
                 arvore = ET.parse(caminho)
                 raiz = arvore.getroot()
 
-                # NOVO: Procura múltiplas notas (Lotes) dentro do mesmo XML
                 nodos_nota = []
                 for elem in raiz.iter():
                     tag_limpa = elem.tag.split('}')[-1].lower()
                     if tag_limpa in ['nfse', 'nfs-e']:
                         nodos_nota.append(elem)
                 
-                # Fallback para padrão ABRASF se não achar o padrão Nacional
                 if not nodos_nota:
                     for elem in raiz.iter():
                         tag_limpa = elem.tag.split('}')[-1].lower()
                         if tag_limpa == 'compnfse':
                             nodos_nota.append(elem)
                             
-                # Fallback final: se não achar blocos, assume que a raiz é a nota
                 if not nodos_nota:
                     nodos_nota = [raiz]
 
-                # Itera sobre cada nota encontrada dentro do arquivo
                 for nodo in nodos_nota:
                     registro = self._achatar_xml(nodo)
 
@@ -337,7 +384,6 @@ class GeradorCsvGoverno:
                     flag_ret_iss = self._get_text(nodo, ['tpRetISSQN', 'IssRetido'], '1')
 
                     if cnpj and numero_normalizado:
-                        # Extrai o Ano e Mês (YYYY-MM) para a chave
                         mes_ano_xml = data_emissao[:7] if len(data_emissao) >= 7 else "0000-00"
                         chave = f"{cnpj}_{numero_normalizado}_{mes_ano_xml}"
                         
@@ -395,7 +441,6 @@ class LeitorBaseGoverno:
         print("[ETL GOVERNO] Carregando dados da Base Consolidada (CSV)...")
         df = pd.read_csv(self.caminho_csv, sep=';', encoding='utf-8-sig', dtype=str)
         
-        # Atualiza dinamicamente as chaves legadas do CSV para o novo padrão (CNPJ_Nota_Ano-Mes)
         if 'CNPJ_XML' in df.columns and 'Nota_XML' in df.columns and 'DataEmissao_XML' in df.columns:
             df['MesAno_XML'] = df['DataEmissao_XML'].apply(lambda x: str(x)[:7] if pd.notna(x) and len(str(x)) >= 7 else "0000-00")
             df['Chave'] = df['CNPJ_XML'] + "_" + df['Nota_XML'] + "_" + df['MesAno_XML']
@@ -483,7 +528,6 @@ class LeitorRelatorioTotvs:
                 df_totvs['Nota_TOTVS'] = df_totvs['Docto'].apply(self._limpar_numero_nota)
                 df_totvs['CNPJ_TOTVS'] = df_totvs['CNPJ emit'].apply(self._limpar_cnpj)
                 
-                # Extrai o Mês e Ano da Dt.Emiss do TOTVS para compor a chave (Converte DD/MM/YYYY para YYYY-MM)
                 def extract_mes_ano(dt_str):
                     if pd.isna(dt_str) or not dt_str: return "0000-00"
                     dt_str = str(dt_str).strip()
@@ -495,7 +539,6 @@ class LeitorRelatorioTotvs:
                 
                 df_totvs['MesAno_TOTVS'] = df_totvs.get('Dt.Emiss', pd.Series(dtype=str)).apply(extract_mes_ano)
                 
-                # Chave agora é CNPJ + Nota + Ano-Mês
                 df_totvs['Chave'] = df_totvs.apply(
                     lambda row: f"{row['CNPJ_TOTVS']}_{row['Nota_TOTVS']}_{row['MesAno_TOTVS']}" 
                     if row['CNPJ_TOTVS'] and row['Nota_TOTVS'] else None, axis=1
@@ -506,13 +549,11 @@ class LeitorRelatorioTotvs:
                 df_totvs['Valor_TOTVS'] = self._converter_moeda(df_totvs, 'Tot. Nota')
                 df_totvs['BaseCalc_TOTVS'] = self._converter_moeda(df_totvs, 'Base Calc.')
                 
-                # Impostos Retidos
                 df_totvs['ISS_TOTVS'] = self._converter_moeda(df_totvs, 'ISS')
                 df_totvs['IRRF_TOTVS'] = self._converter_moeda(df_totvs, 'IRRF')
                 df_totvs['INSS_TOTVS'] = self._converter_moeda(df_totvs, 'INSS')
                 df_totvs['CSRF_TOTVS'] = self._converter_moeda(df_totvs, 'CSRF')
                 
-                # Alíquotas para validação da regra de Simples/CSRF
                 df_totvs['Aliq_IRRF_TOTVS'] = self._converter_moeda(df_totvs, 'Aliq IRRF')
                 df_totvs['Aliq_INSS_TOTVS'] = self._converter_moeda(df_totvs, 'Aliq INSS')
                 df_totvs['Aliq_ISS_TOTVS'] = self._converter_moeda(df_totvs, 'Aliq ISS')
@@ -543,8 +584,8 @@ class LeitorRelatorioTotvs:
 
 
 class AuditorFiscal:
-    def cruzar_dados(self, df_xml: pd.DataFrame, df_totvs: pd.DataFrame, df_simples: pd.DataFrame) -> pd.DataFrame:
-        print("[AUDITORIA] A executar a Malha Fina Tributária Avançada...")
+    def cruzar_dados(self, df_xml: pd.DataFrame, df_totvs: pd.DataFrame, df_simples: pd.DataFrame, regras_retencao: dict) -> pd.DataFrame:
+        print("[AUDITORIA] A executar a Malha Fina Tributária Avançada (com regras por COD ITEM)...")
         if df_xml.empty or df_totvs.empty:
             return pd.DataFrame()
             
@@ -587,7 +628,6 @@ class AuditorFiscal:
                 
             teve_erro_simples = False
             
-            # --- REGRA 1: Optantes pelo Simples Nacional NÃO devem sofrer retenção de impostos ---
             if is_simples:
                 retencoes_indevidas = []
                 if row.get('IRRF_TOTVS', 0.0) > 0 and row.get('Aliq_IRRF_TOTVS', 0.0) > 0: retencoes_indevidas.append('IRRF')
@@ -598,8 +638,53 @@ class AuditorFiscal:
                 if retencoes_indevidas:
                     erros_encontrados.append("SIMPLES_RET_INDEVIDA")
                     teve_erro_simples = True
+                    
+            # --- NOVA REGRA: VALIDAÇÃO PELA PLANILHA DE REGRAS (COD ITEM) ---
+            cod_item = str(row.get('Cód.Item', '')).strip()
+            regra = regras_retencao.get(cod_item)
             
-            # --- REGRA 2: Validação da Alíquota de CSRF (deve ser 4.65%) ---
+            teve_erro_regra = False
+            if regra:
+                vlr_totvs = row.get('Valor_TOTVS', 0.0)
+                ir_totvs = row.get('IRRF_TOTVS', 0.0)
+                cs_totvs = row.get('CSRF_TOTVS', 0.0)
+                inss_totvs = row.get('INSS_TOTVS', 0.0)
+                iss_totvs = row.get('ISS_TOTVS', 0.0)
+
+                limite_minimo = 10.0 
+                
+                # Para não-optantes pelo Simples, verificamos IR e CS com base na Regra
+                if not is_simples:
+                    if regra['IR'] == 'NÃO' and ir_totvs > 0:
+                        erros_encontrados.append('REGRA_IR_INDEVIDO')
+                        teve_erro_regra = True
+                    elif regra['IR'] == 'SIM' and ir_totvs == 0 and (vlr_totvs * 0.015) >= limite_minimo:
+                        erros_encontrados.append('REGRA_IR_FALTA')
+                        teve_erro_regra = True
+                        
+                    if regra['CS'] == 'NÃO' and cs_totvs > 0:
+                        erros_encontrados.append('REGRA_CS_INDEVIDO')
+                        teve_erro_regra = True
+                    elif regra['CS'] == 'SIM' and cs_totvs == 0 and (vlr_totvs * 0.0465) >= limite_minimo:
+                        erros_encontrados.append('REGRA_CS_FALTA')
+                        teve_erro_regra = True
+                        
+                # Regras INSS e ISS (Se aplicam à parte do Simples Nacional)
+                if regra['INSS'] == 'NÃO' and inss_totvs > 0:
+                    erros_encontrados.append('REGRA_INSS_INDEVIDO')
+                    teve_erro_regra = True
+                elif regra['INSS'] == 'SIM' and inss_totvs == 0 and (vlr_totvs * 0.11) >= limite_minimo:
+                    erros_encontrados.append('REGRA_INSS_FALTA')
+                    teve_erro_regra = True
+                    
+                if regra['ISS'] == 'NÃO' and iss_totvs > 0:
+                    erros_encontrados.append('REGRA_ISS_INDEVIDO')
+                    teve_erro_regra = True
+                elif regra['ISS'] == 'SIM' and iss_totvs == 0:
+                    erros_encontrados.append('REGRA_ISS_FALTA')
+                    teve_erro_regra = True
+            # -----------------------------------------------------------------
+            
             if row.get('CSRF_TOTVS', 0.0) > 0:
                 aliq_csrf = row.get('Aliq_CSRF_TOTVS', 0.0)
                 if not (4.6 <= aliq_csrf <= 4.7):
@@ -607,7 +692,6 @@ class AuditorFiscal:
 
             limite_isencao = 10.0 
 
-            # --- CASO A: NOTA TEM XML E EXISTE NO ERP ---
             if row['_merge'] == 'both':
                 if dt_xml and dt_totvs and dt_xml != dt_totvs:
                     erros_encontrados.append("DATA_EMISSAO")
@@ -620,19 +704,17 @@ class AuditorFiscal:
                 if abs(iss_esperado - row.get('ISS_TOTVS', 0.0)) > limite_isencao:
                     erros_encontrados.append("ISS")
                     
-                if not teve_erro_simples:
+                if not teve_erro_simples and not teve_erro_regra:
                     if abs(row.get('IRRF_XML', 0.0) - row.get('IRRF_TOTVS', 0.0)) > limite_isencao:
                         erros_encontrados.append('IR')
                     if abs(row.get('INSS_XML', 0.0) - row.get('INSS_TOTVS', 0.0)) > limite_isencao:
                         erros_encontrados.append('INSS')
 
-            # --- CASO B: NOTA SÓ EXISTE NO ERP (SEM XML) ---
             elif row['_merge'] == 'right_only':
-                tem_outro_erro = teve_erro_simples or ("CSRF_ALIQ_ERRADA" in erros_encontrados)
+                tem_outro_erro = teve_erro_simples or teve_erro_regra or ("CSRF_ALIQ_ERRADA" in erros_encontrados)
                 
-                if not teve_erro_simples:
+                if not teve_erro_simples and not teve_erro_regra:
                     erros_totvs = []
-                    # Para notas cegas, validamos internamente o que o TOTVS diz que reteve
                     if row.get('IRRF_TOTVS', 0.0) > limite_isencao: erros_totvs.append("IR")
                     if row.get('INSS_TOTVS', 0.0) > limite_isencao: erros_totvs.append("INSS")
                     if row.get('ISS_TOTVS', 0.0) > limite_isencao: erros_totvs.append("ISS")
@@ -641,7 +723,6 @@ class AuditorFiscal:
                         erros_encontrados.append("_".join(erros_totvs))
                         tem_outro_erro = True
                         
-                # Nova regra: Retirar das inconsistências as notas que apenas faltam XML
                 if tem_outro_erro:
                     erros_encontrados.append("FALTA_XML")
 
@@ -658,6 +739,17 @@ class AuditorFiscal:
             if obs in ['OK', '']: return "Sem Erro"
             if "SIMPLES_RET_INDEVIDA" in obs: return "Sem Consulta Simples nacional"
             if "CSRF_ALIQ_ERRADA" in obs: return "Alíquota CSRF Divergente"
+            
+            # --- Mapeamento Dinâmico para a Planilha de Regras ---
+            mensagens_regra = []
+            if "REGRA_IR" in obs: mensagens_regra.append("IR")
+            if "REGRA_CS" in obs: mensagens_regra.append("CSRF")
+            if "REGRA_INSS" in obs: mensagens_regra.append("INSS")
+            if "REGRA_ISS" in obs: mensagens_regra.append("ISS")
+            
+            if mensagens_regra:
+                return "Divergência Regra: " + "/".join(mensagens_regra)
+            # -----------------------------------------------------
             
             tem_ir, tem_inss, tem_iss = "IR" in obs, "INSS" in obs, "ISS" in obs
             
@@ -689,7 +781,7 @@ class AuditorFiscal:
         df_lancadas = df_resultado[df_resultado['_merge'].isin(['both', 'right_only'])].copy()
         if df_lancadas.empty: return None
             
-        df_erros = df_lancadas[df_lancadas['Valid. FINAL'].isin(['DIVERGENTE', 'FALTA XML'])].copy()
+        df_erros = df_lancadas[df_lancadas['Valid. FINAL'] != 'CONCILIADO'].copy()
 
         cols_financeiras = ['Valor_TOTVS', 'IRRF_TOTVS', 'CSRF_TOTVS', 'INSS_TOTVS', 'ISS_TOTVS']
         for c in cols_financeiras:
@@ -708,24 +800,13 @@ class AuditorFiscal:
         else:
             df_estab = pd.DataFrame(columns=['Estab', 'Total NFS', 'Para Verificar'])
         
-        lista_apontamentos = [
-            (1, "Sem Consulta Simples nacional"),
-            (2, "Verf. IR/ISS/INSS"),
-            (3, "Verf. IR/INSS"),
-            (4, "Verf. IR/ISS"),
-            (5, "Verf. ISS/INSS"),
-            (6, "Verf. IR"),
-            (7, "Verf. ISS"),
-            (8, "Verf. INSS"),
-            (9, "Alíquota CSRF Divergente"),
-            (10, "Nota sem XML na Receita"),
-            (11, "Divergência de Data")
-        ]
+        # --- TABELA DE ERROS 100% DINÂMICA ---
         erros_contagem = df_erros['Apontamento_Mapeado'].value_counts().to_dict()
         dados_apontamentos = []
-        for ordem, desc in lista_apontamentos:
-            qtd = erros_contagem.get(desc, 0)
+        ordem = 1
+        for desc, qtd in sorted(erros_contagem.items(), key=lambda x: x[1], reverse=True):
             dados_apontamentos.append((ordem, desc, qtd))
+            ordem += 1
             
         if 'CNPJ emit' in df_lancadas.columns and 'Nome Abrev' in df_lancadas.columns:
             df_forn = df_lancadas.groupby(['CNPJ emit', 'Nome Abrev']).size().reset_index(name='Quantidade')
@@ -830,8 +911,14 @@ class AuditorFiscal:
             'Aliq_IRRF_TOTVS', 'Aliq_INSS_TOTVS', 'Aliq_ISS_TOTVS'
         ]
         
-        colunas_originais = [col for col in df_resultado.columns if col not in colunas_tecnicas and col not in colunas_comparacao and col not in ['Observações', 'Valid. FINAL']]
-        colunas_finais = ['Observações', 'Valid. FINAL'] + colunas_comparacao + colunas_originais
+        colunas_destaque = []
+        for c in ['Usuario', 'Dt.Trans', 'Est', 'Est Fiscal']:
+            if c in df_resultado.columns and c not in colunas_destaque:
+                colunas_destaque.append(c)
+
+        colunas_originais = [col for col in df_resultado.columns if col not in colunas_tecnicas and col not in colunas_comparacao and col not in ['Observações', 'Valid. FINAL'] and col not in colunas_destaque]
+        
+        colunas_finais = ['Observações', 'Valid. FINAL'] + colunas_destaque + colunas_comparacao + colunas_originais
         
         ws_val.append(colunas_finais)
         for col_idx, col_name in enumerate(colunas_finais, 1):
@@ -841,8 +928,7 @@ class AuditorFiscal:
             ws_val.column_dimensions[celula.column_letter].width = 20
             
         if not df_erros.empty:
-            df_erros['Ordem_Sort'] = df_erros['Valid. FINAL'].apply(lambda x: 1 if x == 'FALTA XML' else 0)
-            df_erros = df_erros.sort_values(by=['Ordem_Sort', 'Apontamento_Mapeado']).drop(columns=['Ordem_Sort'])
+            df_erros = df_erros.sort_values(by=['Apontamento_Mapeado'])
             
             df_export = df_erros[colunas_finais].copy()
             df_export = df_export.fillna("")
@@ -870,7 +956,8 @@ class AuditorFiscal:
                 if "IR" in obs: pintar_celulas("IRRF_XML", "IRRF_TOTVS")
                 if "INSS" in obs: pintar_celulas("INSS_XML", "INSS_TOTVS")
                 
-                if "CSRF_ALIQ_ERRADA" in obs:
+                # Assegura que se a regra de CS for ferida, o campo fica vermelho
+                if "CSRF_ALIQ_ERRADA" in obs or "REGRA_CS" in obs:
                     pintar_celulas("CSRF_TOTVS", "Aliq_CSRF_TOTVS")
                 
                 if "SIMPLES_RET_INDEVIDA" in obs:
@@ -894,6 +981,7 @@ class AuditorFiscal:
 
 if __name__ == "__main__":
     RAIZ_PROJETO = Path(__file__).resolve().parent.parent
+    
     config_caminhos = CaminhosProjeto(diretorio_base=RAIZ_PROJETO)
     
     gerador_csv = GeradorCsvGoverno(caminhos=config_caminhos)
@@ -908,10 +996,24 @@ if __name__ == "__main__":
     if not tabela_totvs.empty and 'CNPJ_TOTVS' in tabela_totvs.columns:
         cnpjs_para_consultar.update(tabela_totvs['CNPJ_TOTVS'].dropna().tolist())
         
-    tabela_simples = LeitorSimplesNacional(diretorio_base=RAIZ_PROJETO).carregar(cnpjs_alvo=cnpjs_para_consultar)
+    mapa_emit = {}
+    if not tabela_totvs.empty and 'CNPJ_TOTVS' in tabela_totvs.columns and 'Emit.' in tabela_totvs.columns:
+        temp_map = tabela_totvs.dropna(subset=['CNPJ_TOTVS', 'Emit.']).set_index('CNPJ_TOTVS')['Emit.'].to_dict()
+        mapa_emit.update(temp_map)
+        
+    tabela_simples = LeitorSimplesNacional(caminhos=config_caminhos).carregar(cnpjs_alvo=cnpjs_para_consultar, mapa_emitente=mapa_emit)
+    
+    # --- NOVO: Carrega as Regras Parametrizadas ---
+    leitor_regras = LeitorRegrasRetencao(caminhos=config_caminhos)
+    regras_retencao = leitor_regras.carregar()
     
     auditor = AuditorFiscal()
-    resultado = auditor.cruzar_dados(df_xml=tabela_xml, df_totvs=tabela_totvs, df_simples=tabela_simples)
+    resultado = auditor.cruzar_dados(
+        df_xml=tabela_xml, 
+        df_totvs=tabela_totvs, 
+        df_simples=tabela_simples,
+        regras_retencao=regras_retencao
+    )
     
     if not resultado.empty:
         print("\n" + "="*50)

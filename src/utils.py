@@ -30,7 +30,8 @@ def scroll_and_click(driver: WebDriver, wait: WebDriverWait[WebDriver], locator:
             driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", btn)  # type: ignore[reportUnknownMemberType]
         if to_be_clickable:
             btn = wait.until(EC.element_to_be_clickable(locator))
-        print(to_be_clickable)
+        # print(to_be_clickable)
+        
         if js_click:
             driver.execute_script("arguments[0].click();", btn)  # type: ignore[reportUnknownMemberType]
         else:

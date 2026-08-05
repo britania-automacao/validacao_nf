@@ -37,40 +37,54 @@ load_dotenv()
 
 def ler_arquivo_robusto(caminho: Path) -> pd.DataFrame:
     """
-    Função blindada para ler arquivos com diferentes separadores, encodings 
-    e ignorar o "bug das aspas" em descrições de produtos.
+    Lê o CSV emulando perfeitamente o Excel para evitar colunas deslocadas (Header Shift).
     """
     if caminho.suffix.lower() == '.xlsx':
         return pd.read_excel(caminho, dtype=str)
     
     configs = [
-        {'sep': '\t', 'encoding': 'latin1'},
-        {'sep': '\t', 'encoding': 'utf-8'},
-        {'sep': '\t', 'encoding': 'utf-16'},
         {'sep': ';', 'encoding': 'latin1'},
         {'sep': ';', 'encoding': 'utf-8'},
+        {'sep': '\t', 'encoding': 'latin1'},
+        {'sep': '\t', 'encoding': 'utf-16'},
         {'sep': ',', 'encoding': 'utf-8'},
     ]
     
     ultimo_erro = None
     for config in configs:
         try:
+            # index_col=False evita o clássico problema do Pandas deslocar os cabeçalhos
             df = pd.read_csv(
                 caminho, 
                 sep=config['sep'], 
                 encoding=config['encoding'], 
                 dtype=str, 
-                quoting=3, 
-                on_bad_lines='skip'
+                on_bad_lines='skip',
+                engine='python',
+                index_col=False 
             )
-            if len(df.columns) > 2:
-                df.columns = [str(c).replace('"', '').replace("'", "").strip() for c in df.columns]
+            colunas_limpas = [str(c).replace('"', '').replace("'", "").strip() for c in df.columns]
+            df.columns = colunas_limpas
+            
+            # Se encontrou a coluna exata, o layout está perfeito.
+            if 'Chave Acesso' in df.columns:
                 return df
+                
         except Exception as e:
             ultimo_erro = e
             continue
             
-    raise ValueError(f"Não foi possível decodificar o arquivo. Formato desconhecido. Último erro: {ultimo_erro}")
+    # Fallback se não encontrar o nome exato da coluna
+    for config in configs:
+        try:
+            df = pd.read_csv(caminho, sep=config['sep'], encoding=config['encoding'], dtype=str, on_bad_lines='skip', engine='python', index_col=False)
+            if len(df.columns) > 2:
+                df.columns = [str(c).replace('"', '').replace("'", "").strip() for c in df.columns]
+                return df
+        except Exception:
+            continue
+            
+    raise ValueError(f"Não foi possível decodificar o arquivo. Último erro: {ultimo_erro}")
 
 
 class LeitorQuiriusNFe:
@@ -96,14 +110,12 @@ class LeitorQuiriusNFe:
             return 0.0
 
     def _encontrar_coluna_valor(self, df: pd.DataFrame) -> str:
-        # Prioridade máxima: Buscar pelo Vlr. Total da Nota (que inclui IPI, ST, Frete, etc)
         candidatas_exatas = ['Vlr. Total da Nota', 'Vlr. Total da NF-e', 'Valor Total', 'Tot. Nota']
         for cand in candidatas_exatas:
             for col in df.columns:
                 if cand.lower() == col.lower() or cand.lower() in col.lower():
                     return col
                     
-        # Fallback genérico blindado
         for col in df.columns:
             nome_limpo = col.lower()
             if 'vlr' in nome_limpo and 'total' in nome_limpo:
@@ -120,8 +132,10 @@ class LeitorQuiriusNFe:
             return pd.DataFrame()
 
         lista_dfs = []
-        for caminho in arquivos:
+        total = len(arquivos)
+        for idx, caminho in enumerate(arquivos, 1):
             try:
+                print(f"[ETL QUIRIUS] Lendo arquivo {idx}/{total}: {caminho.name} ...")
                 df_temp = ler_arquivo_robusto(caminho)
                 df_temp['Pasta_Origem'] = caminho.parent.name
                 lista_dfs.append(df_temp)
@@ -132,7 +146,11 @@ class LeitorQuiriusNFe:
             print("[ERRO CRÍTICO] Nenhum arquivo do Quirius pôde ser lido corretamente.")
             return pd.DataFrame()
 
+        print("[ETL QUIRIUS] Consolidando tabelas lidas...")
         df_quirius = pd.concat(lista_dfs, ignore_index=True)
+        
+        # Proteção contra relatórios duplicados na pasta do Quirius
+        df_quirius.drop_duplicates(inplace=True)
         
         col_chave = next((c for c in df_quirius.columns if 'Chave' in c and 'Acesso' in c), None)
         if not col_chave:
@@ -148,9 +166,6 @@ class LeitorQuiriusNFe:
         else:
             df_quirius['Valor_QRI'] = 0.0
 
-        # CORREÇÃO INTELIGENTE: Ao invés de somar (o que triplica notas de múltiplos itens),
-        # usamos 'first' na coluna Vlr. Total da Nota. Isso garante que ele pegue o valor cheio 
-        # (já com IPI e ST calculados) uma única vez por Chave de Acesso.
         df_quirius = df_quirius.groupby('Chave_Acesso', as_index=False).agg({
             'Valor_QRI': 'first',
             'Nº NF-e': 'first',
@@ -160,9 +175,7 @@ class LeitorQuiriusNFe:
             'Pasta_Origem': 'first'
         })
         
-        # Renomeia para clareza no cruzamento final
         df_quirius.rename(columns={'Data Emissão': 'Data Emissão Quirius'}, inplace=True)
-
         print(f"[ETL QUIRIUS] Carregadas e agrupadas {len(df_quirius)} NF-es únicas.")
         return df_quirius
 
@@ -175,6 +188,7 @@ class LeitorOFBMateriais:
 
     def _limpar_chave(self, chave_bruta) -> str:
         if pd.isna(chave_bruta): return ""
+        # Filter tira a aspa (') e letras, pegando só os 44 números reais
         limpa = ''.join(filter(str.isdigit, str(chave_bruta)))
         return limpa if len(limpa) == 44 else ""
 
@@ -200,8 +214,10 @@ class LeitorOFBMateriais:
             return pd.DataFrame()
 
         lista_dfs = []
-        for caminho in arquivos:
+        total = len(arquivos)
+        for idx, caminho in enumerate(arquivos, 1):
             try:
+                print(f"[ETL TOTVS] Lendo arquivo {idx}/{total}: {caminho.name} ...")
                 df_temp = ler_arquivo_robusto(caminho)
                 lista_dfs.append(df_temp)
             except Exception as e:
@@ -212,44 +228,97 @@ class LeitorOFBMateriais:
             return pd.DataFrame()
 
         df_totvs = pd.concat(lista_dfs, ignore_index=True)
+        
+        # Proteção Blindada: Exclui linhas duplicadas oriundas de leitura de arquivos em subpastas de backup
+        df_totvs.drop_duplicates(inplace=True)
 
-        # Desconsiderar notas de frete onde o usuário é "RPW - SERVICO"
-        if 'Nome do Usuario' in df_totvs.columns:
+        col_usuario = next((c for c in df_totvs.columns if c.lower() in ['nome do usuario', 'usuário', 'usuario']), None)
+        if col_usuario:
             qtd_antes = len(df_totvs)
-            df_totvs = df_totvs[~df_totvs['Nome do Usuario'].astype(str).str.upper().str.contains('RPW - SERVICO', na=False)].copy()
+            df_totvs = df_totvs[~df_totvs[col_usuario].astype(str).str.upper().str.contains('RPW - SERVICO', na=False)].copy()
             qtd_depois = len(df_totvs)
             if qtd_antes != qtd_depois:
                 print(f"[ETL TOTVS] {qtd_antes - qtd_depois} registros de frete (RPW - SERVICO) ignorados para evitar duplicidade.")
 
-        if 'Chave Acesso' not in df_totvs.columns:
-            print("[ERRO CRÍTICO] Coluna 'Chave Acesso' não encontrada no relatório OFB!")
+        # --- CAÇADOR DE CHAVE INFALÍVEL ---
+        col_chave = 'Chave Acesso'
+        tem_chave_valida = False
+        
+        if col_chave in df_totvs.columns:
+            amostra = df_totvs[col_chave].dropna().astype(str).head(5000)
+            for val in amostra:
+                v_clean = ''.join(filter(str.isdigit, val))
+                if len(v_clean) == 44:
+                    tem_chave_valida = True
+                    break
+                    
+        if not tem_chave_valida:
+            print(f"[AVISO] A coluna '{col_chave}' não possui os 44 dígitos. Buscando na tabela...")
+            for col in df_totvs.columns:
+                amostra = df_totvs[col].dropna().astype(str).head(5000)
+                for val in amostra:
+                    v_clean = ''.join(filter(str.isdigit, val))
+                    if len(v_clean) == 44:
+                        col_chave = col
+                        tem_chave_valida = True
+                        print(f"-> Sucesso! A verdadeira chave de 44 dígitos foi rastreada na coluna: '{col}'")
+                        break
+                if tem_chave_valida:
+                    break
+                    
+        if not tem_chave_valida:
+            print("[ERRO CRÍTICO] Nenhuma coluna com Chaves de Acesso (44 dígitos) foi encontrada no relatório OFB!")
             return pd.DataFrame()
 
-        df_totvs['Chave_Acesso'] = df_totvs['Chave Acesso'].apply(self._limpar_chave)
+        qtd_bruta = len(df_totvs)
+        df_totvs['Chave_Acesso'] = df_totvs[col_chave].apply(self._limpar_chave)
         df_totvs = df_totvs[df_totvs['Chave_Acesso'] != ""].copy()
 
-        df_totvs['Valor_Item_OFB'] = df_totvs['Vlr Item'].apply(self._converter_moeda)
+        if len(df_totvs) == 0 and qtd_bruta > 0:
+            print(f"[AVISO] ALERTA: Foram lidas {qtd_bruta} linhas, mas nenhuma chave sobreviveu à limpeza!")
 
-        # Mapeia a coluna de data (Emissão ou Dt Docto)
-        col_emissao = 'Emissão' if 'Emissão' in df_totvs.columns else ('Dt Docto' if 'Dt Docto' in df_totvs.columns else None)
+        col_vlr_item = next((c for c in df_totvs.columns if c.lower() in ['vlr item', 'valor item', 'vlr. item', 'vlr.item', 'valor do item']), None)
+        if col_vlr_item:
+            df_totvs['Valor_Item_OFB'] = df_totvs[col_vlr_item].apply(self._converter_moeda)
+        else:
+            df_totvs['Valor_Item_OFB'] = 0.0
 
-        agg_dict = {
-            'Valor_Item_OFB': 'sum', # SOMA o valor de todos os itens da nota no TOTVS
-            'Doc Fisc': 'first',
-            'Nome': 'first',
-            'Estabelecimento': 'first',
-            'Nome do Usuario': 'first'
-        }
-        if col_emissao:
-            agg_dict[col_emissao] = 'first'
+        col_emissao = next((c for c in df_totvs.columns if c.lower() in ['emissão', 'emissao', 'data emissão', 'dt emissao']), None)
+        col_dt_docto = next((c for c in df_totvs.columns if c.lower() in ['dt docto', 'data docto', 'dt. docto', 'dt.docto']), None)
+        
+        col_docfisc = next((c for c in df_totvs.columns if c.lower() in ['doc fisc', 'docto', 'nota']), None)
+        col_nome = next((c for c in df_totvs.columns if c.lower() in ['nome', 'razão social', 'nome abrev']), None)
+        col_est = next((c for c in df_totvs.columns if c.lower() in ['estabelecimento', 'est', 'est fiscal']), None)
+
+        agg_dict = {'Valor_Item_OFB': 'sum'}
+        if col_docfisc: agg_dict[col_docfisc] = 'first'
+        if col_nome: agg_dict[col_nome] = 'first'
+        if col_est: agg_dict[col_est] = 'first'
+        if col_usuario: agg_dict[col_usuario] = 'first'
+        if col_emissao: agg_dict[col_emissao] = 'first'
+        if col_dt_docto: agg_dict[col_dt_docto] = 'first'
 
         df_totvs = df_totvs.groupby('Chave_Acesso', as_index=False).agg(agg_dict)
         
         df_totvs.rename(columns={'Valor_Item_OFB': 'Valor_OFB'}, inplace=True)
-        if col_emissao:
-            df_totvs.rename(columns={col_emissao: 'Data Emissão TOTVS'}, inplace=True)
-        else:
-            df_totvs['Data Emissão TOTVS'] = ""
+        
+        if col_emissao: df_totvs.rename(columns={col_emissao: 'Data Emissão TOTVS'}, inplace=True)
+        else: df_totvs['Data Emissão TOTVS'] = ""
+        
+        if col_dt_docto: df_totvs.rename(columns={col_dt_docto: 'Dt Docto'}, inplace=True)
+        else: df_totvs['Dt Docto'] = ""
+        
+        if col_docfisc: df_totvs.rename(columns={col_docfisc: 'Doc Fisc'}, inplace=True)
+        else: df_totvs['Doc Fisc'] = ""
+        
+        if col_nome: df_totvs.rename(columns={col_nome: 'Nome'}, inplace=True)
+        else: df_totvs['Nome'] = ""
+        
+        if col_est: df_totvs.rename(columns={col_est: 'Estabelecimento'}, inplace=True)
+        else: df_totvs['Estabelecimento'] = ""
+        
+        if col_usuario: df_totvs.rename(columns={col_usuario: 'Nome do Usuario'}, inplace=True)
+        else: df_totvs['Nome do Usuario'] = ""
 
         print(f"[ETL TOTVS] Consolidadas {len(df_totvs)} NF-es únicas vindas dos itens.")
         return df_totvs
@@ -260,46 +329,59 @@ class AuditorMateriais:
     
     def cruzar_dados(self, df_quirius: pd.DataFrame, df_totvs: pd.DataFrame) -> pd.DataFrame:
         print("[AUDITORIA] Cruzando Base Quirius vs Base TOTVS pelas Chaves de 44 Dígitos...")
+        
         if df_quirius.empty or df_totvs.empty:
             return pd.DataFrame()
 
         df_cruzamento = pd.merge(df_quirius, df_totvs, on='Chave_Acesso', how='outer', indicator=True)
 
-        # --- NOVA REGRA APLICADA ---
-        # Ignora as notas que estão no Quirius mas ainda não foram lançadas no TOTVS (FALTA_NO_TOTVS / left_only)
         qtd_ignoradas = len(df_cruzamento[df_cruzamento['_merge'] == 'left_only'])
         df_cruzamento = df_cruzamento[df_cruzamento['_merge'] != 'left_only'].copy()
         print(f"[AUDITORIA] {qtd_ignoradas} notas presentes no Governo mas não no TOTVS foram ignoradas.")
 
         def formatar_data(dt_str):
             """Transforma qualquer data para o formato YYYY-MM-DD para comparação justa"""
-            if pd.isna(dt_str) or not str(dt_str).strip(): return ""
+            if pd.isna(dt_str) or not str(dt_str).strip() or str(dt_str).lower() in ['nan', 'none', 'nat']: 
+                return ""
+                
             dt_str = str(dt_str).strip()
-            # Padrão TOTVS (DD/MM/YYYY)
+            
+            # Padrão TOTVS Completo (DD/MM/YYYY) -> Converte para YYYY-MM-DD
             if len(dt_str) >= 10 and dt_str[2] == '/' and dt_str[5] == '/':
                 return f"{dt_str[6:10]}-{dt_str[3:5]}-{dt_str[0:2]}"
-            # Padrão Quirius (YYYY-MM-DD HH:MM:SS)
+            
+            # Padrão TOTVS Curto (DD/MM/YY) -> Converte para YYYY-MM-DD (Evita alarme falso)
+            if len(dt_str) == 8 and dt_str[2] == '/' and dt_str[5] == '/':
+                return f"20{dt_str[6:8]}-{dt_str[3:5]}-{dt_str[0:2]}"
+                
+            # Padrão Quirius (YYYY-MM-DD HH:MM:SS) -> Converte para YYYY-MM-DD
             if len(dt_str) >= 10 and dt_str[4] == '-':
                 return dt_str[:10]
+                
             return dt_str
 
         def validar_erros(row):
-            # A condição left_only não ocorrerá mais, mas mantida como fallback de segurança
             if row['_merge'] == 'left_only':
                 return 'FALTA_NO_TOTVS'
             elif row['_merge'] == 'right_only':
                 return 'FALTA_NO_QUIRIUS'
             else:
+                v_qri = row.get('Valor_QRI', 0.0)
+                dt_qri = str(row.get('Data Emissão Quirius', '')).strip()
+                
+                if pd.isna(v_qri) or v_qri == 0.0 or not dt_qri or dt_qri.lower() in ['nan', 'nat', 'none']:
+                    return 'INFO_FALTANTE_QUIRIUS'
+
                 erros = []
-                # Compara o valor agrupado
-                dif = round(row.get('Valor_QRI', 0.0) - row.get('Valor_OFB', 0.0), 2)
+                dif = round(v_qri - row.get('Valor_OFB', 0.0), 2)
                 if abs(dif) > 0.10:
                     erros.append('VALOR')
                 
-                # Validação de Datas
-                dt_qri = formatar_data(row.get('Data Emissão Quirius', ''))
-                dt_ofb = formatar_data(row.get('Data Emissão TOTVS', ''))
-                if dt_qri and dt_ofb and dt_qri != dt_ofb:
+                # Validação de Datas (Só compara a Emissão Quirius com Emissão TOTVS)
+                dt_qri_fmt = formatar_data(dt_qri)
+                dt_ofb_fmt = formatar_data(row.get('Data Emissão TOTVS', ''))
+                
+                if dt_qri_fmt and dt_ofb_fmt and dt_qri_fmt != dt_ofb_fmt:
                     erros.append('DATA')
 
                 return ",".join(erros) if erros else "OK"
@@ -313,6 +395,7 @@ class AuditorMateriais:
             if obs == "OK": return "Sem Erro"
             if "FALTA_NO_TOTVS" in obs: return "Nota lançada no Governo, não no TOTVS"
             if "FALTA_NO_QUIRIUS" in obs: return "Nota lançada no TOTVS, não no Governo"
+            if "INFO_FALTANTE_QUIRIUS" in obs: return "Falta a informação no relatório Quirius"
             
             tem_data = "DATA" in obs
             tem_valor = "VALOR" in obs
@@ -335,11 +418,12 @@ class AuditorMateriais:
             df_cruzamento['Razão Social Emissor'] = df_cruzamento['Razão Social Emissor'].fillna(df_cruzamento['Nome'])
 
         colunas_finais = [
-            'Apontamento_Mapeado', 'Valid. FINAL', 'Dif. QRI x OFB', 'Valor_QRI', 'Valor_OFB',
+            'Apontamento_Mapeado', 'Valid. FINAL', 'Nome do Usuario', 'Dt Docto', 'Estabelecimento',
+            'Dif. QRI x OFB', 'Valor_QRI', 'Valor_OFB',
             'Data Emissão Quirius', 'Data Emissão TOTVS',
             'Chave_Acesso', 'Nº NF-e', 'Doc Fisc', 
             'CNPJ Emissor', 'Razão Social Emissor', 'Nome', 
-            'Pasta_Origem', 'Estabelecimento', 'Nome do Usuario'
+            'Pasta_Origem'
         ]
         
         for col in colunas_finais:
@@ -352,7 +436,7 @@ class AuditorMateriais:
         print("[EXPORTAÇÃO] Gerando Dashboard Executivo de Materiais...")
         if df_resultado.empty: return None
 
-        df_erros = df_resultado[df_resultado['Valid. FINAL'] != 'CONCILIADO'].copy()
+        df_erros = df_resultado[df_resultado['Apontamento_Mapeado'] != 'Sem Erro'].copy()
 
         if 'Valor_OFB' in df_resultado.columns:
             df_resultado['Valor_OFB'] = pd.to_numeric(df_resultado['Valor_OFB'], errors='coerce').fillna(0)
@@ -360,7 +444,6 @@ class AuditorMateriais:
         total_nfs = len(df_resultado)
         total_verificar = len(df_erros)
 
-        # Levantamento por Estabelecimento
         est_col = 'Estabelecimento'
         if est_col in df_resultado.columns:
             df_estab = df_resultado.groupby(est_col).size().reset_index(name='Total NFS')
@@ -370,13 +453,12 @@ class AuditorMateriais:
         else:
             df_estab = pd.DataFrame(columns=['Estabelecimento', 'Total NFS', 'Para Verificar'])
 
-        # Levantamento de Apontamentos (Erros mapeados para bater com a capa)
-        # NOTA: O apontamento "Nota lançada no Governo, não no TOTVS" foi removido da matriz.
         lista_apontamentos = [
             (1, "Divergência de Valor e Data"),
             (2, "Divergência de Valor"),
             (3, "Divergência de Data"),
-            (4, "Nota lançada no TOTVS, não no Governo"),
+            (4, "Falta a informação no relatório Quirius"),
+            (5, "Nota lançada no TOTVS, não no Governo"),
         ]
         
         erros_contagem = df_erros['Apontamento_Mapeado'].value_counts().to_dict()
@@ -385,22 +467,19 @@ class AuditorMateriais:
             qtd = erros_contagem.get(desc, 0)
             dados_apontamentos.append((ordem, desc, qtd))
 
-        # Top 10 Fornecedores de Materiais
         if 'CNPJ Emissor' in df_resultado.columns and 'Razão Social Emissor' in df_resultado.columns:
             df_forn = df_resultado.groupby(['CNPJ Emissor', 'Razão Social Emissor']).size().reset_index(name='Quantidade')
             df_forn = df_forn.sort_values(by='Quantidade', ascending=False).head(10)
         else:
             df_forn = pd.DataFrame(columns=['CNPJ Emissor', 'Razão Social Emissor', 'Quantidade'])
 
-        # Top 5 Usuários (Lançamentos)
         if 'Nome do Usuario' in df_resultado.columns:
             df_user = df_resultado.groupby(['Nome do Usuario']).size().reset_index(name='Quantidades')
             df_user = df_user.sort_values(by='Quantidades', ascending=False).head(5)
-            df_user.insert(0, 'Cód.', '-') # Adaptação visual para manter as 3 colunas padrão
+            df_user.insert(0, 'Cód.', '-') 
         else:
             df_user = pd.DataFrame(columns=['Cód.', 'Nome do Usuario', 'Quantidades'])
 
-        # Totais Financeiros
         totais_gerais = [
             ("Valor Total NFS (OFB)", df_resultado['Valor_OFB'].sum())
         ]
@@ -408,7 +487,6 @@ class AuditorMateriais:
         arquivo_saida = caminho_saida / "relatorio_materiais.xlsx"
         wb = Workbook()
         
-        # === ABA DASHBOARD ===
         ws = wb.active
         ws.title = "Dashboard"
         ws.sheet_view.showGridLines = False
@@ -446,7 +524,6 @@ class AuditorMateriais:
         for col, width in larguras.items():
             ws.column_dimensions[col].width = width
 
-        # Criação dos blocos do Dashboard
         criar_titulo_secao(ws, 2, 4, 2, "RESUMO DE NFS (MATERIAIS)")
         ws.cell(row=3, column=2, value="Total de NFS").font = Font(bold=True)
         ws.cell(row=3, column=3, value=total_nfs).alignment = Alignment(horizontal="left")
@@ -484,11 +561,8 @@ class AuditorMateriais:
             celula.fill = fill_title
             ws_val.column_dimensions[celula.column_letter].width = 20
             
-        df_export = df_resultado.fillna("")
-        
-        # Ordenação inteligente: Coloca as divergências no topo
-        df_export['Ordem_Sort'] = df_export['Valid. FINAL'].apply(lambda x: 1 if 'CONCILIADO' in x else 0)
-        df_export = df_export.sort_values(by=['Ordem_Sort', 'Valid. FINAL']).drop(columns=['Ordem_Sort'])
+        df_export = df_erros.fillna("")
+        df_export = df_export.sort_values(by=['Valid. FINAL', 'Apontamento_Mapeado'])
 
         col_idx_map = {col_name: idx for idx, col_name in enumerate(colunas_finais, 1)}
         fill_erro = PatternFill(fill_type="solid", fgColor="FFC7CE") 
@@ -497,12 +571,11 @@ class AuditorMateriais:
         for r_idx, r in enumerate(df_export.itertuples(index=False), start=2):
             ws_val.append(list(r))
             
-            # Formatação Monetária
             ws_val.cell(row=r_idx, column=col_idx_map.get('Dif. QRI x OFB', 3)).number_format = 'R$ #,##0.00'
             ws_val.cell(row=r_idx, column=col_idx_map.get('Valor_QRI', 4)).number_format = 'R$ #,##0.00'
             ws_val.cell(row=r_idx, column=col_idx_map.get('Valor_OFB', 5)).number_format = 'R$ #,##0.00'
 
-            obs = str(r[0]) # Apontamento Mapeado
+            obs = str(r[0]) 
             
             def pintar_celulas(col_qri, col_totvs):
                 if col_qri in col_idx_map:
@@ -512,7 +585,6 @@ class AuditorMateriais:
                     ws_val.cell(row=r_idx, column=col_idx_map[col_totvs]).fill = fill_erro
                     ws_val.cell(row=r_idx, column=col_idx_map[col_totvs]).font = font_erro
 
-            # Pintura Condicional baseada no erro detectado
             if obs != 'Sem Erro':
                 ws_val.cell(row=r_idx, column=col_idx_map.get('Apontamento_Mapeado', 1)).fill = fill_erro
                 ws_val.cell(row=r_idx, column=col_idx_map.get('Apontamento_Mapeado', 1)).font = font_erro
@@ -522,13 +594,22 @@ class AuditorMateriais:
                 if "não no TOTVS" in obs: pintar_celulas("Chave_Acesso", "Nº NF-e")
                 if "não no Governo" in obs: pintar_celulas("Chave_Acesso", "Doc Fisc")
                 
+                if "Falta a informação" in obs:
+                    pintar_celulas("Valor_QRI", "Data Emissão Quirius")
+                
         ws_val.freeze_panes = "A2"
         ultima_coluna = get_column_letter(ws_val.max_column)
         ws_val.auto_filter.ref = f"A1:{ultima_coluna}{ws_val.max_row}"
 
-        wb.save(arquivo_saida)
-        print(f"[SUCESSO] Dashboard Finalizado: {arquivo_saida}")
-        return arquivo_saida
+        try:
+            wb.save(str(arquivo_saida))
+            print(f"[SUCESSO] Dashboard Finalizado: {arquivo_saida}")
+            return arquivo_saida
+        except PermissionError:
+            print(f"\n[ERRO CRÍTICO] ACESSO NEGADO!")
+            print(f"O arquivo '{str(arquivo_saida)}' está ABERTO em algum lugar.")
+            print("Por favor, feche o Excel e rode o script novamente.")
+            return None
 
 
 if __name__ == "__main__":
@@ -547,3 +628,11 @@ if __name__ == "__main__":
     
     if not df_resultado.empty:
         auditor.exportar_dashboard(df_resultado, caminhos.saida_auditoria)
+    else:
+        print("\n[AVISO] O processo terminou, mas o relatório Excel não foi gerado.")
+        print("        Motivo: Após aplicar a regra de descartar notas não lançadas no TOTVS, sobraram ZERO notas para comparar.")
+        print("        Solução: Verifique se o seu relatório OFB013 possui chaves de acesso válidas.")
+    
+    print("\n" + "="*50)
+    print(" PIPELINE DE MATERIAIS CONCLUÍDO COM SUCESSO ")
+    print("="*50)

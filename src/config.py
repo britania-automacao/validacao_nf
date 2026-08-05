@@ -66,18 +66,23 @@ class CaminhosProjeto:
     def __init__(self, diretorio_base: Path):
         self.diretorio_base = diretorio_base
         
-        self.entrada_totvs = self.diretorio_base / "dados" / "entrada_totvs"
-        self.saida_auditoria = diretorio_base / "dados" / "saida_auditoria"
+        # --- CAMINHOS MAPEADOS NA REDE CORPORATIVA (Mapeamento P:) ---
+        self.entrada_totvs = Path(r"P:\FISCAL\GERAL\05 - KPIs RECEBIMENTO FISCAL\8. Automacao Validacao NF\entrada_totvs")
+        self.consulta_simples_nacional = Path(r"P:\FISCAL\GERAL\05 - KPIs RECEBIMENTO FISCAL\8. Automacao Validacao NF\consulta_simples_nacional")
+        
+        # --- CAMINHOS LOCAIS DO PROJETO ---
+        self.saida_auditoria = self.diretorio_base / "dados" / "saida_auditoria"
         self.xml_materiais_quirius = self.diretorio_base / "dados" / "xml_materiais_quirius"
         self.xml_servicos_nacional = self.diretorio_base / "dados" / "xml_servicos_nacional"
         self.certificados = self.diretorio_base / "dados" / "certificados"
-        
         self.historico_controle = self.diretorio_base / "dados" / "historico"
         self.planilha_mestre = self.diretorio_base / "planilha_mestre" / "planilha_mestre.xlsm"
 
     def obter_todos_diretorios_obrigatorios(self) -> list:
         return [
             self.entrada_totvs,
+            self.consulta_simples_nacional,
+            self.saida_auditoria,
             self.xml_materiais_quirius,
             self.xml_servicos_nacional,
             self.certificados,
@@ -89,7 +94,7 @@ class InicializadorAmbiente:
         self.caminhos = caminhos
 
     def executar_configuracao_ciclo_vida(self) -> bool:
-        print("[INFO] Iniciando a validação da infraestrutura local...")
+        print("[INFO] Iniciando a validação da infraestrutura local/rede...")
         estrutura_pastas_criada = self._criar_arvore_diretorios()
         planilha_mestre_verificada = self._verificar_presenca_planilha_mestre()
         
