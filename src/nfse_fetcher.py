@@ -48,12 +48,12 @@ class SincronizadorGoverno:
         self.logger.addHandler(fh)
         self.logger.addHandler(sh)
 
-        # 2. Configuração de Certificados (Agora o logger já existe para ser usado)
+        # Configuração de Certificados
         pasta_cert = raiz_projeto / "dados" / "certificados" / self.empresa_id
         pasta_cert.mkdir(parents=True, exist_ok=True)
         self.cert_path = self._garantir_certificados_pem(pasta_cert, cfg['cert_nome'], cfg['cert_senha'])
         
-        # 3. Configurar restante dos arquivos locais
+        # Configurar restante dos arquivos locais
         self.arquivo_nsu = self.pasta_historico / "ultimo_nsu.txt"
         
         self.pasta_destino = raiz_projeto / "dados" / "xml_servicos_nacional" / self.empresa_id
@@ -61,13 +61,11 @@ class SincronizadorGoverno:
         
         self.arquivo_excel = self.pasta_destino / f"Resumo_Notas_Nacional_{self.empresa_id}.xlsx"
         
-        # 4. Configurar caminho para CÓPIA NA REDE
-        # Aponta para P:\FISCAL\GERAL\05 - KPIs RECEBIMENTO FISCAL\8. Automacao Validacao NF\xml_servicos_nacional
+        # Configurar caminho para CÓPIA NA REDE
         self.pasta_rede = Path(r"P:\FISCAL\GERAL\05 - KPIs RECEBIMENTO FISCAL\8. Automacao Validacao NF\xml_servicos_nacional") / self.empresa_id
         self.arquivo_excel_rede = self.pasta_rede / f"Resumo_Notas_Nacional_{self.empresa_id}.xlsx"
 
     def _garantir_certificados_pem(self, pasta_cert: Path, cert_nome: str, cert_senha: str):
-        """Transforma o certificado .pfx em arquivos .pem para a API em Python"""
         cert_pub_path = pasta_cert / "cert_publico.pem"
         cert_key_path = pasta_cert / "chave.pem"
         
@@ -144,10 +142,41 @@ class SincronizadorGoverno:
                  return True, conteudo_resposta
             return False, f"ERRO_GERAL: {e}"
             
+    def _extrair_chave_acesso(self, xml_string: str) -> str:
+        """Tenta encontrar a Chave de Acesso (Id) no cabecalho da NFS-e"""
+        try:
+            # Lida com o namespace padrao da receita
+            namespaces = {'ns': 'http://www.sped.fazenda.gov.br/nfse'}
+            raiz = ET.fromstring(xml_string)
+            
+            # Procura especificamente pela tag <infNFSe> e pega o atributo Id
+            inf_nfse = raiz.find('.//ns:infNFSe', namespaces)
+            if inf_nfse is not None and 'Id' in inf_nfse.attrib:
+                chave_suja = str(inf_nfse.attrib['Id'])
+                # Remove o prefixo "NFS" que vem grudado na chave (ex: NFS3550...)
+                if chave_suja.startswith("NFS"):
+                    return chave_suja[3:]
+                return chave_suja
+                
+            # Fallback genérico caso a prefeitura não use namespace
+            for elem in raiz.iter():
+                if elem.tag.endswith('infNFSe') and 'Id' in elem.attrib:
+                    chave_suja = str(elem.attrib['Id'])
+                    if chave_suja.startswith("NFS"):
+                        return chave_suja[3:]
+                    return chave_suja
+        except Exception as e:
+            self.logger.warning(f"Não foi possível extrair a chave de acesso: {e}")
+            
+        return ""
+
     def _converter_xml_para_dict(self, xml_string: str, nsu: int) -> dict:
         try:
             raiz = ET.fromstring(xml_string)
             dados = {'NSU_API': str(nsu)}
+            
+            # Busca e armazena a chave de acesso real do XML
+            dados['Chave_Acesso_NFSe'] = self._extrair_chave_acesso(xml_string)
 
             def achatar(nodo, prefixo=''):
                 for filho in nodo:
@@ -178,6 +207,13 @@ class SincronizadorGoverno:
                     df_final = df_final.drop_duplicates(subset=['NSU_API'], keep='last')
             else:
                 df_final = df_novos
+                
+            # Para organizar, puxa a Chave de Acesso para o começo do Excel
+            cols = list(df_final.columns)
+            if 'Chave_Acesso_NFSe' in cols:
+                cols.remove('Chave_Acesso_NFSe')
+                cols.insert(1, 'Chave_Acesso_NFSe')
+                df_final = df_final[cols]
                 
             # Salva na pasta LOCAL (C:)
             df_final.to_excel(self.arquivo_excel, index=False)
@@ -216,7 +252,7 @@ class SincronizadorGoverno:
                 except Exception: pass
 
         if notas_pendentes:
-            self.logger.info(f"Atualizando Excel com {len(notas_pendentes)} XML(s) que já existiam na pasta...")
+            self.logger.info(f"Atualizando Excel com {len(notas_pendentes)} XML(s) que já existiam na pasta mas não no Excel...")
             self._atualizar_excel(notas_pendentes)
 
     def buscar_notas(self):
