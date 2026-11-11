@@ -8,12 +8,11 @@ from selenium.webdriver.remote.webdriver import WebDriver
 
 logger = logging.getLogger("quirius_fetcher.driver")
 
-
-def get_driver(headless: bool = True, download_dir: Path | None = None, insecure_origins: list[str] | None = None) -> WebDriver:
+# <--- COMENTADO: Mudei o headless padrão para False para você poder visualizar os testes na tela
+def get_driver(headless: bool = False, download_dir: Path | None = None, insecure_origins: list[str] | None = None) -> WebDriver:
     """
     Inicializa o ChromeDriver.
-    O parâmetro headless agora é True por padrão. 
-    Se quiser ver o navegador rodando para debugar, passe headless=False.
+    O parâmetro headless agora é False por padrão para depuração visual.
     """
     logger.info("Initializing Chrome WebDriver...")
     
@@ -95,7 +94,8 @@ def get_driver(headless: bool = True, download_dir: Path | None = None, insecure
 
 
 @contextmanager
-def browser_session(headless: bool = True, download_dir: Path | None = None, insecure_origins: list[str] | None = None):
+# <--- COMENTADO: Mudei o headless padrão para False aqui também
+def browser_session(headless: bool = False, download_dir: Path | None = None, insecure_origins: list[str] | None = None):
     """Gerencia o ciclo de vida do navegador (abre, executa e fecha)"""
     driver = get_driver(headless=headless, download_dir=download_dir, insecure_origins=insecure_origins)
     try:

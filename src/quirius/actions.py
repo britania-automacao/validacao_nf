@@ -45,6 +45,10 @@ class QuiriusActions:
 
     def selecionar_empresa(self, id_empresa: str):        
         logger.info(f"Selecting company with ID: {id_empresa}")
+        
+        # 1. WebDriverWait garantindo que o elemento 'ddlEmpresa' carregou no HTML antes de agir
+        self.wait.until(EC.presence_of_element_located((By.ID, 'ddlEmpresa')))
+        
         script_js = """
         const select = document.getElementById('ddlEmpresa');
         if (select) {
@@ -54,6 +58,37 @@ class QuiriusActions:
         """
         self.driver.execute_script(script_js, str(id_empresa)) # pyright: ignore[reportUnknownMemberType]
         time.sleep(2)
+        
+        # 2. Validação se foi o estabelecimento correto
+        logger.info("Validando se a empresa foi selecionada corretamente...")
+        try:
+            # Pega o texto que a interface está mostrando na tela
+            elemento_texto = self.wait.until(
+                EC.presence_of_element_located((By.XPATH, "//span[contains(@class, 'select2-selection__rendered')]"))
+            )
+            texto_selecionado = str(elemento_texto.text).strip()
+            
+            id_str = str(id_empresa).strip()
+            id_zero2 = id_str.zfill(2)
+            id_zero3 = id_str.zfill(3)
+            
+            valido = (texto_selecionado.startswith(f"{id_str} -") or 
+                      texto_selecionado.startswith(f"{id_zero2} -") or
+                      texto_selecionado.startswith(f"{id_zero3} -") or
+                      texto_selecionado == id_str or 
+                      texto_selecionado == id_zero2)
+                      
+            if not valido:
+                raise Exception(f"Falha na validação: O JS executou '{id_empresa}', mas a tela continuou mostrando '{texto_selecionado}'.")
+            
+            logger.info(f"Empresa '{texto_selecionado}' validada com sucesso.")
+        except TimeoutException:
+            # Fallback: Se não achar o texto na tela, valida se o 'value' oculto mudou de verdade
+            valor_interno = self.driver.execute_script("return document.getElementById('ddlEmpresa').value;")
+            if str(valor_interno) != str(id_empresa):
+                 raise Exception(f"Falha na validação: O valor interno do campo continuou como '{valor_interno}' em vez de '{id_empresa}'.")
+            logger.info("Empresa validada com sucesso através do código oculto.")
+
         scroll_and_click(self.driver, self.wait, self.Elements.BTN_CONFIRMAR_SELECAO_EMPRESA)
 
     def selecionar_modulo(self, module: str) -> None:
@@ -163,9 +198,6 @@ class QuiriusActions:
         initial_files = set(os.listdir(download_dir))
         
         logger.info("Clicking the Export button...")
-        #scroll_and_click(self.driver, self.wait, self.Elements.BUTTON_EXPORT_NFE)
-        #btn = self.wait.until(EC.presence_of_element_located(self.Elements.BUTTON_EXPORT_NFE))
-        #btn.click()
         scroll_and_click(self.driver, self.wait, self.Elements.BUTTON_EXPORT_NFE, to_be_clickable=False, js_click=True)
 
         logger.info("Waiting for file download to start and complete...")

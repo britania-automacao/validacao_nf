@@ -200,6 +200,8 @@ class SincronizadorGoverno:
         try:
             df_novos = pd.DataFrame(notas_extraidas)
             
+            df_novos = df_novos.astype(str)
+            
             if self.arquivo_excel.exists():
                 df_existente = pd.read_excel(self.arquivo_excel, dtype=str)
                 df_final = pd.concat([df_existente, df_novos], ignore_index=True)
