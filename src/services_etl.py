@@ -112,29 +112,53 @@ class LeitorSimplesNacional:
         if not cnpj or len(cnpj) != 14: 
             return "PENDENTE_CONSULTA"
             
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'application/json'
+        }
+
+        # Cascata de APIs otimizada: prioriza as mais rápidas com maior cota gratuita
         apis = [
-            {"nome": "ReceitaWS", "url": f"https://receitaws.com.br/v1/cnpj/{cnpj}"},
+            {"nome": "CNPJ.ws", "url": f"https://publica.cnpj.ws/cnpj/{cnpj}"},
+            {"nome": "BrasilAPI", "url": f"https://brasilapi.com.br/api/cnpj/v1/{cnpj}"},
             {"nome": "MinhaReceita", "url": f"https://minhareceita.org/{cnpj}"},
-            {"nome": "BrasilAPI", "url": f"https://brasilapi.com.br/api/cnpj/v1/{cnpj}"}
+            {"nome": "ReceitaWS", "url": f"https://receitaws.com.br/v1/cnpj/{cnpj}"}
         ]
 
         for api in apis:
             nome_api = api["nome"]
             url = api["url"]
             try:
-                response = requests.get(url, timeout=10, verify=False)
+                response = requests.get(url, headers=headers, timeout=8, verify=False)
                 if response.status_code == 200:
                     dados = response.json()
-                    if nome_api == "ReceitaWS":
+                    
+                    if nome_api == "CNPJ.ws":
+                        simples_info = dados.get("simples")
+                        if isinstance(simples_info, dict):
+                            optante = simples_info.get("simples")
+                            if isinstance(optante, str):
+                                return "SIM" if optante.strip().lower() == "sim" else "NÃO"
+                            elif isinstance(optante, bool):
+                                return "SIM" if optante else "NÃO"
+                        return "NÃO"
+                        
+                    elif nome_api in ["BrasilAPI", "MinhaReceita"]:
+                        opcao = dados.get("opcao_pelo_simples")
+                        if opcao is not None:
+                            return "SIM" if opcao is True else "NÃO"
+                            
+                    elif nome_api == "ReceitaWS":
                         if dados.get("status") == "ERROR": continue
                         simples = dados.get("simples")
                         if isinstance(simples, dict):
                             opcao = simples.get("optante")
                             return "SIM" if opcao is True else "NÃO"
                         return "NÃO"
-                    elif nome_api in ["MinhaReceita", "BrasilAPI"]:
-                        opcao = dados.get("opcao_pelo_simples")
-                        return "SIM" if opcao is True else "NÃO"
+                        
+                elif response.status_code == 429:
+                    # Se tomar rate limit em uma API, pula imediatamente para a próxima
+                    continue
             except Exception:
                 continue
         return "PENDENTE_CONSULTA"
@@ -225,18 +249,26 @@ class LeitorSimplesNacional:
 
             if cnpjs_faltantes:
                 houve_alteracao = True
-                print(f"[API SIMPLES] {len(cnpjs_faltantes)} CNPJs pendentes/novos detectados! Consultando cascata de APIs...")
+                print(f"[API SIMPLES] {len(cnpjs_faltantes)} CNPJs pendentes/novos detectados! Processando com cascata otimizada...")
                 novos_registros = []
                 
                 for idx, cnpj in enumerate(cnpjs_faltantes, 1):
-                    status = self._consultar_api(cnpj)
+                    # 1. Otimização rápida: se o XML oficial recente da NFS-e já traz o status, aproveita de imediato (sem gastar cota externa)
+                    if mapa_simples_xml and cnpj in mapa_simples_xml and mapa_simples_xml[cnpj] in ['SIM', 'NÃO']:
+                        status = mapa_simples_xml[cnpj]
+                        print(f"[API SIMPLES] ({idx}/{len(cnpjs_faltantes)}) CNPJ {cnpj}: Obtido diretamente do XML oficial -> {status}")
+                    else:
+                        # 2. Caso contrário, consulta a cascata de APIs com intervalo suave de 2s
+                        status = self._consultar_api(cnpj)
+                        print(f"[API SIMPLES] ({idx}/{len(cnpjs_faltantes)}) CNPJ {cnpj}: Consulta externa concluída -> {status}")
+                        time.sleep(2)
+                        
                     emit_novo = str(mapa_emitente.get(cnpj, "")) if mapa_emitente else ""
                     nova_linha = {
                         col_cnpj: cnpj, 'Emit.': emit_novo, col_simples: status,
                         'CNPJ_Limpo': cnpj, 'Simples_SN': status
                     }
                     novos_registros.append(nova_linha)
-                    time.sleep(20) 
 
                 df_novos = pd.DataFrame(novos_registros)
                 df_original = pd.concat([df_original, df_novos], ignore_index=True)
