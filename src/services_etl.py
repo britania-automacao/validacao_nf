@@ -43,12 +43,24 @@ load_dotenv()
 
 class LeitorRegrasRetencao:
     def __init__(self, caminhos: CaminhosProjeto):
-        self.pasta = Path(r"P:\FISCAL\GERAL\05 - KPIs RECEBIMENTO FISCAL\8. Automacao Validacao NF\planilha_de_regras")
+        self.caminhos = caminhos
+        p_rede = Path(r"P:\FISCAL\GERAL\05 - KPIs RECEBIMENTO FISCAL\8. Automacao Validacao NF\planilha_de_regras")
+        p_local = caminhos.diretorio_base / "planilha_de_regras"
+        try:
+            if p_rede.exists():
+                self.pasta = p_rede
+            else:
+                self.pasta = p_local
+        except (PermissionError, OSError):
+            self.pasta = p_local
+            
         self.arquivo = self.pasta / "regras_retencao.xlsx"
+        if not self.arquivo.exists() and (p_local / "regras_retencao.xlsx").exists():
+            self.arquivo = p_local / "regras_retencao.xlsx"
         
     def carregar(self) -> dict:
         if not self.arquivo.exists():
-            print(f"[AVISO] Planilha de regras não encontrada no caminho de rede: {self.arquivo}. A validação por Cód. Item será ignorada.")
+            print(f"[AVISO] Planilha de regras não encontrada no caminho: {self.arquivo}. A validação por Cód. Item será ignorada.")
             return {}
             
         try:
@@ -76,8 +88,14 @@ class LeitorRegrasRetencao:
 
 class LeitorSimplesNacional:
     def __init__(self, caminhos: CaminhosProjeto):
-        self.pasta = caminhos.consulta_simples_nacional
-        self.pasta.mkdir(parents=True, exist_ok=True)
+        self.caminhos = caminhos
+        try:
+            self.pasta = caminhos.consulta_simples_nacional
+            if not self.pasta.exists():
+                self.pasta.mkdir(parents=True, exist_ok=True)
+        except (PermissionError, OSError):
+            self.pasta = caminhos.diretorio_base / "dados" / "consulta_simples_nacional"
+            self.pasta.mkdir(parents=True, exist_ok=True)
 
     def _limpar_cnpj(self, cnpj_bruto) -> str:
         if pd.isna(cnpj_bruto): return ""
@@ -121,8 +139,24 @@ class LeitorSimplesNacional:
                 continue
         return "PENDENTE_CONSULTA"
 
-    def carregar(self, cnpjs_alvo=None, mapa_emitente=None) -> pd.DataFrame:
-        arquivos = list(self.pasta.glob("*.xlsx")) + list(self.pasta.glob("*.csv"))
+    def carregar(self, cnpjs_alvo=None, mapa_emitente=None, mapa_simples_xml: dict | None = None) -> pd.DataFrame:
+        arquivos = []
+        try:
+            arquivos = list(self.pasta.glob("*.xlsx")) + list(self.pasta.glob("*.csv"))
+        except Exception:
+            pass
+            
+        # Fallback para pasta local se a pasta configurada estiver inacessível ou vazia
+        if not arquivos:
+            pasta_local = self.caminhos.diretorio_base / "dados" / "consulta_simples_nacional"
+            if pasta_local.exists():
+                try:
+                    arquivos = list(pasta_local.glob("*.xlsx")) + list(pasta_local.glob("*.csv"))
+                    if arquivos:
+                        self.pasta = pasta_local
+                except Exception:
+                    pass
+
         df_original = pd.DataFrame()
         col_cnpj, col_simples = "CNPJ", "SIMPLES"
         caminho_salvar = None
@@ -151,6 +185,35 @@ class LeitorSimplesNacional:
             df_original = pd.DataFrame(columns=['CNPJ', 'Emit.', 'SIMPLES', 'CNPJ_Limpo', 'Simples_SN'])
 
         houve_alteracao = False
+
+        # --- REVALIDAÇÃO INTELIGENTE DE CNPJs COM DIVERGÊNCIA (PLANILHA x XML OFICIAL) ---
+        if mapa_simples_xml and not df_original.empty and 'CNPJ_Limpo' in df_original.columns:
+            cnpjs_para_revalidar = []
+            for idx, row in df_original.iterrows():
+                cnpj_c = str(row.get('CNPJ_Limpo', '')).strip()
+                if cnpj_c in mapa_simples_xml:
+                    st_planilha = str(row.get('Simples_SN', '')).strip().upper()
+                    st_xml = str(mapa_simples_xml[cnpj_c]).strip().upper()
+                    if st_planilha in ['SIM', 'NÃO'] and st_xml in ['SIM', 'NÃO'] and st_planilha != st_xml:
+                        cnpjs_para_revalidar.append((idx, cnpj_c, st_planilha, st_xml))
+            
+            if cnpjs_para_revalidar:
+                print(f"[API SIMPLES] {len(cnpjs_para_revalidar)} CNPJ(s) com divergência entre a Planilha e o XML detectados! Revalidando na Receita Federal...")
+                for idx, cnpj_c, st_planilha, st_xml in cnpjs_para_revalidar:
+                    print(f"[API SIMPLES] Reconsultando CNPJ {cnpj_c} (Planilha={st_planilha} vs XML={st_xml})...")
+                    status_api = self._consultar_api(cnpj_c)
+                    if status_api in ['SIM', 'NÃO']:
+                        print(f"-> Retorno da Receita Federal para {cnpj_c}: {status_api}")
+                        if status_api != st_planilha:
+                            print(f"-> Atualizando cadastro do CNPJ {cnpj_c} na planilha de '{st_planilha}' para '{status_api}'!")
+                            df_original.at[idx, col_simples] = status_api
+                            df_original.at[idx, 'Simples_SN'] = status_api
+                            houve_alteracao = True
+                    else:
+                        # Se a API estiver temporariamente indisponível mas o XML emitido declara NÃO,
+                        # respeita a declaração do documento fiscal emitido
+                        print(f"-> Não foi possível obter resposta definitiva da API para {cnpj_c} ({status_api}).")
+                    time.sleep(2)
 
         if cnpjs_alvo:
             cnpjs_existentes = set()
@@ -186,7 +249,17 @@ class LeitorSimplesNacional:
                     df_salvar.to_excel(caminho_salvar, index=False)
                 else:
                     df_salvar.to_csv(caminho_salvar, sep=';', index=False, encoding='utf-8-sig')
-            except Exception: pass
+                print(f"[API SIMPLES] Planilha de Simples Nacional atualizada com sucesso: {caminho_salvar.name}")
+            except Exception as e_salvar:
+                print(f"[AVISO] Não foi possível salvar atualizações no arquivo principal: {e_salvar}")
+                # Fallback: tentar salvar na pasta local se a remota falhar
+                try:
+                    caminho_local = self.caminhos.diretorio_base / "dados" / "consulta_simples_nacional" / "consulta_simples_nacional.xlsx"
+                    caminho_local.parent.mkdir(parents=True, exist_ok=True)
+                    df_salvar.to_excel(caminho_local, index=False)
+                    print(f"[API SIMPLES] Atualizações salvas com sucesso no backup local: {caminho_local}")
+                except Exception:
+                    pass
 
         if not df_original.empty and 'CNPJ_Limpo' in df_original.columns:
             df_retorno = df_original.drop_duplicates(subset=['CNPJ_Limpo'], keep='last')
@@ -409,7 +482,15 @@ class AuditorFiscal:
             
             val_simples_planilha = str(row.get('Simples_SN', 'PENDENTE_CONSULTA')).strip().upper()
             val_simples_xml = str(row.get('Simples_XML_Resolvido', 'NÃO')).strip().upper()
-            is_simples = (val_simples_planilha == 'SIM') or (val_simples_xml == 'SIM')
+            
+            # --- DEFINIÇÃO INTELIGENTE DE OPÇÃO PELO SIMPLES ---
+            # Se o XML emitido declara explicitamente NÃO (opSimpNac = 1) e a planilha divergia com SIM,
+            # a emissão oficial do documento fiscal prevalece para a apuração da nota,
+            # evitando apontar indevidamente 'SIMPLES_RET_INDEVIDA' em prestadores comuns.
+            if val_simples_xml == 'NÃO' and val_simples_planilha == 'SIM':
+                is_simples = False
+            else:
+                is_simples = (val_simples_planilha == 'SIM') or (val_simples_xml == 'SIM')
             
             cod_item = str(row.get('Cód.Item', '')).strip()
             regra = regras_retencao.get(cod_item)
@@ -775,7 +856,16 @@ if __name__ == "__main__":
         temp_map = tabela_totvs.dropna(subset=['CNPJ_TOTVS', 'Emit.']).set_index('CNPJ_TOTVS')['Emit.'].to_dict()
         mapa_emit.update(temp_map)
         
-    tabela_simples = LeitorSimplesNacional(caminhos=config_caminhos).carregar(cnpjs_alvo=cnpjs_para_consultar, mapa_emitente=mapa_emit)
+    mapa_simples_xml = {}
+    if not tabela_xml.empty and 'CNPJ_XML' in tabela_xml.columns and 'Simples_XML_Resolvido' in tabela_xml.columns:
+        temp_simples = tabela_xml.dropna(subset=['CNPJ_XML', 'Simples_XML_Resolvido']).set_index('CNPJ_XML')['Simples_XML_Resolvido'].to_dict()
+        mapa_simples_xml.update(temp_simples)
+
+    tabela_simples = LeitorSimplesNacional(caminhos=config_caminhos).carregar(
+        cnpjs_alvo=cnpjs_para_consultar, 
+        mapa_emitente=mapa_emit,
+        mapa_simples_xml=mapa_simples_xml
+    )
     
     leitor_regras = LeitorRegrasRetencao(caminhos=config_caminhos)
     regras_retencao = leitor_regras.carregar()

@@ -220,3 +220,6 @@ __marimo__/
 dados
 certificado.pem
 chave_privada.key
+
+# Documentos e relatorios temporarios
+*.docx

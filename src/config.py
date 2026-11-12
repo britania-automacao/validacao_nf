@@ -66,9 +66,25 @@ class CaminhosProjeto:
     def __init__(self, diretorio_base: Path):
         self.diretorio_base = diretorio_base
         
-        # --- CAMINHOS MAPEADOS NA REDE CORPORATIVA (Mapeamento P:) ---
-        self.entrada_totvs = Path(r"P:\FISCAL\GERAL\05 - KPIs RECEBIMENTO FISCAL\8. Automacao Validacao NF\entrada_totvs")
-        self.consulta_simples_nacional = Path(r"P:\FISCAL\GERAL\05 - KPIs RECEBIMENTO FISCAL\8. Automacao Validacao NF\consulta_simples_nacional")
+        # --- CAMINHOS MAPEADOS NA REDE CORPORATIVA (Mapeamento P:) COM FALLBACK LOCAL ---
+        p_entrada = Path(r"P:\FISCAL\GERAL\05 - KPIs RECEBIMENTO FISCAL\8. Automacao Validacao NF\entrada_totvs")
+        p_simples = Path(r"P:\FISCAL\GERAL\05 - KPIs RECEBIMENTO FISCAL\8. Automacao Validacao NF\consulta_simples_nacional")
+        
+        try:
+            if p_entrada.exists():
+                self.entrada_totvs = p_entrada
+            else:
+                self.entrada_totvs = self.diretorio_base / "dados" / "entrada_totvs"
+        except (PermissionError, OSError):
+            self.entrada_totvs = self.diretorio_base / "dados" / "entrada_totvs"
+
+        try:
+            if p_simples.exists():
+                self.consulta_simples_nacional = p_simples
+            else:
+                self.consulta_simples_nacional = self.diretorio_base / "dados" / "consulta_simples_nacional"
+        except (PermissionError, OSError):
+            self.consulta_simples_nacional = self.diretorio_base / "dados" / "consulta_simples_nacional"
         
         # --- CAMINHOS LOCAIS DO PROJETO ---
         self.saida_auditoria = self.diretorio_base / "dados" / "saida_auditoria"
