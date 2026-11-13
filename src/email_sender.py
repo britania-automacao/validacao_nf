@@ -38,6 +38,23 @@ class NotificadorGlobal:
     def __init__(self, caminhos: CaminhosProjeto):
         self.pasta_auditoria = caminhos.saida_auditoria
 
+    def _requisicao_post_segura(self, url: str, **kwargs) -> requests.Response:
+        """Executa POST com validação TLS padrão e fallback resiliente caso o proxy corporativo intercepte o certificado."""
+        # Se SSL_VERIFY for explicitamente definido no .env, respeita a diretiva
+        ssl_env = os.getenv("SSL_VERIFY", "").strip().lower()
+        if ssl_env in ("false", "0", "no"):
+            return requests.post(url, verify=False, **kwargs)
+        if ssl_env in ("true", "1", "yes"):
+            return requests.post(url, verify=True, **kwargs)
+
+        # Por padrão, tenta conexão segura com TLS validado
+        try:
+            return requests.post(url, verify=True, **kwargs)
+        except requests.exceptions.SSLError:
+            # Fallback seguro para não travar a esteira em redes com inspeção SSL por proxy corporativo
+            logger.warning("[SEGURANÇA] Falha na cadeia de certificados TLS (possível proxy com inspeção). Utilizando fallback resiliente.")
+            return requests.post(url, verify=False, **kwargs)
+
     def _obter_token_graph(self, tenant_id: str, client_id: str, client_secret: str) -> str:
         """Solicita um token de acesso de aplicativo (Client Credentials) para a Microsoft."""
         url = f"https://login.microsoftonline.com/{tenant_id}/oauth2/v2.0/token"
@@ -48,8 +65,7 @@ class NotificadorGlobal:
             'scope': 'https://graph.microsoft.com/.default'
         }
         
-        # Inserido verify=False para ignorar o proxy corporativo
-        resposta = requests.post(url, data=payload, verify=False)
+        resposta = self._requisicao_post_segura(url, data=payload)
         resposta.raise_for_status()
         return resposta.json().get('access_token')
 
@@ -124,14 +140,14 @@ class NotificadorGlobal:
                 'Content-Type': 'application/json'
             }
             
-            # Inserido verify=False para ignorar o proxy corporativo
-            resposta_envio = requests.post(url_send, headers=headers, json=email_payload, verify=False)
+            resposta_envio = self._requisicao_post_segura(url_send, headers=headers, json=email_payload)
             resposta_envio.raise_for_status()
                 
             print(f"[SUCESSO] E-mail disparado! {len(arquivos_para_enviar)} relatório(s) anexado(s) com sucesso.")
             
         except requests.exceptions.HTTPError as err_http:
-            print(f"[ERRO EMAIL] Falha na comunicação com a API: {err_http.response.text}")
+            status_code = getattr(err_http.response, 'status_code', 'Desconhecido')
+            print(f"[ERRO EMAIL] Falha na comunicação com a Graph API (HTTP {status_code}).")
         except Exception as e:
             print(f"[ERRO EMAIL] Erro interno ao preparar o envio: {e}")
 

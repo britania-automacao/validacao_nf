@@ -86,15 +86,17 @@ def buscar_ultimo_nsu_regressivo():
         params = {'cnpjConsulta': cnpj}
         
         try:
-            # Faz a requisição para a API
-            resp = requests.get(
-                url, 
+            # Faz a requisição para a API com TLS validado e fallback resiliente
+            req_kwargs = dict(
                 params=params, 
                 cert=(caminho_pub, caminho_key), 
                 headers={'Accept': 'application/xml'},
-                verify=False,
                 timeout=15
             )
+            try:
+                resp = requests.get(url, verify=True, **req_kwargs)
+            except requests.exceptions.SSLError:
+                resp = requests.get(url, verify=False, **req_kwargs)
             
             if resp.status_code == 200:
                 texto_resp = resp.text

@@ -30,19 +30,19 @@ echo.
 echo [1/5] Executando Quirius Fetcher (Multiplas Empresas)...
 
 echo - Extraindo Empresa 1...
-python src\quirius_fetcher.py -c 1 -r 90 -o "C:\Users\angelo.jorge\Desktop\Projetos\validacao_notas\validacao_nf\dados\xml_materiais_quirius"
+python src\quirius_fetcher.py -c 1 -r 90 -o "%~dp0dados\xml_materiais_quirius"
 if %ERRORLEVEL% neq 0 goto erro
 
 echo - Extraindo Empresa 15...
-python src\quirius_fetcher.py -c 15 -r 90 -o "C:\Users\angelo.jorge\Desktop\Projetos\validacao_notas\validacao_nf\dados\xml_materiais_quirius"
+python src\quirius_fetcher.py -c 15 -r 90 -o "%~dp0dados\xml_materiais_quirius"
 if %ERRORLEVEL% neq 0 goto erro
 
 echo - Extraindo Empresa 30...
-python src\quirius_fetcher.py -c 30 -r 90 -o "C:\Users\angelo.jorge\Desktop\Projetos\validacao_notas\validacao_nf\dados\xml_materiais_quirius"
+python src\quirius_fetcher.py -c 30 -r 90 -o "%~dp0dados\xml_materiais_quirius"
 if %ERRORLEVEL% neq 0 goto erro
 
 echo - Extraindo Empresa 35...
-python src\quirius_fetcher.py -c 35 -r 90 -o "C:\Users\angelo.jorge\Desktop\Projetos\validacao_notas\validacao_nf\dados\xml_materiais_quirius"
+python src\quirius_fetcher.py -c 35 -r 90 -o "%~dp0dados\xml_materiais_quirius"
 if %ERRORLEVEL% neq 0 goto erro
 
 echo.

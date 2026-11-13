@@ -42,6 +42,12 @@ class SMBStorage(Storage):
             raise ValueError(f"Invalid SMB path: {path}")
 
         if server not in self._registered:
+            allowed_servers_str = os.getenv("SMB_ALLOWED_SERVERS", "").strip()
+            if allowed_servers_str:
+                allowed = {s.strip().lower() for s in allowed_servers_str.split(",") if s.strip()}
+                if "*" not in allowed and server.lower() not in allowed:
+                    raise PermissionError(f"Acesso ao servidor SMB '{server}' não autorizado pela política de segurança.")
+
             smbclient.register_session(server, username=self.username, password=self.password)
             self._registered.add(server)
 

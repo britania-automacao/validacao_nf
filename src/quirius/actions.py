@@ -15,7 +15,8 @@ logger = logging.getLogger("quirius_fetcher.actions")
 
 
 class QuiriusActions:
-    URL_LOGIN = "http://10.0.10.57:600/UIM/Admin/Login.aspx" 
+    _base_quirius = os.getenv("QUIRIUS_URL", "http://10.0.10.57:600").rstrip("/")
+    URL_LOGIN = f"{_base_quirius}/UIM/Admin/Login.aspx" if not _base_quirius.endswith("/Login.aspx") else _base_quirius 
 
     class Elements:
         INPUT_LOGIN = (By.ID, "ctl00_txtLogin")

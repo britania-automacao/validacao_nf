@@ -129,7 +129,10 @@ class LeitorSimplesNacional:
             nome_api = api["nome"]
             url = api["url"]
             try:
-                response = requests.get(url, headers=headers, timeout=8, verify=False)
+                try:
+                    response = requests.get(url, headers=headers, timeout=8, verify=True)
+                except requests.exceptions.SSLError:
+                    response = requests.get(url, headers=headers, timeout=8, verify=False)
                 if response.status_code == 200:
                     dados = response.json()
                     

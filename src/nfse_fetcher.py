@@ -1,5 +1,6 @@
 # src/nfse_fetcher.py
 import os
+import stat
 import time
 import requests
 import base64
@@ -88,6 +89,10 @@ class SincronizadorGoverno:
                     format=serialization.PrivateFormat.TraditionalOpenSSL,
                     encryption_algorithm=serialization.NoEncryption()
                 ))
+            try:
+                os.chmod(cert_key_path, stat.S_IRUSR | stat.S_IWUSR)
+            except Exception:
+                pass
                 
             with open(cert_pub_path, "wb") as f:
                 f.write(certificate.public_bytes(serialization.Encoding.PEM))

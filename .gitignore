@@ -220,6 +220,12 @@ __marimo__/
 dados
 certificado.pem
 chave_privada.key
+*.pem
+*.key
+*.pfx
+*.p12
 
 # Documentos e relatorios temporarios
 *.docx
+Relatório Segurança*
+template-relatorio-seguranca*
